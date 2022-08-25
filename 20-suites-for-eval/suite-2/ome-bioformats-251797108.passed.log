@@ -1,0 +1,1813 @@
+travis_time:start:0e1665e2[0Ktravis_time:end:0e1665e2:start=1639805872028484192,finish=1639805872176816818,duration=148332626,event=no_world_writable_dirs[0Ktravis_time:start:0889b1b9[0Ktravis_time:end:0889b1b9:start=1639805872183162245,finish=1639805872187608933,duration=4446688,event=check_unsupported[0Ktravis_time:start:2c6444c3[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:2c6444c3:start=1639805872193039766,finish=1639805872200778748,duration=7738982,event=show_system_info[0Ktravis_time:start:08dfa095[0Ktravis_time:end:08dfa095:start=1639805872205569859,finish=1639805872221227587,duration=15657728,event=rm_riak_source[0Ktravis_time:start:0216af8f[0Ktravis_time:end:0216af8f:start=1639805872226490832,finish=1639805872237198085,duration=10707253,event=fix_rwky_redis[0Ktravis_time:start:0255a8d5[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:0255a8d5:start=1639805872242818964,finish=1639805892881366288,duration=20638547324,event=wait_for_network[0Ktravis_time:start:14c2297d[0Ktravis_time:end:14c2297d:start=1639805892887858362,finish=1639805894731264346,duration=1843405984,event=update_apt_keys[0Ktravis_time:start:12c054e7[0Ktravis_time:end:12c054e7:start=1639805894737589241,finish=1639805894801818333,duration=64229092,event=fix_hhvm_source[0Ktravis_time:start:05b2719b[0Ktravis_time:end:05b2719b:start=1639805894806765753,finish=1639805894812722977,duration=5957224,event=update_mongo_arch[0Ktravis_time:start:0eec4592[0Ktravis_time:end:0eec4592:start=1639805894818589042,finish=1639805894866796096,duration=48207054,event=fix_sudo_enabled_trusty[0Ktravis_time:start:1c44e9eb[0Ktravis_time:end:1c44e9eb:start=1639805894872864319,finish=1639805894889240992,duration=16376673,event=clean_up_path[0Ktravis_time:start:133b0449[0Ktravis_time:end:133b0449:start=1639805894894956879,finish=1639805894908564337,duration=13607458,event=fix_resolv_conf[0Ktravis_time:start:1ca967c3[0Ktravis_time:end:1ca967c3:start=1639805894913322911,finish=1639805894929464608,duration=16141697,event=fix_etc_hosts[0Ktravis_time:start:18c64722[0Ktravis_time:start:1b63ea78[0Ktravis_time:end:1b63ea78:start=1639805894954448176,finish=1639805894974051370,duration=19603194,event=no_ipv6_localhost[0Ktravis_time:start:02246052[0Ktravis_time:end:02246052:start=1639805894980604126,finish=1639805895023290227,duration=42686101,event=fix_etc_mavenrc[0Ktravis_time:start:20f2d104[0Ktravis_time:end:20f2d104:start=1639805895029668164,finish=1639805895034952389,duration=5284225,event=fix_wwdr_certificate[0Ktravis_time:start:1e3fe157[0Ktravis_time:end:1e3fe157:start=1639805895039789218,finish=1639805895076237750,duration=36448532,event=put_localhost_first[0Ktravis_time:start:192b71f4[0Ktravis_time:end:192b71f4:start=1639805895081573909,finish=1639805895086986374,duration=5412465,event=home_paths[0Ktravis_time:start:225bf276[0Ktravis_time:end:225bf276:start=1639805895092987706,finish=1639805895154770445,duration=61782739,event=disable_initramfs[0Ktravis_time:start:1be78f08[0Ktravis_time:end:1be78f08:start=1639805895161077612,finish=1639805895261785137,duration=100707525,event=disable_ssh_roaming[0Ktravis_time:start:224bdd2d[0Ktravis_time:end:224bdd2d:start=1639805895271469038,finish=1639805895275576500,duration=4107462,event=debug_tools[0Ktravis_time:start:1c730d96[0Ktravis_time:end:1c730d96:start=1639805895281359463,finish=1639805895288269013,duration=6909550,event=uninstall_oclint[0Ktravis_time:start:08bf0318[0Ktravis_time:end:08bf0318:start=1639805895295417075,finish=1639805895300859989,duration=5442914,event=rvm_use[0Ktravis_time:start:061f6fe2[0Ktravis_time:end:061f6fe2:start=1639805895305259825,finish=1639805895316160659,duration=10900834,event=rm_etc_boto_cfg[0Ktravis_time:start:05d86517[0Ktravis_time:end:05d86517:start=1639805895321172450,finish=1639805895324988505,duration=3816055,event=rm_oraclejdk8_symlink[0Ktravis_time:start:008e01a3[0Ktravis_time:end:008e01a3:start=1639805895329991246,finish=1639805895380859551,duration=50868305,event=enable_i386[0Ktravis_time:start:1ca96264[0Ktravis_time:end:1ca96264:start=1639805895387703344,finish=1639805895394662849,duration=6959505,event=update_rubygems[0Ktravis_time:start:016466da[0Ktravis_time:end:016466da:start=1639805895401370867,finish=1639805895410282414,duration=8911547,event=ensure_path_components[0Ktravis_time:start:04372220[0Ktravis_time:end:04372220:start=1639805895415097745,finish=1639805895418064011,duration=2966266,event=redefine_curl[0Ktravis_time:start:0aaedef8[0Ktravis_time:end:0aaedef8:start=1639805895422367802,finish=1639805895425527012,duration=3159210,event=nonblock_pipe[0Ktravis_time:start:16066074[0Ktravis_time:end:16066074:start=1639805895429652419,finish=1639805898297199618,duration=2867547199,event=apt_get_update[0Ktravis_time:start:060c48c0[0Ktravis_time:end:060c48c0:start=1639805898302626350,finish=1639805898306604467,duration=3978117,event=deprecate_xcode_64[0Ktravis_time:start:02f718e4[0Ktravis_time:end:02f718e4:start=1639805898312056682,finish=1639805898318737995,duration=6681313,event=update_heroku[0Ktravis_time:start:30e2edc2[0Ktravis_time:end:30e2edc2:start=1639805898324880851,finish=1639805898329838104,duration=4957253,event=shell_session_update[0Ktravis_time:start:392c46dc[0Ktravis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0Ktravis_time:end:392c46dc:start=1639805898335794863,finish=1639805898367248330,duration=31453467,event=set_docker_mtu[0Ktravis_time:start:10fa7eb3[0Ktravis_time:end:10fa7eb3:start=1639805898372623749,finish=1639805898388298300,duration=15674551,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling openjdk7[0m
+$ jdk_switcher use "openjdk7"
+Switching to OpenJDK7 (java-1.7.0-openjdk-amd64), JAVA_HOME will be set to /usr/lib/jvm/java-7-openjdk-amd64
+travis_fold:end:install_jdk[0Ktravis_fold:start:apt[0Ktravis_time:start:04f7f294[0K$ travis_apt_get_update
+travis_time:end:04f7f294:start=1639805898409123725,finish=1639805901447824913,duration=3038701188,event=prepare[0K[33;1mInstalling APT Packages[0m
+travis_time:start:053d2a9c[0K$ sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install git
+Reading package lists...
+Building dependency tree...
+Reading state information...
+git is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+travis_time:end:053d2a9c:start=1639805901452612750,finish=1639805901525944442,duration=73331692,event=prepare[0Ktravis_fold:end:apt[0Ktravis_time:start:08ee3b0a[0Ktravis_time:end:08ee3b0a:start=1639805901533089811,finish=1639805901537605133,duration=4515322,event=fix_ps4[0Ktravis_time:start:154d7ae2[0K
+$ cd passed/ome/bioformats
+
+travis_time:end:154d7ae2:start=1639805901543817897,finish=1639805901549241094,duration=5423197,event=checkout[0Ktravis_time:start:230518aa[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export BUILD=maven
+
+travis_time:end:230518aa:start=1639805901556229620,finish=1639805901995474421,duration=439244801,event=env[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:0af57b26[0K$ Installing caching utilities
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 2 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 3 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed 3 times.[0m
+
+travis_time:end:0af57b26:start=1639805902872537760,finish=1639805905960180390,duration=3087642630,event=setup_casher[0Ktravis_time:start:05d3606f[0K$ Installing caching utilities from the Travis CI server (https:///files/casher) failed, failing over to using GitHub (https://raw.githubusercontent.com/travis-ci/casher/bash/bin/casher)
+travis_time:end:05d3606f:start=1639805905968158980,finish=1639805906177455604,duration=209296624,event=setup_casher[0Ktravis_time:start:0ba44298[0Ktravis_time:end:0ba44298:start=1639805906187922909,finish=1639805906194593189,duration=6670280,event=setup_casher[0Ktravis_time:start:099527a0[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+attempting to download cache archive[0m
+[31;1mcould not download cache[0m
+travis_time:end:099527a0:start=1639805906202041687,finish=1639805907814249080,duration=1612207393,event=setup_casher[0Ktravis_time:start:0a208a62[0Ktravis_time:end:0a208a62:start=1639805907822092192,finish=1639805907826605138,duration=4512946,event=setup_casher[0Ktravis_time:start:0102e48c[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+adding /home/travis/.m2 to cache[0m
+travis_time:end:0102e48c:start=1639805907831961146,finish=1639805910293002335,duration=2461041189,event=setup_casher[0Ktravis_fold:end:cache.1[0K
+$ java -Xmx32m -version
+java version "1.7.0_75"
+OpenJDK Runtime Environment (IcedTea 2.5.4) (7u75-2.5.4-1~precise1)
+OpenJDK 64-Bit Server VM (build 24.75-b04, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.7.0_75
+travis_fold:start:before_install[0Ktravis_time:start:01537be4[0K$ if [[ $BUILD == 'ant' ]]; then pip install --user flake8 Sphinx; fi
+travis_time:end:01537be4:start=1639805910529964309,finish=1639805910535273625,duration=5309316,event=before_install[0Ktravis_fold:end:before_install[0Ktravis_fold:start:install[0Ktravis_time:start:0c929511[0K$ mvn -o install -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_75, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-openjdk-amd64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-109-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Bio-Formats projects
+[INFO] JAI Image I/O Tools
+[INFO] libjpeg-turbo Java bindings
+[INFO] Bio-Formats API
+[INFO] BSD Bio-Formats readers and writers
+[INFO] Bio-Formats library
+[INFO] Bio-Formats code generator
+[INFO] Bio-Formats Plugins for ImageJ
+[INFO] Bio-Formats command line tools
+[INFO] bioformats_package bundle
+[INFO] LOCI Tools bundle
+[INFO] Bio-Formats testing framework
+[INFO] Bio-Formats Sphinx documentation
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats projects 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] Checking for local modifications: skipped.
+[INFO] maven is executed in offline mode, Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildNumber: a759a3a870d7270c4d3a033624391108b94cf792 at timestamp: 1639805914436
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ pom-bio-formats >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ pom-bio-formats <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ pom-bio-formats ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ pom-bio-formats ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/pom.xml to /home/travis/.m2/repository/ome/pom-bio-formats/5.6.0-SNAPSHOT/pom-bio-formats-5.6.0-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building JAI Image I/O Tools 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jai_imageio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ jai_imageio ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jai_imageio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ jai_imageio ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ jai_imageio ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ jai_imageio ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ jai_imageio >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ jai_imageio <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ jai_imageio ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ jai_imageio ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ jai_imageio ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/pom.xml to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building libjpeg-turbo Java bindings 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 7 resources to META-INF/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ turbojpeg ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ turbojpeg ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ turbojpeg ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ turbojpeg ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ turbojpeg >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ turbojpeg <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ turbojpeg ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ turbojpeg ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ turbojpeg ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/pom.xml to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats API 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-api ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-api >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-api <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-api ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-api ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-api ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/pom.xml to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building BSD Bio-Formats readers and writers 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-bsd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-bsd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-bsd ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-bsd ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-bsd >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-bsd <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-bsd ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-bsd ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-bsd ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/pom.xml to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats library 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-gpl ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-gpl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/formats-gpl/lib
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-gpl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-gpl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 26 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-gpl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-gpl ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (missing-mdb-test) @ formats-gpl ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (missing-poi-test) @ formats-gpl ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (missing-netcdf-test) @ formats-gpl ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-gpl ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-gpl >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-gpl ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-gpl <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-gpl ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-gpl ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-gpl ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/formats-gpl-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-gpl/5.6.0-SNAPSHOT/formats-gpl-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-gpl/pom.xml to /home/travis/.m2/repository/ome/formats-gpl/5.6.0-SNAPSHOT/formats-gpl-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/formats-gpl-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-gpl/5.6.0-SNAPSHOT/formats-gpl-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/formats-gpl-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-gpl/5.6.0-SNAPSHOT/formats-gpl-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats code generator 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bf-autogen ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ bf-autogen ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/autogen/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ bf-autogen ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ bf-autogen ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/autogen/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ bf-autogen ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ bf-autogen ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ bf-autogen ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ bf-autogen >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bf-autogen ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ bf-autogen <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ bf-autogen ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/autogen/target/bf-autogen-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ bf-autogen ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ bf-autogen ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/autogen/target/bf-autogen-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/bf-autogen/5.6.0-SNAPSHOT/bf-autogen-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/autogen/pom.xml to /home/travis/.m2/repository/ome/bf-autogen/5.6.0-SNAPSHOT/bf-autogen-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/autogen/target/bf-autogen-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/bf-autogen/5.6.0-SNAPSHOT/bf-autogen-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats Plugins for ImageJ 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bio-formats_plugins ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ bio-formats_plugins ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ bio-formats_plugins ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ bio-formats_plugins ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ bio-formats_plugins ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ bio-formats_plugins ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ bio-formats_plugins ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ bio-formats_plugins >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bio-formats_plugins ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ bio-formats_plugins <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ bio-formats_plugins ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/target/bio-formats_plugins-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ bio-formats_plugins ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ bio-formats_plugins ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/target/bio-formats_plugins-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/bio-formats_plugins/5.6.0-SNAPSHOT/bio-formats_plugins-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/pom.xml to /home/travis/.m2/repository/ome/bio-formats_plugins/5.6.0-SNAPSHOT/bio-formats_plugins-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/target/bio-formats_plugins-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/bio-formats_plugins/5.6.0-SNAPSHOT/bio-formats_plugins-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/target/bio-formats_plugins-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/bio-formats_plugins/5.6.0-SNAPSHOT/bio-formats_plugins-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats command line tools 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bio-formats-tools ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ bio-formats-tools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ bio-formats-tools ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ bio-formats-tools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ bio-formats-tools ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ bio-formats-tools ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ bio-formats-tools ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ bio-formats-tools >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bio-formats-tools ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ bio-formats-tools <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ bio-formats-tools ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/target/bio-formats-tools-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ bio-formats-tools ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ bio-formats-tools ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/target/bio-formats-tools-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/bio-formats-tools/5.6.0-SNAPSHOT/bio-formats-tools-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/pom.xml to /home/travis/.m2/repository/ome/bio-formats-tools/5.6.0-SNAPSHOT/bio-formats-tools-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/target/bio-formats-tools-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/bio-formats-tools/5.6.0-SNAPSHOT/bio-formats-tools-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/target/bio-formats-tools-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/bio-formats-tools/5.6.0-SNAPSHOT/bio-formats-tools-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building bioformats_package bundle 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bioformats_package ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ bioformats_package >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bioformats_package ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ bioformats_package <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ bioformats_package ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.4:single (make-assembly) @ bioformats_package ---
+[INFO] Reading assembly descriptor: assembly.xml
+[WARNING] The following patterns were never triggered in this artifact exclusion filter:
+o  'gov.nih.imagej:imagej'
+o  'net.imagej:ij'
+o  'org.springframework:spring*'
+o  'aopalliance:aopalliance'
+o  'org.aspectj:aspectj*'
+o  'org.slf4j:slf4j-log4j12'
+o  'log4j:log4j'
+o  'org.testng:testng'
+o  'com.beust:jcommander'
+o  'org.yaml:snakeyaml'
+o  'org.beanshell:bsh'
+o  'edu.princeton.cup:java-cup'
+o  'org.apache.bcel:bcel'
+o  'commons-codec:commons-codec'
+o  'regexp:regexp'
+o  'org.apache.ant:ant-trax'
+o  'edu.ucar:udunits'
+o  'javax.servlet:servlet-api'
+
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/bundles/bioformats_package/target/bioformats_package-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ bioformats_package ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bundles/bioformats_package/pom.xml to /home/travis/.m2/repository/ome/bioformats_package/5.6.0-SNAPSHOT/bioformats_package-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bundles/bioformats_package/target/bioformats_package-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/bioformats_package/5.6.0-SNAPSHOT/bioformats_package-5.6.0-SNAPSHOT.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building LOCI Tools bundle 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ loci_tools ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ loci_tools >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ loci_tools ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ loci_tools <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ loci_tools ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.4:single (make-assembly) @ loci_tools ---
+[INFO] Reading assembly descriptor: assembly.xml
+[WARNING] The following patterns were never triggered in this artifact exclusion filter:
+o  'gov.nih.imagej:imagej'
+o  'net.imagej:ij'
+o  'org.testng:testng'
+o  'com.beust:jcommander'
+o  'org.yaml:snakeyaml'
+o  'org.beanshell:bsh'
+o  'edu.princeton.cup:java-cup'
+o  'org.apache.bcel:bcel'
+o  'commons-codec:commons-codec'
+o  'regexp:regexp'
+o  'org.apache.ant:ant-trax'
+o  'edu.ucar:udunits'
+o  'javax.servlet:servlet-api'
+
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/bundles/loci_tools/target/loci_tools-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ loci_tools ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bundles/loci_tools/pom.xml to /home/travis/.m2/repository/ome/loci_tools/5.6.0-SNAPSHOT/loci_tools-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bundles/loci_tools/target/loci_tools-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/loci_tools/5.6.0-SNAPSHOT/loci_tools-5.6.0-SNAPSHOT.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats testing framework 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ test-suite ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ test-suite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/test-suite/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ test-suite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ test-suite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/test-suite/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ test-suite ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ test-suite ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ test-suite ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ test-suite >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ test-suite ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ test-suite <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ test-suite ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/test-suite/target/test-suite-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ test-suite ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ test-suite ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/test-suite/target/test-suite-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/test-suite/5.6.0-SNAPSHOT/test-suite-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/test-suite/pom.xml to /home/travis/.m2/repository/ome/test-suite/5.6.0-SNAPSHOT/test-suite-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/test-suite/target/test-suite-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/test-suite/5.6.0-SNAPSHOT/test-suite-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats Sphinx documentation 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-docs ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-docs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-docs ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-docs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/docs/sphinx/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-docs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-docs ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.2.1:java (default) > validate @ formats-docs >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-docs ---
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.2.1:java (default) < validate @ formats-docs <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:java (default) @ formats-docs ---
+Executing ReadPhysicalSize
+Physical calibration - Image: 0
+	X = 1.0 nm = 0.001 µm
+	Y = 0.1 µm = 0.1 µm
+Success
+Executing FileConvert
+Success
+Executing FileExport
+Success
+Executing FileExportSPW
+Success
+Executing SimpleTiledWriter
+Success
+Executing TiledReaderWriter
+Success
+Executing TiledReaderWriter
+Success
+Executing OverlappedTiledWriter
+Success
+Executing OverlappedTiledWriter
+Success
+Executing ReadWriteInMemory
+Reading file into memory from disk...
+0 bytes read.
+
+Reading image data from memory...
+Series count: 1
+First series:
+	Image count = 1
+	SizeX = 512
+	SizeY = 512
+	SizeZ = 1
+	SizeC = 1
+	SizeT = 1
+
+Writing planes to destination in memory: .
+
+Flushing image data to disk...
+Success
+Executing OrthogonalReader
+2021-12-18 05:42:00,184 [ExampleSuite.main()] INFO  loci.formats.ImageReader - FakeReader initializing /home/travis/build/passed/ome/bioformats/docs/sphinx/target/classes/test.fake
+Success
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-docs ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/docs/sphinx/target/formats-docs-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-docs >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-docs ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-docs <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-docs ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-docs ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-docs ---
+[INFO] Skipping artifact installation
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Bio-Formats projects ............................... SUCCESS [  1.062 s]
+[INFO] JAI Image I/O Tools ................................ SUCCESS [ 19.565 s]
+[INFO] libjpeg-turbo Java bindings ........................ SUCCESS [  2.408 s]
+[INFO] Bio-Formats API .................................... SUCCESS [  2.864 s]
+[INFO] BSD Bio-Formats readers and writers ................ SUCCESS [ 23.107 s]
+[INFO] Bio-Formats library ................................ SUCCESS [01:09 min]
+[INFO] Bio-Formats code generator ......................... SUCCESS [  7.322 s]
+[INFO] Bio-Formats Plugins for ImageJ ..................... SUCCESS [ 32.799 s]
+[INFO] Bio-Formats command line tools ..................... SUCCESS [  4.220 s]
+[INFO] bioformats_package bundle .......................... SUCCESS [ 14.192 s]
+[INFO] LOCI Tools bundle .................................. SUCCESS [  8.994 s]
+[INFO] Bio-Formats testing framework ...................... SUCCESS [  6.331 s]
+[INFO] Bio-Formats Sphinx documentation ................... SUCCESS [01:26 min]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 04:41 min
+[INFO] Finished at: 2021-12-18T05:43:13+00:00
+[INFO] Final Memory: 19M/441M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:0c929511:start=1639805910544028074,finish=1639806193739414155,duration=283195386081,event=install[0Ktravis_fold:end:install[0Ktravis_time:start:0014eab2[0K$ ./tools/test-build $BUILD
++maven
++mvn
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Bio-Formats projects
+[INFO] JAI Image I/O Tools
+[INFO] libjpeg-turbo Java bindings
+[INFO] Bio-Formats API
+[INFO] BSD Bio-Formats readers and writers
+[INFO] Bio-Formats library
+[INFO] Bio-Formats code generator
+[INFO] Bio-Formats Plugins for ImageJ
+[INFO] Bio-Formats command line tools
+[INFO] bioformats_package bundle
+[INFO] LOCI Tools bundle
+[INFO] Bio-Formats testing framework
+[INFO] Bio-Formats Sphinx documentation
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats projects 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] Checking for local modifications: skipped.
+[INFO] Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildNumber: a759a3a870d7270c4d3a033624391108b94cf792 at timestamp: 1639806196396
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ pom-bio-formats >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ pom-bio-formats <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ pom-bio-formats ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ pom-bio-formats ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/pom.xml to /home/travis/.m2/repository/ome/pom-bio-formats/5.6.0-SNAPSHOT/pom-bio-formats-5.6.0-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building JAI Image I/O Tools 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jai_imageio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ jai_imageio ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jai_imageio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ jai_imageio ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ jai_imageio ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ jai_imageio ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ jai_imageio >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ jai_imageio <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ jai_imageio ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ jai_imageio ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ jai_imageio ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/pom.xml to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building libjpeg-turbo Java bindings 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 7 resources to META-INF/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ turbojpeg ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ turbojpeg ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ turbojpeg ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ turbojpeg ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ turbojpeg >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ turbojpeg <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ turbojpeg ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ turbojpeg ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ turbojpeg ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/pom.xml to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats API 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-api ---
+[INFO] Surefire report directory: /home/travis/build/passed/ome/bioformats/components/formats-api/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Configuring TestNG with: TestNG652Configurator
+2021-12-18 05:43:20,715 [main] WARN  loci.formats.ClassList - Could not find invalid
+2021-12-18 05:43:20,720 [main] WARN  loci.formats.ClassList - Could not find invalid
+2021-12-18 05:43:20,875 [main] WARN  loci.formats.FormatTools - Invalid base unit: using default reference frame unit
+2021-12-18 05:43:20,875 [main] WARN  loci.formats.FormatTools - Invalid base unit: using default reference frame unit
+2021-12-18 05:43:20,876 [main] WARN  loci.formats.FormatTools - Invalid base unit: using default reference frame unit
+2021-12-18 05:43:20,876 [main] WARN  loci.formats.FormatTools - Invalid base unit: using default reference frame unit
+Tests run: 123, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.28 sec - in TestSuite
+
+Results :
+
+Tests run: 123, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-api ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-api >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-api <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-api ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-api ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-api ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/pom.xml to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building BSD Bio-Formats readers and writers 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-bsd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-bsd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-bsd ---
+[INFO] Surefire report directory: /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+2021-12-18 05:43:26,595 [main] ERROR loci.formats.ClassList - "loci.formats.out.WlzWriter" is not valid.
+2021-12-18 05:43:26,598 [main] ERROR loci.formats.ClassList - "loci.formats.out.CellH5Writer" is not valid.
+2021-12-18 05:43:27,591 [main] ERROR loci.formats.ClassList - "loci.formats.in.IPLabReader" is not valid.
+2021-12-18 05:43:27,592 [main] ERROR loci.formats.ClassList - "loci.formats.in.IvisionReader" is not valid.
+2021-12-18 05:43:27,592 [main] ERROR loci.formats.ClassList - "loci.formats.in.DeltavisionReader" is not valid.
+2021-12-18 05:43:27,592 [main] ERROR loci.formats.ClassList - "loci.formats.in.MRCReader" is not valid.
+2021-12-18 05:43:27,592 [main] ERROR loci.formats.ClassList - "loci.formats.in.GatanReader" is not valid.
+2021-12-18 05:43:27,593 [main] ERROR loci.formats.ClassList - "loci.formats.in.GatanDM2Reader" is not valid.
+2021-12-18 05:43:27,593 [main] ERROR loci.formats.ClassList - "loci.formats.in.ImarisReader" is not valid.
+2021-12-18 05:43:27,593 [main] ERROR loci.formats.ClassList - "loci.formats.in.OpenlabRawReader" is not valid.
+2021-12-18 05:43:27,595 [main] ERROR loci.formats.ClassList - "loci.formats.in.LIFReader" is not valid.
+2021-12-18 05:43:27,599 [main] ERROR loci.formats.ClassList - "loci.formats.in.SDTReader" is not valid.
+2021-12-18 05:43:27,599 [main] ERROR loci.formats.ClassList - "loci.formats.in.SPCReader" is not valid.
+2021-12-18 05:43:27,600 [main] ERROR loci.formats.ClassList - "loci.formats.in.SlidebookReader" is not valid.
+2021-12-18 05:43:27,600 [main] ERROR loci.formats.ClassList - "loci.formats.in.AliconaReader" is not valid.
+2021-12-18 05:43:27,601 [main] ERROR loci.formats.ClassList - "loci.formats.in.KhorosReader" is not valid.
+2021-12-18 05:43:27,601 [main] ERROR loci.formats.ClassList - "loci.formats.in.VisitechReader" is not valid.
+2021-12-18 05:43:27,601 [main] ERROR loci.formats.ClassList - "loci.formats.in.LIMReader" is not valid.
+2021-12-18 05:43:27,601 [main] ERROR loci.formats.ClassList - "loci.formats.in.PSDReader" is not valid.
+2021-12-18 05:43:27,602 [main] ERROR loci.formats.ClassList - "loci.formats.in.InCellReader" is not valid.
+2021-12-18 05:43:27,602 [main] ERROR loci.formats.ClassList - "loci.formats.in.L2DReader" is not valid.
+2021-12-18 05:43:27,602 [main] ERROR loci.formats.ClassList - "loci.formats.in.FEIReader" is not valid.
+2021-12-18 05:43:27,602 [main] ERROR loci.formats.ClassList - "loci.formats.in.NAFReader" is not valid.
+2021-12-18 05:43:27,602 [main] ERROR loci.formats.ClassList - "loci.formats.in.MINCReader" is not valid.
+2021-12-18 05:43:27,603 [main] ERROR loci.formats.ClassList - "loci.formats.in.MRWReader" is not valid.
+2021-12-18 05:43:27,603 [main] ERROR loci.formats.ClassList - "loci.formats.in.TillVisionReader" is not valid.
+2021-12-18 05:43:27,603 [main] ERROR loci.formats.ClassList - "loci.formats.in.ARFReader" is not valid.
+2021-12-18 05:43:27,603 [main] ERROR loci.formats.ClassList - "loci.formats.in.CellomicsReader" is not valid.
+2021-12-18 05:43:27,603 [main] ERROR loci.formats.ClassList - "loci.formats.in.LiFlimReader" is not valid.
+2021-12-18 05:43:27,604 [main] ERROR loci.formats.ClassList - "loci.formats.in.TargaReader" is not valid.
+2021-12-18 05:43:27,604 [main] ERROR loci.formats.ClassList - "loci.formats.in.OxfordInstrumentsReader" is not valid.
+2021-12-18 05:43:27,604 [main] ERROR loci.formats.ClassList - "loci.formats.in.VGSAMReader" is not valid.
+2021-12-18 05:43:27,604 [main] ERROR loci.formats.ClassList - "loci.formats.in.HISReader" is not valid.
+2021-12-18 05:43:27,604 [main] ERROR loci.formats.ClassList - "loci.formats.in.WATOPReader" is not valid.
+2021-12-18 05:43:27,605 [main] ERROR loci.formats.ClassList - "loci.formats.in.SeikoReader" is not valid.
+2021-12-18 05:43:27,605 [main] ERROR loci.formats.ClassList - "loci.formats.in.TopometrixReader" is not valid.
+2021-12-18 05:43:27,605 [main] ERROR loci.formats.ClassList - "loci.formats.in.UBMReader" is not valid.
+2021-12-18 05:43:27,605 [main] ERROR loci.formats.ClassList - "loci.formats.in.QuesantReader" is not valid.
+2021-12-18 05:43:27,605 [main] ERROR loci.formats.ClassList - "loci.formats.in.BioRadGelReader" is not valid.
+2021-12-18 05:43:27,605 [main] ERROR loci.formats.ClassList - "loci.formats.in.RHKReader" is not valid.
+2021-12-18 05:43:27,606 [main] ERROR loci.formats.ClassList - "loci.formats.in.MolecularImagingReader" is not valid.
+2021-12-18 05:43:27,606 [main] ERROR loci.formats.ClassList - "loci.formats.in.CellWorxReader" is not valid.
+2021-12-18 05:43:27,606 [main] ERROR loci.formats.ClassList - "loci.formats.in.Ecat7Reader" is not valid.
+2021-12-18 05:43:27,606 [main] ERROR loci.formats.ClassList - "loci.formats.in.VarianFDFReader" is not valid.
+2021-12-18 05:43:27,606 [main] ERROR loci.formats.ClassList - "loci.formats.in.AIMReader" is not valid.
+2021-12-18 05:43:27,606 [main] ERROR loci.formats.ClassList - "loci.formats.in.InCell3000Reader" is not valid.
+2021-12-18 05:43:27,607 [main] ERROR loci.formats.ClassList - "loci.formats.in.SpiderReader" is not valid.
+2021-12-18 05:43:27,607 [main] ERROR loci.formats.ClassList - "loci.formats.in.VolocityReader" is not valid.
+2021-12-18 05:43:27,607 [main] ERROR loci.formats.ClassList - "loci.formats.in.ImagicReader" is not valid.
+2021-12-18 05:43:27,607 [main] ERROR loci.formats.ClassList - "loci.formats.in.HamamatsuVMSReader" is not valid.
+2021-12-18 05:43:27,607 [main] ERROR loci.formats.ClassList - "loci.formats.in.CellSensReader" is not valid.
+2021-12-18 05:43:27,607 [main] ERROR loci.formats.ClassList - "loci.formats.in.INRReader" is not valid.
+2021-12-18 05:43:27,608 [main] ERROR loci.formats.ClassList - "loci.formats.in.KodakReader" is not valid.
+2021-12-18 05:43:27,608 [main] ERROR loci.formats.ClassList - "loci.formats.in.VolocityClippingReader" is not valid.
+2021-12-18 05:43:27,608 [main] ERROR loci.formats.ClassList - "loci.formats.in.ZeissCZIReader" is not valid.
+2021-12-18 05:43:27,608 [main] ERROR loci.formats.ClassList - "loci.formats.in.SIFReader" is not valid.
+2021-12-18 05:43:27,608 [main] ERROR loci.formats.ClassList - "loci.formats.in.NDPISReader" is not valid.
+2021-12-18 05:43:27,608 [main] ERROR loci.formats.ClassList - "loci.formats.in.PovrayReader" is not valid.
+2021-12-18 05:43:27,608 [main] ERROR loci.formats.ClassList - "loci.formats.in.IMODReader" is not valid.
+2021-12-18 05:43:27,657 [main] ERROR loci.formats.ClassList - "loci.formats.in.AFIReader" is not valid.
+2021-12-18 05:43:27,657 [main] ERROR loci.formats.ClassList - "loci.formats.in.ImspectorReader" is not valid.
+2021-12-18 05:43:27,657 [main] ERROR loci.formats.ClassList - "loci.formats.in.BioRadSCNReader" is not valid.
+2021-12-18 05:43:27,657 [main] ERROR loci.formats.ClassList - "loci.formats.in.ZeissLMSReader" is not valid.
+2021-12-18 05:43:27,658 [main] ERROR loci.formats.ClassList - "loci.formats.in.PQBinReader" is not valid.
+2021-12-18 05:43:27,660 [main] ERROR loci.formats.ClassList - "loci.formats.in.I2IReader" is not valid.
+2021-12-18 05:43:27,661 [main] ERROR loci.formats.ClassList - "loci.formats.in.SPEReader" is not valid.
+2021-12-18 05:43:27,661 [main] ERROR loci.formats.ClassList - "loci.formats.in.OIRReader" is not valid.
+2021-12-18 05:43:27,661 [main] ERROR loci.formats.ClassList - "loci.formats.in.JEOLReader" is not valid.
+2021-12-18 05:43:27,661 [main] ERROR loci.formats.ClassList - "loci.formats.in.NiftiReader" is not valid.
+2021-12-18 05:43:27,661 [main] ERROR loci.formats.ClassList - "loci.formats.in.AnalyzeReader" is not valid.
+2021-12-18 05:43:27,662 [main] ERROR loci.formats.ClassList - "loci.formats.in.APLReader" is not valid.
+2021-12-18 05:43:27,665 [main] ERROR loci.formats.ClassList - "loci.formats.in.PerkinElmerReader" is not valid.
+2021-12-18 05:43:27,665 [main] ERROR loci.formats.ClassList - "loci.formats.in.AmiraReader" is not valid.
+2021-12-18 05:43:27,665 [main] ERROR loci.formats.ClassList - "loci.formats.in.ScanrReader" is not valid.
+2021-12-18 05:43:27,665 [main] ERROR loci.formats.ClassList - "loci.formats.in.BDReader" is not valid.
+2021-12-18 05:43:27,666 [main] ERROR loci.formats.ClassList - "loci.formats.in.UnisokuReader" is not valid.
+2021-12-18 05:43:27,666 [main] ERROR loci.formats.ClassList - "loci.formats.in.PDSReader" is not valid.
+2021-12-18 05:43:27,666 [main] ERROR loci.formats.ClassList - "loci.formats.in.FujiReader" is not valid.
+2021-12-18 05:43:27,666 [main] ERROR loci.formats.ClassList - "loci.formats.in.OperettaReader" is not valid.
+2021-12-18 05:43:27,666 [main] ERROR loci.formats.ClassList - "loci.formats.in.InveonReader" is not valid.
+2021-12-18 05:43:27,666 [main] ERROR loci.formats.ClassList - "loci.formats.in.CellVoyagerReader" is not valid.
+2021-12-18 05:43:27,667 [main] ERROR loci.formats.ClassList - "loci.formats.in.ColumbusReader" is not valid.
+2021-12-18 05:43:27,667 [main] ERROR loci.formats.ClassList - "loci.formats.in.BioRadReader" is not valid.
+2021-12-18 05:43:27,667 [main] ERROR loci.formats.ClassList - "loci.formats.in.FV1000Reader" is not valid.
+2021-12-18 05:43:27,667 [main] ERROR loci.formats.ClassList - "loci.formats.in.ZeissZVIReader" is not valid.
+2021-12-18 05:43:27,667 [main] ERROR loci.formats.ClassList - "loci.formats.in.IPWReader" is not valid.
+2021-12-18 05:43:27,668 [main] ERROR loci.formats.ClassList - "loci.formats.in.JPXReader" is not valid.
+2021-12-18 05:43:27,668 [main] ERROR loci.formats.ClassList - "loci.formats.in.ND2Reader" is not valid.
+2021-12-18 05:43:27,668 [main] ERROR loci.formats.ClassList - "loci.formats.in.PCIReader" is not valid.
+2021-12-18 05:43:27,668 [main] ERROR loci.formats.ClassList - "loci.formats.in.ImarisHDFReader" is not valid.
+2021-12-18 05:43:27,669 [main] ERROR loci.formats.ClassList - "loci.formats.in.CellH5Reader" is not valid.
+2021-12-18 05:43:27,669 [main] ERROR loci.formats.ClassList - "loci.formats.in.WlzReader" is not valid.
+2021-12-18 05:43:27,669 [main] ERROR loci.formats.ClassList - "loci.formats.in.VeecoReader" is not valid.
+2021-12-18 05:43:27,669 [main] ERROR loci.formats.ClassList - "loci.formats.in.ZeissLSMReader" is not valid.
+2021-12-18 05:43:27,669 [main] ERROR loci.formats.ClassList - "loci.formats.in.SEQReader" is not valid.
+2021-12-18 05:43:27,669 [main] ERROR loci.formats.ClassList - "loci.formats.in.GelReader" is not valid.
+2021-12-18 05:43:27,670 [main] ERROR loci.formats.ClassList - "loci.formats.in.ImarisTiffReader" is not valid.
+2021-12-18 05:43:27,670 [main] ERROR loci.formats.ClassList - "loci.formats.in.FlexReader" is not valid.
+2021-12-18 05:43:27,670 [main] ERROR loci.formats.ClassList - "loci.formats.in.SVSReader" is not valid.
+2021-12-18 05:43:27,670 [main] ERROR loci.formats.ClassList - "loci.formats.in.ImaconReader" is not valid.
+2021-12-18 05:43:27,670 [main] ERROR loci.formats.ClassList - "loci.formats.in.LEOReader" is not valid.
+2021-12-18 05:43:27,670 [main] ERROR loci.formats.ClassList - "loci.formats.in.JPKReader" is not valid.
+2021-12-18 05:43:27,671 [main] ERROR loci.formats.ClassList - "loci.formats.in.NDPIReader" is not valid.
+2021-12-18 05:43:27,671 [main] ERROR loci.formats.ClassList - "loci.formats.in.PCORAWReader" is not valid.
+2021-12-18 05:43:27,673 [main] ERROR loci.formats.ClassList - "loci.formats.in.PyramidTiffReader" is not valid.
+2021-12-18 05:43:27,673 [main] ERROR loci.formats.ClassList - "loci.formats.in.MIASReader" is not valid.
+2021-12-18 05:43:27,673 [main] ERROR loci.formats.ClassList - "loci.formats.in.TCSReader" is not valid.
+2021-12-18 05:43:27,673 [main] ERROR loci.formats.ClassList - "loci.formats.in.LeicaReader" is not valid.
+2021-12-18 05:43:27,673 [main] ERROR loci.formats.ClassList - "loci.formats.in.NikonReader" is not valid.
+2021-12-18 05:43:27,673 [main] ERROR loci.formats.ClassList - "loci.formats.in.FluoviewReader" is not valid.
+2021-12-18 05:43:27,674 [main] ERROR loci.formats.ClassList - "loci.formats.in.PrairieReader" is not valid.
+2021-12-18 05:43:27,674 [main] ERROR loci.formats.ClassList - "loci.formats.in.MetamorphReader" is not valid.
+2021-12-18 05:43:27,676 [main] ERROR loci.formats.ClassList - "loci.formats.in.ImprovisionTiffReader" is not valid.
+2021-12-18 05:43:27,676 [main] ERROR loci.formats.ClassList - "loci.formats.in.MetamorphTiffReader" is not valid.
+2021-12-18 05:43:27,676 [main] ERROR loci.formats.ClassList - "loci.formats.in.NikonTiffReader" is not valid.
+2021-12-18 05:43:27,676 [main] ERROR loci.formats.ClassList - "loci.formats.in.PhotoshopTiffReader" is not valid.
+2021-12-18 05:43:27,676 [main] ERROR loci.formats.ClassList - "loci.formats.in.FEITiffReader" is not valid.
+2021-12-18 05:43:27,676 [main] ERROR loci.formats.ClassList - "loci.formats.in.SimplePCITiffReader" is not valid.
+2021-12-18 05:43:27,677 [main] ERROR loci.formats.ClassList - "loci.formats.in.NikonElementsTiffReader" is not valid.
+2021-12-18 05:43:27,677 [main] ERROR loci.formats.ClassList - "loci.formats.in.TrestleReader" is not valid.
+2021-12-18 05:43:27,677 [main] ERROR loci.formats.ClassList - "loci.formats.in.SISReader" is not valid.
+2021-12-18 05:43:27,677 [main] ERROR loci.formats.ClassList - "loci.formats.in.DNGReader" is not valid.
+2021-12-18 05:43:27,677 [main] ERROR loci.formats.ClassList - "loci.formats.in.ZeissTIFFReader" is not valid.
+2021-12-18 05:43:27,677 [main] ERROR loci.formats.ClassList - "loci.formats.in.LeicaSCNReader" is not valid.
+2021-12-18 05:43:27,677 [main] ERROR loci.formats.ClassList - "loci.formats.in.SlidebookTiffReader" is not valid.
+2021-12-18 05:43:27,679 [main] ERROR loci.formats.ClassList - "loci.formats.in.BurleighReader" is not valid.
+2021-12-18 05:43:27,680 [main] ERROR loci.formats.ClassList - "loci.formats.in.OpenlabReader" is not valid.
+2021-12-18 05:43:27,691 [main] ERROR loci.formats.ClassList - "loci.formats.in.SMCameraReader" is not valid.
+2021-12-18 05:43:27,691 [main] ERROR loci.formats.ClassList - "loci.formats.in.SBIGReader" is not valid.
+2021-12-18 05:43:27,691 [main] ERROR loci.formats.ClassList - "loci.formats.in.HRDGDFReader" is not valid.
+2021-12-18 05:43:27,691 [main] ERROR loci.formats.ClassList - "loci.formats.in.HitachiReader" is not valid.
+2021-12-18 05:43:27,692 [main] ERROR loci.formats.ClassList - "loci.formats.in.BrukerReader" is not valid.
+2021-12-18 05:43:27,692 [main] ERROR loci.formats.ClassList - "loci.formats.in.CanonRawReader" is not valid.
+2021-12-18 05:43:27,724 [main] WARN  loci.formats.FormatHandler - Image ID 'Image:1': missing plane #1.  Using TiffReader to determine the number of planes.
+2021-12-18 06:01:18,128 [main] WARN  loci.formats.Memoizer - skipping memo: directory not writeable - /tmp/loci.formats.utests.MemoizerTest.9026946629863097012
+2021-12-18 06:01:18,200 [main] WARN  loci.formats.Memoizer - skipping memo: directory not writeable - /tmp/loci.formats.utests.MemoizerTest.2548472560722434289
+2021-12-18 06:01:18,240 [main] WARN  loci.formats.Memoizer - skipping memo: directory not writeable - /tmp/loci.formats.utests.MemoizerTest.4730807109684537270
+2021-12-18 06:01:18,240 [main] WARN  loci.formats.Memoizer - skipping memo: directory not writeable - /tmp/loci.formats.utests.MemoizerTest.8541794242978264739
+2021-12-18 06:01:18,241 [main] WARN  loci.formats.Memoizer - skipping memo: directory not writeable - /tmp/loci.formats.utests.MemoizerTest.5575970909627772537
+2021-12-18 06:01:31,003 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:31,191 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:31,342 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:31,528 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:31,577 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:31,662 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:31,808 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:31,881 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,000 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,032 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,200 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,356 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,416 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,486 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,572 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,706 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,892 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:32,937 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:33,151 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:33,256 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:33,303 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:33,412 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:33,570 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:33,682 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:33,759 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:33,816 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:33,906 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+2021-12-18 06:01:34,050 [main] WARN  ome.xml.model.enums.handlers.ExperimentTypeEnumHandler - Unknown ExperimentType value 'null' will be stored as "Other"
+Tests run: 1383, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1,182.943 sec - in TestSuite
+
+Results :
+
+Tests run: 1383, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-bsd ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-bsd >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-bsd <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-bsd ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-bsd ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-bsd ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/pom.xml to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats library 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-gpl ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-gpl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/formats-gpl/lib
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-gpl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-gpl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 26 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-gpl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-gpl ---
+[INFO] Surefire report directory: /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+2021-12-18 06:03:08,948 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.FilterSet@a0aa211 reference to urn:lsid:foo.bar.com:Dichroic:123456 missing from object hierarchy.
+2021-12-18 06:03:08,953 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.Laser@654e7167 reference to urn:lsid:foo.bar.com:LightSource:123789 missing from object hierarchy.
+2021-12-18 06:03:09,165 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.FilterSet@4bada6c3 reference to urn:lsid:foo.bar.com:Dichroic:123456 missing from object hierarchy.
+2021-12-18 06:03:09,165 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.Laser@1aa2def reference to urn:lsid:foo.bar.com:LightSource:123789 missing from object hierarchy.
+2021-12-18 06:03:09,321 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.FilterSet@4072e154 reference to urn:lsid:foo.bar.com:Dichroic:123456 missing from object hierarchy.
+2021-12-18 06:03:09,321 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.Laser@1b1ce9a reference to urn:lsid:foo.bar.com:LightSource:123789 missing from object hierarchy.
+2021-12-18 06:03:09,492 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.Laser@1ed812af reference to urn:lsid:foo.bar.com:LightSource:123789 missing from object hierarchy.
+2021-12-18 06:03:09,493 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.FilterSet@7bb2aefa reference to urn:lsid:foo.bar.com:Dichroic:123456 missing from object hierarchy.
+2021-12-18 06:03:09,939 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.FilterSet@78c87f7c reference to urn:lsid:foo.bar.com:Dichroic:123456 missing from object hierarchy.
+2021-12-18 06:03:09,939 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.Laser@4d397b37 reference to urn:lsid:foo.bar.com:LightSource:123789 missing from object hierarchy.
+2021-12-18 06:03:10,083 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.Laser@2e9ec1d5 reference to urn:lsid:foo.bar.com:LightSource:123789 missing from object hierarchy.
+2021-12-18 06:03:10,084 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.FilterSet@38c79edc reference to urn:lsid:foo.bar.com:Dichroic:123456 missing from object hierarchy.
+2021-12-18 06:03:10,203 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.Laser@2dbf6c74 reference to urn:lsid:foo.bar.com:LightSource:123789 missing from object hierarchy.
+2021-12-18 06:03:10,203 [main] WARN  ome.xml.model.OMEModelImpl - ome.xml.model.FilterSet@72694b22 reference to urn:lsid:foo.bar.com:Dichroic:123456 missing from object hierarchy.
+Tests run: 107, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.415 sec - in TestSuite
+
+Results :
+
+Tests run: 107, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (missing-mdb-test) @ formats-gpl ---
+[INFO] Surefire report directory: /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.685 sec - in TestSuite
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (missing-poi-test) @ formats-gpl ---
+[INFO] Surefire report directory: /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.786 sec - in TestSuite
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (missing-netcdf-test) @ formats-gpl ---
+[INFO] Surefire report directory: /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.721 sec - in TestSuite
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-gpl ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-gpl >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-gpl ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-gpl <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-gpl ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-gpl ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-gpl ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/formats-gpl-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-gpl/5.6.0-SNAPSHOT/formats-gpl-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-gpl/pom.xml to /home/travis/.m2/repository/ome/formats-gpl/5.6.0-SNAPSHOT/formats-gpl-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/formats-gpl-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-gpl/5.6.0-SNAPSHOT/formats-gpl-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-gpl/target/formats-gpl-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-gpl/5.6.0-SNAPSHOT/formats-gpl-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats code generator 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bf-autogen ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ bf-autogen ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/autogen/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ bf-autogen ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ bf-autogen ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/autogen/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ bf-autogen ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ bf-autogen ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ bf-autogen ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ bf-autogen >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bf-autogen ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ bf-autogen <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ bf-autogen ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/autogen/target/bf-autogen-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ bf-autogen ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ bf-autogen ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/autogen/target/bf-autogen-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/bf-autogen/5.6.0-SNAPSHOT/bf-autogen-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/autogen/pom.xml to /home/travis/.m2/repository/ome/bf-autogen/5.6.0-SNAPSHOT/bf-autogen-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/autogen/target/bf-autogen-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/bf-autogen/5.6.0-SNAPSHOT/bf-autogen-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats Plugins for ImageJ 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bio-formats_plugins ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ bio-formats_plugins ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ bio-formats_plugins ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ bio-formats_plugins ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ bio-formats_plugins ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ bio-formats_plugins ---
+[INFO] Surefire report directory: /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Composite color mode
+Warning: Data has too many channels for Custom color mode
+Warning: Data has too many channels for Custom color mode
+Warning: Data has too many channels for Custom color mode
+Warning: Data has too many channels for Custom color mode
+Warning: Data has too many channels for Custom color mode
+Warning: Data has too many channels for Custom color mode
+Warning: Data has too many channels for Custom color mode
+Warning: Data has too many channels for Custom color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Default color mode
+Warning: Data has too many channels for Grayscale color mode
+Warning: Data has too many channels for Grayscale color mode
+Warning: Data has too many channels for Grayscale color mode
+Warning: Data has too many channels for Grayscale color mode
+Warning: Data has too many channels for Grayscale color mode
+Warning: Data has too many channels for Grayscale color mode
+Warning: Data has too many channels for Grayscale color mode
+Warning: Data has too many channels for Grayscale color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Colorized color mode
+Warning: Data has too many channels for Default color mode
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.073 sec - in TestSuite
+
+Results :
+
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ bio-formats_plugins ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ bio-formats_plugins >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bio-formats_plugins ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ bio-formats_plugins <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ bio-formats_plugins ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/target/bio-formats_plugins-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ bio-formats_plugins ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ bio-formats_plugins ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/target/bio-formats_plugins-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/bio-formats_plugins/5.6.0-SNAPSHOT/bio-formats_plugins-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/pom.xml to /home/travis/.m2/repository/ome/bio-formats_plugins/5.6.0-SNAPSHOT/bio-formats_plugins-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/target/bio-formats_plugins-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/bio-formats_plugins/5.6.0-SNAPSHOT/bio-formats_plugins-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-plugins/target/bio-formats_plugins-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/bio-formats_plugins/5.6.0-SNAPSHOT/bio-formats_plugins-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats command line tools 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bio-formats-tools ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ bio-formats-tools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ bio-formats-tools ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ bio-formats-tools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ bio-formats-tools ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ bio-formats-tools ---
+[INFO] Surefire report directory: /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running loci.formats.tools.ImageConverterTest
+Configuring TestNG with: TestNG652Configurator
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.828 sec - in loci.formats.tools.ImageConverterTest
+
+Results :
+
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ bio-formats-tools ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ bio-formats-tools >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bio-formats-tools ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ bio-formats-tools <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ bio-formats-tools ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/target/bio-formats-tools-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ bio-formats-tools ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ bio-formats-tools ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/target/bio-formats-tools-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/bio-formats-tools/5.6.0-SNAPSHOT/bio-formats-tools-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/pom.xml to /home/travis/.m2/repository/ome/bio-formats-tools/5.6.0-SNAPSHOT/bio-formats-tools-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/target/bio-formats-tools-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/bio-formats-tools/5.6.0-SNAPSHOT/bio-formats-tools-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bio-formats-tools/target/bio-formats-tools-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/bio-formats-tools/5.6.0-SNAPSHOT/bio-formats-tools-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building bioformats_package bundle 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bioformats_package ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ bioformats_package >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ bioformats_package ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ bioformats_package <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ bioformats_package ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.4:single (make-assembly) @ bioformats_package ---
+[INFO] Reading assembly descriptor: assembly.xml
+[WARNING] The following patterns were never triggered in this artifact exclusion filter:
+o  'gov.nih.imagej:imagej'
+o  'net.imagej:ij'
+o  'org.springframework:spring*'
+o  'aopalliance:aopalliance'
+o  'org.aspectj:aspectj*'
+o  'org.slf4j:slf4j-log4j12'
+o  'log4j:log4j'
+o  'org.testng:testng'
+o  'com.beust:jcommander'
+o  'org.yaml:snakeyaml'
+o  'org.beanshell:bsh'
+o  'edu.princeton.cup:java-cup'
+o  'org.apache.bcel:bcel'
+o  'commons-codec:commons-codec'
+o  'regexp:regexp'
+o  'org.apache.ant:ant-trax'
+o  'edu.ucar:udunits'
+o  'javax.servlet:servlet-api'
+
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/bundles/bioformats_package/target/bioformats_package-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ bioformats_package ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bundles/bioformats_package/pom.xml to /home/travis/.m2/repository/ome/bioformats_package/5.6.0-SNAPSHOT/bioformats_package-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bundles/bioformats_package/target/bioformats_package-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/bioformats_package/5.6.0-SNAPSHOT/bioformats_package-5.6.0-SNAPSHOT.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building LOCI Tools bundle 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ loci_tools ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ loci_tools >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ loci_tools ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ loci_tools <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ loci_tools ---
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.4:single (make-assembly) @ loci_tools ---
+[INFO] Reading assembly descriptor: assembly.xml
+[WARNING] The following patterns were never triggered in this artifact exclusion filter:
+o  'gov.nih.imagej:imagej'
+o  'net.imagej:ij'
+o  'org.testng:testng'
+o  'com.beust:jcommander'
+o  'org.yaml:snakeyaml'
+o  'org.beanshell:bsh'
+o  'edu.princeton.cup:java-cup'
+o  'org.apache.bcel:bcel'
+o  'commons-codec:commons-codec'
+o  'regexp:regexp'
+o  'org.apache.ant:ant-trax'
+o  'edu.ucar:udunits'
+o  'javax.servlet:servlet-api'
+
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/bundles/loci_tools/target/loci_tools-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ loci_tools ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bundles/loci_tools/pom.xml to /home/travis/.m2/repository/ome/loci_tools/5.6.0-SNAPSHOT/loci_tools-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/bundles/loci_tools/target/loci_tools-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/loci_tools/5.6.0-SNAPSHOT/loci_tools-5.6.0-SNAPSHOT.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats testing framework 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ test-suite ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ test-suite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/test-suite/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ test-suite ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ test-suite ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/test-suite/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ test-suite ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ test-suite ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ test-suite ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ test-suite >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ test-suite ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ test-suite <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ test-suite ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/test-suite/target/test-suite-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ test-suite ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ test-suite ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/test-suite/target/test-suite-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/test-suite/5.6.0-SNAPSHOT/test-suite-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/test-suite/pom.xml to /home/travis/.m2/repository/ome/test-suite/5.6.0-SNAPSHOT/test-suite-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/test-suite/target/test-suite-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/test-suite/5.6.0-SNAPSHOT/test-suite-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats Sphinx documentation 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-docs ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-docs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-docs ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-docs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/docs/sphinx/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-docs ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-docs ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.2.1:java (default) > validate @ formats-docs >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-docs ---
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.2.1:java (default) < validate @ formats-docs <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:java (default) @ formats-docs ---
+Executing ReadPhysicalSize
+Physical calibration - Image: 0
+	X = 1.0 nm = 0.001 µm
+	Y = 0.1 µm = 0.1 µm
+Success
+Executing FileConvert
+Success
+Executing FileExport
+Success
+Executing FileExportSPW
+Success
+Executing SimpleTiledWriter
+Success
+Executing TiledReaderWriter
+Success
+Executing TiledReaderWriter
+Success
+Executing OverlappedTiledWriter
+Success
+Executing OverlappedTiledWriter
+Success
+Executing ReadWriteInMemory
+Reading file into memory from disk...
+0 bytes read.
+
+Reading image data from memory...
+Series count: 1
+First series:
+	Image count = 1
+	SizeX = 512
+	SizeY = 512
+	SizeZ = 1
+	SizeC = 1
+	SizeT = 1
+
+Writing planes to destination in memory: .
+
+Flushing image data to disk...
+Success
+Executing OrthogonalReader
+2021-12-18 06:04:23,185 [ExampleSuite.main()] INFO  loci.formats.ImageReader - FakeReader initializing /home/travis/build/passed/ome/bioformats/docs/sphinx/target/classes/test.fake
+Success
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-docs ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/docs/sphinx/target/formats-docs-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-docs >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-docs ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-docs <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-docs ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-docs ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-docs ---
+[INFO] Skipping artifact installation
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Bio-Formats projects ............................... SUCCESS [  0.737 s]
+[INFO] JAI Image I/O Tools ................................ SUCCESS [  2.359 s]
+[INFO] libjpeg-turbo Java bindings ........................ SUCCESS [  0.505 s]
+[INFO] Bio-Formats API .................................... SUCCESS [  2.452 s]
+[INFO] BSD Bio-Formats readers and writers ................ SUCCESS [19:44 min]
+[INFO] Bio-Formats library ................................ SUCCESS [  8.315 s]
+[INFO] Bio-Formats code generator ......................... SUCCESS [  0.306 s]
+[INFO] Bio-Formats Plugins for ImageJ ..................... SUCCESS [  9.743 s]
+[INFO] Bio-Formats command line tools ..................... SUCCESS [ 33.375 s]
+[INFO] bioformats_package bundle .......................... SUCCESS [  8.620 s]
+[INFO] LOCI Tools bundle .................................. SUCCESS [  6.668 s]
+[INFO] Bio-Formats testing framework ...................... SUCCESS [  0.221 s]
+[INFO] Bio-Formats Sphinx documentation ................... SUCCESS [01:58 min]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 22:56 min
+[INFO] Finished at: 2021-12-18T06:06:11+00:00
+[INFO] Final Memory: 17M/411M
+[INFO] ------------------------------------------------------------------------
++exit 0
+travis_time:end:0014eab2:start=1639806193748648531,finish=1639807571940332085,duration=1378191683554,event=script[0K[32;1mThe command "./tools/test-build $BUILD" exited with 0.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:1ab78148[0Ktravis_time:end:1ab78148:start=1639807571949266649,finish=1639807571955041836,duration=5775187,event=cache[0Ktravis_time:start:1de5cf38[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading /[0m
+[31;1mfailed to upload cache[0m
+travis_time:end:1de5cf38:start=1639807571962189872,finish=1639807578321682759,duration=6359492887,event=cache[0Ktravis_fold:end:cache.2[0K
+
+Done. Your build exited with 0.

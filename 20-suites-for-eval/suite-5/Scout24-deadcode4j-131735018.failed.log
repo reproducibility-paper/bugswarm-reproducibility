@@ -1,0 +1,1519 @@
+travis_time:start:19e3e1c8[0Ktravis_time:end:19e3e1c8:start=1641618925545129826,finish=1641618925704344739,duration=159214913,event=no_world_writable_dirs[0Ktravis_time:start:0b40b4f0[0Ktravis_time:end:0b40b4f0:start=1641618925709990063,finish=1641618925713436848,duration=3446785,event=check_unsupported[0Ktravis_time:start:0f7a67e8[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:0f7a67e8:start=1641618925718381076,finish=1641618925726420280,duration=8039204,event=show_system_info[0Ktravis_time:start:28427cae[0Ktravis_time:end:28427cae:start=1641618925732004833,finish=1641618925748606793,duration=16601960,event=rm_riak_source[0Ktravis_time:start:006da274[0Ktravis_time:end:006da274:start=1641618925753877178,finish=1641618925764469971,duration=10592793,event=fix_rwky_redis[0Ktravis_time:start:0413cb8c[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:0413cb8c:start=1641618925770905972,finish=1641618946490055484,duration=20719149512,event=wait_for_network[0Ktravis_time:start:052c7fd9[0Ktravis_time:end:052c7fd9:start=1641618946496115093,finish=1641618947941114638,duration=1444999545,event=update_apt_keys[0Ktravis_time:start:03ecc6a0[0Ktravis_time:end:03ecc6a0:start=1641618947947500059,finish=1641618948133615635,duration=186115576,event=fix_hhvm_source[0Ktravis_time:start:0abce080[0Ktravis_time:end:0abce080:start=1641618948140245441,finish=1641618948145621620,duration=5376179,event=update_mongo_arch[0Ktravis_time:start:011e8abc[0Ktravis_time:end:011e8abc:start=1641618948151690938,finish=1641618948198262144,duration=46571206,event=fix_sudo_enabled_trusty[0Ktravis_time:start:0613617c[0Ktravis_time:end:0613617c:start=1641618948204610993,finish=1641618948218869758,duration=14258765,event=clean_up_path[0Ktravis_time:start:1566f720[0Ktravis_time:end:1566f720:start=1641618948223574578,finish=1641618948235571468,duration=11996890,event=fix_resolv_conf[0Ktravis_time:start:0ac30fb8[0Ktravis_time:end:0ac30fb8:start=1641618948240217373,finish=1641618948257734939,duration=17517566,event=fix_etc_hosts[0Ktravis_time:start:0f22872e[0Ktravis_time:start:0a8c7d4b[0Ktravis_time:end:0a8c7d4b:start=1641618948279154788,finish=1641618948448477027,duration=169322239,event=no_ipv6_localhost[0Ktravis_time:start:00417210[0Ktravis_time:end:00417210:start=1641618948454128542,finish=1641618948866179335,duration=412050793,event=fix_etc_mavenrc[0Ktravis_time:start:2834a942[0Ktravis_time:end:2834a942:start=1641618948872752884,finish=1641618948879430826,duration=6677942,event=fix_wwdr_certificate[0Ktravis_time:start:173e1d1b[0Ktravis_time:end:173e1d1b:start=1641618948885481948,finish=1641618948919672527,duration=34190579,event=put_localhost_first[0Ktravis_time:start:33810636[0Ktravis_time:end:33810636:start=1641618948926538331,finish=1641618948931743654,duration=5205323,event=home_paths[0Ktravis_time:start:1cef7614[0Ktravis_time:end:1cef7614:start=1641618948937928455,finish=1641618949285626168,duration=347697713,event=disable_initramfs[0Ktravis_time:start:07ee731e[0Ktravis_time:end:07ee731e:start=1641618949291669720,finish=1641618949408191367,duration=116521647,event=disable_ssh_roaming[0Ktravis_time:start:0aee3cf0[0Ktravis_time:end:0aee3cf0:start=1641618949413926865,finish=1641618949417540728,duration=3613863,event=debug_tools[0Ktravis_time:start:0753ed80[0Ktravis_time:end:0753ed80:start=1641618949423171428,finish=1641618949428585026,duration=5413598,event=uninstall_oclint[0Ktravis_time:start:02386cd8[0Ktravis_time:end:02386cd8:start=1641618949434991195,finish=1641618949440462198,duration=5471003,event=rvm_use[0Ktravis_time:start:019ae980[0Ktravis_time:end:019ae980:start=1641618949446065843,finish=1641618949459523640,duration=13457797,event=rm_etc_boto_cfg[0Ktravis_time:start:0acc5cdd[0Ktravis_time:end:0acc5cdd:start=1641618949465451492,finish=1641618949469676269,duration=4224777,event=rm_oraclejdk8_symlink[0Ktravis_time:start:1d4bbb72[0Ktravis_time:end:1d4bbb72:start=1641618949474556500,finish=1641618949519757493,duration=45200993,event=enable_i386[0Ktravis_time:start:1dc13c64[0Ktravis_time:end:1dc13c64:start=1641618949525708596,finish=1641618949532523792,duration=6815196,event=update_rubygems[0Ktravis_time:start:04df885c[0Ktravis_time:end:04df885c:start=1641618949537822074,finish=1641618949546703676,duration=8881602,event=ensure_path_components[0Ktravis_time:start:11d931cf[0Ktravis_time:end:11d931cf:start=1641618949552083913,finish=1641618949555918145,duration=3834232,event=redefine_curl[0Ktravis_time:start:1206c39c[0Ktravis_time:end:1206c39c:start=1641618949562085007,finish=1641618949566021519,duration=3936512,event=nonblock_pipe[0Ktravis_time:start:09bdaf74[0Ktravis_time:end:09bdaf74:start=1641618949571603485,finish=1641618952802678327,duration=3231074842,event=apt_get_update[0Ktravis_time:start:0c168c60[0Ktravis_time:end:0c168c60:start=1641618952808529453,finish=1641618952812421506,duration=3892053,event=deprecate_xcode_64[0Ktravis_time:start:0c920074[0Ktravis_time:end:0c920074:start=1641618952817845766,finish=1641618952824262724,duration=6416958,event=update_heroku[0Ktravis_time:start:0aba6f0e[0Ktravis_time:end:0aba6f0e:start=1641618952829653488,finish=1641618952833988375,duration=4334887,event=shell_session_update[0Ktravis_time:start:0cb71ef0[0Ktravis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0Ktravis_time:end:0cb71ef0:start=1641618952840018102,finish=1641618952871156614,duration=31138512,event=set_docker_mtu[0Ktravis_time:start:076d361c[0Ktravis_time:end:076d361c:start=1641618952876942750,finish=1641618952893507812,duration=16565062,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk7[0m
+$ jdk_switcher use "oraclejdk7"
+Switching to Oracle JDK7 (java-7-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-7-oracle
+travis_fold:end:install_jdk[0Ktravis_time:start:285be596[0Ktravis_time:end:285be596:start=1641618952911248398,finish=1641618952915766405,duration=4518007,event=fix_ps4[0Ktravis_time:start:0febb238[0K
+$ cd failed/Scout24/deadcode4j
+
+travis_time:end:0febb238:start=1641618952920403540,finish=1641618952924935668,duration=4532128,event=checkout[0Ktravis_time:start:38cde1ed[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export MVN_VERSION=3.2.5
+
+travis_time:end:38cde1ed:start=1641618952931235418,finish=1641618953253679245,duration=322443827,event=env[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:07a34c30[0K$ Installing caching utilities
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 2 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 3 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed 3 times.[0m
+
+travis_time:end:07a34c30:start=1641618957248667089,finish=1641618960321153224,duration=3072486135,event=setup_casher[0Ktravis_time:start:0f7cc4a0[0K$ Installing caching utilities from the Travis CI server (https:///files/casher) failed, failing over to using GitHub (https://raw.githubusercontent.com/travis-ci/casher/bash/bin/casher)
+travis_time:end:0f7cc4a0:start=1641618960328369967,finish=1641618960555072553,duration=226702586,event=setup_casher[0Ktravis_time:start:0a38b010[0Ktravis_time:end:0a38b010:start=1641618960564914464,finish=1641618960571048976,duration=6134512,event=setup_casher[0Ktravis_time:start:02a876b2[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+attempting to download cache archive[0m
+[31;1mcould not download cache[0m
+travis_time:end:02a876b2:start=1641618960580025264,finish=1641618961903441827,duration=1323416563,event=setup_casher[0Ktravis_time:start:24203f60[0Ktravis_time:end:24203f60:start=1641618961909792203,finish=1641618961914043142,duration=4250939,event=setup_casher[0Ktravis_time:start:0d0c2ccc[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+adding /home/travis/.m2/repository to cache[0m
+travis_time:end:0d0c2ccc:start=1641618961919637712,finish=1641618964574518008,duration=2654880296,event=setup_casher[0Ktravis_fold:end:cache.1[0K
+$ java -Xmx32m -version
+java version "1.7.0_76"
+Java(TM) SE Runtime Environment (build 1.7.0_76-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 24.76-b04, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.7.0_76
+travis_fold:start:before_install.1[0Ktravis_time:start:27228cc2[0K$ MVN_URL=https://archive.apache.org/dist/maven/maven-3/$MVN_VERSION/binaries/apache-maven-$MVN_VERSION-bin.tar.gz
+travis_time:end:27228cc2:start=1641618964771190110,finish=1641618964776100234,duration=4910124,event=before_install[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:104964b4[0K$ wget -q -O /tmp/maven.tar.gz $MVN_URL
+travis_time:end:104964b4:start=1641618964783932241,finish=1641618967196905714,duration=2412973473,event=before_install[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:before_install.3[0Ktravis_time:start:25681300[0K$ tar xzf /tmp/maven.tar.gz
+travis_time:end:25681300:start=1641618967205583933,finish=1641618967420602445,duration=215018512,event=before_install[0Ktravis_fold:end:before_install.3[0Ktravis_fold:start:before_install.4[0Ktravis_time:start:02418a50[0K$ export M2_HOME=`pwd`/apache-maven-$MVN_VERSION
+travis_time:end:02418a50:start=1641618967429285697,finish=1641618967436857364,duration=7571667,event=before_install[0Ktravis_fold:end:before_install.4[0Ktravis_fold:start:before_install.5[0Ktravis_time:start:11be939c[0K$ export PATH=$M2_HOME/bin:$PATH
+travis_time:end:11be939c:start=1641618967445672297,finish=1641618967451484821,duration=5812524,event=before_install[0Ktravis_fold:end:before_install.5[0Ktravis_fold:start:before_install.6[0Ktravis_time:start:01291104[0K$ export MAVEN_SKIP_RC=true
+travis_time:end:01291104:start=1641618967459397445,finish=1641618967464343153,duration=4945708,event=before_install[0Ktravis_fold:end:before_install.6[0Ktravis_fold:start:install.1[0Ktravis_time:start:0544c647[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B -U clean verify org.apache.maven.plugins:maven-war-plugin:2.4:help -Dinvoker.skip=true -Dmaven.main.skip=true -Dmaven.plugin.skip=true -Dmaven.test.skip=true -PenableCoverage,travis
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ deadcode4j-maven-plugin ---
+[INFO] Deleting /home/travis/build/failed/Scout24/deadcode4j/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-argLine) @ deadcode4j-maven-plugin ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/failed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/failed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:helpmojo (help-goal) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ deadcode4j-maven-plugin ---
+[INFO] Not compiling main sources
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (default-descriptor) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (mojo-descriptor) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ deadcode4j-maven-plugin ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ deadcode4j-maven-plugin ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ deadcode4j-maven-plugin ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ deadcode4j-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ deadcode4j-maven-plugin ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/deadcode4j-maven-plugin-2.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:addPluginArtifactMetadata (default-addPluginArtifactMetadata) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:install (default) @ deadcode4j-maven-plugin ---
+[INFO] Skipping artifact installation per configuration.
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (copyTestClasses) @ deadcode4j-maven-plugin ---
+[INFO] Skipping Antrun execution
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-invoker.mavenOpts) @ deadcode4j-maven-plugin ---
+[INFO] invoker.mavenOpts set to -javaagent:/home/travis/.m2/failed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/failed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.17:integration-test (default) @ deadcode4j-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:integration-test (test-find) @ deadcode4j-maven-plugin ---
+[INFO] Skipping invocation per configuration. If this is incorrect, ensure the skipInvocation parameter is not set to true.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:integration-test (test-help) @ deadcode4j-maven-plugin ---
+[INFO] Skipping invocation per configuration. If this is incorrect, ensure the skipInvocation parameter is not set to true.
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (clean) @ deadcode4j-maven-plugin ---
+[INFO] Skipping Antrun execution
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.17:verify (default) @ deadcode4j-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:verify (default) @ deadcode4j-maven-plugin ---
+[INFO] Skipping invocation per configuration. If this is incorrect, ensure the skipInvocation parameter is not set to true.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-war-plugin:2.4:help (default-cli) @ deadcode4j-maven-plugin ---
+[INFO] Apache Maven WAR Plugin 2.4
+  Builds a Web Application Archive (WAR) file from the project output and its
+  dependencies.
+
+This plugin has 5 goals:
+
+war:exploded
+  Create an exploded webapp in a specified directory.
+
+war:help
+  Display help information on maven-war-plugin.
+  Call mvn war:help -Ddetail=true -Dgoal=<goal-name> to display parameter
+  details.
+
+war:inplace
+  Generate the webapp in the WAR source directory.
+
+war:manifest
+  Generate a manifest for this webapp. The manifest file is created in the
+  warSourceDirectory.
+
+war:war
+  Build a WAR file.
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:15 min
+[INFO] Finished at: 2022-01-08T05:17:24+00:00
+[INFO] Final Memory: 45M/1963M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:0544c647:start=1641618967472426323,finish=1641619054709148192,duration=87236721869,event=install[0Ktravis_fold:end:install.1[0Ktravis_fold:start:install.2[0Ktravis_time:start:2a819662[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B org.apache.maven.plugins:maven-dependency-plugin:2.10:get -Dartifact=org.apache.maven.surefire:surefire-junit4:2.17
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:get (default-cli) @ deadcode4j-maven-plugin ---
+[INFO] Resolving org.apache.maven.surefire:surefire-junit4:jar:2.17 with transitive dependencies
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 22.601 s
+[INFO] Finished at: 2022-01-08T05:17:58+00:00
+[INFO] Final Memory: 28M/1963M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:2a819662:start=1641619054717429804,finish=1641619078739602292,duration=24022172488,event=install[0Ktravis_fold:end:install.2[0Ktravis_fold:start:install.3[0Ktravis_time:start:049cfc84[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B org.apache.maven.plugins:maven-dependency-plugin:2.10:get -Dartifact=org.apache.maven.surefire:surefire-junit47:2.17
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:get (default-cli) @ deadcode4j-maven-plugin ---
+[INFO] Resolving org.apache.maven.surefire:surefire-junit47:jar:2.17 with transitive dependencies
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.407 s
+[INFO] Finished at: 2022-01-08T05:18:03+00:00
+[INFO] Final Memory: 27M/1963M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:049cfc84:start=1641619078744984356,finish=1641619083462940949,duration=4717956593,event=install[0Ktravis_fold:end:install.3[0Ktravis_time:start:0ab07c86[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B -o clean verify -PenableCoverage,travis
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ deadcode4j-maven-plugin ---
+[INFO] Deleting /home/travis/build/failed/Scout24/deadcode4j/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-argLine) @ deadcode4j-maven-plugin ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/failed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/failed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:helpmojo (help-goal) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ deadcode4j-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 80 source files to /home/travis/build/failed/Scout24/deadcode4j/target/classes
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (default-descriptor) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 3 mojo descriptors.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (mojo-descriptor) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 3 mojo descriptors.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ deadcode4j-maven-plugin ---
+[INFO] Discovered 2 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 20 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ deadcode4j-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 182 source files to /home/travis/build/failed/Scout24/deadcode4j/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ deadcode4j-maven-plugin ---
+[INFO] Surefire report directory: /home/travis/build/failed/Scout24/deadcode4j/target/surefire-reports
+[INFO] parallel='classes', perCoreThreadCount=false, threadCount=4, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running de.is24.deadcode4j.analyzer.A_SpringWebXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SpringWebXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.An_IgnoreClassesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_IgnoreClassesAnalyzer
+Running de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer
+Running de.is24.deadcode4j.analyzer.A_CustomAnnotationsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomAnnotationsAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ReferenceToConstantsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ReferenceToConstantsAnalyzer
+Running de.is24.maven.An_UpdateChecker
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.maven.An_UpdateChecker
+Running de.is24.deadcode4j.A_Repository
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_Repository
+Running de.is24.deadcode4j.analyzer.A_LogbackXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_LogbackXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ServletContainerInitializerAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ServletContainerInitializerAnalyzer
+Running de.is24.maven.slf4j.A_LoggerForMavenLog
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.maven.slf4j.A_LoggerForMavenLog
+Running de.is24.deadcode4j.analyzer.A_JerseyWebXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_JerseyWebXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_SimpleXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SimpleXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_CustomSuperClassAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomSuperClassAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ClassDependencyAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ClassDependencyAnalyzer
+Running de.is24.deadcode4j.plugin.A_UsageStatisticsManager
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.A_UsageStatisticsManager
+Running de.is24.deadcode4j.analyzer.A_CustomXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomXmlAnalyzer
+Running de.is24.deadcode4j.plugin.A_ModuleGenerator
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.A_ModuleGenerator
+Running de.is24.deadcode4j.analyzer.A_TldAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_TldAnalyzer
+Running de.is24.deadcode4j.An_IntermediateResultSet
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.An_IntermediateResultSet
+Running de.is24.deadcode4j.analyzer.An_XmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_XmlAnalyzer
+Running de.is24.deadcode4j.A_DeadCodeComputer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_DeadCodeComputer
+Running de.is24.deadcode4j.plugin.A_DeadCodeLogger
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.A_DeadCodeLogger
+Running de.is24.deadcode4j.analyzer.javassist.A_CtClasses
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.javassist.A_CtClasses
+Running de.is24.deadcode4j.A_Module
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_Module
+Running de.is24.deadcode4j.analyzer.A_SpringDataCustomRepositoriesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SpringDataCustomRepositoriesAnalyzer
+Running de.is24.deadcode4j.analyzer.A_MainClassAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_MainClassAnalyzer
+Running de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer
+Running de.is24.deadcode4j.analyzer.An_ExtendedXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_ExtendedXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.webxml.A_BaseWebXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.webxml.A_BaseWebXmlAnalyzer
+Running de.is24.deadcode4j.A_Utils
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_Utils
+Running de.is24.javaparser.A_Nodes
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.javaparser.A_Nodes
+Running de.is24.javaparser.An_ImportDeclarations
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.javaparser.An_ImportDeclarations
+Running de.is24.deadcode4j.analyzer.A_WebXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_WebXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_SpringXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SpringXmlAnalyzer
+Running de.is24.deadcode4j.plugin.packaginghandler.A_PackagingHandler
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.packaginghandler.A_PackagingHandler
+Running de.is24.deadcode4j.analyzer.A_SpringNamespaceHandlerAnalyzer
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Testing de.is24.deadcode4j.analyzer.SpringNamespaceHandlerAnalyzer
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Testing de.is24.deadcode4j.analyzer.SpringNamespaceHandlerAnalyzer
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.588 sec - in de.is24.deadcode4j.analyzer.A_SpringNamespaceHandlerAnalyzer
+Running de.is24.maven.slf4j.An_AbstractSlf4jMojo
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.maven.slf4j.An_AbstractSlf4jMojo
+Running de.is24.deadcode4j.An_IntermediateResults
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.An_IntermediateResults
+Running de.is24.guava.A_SequentialLoadingCacheTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.guava.A_SequentialLoadingCacheTest
+Running de.is24.guava.A_NonNullFunctions
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.guava.A_NonNullFunctions
+Running de.is24.deadcode4j.analyzer.A_TypeErasureAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_TypeErasureAnalyzer
+Running de.is24.deadcode4j.analyzer.A_CustomInterfacesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomInterfacesAnalyzer
+Running de.is24.deadcode4j.A_DeadCodeFinder
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_DeadCodeFinder
+Running de.is24.deadcode4j.analyzer.A_JavaFileAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_JavaFileAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ByteCodeAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ByteCodeAnalyzer
+Running de.is24.deadcode4j.analyzer.A_HibernateAnnotationsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_HibernateAnnotationsAnalyzer
+Running de.is24.deadcode4j.An_IntermediateResultMap
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.An_IntermediateResultMap
+Running de.is24.deadcode4j.analyzer.An_InterfacesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_InterfacesAnalyzer
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ deadcode4j-maven-plugin ---
+[INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/deadcode4j-maven-plugin-2.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:addPluginArtifactMetadata (default-addPluginArtifactMetadata) @ deadcode4j-maven-plugin ---
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:install (default) @ deadcode4j-maven-plugin ---
+[INFO] Installing /home/travis/build/failed/Scout24/deadcode4j/pom.xml to /home/travis/.m2/failed/de/is24/mavenplugins/deadcode4j-maven-plugin/2.2.0-SNAPSHOT/deadcode4j-maven-plugin-2.2.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/failed/Scout24/deadcode4j/target/deadcode4j-maven-plugin-2.2.0-SNAPSHOT.jar to /home/travis/.m2/failed/de/is24/mavenplugins/deadcode4j-maven-plugin/2.2.0-SNAPSHOT/deadcode4j-maven-plugin-2.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (copyTestClasses) @ deadcode4j-maven-plugin ---
+[INFO] Executing tasks
+
+main:
+     [copy] Copying 34 files to /tmp/deadcode4j
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-invoker.mavenOpts) @ deadcode4j-maven-plugin ---
+[INFO] invoker.mavenOpts set to -javaagent:/home/travis/.m2/failed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/failed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.17:integration-test (default) @ deadcode4j-maven-plugin ---
+[INFO] Failsafe report directory: /home/travis/build/failed/Scout24/deadcode4j/target/failsafe-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running de.is24.deadcode4j.plugin.IT_PuttingItAllTogether
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+[ERROR] An unexpected exception occurred. Please consider reporting an issue at https://github.com/ImmobilienScout24/deadcode4j/issues
+java.lang.IllegalArgumentException: [endOfFileName] must be set!
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+	at de.is24.deadcode4j.analyzer.SimpleXmlAnalyzer.<init>(SimpleXmlAnalyzer.java:46)
+	at de.is24.deadcode4j.analyzer.AopXmlAnalyzer.<init>(AopXmlAnalyzer.java:13)
+	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.analyzeCode(FindDeadCodeOnlyMojo.java:199)
+	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.doExecute(FindDeadCodeOnlyMojo.java:150)
+	at de.is24.maven.slf4j.AbstractSlf4jMojo.execute(AbstractSlf4jMojo.java:20)
+	at de.is24.deadcode4j.plugin.IT_PuttingItAllTogether.isConfiguredAndAnalyzesClassesAsExpected(IT_PuttingItAllTogether.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.apache.maven.plugin.testing.MojoRule$2.evaluate(MojoRule.java:308)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+[DEBUG] de.is24.maven.UpdateChecker: Update check failed!
+java.lang.NullPointerException
+	at de.is24.maven.UpdateChecker.checkForUpdate(UpdateChecker.java:44)
+	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.checkForUpdate(FindDeadCodeOnlyMojo.java:185)
+	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.doExecute(FindDeadCodeOnlyMojo.java:148)
+	at de.is24.maven.slf4j.AbstractSlf4jMojo.execute(AbstractSlf4jMojo.java:20)
+	at de.is24.deadcode4j.plugin.IT_PuttingItAllTogether.handlesRuntimeException(IT_PuttingItAllTogether.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.apache.maven.plugin.testing.MojoRule$2.evaluate(MojoRule.java:308)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+[WARN ] Update check failed: null
+[ERROR] An unexpected exception occurred. Please consider reporting an issue at https://github.com/ImmobilienScout24/deadcode4j/issues
+java.lang.IllegalArgumentException: [endOfFileName] must be set!
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+	at de.is24.deadcode4j.analyzer.SimpleXmlAnalyzer.<init>(SimpleXmlAnalyzer.java:46)
+	at de.is24.deadcode4j.analyzer.AopXmlAnalyzer.<init>(AopXmlAnalyzer.java:13)
+	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.analyzeCode(FindDeadCodeOnlyMojo.java:199)
+	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.doExecute(FindDeadCodeOnlyMojo.java:150)
+	at de.is24.maven.slf4j.AbstractSlf4jMojo.execute(AbstractSlf4jMojo.java:20)
+	at de.is24.deadcode4j.plugin.IT_PuttingItAllTogether.handlesRuntimeException(IT_PuttingItAllTogether.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.apache.maven.plugin.testing.MojoRule$2.evaluate(MojoRule.java:308)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.245 sec <<< FAILURE! - in de.is24.deadcode4j.plugin.IT_PuttingItAllTogether
+isConfiguredAndAnalyzesClassesAsExpected(de.is24.deadcode4j.plugin.IT_PuttingItAllTogether)  Time elapsed: 4.674 sec  <<< ERROR!
+java.lang.IllegalArgumentException: [endOfFileName] must be set!
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+	at de.is24.deadcode4j.analyzer.SimpleXmlAnalyzer.<init>(SimpleXmlAnalyzer.java:46)
+	at de.is24.deadcode4j.analyzer.AopXmlAnalyzer.<init>(AopXmlAnalyzer.java:13)
+	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.analyzeCode(FindDeadCodeOnlyMojo.java:199)
+	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.doExecute(FindDeadCodeOnlyMojo.java:150)
+	at de.is24.maven.slf4j.AbstractSlf4jMojo.execute(AbstractSlf4jMojo.java:20)
+	at de.is24.deadcode4j.plugin.IT_PuttingItAllTogether.isConfiguredAndAnalyzesClassesAsExpected(IT_PuttingItAllTogether.java:28)
+
+
+Results :
+
+Tests in error: 
+  IT_PuttingItAllTogether.isConfiguredAndAnalyzesClassesAsExpected:28 » IllegalArgument
+
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:integration-test (test-find) @ deadcode4j-maven-plugin ---
+[INFO] use parallelThreads 3
+[INFO] Building: brokenFiles/pom.xml
+[INFO] Building: customWebAppResourcesAreConsidered/pom.xml
+[INFO] Building: defaultWebAppResourcesAreConsidered/pom.xml
+[INFO] [INFO] Scanning for projects...
+[INFO] [INFO] Scanning for projects...
+[INFO] [INFO] Scanning for projects...
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building customWebAppResourcesAreConsidered 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building brokenFiles 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ customWebAppResourcesAreConsidered ---
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ brokenFiles ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building defaultWebAppResourcesAreConsidered 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building customWebAppResourcesAreConsidered 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building brokenFiles 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ defaultWebAppResourcesAreConsidered ---
+[INFO] [INFO] 
+[INFO] [INFO] >>> deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) > package @ brokenFiles >>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ brokenFiles ---
+[INFO] [INFO] 
+[INFO] [INFO] >>> deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) > package @ customWebAppResourcesAreConsidered >>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ customWebAppResourcesAreConsidered ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building defaultWebAppResourcesAreConsidered 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] >>> deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) > package @ defaultWebAppResourcesAreConsidered >>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ defaultWebAppResourcesAreConsidered ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/customWebAppResourcesAreConsidered/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ customWebAppResourcesAreConsidered ---
+[INFO] [INFO] Copying 3 resources
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/defaultWebAppResourcesAreConsidered/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ defaultWebAppResourcesAreConsidered ---
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ brokenFiles ---
+[INFO] [INFO] Changes detected - recompiling the module!
+[INFO] [INFO] Compiling 1 source file to /home/travis/build/failed/Scout24/deadcode4j/target/it/customWebAppResourcesAreConsidered/target/classes
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ brokenFiles ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/brokenFiles/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ brokenFiles ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ brokenFiles ---
+[INFO] [INFO] Changes detected - recompiling the module!
+[INFO] [INFO] Compiling 1 source file to /home/travis/build/failed/Scout24/deadcode4j/target/it/defaultWebAppResourcesAreConsidered/target/classes
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ brokenFiles ---
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ customWebAppResourcesAreConsidered ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/customWebAppResourcesAreConsidered/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ customWebAppResourcesAreConsidered ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ customWebAppResourcesAreConsidered ---
+[INFO] [INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/it/brokenFiles/target/brokenFiles-42.jar
+[INFO] [INFO] 
+[INFO] [INFO] <<< deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) < package @ brokenFiles <<<
+[INFO] [INFO] 
+[INFO] [INFO] --- deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) @ brokenFiles ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-war-plugin:2.4:war (default-war) @ customWebAppResourcesAreConsidered ---
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ defaultWebAppResourcesAreConsidered ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/defaultWebAppResourcesAreConsidered/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ defaultWebAppResourcesAreConsidered ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ defaultWebAppResourcesAreConsidered ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-war-plugin:2.4:war (default-war) @ defaultWebAppResourcesAreConsidered ---
+[INFO] [INFO] Running in offline mode; skipping update check.
+[INFO] [INFO] Thanks for calling me! Let's see what I can do for you...
+[INFO] [ERROR] An unexpected exception occurred. Please consider reporting an issue at https://github.com/ImmobilienScout24/deadcode4j/issues
+[INFO] java.lang.IllegalArgumentException: [endOfFileName] must be set!
+[INFO] 	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+[INFO] 	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+[INFO] 	at de.is24.deadcode4j.analyzer.SimpleXmlAnalyzer.<init>(SimpleXmlAnalyzer.java:46)
+[INFO] 	at de.is24.deadcode4j.analyzer.AopXmlAnalyzer.<init>(AopXmlAnalyzer.java:13)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.analyzeCode(FindDeadCodeOnlyMojo.java:199)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.doExecute(FindDeadCodeOnlyMojo.java:150)
+[INFO] 	at de.is24.maven.slf4j.AbstractSlf4jMojo.execute(AbstractSlf4jMojo.java:20)
+[INFO] 	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:132)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+[INFO] 	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120)
+[INFO] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:355)
+[INFO] 	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:155)
+[INFO] 	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:584)
+[INFO] 	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:216)
+[INFO] 	at org.apache.maven.cli.MavenCli.main(MavenCli.java:160)
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+[INFO] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[INFO] 	at java.lang.reflect.Method.invoke(Method.java:606)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] BUILD FAILURE
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Total time: 2.997 s
+[INFO] [INFO] Finished at: 2022-01-08T05:19:25+00:00
+[INFO] [INFO] Final Memory: 20M/1963M
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [WARNING] The requested profile "enableCoverage" could not be activated because it does not exist.
+[INFO] [WARNING] The requested profile "travis" could not be activated because it does not exist.
+[INFO] [ERROR] Failed to execute goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) on project brokenFiles: Execution default-cli of goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find failed: [endOfFileName] must be set! -> [Help 1]
+[INFO] [ERROR] 
+[INFO] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[INFO] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[INFO] [ERROR] 
+[INFO] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[INFO] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+[INFO] ..FAILED (6.3 s)
+[INFO]   The build exited with code 1. See /home/travis/build/failed/Scout24/deadcode4j/target/it/brokenFiles/build.log for details.
+[INFO] Building: reactorProject/pom.xml
+[INFO] [INFO] Packaging webapp
+[INFO] [INFO] Assembling webapp [defaultWebAppResourcesAreConsidered] in [/home/travis/build/failed/Scout24/deadcode4j/target/it/defaultWebAppResourcesAreConsidered/target/defaultWebAppResourcesAreConsidered-42]
+[INFO] [INFO] Packaging webapp
+[INFO] [INFO] Assembling webapp [customWebAppResourcesAreConsidered] in [/home/travis/build/failed/Scout24/deadcode4j/target/it/customWebAppResourcesAreConsidered/target/webapp]
+[INFO] [INFO] Processing war project
+[INFO] [INFO] Copying webapp resources [/home/travis/build/failed/Scout24/deadcode4j/target/it/defaultWebAppResourcesAreConsidered/src/main/webapp]
+[INFO] [INFO] Processing war project
+[INFO] [INFO] Copying webapp resources [/home/travis/build/failed/Scout24/deadcode4j/target/it/customWebAppResourcesAreConsidered/src/main/webapp]
+[INFO] [INFO] Webapp assembled in [568 msecs]
+[INFO] [INFO] Webapp assembled in [564 msecs]
+[INFO] [INFO] Building war: /home/travis/build/failed/Scout24/deadcode4j/target/it/defaultWebAppResourcesAreConsidered/target/defaultWebAppResourcesAreConsidered-42.war
+[INFO] [INFO] Building war: /home/travis/build/failed/Scout24/deadcode4j/target/it/customWebAppResourcesAreConsidered/target/customWebAppResourcesAreConsidered-42.war
+[INFO] [INFO] 
+[INFO] [INFO] <<< deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) < package @ defaultWebAppResourcesAreConsidered <<<
+[INFO] [INFO] 
+[INFO] [INFO] --- deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) @ defaultWebAppResourcesAreConsidered ---
+[INFO] [INFO] 
+[INFO] [INFO] <<< deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) < package @ customWebAppResourcesAreConsidered <<<
+[INFO] [INFO] 
+[INFO] [INFO] --- deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) @ customWebAppResourcesAreConsidered ---
+[INFO] [INFO] Running in offline mode; skipping update check.
+[INFO] [INFO] Thanks for calling me! Let's see what I can do for you...
+[INFO] [ERROR] An unexpected exception occurred. Please consider reporting an issue at https://github.com/ImmobilienScout24/deadcode4j/issues
+[INFO] java.lang.IllegalArgumentException: [endOfFileName] must be set!
+[INFO] 	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+[INFO] 	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+[INFO] 	at de.is24.deadcode4j.analyzer.SimpleXmlAnalyzer.<init>(SimpleXmlAnalyzer.java:46)
+[INFO] 	at de.is24.deadcode4j.analyzer.AopXmlAnalyzer.<init>(AopXmlAnalyzer.java:13)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.analyzeCode(FindDeadCodeOnlyMojo.java:199)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.doExecute(FindDeadCodeOnlyMojo.java:150)
+[INFO] 	at de.is24.maven.slf4j.AbstractSlf4jMojo.execute(AbstractSlf4jMojo.java:20)
+[INFO] 	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:132)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+[INFO] 	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120)
+[INFO] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:355)
+[INFO] 	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:155)
+[INFO] 	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:584)
+[INFO] 	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:216)
+[INFO] 	at org.apache.maven.cli.MavenCli.main(MavenCli.java:160)
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+[INFO] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[INFO] 	at java.lang.reflect.Method.invoke(Method.java:606)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] BUILD FAILURE
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Total time: 5.692 s
+[INFO] [INFO] Finished at: 2022-01-08T05:19:28+00:00
+[INFO] [INFO] Running in offline mode; skipping update check.
+[INFO] [INFO] Thanks for calling me! Let's see what I can do for you...
+[INFO] [INFO] Final Memory: 26M/1963M
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [WARNING] The requested profile "enableCoverage" could not be activated because it does not exist.
+[INFO] [WARNING] The requested profile "travis" could not be activated because it does not exist.
+[INFO] [ERROR] An unexpected exception occurred. Please consider reporting an issue at https://github.com/ImmobilienScout24/deadcode4j/issues
+[INFO] java.lang.IllegalArgumentException: [endOfFileName] must be set!
+[INFO] 	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+[INFO] 	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+[INFO] 	at de.is24.deadcode4j.analyzer.SimpleXmlAnalyzer.<init>(SimpleXmlAnalyzer.java:46)
+[INFO] 	at de.is24.deadcode4j.analyzer.AopXmlAnalyzer.<init>(AopXmlAnalyzer.java:13)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.analyzeCode(FindDeadCodeOnlyMojo.java:199)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.doExecute(FindDeadCodeOnlyMojo.java:150)
+[INFO] 	at de.is24.maven.slf4j.AbstractSlf4jMojo.execute(AbstractSlf4jMojo.java:20)
+[INFO] 	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:132)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+[INFO] 	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120)
+[INFO] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:355)
+[INFO] 	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:155)
+[INFO] 	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:584)
+[INFO] [ERROR] Failed to execute goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) on project defaultWebAppResourcesAreConsidered: Execution default-cli of goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find failed: [endOfFileName] must be set! -> [Help 1]
+[INFO] 	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:216)
+[INFO] [ERROR] 
+[INFO] 	at org.apache.maven.cli.MavenCli.main(MavenCli.java:160)
+[INFO] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[INFO] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+[INFO] [ERROR] 
+[INFO] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[INFO] 	at java.lang.reflect.Method.invoke(Method.java:606)
+[INFO] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+[INFO] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] BUILD FAILURE
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Total time: 5.939 s
+[INFO] [INFO] Finished at: 2022-01-08T05:19:28+00:00
+[INFO] ..FAILED (9.1 s)
+[INFO]   The build exited with code 1. See /home/travis/build/failed/Scout24/deadcode4j/target/it/defaultWebAppResourcesAreConsidered/build.log for details.
+[INFO] Building: scatteredHibernate/pom.xml
+[INFO] [INFO] Final Memory: 26M/1963M
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [WARNING] The requested profile "enableCoverage" could not be activated because it does not exist.
+[INFO] [WARNING] The requested profile "travis" could not be activated because it does not exist.
+[INFO] [ERROR] Failed to execute goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) on project customWebAppResourcesAreConsidered: Execution default-cli of goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find failed: [endOfFileName] must be set! -> [Help 1]
+[INFO] [ERROR] 
+[INFO] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[INFO] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[INFO] [ERROR] 
+[INFO] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[INFO] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+[INFO] [INFO] Scanning for projects...
+[INFO] ..FAILED (9.3 s)
+[INFO]   The build exited with code 1. See /home/travis/build/failed/Scout24/deadcode4j/target/it/customWebAppResourcesAreConsidered/build.log for details.
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Reactor Build Order:
+[INFO] [INFO] 
+[INFO] [INFO] reactorProject
+[INFO] [INFO] reactorProject-emptyProject
+[INFO] [INFO] reactorProject-javaProject
+[INFO] [INFO] reactorProject-webAppProject
+[INFO] [INFO] reactorProject-secondWebAppProject
+[INFO] [INFO] reactorProject-secondJavaProject
+[INFO] [INFO] reactorProject-secondReactorProject
+[INFO] [INFO] reactorProject-secondReactorProject-nestedJavaProject
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building reactorProject 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ reactorProject ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building reactorProject-emptyProject 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ reactorProject-emptyProject ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building reactorProject-javaProject 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ reactorProject-javaProject ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building reactorProject-webAppProject 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ reactorProject-webAppProject ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building reactorProject-secondWebAppProject 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ reactorProject-secondWebAppProject ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building reactorProject-secondJavaProject 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ reactorProject-secondJavaProject ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building reactorProject-secondReactorProject 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ reactorProject-secondReactorProject ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building reactorProject-secondReactorProject-nestedJavaProject 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ reactorProject-secondReactorProject-nestedJavaProject ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building reactorProject 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] >>> deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) > package @ reactorProject >>>
+[INFO] [INFO]                                                                         
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Forking reactorProject-emptyProject 42
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ reactorProject-emptyProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/emptyProject/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ reactorProject-emptyProject ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ reactorProject-emptyProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/emptyProject/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ reactorProject-emptyProject ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ reactorProject-emptyProject ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ reactorProject-emptyProject ---
+[INFO] [WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] [INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/emptyProject/target/reactorProject-emptyProject-42.jar
+[INFO] [INFO]                                                                         
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Forking reactorProject-javaProject 42
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ reactorProject-javaProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/javaProject/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ reactorProject-javaProject ---
+[INFO] [INFO] Changes detected - recompiling the module!
+[INFO] [INFO] Compiling 1 source file to /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/javaProject/target/classes
+[INFO] [INFO] Scanning for projects...
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ reactorProject-javaProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/javaProject/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ reactorProject-javaProject ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ reactorProject-javaProject ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ reactorProject-javaProject ---
+[INFO] [INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/javaProject/target/reactorProject-javaProject-42.jar
+[INFO] [INFO]                                                                         
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Forking reactorProject-webAppProject 42
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ reactorProject-webAppProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/webAppProject/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ reactorProject-webAppProject ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ reactorProject-webAppProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/webAppProject/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ reactorProject-webAppProject ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ reactorProject-webAppProject ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-war-plugin:2.4:war (default-war) @ reactorProject-webAppProject ---
+[INFO] [WARNING] 
+[INFO] [WARNING] Some problems were encountered while building the effective model for de.is24.junit:scatteredHibernate-definitions:jar:42
+[INFO] [WARNING] 'version' contains an expression but should be a constant. @ de.is24.junit:scatteredHibernate-definitions:${project.parent.version}, /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/definitions/pom.xml, line 14, column 14
+[INFO] [WARNING] 
+[INFO] [WARNING] Some problems were encountered while building the effective model for de.is24.junit:scatteredHibernate-overriding-definition:jar:42
+[INFO] [WARNING] 'version' contains an expression but should be a constant. @ de.is24.junit:scatteredHibernate-overriding-definition:${project.parent.version}, /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/overriding-definition/pom.xml, line 14, column 14
+[INFO] [WARNING] 
+[INFO] [WARNING] Some problems were encountered while building the effective model for de.is24.junit:scatteredHibernate-usages:jar:42
+[INFO] [WARNING] 'version' contains an expression but should be a constant. @ de.is24.junit:scatteredHibernate-usages:${project.parent.version}, /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/usages/pom.xml, line 14, column 14
+[INFO] [WARNING] 
+[INFO] [WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[INFO] [WARNING] 
+[INFO] [WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[INFO] [WARNING] 
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Reactor Build Order:
+[INFO] [INFO] 
+[INFO] [INFO] scatteredHibernate
+[INFO] [INFO] scatteredHibernate-definitions
+[INFO] [INFO] scatteredHibernate-usages
+[INFO] [INFO] scatteredHibernate-overriding-definition
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building scatteredHibernate 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scatteredHibernate ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building scatteredHibernate-definitions 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scatteredHibernate-definitions ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building scatteredHibernate-usages 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scatteredHibernate-usages ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building scatteredHibernate-overriding-definition 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ scatteredHibernate-overriding-definition ---
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building scatteredHibernate 42
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Packaging webapp
+[INFO] [INFO] Assembling webapp [reactorProject-webAppProject] in [/home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/webAppProject/target/reactorProject-webAppProject-42]
+[INFO] [INFO] Processing war project
+[INFO] [INFO] Copying webapp resources [/home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/webAppProject/src/main/webapp]
+[INFO] [INFO] 
+[INFO] [INFO] >>> deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) > package @ scatteredHibernate >>>
+[INFO] [INFO]                                                                         
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Forking scatteredHibernate-definitions 42
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Webapp assembled in [68 msecs]
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scatteredHibernate-definitions ---
+[INFO] [INFO] Building war: /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/webAppProject/target/reactorProject-webAppProject-42.war
+[INFO] [INFO]                                                                         
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Forking reactorProject-secondWebAppProject 42
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ reactorProject-secondWebAppProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondWebAppProject/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ reactorProject-secondWebAppProject ---
+[INFO] [INFO] Changes detected - recompiling the module!
+[INFO] [INFO] Compiling 1 source file to /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondWebAppProject/target/classes
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ reactorProject-secondWebAppProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondWebAppProject/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ reactorProject-secondWebAppProject ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ reactorProject-secondWebAppProject ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-war-plugin:2.4:war (default-war) @ reactorProject-secondWebAppProject ---
+[INFO] [INFO] Packaging webapp
+[INFO] [INFO] Assembling webapp [reactorProject-secondWebAppProject] in [/home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondWebAppProject/target/reactorProject-secondWebAppProject-42]
+[INFO] [INFO] Processing war project
+[INFO] [INFO] Copying webapp resources [/home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondWebAppProject/src/main/webapp]
+[INFO] [INFO] Webapp assembled in [5 msecs]
+[INFO] [INFO] Building war: /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondWebAppProject/target/reactorProject-secondWebAppProject-42.war
+[INFO] [INFO]                                                                         
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Forking reactorProject-secondJavaProject 42
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ reactorProject-secondJavaProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondJavaProject/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ reactorProject-secondJavaProject ---
+[INFO] [INFO] Changes detected - recompiling the module!
+[INFO] [INFO] Compiling 1 source file to /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondJavaProject/target/classes
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ reactorProject-secondJavaProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondJavaProject/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ reactorProject-secondJavaProject ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ reactorProject-secondJavaProject ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ reactorProject-secondJavaProject ---
+[INFO] [INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondJavaProject/target/reactorProject-secondJavaProject-42.jar
+[INFO] [INFO]                                                                         
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Forking reactorProject-secondReactorProject-nestedJavaProject 42
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ reactorProject-secondReactorProject-nestedJavaProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondReactorProject/nestedJavaProject/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ reactorProject-secondReactorProject-nestedJavaProject ---
+[INFO] [INFO] Changes detected - recompiling the module!
+[INFO] [INFO] Compiling 1 source file to /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondReactorProject/nestedJavaProject/target/classes
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ reactorProject-secondReactorProject-nestedJavaProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondReactorProject/nestedJavaProject/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ reactorProject-secondReactorProject-nestedJavaProject ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ reactorProject-secondReactorProject-nestedJavaProject ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ reactorProject-secondReactorProject-nestedJavaProject ---
+[INFO] [INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/secondReactorProject/nestedJavaProject/target/reactorProject-secondReactorProject-nestedJavaProject-42.jar
+[INFO] [INFO] 
+[INFO] [INFO] <<< deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) < package @ reactorProject <<<
+[INFO] [INFO] 
+[INFO] [INFO] --- deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) @ reactorProject ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/definitions/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ scatteredHibernate-definitions ---
+[INFO] [INFO] Changes detected - recompiling the module!
+[INFO] [INFO] Compiling 1 source file to /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/definitions/target/classes
+[INFO] [INFO] Running in offline mode; skipping update check.
+[INFO] [INFO] Thanks for calling me! Let's see what I can do for you...
+[INFO] [ERROR] An unexpected exception occurred. Please consider reporting an issue at https://github.com/ImmobilienScout24/deadcode4j/issues
+[INFO] java.lang.IllegalArgumentException: [endOfFileName] must be set!
+[INFO] 	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+[INFO] 	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+[INFO] 	at de.is24.deadcode4j.analyzer.SimpleXmlAnalyzer.<init>(SimpleXmlAnalyzer.java:46)
+[INFO] 	at de.is24.deadcode4j.analyzer.AopXmlAnalyzer.<init>(AopXmlAnalyzer.java:13)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.analyzeCode(FindDeadCodeOnlyMojo.java:199)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.doExecute(FindDeadCodeOnlyMojo.java:150)
+[INFO] 	at de.is24.maven.slf4j.AbstractSlf4jMojo.execute(AbstractSlf4jMojo.java:20)
+[INFO] 	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:132)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+[INFO] 	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120)
+[INFO] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:355)
+[INFO] 	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:155)
+[INFO] 	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:584)
+[INFO] 	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:216)
+[INFO] 	at org.apache.maven.cli.MavenCli.main(MavenCli.java:160)
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+[INFO] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[INFO] 	at java.lang.reflect.Method.invoke(Method.java:606)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Reactor Summary:
+[INFO] [INFO] 
+[INFO] [INFO] reactorProject ..................................... FAILURE [  3.954 s]
+[INFO] [INFO] reactorProject-emptyProject ........................ SUCCESS [  0.003 s]
+[INFO] [INFO] reactorProject-javaProject ......................... SUCCESS [  0.002 s]
+[INFO] [INFO] reactorProject-webAppProject ....................... SUCCESS [  0.003 s]
+[INFO] [INFO] reactorProject-secondWebAppProject ................. SUCCESS [  0.002 s]
+[INFO] [INFO] reactorProject-secondJavaProject ................... SUCCESS [  0.002 s]
+[INFO] [INFO] reactorProject-secondReactorProject ................ SUCCESS [  0.002 s]
+[INFO] [INFO] reactorProject-secondReactorProject-nestedJavaProject SUCCESS [  0.003 s]
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] BUILD FAILURE
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Total time: 4.628 s
+[INFO] [INFO] Finished at: 2022-01-08T05:19:33+00:00
+[INFO] [INFO] Final Memory: 28M/1963M
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [WARNING] The requested profile "enableCoverage" could not be activated because it does not exist.
+[INFO] [WARNING] The requested profile "travis" could not be activated because it does not exist.
+[INFO] [ERROR] Failed to execute goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) on project reactorProject: Execution default-cli of goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find failed: [endOfFileName] must be set! -> [Help 1]
+[INFO] [ERROR] 
+[INFO] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[INFO] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[INFO] [ERROR] 
+[INFO] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[INFO] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+[INFO] ..FAILED (7.8 s)
+[INFO]   The build exited with code 1. See /home/travis/build/failed/Scout24/deadcode4j/target/it/reactorProject/build.log for details.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ scatteredHibernate-definitions ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/definitions/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ scatteredHibernate-definitions ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ scatteredHibernate-definitions ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scatteredHibernate-definitions ---
+[INFO] [INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/definitions/target/scatteredHibernate-definitions-42.jar
+[INFO] [INFO]                                                                         
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Forking scatteredHibernate-usages 42
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scatteredHibernate-usages ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/usages/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ scatteredHibernate-usages ---
+[INFO] [INFO] Changes detected - recompiling the module!
+[INFO] [INFO] Compiling 1 source file to /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/usages/target/classes
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ scatteredHibernate-usages ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/usages/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ scatteredHibernate-usages ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ scatteredHibernate-usages ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scatteredHibernate-usages ---
+[INFO] [INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/usages/target/scatteredHibernate-usages-42.jar
+[INFO] [INFO]                                                                         
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] Forking scatteredHibernate-overriding-definition 42
+[INFO] [INFO] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scatteredHibernate-overriding-definition ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/overriding-definition/src/main/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ scatteredHibernate-overriding-definition ---
+[INFO] [INFO] Changes detected - recompiling the module!
+[INFO] [INFO] Compiling 1 source file to /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/overriding-definition/target/classes
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ scatteredHibernate-overriding-definition ---
+[INFO] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] [INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/overriding-definition/src/test/resources
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ scatteredHibernate-overriding-definition ---
+[INFO] [INFO] No sources to compile
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-surefire-plugin:2.17:test (default-test) @ scatteredHibernate-overriding-definition ---
+[INFO] [INFO] No tests to run.
+[INFO] [INFO] 
+[INFO] [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scatteredHibernate-overriding-definition ---
+[INFO] [INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/overriding-definition/target/scatteredHibernate-overriding-definition-42.jar
+[INFO] [INFO] 
+[INFO] [INFO] <<< deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) < package @ scatteredHibernate <<<
+[INFO] [INFO] 
+[INFO] [INFO] --- deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) @ scatteredHibernate ---
+[INFO] [INFO] Running in offline mode; skipping update check.
+[INFO] [INFO] Thanks for calling me! Let's see what I can do for you...
+[INFO] [ERROR] An unexpected exception occurred. Please consider reporting an issue at https://github.com/ImmobilienScout24/deadcode4j/issues
+[INFO] java.lang.IllegalArgumentException: [endOfFileName] must be set!
+[INFO] 	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+[INFO] 	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+[INFO] 	at de.is24.deadcode4j.analyzer.SimpleXmlAnalyzer.<init>(SimpleXmlAnalyzer.java:46)
+[INFO] 	at de.is24.deadcode4j.analyzer.AopXmlAnalyzer.<init>(AopXmlAnalyzer.java:13)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.analyzeCode(FindDeadCodeOnlyMojo.java:199)
+[INFO] 	at de.is24.deadcode4j.plugin.FindDeadCodeOnlyMojo.doExecute(FindDeadCodeOnlyMojo.java:150)
+[INFO] 	at de.is24.maven.slf4j.AbstractSlf4jMojo.execute(AbstractSlf4jMojo.java:20)
+[INFO] 	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:132)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+[INFO] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+[INFO] 	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+[INFO] 	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120)
+[INFO] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:355)
+[INFO] 	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:155)
+[INFO] 	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:584)
+[INFO] 	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:216)
+[INFO] 	at org.apache.maven.cli.MavenCli.main(MavenCli.java:160)
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[INFO] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+[INFO] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[INFO] 	at java.lang.reflect.Method.invoke(Method.java:606)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+[INFO] 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Reactor Summary:
+[INFO] [INFO] 
+[INFO] [INFO] scatteredHibernate ................................. FAILURE [  3.045 s]
+[INFO] [INFO] scatteredHibernate-definitions ..................... SUCCESS [  0.003 s]
+[INFO] [INFO] scatteredHibernate-usages .......................... SUCCESS [  0.003 s]
+[INFO] [INFO] scatteredHibernate-overriding-definition ........... SUCCESS [  0.002 s]
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] BUILD FAILURE
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Total time: 3.567 s
+[INFO] [INFO] Finished at: 2022-01-08T05:19:35+00:00
+[INFO] [INFO] Final Memory: 25M/1963M
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [WARNING] The requested profile "enableCoverage" could not be activated because it does not exist.
+[INFO] [WARNING] The requested profile "travis" could not be activated because it does not exist.
+[INFO] [ERROR] Failed to execute goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find (default-cli) on project scatteredHibernate: Execution default-cli of goal de.is24.mavenplugins:deadcode4j-maven-plugin:2.2.0-SNAPSHOT:find failed: [endOfFileName] must be set! -> [Help 1]
+[INFO] [ERROR] 
+[INFO] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[INFO] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[INFO] [ERROR] 
+[INFO] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[INFO] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+[INFO] ..FAILED (6.9 s)
+[INFO]   The build exited with code 1. See /home/travis/build/failed/Scout24/deadcode4j/target/it/scatteredHibernate/build.log for details.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:integration-test (test-help) @ deadcode4j-maven-plugin ---
+[INFO] use parallelThreads 3
+[INFO] Building: pom.xml
+[INFO] [INFO] Scanning for projects...
+[INFO] [INFO]                                                                         
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Building Maven Stub Project (No POM) 1
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] 
+[INFO] [INFO] --- deadcode4j-maven-plugin:2.2.0-SNAPSHOT:help (default-cli) @ standalone-pom ---
+[INFO] [INFO] deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO]   Finds unused classes of a project
+[INFO] 
+[INFO] This plugin has 3 goals:
+[INFO] 
+[INFO] deadcode4j:find
+[INFO]   Finds dead (i.e. unused) code. Causes the package phase to be executed.
+[INFO] 
+[INFO]   Available parameters:
+[INFO] 
+[INFO]     annotationsMarkingLiveCode
+[INFO]       Lists the fqcn of the annotations marking a class as being 'live code'.
+[INFO] 
+[INFO]     classesToIgnore
+[INFO]       Lists the 'dead' classes that should be ignored.
+[INFO] 
+[INFO]     customXmls
+[INFO]       Lists the custom XML analysis configurations to set up. Have a look at
+[INFO]       https://github.com/ImmobilienScout24/deadcode4j to learn how to configure
+[INFO]       a custom XML analyzer.
+[INFO] 
+[INFO]     ignoreMainClasses
+[INFO]       Mark all classes with a main method as being 'live code'.
+[INFO] 
+[INFO]     interfacesMarkingLiveCode
+[INFO]       Lists the fqcn of the interfaces marking a class as being 'live code'.
+[INFO] 
+[INFO]     modulesToSkip
+[INFO]       Lists the modules that should not be analyzed.
+[INFO] 
+[INFO]     skipSendingUsageStatistics
+[INFO]       Skip sending usage statistics.
+[INFO]       If set to false, statistics will be sent.
+[INFO]       If nothing is configured and running in interactive mode (NOT using the -B
+[INFO]       flag), the user is requested to allow sending the usage statistics.
+[INFO]       Note that this step is skipped if Maven is running in offline mode (using
+[INFO]       the -o flag).
+[INFO] 
+[INFO]     skipUpdateCheck
+[INFO]       Skip the update check performed at startup.
+[INFO]       Note that this step is skipped if Maven is running in offline mode (using
+[INFO]       the -o flag).
+[INFO] 
+[INFO]     superClassesMarkingLiveCode
+[INFO]       Lists the fqcn of the classes marking a direct subclass as being 'live
+[INFO]       code'.
+[INFO] 
+[INFO]     usageStatisticsComment
+[INFO]       The comment to send along with the usage statistics.
+[INFO]       State a testimonial, refer to your project, provide a way to contact you,
+[INFO]       request a feature, ...
+[INFO] 
+[INFO] deadcode4j:find-only
+[INFO]   Finds dead (i.e. unused) code. In contrast to find, no phase is executed.
+[INFO] 
+[INFO]   Available parameters:
+[INFO] 
+[INFO]     annotationsMarkingLiveCode
+[INFO]       Lists the fqcn of the annotations marking a class as being 'live code'.
+[INFO] 
+[INFO]     classesToIgnore
+[INFO]       Lists the 'dead' classes that should be ignored.
+[INFO] 
+[INFO]     customXmls
+[INFO]       Lists the custom XML analysis configurations to set up. Have a look at
+[INFO]       https://github.com/ImmobilienScout24/deadcode4j to learn how to configure
+[INFO]       a custom XML analyzer.
+[INFO] 
+[INFO]     ignoreMainClasses
+[INFO]       Mark all classes with a main method as being 'live code'.
+[INFO] 
+[INFO]     interfacesMarkingLiveCode
+[INFO]       Lists the fqcn of the interfaces marking a class as being 'live code'.
+[INFO] 
+[INFO]     modulesToSkip
+[INFO]       Lists the modules that should not be analyzed.
+[INFO] 
+[INFO]     skipSendingUsageStatistics
+[INFO]       Skip sending usage statistics.
+[INFO]       If set to false, statistics will be sent.
+[INFO]       If nothing is configured and running in interactive mode (NOT using the -B
+[INFO]       flag), the user is requested to allow sending the usage statistics.
+[INFO]       Note that this step is skipped if Maven is running in offline mode (using
+[INFO]       the -o flag).
+[INFO] 
+[INFO]     skipUpdateCheck
+[INFO]       Skip the update check performed at startup.
+[INFO]       Note that this step is skipped if Maven is running in offline mode (using
+[INFO]       the -o flag).
+[INFO] 
+[INFO]     superClassesMarkingLiveCode
+[INFO]       Lists the fqcn of the classes marking a direct subclass as being 'live
+[INFO]       code'.
+[INFO] 
+[INFO]     usageStatisticsComment
+[INFO]       The comment to send along with the usage statistics.
+[INFO]       State a testimonial, refer to your project, provide a way to contact you,
+[INFO]       request a feature, ...
+[INFO] 
+[INFO] deadcode4j:help
+[INFO]   Display help information on deadcode4j-maven-plugin.
+[INFO]   Call mvn deadcode4j:help -Ddetail=true -Dgoal=<goal-name> to display parameter
+[INFO]   details.
+[INFO] 
+[INFO]   Available parameters:
+[INFO] 
+[INFO]     detail
+[INFO]       If true, display all settable properties for each goal.
+[INFO] 
+[INFO]     goal
+[INFO]       The name of the goal for which to show help. If unspecified, all goals
+[INFO]       will be displayed.
+[INFO] 
+[INFO]     indentSize
+[INFO]       The number of spaces per indentation level, should be positive.
+[INFO] 
+[INFO]     lineLength
+[INFO]       The maximum length of a display line, should be positive.
+[INFO] 
+[INFO] 
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] BUILD SUCCESS
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [INFO] Total time: 1.364 s
+[INFO] [INFO] Finished at: 2022-01-08T05:19:39+00:00
+[INFO] [INFO] Final Memory: 25M/1963M
+[INFO] [INFO] ------------------------------------------------------------------------
+[INFO] [WARNING] The requested profile "enableCoverage" could not be activated because it does not exist.
+[INFO] [WARNING] The requested profile "travis" could not be activated because it does not exist.
+[INFO] ..SUCCESS (4.3 s)
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (clean) @ deadcode4j-maven-plugin ---
+[INFO] Executing tasks
+
+main:
+   [delete] Deleting directory /tmp/deadcode4j
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.17:verify (default) @ deadcode4j-maven-plugin ---
+[INFO] Failsafe report directory: /home/travis/build/failed/Scout24/deadcode4j/target/failsafe-reports
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:35 min
+[INFO] Finished at: 2022-01-08T05:19:40+00:00
+[INFO] Final Memory: 43M/1963M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-failsafe-plugin:2.17:verify (default) on project deadcode4j-maven-plugin: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/travis/build/failed/Scout24/deadcode4j/target/failsafe-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+travis_time:end:0ab07c86:start=1641619083469652643,finish=1641619180318593125,duration=96848940482,event=script[0K[31;1mThe command "mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B -o clean verify -PenableCoverage,travis" exited with 1.[0m
+travis_fold:start:before_cache[0Ktravis_time:start:22d22bc8[0K$ rm -rf $HOME/.m2/repository/de/is24/mavenplugins/deadcode4j-maven-plugin/
+travis_time:end:22d22bc8:start=1641619180325742465,finish=1641619180333088706,duration=7346241,event=before_cache[0Ktravis_fold:end:before_cache[0Ktravis_fold:start:cache.2[0Kstore build cache
+travis_time:start:03a2e848[0Ktravis_time:end:03a2e848:start=1641619180340686492,finish=1641619180345742137,duration=5055645,event=cache[0Ktravis_time:start:199539d8[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading /[0m
+[31;1mfailed to upload cache[0m
+travis_time:end:199539d8:start=1641619180352297494,finish=1641619181833293113,duration=1480995619,event=cache[0Ktravis_fold:end:cache.2[0K
+
+Done. Your build exited with 1.

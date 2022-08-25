@@ -1,0 +1,142 @@
+travis_time:start:0da04b79[0Ktravis_time:end:0da04b79:start=1641619904630627435,finish=1641619904793063439,duration=162436004,event=no_world_writable_dirs[0Ktravis_time:start:03cd40b2[0Ktravis_time:end:03cd40b2:start=1641619904800780631,finish=1641619904806106267,duration=5325636,event=check_unsupported[0Ktravis_time:start:00ae45d2[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:00ae45d2:start=1641619904812342089,finish=1641619904822109632,duration=9767543,event=show_system_info[0Ktravis_time:start:0ae99ada[0Ktravis_time:end:0ae99ada:start=1641619904828957489,finish=1641619904848326091,duration=19368602,event=rm_riak_source[0Ktravis_time:start:1ab18ee4[0Ktravis_time:end:1ab18ee4:start=1641619904854231085,finish=1641619904863965358,duration=9734273,event=fix_rwky_redis[0Ktravis_time:start:0f076c7d[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:0f076c7d:start=1641619904869594437,finish=1641619925561018876,duration=20691424439,event=wait_for_network[0Ktravis_time:start:08e793cc[0Ktravis_time:end:08e793cc:start=1641619925568143707,finish=1641619927341144865,duration=1773001158,event=update_apt_keys[0Ktravis_time:start:088cac28[0Ktravis_time:end:088cac28:start=1641619927346666381,finish=1641619927509560725,duration=162894344,event=fix_hhvm_source[0Ktravis_time:start:16a2531e[0Ktravis_time:end:16a2531e:start=1641619927516931938,finish=1641619927523654532,duration=6722594,event=update_mongo_arch[0Ktravis_time:start:1652b400[0Ktravis_time:end:1652b400:start=1641619927530161348,finish=1641619927582715866,duration=52554518,event=fix_sudo_enabled_trusty[0Ktravis_time:start:2c409b70[0Ktravis_time:end:2c409b70:start=1641619927587567159,finish=1641619927600514030,duration=12946871,event=clean_up_path[0Ktravis_time:start:0405d226[0Ktravis_time:end:0405d226:start=1641619927605956130,finish=1641619927621636695,duration=15680565,event=fix_resolv_conf[0Ktravis_time:start:1162cbc0[0Ktravis_time:end:1162cbc0:start=1641619927627455115,finish=1641619927646717605,duration=19262490,event=fix_etc_hosts[0Ktravis_time:start:079703ae[0Ktravis_time:end:079703ae:start=1641619927652236914,finish=1641619927667846457,duration=15609543,event=fix_mvn_settings_xml[0Ktravis_time:start:095b7b34[0Ktravis_time:end:095b7b34:start=1641619927674550000,finish=1641619927742171865,duration=67621865,event=no_ipv6_localhost[0Ktravis_time:start:0a3097f2[0Ktravis_time:end:0a3097f2:start=1641619927747701742,finish=1641619928008115167,duration=260413425,event=fix_etc_mavenrc[0Ktravis_time:start:01c27356[0Ktravis_time:end:01c27356:start=1641619928014316180,finish=1641619928020626420,duration=6310240,event=fix_wwdr_certificate[0Ktravis_time:start:0a950408[0Ktravis_time:end:0a950408:start=1641619928026715778,finish=1641619928063940176,duration=37224398,event=put_localhost_first[0Ktravis_time:start:03207cc8[0Ktravis_time:end:03207cc8:start=1641619928070247741,finish=1641619928075563274,duration=5315533,event=home_paths[0Ktravis_time:start:01711de8[0Ktravis_time:end:01711de8:start=1641619928081530213,finish=1641619928342436765,duration=260906552,event=disable_initramfs[0Ktravis_time:start:005e8825[0Ktravis_time:end:005e8825:start=1641619928348627980,finish=1641619928599560935,duration=250932955,event=disable_ssh_roaming[0Ktravis_time:start:002185bc[0Ktravis_time:end:002185bc:start=1641619928604785266,finish=1641619928608653292,duration=3868026,event=debug_tools[0Ktravis_time:start:193b56dc[0Ktravis_time:end:193b56dc:start=1641619928614049113,finish=1641619928619872950,duration=5823837,event=uninstall_oclint[0Ktravis_time:start:08fa61e0[0Ktravis_time:end:08fa61e0:start=1641619928625178301,finish=1641619928630580250,duration=5401949,event=rvm_use[0Ktravis_time:start:017de1b8[0Ktravis_time:end:017de1b8:start=1641619928635929620,finish=1641619928649564680,duration=13635060,event=rm_etc_boto_cfg[0Ktravis_time:start:0eda645d[0Ktravis_time:end:0eda645d:start=1641619928654851101,finish=1641619928659545314,duration=4694213,event=rm_oraclejdk8_symlink[0Ktravis_time:start:2e7f9f40[0Ktravis_time:end:2e7f9f40:start=1641619928664282077,finish=1641619928706186404,duration=41904327,event=enable_i386[0Ktravis_time:start:3093c8fb[0Ktravis_time:end:3093c8fb:start=1641619928711732736,finish=1641619928718858960,duration=7126224,event=update_rubygems[0Ktravis_time:start:004b2d76[0Ktravis_time:end:004b2d76:start=1641619928724339706,finish=1641619928732121982,duration=7782276,event=ensure_path_components[0Ktravis_time:start:2c517819[0Ktravis_time:end:2c517819:start=1641619928737418797,finish=1641619928741384668,duration=3965871,event=redefine_curl[0Ktravis_time:start:064661e0[0Ktravis_time:end:064661e0:start=1641619928746518310,finish=1641619928750279557,duration=3761247,event=nonblock_pipe[0Ktravis_time:start:020e5774[0Ktravis_time:end:020e5774:start=1641619928755441705,finish=1641619931932082070,duration=3176640365,event=apt_get_update[0Ktravis_time:start:0d2a2be8[0Ktravis_time:end:0d2a2be8:start=1641619931938331825,finish=1641619931942264127,duration=3932302,event=deprecate_xcode_64[0Ktravis_time:start:09ee9cee[0Ktravis_time:end:09ee9cee:start=1641619931947795278,finish=1641619931955128862,duration=7333584,event=update_heroku[0Ktravis_time:start:0d281c6d[0Ktravis_time:end:0d281c6d:start=1641619931961107452,finish=1641619931965663120,duration=4555668,event=shell_session_update[0Ktravis_time:start:134050b0[0Ktravis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0Ktravis_time:end:134050b0:start=1641619931971260849,finish=1641619932004925452,duration=33664603,event=set_docker_mtu[0Ktravis_time:start:04edad0c[0Ktravis_time:end:04edad0c:start=1641619932010914466,finish=1641619932026385639,duration=15471173,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk8[0m
+$ jdk_switcher use "oraclejdk8"
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+travis_fold:end:install_jdk[0Ktravis_time:start:26699f61[0Ktravis_time:end:26699f61:start=1641619932045541598,finish=1641619932049814648,duration=4273050,event=fix_ps4[0Ktravis_time:start:1058fa60[0K
+$ cd failed/eclipse/golo-lang
+
+travis_time:end:1058fa60:start=1641619932056051231,finish=1641619932060928409,duration=4877178,event=checkout[0Ktravis_time:start:07354034[0Ktravis_time:end:07354034:start=1641619932067063633,finish=1641619933205313888,duration=1138250255,event=env[0K$ export TERM=dumb
+$ java -Xmx32m -version
+java version "1.8.0_31"
+Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.8.0_31
+travis_fold:start:install[0Ktravis_time:start:0ec26a7e[0K$ ./gradlew assemble
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+:asciidoctor UP-TO-DATE
+:compileJjtree UP-TO-DATE
+:compileJavacc UP-TO-DATE
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:goloc UP-TO-DATE
+:classes UP-TO-DATE
+:golodoc UP-TO-DATE
+:jar UP-TO-DATE
+:vanillaScripts UP-TO-DATE
+:startScripts UP-TO-DATE
+:distTar UP-TO-DATE
+:distZip UP-TO-DATE
+:assemble UP-TO-DATE
+
+BUILD SUCCESSFUL
+
+Total time: 22.12 secs
+travis_time:end:0ec26a7e:start=1641619933796993111,finish=1641619960497637233,duration=26700644122,event=install[0Ktravis_fold:end:install[0Ktravis_time:start:26c188f2[0K$ ./gradlew check
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+:compileJjtree UP-TO-DATE
+:compileJavacc UP-TO-DATE
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:goloc UP-TO-DATE
+:classes UP-TO-DATE
+:findbugsMain UP-TO-DATE
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:test
+
+Gradle suite > Gradle test > gololang.StandardAugmentationsTest.number_repeaters FAILED
+    java.lang.reflect.InvocationTargetException at StandardAugmentationsTest.java:495
+        Caused by: java.lang.NullPointerException at StandardAugmentationsTest.java:495
+
+628 tests completed, 1 failed
+:test FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///home/travis/build/failed/eclipse/golo-lang/build/reports/tests/index.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 21.325 secs
+travis_time:end:26c188f2:start=1641619960505322336,finish=1641619982304418268,duration=21799095932,event=[0K[31;1mThe command "./gradlew check" exited with 1.[0m
+
+
+Done. Your build exited with 1.

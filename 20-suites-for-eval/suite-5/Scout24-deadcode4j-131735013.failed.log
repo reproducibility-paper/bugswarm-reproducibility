@@ -1,0 +1,746 @@
+travis_time:start:1b3c6f54[0Ktravis_time:end:1b3c6f54:start=1641694425548332491,finish=1641694425689063811,duration=140731320,event=no_world_writable_dirs[0Ktravis_time:start:040f38d5[0Ktravis_time:end:040f38d5:start=1641694425695570450,finish=1641694425699652478,duration=4082028,event=check_unsupported[0Ktravis_time:start:11f0e2a5[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:11f0e2a5:start=1641694425705039800,finish=1641694425713257266,duration=8217466,event=show_system_info[0Ktravis_time:start:100688a3[0Ktravis_time:end:100688a3:start=1641694425718793710,finish=1641694425737669809,duration=18876099,event=rm_riak_source[0Ktravis_time:start:137fe230[0Ktravis_time:end:137fe230:start=1641694425743656681,finish=1641694425753674936,duration=10018255,event=fix_rwky_redis[0Ktravis_time:start:1daac040[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:1daac040:start=1641694425759628216,finish=1641694446379450643,duration=20619822427,event=wait_for_network[0Ktravis_time:start:2a8175fc[0Ktravis_time:end:2a8175fc:start=1641694446384855613,finish=1641694447457355292,duration=1072499679,event=update_apt_keys[0Ktravis_time:start:007b14e5[0Ktravis_time:end:007b14e5:start=1641694447463835916,finish=1641694447685124241,duration=221288325,event=fix_hhvm_source[0Ktravis_time:start:1049c160[0Ktravis_time:end:1049c160:start=1641694447691194029,finish=1641694447696939068,duration=5745039,event=update_mongo_arch[0Ktravis_time:start:0070fddc[0Ktravis_time:end:0070fddc:start=1641694447701675333,finish=1641694447748068018,duration=46392685,event=fix_sudo_enabled_trusty[0Ktravis_time:start:2f5e5c37[0Ktravis_time:end:2f5e5c37:start=1641694447753424828,finish=1641694447768505491,duration=15080663,event=clean_up_path[0Ktravis_time:start:027a09e0[0Ktravis_time:end:027a09e0:start=1641694447774128510,finish=1641694447788448474,duration=14319964,event=fix_resolv_conf[0Ktravis_time:start:0af35833[0Ktravis_time:end:0af35833:start=1641694447793074858,finish=1641694447810000115,duration=16925257,event=fix_etc_hosts[0Ktravis_time:start:0412da1e[0Ktravis_time:start:1a559ca8[0Ktravis_time:end:1a559ca8:start=1641694447832046290,finish=1641694447848731563,duration=16685273,event=no_ipv6_localhost[0Ktravis_time:start:2994f390[0Ktravis_time:end:2994f390:start=1641694447854082855,finish=1641694448312187031,duration=458104176,event=fix_etc_mavenrc[0Ktravis_time:start:21c9a629[0Ktravis_time:end:21c9a629:start=1641694448318077365,finish=1641694448323972715,duration=5895350,event=fix_wwdr_certificate[0Ktravis_time:start:1c24ccb6[0Ktravis_time:end:1c24ccb6:start=1641694448328689825,finish=1641694448366691047,duration=38001222,event=put_localhost_first[0Ktravis_time:start:00df809a[0Ktravis_time:end:00df809a:start=1641694448372479859,finish=1641694448377774299,duration=5294440,event=home_paths[0Ktravis_time:start:2948c8b1[0Ktravis_time:end:2948c8b1:start=1641694448383276065,finish=1641694448937524954,duration=554248889,event=disable_initramfs[0Ktravis_time:start:292f72d1[0Ktravis_time:end:292f72d1:start=1641694448943829998,finish=1641694449533907483,duration=590077485,event=disable_ssh_roaming[0Ktravis_time:start:009717b7[0Ktravis_time:end:009717b7:start=1641694449539673102,finish=1641694449543171222,duration=3498120,event=debug_tools[0Ktravis_time:start:0490a520[0Ktravis_time:end:0490a520:start=1641694449547813924,finish=1641694449553701852,duration=5887928,event=uninstall_oclint[0Ktravis_time:start:2e221723[0Ktravis_time:end:2e221723:start=1641694449559699459,finish=1641694449564499419,duration=4799960,event=rvm_use[0Ktravis_time:start:0c638991[0Ktravis_time:end:0c638991:start=1641694449568877210,finish=1641694449580093991,duration=11216781,event=rm_etc_boto_cfg[0Ktravis_time:start:0b399cf6[0Ktravis_time:end:0b399cf6:start=1641694449585252345,finish=1641694449589885395,duration=4633050,event=rm_oraclejdk8_symlink[0Ktravis_time:start:0c7cebad[0Ktravis_time:end:0c7cebad:start=1641694449596748195,finish=1641694449653356175,duration=56607980,event=enable_i386[0Ktravis_time:start:0b239d00[0Ktravis_time:end:0b239d00:start=1641694449660618247,finish=1641694449798598782,duration=137980535,event=update_rubygems[0Ktravis_time:start:0a0ed4e3[0Ktravis_time:end:0a0ed4e3:start=1641694449804444524,finish=1641694449811268048,duration=6823524,event=ensure_path_components[0Ktravis_time:start:016084ba[0Ktravis_time:end:016084ba:start=1641694449816246016,finish=1641694449820809457,duration=4563441,event=redefine_curl[0Ktravis_time:start:0d0a9960[0Ktravis_time:end:0d0a9960:start=1641694449827842249,finish=1641694449833534482,duration=5692233,event=nonblock_pipe[0Ktravis_time:start:00da17df[0Ktravis_time:end:00da17df:start=1641694449840668743,finish=1641694452645608477,duration=2804939734,event=apt_get_update[0Ktravis_time:start:0d9117da[0Ktravis_time:end:0d9117da:start=1641694452651102996,finish=1641694452654782571,duration=3679575,event=deprecate_xcode_64[0Ktravis_time:start:0018d233[0Ktravis_time:end:0018d233:start=1641694452659227955,finish=1641694452666279782,duration=7051827,event=update_heroku[0Ktravis_time:start:0d8724f8[0Ktravis_time:end:0d8724f8:start=1641694452672403270,finish=1641694452677476943,duration=5073673,event=shell_session_update[0Ktravis_time:start:207e4120[0Ktravis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0Ktravis_time:end:207e4120:start=1641694452682621649,finish=1641694452718162827,duration=35541178,event=set_docker_mtu[0Ktravis_time:start:087c8924[0Ktravis_time:end:087c8924:start=1641694452724224471,finish=1641694452745716520,duration=21492049,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling openjdk7[0m
+$ jdk_switcher use "openjdk7"
+Switching to OpenJDK7 (java-1.7.0-openjdk-amd64), JAVA_HOME will be set to /usr/lib/jvm/java-7-openjdk-amd64
+travis_fold:end:install_jdk[0Ktravis_time:start:2a9c1939[0Ktravis_time:end:2a9c1939:start=1641694452776374460,finish=1641694452780611748,duration=4237288,event=fix_ps4[0Ktravis_time:start:2847faec[0K
+$ cd failed/Scout24/deadcode4j
+
+travis_time:end:2847faec:start=1641694452787073984,finish=1641694452792793695,duration=5719711,event=checkout[0Ktravis_time:start:02bd6964[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export MVN_VERSION=3.1.1
+
+travis_time:end:02bd6964:start=1641694452801024063,finish=1641694452879581190,duration=78557127,event=env[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:01b02a30[0K$ Installing caching utilities
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 2 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 3 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed 3 times.[0m
+
+travis_time:end:01b02a30:start=1641694455439142556,finish=1641694458529063349,duration=3089920793,event=setup_casher[0Ktravis_time:start:1c849e34[0K$ Installing caching utilities from the Travis CI server (https:///files/casher) failed, failing over to using GitHub (https://raw.githubusercontent.com/travis-ci/casher/bash/bin/casher)
+travis_time:end:1c849e34:start=1641694458536077259,finish=1641694458755846181,duration=219768922,event=setup_casher[0Ktravis_time:start:00f09a4c[0Ktravis_time:end:00f09a4c:start=1641694458765182215,finish=1641694458770087502,duration=4905287,event=setup_casher[0Ktravis_time:start:00859140[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+attempting to download cache archive[0m
+[31;1mcould not download cache[0m
+travis_time:end:00859140:start=1641694458776296957,finish=1641694460614839809,duration=1838542852,event=setup_casher[0Ktravis_time:start:12eacab3[0Ktravis_time:end:12eacab3:start=1641694460623559978,finish=1641694460631365465,duration=7805487,event=setup_casher[0Ktravis_time:start:027549fd[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+adding /home/travis/.m2/repository to cache[0m
+travis_time:end:027549fd:start=1641694460641386161,finish=1641694462420183501,duration=1778797340,event=setup_casher[0Ktravis_fold:end:cache.1[0K
+$ java -Xmx32m -version
+java version "1.7.0_75"
+OpenJDK Runtime Environment (IcedTea 2.5.4) (7u75-2.5.4-1~precise1)
+OpenJDK 64-Bit Server VM (build 24.75-b04, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.7.0_75
+travis_fold:start:before_install.1[0Ktravis_time:start:02aee92f[0K$ MVN_URL=https://archive.apache.org/dist/maven/maven-3/$MVN_VERSION/binaries/apache-maven-$MVN_VERSION-bin.tar.gz
+travis_time:end:02aee92f:start=1641694462704815557,finish=1641694462709547184,duration=4731627,event=before_install[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:1afeb4f4[0K$ wget -q -O /tmp/maven.tar.gz $MVN_URL
+travis_time:end:1afeb4f4:start=1641694462716528718,finish=1641694465016466291,duration=2299937573,event=before_install[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:before_install.3[0Ktravis_time:start:012154c0[0K$ tar xzf /tmp/maven.tar.gz
+travis_time:end:012154c0:start=1641694465024159933,finish=1641694465235922362,duration=211762429,event=before_install[0Ktravis_fold:end:before_install.3[0Ktravis_fold:start:before_install.4[0Ktravis_time:start:1be676d2[0K$ export M2_HOME=`pwd`/apache-maven-$MVN_VERSION
+travis_time:end:1be676d2:start=1641694465243666021,finish=1641694465250461473,duration=6795452,event=before_install[0Ktravis_fold:end:before_install.4[0Ktravis_fold:start:before_install.5[0Ktravis_time:start:16e95de7[0K$ export PATH=$M2_HOME/bin:$PATH
+travis_time:end:16e95de7:start=1641694465259312946,finish=1641694465266587116,duration=7274170,event=before_install[0Ktravis_fold:end:before_install.5[0Ktravis_fold:start:before_install.6[0Ktravis_time:start:064be7ff[0K$ export MAVEN_SKIP_RC=true
+travis_time:end:064be7ff:start=1641694465273614327,finish=1641694465278316406,duration=4702079,event=before_install[0Ktravis_fold:end:before_install.6[0Ktravis_fold:start:install.1[0Ktravis_time:start:05c13060[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B -U clean verify org.apache.maven.plugins:maven-war-plugin:2.4:help -Dinvoker.skip=true -Dmaven.main.skip=true -Dmaven.plugin.skip=true -Dmaven.test.skip=true -PenableCoverage,travis
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.is24.mavenplugins:deadcode4j-maven-plugin:maven-plugin:2.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1070, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1073, column 18
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1094, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1097, column 18
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ deadcode4j-maven-plugin ---
+[INFO] Deleting /home/travis/build/failed/Scout24/deadcode4j/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-argLine) @ deadcode4j-maven-plugin ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/failed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/failed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:helpmojo (help-goal) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (default-descriptor) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ deadcode4j-maven-plugin ---
+[INFO] Not compiling main sources
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (mojo-descriptor) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ deadcode4j-maven-plugin ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ deadcode4j-maven-plugin ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ deadcode4j-maven-plugin ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ deadcode4j-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ deadcode4j-maven-plugin ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /home/travis/build/failed/Scout24/deadcode4j/target/deadcode4j-maven-plugin-2.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:addPluginArtifactMetadata (default-addPluginArtifactMetadata) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:install (default) @ deadcode4j-maven-plugin ---
+[INFO] Skipping artifact installation per configuration.
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (copyTestClasses) @ deadcode4j-maven-plugin ---
+[INFO] Skipping Antrun execution
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-invoker.mavenOpts) @ deadcode4j-maven-plugin ---
+[INFO] invoker.mavenOpts set to -javaagent:/home/travis/.m2/failed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/failed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.17:integration-test (default) @ deadcode4j-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:integration-test (test-find) @ deadcode4j-maven-plugin ---
+[INFO] Skipping invocation per configuration. If this is incorrect, ensure the skipInvocation parameter is not set to true.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:integration-test (test-help) @ deadcode4j-maven-plugin ---
+[INFO] Skipping invocation per configuration. If this is incorrect, ensure the skipInvocation parameter is not set to true.
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (clean) @ deadcode4j-maven-plugin ---
+[INFO] Skipping Antrun execution
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.17:verify (default) @ deadcode4j-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:verify (default) @ deadcode4j-maven-plugin ---
+[INFO] Skipping invocation per configuration. If this is incorrect, ensure the skipInvocation parameter is not set to true.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-war-plugin:2.4:help (default-cli) @ deadcode4j-maven-plugin ---
+[INFO] Apache Maven WAR Plugin 2.4
+  Builds a Web Application Archive (WAR) file from the project output and its
+  dependencies.
+
+This plugin has 5 goals:
+
+war:exploded
+  Create an exploded webapp in a specified directory.
+
+war:help
+  Display help information on maven-war-plugin.
+  Call mvn war:help -Ddetail=true -Dgoal=<goal-name> to display parameter
+  details.
+
+war:inplace
+  Generate the webapp in the WAR source directory.
+
+war:manifest
+  Generate a manifest for this webapp. The manifest file is created in the
+  warSourceDirectory.
+
+war:war
+  Build a WAR file.
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1:21.990s
+[INFO] Finished at: Sun Jan 09 02:15:48 UTC 2022
+[INFO] Final Memory: 44M/1963M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:05c13060:start=1641694465288759135,finish=1641694549225783046,duration=83937023911,event=install[0Ktravis_fold:end:install.1[0Ktravis_fold:start:install.2[0Ktravis_time:start:02e1eb70[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B org.apache.maven.plugins:maven-dependency-plugin:2.10:get -Dartifact=org.apache.maven.surefire:surefire-junit4:2.17
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.is24.mavenplugins:deadcode4j-maven-plugin:maven-plugin:2.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1070, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1073, column 18
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1094, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1097, column 18
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:get (default-cli) @ deadcode4j-maven-plugin ---
+[INFO] Resolving org.apache.maven.surefire:surefire-junit4:jar:2.17 with transitive dependencies
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 21.536s
+[INFO] Finished at: Sun Jan 09 02:16:11 UTC 2022
+[INFO] Final Memory: 28M/1963M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:02e1eb70:start=1641694549234977758,finish=1641694572036500526,duration=22801522768,event=install[0Ktravis_fold:end:install.2[0Ktravis_fold:start:install.3[0Ktravis_time:start:1f859782[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B org.apache.maven.plugins:maven-dependency-plugin:2.10:get -Dartifact=org.apache.maven.surefire:surefire-junit47:2.17
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.is24.mavenplugins:deadcode4j-maven-plugin:maven-plugin:2.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1070, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1073, column 18
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1094, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1097, column 18
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:get (default-cli) @ deadcode4j-maven-plugin ---
+[INFO] Resolving org.apache.maven.surefire:surefire-junit47:jar:2.17 with transitive dependencies
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.181s
+[INFO] Finished at: Sun Jan 09 02:16:16 UTC 2022
+[INFO] Final Memory: 26M/1963M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:1f859782:start=1641694572045150935,finish=1641694576588758852,duration=4543607917,event=install[0Ktravis_fold:end:install.3[0Ktravis_time:start:17d6ed24[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B -o clean verify -PenableCoverage,travis
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.is24.mavenplugins:deadcode4j-maven-plugin:maven-plugin:2.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1070, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1073, column 18
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1094, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1097, column 18
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ deadcode4j-maven-plugin ---
+[INFO] Deleting /home/travis/build/failed/Scout24/deadcode4j/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-argLine) @ deadcode4j-maven-plugin ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/failed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/failed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:helpmojo (help-goal) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (default-descriptor) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/Scout24/deadcode4j/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ deadcode4j-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 80 source files to /home/travis/build/failed/Scout24/deadcode4j/target/classes
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (mojo-descriptor) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 3 mojo descriptors.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ deadcode4j-maven-plugin ---
+[INFO] Discovered 2 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 20 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ deadcode4j-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 182 source files to /home/travis/build/failed/Scout24/deadcode4j/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ deadcode4j-maven-plugin ---
+[INFO] Surefire report directory: /home/travis/build/failed/Scout24/deadcode4j/target/surefire-reports
+[INFO] parallel='classes', perCoreThreadCount=false, threadCount=4, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running de.is24.deadcode4j.analyzer.A_SpringWebXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SpringWebXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.An_IgnoreClassesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_IgnoreClassesAnalyzer
+Running de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer
+Running de.is24.deadcode4j.analyzer.A_CustomAnnotationsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomAnnotationsAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ReferenceToConstantsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ReferenceToConstantsAnalyzer
+Running de.is24.maven.An_UpdateChecker
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.maven.An_UpdateChecker
+Running de.is24.deadcode4j.analyzer.A_LogbackXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_LogbackXmlAnalyzer
+Running de.is24.deadcode4j.A_Repository
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_Repository
+Running de.is24.maven.slf4j.A_LoggerForMavenLog
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.maven.slf4j.A_LoggerForMavenLog
+Running de.is24.deadcode4j.analyzer.A_ServletContainerInitializerAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ServletContainerInitializerAnalyzer
+Running de.is24.deadcode4j.analyzer.A_JerseyWebXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_JerseyWebXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_SimpleXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SimpleXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_CustomSuperClassAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomSuperClassAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ClassDependencyAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ClassDependencyAnalyzer
+Running de.is24.deadcode4j.plugin.A_UsageStatisticsManager
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.A_UsageStatisticsManager
+Running de.is24.deadcode4j.analyzer.A_CustomXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomXmlAnalyzer
+Running de.is24.deadcode4j.plugin.A_ModuleGenerator
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.A_ModuleGenerator
+Running de.is24.deadcode4j.analyzer.A_TldAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_TldAnalyzer
+Running de.is24.deadcode4j.An_IntermediateResultSet
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.An_IntermediateResultSet
+Running de.is24.deadcode4j.analyzer.An_XmlAnalyzer
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Tests run: 8, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 0.324 sec <<< FAILURE! - in de.is24.deadcode4j.analyzer.An_XmlAnalyzer
+handlesIOExceptionWhenAnalyzingFile(de.is24.deadcode4j.analyzer.An_XmlAnalyzer)  Time elapsed: 0.312 sec  <<< ERROR!
+java.lang.IllegalArgumentException: [endOfFileName] must be set!
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer$1.<init>(An_XmlAnalyzer.java:49)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer.createAnalyzer(An_XmlAnalyzer.java:49)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer.createAnalyzer(An_XmlAnalyzer.java:37)
+
+handlesIOExceptionWhenAnalyzingFile(de.is24.deadcode4j.analyzer.An_XmlAnalyzer)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.finishAnalysis(AnAnalyzer.java:55)
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.finishAnalysisIfNecessary(AnAnalyzer.java:62)
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.doFinishAnalysis(AnAnalyzer.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.internal.runners.MethodRoadie.runAfters(MethodRoadie.java:150)
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:102)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:300)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:288)
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87)
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:208)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:121)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:123)
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:121)
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:53)
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.apache.maven.surefire.junitcore.pc.Scheduler$1.run(Scheduler.java:318)
+	at org.apache.maven.surefire.junitcore.pc.InvokerStrategy.schedule(InvokerStrategy.java:41)
+	at org.apache.maven.surefire.junitcore.pc.Scheduler.schedule(Scheduler.java:274)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junitcore.pc.ParallelComputerBuilder$PC$2.run(ParallelComputerBuilder.java:491)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:113)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:85)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:54)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:134)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+handlesSaxExceptionInConstructor(de.is24.deadcode4j.analyzer.An_XmlAnalyzer)  Time elapsed: 0.004 sec  <<< ERROR!
+java.lang.IllegalArgumentException: [endOfFileName] must be set!
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer$1.<init>(An_XmlAnalyzer.java:49)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer.createAnalyzer(An_XmlAnalyzer.java:49)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer.createAnalyzer(An_XmlAnalyzer.java:37)
+
+handlesSaxExceptionInConstructor(de.is24.deadcode4j.analyzer.An_XmlAnalyzer)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.finishAnalysis(AnAnalyzer.java:55)
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.finishAnalysisIfNecessary(AnAnalyzer.java:62)
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.doFinishAnalysis(AnAnalyzer.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.internal.runners.MethodRoadie.runAfters(MethodRoadie.java:150)
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:102)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:300)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:288)
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87)
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:208)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:121)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:123)
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:121)
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:53)
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.apache.maven.surefire.junitcore.pc.Scheduler$1.run(Scheduler.java:318)
+	at org.apache.maven.surefire.junitcore.pc.InvokerStrategy.schedule(InvokerStrategy.java:41)
+	at org.apache.maven.surefire.junitcore.pc.Scheduler.schedule(Scheduler.java:274)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junitcore.pc.ParallelComputerBuilder$PC$2.run(ParallelComputerBuilder.java:491)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:113)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:85)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:54)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:134)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+doesNotParseNonMatchingFile(de.is24.deadcode4j.analyzer.An_XmlAnalyzer)  Time elapsed: 0.004 sec  <<< ERROR!
+java.lang.IllegalArgumentException: [endOfFileName] must be set!
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer$1.<init>(An_XmlAnalyzer.java:49)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer.createAnalyzer(An_XmlAnalyzer.java:49)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer.createAnalyzer(An_XmlAnalyzer.java:37)
+
+doesNotParseNonMatchingFile(de.is24.deadcode4j.analyzer.An_XmlAnalyzer)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.finishAnalysis(AnAnalyzer.java:55)
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.finishAnalysisIfNecessary(AnAnalyzer.java:62)
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.doFinishAnalysis(AnAnalyzer.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.internal.runners.MethodRoadie.runAfters(MethodRoadie.java:150)
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:102)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:300)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:288)
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87)
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:208)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:121)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:123)
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:121)
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:53)
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.apache.maven.surefire.junitcore.pc.Scheduler$1.run(Scheduler.java:318)
+	at org.apache.maven.surefire.junitcore.pc.InvokerStrategy.schedule(InvokerStrategy.java:41)
+	at org.apache.maven.surefire.junitcore.pc.Scheduler.schedule(Scheduler.java:274)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junitcore.pc.ParallelComputerBuilder$PC$2.run(ParallelComputerBuilder.java:491)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:113)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:85)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:54)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:134)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+parsesMatchingFile(de.is24.deadcode4j.analyzer.An_XmlAnalyzer)  Time elapsed: 0.004 sec  <<< ERROR!
+java.lang.IllegalArgumentException: [endOfFileName] must be set!
+	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+	at de.is24.deadcode4j.analyzer.XmlAnalyzer.<init>(XmlAnalyzer.java:43)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer$1.<init>(An_XmlAnalyzer.java:49)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer.createAnalyzer(An_XmlAnalyzer.java:49)
+	at de.is24.deadcode4j.analyzer.An_XmlAnalyzer.createAnalyzer(An_XmlAnalyzer.java:37)
+
+parsesMatchingFile(de.is24.deadcode4j.analyzer.An_XmlAnalyzer)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.finishAnalysis(AnAnalyzer.java:55)
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.finishAnalysisIfNecessary(AnAnalyzer.java:62)
+	at de.is24.deadcode4j.analyzer.AnAnalyzer.doFinishAnalysis(AnAnalyzer.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.internal.runners.MethodRoadie.runAfters(MethodRoadie.java:150)
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:102)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:300)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:288)
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87)
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:208)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:121)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:123)
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:121)
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:53)
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.apache.maven.surefire.junitcore.pc.Scheduler$1.run(Scheduler.java:318)
+	at org.apache.maven.surefire.junitcore.pc.InvokerStrategy.schedule(InvokerStrategy.java:41)
+	at org.apache.maven.surefire.junitcore.pc.Scheduler.schedule(Scheduler.java:274)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junitcore.pc.ParallelComputerBuilder$PC$2.run(ParallelComputerBuilder.java:491)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.createRequestAndRun(JUnitCoreWrapper.java:113)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.executeEager(JUnitCoreWrapper.java:85)
+	at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:54)
+	at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:134)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+Running de.is24.deadcode4j.A_DeadCodeComputer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_DeadCodeComputer
+Running de.is24.deadcode4j.analyzer.javassist.A_CtClasses
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.javassist.A_CtClasses
+Running de.is24.deadcode4j.plugin.A_DeadCodeLogger
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.A_DeadCodeLogger
+Running de.is24.deadcode4j.A_Module
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_Module
+Running de.is24.deadcode4j.analyzer.A_SpringDataCustomRepositoriesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SpringDataCustomRepositoriesAnalyzer
+Running de.is24.deadcode4j.analyzer.A_MainClassAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_MainClassAnalyzer
+Running de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer
+Running de.is24.deadcode4j.analyzer.An_ExtendedXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_ExtendedXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.webxml.A_BaseWebXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.webxml.A_BaseWebXmlAnalyzer
+Running de.is24.deadcode4j.A_Utils
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_Utils
+Running de.is24.javaparser.A_Nodes
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.javaparser.A_Nodes
+Running de.is24.javaparser.An_ImportDeclarations
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.javaparser.An_ImportDeclarations
+Running de.is24.deadcode4j.analyzer.A_WebXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_WebXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_SpringXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SpringXmlAnalyzer
+Running de.is24.deadcode4j.plugin.packaginghandler.A_PackagingHandler
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.packaginghandler.A_PackagingHandler
+Running de.is24.deadcode4j.analyzer.A_SpringNamespaceHandlerAnalyzer
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Testing de.is24.deadcode4j.analyzer.SpringNamespaceHandlerAnalyzer
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Testing de.is24.deadcode4j.analyzer.SpringNamespaceHandlerAnalyzer
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.864 sec - in de.is24.deadcode4j.analyzer.A_SpringNamespaceHandlerAnalyzer
+Running de.is24.maven.slf4j.An_AbstractSlf4jMojo
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.maven.slf4j.An_AbstractSlf4jMojo
+Running de.is24.deadcode4j.An_IntermediateResults
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.An_IntermediateResults
+Running de.is24.guava.A_SequentialLoadingCacheTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.guava.A_SequentialLoadingCacheTest
+Running de.is24.guava.A_NonNullFunctions
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.guava.A_NonNullFunctions
+Running de.is24.deadcode4j.analyzer.A_CustomInterfacesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomInterfacesAnalyzer
+Running de.is24.deadcode4j.analyzer.A_TypeErasureAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_TypeErasureAnalyzer
+Running de.is24.deadcode4j.A_DeadCodeFinder
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_DeadCodeFinder
+Running de.is24.deadcode4j.analyzer.A_JavaFileAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_JavaFileAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ByteCodeAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ByteCodeAnalyzer
+Running de.is24.deadcode4j.analyzer.A_HibernateAnnotationsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_HibernateAnnotationsAnalyzer
+Running de.is24.deadcode4j.An_IntermediateResultMap
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.An_IntermediateResultMap
+Running de.is24.deadcode4j.analyzer.An_InterfacesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_InterfacesAnalyzer
+
+Results :
+
+Tests in error: 
+  An_XmlAnalyzer>AnAnalyzer.initAnalyzer:30->createAnalyzer:37->createAnalyzer:49 » IllegalArgument
+  An_XmlAnalyzer>AnAnalyzer.doFinishAnalysis:42->AnAnalyzer.finishAnalysisIfNecessary:62->AnAnalyzer.finishAnalysis:55 » NullPointer
+  An_XmlAnalyzer>AnAnalyzer.initAnalyzer:30->createAnalyzer:37->createAnalyzer:49 » IllegalArgument
+  An_XmlAnalyzer>AnAnalyzer.doFinishAnalysis:42->AnAnalyzer.finishAnalysisIfNecessary:62->AnAnalyzer.finishAnalysis:55 » NullPointer
+  An_XmlAnalyzer>AnAnalyzer.initAnalyzer:30->createAnalyzer:37->createAnalyzer:49 » IllegalArgument
+  An_XmlAnalyzer>AnAnalyzer.doFinishAnalysis:42->AnAnalyzer.finishAnalysisIfNecessary:62->AnAnalyzer.finishAnalysis:55 » NullPointer
+  An_XmlAnalyzer>AnAnalyzer.initAnalyzer:30->createAnalyzer:37->createAnalyzer:49 » IllegalArgument
+  An_XmlAnalyzer>AnAnalyzer.doFinishAnalysis:42->AnAnalyzer.finishAnalysisIfNecessary:62->AnAnalyzer.finishAnalysis:55 » NullPointer
+
+Tests run: 10, Failures: 0, Errors: 8, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 51.656s
+[INFO] Finished at: Sun Jan 09 02:17:09 UTC 2022
+[INFO] Final Memory: 37M/1963M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.17:test (default-test) on project deadcode4j-maven-plugin: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/travis/build/failed/Scout24/deadcode4j/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+travis_time:end:17d6ed24:start=1641694576597481257,finish=1641694629835021819,duration=53237540562,event=script[0K[31;1mThe command "mvn -o -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B -o clean verify -PenableCoverage,travis" exited with 1.[0m
+travis_fold:start:before_cache[0Ktravis_time:start:0bbd9283[0K$ rm -rf $HOME/.m2/repository/de/is24/mavenplugins/deadcode4j-maven-plugin/
+travis_time:end:0bbd9283:start=1641694629843074240,finish=1641694629849524527,duration=6450287,event=before_cache[0Ktravis_fold:end:before_cache[0Ktravis_fold:start:cache.2[0Kstore build cache
+travis_time:start:184f6d8e[0Ktravis_time:end:184f6d8e:start=1641694629855977268,finish=1641694629861130309,duration=5153041,event=cache[0Ktravis_time:start:08aecce2[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading /[0m
+[31;1mfailed to upload cache[0m
+travis_time:end:08aecce2:start=1641694629867744234,finish=1641694631303211223,duration=1435466989,event=cache[0Ktravis_fold:end:cache.2[0K
+
+Done. Your build exited with 1.

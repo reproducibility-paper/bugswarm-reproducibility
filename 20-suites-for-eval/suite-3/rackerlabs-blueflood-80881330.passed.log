@@ -1,0 +1,1674 @@
+travis_time:start:00aa6ee6[0Ktravis_time:end:00aa6ee6:start=1640511097540795629,finish=1640511097690059214,duration=149263585,event=no_world_writable_dirs[0Ktravis_time:start:0eee1320[0Ktravis_time:end:0eee1320:start=1640511097696638109,finish=1640511097700577445,duration=3939336,event=check_unsupported[0Ktravis_time:start:046abecc[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:046abecc:start=1640511097705474020,finish=1640511097714275676,duration=8801656,event=show_system_info[0Ktravis_time:start:01702e1e[0Ktravis_time:end:01702e1e:start=1640511097720355713,finish=1640511097738262008,duration=17906295,event=rm_riak_source[0Ktravis_time:start:0540af3d[0Ktravis_time:end:0540af3d:start=1640511097744649169,finish=1640511097755994476,duration=11345307,event=fix_rwky_redis[0Ktravis_time:start:02ac7988[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:02ac7988:start=1640511097761055449,finish=1640511118477705597,duration=20716650148,event=wait_for_network[0Ktravis_time:start:094f7ee6[0Ktravis_time:end:094f7ee6:start=1640511118484131115,finish=1640511122771787699,duration=4287656584,event=update_apt_keys[0Ktravis_time:start:15fe7378[0Ktravis_time:end:15fe7378:start=1640511122778156723,finish=1640511122847100131,duration=68943408,event=fix_hhvm_source[0Ktravis_time:start:07b31545[0Ktravis_time:end:07b31545:start=1640511122852068801,finish=1640511122856912819,duration=4844018,event=update_mongo_arch[0Ktravis_time:start:040766f0[0Ktravis_time:end:040766f0:start=1640511122862543813,finish=1640511122910978111,duration=48434298,event=fix_sudo_enabled_trusty[0Ktravis_time:start:011443a8[0Ktravis_time:end:011443a8:start=1640511122917601350,finish=1640511122933872960,duration=16271610,event=clean_up_path[0Ktravis_time:start:223cfb68[0Ktravis_time:end:223cfb68:start=1640511122940357193,finish=1640511122956560162,duration=16202969,event=fix_resolv_conf[0Ktravis_time:start:0c3af6b0[0Ktravis_time:end:0c3af6b0:start=1640511122963310696,finish=1640511122982687280,duration=19376584,event=fix_etc_hosts[0Ktravis_time:start:0a1ee4e3[0Ktravis_time:start:10ff40dc[0Ktravis_time:end:10ff40dc:start=1640511123004926937,finish=1640511123021000201,duration=16073264,event=no_ipv6_localhost[0Ktravis_time:start:09eb3f35[0Ktravis_time:end:09eb3f35:start=1640511123025914730,finish=1640511123070905098,duration=44990368,event=fix_etc_mavenrc[0Ktravis_time:start:1369eaf9[0Ktravis_time:end:1369eaf9:start=1640511123077071270,finish=1640511123083039867,duration=5968597,event=fix_wwdr_certificate[0Ktravis_time:start:1dceef60[0Ktravis_time:end:1dceef60:start=1640511123088355021,finish=1640511123123366930,duration=35011909,event=put_localhost_first[0Ktravis_time:start:0db4018c[0Ktravis_time:end:0db4018c:start=1640511123128681591,finish=1640511123132790988,duration=4109397,event=home_paths[0Ktravis_time:start:34de71f2[0Ktravis_time:end:34de71f2:start=1640511123137720796,finish=1640511123167363543,duration=29642747,event=disable_initramfs[0Ktravis_time:start:1b9e4f70[0Ktravis_time:end:1b9e4f70:start=1640511123173310856,finish=1640511123293362283,duration=120051427,event=disable_ssh_roaming[0Ktravis_time:start:17c8dffa[0Ktravis_time:end:17c8dffa:start=1640511123298126330,finish=1640511123301262626,duration=3136296,event=debug_tools[0Ktravis_time:start:07f5daf1[0Ktravis_time:end:07f5daf1:start=1640511123305802634,finish=1640511123310810574,duration=5007940,event=uninstall_oclint[0Ktravis_time:start:0203ecf5[0Ktravis_time:end:0203ecf5:start=1640511123316552179,finish=1640511123321765994,duration=5213815,event=rvm_use[0Ktravis_time:start:1a17e5e8[0Ktravis_time:end:1a17e5e8:start=1640511123326656007,finish=1640511123339728547,duration=13072540,event=rm_etc_boto_cfg[0Ktravis_time:start:007fc36b[0Ktravis_time:end:007fc36b:start=1640511123344924026,finish=1640511123348413493,duration=3489467,event=rm_oraclejdk8_symlink[0Ktravis_time:start:11fc35a0[0Ktravis_time:end:11fc35a0:start=1640511123353455494,finish=1640511123396368593,duration=42913099,event=enable_i386[0Ktravis_time:start:05ca0f70[0Ktravis_time:end:05ca0f70:start=1640511123401904023,finish=1640511123407828319,duration=5924296,event=update_rubygems[0Ktravis_time:start:0bea0750[0Ktravis_time:end:0bea0750:start=1640511123412772594,finish=1640511123420624104,duration=7851510,event=ensure_path_components[0Ktravis_time:start:03bedbd4[0Ktravis_time:end:03bedbd4:start=1640511123425858427,finish=1640511123429686458,duration=3828031,event=redefine_curl[0Ktravis_time:start:09be5384[0Ktravis_time:end:09be5384:start=1640511123435090307,finish=1640511123438977124,duration=3886817,event=nonblock_pipe[0Ktravis_time:start:0f398768[0Ktravis_time:end:0f398768:start=1640511123444302084,finish=1640511126486679710,duration=3042377626,event=apt_get_update[0Ktravis_time:start:00479a05[0Ktravis_time:end:00479a05:start=1640511126492961267,finish=1640511126497755420,duration=4794153,event=deprecate_xcode_64[0Ktravis_time:start:11301b2c[0Ktravis_time:end:11301b2c:start=1640511126503159387,finish=1640511126510020081,duration=6860694,event=update_heroku[0Ktravis_time:start:034e340a[0Ktravis_time:end:034e340a:start=1640511126515629718,finish=1640511126519688932,duration=4059214,event=shell_session_update[0Ktravis_time:start:345faea8[0Ktravis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0Ktravis_time:end:345faea8:start=1640511126525327870,finish=1640511126558969674,duration=33641804,event=set_docker_mtu[0Ktravis_time:start:1abd7618[0Ktravis_time:end:1abd7618:start=1640511126564687177,finish=1640511126580311987,duration=15624810,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk7[0m
+$ jdk_switcher use "oraclejdk7"
+Switching to Oracle JDK7 (java-7-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-7-oracle
+travis_fold:end:install_jdk[0Ktravis_time:start:217528c7[0Ktravis_time:end:217528c7:start=1640511126600061999,finish=1640511126604151727,duration=4089728,event=fix_ps4[0Ktravis_time:start:018ca69a[0K
+$ cd passed/rackerlabs/blueflood
+
+travis_time:end:018ca69a:start=1640511126609407524,finish=1640511126626748458,duration=17340934,event=checkout[0Ktravis_time:start:2b874658[0Ktravis_time:end:2b874658:start=1640511126634001851,finish=1640511126814222786,duration=180220935,event=env[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:0810205e[0K$ Installing caching utilities
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 2 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 3 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed 3 times.[0m
+
+travis_time:end:0810205e:start=1640511127625045971,finish=1640511130708256636,duration=3083210665,event=setup_casher[0Ktravis_time:start:03bee8e8[0K$ Installing caching utilities from the Travis CI server (https:///files/casher) failed, failing over to using GitHub (https://raw.githubusercontent.com/travis-ci/casher/bash/bin/casher)
+travis_time:end:03bee8e8:start=1640511130715798334,finish=1640511130775748651,duration=59950317,event=setup_casher[0Ktravis_time:start:0ec14a71[0Ktravis_time:end:0ec14a71:start=1640511130786157605,finish=1640511130792207404,duration=6049799,event=setup_casher[0Ktravis_time:start:38031564[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+attempting to download cache archive[0m
+[31;1mcould not download cache[0m
+travis_time:end:38031564:start=1640511130798619447,finish=1640511132202644690,duration=1404025243,event=setup_casher[0Ktravis_time:start:014903c7[0Ktravis_time:end:014903c7:start=1640511132209723600,finish=1640511132215302489,duration=5578889,event=setup_casher[0Ktravis_time:start:08d67ce8[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+adding /home/travis/.m2 to cache[0m
+travis_time:end:08d67ce8:start=1640511132222908947,finish=1640511134328312729,duration=2105403782,event=setup_casher[0Ktravis_fold:end:cache.1[0K
+$ java -Xmx32m -version
+java version "1.7.0_76"
+Java(TM) SE Runtime Environment (build 1.7.0_76-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 24.76-b04, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.7.0_76
+travis_fold:start:install[0Ktravis_time:start:07d3f93c[0K$ mvn -o install dependency:resolve -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dmaven.test.skip -Dmaven.javadoc.skip -Dcassandra.skip
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Blueflood
+[INFO] Blueflood Core Engine
+[INFO] Blueflood UDP Ingestion
+[INFO] Blueflood Elasticsearch Indexer and Discovery
+[INFO] Blueflood HTTP Ingestion and Querying
+[INFO] Blueflood Rollup Kafka Producer
+[INFO] Blueflood Rollup Cloudfiles Exporter
+[INFO] Blueflood IO Bindings for Datastax Java Driver
+[INFO] Blueflood Out-of-band Rollup Tools
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ blueflood ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (prepare-agent) @ blueflood ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/target/jacoco.exec
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:reserve-network-port (reserve-network-port) @ blueflood ---
+[INFO] Reserved port 34521 for cassandra.rpcPort
+[INFO] Reserved port 39579 for cassandra.jmxPort
+[INFO] Reserved port 37549 for cassandra.storagePort
+[INFO] Reserved port 43415 for cassandra.stopPort
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ blueflood ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ blueflood ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:test-jar (default) @ blueflood ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent-integration (prepare-it-agent) @ blueflood ---
+[INFO] jacoco.agent.it.argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/target/jacoco-it.exec
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:delete (delete-cassandra) @ blueflood ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:start (default) @ blueflood ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:stop (default) @ blueflood ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ blueflood ---
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/pom.xml to /home/travis/.m2/repository/com/rackspacecloud/blueflood/2.0.0-SNAPSHOT/blueflood-2.0.0-SNAPSHOT.pom
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:resolve (default-cli) @ blueflood ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    none
+[INFO] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Core Engine 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ blueflood-core ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (prepare-agent) @ blueflood-core ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-core/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ blueflood-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ blueflood-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:add-test-source (add-integration-test-sources) @ blueflood-core ---
+[INFO] Test Source directory: /home/travis/build/passed/rackerlabs/blueflood/blueflood-core/src/integration-test/java added.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ blueflood-core ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:reserve-network-port (reserve-network-port) @ blueflood-core ---
+[INFO] Reserved port 40567 for cassandra.rpcPort
+[INFO] Reserved port 36959 for cassandra.jmxPort
+[INFO] Reserved port 39433 for cassandra.storagePort
+[INFO] Reserved port 38805 for cassandra.stopPort
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ blueflood-core ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.14.1:test (default-test) @ blueflood-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ blueflood-core ---
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ blueflood-core ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ blueflood-core ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:test-jar (default) @ blueflood-core ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent-integration (prepare-it-agent) @ blueflood-core ---
+[INFO] jacoco.agent.it.argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-core/target/jacoco-it.exec
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:delete (delete-cassandra) @ blueflood-core ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:start (default) @ blueflood-core ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.15:integration-test (integration-tests) @ blueflood-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:stop (default) @ blueflood-core ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.15:verify (verify) @ blueflood-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ blueflood-core ---
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-core/target/blueflood-core-2.0.0-SNAPSHOT.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-core/2.0.0-SNAPSHOT/blueflood-core-2.0.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-core/pom.xml to /home/travis/.m2/repository/com/rackspacecloud/blueflood-core/2.0.0-SNAPSHOT/blueflood-core-2.0.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-core/target/blueflood-core-2.0.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-core/2.0.0-SNAPSHOT/blueflood-core-2.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:resolve (default-cli) @ blueflood-core ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    org.clojure:clojure:jar:1.5.1:compile
+[INFO]    org.mortbay.jetty:servlet-api:jar:2.5-20081211:compile
+[INFO]    com.google.protobuf:protobuf-java:jar:2.5.0:compile
+[INFO]    com.codahale.metrics:metrics-core:jar:3.0.1:compile
+[INFO]    org.antlr:antlr-runtime:jar:3.2:compile
+[INFO]    org.hamcrest:hamcrest-core:jar:1.1:compile
+[INFO]    bigml:histogram:jar:3.2.1:compile
+[INFO]    stax:stax-api:jar:1.0.1:compile
+[INFO]    com.googlecode.json-simple:json-simple:jar:1.1:compile
+[INFO]    com.yammer.metrics:metrics-core:jar:2.1.2:compile
+[INFO]    commons-logging:commons-logging:jar:1.1.1:compile
+[INFO]    com.codahale.metrics:metrics-log4j:jar:3.0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-core:jar:1.56.34:compile
+[INFO]    org.apache.zookeeper:zookeeper:jar:3.4.5:compile
+[INFO]    org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-csv:jar:1.0-r706900_3:compile
+[INFO]    org.apache.cassandra:cassandra-all:jar:1.2.2:compile
+[INFO]    org.apache.thrift:libthrift:jar:0.7.0:compile
+[INFO]    org.mortbay.jetty:jetty-util:jar:6.1.22:compile
+[INFO]    joda-time:joda-time:jar:1.6.2:compile
+[INFO]    org.apache.cassandra:cassandra-thrift:jar:1.2.2:compile
+[INFO]    junit:junit:jar:4.10:compile
+[INFO]    org.codehaus.jettison:jettison:jar:1.2:compile
+[INFO]    org.mindrot:jbcrypt:jar:0.3m:compile
+[INFO]    org.apache.httpcomponents:httpclient:jar:4.0.1:compile
+[INFO]    com.google.code.gson:gson:jar:2.2:compile
+[INFO]    com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.3:compile
+[INFO]    antlr:antlr:jar:2.7.7:compile
+[INFO]    org.apache.curator:curator-client:jar:2.3.0:compile
+[INFO]    org.codehaus.jackson:jackson-core-asl:jar:1.9.2:compile
+[INFO]    commons-cli:commons-cli:jar:1.2:compile
+[INFO]    org.apache.curator:curator-framework:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-jvm:jar:3.0.1:compile
+[INFO]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2:compile
+[INFO]    commons-codec:commons-codec:jar:1.5:compile
+[INFO]    com.ning:compress-lzf:jar:0.8.4:compile
+[INFO]    com.github.stephenc.high-scale-lib:high-scale-lib:jar:1.1.2:compile
+[INFO]    log4j:log4j:jar:1.2.16:compile
+[INFO]    org.apache.cassandra.deps:avro:jar:1.4.0-cassandra-1:compile
+[INFO]    org.slf4j:slf4j-log4j12:jar:1.7.6:compile
+[INFO]    com.netflix.astyanax:astyanax-recipes:jar:1.56.34:compile
+[INFO]    org.slf4j:slf4j-api:jar:1.6.4:compile
+[INFO]    org.antlr:antlr:jar:3.2:compile
+[INFO]    commons-lang:commons-lang:jar:2.4:compile
+[INFO]    org.jboss.netty:netty:jar:3.2.4.Final:compile
+[INFO]    javax.servlet:servlet-api:jar:2.5:compile
+[INFO]    org.apache.curator:curator-recipes:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-graphite:jar:3.0.1:compile
+[INFO]    io.netty:netty:jar:3.6.1.Final:compile
+[INFO]    com.netflix.astyanax:astyanax-thrift:jar:1.56.34:compile
+[INFO]    org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+[INFO]    jline:jline:jar:1.0:compile
+[INFO]    org.antlr:stringtemplate:jar:3.2:compile
+[INFO]    edu.stanford.ppl:snaptree:jar:0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-cassandra:jar:1.56.34:compile
+[INFO]    net.jpountz.lz4:lz4:jar:1.1.0:compile
+[INFO]    com.aphyr:riemann-java-client:jar:0.2.9:compile
+[INFO]    com.github.stephenc:jamm:jar:0.2.5:compile
+[INFO]    com.google.guava:guava:jar:15.0:compile
+[INFO]    org.mortbay.jetty:jetty:jar:6.1.22:compile
+[INFO]    org.xerial.snappy:snappy-java:jar:1.0.4.1:compile
+[INFO]    org.mockito:mockito-all:jar:1.8.5:compile
+[INFO]    org.yaml:snakeyaml:jar:1.6:compile
+[INFO]    com.eaio.uuid:uuid:jar:3.2:compile
+[INFO] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood UDP Ingestion 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ blueflood-udp ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (prepare-agent) @ blueflood-udp ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-udp/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ blueflood-udp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/rackerlabs/blueflood/blueflood-udp/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ blueflood-udp ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ blueflood-udp ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:reserve-network-port (reserve-network-port) @ blueflood-udp ---
+[INFO] Reserved port 32807 for cassandra.rpcPort
+[INFO] Reserved port 34571 for cassandra.jmxPort
+[INFO] Reserved port 44849 for cassandra.storagePort
+[INFO] Reserved port 43537 for cassandra.stopPort
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ blueflood-udp ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ blueflood-udp ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ blueflood-udp ---
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ blueflood-udp ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ blueflood-udp ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:test-jar (default) @ blueflood-udp ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent-integration (prepare-it-agent) @ blueflood-udp ---
+[INFO] jacoco.agent.it.argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-udp/target/jacoco-it.exec
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:delete (delete-cassandra) @ blueflood-udp ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:start (default) @ blueflood-udp ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:stop (default) @ blueflood-udp ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ blueflood-udp ---
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-udp/target/blueflood-udp-2.0.0-SNAPSHOT.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-udp/2.0.0-SNAPSHOT/blueflood-udp-2.0.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-udp/pom.xml to /home/travis/.m2/repository/com/rackspacecloud/blueflood-udp/2.0.0-SNAPSHOT/blueflood-udp-2.0.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-udp/target/blueflood-udp-2.0.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-udp/2.0.0-SNAPSHOT/blueflood-udp-2.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:resolve (default-cli) @ blueflood-udp ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    org.clojure:clojure:jar:1.5.1:compile
+[INFO]    org.mortbay.jetty:servlet-api:jar:2.5-20081211:compile
+[INFO]    com.google.protobuf:protobuf-java:jar:2.5.0:compile
+[INFO]    com.codahale.metrics:metrics-core:jar:3.0.1:compile
+[INFO]    org.antlr:antlr-runtime:jar:3.2:compile
+[INFO]    org.hamcrest:hamcrest-core:jar:1.1:compile
+[INFO]    com.rackspacecloud:blueflood-core:jar:2.0.0-SNAPSHOT:compile
+[INFO]    bigml:histogram:jar:3.2.1:compile
+[INFO]    stax:stax-api:jar:1.0.1:compile
+[INFO]    com.googlecode.json-simple:json-simple:jar:1.1:compile
+[INFO]    com.yammer.metrics:metrics-core:jar:2.1.2:compile
+[INFO]    commons-logging:commons-logging:jar:1.1.1:compile
+[INFO]    com.codahale.metrics:metrics-log4j:jar:3.0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-core:jar:1.56.34:compile
+[INFO]    org.apache.zookeeper:zookeeper:jar:3.4.5:compile
+[INFO]    org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-csv:jar:1.0-r706900_3:compile
+[INFO]    org.apache.cassandra:cassandra-all:jar:1.2.2:compile
+[INFO]    org.apache.thrift:libthrift:jar:0.7.0:compile
+[INFO]    org.mortbay.jetty:jetty-util:jar:6.1.22:compile
+[INFO]    joda-time:joda-time:jar:1.6.2:compile
+[INFO]    org.apache.cassandra:cassandra-thrift:jar:1.2.2:compile
+[INFO]    junit:junit:jar:4.10:compile
+[INFO]    org.codehaus.jettison:jettison:jar:1.2:compile
+[INFO]    org.mindrot:jbcrypt:jar:0.3m:compile
+[INFO]    org.apache.httpcomponents:httpclient:jar:4.0.1:compile
+[INFO]    com.google.code.gson:gson:jar:2.2:compile
+[INFO]    com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.3:compile
+[INFO]    antlr:antlr:jar:2.7.7:compile
+[INFO]    org.apache.curator:curator-client:jar:2.3.0:compile
+[INFO]    org.codehaus.jackson:jackson-core-asl:jar:1.9.2:compile
+[INFO]    commons-cli:commons-cli:jar:1.2:compile
+[INFO]    org.apache.curator:curator-framework:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-jvm:jar:3.0.1:compile
+[INFO]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2:compile
+[INFO]    io.netty:netty-all:jar:4.0.8.Final:compile
+[INFO]    commons-codec:commons-codec:jar:1.5:compile
+[INFO]    com.ning:compress-lzf:jar:0.8.4:compile
+[INFO]    com.github.stephenc.high-scale-lib:high-scale-lib:jar:1.1.2:compile
+[INFO]    log4j:log4j:jar:1.2.16:compile
+[INFO]    org.apache.cassandra.deps:avro:jar:1.4.0-cassandra-1:compile
+[INFO]    org.slf4j:slf4j-log4j12:jar:1.7.6:compile
+[INFO]    com.netflix.astyanax:astyanax-recipes:jar:1.56.34:compile
+[INFO]    org.slf4j:slf4j-api:jar:1.6.4:compile
+[INFO]    org.antlr:antlr:jar:3.2:compile
+[INFO]    commons-lang:commons-lang:jar:2.4:compile
+[INFO]    org.jboss.netty:netty:jar:3.2.4.Final:compile
+[INFO]    javax.servlet:servlet-api:jar:2.5:compile
+[INFO]    org.apache.curator:curator-recipes:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-graphite:jar:3.0.1:compile
+[INFO]    io.netty:netty:jar:3.6.1.Final:compile
+[INFO]    com.netflix.astyanax:astyanax-thrift:jar:1.56.34:compile
+[INFO]    org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+[INFO]    jline:jline:jar:1.0:compile
+[INFO]    org.antlr:stringtemplate:jar:3.2:compile
+[INFO]    edu.stanford.ppl:snaptree:jar:0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-cassandra:jar:1.56.34:compile
+[INFO]    net.jpountz.lz4:lz4:jar:1.1.0:compile
+[INFO]    com.aphyr:riemann-java-client:jar:0.2.9:compile
+[INFO]    com.github.stephenc:jamm:jar:0.2.5:compile
+[INFO]    com.google.guava:guava:jar:15.0:compile
+[INFO]    org.mortbay.jetty:jetty:jar:6.1.22:compile
+[INFO]    org.xerial.snappy:snappy-java:jar:1.0.4.1:compile
+[INFO]    org.mockito:mockito-all:jar:1.8.5:compile
+[INFO]    org.yaml:snakeyaml:jar:1.6:compile
+[INFO]    com.eaio.uuid:uuid:jar:3.2:compile
+[INFO] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Elasticsearch Indexer and Discovery 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ blueflood-elasticsearch ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (prepare-agent) @ blueflood-elasticsearch ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-elasticsearch/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ blueflood-elasticsearch ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ blueflood-elasticsearch ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ blueflood-elasticsearch ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:reserve-network-port (reserve-network-port) @ blueflood-elasticsearch ---
+[INFO] Reserved port 39593 for cassandra.rpcPort
+[INFO] Reserved port 43617 for cassandra.jmxPort
+[INFO] Reserved port 39397 for cassandra.storagePort
+[INFO] Reserved port 38375 for cassandra.stopPort
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ blueflood-elasticsearch ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ blueflood-elasticsearch ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ blueflood-elasticsearch ---
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ blueflood-elasticsearch ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ blueflood-elasticsearch ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:test-jar (default) @ blueflood-elasticsearch ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent-integration (prepare-it-agent) @ blueflood-elasticsearch ---
+[INFO] jacoco.agent.it.argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-elasticsearch/target/jacoco-it.exec
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:delete (delete-cassandra) @ blueflood-elasticsearch ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:start (default) @ blueflood-elasticsearch ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:stop (default) @ blueflood-elasticsearch ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ blueflood-elasticsearch ---
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-elasticsearch/target/blueflood-elasticsearch-2.0.0-SNAPSHOT.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-elasticsearch/2.0.0-SNAPSHOT/blueflood-elasticsearch-2.0.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-elasticsearch/pom.xml to /home/travis/.m2/repository/com/rackspacecloud/blueflood-elasticsearch/2.0.0-SNAPSHOT/blueflood-elasticsearch-2.0.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-elasticsearch/target/blueflood-elasticsearch-2.0.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-elasticsearch/2.0.0-SNAPSHOT/blueflood-elasticsearch-2.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:resolve (default-cli) @ blueflood-elasticsearch ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    org.clojure:clojure:jar:1.5.1:compile
+[INFO]    org.mortbay.jetty:servlet-api:jar:2.5-20081211:compile
+[INFO]    org.apache.lucene:lucene-queryparser:jar:4.10.4:compile
+[INFO]    com.google.protobuf:protobuf-java:jar:2.5.0:compile
+[INFO]    com.codahale.metrics:metrics-core:jar:3.0.1:compile
+[INFO]    org.hamcrest:hamcrest-core:jar:1.1:test
+[INFO]    com.rackspacecloud:blueflood-core:jar:2.0.0-SNAPSHOT:compile
+[INFO]    bigml:histogram:jar:3.2.1:compile
+[INFO]    stax:stax-api:jar:1.0.1:compile
+[INFO]    org.yaml:snakeyaml:jar:1.12:compile
+[INFO]    org.apache.lucene:lucene-highlighter:jar:4.10.4:compile
+[INFO]    org.apache.lucene:lucene-queries:jar:4.10.4:compile
+[INFO]    com.googlecode.json-simple:json-simple:jar:1.1:compile
+[INFO]    com.yammer.metrics:metrics-core:jar:2.1.2:compile
+[INFO]    commons-logging:commons-logging:jar:1.1.1:compile
+[INFO]    org.elasticsearch:elasticsearch:jar:1.7.1:compile
+[INFO]    com.codahale.metrics:metrics-log4j:jar:3.0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-core:jar:1.56.34:compile
+[INFO]    org.apache.zookeeper:zookeeper:jar:3.4.5:compile
+[INFO]    org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-csv:jar:1.0-r706900_3:compile
+[INFO]    org.apache.lucene:lucene-join:jar:4.10.4:compile
+[INFO]    org.apache.cassandra:cassandra-all:jar:1.2.2:compile
+[INFO]    org.apache.lucene:lucene-memory:jar:4.10.4:compile
+[INFO]    org.apache.thrift:libthrift:jar:0.7.0:compile
+[INFO]    org.apache.lucene:lucene-analyzers-common:jar:4.10.4:compile
+[INFO]    org.mortbay.jetty:jetty-util:jar:6.1.22:compile
+[INFO]    joda-time:joda-time:jar:1.6.2:compile
+[INFO]    org.apache.cassandra:cassandra-thrift:jar:1.2.2:compile
+[INFO]    junit:junit:jar:4.10:test
+[INFO]    org.codehaus.jettison:jettison:jar:1.2:compile
+[INFO]    org.mindrot:jbcrypt:jar:0.3m:compile
+[INFO]    org.apache.httpcomponents:httpclient:jar:4.0.1:compile
+[INFO]    com.google.code.gson:gson:jar:2.2:compile
+[INFO]    org.apache.lucene:lucene-sandbox:jar:4.10.4:compile
+[INFO]    com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.3:compile
+[INFO]    org.apache.curator:curator-client:jar:2.3.0:compile
+[INFO]    org.apache.lucene:lucene-spatial:jar:4.10.4:compile
+[INFO]    org.codehaus.jackson:jackson-core-asl:jar:1.9.2:compile
+[INFO]    commons-cli:commons-cli:jar:1.2:compile
+[INFO]    org.apache.curator:curator-framework:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-jvm:jar:3.0.1:compile
+[INFO]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2:compile
+[INFO]    org.ow2.asm:asm-commons:jar:4.1:compile
+[INFO]    commons-codec:commons-codec:jar:1.5:compile
+[INFO]    org.slf4j:slf4j-api:jar:1.7.5:compile
+[INFO]    com.ning:compress-lzf:jar:0.8.4:compile
+[INFO]    com.github.stephenc.high-scale-lib:high-scale-lib:jar:1.1.2:compile
+[INFO]    com.spatial4j:spatial4j:jar:0.4.1:compile
+[INFO]    log4j:log4j:jar:1.2.16:compile
+[INFO]    org.apache.cassandra.deps:avro:jar:1.4.0-cassandra-1:compile
+[INFO]    org.slf4j:slf4j-log4j12:jar:1.7.6:compile
+[INFO]    com.netflix.astyanax:astyanax-recipes:jar:1.56.34:compile
+[INFO]    org.apache.lucene:lucene-suggest:jar:4.10.4:compile
+[INFO]    org.antlr:antlr:jar:3.2:compile
+[INFO]    commons-lang:commons-lang:jar:2.4:compile
+[INFO]    org.jboss.netty:netty:jar:3.2.4.Final:compile
+[INFO]    javax.servlet:servlet-api:jar:2.5:compile
+[INFO]    org.apache.curator:curator-recipes:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-graphite:jar:3.0.1:compile
+[INFO]    org.ow2.asm:asm:jar:4.1:compile
+[INFO]    io.netty:netty:jar:3.6.1.Final:compile
+[INFO]    com.netflix.astyanax:astyanax-thrift:jar:1.56.34:compile
+[INFO]    org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+[INFO]    jline:jline:jar:1.0:compile
+[INFO]    org.apache.lucene:lucene-core:jar:4.10.4:compile
+[INFO]    edu.stanford.ppl:snaptree:jar:0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-cassandra:jar:1.56.34:compile
+[INFO]    net.jpountz.lz4:lz4:jar:1.1.0:compile
+[INFO]    com.aphyr:riemann-java-client:jar:0.2.9:compile
+[INFO]    com.github.stephenc:jamm:jar:0.2.5:compile
+[INFO]    com.google.guava:guava:jar:15.0:compile
+[INFO]    com.github.tlrx:elasticsearch-test:jar:1.2.1:test
+[INFO]    org.mortbay.jetty:jetty:jar:6.1.22:compile
+[INFO]    org.apache.lucene:lucene-misc:jar:4.10.4:compile
+[INFO]    org.xerial.snappy:snappy-java:jar:1.0.4.1:compile
+[INFO]    org.antlr:antlr-runtime:jar:3.5:compile
+[INFO]    org.mockito:mockito-all:jar:1.8.5:compile
+[INFO]    org.apache.lucene:lucene-grouping:jar:4.10.4:compile
+[INFO]    com.eaio.uuid:uuid:jar:3.2:compile
+[INFO] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood HTTP Ingestion and Querying 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ blueflood-http ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (prepare-agent) @ blueflood-http ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-http/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ blueflood-http ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/rackerlabs/blueflood/blueflood-http/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ blueflood-http ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:add-test-source (add-integration-test-sources) @ blueflood-http ---
+[INFO] Test Source directory: /home/travis/build/passed/rackerlabs/blueflood/blueflood-http/src/integration-test/java added.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ blueflood-http ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:reserve-network-port (reserve-network-port) @ blueflood-http ---
+[INFO] Reserved port 41055 for cassandra.rpcPort
+[INFO] Reserved port 33545 for cassandra.jmxPort
+[INFO] Reserved port 35359 for cassandra.storagePort
+[INFO] Reserved port 33767 for cassandra.stopPort
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ blueflood-http ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.14.1:test (default-test) @ blueflood-http ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ blueflood-http ---
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ blueflood-http ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ blueflood-http ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:test-jar (default) @ blueflood-http ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent-integration (prepare-it-agent) @ blueflood-http ---
+[INFO] jacoco.agent.it.argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-http/target/jacoco-it.exec
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:delete (delete-cassandra) @ blueflood-http ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:start (default) @ blueflood-http ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.15:integration-test (integration-tests) @ blueflood-http ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:stop (default) @ blueflood-http ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.15:verify (verify) @ blueflood-http ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ blueflood-http ---
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-http/target/blueflood-http-2.0.0-SNAPSHOT.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-http/2.0.0-SNAPSHOT/blueflood-http-2.0.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-http/pom.xml to /home/travis/.m2/repository/com/rackspacecloud/blueflood-http/2.0.0-SNAPSHOT/blueflood-http-2.0.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-http/target/blueflood-http-2.0.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-http/2.0.0-SNAPSHOT/blueflood-http-2.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:resolve (default-cli) @ blueflood-http ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    org.mortbay.jetty:servlet-api:jar:2.5-20081211:compile
+[INFO]    org.clojure:clojure:jar:1.5.1:compile
+[INFO]    org.apache.lucene:lucene-queryparser:jar:4.10.4:compile
+[INFO]    com.google.protobuf:protobuf-java:jar:2.5.0:compile
+[INFO]    com.codahale.metrics:metrics-core:jar:3.0.1:compile
+[INFO]    org.apache.httpcomponents:httpclient:jar:4.3.3:compile
+[INFO]    org.hamcrest:hamcrest-core:jar:1.1:test
+[INFO]    com.rackspacecloud:blueflood-core:jar:2.0.0-SNAPSHOT:compile
+[INFO]    stax:stax-api:jar:1.0.1:compile
+[INFO]    bigml:histogram:jar:3.2.1:compile
+[INFO]    org.yaml:snakeyaml:jar:1.12:compile
+[INFO]    org.apache.lucene:lucene-highlighter:jar:4.10.4:compile
+[INFO]    org.apache.lucene:lucene-queries:jar:4.10.4:compile
+[INFO]    com.yammer.metrics:metrics-core:jar:2.1.2:compile
+[INFO]    com.googlecode.json-simple:json-simple:jar:1.1:compile
+[INFO]    org.mockito:mockito-all:jar:1.8.4:test
+[INFO]    org.elasticsearch:elasticsearch:jar:1.7.1:compile
+[INFO]    com.codahale.metrics:metrics-log4j:jar:3.0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-core:jar:1.56.34:compile
+[INFO]    org.apache.zookeeper:zookeeper:jar:3.4.5:compile
+[INFO]    org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-csv:jar:1.0-r706900_3:compile
+[INFO]    org.apache.lucene:lucene-join:jar:4.10.4:compile
+[INFO]    org.apache.cassandra:cassandra-all:jar:1.2.2:compile
+[INFO]    org.apache.lucene:lucene-memory:jar:4.10.4:compile
+[INFO]    org.apache.thrift:libthrift:jar:0.7.0:compile
+[INFO]    org.apache.lucene:lucene-analyzers-common:jar:4.10.4:compile
+[INFO]    org.mortbay.jetty:jetty-util:jar:6.1.22:compile
+[INFO]    joda-time:joda-time:jar:1.6.2:compile
+[INFO]    org.slf4j:slf4j-api:jar:1.7.6:compile
+[INFO]    org.apache.cassandra:cassandra-thrift:jar:1.2.2:compile
+[INFO]    junit:junit:jar:4.10:test
+[INFO]    org.codehaus.jettison:jettison:jar:1.2:compile
+[INFO]    org.mindrot:jbcrypt:jar:0.3m:compile
+[INFO]    com.google.code.gson:gson:jar:2.2:compile
+[INFO]    commons-logging:commons-logging:jar:1.1.3:compile
+[INFO]    org.apache.lucene:lucene-sandbox:jar:4.10.4:compile
+[INFO]    com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.3:compile
+[INFO]    org.apache.curator:curator-client:jar:2.3.0:compile
+[INFO]    org.apache.lucene:lucene-spatial:jar:4.10.4:compile
+[INFO]    org.codehaus.jackson:jackson-core-asl:jar:1.9.2:compile
+[INFO]    commons-cli:commons-cli:jar:1.2:compile
+[INFO]    org.apache.curator:curator-framework:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-jvm:jar:3.0.1:compile
+[INFO]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2:compile
+[INFO]    io.netty:netty-all:jar:4.0.8.Final:compile
+[INFO]    org.ow2.asm:asm-commons:jar:4.1:compile
+[INFO]    com.ning:compress-lzf:jar:0.8.4:compile
+[INFO]    com.github.stephenc.high-scale-lib:high-scale-lib:jar:1.1.2:compile
+[INFO]    log4j:log4j:jar:1.2.16:compile
+[INFO]    com.spatial4j:spatial4j:jar:0.4.1:compile
+[INFO]    org.apache.cassandra.deps:avro:jar:1.4.0-cassandra-1:compile
+[INFO]    org.slf4j:slf4j-log4j12:jar:1.7.6:compile
+[INFO]    com.netflix.astyanax:astyanax-recipes:jar:1.56.34:compile
+[INFO]    org.apache.httpcomponents:httpcore:jar:4.3.2:compile
+[INFO]    org.apache.lucene:lucene-suggest:jar:4.10.4:compile
+[INFO]    org.antlr:antlr:jar:3.2:compile
+[INFO]    commons-lang:commons-lang:jar:2.4:compile
+[INFO]    org.jboss.netty:netty:jar:3.2.4.Final:compile
+[INFO]    javax.servlet:servlet-api:jar:2.5:compile
+[INFO]    org.apache.curator:curator-recipes:jar:2.3.0:compile
+[INFO]    com.rackspacecloud:blueflood-elasticsearch:jar:2.0.0-SNAPSHOT:compile
+[INFO]    com.codahale.metrics:metrics-graphite:jar:3.0.1:compile
+[INFO]    org.ow2.asm:asm:jar:4.1:compile
+[INFO]    io.netty:netty:jar:3.6.1.Final:compile
+[INFO]    com.netflix.astyanax:astyanax-thrift:jar:1.56.34:compile
+[INFO]    jline:jline:jar:1.0:compile
+[INFO]    org.apache.lucene:lucene-core:jar:4.10.4:compile
+[INFO]    edu.stanford.ppl:snaptree:jar:0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-cassandra:jar:1.56.34:compile
+[INFO]    net.jpountz.lz4:lz4:jar:1.1.0:compile
+[INFO]    com.aphyr:riemann-java-client:jar:0.2.9:compile
+[INFO]    com.github.stephenc:jamm:jar:0.2.5:compile
+[INFO]    com.google.guava:guava:jar:15.0:compile
+[INFO]    com.github.tlrx:elasticsearch-test:jar:1.2.1:test
+[INFO]    org.mortbay.jetty:jetty:jar:6.1.22:compile
+[INFO]    org.apache.lucene:lucene-misc:jar:4.10.4:compile
+[INFO]    org.xerial.snappy:snappy-java:jar:1.0.4.1:compile
+[INFO]    org.antlr:antlr-runtime:jar:3.5:compile
+[INFO]    org.apache.lucene:lucene-grouping:jar:4.10.4:compile
+[INFO]    commons-codec:commons-codec:jar:1.6:compile
+[INFO]    com.eaio.uuid:uuid:jar:3.2:compile
+[INFO] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Rollup Kafka Producer 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ blueflood-kafka ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (prepare-agent) @ blueflood-kafka ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-kafka/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ blueflood-kafka ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/rackerlabs/blueflood/blueflood-kafka/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ blueflood-kafka ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ blueflood-kafka ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:reserve-network-port (reserve-network-port) @ blueflood-kafka ---
+[INFO] Reserved port 37677 for cassandra.rpcPort
+[INFO] Reserved port 34405 for cassandra.jmxPort
+[INFO] Reserved port 42677 for cassandra.storagePort
+[INFO] Reserved port 36737 for cassandra.stopPort
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ blueflood-kafka ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.14.1:test (default-test) @ blueflood-kafka ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ blueflood-kafka ---
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ blueflood-kafka ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ blueflood-kafka ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:test-jar (default) @ blueflood-kafka ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent-integration (prepare-it-agent) @ blueflood-kafka ---
+[INFO] jacoco.agent.it.argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-kafka/target/jacoco-it.exec
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:delete (delete-cassandra) @ blueflood-kafka ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:start (default) @ blueflood-kafka ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:stop (default) @ blueflood-kafka ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ blueflood-kafka ---
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-kafka/target/blueflood-kafka-2.0.0-SNAPSHOT.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-kafka/2.0.0-SNAPSHOT/blueflood-kafka-2.0.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-kafka/pom.xml to /home/travis/.m2/repository/com/rackspacecloud/blueflood-kafka/2.0.0-SNAPSHOT/blueflood-kafka-2.0.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-kafka/target/blueflood-kafka-2.0.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-kafka/2.0.0-SNAPSHOT/blueflood-kafka-2.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:resolve (default-cli) @ blueflood-kafka ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    org.clojure:clojure:jar:1.5.1:compile
+[INFO]    org.mortbay.jetty:servlet-api:jar:2.5-20081211:compile
+[INFO]    com.google.protobuf:protobuf-java:jar:2.5.0:compile
+[INFO]    org.antlr:antlr-runtime:jar:3.2:compile
+[INFO]    com.codahale.metrics:metrics-core:jar:3.0.1:compile
+[INFO]    org.apache.zookeeper:zookeeper:jar:3.3.4:compile
+[INFO]    org.hamcrest:hamcrest-core:jar:1.1:compile
+[INFO]    com.rackspacecloud:blueflood-core:jar:2.0.0-SNAPSHOT:compile
+[INFO]    net.sf.jopt-simple:jopt-simple:jar:3.2:compile
+[INFO]    bigml:histogram:jar:3.2.1:compile
+[INFO]    stax:stax-api:jar:1.0.1:compile
+[INFO]    org.scala-lang:scala-reflect:jar:2.10.1:compile
+[INFO]    com.googlecode.json-simple:json-simple:jar:1.1:compile
+[INFO]    commons-logging:commons-logging:jar:1.1.1:compile
+[INFO]    com.codahale.metrics:metrics-log4j:jar:3.0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-core:jar:1.56.34:compile
+[INFO]    org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-csv:jar:1.0-r706900_3:compile
+[INFO]    org.apache.cassandra:cassandra-all:jar:1.2.2:compile
+[INFO]    jline:jline:jar:0.9.94:compile
+[INFO]    org.apache.thrift:libthrift:jar:0.7.0:compile
+[INFO]    org.mortbay.jetty:jetty-util:jar:6.1.22:compile
+[INFO]    org.apache.kafka:kafka_2.10:jar:0.8.0:compile
+[INFO]    joda-time:joda-time:jar:1.6.2:compile
+[INFO]    org.apache.cassandra:cassandra-thrift:jar:1.2.2:compile
+[INFO]    junit:junit:jar:4.10:compile
+[INFO]    org.slf4j:slf4j-api:jar:1.7.2:compile
+[INFO]    org.codehaus.jettison:jettison:jar:1.2:compile
+[INFO]    com.yammer.metrics:metrics-annotation:jar:2.2.0:compile
+[INFO]    org.mindrot:jbcrypt:jar:0.3m:compile
+[INFO]    org.apache.httpcomponents:httpclient:jar:4.0.1:compile
+[INFO]    com.google.code.gson:gson:jar:2.2:compile
+[INFO]    com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.3:compile
+[INFO]    antlr:antlr:jar:2.7.7:compile
+[INFO]    org.apache.curator:curator-client:jar:2.3.0:compile
+[INFO]    com.yammer.metrics:metrics-core:jar:2.2.0:compile
+[INFO]    org.scala-lang:scala-compiler:jar:2.10.1:compile
+[INFO]    org.codehaus.jackson:jackson-core-asl:jar:1.9.2:compile
+[INFO]    commons-cli:commons-cli:jar:1.2:compile
+[INFO]    org.apache.curator:curator-framework:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-jvm:jar:3.0.1:compile
+[INFO]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2:compile
+[INFO]    commons-codec:commons-codec:jar:1.5:compile
+[INFO]    com.ning:compress-lzf:jar:0.8.4:compile
+[INFO]    com.github.stephenc.high-scale-lib:high-scale-lib:jar:1.1.2:compile
+[INFO]    log4j:log4j:jar:1.2.16:compile
+[INFO]    org.apache.cassandra.deps:avro:jar:1.4.0-cassandra-1:compile
+[INFO]    org.slf4j:slf4j-log4j12:jar:1.7.6:compile
+[INFO]    com.netflix.astyanax:astyanax-recipes:jar:1.56.34:compile
+[INFO]    org.antlr:antlr:jar:3.2:compile
+[INFO]    commons-lang:commons-lang:jar:2.4:compile
+[INFO]    org.jboss.netty:netty:jar:3.2.4.Final:compile
+[INFO]    javax.servlet:servlet-api:jar:2.5:compile
+[INFO]    org.apache.curator:curator-recipes:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-graphite:jar:3.0.1:compile
+[INFO]    io.netty:netty:jar:3.6.1.Final:compile
+[INFO]    com.netflix.astyanax:astyanax-thrift:jar:1.56.34:compile
+[INFO]    com.101tec:zkclient:jar:0.3:compile
+[INFO]    org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+[INFO]    org.antlr:stringtemplate:jar:3.2:compile
+[INFO]    edu.stanford.ppl:snaptree:jar:0.1:compile
+[INFO]    org.scala-lang:scala-library:jar:2.10.1:compile
+[INFO]    com.netflix.astyanax:astyanax-cassandra:jar:1.56.34:compile
+[INFO]    com.yammer.metrics:metrics-graphite:jar:2.2.0:compile
+[INFO]    net.jpountz.lz4:lz4:jar:1.1.0:compile
+[INFO]    com.aphyr:riemann-java-client:jar:0.2.9:compile
+[INFO]    com.github.stephenc:jamm:jar:0.2.5:compile
+[INFO]    com.google.guava:guava:jar:15.0:compile
+[INFO]    org.mortbay.jetty:jetty:jar:6.1.22:compile
+[INFO]    org.xerial.snappy:snappy-java:jar:1.0.4.1:compile
+[INFO]    org.mockito:mockito-all:jar:1.8.5:compile
+[INFO]    org.yaml:snakeyaml:jar:1.6:compile
+[INFO]    com.eaio.uuid:uuid:jar:3.2:compile
+[INFO] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Rollup Cloudfiles Exporter 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ blueflood-cloudfiles ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (prepare-agent) @ blueflood-cloudfiles ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-cloudfiles/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ blueflood-cloudfiles ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/rackerlabs/blueflood/blueflood-cloudfiles/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ blueflood-cloudfiles ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ blueflood-cloudfiles ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:reserve-network-port (reserve-network-port) @ blueflood-cloudfiles ---
+[INFO] Reserved port 42461 for cassandra.rpcPort
+[INFO] Reserved port 46837 for cassandra.jmxPort
+[INFO] Reserved port 46233 for cassandra.storagePort
+[INFO] Reserved port 36125 for cassandra.stopPort
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ blueflood-cloudfiles ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.14.1:test (default-test) @ blueflood-cloudfiles ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ blueflood-cloudfiles ---
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ blueflood-cloudfiles ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ blueflood-cloudfiles ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:test-jar (default) @ blueflood-cloudfiles ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent-integration (prepare-it-agent) @ blueflood-cloudfiles ---
+[INFO] jacoco.agent.it.argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-cloudfiles/target/jacoco-it.exec
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:delete (delete-cassandra) @ blueflood-cloudfiles ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:start (default) @ blueflood-cloudfiles ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:stop (default) @ blueflood-cloudfiles ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ blueflood-cloudfiles ---
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-cloudfiles/target/blueflood-cloudfiles-2.0.0-SNAPSHOT.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-cloudfiles/2.0.0-SNAPSHOT/blueflood-cloudfiles-2.0.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-cloudfiles/pom.xml to /home/travis/.m2/repository/com/rackspacecloud/blueflood-cloudfiles/2.0.0-SNAPSHOT/blueflood-cloudfiles-2.0.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-cloudfiles/target/blueflood-cloudfiles-2.0.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-cloudfiles/2.0.0-SNAPSHOT/blueflood-cloudfiles-2.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:resolve (default-cli) @ blueflood-cloudfiles ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    org.clojure:clojure:jar:1.5.1:compile
+[INFO]    org.mortbay.jetty:servlet-api:jar:2.5-20081211:compile
+[INFO]    com.google.protobuf:protobuf-java:jar:2.5.0:compile
+[INFO]    com.codahale.metrics:metrics-core:jar:3.0.1:compile
+[INFO]    org.antlr:antlr-runtime:jar:3.2:compile
+[INFO]    org.hamcrest:hamcrest-core:jar:1.1:compile
+[INFO]    com.google.inject:guice:jar:3.0:compile
+[INFO]    com.rackspacecloud:blueflood-core:jar:2.0.0-SNAPSHOT:compile
+[INFO]    bigml:histogram:jar:3.2.1:compile
+[INFO]    stax:stax-api:jar:1.0.1:compile
+[INFO]    com.googlecode.json-simple:json-simple:jar:1.1:compile
+[INFO]    com.yammer.metrics:metrics-core:jar:2.1.2:compile
+[INFO]    commons-logging:commons-logging:jar:1.1.1:compile
+[INFO]    com.codahale.metrics:metrics-log4j:jar:3.0.1:compile
+[INFO]    org.apache.jclouds.common:openstack-common:jar:1.7.0:compile
+[INFO]    com.netflix.astyanax:astyanax-core:jar:1.56.34:compile
+[INFO]    org.apache.jclouds.api:cloudfiles:jar:1.7.0:compile
+[INFO]    org.apache.jclouds.api:swift:jar:1.7.0:compile
+[INFO]    org.apache.zookeeper:zookeeper:jar:3.4.5:compile
+[INFO]    org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-csv:jar:1.0-r706900_3:compile
+[INFO]    org.apache.cassandra:cassandra-all:jar:1.2.2:compile
+[INFO]    org.apache.thrift:libthrift:jar:0.7.0:compile
+[INFO]    org.mortbay.jetty:jetty-util:jar:6.1.22:compile
+[INFO]    joda-time:joda-time:jar:1.6.2:compile
+[INFO]    org.apache.jclouds.api:openstack-keystone:jar:1.7.0:compile
+[INFO]    org.apache.cassandra:cassandra-thrift:jar:1.2.2:compile
+[INFO]    junit:junit:jar:4.10:compile
+[INFO]    org.codehaus.jettison:jettison:jar:1.2:compile
+[INFO]    org.mindrot:jbcrypt:jar:0.3m:compile
+[INFO]    org.apache.httpcomponents:httpclient:jar:4.0.1:compile
+[INFO]    com.google.code.gson:gson:jar:2.2:compile
+[INFO]    com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.3:compile
+[INFO]    org.99soft.guice:rocoto:jar:6.2:compile
+[INFO]    antlr:antlr:jar:2.7.7:compile
+[INFO]    aopalliance:aopalliance:jar:1.0:compile
+[INFO]    org.apache.curator:curator-client:jar:2.3.0:compile
+[INFO]    javax.ws.rs:jsr311-api:jar:1.1.1:compile
+[INFO]    org.codehaus.jackson:jackson-core-asl:jar:1.9.2:compile
+[INFO]    commons-cli:commons-cli:jar:1.2:compile
+[INFO]    org.apache.jclouds:jclouds-blobstore:jar:1.7.0:compile
+[INFO]    org.apache.curator:curator-framework:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-jvm:jar:3.0.1:compile
+[INFO]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2:compile
+[INFO]    commons-codec:commons-codec:jar:1.5:compile
+[INFO]    com.ning:compress-lzf:jar:0.8.4:compile
+[INFO]    com.github.stephenc.high-scale-lib:high-scale-lib:jar:1.1.2:compile
+[INFO]    log4j:log4j:jar:1.2.16:compile
+[INFO]    javax.annotation:jsr250-api:jar:1.0:compile
+[INFO]    org.apache.cassandra.deps:avro:jar:1.4.0-cassandra-1:compile
+[INFO]    org.slf4j:slf4j-log4j12:jar:1.7.6:compile
+[INFO]    com.netflix.astyanax:astyanax-recipes:jar:1.56.34:compile
+[INFO]    org.slf4j:slf4j-api:jar:1.6.4:compile
+[INFO]    org.antlr:antlr:jar:3.2:compile
+[INFO]    commons-lang:commons-lang:jar:2.4:compile
+[INFO]    org.jboss.netty:netty:jar:3.2.4.Final:compile
+[INFO]    javax.servlet:servlet-api:jar:2.5:compile
+[INFO]    org.apache.curator:curator-recipes:jar:2.3.0:compile
+[INFO]    org.apache.jclouds.provider:cloudfiles-us:jar:1.7.0:compile
+[INFO]    com.codahale.metrics:metrics-graphite:jar:3.0.1:compile
+[INFO]    io.netty:netty:jar:3.6.1.Final:compile
+[INFO]    com.netflix.astyanax:astyanax-thrift:jar:1.56.34:compile
+[INFO]    org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+[INFO]    jline:jline:jar:1.0:compile
+[INFO]    org.antlr:stringtemplate:jar:3.2:compile
+[INFO]    edu.stanford.ppl:snaptree:jar:0.1:compile
+[INFO]    javax.inject:javax.inject:jar:1:compile
+[INFO]    com.netflix.astyanax:astyanax-cassandra:jar:1.56.34:compile
+[INFO]    net.jpountz.lz4:lz4:jar:1.1.0:compile
+[INFO]    com.aphyr:riemann-java-client:jar:0.2.9:compile
+[INFO]    com.github.stephenc:jamm:jar:0.2.5:compile
+[INFO]    com.google.guava:guava:jar:15.0:compile
+[INFO]    org.mortbay.jetty:jetty:jar:6.1.22:compile
+[INFO]    org.apache.jclouds:jclouds-core:jar:1.7.0:compile
+[INFO]    org.xerial.snappy:snappy-java:jar:1.0.4.1:compile
+[INFO]    org.mockito:mockito-all:jar:1.8.5:compile
+[INFO]    com.google.inject.extensions:guice-assistedinject:jar:3.0:compile
+[INFO]    org.yaml:snakeyaml:jar:1.6:compile
+[INFO]    com.eaio.uuid:uuid:jar:3.2:compile
+[INFO] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood IO Bindings for Datastax Java Driver 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ blueflood-io-datastax ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (prepare-agent) @ blueflood-io-datastax ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-io-datastax/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ blueflood-io-datastax ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/rackerlabs/blueflood/blueflood-io-datastax/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ blueflood-io-datastax ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ blueflood-io-datastax ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:reserve-network-port (reserve-network-port) @ blueflood-io-datastax ---
+[INFO] Reserved port 39763 for cassandra.rpcPort
+[INFO] Reserved port 38311 for cassandra.jmxPort
+[INFO] Reserved port 42411 for cassandra.storagePort
+[INFO] Reserved port 43701 for cassandra.stopPort
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ blueflood-io-datastax ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ blueflood-io-datastax ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ blueflood-io-datastax ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ blueflood-io-datastax ---
+[INFO] No sources in project. Archive not created.
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ blueflood-io-datastax ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:test-jar (default) @ blueflood-io-datastax ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent-integration (prepare-it-agent) @ blueflood-io-datastax ---
+[INFO] jacoco.agent.it.argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-io-datastax/target/jacoco-it.exec
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:delete (delete-cassandra) @ blueflood-io-datastax ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:start (default) @ blueflood-io-datastax ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:stop (default) @ blueflood-io-datastax ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ blueflood-io-datastax ---
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-io-datastax/target/blueflood-io-datastax-2.0.0-SNAPSHOT.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-io-datastax/2.0.0-SNAPSHOT/blueflood-io-datastax-2.0.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-io-datastax/pom.xml to /home/travis/.m2/repository/com/rackspacecloud/blueflood-io-datastax/2.0.0-SNAPSHOT/blueflood-io-datastax-2.0.0-SNAPSHOT.pom
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:resolve (default-cli) @ blueflood-io-datastax ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    org.clojure:clojure:jar:1.5.1:compile
+[INFO]    org.mortbay.jetty:servlet-api:jar:2.5-20081211:compile
+[INFO]    com.google.protobuf:protobuf-java:jar:2.5.0:compile
+[INFO]    com.codahale.metrics:metrics-core:jar:3.0.1:compile
+[INFO]    org.antlr:antlr-runtime:jar:3.2:compile
+[INFO]    org.hamcrest:hamcrest-core:jar:1.1:compile
+[INFO]    com.rackspacecloud:blueflood-core:jar:2.0.0-SNAPSHOT:compile
+[INFO]    bigml:histogram:jar:3.2.1:compile
+[INFO]    stax:stax-api:jar:1.0.1:compile
+[INFO]    com.googlecode.json-simple:json-simple:jar:1.1:compile
+[INFO]    com.yammer.metrics:metrics-core:jar:2.1.2:compile
+[INFO]    commons-logging:commons-logging:jar:1.1.1:compile
+[INFO]    com.codahale.metrics:metrics-log4j:jar:3.0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-core:jar:1.56.34:compile
+[INFO]    org.apache.zookeeper:zookeeper:jar:3.4.5:compile
+[INFO]    org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-csv:jar:1.0-r706900_3:compile
+[INFO]    org.apache.cassandra:cassandra-all:jar:1.2.2:compile
+[INFO]    org.apache.thrift:libthrift:jar:0.7.0:compile
+[INFO]    org.mortbay.jetty:jetty-util:jar:6.1.22:compile
+[INFO]    joda-time:joda-time:jar:1.6.2:compile
+[INFO]    org.apache.cassandra:cassandra-thrift:jar:1.2.2:compile
+[INFO]    junit:junit:jar:4.10:compile
+[INFO]    org.codehaus.jettison:jettison:jar:1.2:compile
+[INFO]    org.mindrot:jbcrypt:jar:0.3m:compile
+[INFO]    org.apache.httpcomponents:httpclient:jar:4.0.1:compile
+[INFO]    com.google.code.gson:gson:jar:2.2:compile
+[INFO]    com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.3:compile
+[INFO]    antlr:antlr:jar:2.7.7:compile
+[INFO]    org.apache.curator:curator-client:jar:2.3.0:compile
+[INFO]    org.codehaus.jackson:jackson-core-asl:jar:1.9.2:compile
+[INFO]    commons-cli:commons-cli:jar:1.2:compile
+[INFO]    org.apache.curator:curator-framework:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-jvm:jar:3.0.1:compile
+[INFO]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2:compile
+[INFO]    commons-codec:commons-codec:jar:1.5:compile
+[INFO]    com.ning:compress-lzf:jar:0.8.4:compile
+[INFO]    com.github.stephenc.high-scale-lib:high-scale-lib:jar:1.1.2:compile
+[INFO]    log4j:log4j:jar:1.2.16:compile
+[INFO]    org.apache.cassandra.deps:avro:jar:1.4.0-cassandra-1:compile
+[INFO]    org.slf4j:slf4j-log4j12:jar:1.7.6:compile
+[INFO]    com.netflix.astyanax:astyanax-recipes:jar:1.56.34:compile
+[INFO]    org.slf4j:slf4j-api:jar:1.6.4:compile
+[INFO]    org.antlr:antlr:jar:3.2:compile
+[INFO]    commons-lang:commons-lang:jar:2.4:compile
+[INFO]    org.jboss.netty:netty:jar:3.2.4.Final:compile
+[INFO]    javax.servlet:servlet-api:jar:2.5:compile
+[INFO]    org.apache.curator:curator-recipes:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-graphite:jar:3.0.1:compile
+[INFO]    io.netty:netty:jar:3.6.1.Final:compile
+[INFO]    com.netflix.astyanax:astyanax-thrift:jar:1.56.34:compile
+[INFO]    org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+[INFO]    jline:jline:jar:1.0:compile
+[INFO]    org.antlr:stringtemplate:jar:3.2:compile
+[INFO]    edu.stanford.ppl:snaptree:jar:0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-cassandra:jar:1.56.34:compile
+[INFO]    net.jpountz.lz4:lz4:jar:1.1.0:compile
+[INFO]    com.aphyr:riemann-java-client:jar:0.2.9:compile
+[INFO]    com.github.stephenc:jamm:jar:0.2.5:compile
+[INFO]    com.google.guava:guava:jar:15.0:compile
+[INFO]    org.mortbay.jetty:jetty:jar:6.1.22:compile
+[INFO]    org.xerial.snappy:snappy-java:jar:1.0.4.1:compile
+[INFO]    org.mockito:mockito-all:jar:1.8.5:compile
+[INFO]    org.yaml:snakeyaml:jar:1.6:compile
+[INFO]    com.eaio.uuid:uuid:jar:3.2:compile
+[INFO] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Out-of-band Rollup Tools 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ blueflood-rollupTools ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent (prepare-agent) @ blueflood-rollupTools ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-rollupTools/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ blueflood-rollupTools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/rackerlabs/blueflood/blueflood-rollupTools/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ blueflood-rollupTools ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ blueflood-rollupTools ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.8:reserve-network-port (reserve-network-port) @ blueflood-rollupTools ---
+[INFO] Reserved port 34253 for cassandra.rpcPort
+[INFO] Reserved port 44835 for cassandra.jmxPort
+[INFO] Reserved port 41983 for cassandra.storagePort
+[INFO] Reserved port 36585 for cassandra.stopPort
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ blueflood-rollupTools ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.14.1:test (default-test) @ blueflood-rollupTools ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ blueflood-rollupTools ---
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ blueflood-rollupTools ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ blueflood-rollupTools ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:test-jar (default) @ blueflood-rollupTools ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:prepare-agent-integration (prepare-it-agent) @ blueflood-rollupTools ---
+[INFO] jacoco.agent.it.argLine set to -javaagent:/home/travis/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/travis/build/passed/rackerlabs/blueflood/blueflood-rollupTools/target/jacoco-it.exec
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:delete (delete-cassandra) @ blueflood-rollupTools ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:start (default) @ blueflood-rollupTools ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- cassandra-maven-plugin:2.0.0-1:stop (default) @ blueflood-rollupTools ---
+[INFO] Skipping cassandra: cassandra.skip==true
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ blueflood-rollupTools ---
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-rollupTools/target/blueflood-rollupTools-2.0.0-SNAPSHOT.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-rollupTools/2.0.0-SNAPSHOT/blueflood-rollupTools-2.0.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-rollupTools/pom.xml to /home/travis/.m2/repository/com/rackspacecloud/blueflood-rollupTools/2.0.0-SNAPSHOT/blueflood-rollupTools-2.0.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/rackerlabs/blueflood/blueflood-rollupTools/target/blueflood-rollupTools-2.0.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/com/rackspacecloud/blueflood-rollupTools/2.0.0-SNAPSHOT/blueflood-rollupTools-2.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:resolve (default-cli) @ blueflood-rollupTools ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    org.clojure:clojure:jar:1.5.1:compile
+[INFO]    org.mortbay.jetty:servlet-api:jar:2.5-20081211:compile
+[INFO]    com.google.protobuf:protobuf-java:jar:2.5.0:compile
+[INFO]    com.codahale.metrics:metrics-core:jar:3.0.1:compile
+[INFO]    org.antlr:antlr-runtime:jar:3.2:compile
+[INFO]    org.hamcrest:hamcrest-core:jar:1.1:compile
+[INFO]    com.google.inject:guice:jar:3.0:compile
+[INFO]    com.rackspacecloud:blueflood-core:jar:2.0.0-SNAPSHOT:compile
+[INFO]    bigml:histogram:jar:3.2.1:compile
+[INFO]    stax:stax-api:jar:1.0.1:compile
+[INFO]    com.googlecode.json-simple:json-simple:jar:1.1:compile
+[INFO]    com.yammer.metrics:metrics-core:jar:2.1.2:compile
+[INFO]    commons-logging:commons-logging:jar:1.1.1:compile
+[INFO]    com.codahale.metrics:metrics-log4j:jar:3.0.1:compile
+[INFO]    com.netflix.astyanax:astyanax-core:jar:1.56.34:compile
+[INFO]    org.apache.zookeeper:zookeeper:jar:3.4.5:compile
+[INFO]    org.jclouds.api:cloudfiles:jar:1.6.0:compile
+[INFO]    org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-csv:jar:1.0-r706900_3:compile
+[INFO]    org.apache.cassandra:cassandra-all:jar:1.2.2:compile
+[INFO]    org.apache.thrift:libthrift:jar:0.7.0:compile
+[INFO]    org.mortbay.jetty:jetty-util:jar:6.1.22:compile
+[INFO]    joda-time:joda-time:jar:1.6.2:compile
+[INFO]    org.apache.cassandra:cassandra-thrift:jar:1.2.2:compile
+[INFO]    junit:junit:jar:4.10:compile
+[INFO]    org.codehaus.jettison:jettison:jar:1.2:compile
+[INFO]    org.mindrot:jbcrypt:jar:0.3m:compile
+[INFO]    org.tukaani:xz:jar:1.4:compile
+[INFO]    org.apache.httpcomponents:httpclient:jar:4.0.1:compile
+[INFO]    com.google.code.gson:gson:jar:2.2:compile
+[INFO]    com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.3:compile
+[INFO]    org.99soft.guice:rocoto:jar:6.2:compile
+[INFO]    antlr:antlr:jar:2.7.7:compile
+[INFO]    aopalliance:aopalliance:jar:1.0:compile
+[INFO]    org.apache.curator:curator-client:jar:2.3.0:compile
+[INFO]    javax.ws.rs:jsr311-api:jar:1.1.1:compile
+[INFO]    org.codehaus.jackson:jackson-core-asl:jar:1.9.2:compile
+[INFO]    commons-cli:commons-cli:jar:1.2:compile
+[INFO]    org.apache.curator:curator-framework:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-jvm:jar:3.0.1:compile
+[INFO]    com.google.guava:guava:jar:12.0.1:compile
+[INFO]    org.codehaus.jackson:jackson-mapper-asl:jar:1.9.2:compile
+[INFO]    org.jclouds.api:openstack-keystone:jar:1.6.0:compile
+[INFO]    commons-codec:commons-codec:jar:1.5:compile
+[INFO]    com.google.code.findbugs:jsr305:jar:1.3.9:compile
+[INFO]    com.ning:compress-lzf:jar:0.8.4:compile
+[INFO]    com.github.stephenc.high-scale-lib:high-scale-lib:jar:1.1.2:compile
+[INFO]    log4j:log4j:jar:1.2.16:compile
+[INFO]    javax.annotation:jsr250-api:jar:1.0:compile
+[INFO]    org.apache.cassandra.deps:avro:jar:1.4.0-cassandra-1:compile
+[INFO]    org.slf4j:slf4j-log4j12:jar:1.7.6:compile
+[INFO]    com.netflix.astyanax:astyanax-recipes:jar:1.56.34:compile
+[INFO]    org.jclouds.api:swift:jar:1.6.0:compile
+[INFO]    org.slf4j:slf4j-api:jar:1.6.4:compile
+[INFO]    org.antlr:antlr:jar:3.2:compile
+[INFO]    commons-lang:commons-lang:jar:2.4:compile
+[INFO]    org.jboss.netty:netty:jar:3.2.4.Final:compile
+[INFO]    javax.servlet:servlet-api:jar:2.5:compile
+[INFO]    org.apache.curator:curator-recipes:jar:2.3.0:compile
+[INFO]    com.codahale.metrics:metrics-graphite:jar:3.0.1:compile
+[INFO]    io.netty:netty:jar:3.6.1.Final:compile
+[INFO]    org.jclouds.provider:cloudfiles-us:jar:1.6.0:compile
+[INFO]    com.netflix.astyanax:astyanax-thrift:jar:1.56.34:compile
+[INFO]    org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+[INFO]    jline:jline:jar:1.0:compile
+[INFO]    org.antlr:stringtemplate:jar:3.2:compile
+[INFO]    edu.stanford.ppl:snaptree:jar:0.1:compile
+[INFO]    javax.inject:javax.inject:jar:1:compile
+[INFO]    com.netflix.astyanax:astyanax-cassandra:jar:1.56.34:compile
+[INFO]    net.jpountz.lz4:lz4:jar:1.1.0:compile
+[INFO]    com.aphyr:riemann-java-client:jar:0.2.9:compile
+[INFO]    org.jclouds.common:openstack-common:jar:1.6.0:compile
+[INFO]    com.github.stephenc:jamm:jar:0.2.5:compile
+[INFO]    org.mortbay.jetty:jetty:jar:6.1.22:compile
+[INFO]    org.jclouds:jclouds-core:jar:1.6.0:compile
+[INFO]    org.xerial.snappy:snappy-java:jar:1.0.4.1:compile
+[INFO]    org.jclouds:jclouds-blobstore:jar:1.6.0:compile
+[INFO]    org.mockito:mockito-all:jar:1.8.5:compile
+[INFO]    org.apache.commons:commons-compress:jar:1.7:compile
+[INFO]    com.google.inject.extensions:guice-assistedinject:jar:3.0:compile
+[INFO]    org.yaml:snakeyaml:jar:1.6:compile
+[INFO]    com.eaio.uuid:uuid:jar:3.2:compile
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Blueflood .......................................... SUCCESS [  2.415 s]
+[INFO] Blueflood Core Engine .............................. SUCCESS [  1.847 s]
+[INFO] Blueflood UDP Ingestion ............................ SUCCESS [  0.613 s]
+[INFO] Blueflood Elasticsearch Indexer and Discovery ...... SUCCESS [  0.522 s]
+[INFO] Blueflood HTTP Ingestion and Querying .............. SUCCESS [  1.209 s]
+[INFO] Blueflood Rollup Kafka Producer .................... SUCCESS [  0.286 s]
+[INFO] Blueflood Rollup Cloudfiles Exporter ............... SUCCESS [  0.255 s]
+[INFO] Blueflood IO Bindings for Datastax Java Driver ..... SUCCESS [  0.228 s]
+[INFO] Blueflood Out-of-band Rollup Tools ................. SUCCESS [  0.337 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 8.784 s
+[INFO] Finished at: 2021-12-26T09:32:24+00:00
+[INFO] Final Memory: 30M/491M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:07d3f93c:start=1640511134538286207,finish=1640511145145834190,duration=10607547983,event=install[0Ktravis_fold:end:install[0Ktravis_time:start:12571a5a[0K$ mvn verify -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Pcassandra-2.0 -Dmaven.javadoc.skip --quiet
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+parallel='classes', perCoreThreadCount=true, threadCount=5, useUnlimitedThreads=false
+Running com.rackspacecloud.blueflood.types.StatsTypeTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 sec
+Running com.rackspacecloud.blueflood.service.ScheduleContextTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.816 sec
+Running com.rackspacecloud.blueflood.io.serializers.SlotStateSerializerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.433 sec
+Running com.rackspacecloud.blueflood.inputs.processors.TypeAndUnitProcessorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.198 sec
+Running com.rackspacecloud.blueflood.types.BluefloodSetRollupTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.864 sec
+Running com.rackspacecloud.blueflood.types.BluefloodCounterRollupTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.38 sec
+Running com.rackspacecloud.blueflood.types.BluefloodTimerRollupTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.219 sec
+Running com.rackspacecloud.blueflood.concurrent.ConcurrentStructuresTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.158 sec
+Running com.rackspacecloud.blueflood.io.serializers.SerializationTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.687 sec
+Running com.rackspacecloud.blueflood.types.SimpleNumberTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
+Running com.rackspacecloud.blueflood.types.MetricTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.79 sec
+Running com.rackspacecloud.blueflood.inputs.processors.DiscoveryWriterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.569 sec
+Running com.rackspacecloud.blueflood.types.EventTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.rackspacecloud.blueflood.service.SlotStateTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.367 sec
+Running com.rackspacecloud.blueflood.io.serializers.CassandraModelTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.893 sec
+Running com.rackspacecloud.blueflood.io.serializers.HistogramSerializationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.644 sec
+Running com.rackspacecloud.blueflood.service.ConfigurationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.828 sec
+Running com.rackspacecloud.blueflood.types.HistogramRollupTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running com.rackspacecloud.blueflood.types.BluefloodGaugeRollupTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.863 sec
+Running com.rackspacecloud.blueflood.io.serializers.TimerSerializationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.048 sec
+Running com.rackspacecloud.blueflood.concurrent.ThreadPoolBuilderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.059 sec
+Running com.rackspacecloud.blueflood.inputs.processors.IncomingMetricMetadataAnalyzerTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.176 sec
+Running com.rackspacecloud.blueflood.types.VarianceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.141 sec
+Running com.rackspacecloud.blueflood.io.serializers.CounterRollupSerializationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.855 sec
+Running com.rackspacecloud.blueflood.outputs.serializers.RollupEventSerializerTest
+log4j:WARN No appenders could be found for logger (com.rackspacecloud.blueflood.outputs.serializers.helpers.RollupSerializationHelper).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.553 sec
+Running com.rackspacecloud.blueflood.rollup.UtilTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.685 sec
+Running com.rackspacecloud.blueflood.service.ShardStateWorkerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.462 sec
+Running com.rackspacecloud.blueflood.types.AverageTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec
+Running com.rackspacecloud.blueflood.eventemitter.RollupEventEmitterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.196 sec
+Running com.rackspacecloud.blueflood.cache.ConfigTtlProviderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.867 sec
+Running com.rackspacecloud.blueflood.io.serializers.IMetricSerializerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.879 sec
+Running com.rackspacecloud.blueflood.service.AtomicCountingSetTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.913 sec
+Running com.rackspacecloud.blueflood.types.MaxValueTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Running com.rackspacecloud.blueflood.io.serializers.StringMetadataSerializerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.463 sec
+Running com.rackspacecloud.blueflood.inputs.processors.BatchWriterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.264 sec
+Running com.rackspacecloud.blueflood.service.RollupExecutionContextTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec
+Running com.rackspacecloud.blueflood.rollup.GranularityTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.112 sec
+Running com.rackspacecloud.blueflood.inputs.processors.RollupTypeCacherTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.211 sec
+Running com.rackspacecloud.blueflood.types.MinValueTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running com.rackspacecloud.blueflood.rollup.SlotTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.229 sec
+Running com.rackspacecloud.blueflood.rollup.RangeTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 sec
+Running com.rackspacecloud.blueflood.rollup.SlotKeyTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.343 sec
+
+Results :
+
+Tests run: 167, Failures: 0, Errors: 0, Skipped: 0
+
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.rackspacecloud.blueflood.cache.MetadataCacheBatchedModeIntegrationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.361 sec - in com.rackspacecloud.blueflood.cache.MetadataCacheBatchedModeIntegrationTest
+Running com.rackspacecloud.blueflood.cache.MetadataCacheIntegrationTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 97.244 sec - in com.rackspacecloud.blueflood.cache.MetadataCacheIntegrationTest
+Running com.rackspacecloud.blueflood.io.AstyanaxMetadataIOIntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.205 sec - in com.rackspacecloud.blueflood.io.AstyanaxMetadataIOIntegrationTest
+Running com.rackspacecloud.blueflood.io.AstyanaxReaderIntegrationTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.12 sec - in com.rackspacecloud.blueflood.io.AstyanaxReaderIntegrationTest
+Running com.rackspacecloud.blueflood.io.AstyanaxWriterIntegrationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.666 sec - in com.rackspacecloud.blueflood.io.AstyanaxWriterIntegrationTest
+Running com.rackspacecloud.blueflood.outputs.RollupHandlerIntegrationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.5 sec - in com.rackspacecloud.blueflood.outputs.RollupHandlerIntegrationTest
+Running com.rackspacecloud.blueflood.service.MetricsIntegrationTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.861 sec - in com.rackspacecloud.blueflood.service.MetricsIntegrationTest
+Running com.rackspacecloud.blueflood.service.PreaggregatedMetricsIntegrationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.868 sec - in com.rackspacecloud.blueflood.service.PreaggregatedMetricsIntegrationTest
+Running com.rackspacecloud.blueflood.service.RollupRunnableIntegrationTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.035 sec - in com.rackspacecloud.blueflood.service.RollupRunnableIntegrationTest
+Running com.rackspacecloud.blueflood.service.RollupThreadpoolIntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.788 sec - in com.rackspacecloud.blueflood.service.RollupThreadpoolIntegrationTest
+Running com.rackspacecloud.blueflood.service.ShardStateIntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 sec - in com.rackspacecloud.blueflood.service.ShardStateIntegrationTest
+Running com.rackspacecloud.blueflood.tools.RollupToolIntegrationTest
+Calculating rollups for metrics_5m. Reading from: metrics_full. Writing to: metrics_5m
+Rolled up 289 ranges of metrics_5m
+
+Calculating rollups for metrics_20m. Reading from: metrics_5m. Writing to: metrics_20m
+Rolled up 73 ranges of metrics_20m
+
+Calculating rollups for metrics_60m. Reading from: metrics_20m. Writing to: metrics_60m
+Rolled up 25 ranges of metrics_60m
+
+Calculating rollups for metrics_240m. Reading from: metrics_60m. Writing to: metrics_240m
+Rolled up 7 ranges of metrics_240m
+
+Calculating rollups for metrics_1440m. Reading from: metrics_240m. Writing to: metrics_1440m
+Rolled up 2 ranges of metrics_1440m
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.137 sec - in com.rackspacecloud.blueflood.tools.RollupToolIntegrationTest
+
+Results :
+
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 1
+
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.rackspacecloud.blueflood.io.EventElasticSearchIOTest
+log4j:WARN No appenders could be found for logger (org.elasticsearch.node).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.03 sec
+Running com.rackspacecloud.blueflood.service.ElasticIOTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.751 sec
+
+Results :
+
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0
+
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+parallel='classes', perCoreThreadCount=true, threadCount=5, useUnlimitedThreads=false
+Running com.rackspacecloud.blueflood.outputs.serializers.BatchedMetricsJSONOutputSerializerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.144 sec
+Running com.rackspacecloud.blueflood.outputs.handlers.HttpEventsQueryHandlerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec
+Running com.rackspacecloud.blueflood.inputs.handlers.TestIndexHandler
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.239 sec
+Running com.rackspacecloud.blueflood.outputs.serializers.JSONBasicRollupOutputSerializerTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.183 sec
+Running com.rackspacecloud.blueflood.utils.PlotRequestParserTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.16 sec
+Running com.rackspacecloud.blueflood.outputs.serializers.JSONHistogramOutputSerializerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec
+Running com.rackspacecloud.blueflood.inputs.handlers.HttpAnnotationsEndToEndTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.573 sec
+Running com.rackspacecloud.blueflood.inputs.formats.JSONMetricsContainerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.273 sec
+Running com.rackspacecloud.blueflood.http.RouteMatcherTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.301 sec
+Running com.rackspacecloud.blueflood.tracker.TrackerTest
+SLF4J: The following set of substitute loggers may have been accessed
+SLF4J: during the initialization phase. Logging calls during this
+SLF4J: phase were not honored. However, subsequent logging calls to these
+SLF4J: loggers will work as normally expected.
+SLF4J: See also http://www.slf4j.org/codes.html#substituteLogger
+SLF4J: com.rackspacecloud.blueflood.service.ScheduleContext
+SLF4J: com.rackspacecloud.blueflood.utils.ModuleLoader
+SLF4J: com.rackspacecloud.blueflood.http.RouteMatcher
+SLF4J: com.rackspacecloud.blueflood.types.Locator
+log4j:WARN No appenders could be found for logger (com.rackspacecloud.blueflood.tracker.Tracker).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.166 sec
+Running com.rackspacecloud.blueflood.utils.ModuleLoaderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.697 sec
+Running com.rackspacecloud.blueflood.inputs.handlers.wrappers.TestGsonParsing
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.428 sec
+Running com.rackspacecloud.blueflood.utils.DateTimeParserTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.354 sec
+Running com.rackspacecloud.blueflood.http.HttpRequestWithDecodedQueryParamsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.209 sec
+Running com.rackspacecloud.blueflood.inputs.handlers.HttpEventsIngestionHandlerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec
+
+Results :
+
+Tests run: 52, Failures: 0, Errors: 0, Skipped: 0
+
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.rackspacecloud.blueflood.inputs.handlers.HttpHandlerIntegrationTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.195 sec - in com.rackspacecloud.blueflood.inputs.handlers.HttpHandlerIntegrationTest
+Running com.rackspacecloud.blueflood.inputs.handlers.HttpMetricsIngestionServerShutdownIntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.435 sec - in com.rackspacecloud.blueflood.inputs.handlers.HttpMetricsIngestionServerShutdownIntegrationTest
+Running com.rackspacecloud.blueflood.outputs.handlers.HttpAnnotationsIntegrationTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.072 sec - in com.rackspacecloud.blueflood.outputs.handlers.HttpAnnotationsIntegrationTest
+Running com.rackspacecloud.blueflood.outputs.handlers.HttpRollupHandlerIntegrationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.686 sec - in com.rackspacecloud.blueflood.outputs.handlers.HttpRollupHandlerIntegrationTest
+Running com.rackspacecloud.blueflood.outputs.handlers.HttpRollupHandlerWithESIntegrationTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.298 sec - in com.rackspacecloud.blueflood.outputs.handlers.HttpRollupHandlerWithESIntegrationTest
+
+Results :
+
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0
+
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+parallel='classes', perCoreThreadCount=true, threadCount=5, useUnlimitedThreads=false
+Running com.rackspacecloud.blueflood.outputs.handlers.KafkaServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.331 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+travis_time:end:12571a5a:start=1640511145154541343,finish=1640511446168000402,duration=301013459059,event=script[0K[32;1mThe command "mvn verify -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Pcassandra-2.0 -Dmaven.javadoc.skip --quiet" exited with 0.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:07caac5c[0Ktravis_time:end:07caac5c:start=1640511446176495399,finish=1640511446182768051,duration=6272652,event=cache[0Ktravis_time:start:0902a780[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading /[0m
+[31;1mfailed to upload cache[0m
+travis_time:end:0902a780:start=1640511446191914606,finish=1640511452489504998,duration=6297590392,event=cache[0Ktravis_fold:end:cache.2[0K
+travis_fold:start:after_success[0Ktravis_time:start:108932c4[0K$ mvn jacoco:report jacoco:report-integration coveralls:report -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Blueflood
+[INFO] Blueflood Core Engine
+[INFO] Blueflood UDP Ingestion
+[INFO] Blueflood Elasticsearch Indexer and Discovery
+[INFO] Blueflood HTTP Ingestion and Querying
+[INFO] Blueflood Rollup Kafka Producer
+[INFO] Blueflood Rollup Cloudfiles Exporter
+[INFO] Blueflood IO Bindings for Datastax Java Driver
+[INFO] Blueflood Out-of-band Rollup Tools
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report (default-cli) @ blueflood ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/target/jacoco.exec
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report-integration (default-cli) @ blueflood ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/target/jacoco-it.exec
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Core Engine 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report (default-cli) @ blueflood-core ---
+[INFO] Analyzed bundle 'Blueflood Core Engine' with 239 classes
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report-integration (default-cli) @ blueflood-core ---
+[INFO] Analyzed bundle 'Blueflood Core Engine' with 239 classes
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood UDP Ingestion 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report (default-cli) @ blueflood-udp ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-udp/target/jacoco.exec
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report-integration (default-cli) @ blueflood-udp ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-udp/target/jacoco-it.exec
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Elasticsearch Indexer and Discovery 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report (default-cli) @ blueflood-elasticsearch ---
+[INFO] Analyzed bundle 'Blueflood Elasticsearch Indexer and Discovery' with 6 classes
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report-integration (default-cli) @ blueflood-elasticsearch ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-elasticsearch/target/jacoco-it.exec
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood HTTP Ingestion and Querying 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report (default-cli) @ blueflood-http ---
+[INFO] Analyzed bundle 'Blueflood HTTP Ingestion and Querying' with 52 classes
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report-integration (default-cli) @ blueflood-http ---
+[INFO] Analyzed bundle 'Blueflood HTTP Ingestion and Querying' with 52 classes
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Rollup Kafka Producer 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report (default-cli) @ blueflood-kafka ---
+[INFO] Analyzed bundle 'Blueflood Rollup Kafka Producer' with 5 classes
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report-integration (default-cli) @ blueflood-kafka ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-kafka/target/jacoco-it.exec
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Rollup Cloudfiles Exporter 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report (default-cli) @ blueflood-cloudfiles ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-cloudfiles/target/jacoco.exec
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report-integration (default-cli) @ blueflood-cloudfiles ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-cloudfiles/target/jacoco-it.exec
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood IO Bindings for Datastax Java Driver 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report (default-cli) @ blueflood-io-datastax ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-io-datastax/target/jacoco.exec
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report-integration (default-cli) @ blueflood-io-datastax ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-io-datastax/target/jacoco-it.exec
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood Out-of-band Rollup Tools 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report (default-cli) @ blueflood-rollupTools ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-rollupTools/target/jacoco.exec
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.2.201409121644:report-integration (default-cli) @ blueflood-rollupTools ---
+[INFO] Skipping JaCoCo execution due to missing execution data file:/home/travis/build/passed/rackerlabs/blueflood/blueflood-rollupTools/target/jacoco-it.exec
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Blueflood 2.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- coveralls-maven-plugin:3.0.1:report (default-cli) @ blueflood ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Blueflood .......................................... FAILURE [  0.439 s]
+[INFO] Blueflood Core Engine .............................. SUCCESS [  7.125 s]
+[INFO] Blueflood UDP Ingestion ............................ SUCCESS [  0.005 s]
+[INFO] Blueflood Elasticsearch Indexer and Discovery ...... SUCCESS [  0.250 s]
+[INFO] Blueflood HTTP Ingestion and Querying .............. SUCCESS [  1.529 s]
+[INFO] Blueflood Rollup Kafka Producer .................... SUCCESS [  0.220 s]
+[INFO] Blueflood Rollup Cloudfiles Exporter ............... SUCCESS [  0.003 s]
+[INFO] Blueflood IO Bindings for Datastax Java Driver ..... SUCCESS [  0.003 s]
+[INFO] Blueflood Out-of-band Rollup Tools ................. SUCCESS [  0.003 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.951 s
+[INFO] Finished at: 2021-12-26T09:37:44+00:00
+[INFO] Final Memory: 18M/471M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.eluder.coveralls:coveralls-maven-plugin:3.0.1:report (default-cli) on project blueflood: Build error: Either repository token or service with job id must be defined -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+travis_time:end:108932c4:start=1640511452497744582,finish=1640511464822840659,duration=12325096077,event=after_success[0Ktravis_fold:end:after_success[0K
+Done. Your build exited with 0.
