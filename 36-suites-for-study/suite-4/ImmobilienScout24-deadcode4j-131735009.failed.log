@@ -1,0 +1,141 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ jdk_switcher use openjdk6
+Switching to OpenJDK6 (java-1.6.0-openjdk-amd64), JAVA_HOME will be set to /usr/lib/jvm/java-6-openjdk-amd64
+$ cd failed/ImmobilienScout24/deadcode4j
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export MVN_VERSION=3.0.5
+
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:0a151b98[0K$ Installing caching utilities
+
+travis_time:end:0a151b98:start=1590225233121209007,finish=1590225233675691052,duration=554482045[0Ktravis_time:start:08377f7a[0K
+travis_time:end:08377f7a:start=1590225233690451401,finish=1590225233699397150,duration=8945749[0Ktravis_time:start:02e25626[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:02e25626:start=1590225233708534451,finish=1590225234522499337,duration=813964886[0Ktravis_time:start:0384c297[0K
+travis_time:end:0384c297:start=1590225234533709377,finish=1590225234542890103,duration=9180726[0Ktravis_time:start:02cd1fd4[0K[32;1madding /home/travis/.m2/repository to cache[0m
+
+travis_time:end:02cd1fd4:start=1590225234551646794,finish=1590225235317293447,duration=765646653[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:before_install.1[0Ktravis_time:start:35788710[0K$ MVN_URL=https://archive.apache.org/dist/maven/maven-3/$MVN_VERSION/binaries/apache-maven-$MVN_VERSION-bin.tar.gz
+
+travis_time:end:35788710:start=1590225235568191332,finish=1590225235576690955,duration=8499623[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:0aecb12a[0K$ wget -q -O /tmp/maven.tar.gz $MVN_URL
+
+travis_time:end:0aecb12a:start=1590225235587472632,finish=1590225237718852121,duration=2131379489[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:before_install.3[0Ktravis_time:start:148517c7[0K$ tar xzf /tmp/maven.tar.gz
+
+travis_time:end:148517c7:start=1590225237729804091,finish=1590225237802301160,duration=72497069[0Ktravis_fold:end:before_install.3[0Ktravis_fold:start:before_install.4[0Ktravis_time:start:241bd9d2[0K$ export M2_HOME=`pwd`/apache-maven-$MVN_VERSION
+
+travis_time:end:241bd9d2:start=1590225237814672382,finish=1590225237824235675,duration=9563293[0Ktravis_fold:end:before_install.4[0Ktravis_fold:start:before_install.5[0Ktravis_time:start:19ecd83c[0K$ export PATH=$M2_HOME/bin:$PATH
+
+travis_time:end:19ecd83c:start=1590225237835629979,finish=1590225237844992300,duration=9362321[0Ktravis_fold:end:before_install.5[0Ktravis_fold:start:before_install.6[0Ktravis_time:start:17abf484[0K$ export MAVEN_SKIP_RC=true
+
+travis_time:end:17abf484:start=1590225237855150556,finish=1590225237864914973,duration=9764417[0Ktravis_fold:end:before_install.6[0Ktravis_fold:start:install.1[0Ktravis_time:start:01a46a96[0K$ mvn -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B -U clean verify org.apache.maven.plugins:maven-war-plugin:2.4:help -Dinvoker.skip=true -Dmaven.main.skip=true -Dmaven.plugin.skip=true -Dmaven.test.skip=true -PenableCoverage,travis
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for de.is24.mavenplugins:deadcode4j-maven-plugin:maven-plugin:2.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1070, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.hibernate:hibernate-annotations:jar with value '*' does not match a valid id pattern. @ line 1073, column 18
+[WARNING] 'dependencies.dependency.exclusions.exclusion.groupId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1094, column 15
+[WARNING] 'dependencies.dependency.exclusions.exclusion.artifactId' for org.springframework.data:spring-data-commons:jar with value '*' does not match a valid id pattern. @ line 1097, column 18
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.4/maven-war-plugin-2.4.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.657s
+[INFO] Finished at: Sat May 23 09:13:59 UTC 2020
+[INFO] Final Memory: 14M/1962M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Plugin org.apache.maven.plugins:maven-war-plugin:2.4 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.maven.plugins:maven-war-plugin:jar:2.4: Could not transfer artifact org.apache.maven.plugins:maven-war-plugin:pom:2.4 from/to central (http://repo.maven.apache.org/maven2): Failed to transfer file: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-war-plugin/2.4/maven-war-plugin-2.4.pom. Return code is: 501 , ReasonPhrase:HTTPS Required. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginResolutionException
+
+travis_time:end:01a46a96:start=1590225237877514107,finish=1590225239639587141,duration=1762073034[0K
+[31;1mThe command "mvn -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -B -U clean verify org.apache.maven.plugins:maven-war-plugin:2.4:help -Dinvoker.skip=true -Dmaven.main.skip=true -Dmaven.plugin.skip=true -Dmaven.test.skip=true -PenableCoverage,travis" failed and exited with 1 during .[0m
+
+Your build has been stopped.

@@ -1,0 +1,313 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: python
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 52.21.89.200 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 52.21.89.200 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ cd passed/Cal-CS-61A-Staff/ok
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export CMD=server/apptest.py
+$ export GAE_VERSION=1.9.23
+
+travis_time:start:039cbf14[0K$ source ~/virtualenv/python2.7/bin/activate
+
+travis_time:end:039cbf14:start=1589085147157767722,finish=1589085147168086008,duration=10318286[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:0a21d880[0K$ Installing caching utilities
+
+travis_time:end:0a21d880:start=1589085147580070303,finish=1589085147635664861,duration=55594558[0Ktravis_time:start:01509324[0K
+travis_time:end:01509324:start=1589085147647939229,finish=1589085147656225527,duration=8286298[0Ktravis_time:start:0c192cf0[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:0c192cf0:start=1589085147665700510,finish=1589085148460750059,duration=795049549[0Ktravis_time:start:088cff08[0K
+travis_time:end:088cff08:start=1589085148472078599,finish=1589085148482208465,duration=10129866[0Ktravis_time:start:0b5a28a2[0K[32;1madding /home/travis/virtualenv/python2.7.9 to cache[0m
+
+travis_time:end:0b5a28a2:start=1589085148493345605,finish=1589085149269580253,duration=776234648[0Ktravis_fold:end:cache.1[0K$ python --version
+$ pip --version
+pip 6.0.7 from /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages (python 2.7)
+travis_fold:start:install.1[0Ktravis_time:start:1850f4a0[0K$ pip install pip --upgrade
+Collecting pip from https://files.pythonhosted.org/packages/54/2e/df11ea7e23e7e761d484ed3740285a34e38548cf2bad2bed3dd5768ec8b9/pip-20.1-py2.py3-none-any.whl#sha256=4fdc7fd2db7636777d28d2e1432e2876e30c2b790d461f135716577f73104369
+  Downloading https://files.pythonhosted.org/packages/54/2e/df11ea7e23e7e761d484ed3740285a34e38548cf2bad2bed3dd5768ec8b9/pip-20.1-py2.py3-none-any.whl (1.5MB)
+Installing collected packages: pip
+  Found existing installation: pip 6.0.7
+    Uninstalling pip-6.0.7:
+      Successfully uninstalled pip-6.0.7
+
+Successfully installed pip-20.1
+
+travis_time:end:1850f4a0:start=1589085149543353976,finish=1589085152061385487,duration=2518031511[0Ktravis_fold:end:install.1[0Ktravis_fold:start:install.2[0Ktravis_time:start:02ea79f3[0K$ pip install -r server_requirements.txt
+Collecting Flask==0.10.1
+  Downloading Flask-0.10.1.tar.gz (544 kB)
+Collecting Flask-Cache==0.13.1
+  Downloading Flask-Cache-0.13.1.tar.gz (45 kB)
+Collecting Jinja2==2.7.3
+  Downloading Jinja2-2.7.3.tar.gz (378 kB)
+Collecting MarkupSafe==0.23
+  Downloading MarkupSafe-0.23.tar.gz (13 kB)
+Collecting PyYAML==3.11
+  Downloading PyYAML-3.11.tar.gz (248 kB)
+Collecting Pygments==1.6
+  Downloading Pygments-1.6.tar.gz (1.4 MB)
+Collecting Sphinx==1.2.2
+  Downloading Sphinx-1.2.2-py27-none-any.whl (1.1 MB)
+Collecting Werkzeug==0.9.6
+  Downloading Werkzeug-0.9.6.tar.gz (1.1 MB)
+Collecting argparse==1.2.1
+  Downloading argparse-1.2.1.tar.gz (69 kB)
+Collecting astroid==1.1.1
+  Downloading astroid-1.1.1.tar.gz (119 kB)
+Collecting docutils==0.11
+  Downloading docutils-0.11.tar.gz (1.6 MB)
+Collecting git-pylint-commit-hook==2.0.5
+  Downloading git-pylint-commit-hook-2.0.5.tar.gz (10 kB)
+Collecting itsdangerous==0.24
+  Downloading itsdangerous-0.24.tar.gz (46 kB)
+Obtaining linkenv-master from git+git://github.com/ze-phyr-us/linkenv.git@ae463b3211cb8dcc8868e88176a1101733c83b6d#egg=linkenv-master (from -r server_requirements.txt (line 14))
+  Cloning git://github.com/ze-phyr-us/linkenv.git (to revision ae463b3211cb8dcc8868e88176a1101733c83b6d) to /home/travis/virtualenv/python2.7.9/src/linkenv-master
+Collecting logilab-common==0.61.0
+  Downloading logilab-common-0.61.0.tar.gz (199 kB)
+Collecting mimerender==0.5.4
+  Downloading mimerender-0.5.4.tar.gz (6.4 kB)
+Requirement already satisfied: nose==1.3.4 in /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages (from -r server_requirements.txt (line 17)) (1.3.4)
+Collecting pylint==1.2.1
+  Downloading pylint-1.2.1.tar.gz (404 kB)
+Collecting python-dateutil==2.2
+  Downloading python-dateutil-2.2.tar.gz (259 kB)
+Collecting python-mimeparse==0.1.4
+  Downloading python-mimeparse-0.1.4.tar.gz (5.2 kB)
+Collecting requests==2.3.0
+  Downloading requests-2.3.0-py2.py3-none-any.whl (452 kB)
+Collecting six==1.6.1
+  Downloading six-1.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting sphinxcontrib-httpdomain==1.2.1
+  Downloading sphinxcontrib_httpdomain-1.2.1-py27-none-any.whl (13 kB)
+Collecting unittest2==0.5.1
+  Downloading unittest2-0.5.1.tar.gz (62 kB)
+Requirement already satisfied: wsgiref==0.1.2 in /opt/python/2.7.9/lib/python2.7 (from -r server_requirements.txt (line 25)) (0.1.2)
+Collecting ddt==0.8.0
+  Downloading ddt-0.8.0-py2.py3-none-any.whl (4.0 kB)
+Collecting webargs==0.5.0
+  Downloading webargs-0.5.0-py2.py3-none-any.whl (14 kB)
+Collecting webob==1.1.1
+  Downloading WebOb-1.1.1.zip (196 kB)
+Collecting pytz==2015.7
+  Downloading pytz-2015.7-py2.py3-none-any.whl (476 kB)
+Collecting coverage==3.7.1
+  Downloading coverage-3.7.1.tar.gz (284 kB)
+Collecting coveralls==0.5
+  Downloading coveralls-0.5.zip (18 kB)
+Collecting mock==1.3.0
+  Downloading mock-1.3.0-py2.py3-none-any.whl (56 kB)
+Collecting docopt>=0.6.1
+  Downloading docopt-0.6.2.tar.gz (25 kB)
+Collecting pbr>=0.11
+  Downloading pbr-5.4.5-py2.py3-none-any.whl (110 kB)
+Collecting funcsigs; python_version < "3.3"
+  Downloading funcsigs-1.0.2-py2.py3-none-any.whl (17 kB)
+Building wheels for collected packages: Flask, Flask-Cache, Jinja2, MarkupSafe, PyYAML, Pygments, Werkzeug, argparse, astroid, docutils, git-pylint-commit-hook, itsdangerous, logilab-common, mimerender, pylint, python-dateutil, python-mimeparse, unittest2, webob, coverage, coveralls, docopt
+  Building wheel for Flask (setup.py): started
+  Building wheel for Flask (setup.py): finished with status 'done'
+  Created wheel for Flask: filename=Flask-0.10.1-py2-none-any.whl size=115939 sha256=b5809cd004bf690929d17f17121c1e49a95c67b97f1e2609af38d0796d177b96
+  Stored in directory: /home/travis/.cache/pip/wheels/98/b7/10/b97738f2470417b8d1ec57df42803b55fda8e7ce67b9d0aa74
+  Building wheel for Flask-Cache (setup.py): started
+  Building wheel for Flask-Cache (setup.py): finished with status 'done'
+  Created wheel for Flask-Cache: filename=Flask_Cache-0.13.1-py2-none-any.whl size=12298 sha256=c06c109a0ae6caf05320eaf3c7040a7ad4962b22a20e767960b34344691ce3ca
+  Stored in directory: /home/travis/.cache/pip/wheels/15/5d/01/165876743de18c1d5e112cdef00e5a0882534fabf68ace460f
+  Building wheel for Jinja2 (setup.py): started
+  Building wheel for Jinja2 (setup.py): finished with status 'done'
+  Created wheel for Jinja2: filename=Jinja2-2.7.3-py2-none-any.whl size=297108 sha256=6b7438a8e1c5aa8197696c1d87c832364f2b5676f5970141925a2724406ce159
+  Stored in directory: /home/travis/.cache/pip/wheels/6d/ae/90/d6afd0548c2d9267027e737a792e83dd8d20f20caeea694054
+  Building wheel for MarkupSafe (setup.py): started
+  Building wheel for MarkupSafe (setup.py): finished with status 'done'
+  Created wheel for MarkupSafe: filename=MarkupSafe-0.23-cp27-none-linux_x86_64.whl size=25662 sha256=06221eabda3fdb635035d4934a73d07e9030b7af17ade5fcf435d28cb48b6e17
+  Stored in directory: /home/travis/.cache/pip/wheels/0a/6b/fe/365b176df07f4c62e6a240f9cbc896c7b36d9faa439393a65a
+  Building wheel for PyYAML (setup.py): started
+  Building wheel for PyYAML (setup.py): finished with status 'done'
+  Created wheel for PyYAML: filename=PyYAML-3.11-cp27-none-linux_x86_64.whl size=276299 sha256=a8e608f18d1a797e66c90a81e13138915984bdcd282f9a54ac7876da162a7b38
+  Stored in directory: /home/travis/.cache/pip/wheels/49/4a/a0/82418a772ad2d883345e7b8d84b41eef459defb9d7cb8cf87f
+  Building wheel for Pygments (setup.py): started
+  Building wheel for Pygments (setup.py): finished with status 'done'
+  Created wheel for Pygments: filename=Pygments-1.6-py2-none-any.whl size=627143 sha256=87b9e229c70ef60da9be51ecf9f817fb82701820afb1b2ec867c3b7c1124de97
+  Stored in directory: /home/travis/.cache/pip/wheels/53/91/82/192c57c0d98b35ad60c7e9d5c55653a84d40010ade7014e378
+  Building wheel for Werkzeug (setup.py): started
+  Building wheel for Werkzeug (setup.py): finished with status 'done'
+  Created wheel for Werkzeug: filename=Werkzeug-0.9.6-py2-none-any.whl size=374288 sha256=8676ab2b8f27095c1acc54a1a0d8d6854e022ec73ab552e0f5e14c2ae7742220
+  Stored in directory: /home/travis/.cache/pip/wheels/58/8b/a4/357605ee018811c09bf12e815ff841ccfe5b5269601c7f05f9
+  Building wheel for argparse (setup.py): started
+  Building wheel for argparse (setup.py): finished with status 'done'
+  Created wheel for argparse: filename=argparse-1.2.1-py2-none-any.whl size=22382 sha256=a0ce4ba4fbf0103908a80d4674f4cf31f6977d0fff3bbebc9780edc817135fe5
+  Stored in directory: /home/travis/.cache/pip/wheels/9f/79/7e/e3f33e05010185975b7ade632c68bad70fcf71d1ff1adc1a02
+  Building wheel for astroid (setup.py): started
+  Building wheel for astroid (setup.py): finished with status 'done'
+  Created wheel for astroid: filename=astroid-1.1.1-py2-none-any.whl size=125586 sha256=f4e2b8643d6da108af82f0d44bede0d86fcb1ed3ee892f109dea16eccca5da2a
+  Stored in directory: /home/travis/.cache/pip/wheels/2d/a9/0e/2280dcbf870a7e3a79b58bf3201955dd9eac89572954b7fb24
+  Building wheel for docutils (setup.py): started
+  Building wheel for docutils (setup.py): finished with status 'done'
+  Created wheel for docutils: filename=docutils-0.11-py2-none-any.whl size=509144 sha256=8f0f551fd4c420c266e2e41e391d637fd081a7eafc379a93739f9b59769fe785
+  Stored in directory: /home/travis/.cache/pip/wheels/e9/15/18/e3f3728aa556c5313c446b1229431513274adc02726502f134
+  Building wheel for git-pylint-commit-hook (setup.py): started
+  Building wheel for git-pylint-commit-hook (setup.py): finished with status 'done'
+  Created wheel for git-pylint-commit-hook: filename=git_pylint_commit_hook-2.0.5-py2-none-any.whl size=8064 sha256=169e8e9dc1f80415bc07f1ccd6e4ed831e2ee8fc4957bac3df5cec3f438611f5
+  Stored in directory: /home/travis/.cache/pip/wheels/03/ef/cc/682575809cea5a57528a93adc05c1b2a20345c1bd3ab366833
+  Building wheel for itsdangerous (setup.py): started
+  Building wheel for itsdangerous (setup.py): finished with status 'done'
+  Created wheel for itsdangerous: filename=itsdangerous-0.24-py2-none-any.whl size=10432 sha256=b055228072edb670cabb607b163078c95f785eb1c6d5603fa7ded7865ffcfa30
+  Stored in directory: /home/travis/.cache/pip/wheels/a1/51/f9/d3a5c89c941efb961e535b45c6d2cd2402c68972061f7d5847
+  Building wheel for logilab-common (setup.py): started
+  Building wheel for logilab-common (setup.py): finished with status 'done'
+  Created wheel for logilab-common: filename=logilab_common-0.61.0-py2-none-any.whl size=239705 sha256=303ef4eb9e0d3b084f10af0beb71a29b8a393717c32594f10157219cf8236605
+  Stored in directory: /home/travis/.cache/pip/wheels/1f/d8/1d/a303d3f4b70205e39a086f0665cd3775ce3bdfb857d764ec3c
+  Building wheel for mimerender (setup.py): started
+  Building wheel for mimerender (setup.py): finished with status 'done'
+  Created wheel for mimerender: filename=mimerender-0.5.4-py2-none-any.whl size=7994 sha256=1cb13464e0b88d09536d4b948ef17dc1b4bbdf35b4835b313c1d52776f13b220
+  Stored in directory: /home/travis/.cache/pip/wheels/7b/3b/d4/bc0712e00adc5111964dd33e9d0bfe67838d3393dfc10eb34b
+  Building wheel for pylint (setup.py): started
+  Building wheel for pylint (setup.py): finished with status 'done'
+  Created wheel for pylint: filename=pylint-1.2.1-py2-none-any.whl size=353331 sha256=a8455a6686bf2b9a6702b54f92268741d20767e547ad00fbe998ecdc3b5022dd
+  Stored in directory: /home/travis/.cache/pip/wheels/ae/fa/fc/112e0116a7c8bc9fbc0c63baf6bec91ad88c3a032cff1db940
+  Building wheel for python-dateutil (setup.py): started
+  Building wheel for python-dateutil (setup.py): finished with status 'done'
+  Created wheel for python-dateutil: filename=python_dateutil-2.2-py2-none-any.whl size=226626 sha256=19d4b79c243e0dda324038113b6216060993ab037e665aec91e2b11cd29f2e8f
+  Stored in directory: /home/travis/.cache/pip/wheels/37/b3/fb/975fea96327b4fc1110effeba16b5377816217170576398dea
+  Building wheel for python-mimeparse (setup.py): started
+  Building wheel for python-mimeparse (setup.py): finished with status 'done'
+  Created wheel for python-mimeparse: filename=python_mimeparse-0.1.4-py2-none-any.whl size=5303 sha256=77c9185de0a8a37fc64184b75ecd6abff028b53db160b38bfdb8c4da0f3fcd5d
+  Stored in directory: /home/travis/.cache/pip/wheels/29/cb/26/3b2fc33e1150179dba003056b939dd75fdfdf2fcc5dae19db9
+  Building wheel for unittest2 (setup.py): started
+  Building wheel for unittest2 (setup.py): finished with status 'done'
+  Created wheel for unittest2: filename=unittest2-0.5.1-py2-none-any.whl size=73111 sha256=c96d1aae085ae588bcf692035e74f1cca541ab878a4b680cdba0f81f972d9432
+  Stored in directory: /home/travis/.cache/pip/wheels/6c/b0/47/3587ffb15ba6b0a03e0a67bea79394cb74c7e56bcbee3ae68b
+  Building wheel for webob (setup.py): started
+  Building wheel for webob (setup.py): finished with status 'done'
+  Created wheel for webob: filename=WebOb-1.1.1-py2-none-any.whl size=60839 sha256=1e1d18af35152cf18734ae21a5c9ae284c15057bd25c6a4aff2075633e1bd266
+  Stored in directory: /home/travis/.cache/pip/wheels/45/30/ac/5aa05ddce3079ad9b023d32d310f9fc0ca246a36c66656d782
+  Building wheel for coverage (setup.py): started
+  Building wheel for coverage (setup.py): finished with status 'done'
+  Created wheel for coverage: filename=coverage-3.7.1-cp27-none-linux_x86_64.whl size=124059 sha256=10079a91af61c9f2b280fb10de2244851fb3f5a6981f0252d28c3a48e27ee775
+  Stored in directory: /home/travis/.cache/pip/wheels/a0/7c/11/ea29ce2c4f2d0c8e4d0f5f09ca6a333da532ae1e4641f29d04
+  Building wheel for coveralls (setup.py): started
+  Building wheel for coveralls (setup.py): finished with status 'done'
+  Created wheel for coveralls: filename=coveralls-0.5-py2.py3-none-any.whl size=14230 sha256=7936135707404166357a63f5c54643bd133aee6bf68bdf319ecc4d55cf3f4127
+  Stored in directory: /home/travis/.cache/pip/wheels/f4/0d/ec/4ac45bf6e3b08c3ffca35b114c23424fe95bb78334c216c190
+  Building wheel for docopt (setup.py): started
+  Building wheel for docopt (setup.py): finished with status 'done'
+  Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=19851 sha256=1749a8fbc7282e707b52dbbc3155e46c04fb1795eab4707a4bd29d91f22a1bf1
+  Stored in directory: /home/travis/.cache/pip/wheels/1c/d7/2d/aefbee2bf20e0ed968d4ab943e03451db0f14c52b5f624fc7e
+Successfully built Flask Flask-Cache Jinja2 MarkupSafe PyYAML Pygments Werkzeug argparse astroid docutils git-pylint-commit-hook itsdangerous logilab-common mimerender pylint python-dateutil python-mimeparse unittest2 webob coverage coveralls docopt
+Installing collected packages: Werkzeug, MarkupSafe, Jinja2, itsdangerous, Flask, Flask-Cache, PyYAML, Pygments, docutils, Sphinx, argparse, logilab-common, astroid, pylint, git-pylint-commit-hook, linkenv, python-mimeparse, mimerender, six, python-dateutil, requests, sphinxcontrib-httpdomain, unittest2, ddt, webargs, webob, pytz, coverage, docopt, coveralls, pbr, funcsigs, mock
+  Running setup.py develop for linkenv
+  Attempting uninstall: mock
+    Found existing installation: mock 1.0.1
+    Uninstalling mock-1.0.1:
+      Successfully uninstalled mock-1.0.1
+Successfully installed Flask-0.10.1 Flask-Cache-0.13.1 Jinja2-2.7.3 MarkupSafe-0.23 PyYAML-3.11 Pygments-1.6 Sphinx-1.2.2 Werkzeug-0.9.6 argparse-1.2.1 astroid-1.1.1 coverage-3.7.1 coveralls-0.5 ddt-0.8.0 docopt-0.6.2 docutils-0.11 funcsigs-1.0.2 git-pylint-commit-hook-2.0.5 itsdangerous-0.24 linkenv logilab-common-0.61.0 mimerender-0.5.4 mock-1.3.0 pbr-5.4.5 pylint-1.2.1 python-dateutil-2.2 python-mimeparse-0.1.4 pytz-2015.7 requests-2.3.0 six-1.6.1 sphinxcontrib-httpdomain-1.2.1 unittest2-0.5.1 webargs-0.5.0 webob-1.1.1
+
+travis_time:end:02ea79f3:start=1589085152073667048,finish=1589085180065226211,duration=27991559163[0Ktravis_fold:end:install.2[0Ktravis_fold:start:before_script.1[0Ktravis_time:start:152755a7[0K$ wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_$GAE_VERSION.zip -o gae_sdk.zip
+
+travis_time:end:152755a7:start=1589085180077519588,finish=1589085180837051004,duration=759531416[0Ktravis_fold:end:before_script.1[0Ktravis_fold:start:before_script.2[0Ktravis_time:start:116b27c0[0K$ unzip -q google_appengine_$GAE_VERSION.zip
+
+travis_time:end:116b27c0:start=1589085180847972705,finish=1589085183169720579,duration=2321747874[0Ktravis_fold:end:before_script.2[0Ktravis_fold:start:before_script.3[0Ktravis_time:start:1b9c827a[0K$ mv google_appengine gae_sdk
+
+travis_time:end:1b9c827a:start=1589085183180564424,finish=1589085183191426693,duration=10862269[0Ktravis_fold:end:before_script.3[0Ktravis_fold:start:before_script.4[0Ktravis_time:start:1a665494[0K$ export GAE_SDK=$PWD/gae_sdk
+
+travis_time:end:1a665494:start=1589085183201892386,finish=1589085183210167737,duration=8275351[0Ktravis_fold:end:before_script.4[0Ktravis_fold:start:before_script.5[0Ktravis_time:start:00232522[0K$ export PATH=$PATH:$GAE_SDK
+
+travis_time:end:00232522:start=1589085183220432810,finish=1589085183229214633,duration=8781823[0Ktravis_fold:end:before_script.5[0Ktravis_fold:start:before_script.6[0Ktravis_time:start:0249ac26[0K$ export PYTHONPATH=$PYTHONPATH:$GAE_SDK
+
+travis_time:end:0249ac26:start=1589085183240042911,finish=1589085183247670563,duration=7627652[0Ktravis_fold:end:before_script.6[0Ktravis_fold:start:before_script.7[0Ktravis_time:start:2c1ef9ca[0K$ python server/app/generate_keys.py
+
+travis_time:end:2c1ef9ca:start=1589085183257240295,finish=1589085183351648954,duration=94408659[0Ktravis_fold:end:before_script.7[0Ktravis_time:start:11cae8da[0K$ FLASK_CONF=TEST coverage run $CMD --sdk_location $GAE_SDK --quiet
+============================================================
+Doing regression testing
+============================================================
+============================================================
+Doing permissions testing
+============================================================
+============================================================
+Doing integration testing
+============================================================
+ALL TESTS PASSED
+
+travis_time:end:11cae8da:start=1589085183363933497,finish=1589085223729922857,duration=40365989360[0K
+[32;1mThe command "FLASK_CONF=TEST coverage run $CMD --sdk_location $GAE_SDK --quiet" exited with 0.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:04bfa418[0K
+travis_time:end:04bfa418:start=1589085223743104949,finish=1589085223753756266,duration=10651317[0Ktravis_time:start:00a10641[0K[32;1mchanges detected, packing new archive[0m
+
+travis_time:end:00a10641:start=1589085223766045112,finish=1589085228690591881,duration=4924546769[0Ktravis_fold:end:cache.2[0Ktravis_fold:start:after_success.1[0Ktravis_time:start:051068a0[0K$ coveralls
+
+travis_time:end:051068a0:start=1589085228703085614,finish=1589085230342250675,duration=1639165061[0Ktravis_fold:end:after_success.1[0Ktravis_fold:start:after_success.2[0Ktravis_time:start:00e65f31[0K$ coveralls debug
+
+travis_time:end:00e65f31:start=1589085230352471412,finish=1589085231032041155,duration=679569743[0Ktravis_fold:end:after_success.2[0K
+Done. Your build exited with 0.

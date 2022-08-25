@@ -1,0 +1,217 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 52.21.89.200 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 52.21.89.200 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd passed/pgjdbc/pgjdbc
+travis_fold:start:postgresql[0K[33;1mStarting PostgreSQL v9.4[0m
+travis_time:start:00ec7c87[0K$ sudo service postgresql stop
+ * Stopping PostgreSQL 9.1 database server
+   ...done.
+ * Stopping PostgreSQL 9.2 database server
+   ...done.
+ * Stopping PostgreSQL 9.3 database server
+   ...done.
+ * Stopping PostgreSQL 9.4 database server
+   ...done.
+
+travis_time:end:00ec7c87:start=1588407654362258636,finish=1588407655029982925,duration=667724289[0Ktravis_time:start:02446245[0K$ sudo service postgresql start 9.4
+ * Starting PostgreSQL 9.4 database server
+   ...done.
+
+travis_time:end:02446245:start=1588407655040671492,finish=1588407657311068509,duration=2270397017[0Ktravis_time:start:140a5b80[0K$ sudo -u postgres createuser -s -p 5432 travis &>/dev/null
+
+travis_time:end:140a5b80:start=1588407657321122471,finish=1588407657382704250,duration=61581779[0Ktravis_time:start:0ec735d0[0K$ sudo -u postgres createdb -O travis -p 5432 travis &>/dev/null
+
+travis_time:end:0ec735d0:start=1588407657393570156,finish=1588407657675847643,duration=282277487[0Ktravis_time:start:0caacd26[0K$ sudo -u postgres createuser -s -p 5433 travis &>/dev/null
+
+travis_time:end:0caacd26:start=1588407657685587462,finish=1588407657741010692,duration=55423230[0Ktravis_time:start:02887942[0K$ sudo -u postgres createdb -O travis -p 5433 travis &>/dev/null
+
+travis_time:end:02887942:start=1588407657749627660,finish=1588407657804370230,duration=54742570[0Ktravis_fold:end:postgresql[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export SONATYPE_USERNAME=[secure]
+$ export SONATYPE_PASSWORD=[secure]
+$ export copr_token_password=[secure]
+$ export PG_VERSION=9.4
+$ export TEST_CLIENTS=Y
+
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:1516e9da[0K$ Installing caching utilities
+
+travis_time:end:1516e9da:start=1588407658500520261,finish=1588407658558722259,duration=58201998[0Ktravis_time:start:011c3f4c[0K
+travis_time:end:011c3f4c:start=1588407658574413620,finish=1588407658585015357,duration=10601737[0Ktravis_time:start:1bf08ada[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:1bf08ada:start=1588407658596547451,finish=1588407659423195361,duration=826647910[0Ktravis_time:start:0a950096[0K
+travis_time:end:0a950096:start=1588407659434602117,finish=1588407659444662900,duration=10060783[0Ktravis_time:start:0f6b926a[0K[32;1madding /home/travis/.m2/repository to cache[0m
+[32;1madding /home/travis/.ivy2/cache to cache[0m
+[32;1madding /home/travis/.sbt/boot to cache[0m
+
+travis_time:end:0f6b926a:start=1588407659456045769,finish=1588407660283801071,duration=827755302[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:install[0Ktravis_time:start:171df800[0K$ true
+
+travis_time:end:171df800:start=1588407661132577241,finish=1588407661142313735,duration=9736494[0Ktravis_fold:end:install[0Ktravis_fold:start:before_script.1[0Ktravis_time:start:1171cba0[0K$ export PG_DATADIR="/etc/postgresql/${PG_VERSION}/main"
+
+travis_time:end:1171cba0:start=1588407661154687644,finish=1588407661163950808,duration=9263164[0Ktravis_fold:end:before_script.1[0Ktravis_fold:start:before_script.2[0Ktravis_time:start:00730c14[0K$ ./.travis/travis_install_postgres.sh
+
+travis_time:end:00730c14:start=1588407661176113583,finish=1588407661869444805,duration=693331222[0Ktravis_fold:end:before_script.2[0Ktravis_fold:start:before_script.3[0Ktravis_time:start:0104d4f8[0K$ test "x$XA" == 'x' || ./.travis/travis_configure_xa.sh
+
+travis_time:end:0104d4f8:start=1588407661881204951,finish=1588407661890001176,duration=8796225[0Ktravis_fold:end:before_script.3[0Ktravis_fold:start:before_script.4[0Ktravis_time:start:0076d7c0[0K$ ./.travis/travis_start_postgres.sh
+
+travis_time:end:0076d7c0:start=1588407661901779378,finish=1588407662290647572,duration=388868194[0Ktravis_fold:end:before_script.4[0Ktravis_fold:start:before_script.5[0Ktravis_time:start:26d94a2e[0K$ psql -U postgres -c "create user test with password 'test';"
+CREATE ROLE
+
+travis_time:end:26d94a2e:start=1588407662302592133,finish=1588407662323852972,duration=21260839[0Ktravis_fold:end:before_script.5[0Ktravis_fold:start:before_script.6[0Ktravis_time:start:181cd67e[0K$ psql -c 'create database test owner test;' -U postgres
+CREATE DATABASE
+
+travis_time:end:181cd67e:start=1588407662334528058,finish=1588407662578266053,duration=243737995[0Ktravis_fold:end:before_script.6[0Ktravis_fold:start:before_script.7[0Ktravis_time:start:008a71a8[0K$ echo "MAVEN_OPTS='-Xmx1g -Dgpg.skip=true'" > ~/.mavenrc
+
+travis_time:end:008a71a8:start=1588407662590590362,finish=1588407662600117681,duration=9527319[0Ktravis_fold:end:before_script.7[0Ktravis_fold:start:before_script.8[0Ktravis_time:start:1a34be8d[0K$ test "x$PG_VERSION" == 'x' || test $PG_VERSION == '8.4' || test $PG_VERSION == '9.0' || psql test -c 'CREATE EXTENSION hstore;' -U postgres
+CREATE EXTENSION
+
+travis_time:end:1a34be8d:start=1588407662611813508,finish=1588407662655986856,duration=44173348[0Ktravis_fold:end:before_script.8[0Ktravis_fold:start:before_script.9[0Ktravis_time:start:178bd500[0K$ test "x$PG_VERSION" == 'x' || test $PG_VERSION != '8.4' || createlang -U postgres plpgsql test
+
+travis_time:end:178bd500:start=1588407662667491044,finish=1588407662677015727,duration=9524683[0Ktravis_fold:end:before_script.9[0Ktravis_fold:start:before_script.10[0Ktravis_time:start:1d7d9368[0K$ if [[ "x$JDK" == *'x9'* ]]; then remove_dir_from_path $JAVA_HOME/bin; export JAVA_HOME=/usr/lib/jvm/java-9-oracle; export PATH=$JAVA_HOME/bin:$PATH; java -Xmx32m -version; fi
+
+travis_time:end:1d7d9368:start=1588407662689198810,finish=1588407662698656252,duration=9457442[0Ktravis_fold:end:before_script.10[0Ktravis_time:start:0afb43a1[0K$ rm -rf $HOME/.m2/repository/org/postgresql || true
+
+travis_time:end:0afb43a1:start=1588407662710631228,finish=1588407662722101863,duration=11470635[0K
+[32;1mThe command "rm -rf $HOME/.m2/repository/org/postgresql || true" exited with 0.[0m
+travis_time:start:143dfd8d[0K$ export JDK6_HOME=$(jdk_switcher home openjdk6)
+
+travis_time:end:143dfd8d:start=1588407662733697555,finish=1588407662745966609,duration=12269054[0K
+[32;1mThe command "export JDK6_HOME=$(jdk_switcher home openjdk6)" exited with 0.[0m
+travis_time:start:1e7f143f[0K$ export JDK7_HOME=$(jdk_switcher home openjdk7)
+
+travis_time:end:1e7f143f:start=1588407662758857674,finish=1588407662771171957,duration=12314283[0K
+[32;1mThe command "export JDK7_HOME=$(jdk_switcher home openjdk7)" exited with 0.[0m
+travis_time:start:068c8509[0K$ export JDK8_HOME=$(jdk_switcher home oraclejdk8)
+
+travis_time:end:068c8509:start=1588407662783607573,finish=1588407662796638113,duration=13030540[0K
+[32;1mThe command "export JDK8_HOME=$(jdk_switcher home oraclejdk8)" exited with 0.[0m
+travis_time:start:01a54a57[0K$ export JDK9_HOME=/usr/lib/jvm/java-9-oracle
+
+travis_time:end:01a54a57:start=1588407662809086088,finish=1588407662818885799,duration=9799711[0K
+[32;1mThe command "export JDK9_HOME=/usr/lib/jvm/java-9-oracle" exited with 0.[0m
+travis_time:start:051fa2bc[0K$ test -d "${JDK9_HOME}" || export JDK9_HOME=$(jdk_switcher home oraclejdk8)
+
+travis_time:end:051fa2bc:start=1588407662830587852,finish=1588407662843016172,duration=12428320[0K
+[32;1mThe command "test -d "${JDK9_HOME}" || export JDK9_HOME=$(jdk_switcher home oraclejdk8)" exited with 0.[0m
+travis_time:start:0bb67b30[0K$ envsubst < toolchains.xml > ~/.m2/toolchains.xml
+
+travis_time:end:0bb67b30:start=1588407662855617480,finish=1588407662918917873,duration=63300393[0K
+[32;1mThe command "envsubst < toolchains.xml > ~/.m2/toolchains.xml" exited with 0.[0m
+travis_time:start:25a4cf1c[0K$ ./.travis/travis_build.sh
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.8.0_31, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-91-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Downloading: http://repo.maven.apache.org/maven2/org/postgresql/pgjdbc-versions/1.1.1/pgjdbc-versions-1.1.1.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/org/postgresql/pgjdbc-versions/1.1.1/pgjdbc-versions-1.1.1.pom
+[INFO] Downloading: https://repository.apache.org/releases/org/postgresql/pgjdbc-versions/1.1.1/pgjdbc-versions-1.1.1.pom
+[ERROR] The build could not read 1 project -> [Help 1]
+[ERROR]   
+[ERROR]   The project org.postgresql:pgjdbc-aggregate:9.4.1212-SNAPSHOT (/home/travis/build/passed/pgjdbc/pgjdbc/pom.xml) has 1 error
+[ERROR]     Non-resolvable parent POM: Could not transfer artifact org.postgresql:pgjdbc-versions:pom:1.1.1 from/to central (http://repo.maven.apache.org/maven2): Failed to transfer file: http://repo.maven.apache.org/maven2/org/postgresql/pgjdbc-versions/1.1.1/pgjdbc-versions-1.1.1.pom. Return code is: 501 , ReasonPhrase:HTTPS Required. and 'parent.relativePath' points at wrong local POM @ line 3, column 11 -> [Help 2]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException
+
+travis_time:end:25a4cf1c:start=1588407662931023278,finish=1588407665594782145,duration=2663758867[0K
+[31;1mThe command "./.travis/travis_build.sh" exited with 1.[0m
+travis_fold:start:before_cache.1[0Ktravis_time:start:0cc5fd30[0K$ rm -rf $HOME/.m2/repository/org/postgresql
+
+travis_time:end:0cc5fd30:start=1588407665606491741,finish=1588407665616332653,duration=9840912[0Ktravis_fold:end:before_cache.1[0Ktravis_fold:start:before_cache.2[0Ktravis_time:start:3d4e80f2[0K$ find $HOME/.ivy2 -name "ivydata-*.properties" -delete
+
+travis_time:end:3d4e80f2:start=1588407665628302142,finish=1588407665649512160,duration=21210018[0Ktravis_fold:end:before_cache.2[0Ktravis_fold:start:before_cache.3[0Ktravis_time:start:059ebec0[0K$ find $HOME/.sbt -name "*.lock" -delete
+
+travis_time:end:059ebec0:start=1588407665660513823,finish=1588407665678286214,duration=17772391[0Ktravis_fold:end:before_cache.3[0Ktravis_fold:start:cache.2[0Kstore build cache
+travis_time:start:0114f53b[0K
+travis_time:end:0114f53b:start=1588407665688306193,finish=1588407665696318785,duration=8012592[0Ktravis_time:start:09135fb1[0K[32;1mchanges detected, packing new archive[0m
+.
+.
+
+travis_time:end:09135fb1:start=1588407665707069354,finish=1588407676542114211,duration=10835044857[0Ktravis_fold:end:cache.2[0K
+Done. Your build exited with 1.

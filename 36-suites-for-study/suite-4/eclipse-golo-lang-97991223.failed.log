@@ -1,0 +1,317 @@
+travis_time:start:011f57fb[0Ktravis_time:end:011f57fb:start=1590371943812270016,finish=1590371943961772132,duration=149502116,event=no_world_writable_dirs[0Ktravis_time:start:08d0a5c5[0Ktravis_time:end:08d0a5c5:start=1590371943967851195,finish=1590371943971664546,duration=3813351,event=check_unsupported[0Ktravis_time:start:0f6d8a49[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-91-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:0f6d8a49:start=1590371943976989661,finish=1590371943985027708,duration=8038047,event=show_system_info[0Ktravis_time:start:04917815[0Ktravis_time:end:04917815:start=1590371943990495895,finish=1590371944006091859,duration=15595964,event=rm_riak_source[0Ktravis_time:start:18a284f3[0Ktravis_time:end:18a284f3:start=1590371944011072520,finish=1590371944020375821,duration=9303301,event=fix_rwky_redis[0Ktravis_time:start:0ed5c8bc[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:0ed5c8bc:start=1590371944025873781,finish=1590371964652961325,duration=20627087544,event=wait_for_network[0Ktravis_time:start:00b0ad0b[0Ktravis_time:end:00b0ad0b:start=1590371964658966072,finish=1590371965629141588,duration=970175516,event=update_apt_keys[0Ktravis_time:start:096d7307[0Ktravis_time:end:096d7307:start=1590371965635314127,finish=1590371965708628758,duration=73314631,event=fix_hhvm_source[0Ktravis_time:start:1ac0a078[0Ktravis_time:end:1ac0a078:start=1590371965713078227,finish=1590371965717374107,duration=4295880,event=update_mongo_arch[0Ktravis_time:start:05b349da[0Ktravis_time:end:05b349da:start=1590371965723401283,finish=1590371965772104941,duration=48703658,event=fix_sudo_enabled_trusty[0Ktravis_time:start:001ada60[0Ktravis_time:end:001ada60:start=1590371965776075295,finish=1590371965789970600,duration=13895305,event=clean_up_path[0Ktravis_time:start:159e2923[0Ktravis_time:end:159e2923:start=1590371965795283079,finish=1590371965809991469,duration=14708390,event=fix_resolv_conf[0Ktravis_time:start:13feb1fc[0Ktravis_time:end:13feb1fc:start=1590371965816558817,finish=1590371965839827023,duration=23268206,event=fix_etc_hosts[0Ktravis_time:start:12c2d8a7[0Ktravis_time:end:12c2d8a7:start=1590371965852281321,finish=1590371965887659975,duration=35378654,event=fix_mvn_settings_xml[0Ktravis_time:start:0dd3801c[0Ktravis_time:end:0dd3801c:start=1590371965895398239,finish=1590371965909589092,duration=14190853,event=no_ipv6_localhost[0Ktravis_time:start:072e8ff4[0Ktravis_time:end:072e8ff4:start=1590371965914332232,finish=1590371965934530352,duration=20198120,event=fix_etc_mavenrc[0Ktravis_time:start:0cc964e3[0Ktravis_time:end:0cc964e3:start=1590371965940500143,finish=1590371965945828600,duration=5328457,event=fix_wwdr_certificate[0Ktravis_time:start:030fcf62[0Ktravis_time:end:030fcf62:start=1590371965950636059,finish=1590371965983461734,duration=32825675,event=put_localhost_first[0Ktravis_time:start:08b2cc6a[0Ktravis_time:end:08b2cc6a:start=1590371965988895562,finish=1590371965993025086,duration=4129524,event=home_paths[0Ktravis_time:start:01ca3b0b[0Ktravis_time:end:01ca3b0b:start=1590371965997915811,finish=1590371966022030052,duration=24114241,event=disable_initramfs[0Ktravis_time:start:001ca16f[0Ktravis_time:end:001ca16f:start=1590371966027105355,finish=1590371966045564780,duration=18459425,event=disable_ssh_roaming[0Ktravis_time:start:0068e326[0Ktravis_time:end:0068e326:start=1590371966050888901,finish=1590371966055464678,duration=4575777,event=debug_tools[0Ktravis_time:start:0066d4e6[0Ktravis_time:end:0066d4e6:start=1590371966060116390,finish=1590371966065333369,duration=5216979,event=uninstall_oclint[0Ktravis_time:start:04792bae[0Ktravis_time:end:04792bae:start=1590371966071032545,finish=1590371966077899256,duration=6866711,event=rvm_use[0Ktravis_time:start:06b61137[0Ktravis_time:end:06b61137:start=1590371966089143858,finish=1590371966103644313,duration=14500455,event=rm_etc_boto_cfg[0Ktravis_time:start:340f0ccc[0Ktravis_time:end:340f0ccc:start=1590371966108751813,finish=1590371966115259276,duration=6507463,event=rm_oraclejdk8_symlink[0Ktravis_time:start:076acf00[0Ktravis_time:end:076acf00:start=1590371966121619784,finish=1590371966168979406,duration=47359622,event=enable_i386[0Ktravis_time:start:1505b563[0Ktravis_time:end:1505b563:start=1590371966175654075,finish=1590371966184329244,duration=8675169,event=update_rubygems[0Ktravis_time:start:06587f38[0Ktravis_time:end:06587f38:start=1590371966190067417,finish=1590371966197569524,duration=7502107,event=ensure_path_components[0Ktravis_time:start:28ac3adf[0Ktravis_time:end:28ac3adf:start=1590371966203412649,finish=1590371966207868473,duration=4455824,event=redefine_curl[0Ktravis_time:start:0dbb4aa4[0Ktravis_time:end:0dbb4aa4:start=1590371966212973358,finish=1590371966216733016,duration=3759658,event=nonblock_pipe[0Ktravis_time:start:0094782f[0Ktravis_time:end:0094782f:start=1590371966221800113,finish=1590371972040288655,duration=5818488542,event=apt_get_update[0Ktravis_time:start:217f87a4[0Ktravis_time:end:217f87a4:start=1590371972045004014,finish=1590371972049433315,duration=4429301,event=deprecate_xcode_64[0Ktravis_time:start:1b28ed56[0Ktravis_time:end:1b28ed56:start=1590371972054758903,finish=1590371972061715650,duration=6956747,event=update_heroku[0Ktravis_time:start:0f351078[0Ktravis_time:end:0f351078:start=1590371972067701040,finish=1590371972072250208,duration=4549168,event=shell_session_update[0Ktravis_time:start:09cc2e19[0Ktravis_fold:start:docker_mtu[0Ktravis_fold:end:docker_mtu[0Ktravis_time:end:09cc2e19:start=1590371972078257329,finish=1590371972114076824,duration=35819495,event=set_docker_mtu[0Ktravis_time:start:086499e4[0Ktravis_time:end:086499e4:start=1590371972120067550,finish=1590371972134783405,duration=14715855,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk8[0m
+$ jdk_switcher use "oraclejdk8"
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+travis_fold:end:install_jdk[0Ktravis_time:start:065a0930[0Ktravis_time:end:065a0930:start=1590371972154842397,finish=1590371972159663881,duration=4821484,event=fix_ps4[0Ktravis_time:start:133594f5[0K
+$ cd failed/eclipse/golo-lang
+
+travis_time:end:133594f5:start=1590371972164612561,finish=1590371972168728397,duration=4115836,event=checkout[0Ktravis_time:start:12f127a1[0Ktravis_time:end:12f127a1:start=1590371972174819474,finish=1590371972371156091,duration=196336617,event=env[0K$ export TERM=dumb
+$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:install[0Ktravis_time:start:0e7e4460[0K$ ./gradlew assemble
+Downloading https://services.gradle.org/distributions/gradle-2.9-bin.zip
+...............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping /home/travis/.gradle/wrapper/dists/gradle-2.9-bin/ebaspjjvvkuki3ldbldx7hexd/gradle-2.9-bin.zip to /home/travis/.gradle/wrapper/dists/gradle-2.9-bin/ebaspjjvvkuki3ldbldx7hexd
+Set executable permissions for: /home/travis/.gradle/wrapper/dists/gradle-2.9-bin/ebaspjjvvkuki3ldbldx7hexd/gradle-2.9/bin/gradle
+Download https://plugins.gradle.org/m2/ca/coglinc/javacc-gradle-plugin/2.3.1/javacc-gradle-plugin-2.3.1.pom
+Download https://plugins.gradle.org/m2/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.pom
+Download https://plugins.gradle.org/m2/net/nemerosa/versioning/1.6.0/versioning-1.6.0.pom
+Download https://plugins.gradle.org/m2/com/github/ben-manes/gradle-versions-plugin/0.11.3/gradle-versions-plugin-0.11.3.pom
+Download https://plugins.gradle.org/m2/net/java/dev/javacc/javacc/6.1.2/javacc-6.1.2.pom
+Download https://plugins.gradle.org/m2/commons-io/commons-io/2.4/commons-io-2.4.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/25/commons-parent-25.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/9/apache-9.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/37/commons-parent-37.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/16/apache-16.pom
+Download https://plugins.gradle.org/m2/com/thoughtworks/xstream/xstream/1.4.7/xstream-1.4.7.pom
+Download https://plugins.gradle.org/m2/com/thoughtworks/xstream/xstream-parent/1.4.7/xstream-parent-1.4.7.pom
+Download https://plugins.gradle.org/m2/org/codehaus/codehaus-parent/3/codehaus-parent-3.pom
+Download https://plugins.gradle.org/m2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom
+Download https://plugins.gradle.org/m2/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.pom
+Download https://plugins.gradle.org/m2/ca/coglinc/javacc-gradle-plugin/2.3.1/javacc-gradle-plugin-2.3.1.jar
+Download https://plugins.gradle.org/m2/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.jar
+Download https://plugins.gradle.org/m2/net/nemerosa/versioning/1.6.0/versioning-1.6.0.jar
+Download https://plugins.gradle.org/m2/com/github/ben-manes/gradle-versions-plugin/0.11.3/gradle-versions-plugin-0.11.3.jar
+Download https://plugins.gradle.org/m2/net/java/dev/javacc/javacc/6.1.2/javacc-6.1.2.jar
+Download https://plugins.gradle.org/m2/commons-io/commons-io/2.4/commons-io-2.4.jar
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar
+Download https://plugins.gradle.org/m2/com/thoughtworks/xstream/xstream/1.4.7/xstream-1.4.7.jar
+Download https://plugins.gradle.org/m2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar
+Download https://plugins.gradle.org/m2/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+:asciidoctor
+Download https://jcenter.bintray.com/org/asciidoctor/asciidoctorj/1.5.2/asciidoctorj-1.5.2.pom
+Download https://jcenter.bintray.com/org/asciidoctor/asciidoctorj-groovy-dsl/1.0.0.preview2/asciidoctorj-groovy-dsl-1.0.0.preview2.pom
+Download https://jcenter.bintray.com/org/jruby/jruby-complete/1.7.16.1/jruby-complete-1.7.16.1.pom
+Download https://jcenter.bintray.com/org/jruby/jruby-artifacts/1.7.16.1/jruby-artifacts-1.7.16.1.pom
+Download https://jcenter.bintray.com/org/jruby/jruby-parent/1.7.16.1/jruby-parent-1.7.16.1.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Download https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.pom
+Download https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.7/slf4j-parent-1.7.7.pom
+Download https://jcenter.bintray.com/com/beust/jcommander/1.35/jcommander-1.35.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/3/oss-parent-3.pom
+Download https://jcenter.bintray.com/org/codehaus/groovy/groovy-all/1.8.9/groovy-all-1.8.9.pom
+Download https://jcenter.bintray.com/org/asciidoctor/asciidoctorj/1.5.2/asciidoctorj-1.5.2.jar
+Download https://jcenter.bintray.com/org/asciidoctor/asciidoctorj-groovy-dsl/1.0.0.preview2/asciidoctorj-groovy-dsl-1.0.0.preview2.jar
+Download https://jcenter.bintray.com/org/jruby/jruby-complete/1.7.16.1/jruby-complete-1.7.16.1.jar
+Download https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar
+Download https://jcenter.bintray.com/com/beust/jcommander/1.35/jcommander-1.35.jar
+Download https://jcenter.bintray.com/org/codehaus/groovy/groovy-all/1.8.9/groovy-all-1.8.9.jar
+:compileJjtree
+Java Compiler Compiler Version 6.1_2 (Tree Builder)
+(type "jjtree" with no arguments for help)
+Reading from file /home/travis/build/failed/eclipse/golo-lang/src/main/jjtree/org/eclipse/golo/compiler/parser/Golo.jjt . . .
+opt:java
+File "Node.java" does not exist.  Will create one.
+File "SimpleNode.java" does not exist.  Will create one.
+File "ASTerror.java" does not exist.  Will create one.
+File "ASTCompilationUnit.java" does not exist.  Will create one.
+File "ASTModuleDeclaration.java" does not exist.  Will create one.
+File "ASTImportDeclaration.java" does not exist.  Will create one.
+File "ASTToplevelDeclaration.java" does not exist.  Will create one.
+File "ASTStructDeclaration.java" does not exist.  Will create one.
+File "ASTUnionValue.java" does not exist.  Will create one.
+File "ASTUnionDeclaration.java" does not exist.  Will create one.
+File "ASTNamedAugmentationDeclaration.java" does not exist.  Will create one.
+File "ASTAugmentDeclaration.java" does not exist.  Will create one.
+File "ASTFunctionDeclaration.java" does not exist.  Will create one.
+File "ASTDecoratorDeclaration.java" does not exist.  Will create one.
+File "ASTContinue.java" does not exist.  Will create one.
+File "ASTBreak.java" does not exist.  Will create one.
+File "ASTThrow.java" does not exist.  Will create one.
+File "ASTWhileLoop.java" does not exist.  Will create one.
+File "ASTForLoop.java" does not exist.  Will create one.
+File "ASTForEachLoop.java" does not exist.  Will create one.
+File "ASTTryCatchFinally.java" does not exist.  Will create one.
+File "ASTExpressionStatement.java" does not exist.  Will create one.
+File "ASTUnaryExpression.java" does not exist.  Will create one.
+File "ASTInvocationExpression.java" does not exist.  Will create one.
+File "ASTMultiplicativeExpression.java" does not exist.  Will create one.
+File "ASTAdditiveExpression.java" does not exist.  Will create one.
+File "ASTRelationalExpression.java" does not exist.  Will create one.
+File "ASTEqualityExpression.java" does not exist.  Will create one.
+File "ASTAndExpression.java" does not exist.  Will create one.
+File "ASTOrExpression.java" does not exist.  Will create one.
+File "ASTOrIfNullExpression.java" does not exist.  Will create one.
+File "ASTMethodInvocation.java" does not exist.  Will create one.
+File "ASTBlock.java" does not exist.  Will create one.
+File "ASTFunction.java" does not exist.  Will create one.
+File "ASTLiteral.java" does not exist.  Will create one.
+File "ASTCollectionLiteral.java" does not exist.  Will create one.
+File "ASTReference.java" does not exist.  Will create one.
+File "ASTDestructuringAssignment.java" does not exist.  Will create one.
+File "ASTLetOrVar.java" does not exist.  Will create one.
+File "ASTAssignment.java" does not exist.  Will create one.
+File "ASTReturn.java" does not exist.  Will create one.
+File "ASTArgument.java" does not exist.  Will create one.
+File "ASTAnonymousFunctionInvocation.java" does not exist.  Will create one.
+File "ASTFunctionInvocation.java" does not exist.  Will create one.
+File "ASTConditionalBranching.java" does not exist.  Will create one.
+File "ASTCase.java" does not exist.  Will create one.
+File "ASTMatch.java" does not exist.  Will create one.
+File "GoloParserTreeConstants.java" does not exist.  Will create one.
+File "GoloParserVisitor.java" does not exist.  Will create one.
+File "GoloParserDefaultVisitor.java" does not exist.  Will create one.
+File "JJTGoloParserState.java" does not exist.  Will create one.
+Annotated grammar generated successfully in /home/travis/build/failed/eclipse/golo-lang/build/generated/jjtree/tmp/org/eclipse/golo/compiler/parser/Golo.jj
+:compileJavacc
+Java Compiler Compiler Version 6.1_2 (Parser Generator)
+(type "javacc" with no arguments for help)
+Reading from file /home/travis/build/failed/eclipse/golo-lang/build/generated/jjtree/org/eclipse/golo/compiler/parser/Golo.jj . . .
+Note: UNICODE_INPUT option is specified. Please make sure you create the parser/lexer using a Reader with the correct character encoding.
+File "TokenMgrError.java" does not exist.  Will create one.
+File "ParseException.java" does not exist.  Will create one.
+File "Token.java" does not exist.  Will create one.
+File "JavaCharStream.java" does not exist.  Will create one.
+Parser generated with 0 errors and 1 warnings.
+:compileJava
+Download https://jcenter.bintray.com/org/ow2/asm/asm/5.0.4/asm-5.0.4.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-parent/5.0.4/asm-parent-5.0.4.pom
+Download https://jcenter.bintray.com/org/ow2/ow2/1.3/ow2-1.3.pom
+Download https://jcenter.bintray.com/com/beust/jcommander/1.48/jcommander-1.48.pom
+Download https://jcenter.bintray.com/com/github/rjeschke/txtmark/0.13/txtmark-0.13.pom
+Download https://jcenter.bintray.com/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar
+Download https://jcenter.bintray.com/com/beust/jcommander/1.48/jcommander-1.48.jar
+Download https://jcenter.bintray.com/com/github/rjeschke/txtmark/0.13/txtmark-0.13.jar
+Download https://jcenter.bintray.com/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar
+:processResources
+:goloc
+:classes
+:golodoc
+:jar
+:vanillaScripts
+:startScripts
+:distTar
+:distZip
+:assemble
+
+BUILD SUCCESSFUL
+
+Total time: 1 mins 9.495 secs
+travis_time:end:0e7e4460:start=1590371972782190368,finish=1590372043452708346,duration=70670517978,event=install[0Ktravis_fold:end:install[0Ktravis_time:start:01738074[0K$ ./gradlew check
+[versioning] WARNING - the working copy has unstaged or uncommitted changes.
+:compileJjtree UP-TO-DATE
+:compileJavacc UP-TO-DATE
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:goloc
+:classes
+:findbugsMain
+Download https://jcenter.bintray.com/com/google/code/findbugs/findbugs/3.0.1/findbugs-3.0.1.pom
+Download https://jcenter.bintray.com/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.pom
+Download https://jcenter.bintray.com/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom
+Download https://jcenter.bintray.com/com/google/code/findbugs/bcel-findbugs/6.0/bcel-findbugs-6.0.pom
+Download https://jcenter.bintray.com/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.pom
+Download https://jcenter.bintray.com/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-debug-all/5.0.2/asm-debug-all-5.0.2.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-parent/5.0.2/asm-parent-5.0.2.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.pom
+Download https://jcenter.bintray.com/commons-lang/commons-lang/2.6/commons-lang-2.6.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/17/commons-parent-17.pom
+Download https://jcenter.bintray.com/org/apache/apache/7/apache-7.pom
+Download https://jcenter.bintray.com/com/apple/AppleJavaExtensions/1.4/AppleJavaExtensions-1.4.pom
+Download https://jcenter.bintray.com/jaxen/jaxen/1.1.6/jaxen-1.1.6.pom
+Download https://jcenter.bintray.com/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm/5.0.2/asm-5.0.2.pom
+Download https://jcenter.bintray.com/com/google/code/findbugs/findbugs/3.0.1/findbugs-3.0.1.jar
+Download https://jcenter.bintray.com/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar
+Download https://jcenter.bintray.com/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar
+Download https://jcenter.bintray.com/com/google/code/findbugs/bcel-findbugs/6.0/bcel-findbugs-6.0.jar
+Download https://jcenter.bintray.com/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.jar
+Download https://jcenter.bintray.com/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-debug-all/5.0.2/asm-debug-all-5.0.2.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.jar
+Download https://jcenter.bintray.com/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+Download https://jcenter.bintray.com/com/apple/AppleJavaExtensions/1.4/AppleJavaExtensions-1.4.jar
+Download https://jcenter.bintray.com/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar
+Download https://jcenter.bintray.com/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm/5.0.2/asm-5.0.2.jar
+:compileTestJava
+Download https://jcenter.bintray.com/org/ow2/asm/asm-util/5.0.4/asm-util-5.0.4.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-analysis/5.0.4/asm-analysis-5.0.4.pom
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.pom
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+Download https://jcenter.bintray.com/org/skyscreamer/jsonassert/1.2.3/jsonassert-1.2.3.pom
+Download https://jcenter.bintray.com/org/testng/testng/6.9.9/testng-6.9.9.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/5.0.4/asm-tree-5.0.4.pom
+Download https://jcenter.bintray.com/org/json/json/20090211/json-20090211.pom
+Download https://jcenter.bintray.com/org/apache/ant/ant/1.7.0/ant-1.7.0.pom
+Download https://jcenter.bintray.com/org/apache/ant/ant-parent/1.7.0/ant-parent-1.7.0.pom
+Download https://jcenter.bintray.com/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom
+Download https://jcenter.bintray.com/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom
+Download https://jcenter.bintray.com/com/google/inject/guice/4.0/guice-4.0.pom
+Download https://jcenter.bintray.com/com/google/inject/guice-parent/4.0/guice-parent-4.0.pom
+Download https://jcenter.bintray.com/com/google/google/5/google-5.pom
+Download https://jcenter.bintray.com/org/yaml/snakeyaml/1.15/snakeyaml-1.15.pom
+Download https://jcenter.bintray.com/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.pom
+Download https://jcenter.bintray.com/javax/inject/javax.inject/1/javax.inject-1.pom
+Download https://jcenter.bintray.com/aopalliance/aopalliance/1.0/aopalliance-1.0.pom
+Download https://jcenter.bintray.com/com/google/guava/guava/16.0.1/guava-16.0.1.pom
+Download https://jcenter.bintray.com/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-util/5.0.4/asm-util-5.0.4.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-analysis/5.0.4/asm-analysis-5.0.4.jar
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar
+Download https://jcenter.bintray.com/org/skyscreamer/jsonassert/1.2.3/jsonassert-1.2.3.jar
+Download https://jcenter.bintray.com/org/testng/testng/6.9.9/testng-6.9.9.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/5.0.4/asm-tree-5.0.4.jar
+Download https://jcenter.bintray.com/org/json/json/20090211/json-20090211.jar
+Download https://jcenter.bintray.com/org/apache/ant/ant/1.7.0/ant-1.7.0.jar
+Download https://jcenter.bintray.com/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar
+Download https://jcenter.bintray.com/com/google/inject/guice/4.0/guice-4.0-no_aop.jar
+Download https://jcenter.bintray.com/org/yaml/snakeyaml/1.15/snakeyaml-1.15.jar
+Download https://jcenter.bintray.com/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar
+Download https://jcenter.bintray.com/javax/inject/javax.inject/1/javax.inject-1.jar
+Download https://jcenter.bintray.com/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+Download https://jcenter.bintray.com/com/google/guava/guava/16.0.1/guava-16.0.1.jar
+:processTestResources
+:testClasses
+:test
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.build/0.7.1.201405082137/org.jacoco.build-0.7.1.201405082137.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137.jar
+
+Gradle suite > Gradle test > gololang.StandardAugmentationsTest.number_repeaters FAILED
+    java.lang.reflect.InvocationTargetException at StandardAugmentationsTest.java:495
+        Caused by: java.lang.NullPointerException at StandardAugmentationsTest.java:495
+:test FAILED
+
+BUILD FAILED
+
+Total time: 56.263 secs
+travis_time:end:01738074:start=1590372043459126148,finish=1590372100233023364,duration=56773897216,event=[0K[31;1mThe command "./gradlew check" exited with 1.[0m
+
+
+Done. Your build exited with 1.

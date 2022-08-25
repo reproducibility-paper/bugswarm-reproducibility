@@ -1,0 +1,269 @@
+travis_time:start:075a6948[0Ktravis_time:end:075a6948:start=1589776169252231884,finish=1589776169423072675,duration=170840791,event=no_world_writable_dirs[0Ktravis_time:start:00e9e0e0[0Ktravis_time:end:00e9e0e0:start=1589776169429437921,finish=1589776169433332038,duration=3894117,event=check_unsupported[0Ktravis_time:start:07f48b90[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: python
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-91-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:07f48b90:start=1589776169438391369,finish=1589776169446275000,duration=7883631,event=show_system_info[0Ktravis_time:start:00fb4ad2[0Ktravis_time:end:00fb4ad2:start=1589776169451452083,finish=1589776169466650805,duration=15198722,event=rm_riak_source[0Ktravis_time:start:3b9264c8[0Ktravis_time:end:3b9264c8:start=1589776169472354682,finish=1589776169480816512,duration=8461830,event=fix_rwky_redis[0Ktravis_time:start:20f67ef2[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:20f67ef2:start=1589776169485564653,finish=1589776190167336282,duration=20681771629,event=wait_for_network[0Ktravis_time:start:10146ea9[0Ktravis_time:end:10146ea9:start=1589776190173291620,finish=1589776190803343140,duration=630051520,event=update_apt_keys[0Ktravis_time:start:164bf780[0Ktravis_time:end:164bf780:start=1589776190809038901,finish=1589776190874554476,duration=65515575,event=fix_hhvm_source[0Ktravis_time:start:16e7a268[0Ktravis_time:end:16e7a268:start=1589776190879725807,finish=1589776190886066691,duration=6340884,event=update_mongo_arch[0Ktravis_time:start:28f6013a[0Ktravis_time:end:28f6013a:start=1589776190892806456,finish=1589776190941677129,duration=48870673,event=fix_sudo_enabled_trusty[0Ktravis_time:start:01b2b181[0Ktravis_time:end:01b2b181:start=1589776190948470370,finish=1589776190965076708,duration=16606338,event=clean_up_path[0Ktravis_time:start:00be93f8[0Ktravis_time:end:00be93f8:start=1589776190971144961,finish=1589776190984992394,duration=13847433,event=fix_resolv_conf[0Ktravis_time:start:02679f00[0Ktravis_time:end:02679f00:start=1589776190991536972,finish=1589776191009883363,duration=18346391,event=fix_etc_hosts[0Ktravis_time:start:0173ac34[0Ktravis_time:end:0173ac34:start=1589776191015855320,finish=1589776191041235515,duration=25380195,event=fix_mvn_settings_xml[0Ktravis_time:start:14150388[0Ktravis_time:end:14150388:start=1589776191047859879,finish=1589776191065863809,duration=18003930,event=no_ipv6_localhost[0Ktravis_time:start:2a465201[0Ktravis_time:end:2a465201:start=1589776191072805864,finish=1589776191088060949,duration=15255085,event=fix_etc_mavenrc[0Ktravis_time:start:13083874[0Ktravis_time:end:13083874:start=1589776191094856196,finish=1589776191100705136,duration=5848940,event=fix_wwdr_certificate[0Ktravis_time:start:02d386f4[0Ktravis_time:end:02d386f4:start=1589776191106810088,finish=1589776191142663685,duration=35853597,event=put_localhost_first[0Ktravis_time:start:13355bb0[0Ktravis_time:end:13355bb0:start=1589776191148939677,finish=1589776191153970901,duration=5031224,event=home_paths[0Ktravis_time:start:2b82e720[0Ktravis_time:end:2b82e720:start=1589776191159727490,finish=1589776191187661924,duration=27934434,event=disable_initramfs[0Ktravis_time:start:31724844[0Ktravis_time:end:31724844:start=1589776191194712099,finish=1589776191218204741,duration=23492642,event=disable_ssh_roaming[0Ktravis_time:start:051e8e24[0Ktravis_time:end:051e8e24:start=1589776191224661686,finish=1589776191229398601,duration=4736915,event=debug_tools[0Ktravis_time:start:086587b0[0Ktravis_time:end:086587b0:start=1589776191235443260,finish=1589776191241123270,duration=5680010,event=uninstall_oclint[0Ktravis_time:start:065e0f45[0Ktravis_time:end:065e0f45:start=1589776191246079127,finish=1589776191251886382,duration=5807255,event=rvm_use[0Ktravis_time:start:17467843[0Ktravis_time:end:17467843:start=1589776191257919812,finish=1589776191271317388,duration=13397576,event=rm_etc_boto_cfg[0Ktravis_time:start:15abec8e[0Ktravis_time:end:15abec8e:start=1589776191277343013,finish=1589776191281910897,duration=4567884,event=rm_oraclejdk8_symlink[0Ktravis_time:start:0bc71f32[0Ktravis_time:end:0bc71f32:start=1589776191288027352,finish=1589776191332824068,duration=44796716,event=enable_i386[0Ktravis_time:start:0c5f2eae[0Ktravis_time:end:0c5f2eae:start=1589776191337958700,finish=1589776191344937535,duration=6978835,event=update_rubygems[0Ktravis_time:start:0731262a[0Ktravis_time:end:0731262a:start=1589776191350738608,finish=1589776191360448077,duration=9709469,event=ensure_path_components[0Ktravis_time:start:1378f806[0Ktravis_time:end:1378f806:start=1589776191367273699,finish=1589776191372005862,duration=4732163,event=redefine_curl[0Ktravis_time:start:032aae18[0Ktravis_time:end:032aae18:start=1589776191378100860,finish=1589776191382495875,duration=4395015,event=nonblock_pipe[0Ktravis_time:start:1ca8e46a[0Ktravis_time:end:1ca8e46a:start=1589776191388189165,finish=1589776196839522406,duration=5451333241,event=apt_get_update[0Ktravis_time:start:1d8d3256[0Ktravis_time:end:1d8d3256:start=1589776196847120105,finish=1589776196852401564,duration=5281459,event=deprecate_xcode_64[0Ktravis_time:start:01a0530b[0Ktravis_time:end:01a0530b:start=1589776196859697769,finish=1589776196868106874,duration=8409105,event=update_heroku[0Ktravis_time:start:0666eea4[0Ktravis_time:end:0666eea4:start=1589776196874893781,finish=1589776196879305793,duration=4412012,event=shell_session_update[0Ktravis_time:start:154d1fc6[0Ktravis_fold:start:docker_mtu[0Ktravis_fold:end:docker_mtu[0Ktravis_time:end:154d1fc6:start=1589776196886050992,finish=1589776196922690188,duration=36639196,event=set_docker_mtu[0Ktravis_time:start:0c748404[0Ktravis_time:end:0c748404:start=1589776196929082278,finish=1589776196945077316,duration=15995038,event=resolvconf[0K[33;1m3.5 is not installed; attempting download[0m
+[33;1mDownloading archive: https://s3.amazonaws.com/travis-python-archives/binaries/ubuntu/12.04/x86_64/python-3.5.tar.bz2[0m
+travis_time:start:03630e9c[0K$ curl -sSf --retry 5 -o python-3.5.tar.bz2 ${archive_url}
+travis_time:end:03630e9c:start=1589776197025592635,finish=1589776213672667932,duration=16647075297,event=configure[0Ktravis_time:start:246fd696[0K$ sudo tar xjf python-3.5.tar.bz2 --directory /
+travis_time:end:246fd696:start=1589776213680428445,finish=1589776224670748004,duration=10990319559,event=configure[0Ktravis_fold:start:apt[0Ktravis_time:start:28c78134[0K$ travis_apt_get_update
+travis_time:end:28c78134:start=1589776224714790443,finish=1589776230080230824,duration=5365440381,event=prepare[0K[33;1mInstalling APT Packages[0m
+travis_time:start:04aedd2e[0K$ sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install libhdf5-serial-dev netcdf-bin libnetcdf-dev
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  libhdf5-doc netcdf-doc
+The following NEW packages will be installed:
+  libhdf5-serial-dev libnetcdf-dev netcdf-bin
+0 upgraded, 3 newly installed, 0 to remove and 238 not upgraded.
+Need to get 3,107 kB of archives.
+After this operation, 20.4 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ precise/universe libhdf5-serial-dev amd64 1.8.4-patch1-3ubuntu2 [2,278 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ precise/universe libnetcdf-dev amd64 1:4.1.1-6 [644 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ precise/universe netcdf-bin amd64 1:4.1.1-6 [185 kB]
+Fetched 3,107 kB in 0s (3,760 kB/s)
+Selecting previously unselected package libhdf5-serial-dev.
+(Reading database ... 72431 files and directories currently installed.)
+Unpacking libhdf5-serial-dev (from .../libhdf5-serial-dev_1.8.4-patch1-3ubuntu2_amd64.deb) ...
+Selecting previously unselected package libnetcdf-dev.
+Unpacking libnetcdf-dev (from .../libnetcdf-dev_1%3a4.1.1-6_amd64.deb) ...
+Selecting previously unselected package netcdf-bin.
+Unpacking netcdf-bin (from .../netcdf-bin_1%3a4.1.1-6_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up libhdf5-serial-dev (1.8.4-patch1-3ubuntu2) ...
+Setting up libnetcdf-dev (1:4.1.1-6) ...
+Setting up netcdf-bin (1:4.1.1-6) ...
+travis_time:end:04aedd2e:start=1589776230086858699,finish=1589776238900226856,duration=8813368157,event=prepare[0Ktravis_fold:end:apt[0Ktravis_time:start:14d0fcdc[0Ktravis_time:end:14d0fcdc:start=1589776238907116758,finish=1589776238912693297,duration=5576539,event=fix_ps4[0Ktravis_time:start:07a1a250[0K
+$ cd failed/Unidata/netcdf4-python
+
+travis_time:end:07a1a250:start=1589776238919255218,finish=1589776238924538513,duration=5283295,event=checkout[0Ktravis_time:start:1566921f[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export DEPENDS="numpy cython setuptools==18.0.1"
+$ export NO_NET=1
+
+travis_time:end:1566921f:start=1589776238930066572,finish=1589776239106757725,duration=176691153,event=env[0Ktravis_time:start:08eb8f04[0K$ source ~/virtualenv/python3.5/bin/activate
+travis_time:end:08eb8f04:start=1589776239114024653,finish=1589776239119974037,duration=5949384,event=[0K$ python --version
+Python 3.5.6
+$ pip --version
+pip 18.0 from /home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages/pip (python 3.5)
+travis_fold:start:before_install[0Ktravis_time:start:00767837[0K$ pip install $DEPENDS
+Requirement already satisfied: numpy in /home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages (1.15.0)
+Collecting cython
+  Downloading https://files.pythonhosted.org/packages/81/7d/ed2dd579dffd2826d03225b55576d1bf304108c764152e41f7116f2459d8/Cython-0.29.17-cp35-cp35m-manylinux1_x86_64.whl (2.1MB)
+Collecting setuptools==18.0.1
+  Downloading https://files.pythonhosted.org/packages/00/d5/1233f051f7ce669a2009301aa75f1efbd97ccde6b60236997fd9111d5297/setuptools-18.0.1-py2.py3-none-any.whl (461kB)
+Installing collected packages: cython, setuptools
+  Found existing installation: setuptools 40.0.0
+    Uninstalling setuptools-40.0.0:
+      Successfully uninstalled setuptools-40.0.0
+Successfully installed cython-0.29.17 setuptools-18.0.1
+travis_time:end:00767837:start=1589776239602247550,finish=1589776244102156451,duration=4499908901,event=before_install[0Ktravis_fold:end:before_install[0Ktravis_fold:start:install.1[0Ktravis_time:start:23da09bc[0K$ python setup.py build
+reading from setup.cfg...
+using nc-config ...
+
+    HDF5_DIR environment variable not set, checking some standard locations ..
+checking /home/travis ...
+checking /usr/local ...
+checking /sw ...
+checking /opt ...
+checking /opt/local ...
+checking /usr ...
+HDF5 library version: 1.8.4-patch1 found in /usr
+using netcdf library version b'4.1.1'
+using Cython to compile netCDF4.pyx...
+netcdf lib does not have group rename capability
+netcdf lib does not have nc_inq_path function
+netcdf lib does not have nc_inq_format_extended function
+netcdf lib does not have nc_open_mem function
+netcdf lib does not have cdf-5 format capability
+running build
+running build_py
+creating build
+creating build/lib.linux-x86_64-3.5
+creating build/lib.linux-x86_64-3.5/netcdftime
+copying netcdftime/__init__.py -> build/lib.linux-x86_64-3.5/netcdftime
+creating build/lib.linux-x86_64-3.5/netCDF4
+copying netCDF4/__init__.py -> build/lib.linux-x86_64-3.5/netCDF4
+copying netCDF4/utils.py -> build/lib.linux-x86_64-3.5/netCDF4
+running build_ext
+cythoning netCDF4/_netCDF4.pyx to netCDF4/_netCDF4.c
+cythoning netcdftime/_netcdftime.pyx to netcdftime/_netcdftime.c
+building 'netCDF4._netCDF4' extension
+creating build/temp.linux-x86_64-3.5
+creating build/temp.linux-x86_64-3.5/netCDF4
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -fPIC -I/usr/include -I/usr/include -I/home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages/numpy/core/include -Iinclude -I/opt/python/3.5.6/include/python3.5m -c netCDF4/_netCDF4.c -o build/temp.linux-x86_64-3.5/netCDF4/_netCDF4.o
+gcc -pthread -shared -L/opt/python/3.5.6/lib -Wl,-rpath=/opt/python/3.5.6/lib build/temp.linux-x86_64-3.5/netCDF4/_netCDF4.o -L/usr/lib -L/usr/lib -L/opt/python/3.5.6/lib -Wl,--enable-new-dtags,-R/usr/lib -Wl,--enable-new-dtags,-R/usr/lib -lnetcdf -lhdf5_hl -lhdf5 -lpython3.5m -o build/lib.linux-x86_64-3.5/netCDF4/_netCDF4.cpython-35m-x86_64-linux-gnu.so
+building 'netcdftime._netcdftime' extension
+creating build/temp.linux-x86_64-3.5/netcdftime
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -fPIC -I/opt/python/3.5.6/include/python3.5m -c netcdftime/_netcdftime.c -o build/temp.linux-x86_64-3.5/netcdftime/_netcdftime.o
+gcc -pthread -shared -L/opt/python/3.5.6/lib -Wl,-rpath=/opt/python/3.5.6/lib build/temp.linux-x86_64-3.5/netcdftime/_netcdftime.o -L/opt/python/3.5.6/lib -lpython3.5m -o build/lib.linux-x86_64-3.5/netcdftime/_netcdftime.cpython-35m-x86_64-linux-gnu.so
+travis_time:end:23da09bc:start=1589776244108437537,finish=1589776307864348455,duration=63755910918,event=install[0Ktravis_fold:end:install.1[0Ktravis_fold:start:install.2[0Ktravis_time:start:0cf23972[0K$ python setup.py install
+reading from setup.cfg...
+using nc-config ...
+
+    HDF5_DIR environment variable not set, checking some standard locations ..
+checking /home/travis ...
+checking /usr/local ...
+checking /sw ...
+checking /opt ...
+checking /opt/local ...
+checking /usr ...
+HDF5 library version: 1.8.4-patch1 found in /usr
+using netcdf library version b'4.1.1'
+using Cython to compile netCDF4.pyx...
+netcdf lib does not have group rename capability
+netcdf lib does not have nc_inq_path function
+netcdf lib does not have nc_inq_format_extended function
+netcdf lib does not have nc_open_mem function
+netcdf lib does not have cdf-5 format capability
+running install
+running bdist_egg
+running egg_info
+creating netCDF4.egg-info
+writing netCDF4.egg-info/PKG-INFO
+writing dependency_links to netCDF4.egg-info/dependency_links.txt
+writing entry points to netCDF4.egg-info/entry_points.txt
+writing top-level names to netCDF4.egg-info/top_level.txt
+writing requirements to netCDF4.egg-info/requires.txt
+writing manifest file 'netCDF4.egg-info/SOURCES.txt'
+reading manifest file 'netCDF4.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'netCDF4.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+running build_ext
+cythoning netCDF4/_netCDF4.pyx to netCDF4/_netCDF4.c
+skipping 'netcdftime/_netcdftime.c' Cython extension (up-to-date)
+building 'netCDF4._netCDF4' extension
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -fPIC -I/usr/include -I/usr/include -I/home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages/numpy/core/include -Iinclude -I/opt/python/3.5.6/include/python3.5m -c netCDF4/_netCDF4.c -o build/temp.linux-x86_64-3.5/netCDF4/_netCDF4.o
+gcc -pthread -shared -L/opt/python/3.5.6/lib -Wl,-rpath=/opt/python/3.5.6/lib build/temp.linux-x86_64-3.5/netCDF4/_netCDF4.o -L/usr/lib -L/usr/lib -L/opt/python/3.5.6/lib -Wl,--enable-new-dtags,-R/usr/lib -Wl,--enable-new-dtags,-R/usr/lib -lnetcdf -lhdf5_hl -lhdf5 -lpython3.5m -o build/lib.linux-x86_64-3.5/netCDF4/_netCDF4.cpython-35m-x86_64-linux-gnu.so
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/netcdftime
+copying build/lib.linux-x86_64-3.5/netcdftime/__init__.py -> build/bdist.linux-x86_64/egg/netcdftime
+copying build/lib.linux-x86_64-3.5/netcdftime/_netcdftime.cpython-35m-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/egg/netcdftime
+creating build/bdist.linux-x86_64/egg/netCDF4
+copying build/lib.linux-x86_64-3.5/netCDF4/__init__.py -> build/bdist.linux-x86_64/egg/netCDF4
+copying build/lib.linux-x86_64-3.5/netCDF4/utils.py -> build/bdist.linux-x86_64/egg/netCDF4
+copying build/lib.linux-x86_64-3.5/netCDF4/_netCDF4.cpython-35m-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/egg/netCDF4
+byte-compiling build/bdist.linux-x86_64/egg/netcdftime/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/egg/netCDF4/__init__.py to __init__.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/egg/netCDF4/utils.py to utils.cpython-35.pyc
+creating stub loader for netCDF4/_netCDF4.cpython-35m-x86_64-linux-gnu.so
+creating stub loader for netcdftime/_netcdftime.cpython-35m-x86_64-linux-gnu.so
+byte-compiling build/bdist.linux-x86_64/egg/netCDF4/_netCDF4.py to _netCDF4.cpython-35.pyc
+byte-compiling build/bdist.linux-x86_64/egg/netcdftime/_netcdftime.py to _netcdftime.cpython-35.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying netCDF4.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying netCDF4.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying netCDF4.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying netCDF4.egg-info/entry_points.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying netCDF4.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying netCDF4.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+writing build/bdist.linux-x86_64/egg/EGG-INFO/native_libs.txt
+creating dist
+creating 'dist/netCDF4-1.3.0-py3.5-linux-x86_64.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing netCDF4-1.3.0-py3.5-linux-x86_64.egg
+creating /home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages/netCDF4-1.3.0-py3.5-linux-x86_64.egg
+Extracting netCDF4-1.3.0-py3.5-linux-x86_64.egg to /home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages
+Adding netCDF4 1.3.0 to easy-install.pth file
+Installing nc3tonc4 script to /home/travis/virtualenv/python3.5.6/bin
+Installing ncinfo script to /home/travis/virtualenv/python3.5.6/bin
+Installing nc4tonc3 script to /home/travis/virtualenv/python3.5.6/bin
+
+Installed /home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages/netCDF4-1.3.0-py3.5-linux-x86_64.egg
+Processing dependencies for netCDF4==1.3.0
+Searching for numpy==1.15.0
+Best match: numpy 1.15.0
+Adding numpy 1.15.0 to easy-install.pth file
+Installing conv-template script to /home/travis/virtualenv/python3.5.6/bin
+Installing f2py script to /home/travis/virtualenv/python3.5.6/bin
+Installing from-template script to /home/travis/virtualenv/python3.5.6/bin
+
+Using /home/travis/virtualenv/python3.5.6/lib/python3.5/site-packages
+Finished processing dependencies for netCDF4==1.3.0
+travis_time:end:0cf23972:start=1589776307871338964,finish=1589776353238684257,duration=45367345293,event=install[0Ktravis_fold:end:install.2[0Ktravis_time:start:0327b476[0K$ cd test
+travis_time:end:0327b476:start=1589776353246787008,finish=1589776353252375470,duration=5588462,event=script[0K[32;1mThe command "cd test" exited with 0.[0m
+travis_time:start:1c1e5ab4[0K$ python run_all.py
+not running tst_unicode.py ...
+not running tst_diskless.py ...
+not running tst_filepath.py ...
+not running tst_cdf5.py ...
+not running tst_dap.py ...
+
+netcdf4-python version: 1.3.0
+HDF5 lib version:       1.8.4
+netcdf lib version:     4.1.1
+numpy version           1.15.0
+travis_time:end:1c1e5ab4:start=1589776353260142164,finish=1589776359684893584,duration=6424751420,event=script[0K[31;1mThe command "python run_all.py" exited with 1.[0m
+
+
+Done. Your build exited with 1.
