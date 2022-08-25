@@ -1,0 +1,1348 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd passed/HubTurbo/HubTurbo
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export TERM=dumb
+
+$ export TERM=dumb
+$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:before_install.1[0Ktravis_time:start:0279c4f8[0K$ export DISPLAY=:99.0
+
+travis_time:end:0279c4f8:start=1601086245822908522,finish=1601086245831836334,duration=8927812[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:0696d834[0K$ sh -e /etc/init.d/xvfb start
+Starting virtual X frame buffer: Xvfb.
+
+travis_time:end:0696d834:start=1601086245843203666,finish=1601086245863093701,duration=19890035[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:install[0Ktravis_time:start:01341da4[0K$ ./gradlew assemble
+Downloading https://services.gradle.org/distributions/gradle-2.3-all.zip
+............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping /home/travis/.gradle/wrapper/dists/gradle-2.3-all/w01pvxy5gty3tegjrai84pm3/gradle-2.3-all.zip to /home/travis/.gradle/wrapper/dists/gradle-2.3-all/w01pvxy5gty3tegjrai84pm3
+Set executable permissions for: /home/travis/.gradle/wrapper/dists/gradle-2.3-all/w01pvxy5gty3tegjrai84pm3/gradle-2.3/bin/gradle
+Download https://plugins.gradle.org/m2/org/kt3k/gradle/plugin/coveralls-gradle-plugin/2.3.1/coveralls-gradle-plugin-2.3.1.pom
+Download https://plugins.gradle.org/m2/com/github/jengelman/gradle/plugins/shadow/1.2.1/shadow-1.2.1.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpmime/4.3/httpmime-4.3.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcomponents-client/4.3/httpcomponents-client-4.3.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/project/7/project-7.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/13/apache-13.pom
+Download https://plugins.gradle.org/m2/org/eclipse/jgit/org.eclipse.jgit/3.6.0.201412230720-r/org.eclipse.jgit-3.6.0.201412230720-r.pom
+Download https://plugins.gradle.org/m2/org/eclipse/jgit/org.eclipse.jgit-parent/3.6.0.201412230720-r/org.eclipse.jgit-parent-3.6.0.201412230720-r.pom
+Download https://plugins.gradle.org/m2/org/codehaus/groovy/modules/http-builder/http-builder/0.7.1/http-builder-0.7.1.pom
+Download https://plugins.gradle.org/m2/org/jdom/jdom2/2.0.5/jdom2-2.0.5.pom
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm/5.0.3/asm-5.0.3.pom
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-parent/5.0.3/asm-parent-5.0.3.pom
+Download https://plugins.gradle.org/m2/org/ow2/ow2/1.3/ow2-1.3.pom
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.pom
+Download https://plugins.gradle.org/m2/commons-io/commons-io/2.4/commons-io-2.4.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/25/commons-parent-25.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/9/apache-9.pom
+Download https://plugins.gradle.org/m2/org/apache/ant/ant/1.9.4/ant-1.9.4.pom
+Download https://plugins.gradle.org/m2/org/apache/ant/ant-parent/1.9.4/ant-parent-1.9.4.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpclient/4.3/httpclient-4.3.pom
+Download https://plugins.gradle.org/m2/com/jcraft/jsch/0.1.50/jsch-0.1.50.pom
+Download https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom
+Download https://plugins.gradle.org/m2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.pom
+Download https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom
+Download https://plugins.gradle.org/m2/net/sf/json-lib/json-lib/2.3/json-lib-2.3.pom
+Download https://plugins.gradle.org/m2/net/sourceforge/nekohtml/nekohtml/1.9.16/nekohtml-1.9.16.pom
+Download https://plugins.gradle.org/m2/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/3/apache-3.pom
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.pom
+Download https://plugins.gradle.org/m2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.pom
+Download https://plugins.gradle.org/m2/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/11/commons-parent-11.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/4/apache-4.pom
+Download https://plugins.gradle.org/m2/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/9/commons-parent-9.pom
+Download https://plugins.gradle.org/m2/commons-lang/commons-lang/2.4/commons-lang-2.4.pom
+Download https://plugins.gradle.org/m2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/5/commons-parent-5.pom
+Download https://plugins.gradle.org/m2/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.pom
+Download https://plugins.gradle.org/m2/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcomponents-core/4.3/httpcomponents-core-4.3.pom
+Download https://plugins.gradle.org/m2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/22/commons-parent-22.pom
+Download https://plugins.gradle.org/m2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/28/commons-parent-28.pom
+Download https://plugins.gradle.org/m2/org/kt3k/gradle/plugin/coveralls-gradle-plugin/2.3.1/coveralls-gradle-plugin-2.3.1.jar
+Download https://plugins.gradle.org/m2/com/github/jengelman/gradle/plugins/shadow/1.2.1/shadow-1.2.1.jar
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpmime/4.3/httpmime-4.3.jar
+Download https://plugins.gradle.org/m2/org/eclipse/jgit/org.eclipse.jgit/3.6.0.201412230720-r/org.eclipse.jgit-3.6.0.201412230720-r.jar
+Download https://plugins.gradle.org/m2/org/codehaus/groovy/modules/http-builder/http-builder/0.7.1/http-builder-0.7.1.jar
+Download https://plugins.gradle.org/m2/org/jdom/jdom2/2.0.5/jdom2-2.0.5.jar
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.jar
+Download https://plugins.gradle.org/m2/commons-io/commons-io/2.4/commons-io-2.4.jar
+Download https://plugins.gradle.org/m2/org/apache/ant/ant/1.9.4/ant-1.9.4.jar
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpclient/4.3/httpclient-4.3.jar
+Download https://plugins.gradle.org/m2/com/jcraft/jsch/0.1.50/jsch-0.1.50.jar
+Download https://plugins.gradle.org/m2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.jar
+Download https://plugins.gradle.org/m2/net/sf/json-lib/json-lib/2.3/json-lib-2.3-jdk15.jar
+Download https://plugins.gradle.org/m2/net/sourceforge/nekohtml/nekohtml/1.9.16/nekohtml-1.9.16.jar
+Download https://plugins.gradle.org/m2/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.jar
+Download https://plugins.gradle.org/m2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar
+Download https://plugins.gradle.org/m2/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar
+Download https://plugins.gradle.org/m2/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar
+Download https://plugins.gradle.org/m2/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+Download https://plugins.gradle.org/m2/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar
+Download https://plugins.gradle.org/m2/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar
+Download https://plugins.gradle.org/m2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+Download https://plugins.gradle.org/m2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j-api/2.2/log4j-api-2.2.pom
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j/2.2/log4j-2.2.pom
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j-core/2.2/log4j-core-2.2.pom
+Download https://jcenter.bintray.com/org/controlsfx/controlsfx/8.20.8/controlsfx-8.20.8.pom
+Download https://jcenter.bintray.com/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+Download https://jcenter.bintray.com/com/google/guava/guava/18.0/guava-18.0.pom
+Download https://jcenter.bintray.com/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Download https://jcenter.bintray.com/net/java/dev/jna/jna/4.1.0/jna-4.1.0.pom
+Download https://jcenter.bintray.com/org/commonjava/googlecode/markdown4j/markdown4j/2.2-cj-1.0/markdown4j-2.2-cj-1.0.pom
+Download https://jcenter.bintray.com/org/commonjava/commonjava/2/commonjava-2.pom
+Download https://jcenter.bintray.com/org/controlsfx/openjfx-dialogs/1.0.2/openjfx-dialogs-1.0.2.pom
+Download https://jcenter.bintray.com/org/apache/servicemix/bundles/org.apache.servicemix.bundles.egit.github.core/2.1.5_1/org.apache.servicemix.bundles.egit.github.core-2.1.5_1.pom
+Download https://jcenter.bintray.com/org/apache/servicemix/bundles/bundles-pom/11/bundles-pom-11.pom
+Download https://jcenter.bintray.com/org/apache/servicemix/servicemix-pom/5/servicemix-pom-5.pom
+Download https://jcenter.bintray.com/org/apache/apache/7/apache-7.pom
+Download https://jcenter.bintray.com/org/ocpsoft/prettytime/prettytime/3.2.7.Final/prettytime-3.2.7.Final.pom
+Download https://jcenter.bintray.com/org/ocpsoft/prettytime/prettytime-parent/3.2.7.Final/prettytime-parent-3.2.7.Final.pom
+Download https://jcenter.bintray.com/org/ocpsoft/ocpsoft-parent/10/ocpsoft-parent-10.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-java/2.45.0/selenium-java-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-parent/2.45.0/selenium-parent-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-server/2.45.0/selenium-server-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-chrome-driver/2.45.0/selenium-chrome-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-htmlunit-driver/2.45.0/selenium-htmlunit-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-firefox-driver/2.45.0/selenium-firefox-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-ie-driver/2.45.0/selenium-ie-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-safari-driver/2.45.0/selenium-safari-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-support/2.45.0/selenium-support-2.45.0.pom
+Download https://jcenter.bintray.com/org/webbitserver/webbit/0.4.14/webbit-0.4.14.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-leg-rc/2.45.0/selenium-leg-rc-2.45.0.pom
+Download https://jcenter.bintray.com/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.pom
+Download https://jcenter.bintray.com/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.pom
+Download https://jcenter.bintray.com/mx4j/mx4j-tools/3.0.1/mx4j-tools-3.0.1.pom
+Download https://jcenter.bintray.com/org/mortbay/jetty/servlet-api-2.5/6.1.9/servlet-api-2.5-6.1.9.pom
+Download https://jcenter.bintray.com/org/mortbay/jetty/project/6.1.9/project-6.1.9.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/jetty-repacked/7.6.1/jetty-repacked-7.6.1.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/jetty-rc-repacked/5/jetty-rc-repacked-5.pom
+Download https://jcenter.bintray.com/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.pom
+Download https://jcenter.bintray.com/org/yaml/snakeyaml/1.8/snakeyaml-1.8.pom
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.9/commons-codec-1.9.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/32/commons-parent-32.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-remote-driver/2.45.0/selenium-remote-driver-2.45.0.pom
+Download https://jcenter.bintray.com/net/sourceforge/htmlunit/htmlunit/2.15/htmlunit-2.15.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-client/4.3.6/httpcomponents-client-4.3.6.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-exec/1.1/commons-exec-1.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/17/commons-parent-17.pom
+Download https://jcenter.bintray.com/net/java/dev/jna/platform/3.4.0/platform-3.4.0.pom
+Download https://jcenter.bintray.com/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.pom
+Download https://jcenter.bintray.com/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-api/2.45.0/selenium-api-2.45.0.pom
+Download https://jcenter.bintray.com/xalan/xalan/2.7.1/xalan-2.7.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/33/commons-parent-33.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpmime/4.3.3/httpmime-4.3.3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-client/4.3.3/httpcomponents-client-4.3.3.pom
+Download https://jcenter.bintray.com/net/sourceforge/htmlunit/htmlunit-core-js/2.15/htmlunit-core-js-2.15.pom
+Download https://jcenter.bintray.com/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.pom
+Download https://jcenter.bintray.com/net/sourceforge/nekohtml/nekohtml/1.9.21/nekohtml-1.9.21.pom
+Download https://jcenter.bintray.com/net/sourceforge/cssparser/cssparser/0.9.14/cssparser-0.9.14.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-websocket/8.1.15.v20140411/jetty-websocket-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-project/8.1.15.v20140411/jetty-project-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-parent/20/jetty-parent-20.pom
+Download https://jcenter.bintray.com/xalan/serializer/2.7.1/serializer-2.7.1.pom
+Download https://jcenter.bintray.com/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.pom
+Download https://jcenter.bintray.com/org/w3c/css/sac/1.3/sac-1.3.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-util/8.1.15.v20140411/jetty-util-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-io/8.1.15.v20140411/jetty-io-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-http/8.1.15.v20140411/jetty-http-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-core/4.3.3/httpcomponents-core-4.3.3.pom
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j-api/2.2/log4j-api-2.2.jar
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j-core/2.2/log4j-core-2.2.jar
+Download https://jcenter.bintray.com/org/controlsfx/controlsfx/8.20.8/controlsfx-8.20.8.jar
+Download https://jcenter.bintray.com/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar
+Download https://jcenter.bintray.com/com/google/guava/guava/18.0/guava-18.0.jar
+Download https://jcenter.bintray.com/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar
+Download https://jcenter.bintray.com/org/commonjava/googlecode/markdown4j/markdown4j/2.2-cj-1.0/markdown4j-2.2-cj-1.0.jar
+Download https://jcenter.bintray.com/org/controlsfx/openjfx-dialogs/1.0.2/openjfx-dialogs-1.0.2.jar
+Download https://jcenter.bintray.com/org/apache/servicemix/bundles/org.apache.servicemix.bundles.egit.github.core/2.1.5_1/org.apache.servicemix.bundles.egit.github.core-2.1.5_1.jar
+Download https://jcenter.bintray.com/org/ocpsoft/prettytime/prettytime/3.2.7.Final/prettytime-3.2.7.Final.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-java/2.45.0/selenium-java-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-server/2.45.0/selenium-server-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-chrome-driver/2.45.0/selenium-chrome-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-htmlunit-driver/2.45.0/selenium-htmlunit-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-firefox-driver/2.45.0/selenium-firefox-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-ie-driver/2.45.0/selenium-ie-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-safari-driver/2.45.0/selenium-safari-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-support/2.45.0/selenium-support-2.45.0.jar
+Download https://jcenter.bintray.com/org/webbitserver/webbit/0.4.14/webbit-0.4.14.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-leg-rc/2.45.0/selenium-leg-rc-2.45.0.jar
+Download https://jcenter.bintray.com/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar
+Download https://jcenter.bintray.com/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar
+Download https://jcenter.bintray.com/mx4j/mx4j-tools/3.0.1/mx4j-tools-3.0.1.jar
+Download https://jcenter.bintray.com/org/mortbay/jetty/servlet-api-2.5/6.1.9/servlet-api-2.5-6.1.9.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/jetty-repacked/7.6.1/jetty-repacked-7.6.1.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/jetty-rc-repacked/5/jetty-rc-repacked-5.jar
+Download https://jcenter.bintray.com/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar
+Download https://jcenter.bintray.com/org/yaml/snakeyaml/1.8/snakeyaml-1.8.jar
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.9/commons-codec-1.9.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-remote-driver/2.45.0/selenium-remote-driver-2.45.0.jar
+Download https://jcenter.bintray.com/net/sourceforge/htmlunit/htmlunit/2.15/htmlunit-2.15.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.jar
+Download https://jcenter.bintray.com/org/apache/commons/commons-exec/1.1/commons-exec-1.1.jar
+Download https://jcenter.bintray.com/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar
+Download https://jcenter.bintray.com/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.jar
+Download https://jcenter.bintray.com/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-api/2.45.0/selenium-api-2.45.0.jar
+Download https://jcenter.bintray.com/xalan/xalan/2.7.1/xalan-2.7.1.jar
+Download https://jcenter.bintray.com/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpmime/4.3.3/httpmime-4.3.3.jar
+Download https://jcenter.bintray.com/net/sourceforge/htmlunit/htmlunit-core-js/2.15/htmlunit-core-js-2.15.jar
+Download https://jcenter.bintray.com/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar
+Download https://jcenter.bintray.com/net/sourceforge/nekohtml/nekohtml/1.9.21/nekohtml-1.9.21.jar
+Download https://jcenter.bintray.com/net/sourceforge/cssparser/cssparser/0.9.14/cssparser-0.9.14.jar
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-websocket/8.1.15.v20140411/jetty-websocket-8.1.15.v20140411.jar
+Download https://jcenter.bintray.com/xalan/serializer/2.7.1/serializer-2.7.1.jar
+Download https://jcenter.bintray.com/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar
+Download https://jcenter.bintray.com/org/w3c/css/sac/1.3/sac-1.3.jar
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-util/8.1.15.v20140411/jetty-util-8.1.15.v20140411.jar
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-io/8.1.15.v20140411/jetty-io-8.1.15.v20140411.jar
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-http/8.1.15.v20140411/jetty-http-8.1.15.v20140411.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.jar
+:compileJava
+:processResources
+:classes
+:jar
+:shadowJar
+:assemble
+
+BUILD SUCCESSFUL
+
+Total time: 1 mins 44.5 secs
+
+travis_time:end:01341da4:start=1601086245873113546,finish=1601086351257431965,duration=105384318419[0Ktravis_fold:end:install[0Ktravis_time:start:24dfc79a[0K$ ./gradlew clean check -i
+Connected to daemon DaemonInfo{pid=620, address=[24e4d2b3-dba4-494e-a46a-e765afd2e4d2 port:34689, addresses:[/127.0.0.1]], idle=true, context=DefaultDaemonContext[uid=227dd04e-bb9b-42a5-8a97-553714700080,javaHome=/usr/lib/jvm/java-8-oracle,daemonRegistryDir=/home/travis/.gradle/daemon,pid=620,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+CMSClassUnloadingEnabled,-XX:+CMSPermGenSweepingEnabled,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=utf-8,-Duser.country=US,-Duser.language=en,-Duser.variant]}. Dispatching request Build{id=25e022d0-f0c5-40ac-a554-20cd9c1e04a2.1, currentDir=/home/travis/build/passed/HubTurbo/HubTurbo}.
+The client will now receive all logging from the daemon (pid: 620). The daemon log file: /home/travis/.gradle/daemon/2.3/daemon-620.out.log
+Starting 2nd build in daemon [uptime: 1 mins 18.869 secs, performance: 100%, memory: 82% of 1.0 GB]
+Executing build with daemon context: DefaultDaemonContext[uid=227dd04e-bb9b-42a5-8a97-553714700080,javaHome=/usr/lib/jvm/java-8-oracle,daemonRegistryDir=/home/travis/.gradle/daemon,pid=620,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+CMSClassUnloadingEnabled,-XX:+CMSPermGenSweepingEnabled,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=utf-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Starting Build
+Closing daemon's stdin at end of input.
+The daemon will no longer process any standard input.
+Settings evaluated using settings file '/home/travis/build/passed/HubTurbo/HubTurbo/settings.gradle'.
+Projects loaded. Root project using build file '/home/travis/build/passed/HubTurbo/HubTurbo/build.gradle'.
+Included projects: [root project 'HubTurbo']
+Evaluating root project 'HubTurbo' using build file '/home/travis/build/passed/HubTurbo/HubTurbo/build.gradle'.
+All projects evaluated.
+Selected primary task 'clean' from project :
+Selected primary task 'check' from project :
+Tasks to be executed: [task ':clean', task ':compileJava', task ':processResources', task ':classes', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':check']
+:clean (Thread[Daemon worker,5,main]) started.
+:clean
+In-memory cache of /home/travis/build/passed/HubTurbo/HubTurbo/.gradle/2.3/taskArtifacts/fileHashes.bin: Size{406}, CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0}
+In-memory cache of /home/travis/build/passed/HubTurbo/HubTurbo/.gradle/2.3/taskArtifacts/outputFileStates.bin: Size{5}, CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0}
+In-memory cache of /home/travis/build/passed/HubTurbo/HubTurbo/.gradle/2.3/taskArtifacts/fileSnapshots.bin: Size{8}, CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0}
+In-memory cache of /home/travis/build/passed/HubTurbo/HubTurbo/.gradle/2.3/taskArtifacts/taskArtifacts.bin: Size{4}, CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0}
+Executing task ':clean' (up-to-date check took 0.001 secs) due to:
+  Task has not declared any outputs.
+:clean (Thread[Daemon worker,5,main]) completed. Took 0.036 secs.
+:compileJava (Thread[Daemon worker,5,main]) started.
+:compileJava
+Executing task ':compileJava' (up-to-date check took 0.13 secs) due to:
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/dependency-cache has changed.
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/classes/main has changed.
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/classes/main/github/update/IssueUpdateService$2.class has been removed.
+All input files are considered out-of-date for incremental task ':compileJava'.
+Compiling with JDK Java compiler API.
+:compileJava (Thread[Daemon worker,5,main]) completed. Took 1.421 secs.
+:processResources (Thread[Daemon worker,5,main]) started.
+:processResources
+Executing task ':processResources' (up-to-date check took 0.003 secs) due to:
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/resources/main has changed.
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/resources/main/log4j2.xml has been removed.
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/resources/main/ui/hubturbo.css has been removed.
+:processResources (Thread[Daemon worker,5,main]) completed. Took 0.128 secs.
+:classes (Thread[Daemon worker,5,main]) started.
+:classes
+Skipping task ':classes' as it has no actions.
+:classes (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+:compileTestJava (Thread[Daemon worker,5,main]) started.
+:compileTestJava
+Download https://jcenter.bintray.com/junit/junit/4.12/junit-4.12.pom
+Download https://jcenter.bintray.com/org/loadui/testFx/3.1.0/testFx-3.1.0.pom
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.pom
+Download https://jcenter.bintray.com/junit/junit/4.12/junit-4.12.jar
+Download https://jcenter.bintray.com/org/loadui/testFx/3.1.0/testFx-3.1.0.jar
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar
+Executing task ':compileTestJava' (up-to-date check took 1.134 secs) due to:
+  No history is available.
+All input files are considered out-of-date for incremental task ':compileTestJava'.
+Compiling with JDK Java compiler API.
+:compileTestJava (Thread[Daemon worker,5,main]) completed. Took 1.431 secs.
+:processTestResources (Thread[Daemon worker,5,main]) started.
+:processTestResources
+Executing task ':processTestResources' (up-to-date check took 0.067 secs) due to:
+  No history is available.
+:processTestResources (Thread[Daemon worker,5,main]) completed. Took 0.091 secs.
+:testClasses (Thread[Daemon worker,5,main]) started.
+:testClasses
+Skipping task ':testClasses' as it has no actions.
+:testClasses (Thread[Daemon worker,5,main]) completed. Took 0.0 secs.
+:test (Thread[Daemon worker,5,main]) started.
+:test
+Executing task ':test' (up-to-date check took 0.031 secs) due to:
+  No history is available.
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.build/0.7.4.201502262128/org.jacoco.build-0.7.4.201502262128.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128.jar
+[ant:null] Building jar: /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar
+Starting process 'Gradle Test Executor 1'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 1'
+Successfully started process 'Gradle Test Executor 1'
+Gradle Test Executor 1 started executing tests.
+
+guitests.ChromeDriverTest > chromeDriverStubTest STANDARD_OUT
+    2020-09-26 02:12:39,153 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+    2693 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler RepoOpenedEventHandler
+    2858 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler UpdateProgressEventHandler
+    2924 26 Sep 2020 02:12:39 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Browser Request Delay Timer
+    2926 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    2927 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler IssueCreatedEventHandler
+    2929 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler LabelCreatedEventHandler
+    2930 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler MilestoneCreatedEventHandler
+    2931 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    2932 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    2933 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler ColumnClickedEventHandler
+    2965 26 Sep 2020 02:12:39 INFO UI [JavaFX Application Thread] - Registered event handler BoardSavedEventHandler
+    3970 26 Sep 2020 02:12:40 INFO UI [JavaFX Application Thread] - Registered event handler UpdateDummyRepoEventHandler
+    3973 26 Sep 2020 02:12:40 INFO UI [JavaFX Application Thread] - Registered event handler ClearLogicModelEventHandler
+    3973 26 Sep 2020 02:12:40 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    3977 26 Sep 2020 02:12:40 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    3979 26 Sep 2020 02:12:40 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Refresh Timer
+    4001 26 Sep 2020 02:12:40 INFO Logic [JavaFX Application Thread] - Opening dummy/dummy
+    4012 26 Sep 2020 02:12:40 INFO UI [JavaFX Application Thread] - About to trigger event BoardSavedEvent
+    4013 26 Sep 2020 02:12:40 INFO UI [JavaFX Application Thread] - Triggered event BoardSavedEvent
+    4018 26 Sep 2020 02:12:40 INFO DownloadRepoTask [pool-5-thread-1] - dummy/dummy | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    4029 26 Sep 2020 02:12:40 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    4030 26 Sep 2020 02:12:40 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    4030 26 Sep 2020 02:12:40 INFO UpdateUsersTask [pool-5-thread-5] - dummy/dummy | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    4030 26 Sep 2020 02:12:40 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    4031 26 Sep 2020 02:12:41 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    4045 26 Sep 2020 02:12:41 INFO BrowserComponent [JavaFX Application Thread] - Could not find chromedriver_linux; extracted it from jar
+    4047 26 Sep 2020 02:12:41 INFO BrowserComponent [JavaFX Application Thread] - Logging in on GitHub...
+    4052 26 Sep 2020 02:12:41 INFO UI [pool-5-thread-2] - About to trigger event RepoOpenedEvent
+    4053 26 Sep 2020 02:12:41 INFO UI [JavaFX Application Thread] - Registered event handler UILogicRefreshEventHandler
+    4056 26 Sep 2020 02:12:41 INFO UI [pool-5-thread-2] - Triggered event RepoOpenedEvent
+    4276 26 Sep 2020 02:12:41 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    4353 26 Sep 2020 02:12:41 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    4357 26 Sep 2020 02:12:41 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+
+guitests.ChromeDriverTest > chromeDriverStubTest STANDARD_ERROR
+    Starting ChromeDriver 2.14.313457 (3d645c400edf2e2c500566c9aa096063e707c9cf) on port 28770
+    Only local connections are allowed.
+    [0.172][WARNING]: PAC support disabled because there is no system implementation
+
+guitests.ChromeDriverTest > chromeDriverStubTest STANDARD_OUT
+    4789 26 Sep 2020 02:12:41 INFO BrowserComponent [JavaFX Application Thread] - Initializing ChromeDriver
+    4975 26 Sep 2020 02:12:41 INFO BrowserComponent [JavaFX Application Thread] - Initializing ChromeDriver
+    5091 26 Sep 2020 02:12:42 INFO UI [Test worker] - About to trigger event IssueSelectedEvent
+
+guitests.ChromeDriverTest > chromeDriverStubTest STANDARD_ERROR
+    Exception in thread "Test worker" java.lang.IllegalStateException: Not on FX application thread; currentThread = Test worker
+    	at com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:204)
+    	at com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:364)
+    	at javafx.scene.Scene.addToDirtyList(Scene.java:485)
+    	at javafx.scene.Node.addToSceneDirtyList(Node.java:424)
+    	at javafx.scene.Node.impl_markDirty(Node.java:415)
+    	at javafx.scene.Node.impl_geomChanged(Node.java:3784)
+    	at javafx.scene.layout.Region.access$700(Region.java:141)
+    	at javafx.scene.layout.Region$3.invalidated(Region.java:581)
+    	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:111)
+    	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:145)
+    	at javafx.css.StyleableObjectProperty.set(StyleableObjectProperty.java:82)
+    	at javafx.css.StyleableObjectProperty.applyStyle(StyleableObjectProperty.java:68)
+    	at javafx.scene.CssStyleHelper.resetToInitialValues(CssStyleHelper.java:452)
+    	at javafx.scene.CssStyleHelper.createStyleHelper(CssStyleHelper.java:180)
+    	at javafx.scene.Node.reapplyCss(Node.java:8785)
+    	at javafx.scene.Node.impl_reapplyCSS(Node.java:8748)
+    	at javafx.scene.Node$3.onChanged(Node.java:998)
+    	at com.sun.javafx.collections.TrackableObservableList.lambda$new$20(TrackableObservableList.java:45)
+    	at com.sun.javafx.collections.TrackableObservableList$$Lambda$62/1496133407.onChanged(Unknown Source)
+    	at com.sun.javafx.collections.ListListenerHelper$SingleChange.fireValueChangedEvent(ListListenerHelper.java:164)
+    	at com.sun.javafx.collections.ListListenerHelper.fireValueChangedEvent(ListListenerHelper.java:73)
+    	at javafx.collections.ObservableListBase.fireChange(ObservableListBase.java:233)
+    	at javafx.collections.ListChangeBuilder.commit(ListChangeBuilder.java:482)
+    	at javafx.collections.ListChangeBuilder.endChange(ListChangeBuilder.java:541)
+    	at javafx.collections.ObservableListBase.endChange(ObservableListBase.java:205)
+    	at javafx.collections.ModifiableObservableListBase.remove(ModifiableObservableListBase.java:183)
+    	at javafx.collections.ModifiableObservableListBase.remove(ModifiableObservableListBase.java:171)
+    	at ui.issuecolumn.ColumnControl.updateCSSforColumns(ColumnControl.java:147)
+    	at ui.issuecolumn.ColumnControl.setCurrentlySelectedColumn(ColumnControl.java:141)
+    	at ui.issuecolumn.ColumnControl.lambda$new$37(ColumnControl.java:52)
+    	at ui.issuecolumn.ColumnControl$$Lambda$100/1857118717.handle(Unknown Source)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:483)
+    	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+    	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+    	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+    	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+    	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+    	at ui.UI.triggerEvent(UI.java:324)
+    	at guitests.ChromeDriverTest.chromeDriverStubTest(ChromeDriverTest.java:21)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:483)
+    	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+    	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+    	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+    	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+    	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+    	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+    	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+    	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+    	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+    	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+    	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+    	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+    	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+    	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+    	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:86)
+    	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:49)
+    	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+    	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:483)
+    	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+    	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+    	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+    	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+    	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+    	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:483)
+    	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+    	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+    	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+    	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:64)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    	at java.lang.Thread.run(Thread.java:745)
+
+guitests.ChromeDriverTest > chromeDriverStubTest STANDARD_OUT
+    5102 26 Sep 2020 02:12:42 INFO UI [Test worker] - Triggered event IssueSelectedEvent
+    5522 26 Sep 2020 02:12:42 INFO BrowserComponent [JavaFX Application Thread] - Showing issue #1
+    6105 26 Sep 2020 02:12:43 INFO UI [Test worker] - About to trigger event IssueCreatedEvent
+    6107 26 Sep 2020 02:12:43 INFO BrowserComponent [Test worker] - Navigating to New Issue page
+    6108 26 Sep 2020 02:12:43 INFO UI [Test worker] - Triggered event IssueCreatedEvent
+    6109 26 Sep 2020 02:12:43 INFO UI [Test worker] - About to trigger event LabelCreatedEvent
+    6110 26 Sep 2020 02:12:43 INFO BrowserComponent [Test worker] - Navigating to New Label page
+    6112 26 Sep 2020 02:12:43 INFO UI [Test worker] - Triggered event LabelCreatedEvent
+    6112 26 Sep 2020 02:12:43 INFO UI [Test worker] - About to trigger event MilestoneCreatedEvent
+    6113 26 Sep 2020 02:12:43 INFO BrowserComponent [Test worker] - Navigating to New Milestone page
+    6115 26 Sep 2020 02:12:43 INFO UI [Test worker] - Triggered event MilestoneCreatedEvent
+    6787 26 Sep 2020 02:12:43 INFO MenuControl [JavaFX Application Thread] - Menu: View > Documentation
+    6788 26 Sep 2020 02:12:43 INFO BrowserComponent [JavaFX Application Thread] - Showing documentation page
+Gradle Test Executor 1 finished executing tests.
+Starting process 'Gradle Test Executor 2'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 2'
+Successfully started process 'Gradle Test Executor 2'
+Gradle Test Executor 2 started executing tests.
+
+guitests.InvalidLoginTest > invalidLoginTest STANDARD_OUT
+    2020-09-26 02:12:46,568 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+    2745 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler RepoOpenedEventHandler
+    2949 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler UpdateProgressEventHandler
+    3036 26 Sep 2020 02:12:47 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Browser Request Delay Timer
+    3041 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    3044 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler IssueCreatedEventHandler
+    3047 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler LabelCreatedEventHandler
+    3050 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler MilestoneCreatedEventHandler
+    3053 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    3055 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    3058 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler ColumnClickedEventHandler
+    3111 26 Sep 2020 02:12:47 INFO UI [JavaFX Application Thread] - Registered event handler BoardSavedEventHandler
+    4245 26 Sep 2020 02:12:48 INFO UI [JavaFX Application Thread] - Registered event handler UpdateDummyRepoEventHandler
+    4250 26 Sep 2020 02:12:48 INFO UI [JavaFX Application Thread] - Registered event handler ClearLogicModelEventHandler
+    4251 26 Sep 2020 02:12:48 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    4256 26 Sep 2020 02:12:48 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    4260 26 Sep 2020 02:12:48 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Refresh Timer
+    11452 26 Sep 2020 02:12:55 INFO Logic [pool-7-thread-1] - Logging in as HubTurbo
+Gradle Test Executor 2 finished executing tests.
+Starting process 'Gradle Test Executor 3'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 3'
+Successfully started process 'Gradle Test Executor 3'
+Gradle Test Executor 3 started executing tests.
+
+guitests.ModelUpdateUITest > addIssueTest STANDARD_OUT
+    2020-09-26 02:12:58,709 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+    2569 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler RepoOpenedEventHandler
+    2775 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler UpdateProgressEventHandler
+    2858 26 Sep 2020 02:12:59 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Browser Request Delay Timer
+    2860 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    2862 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler IssueCreatedEventHandler
+    2864 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler LabelCreatedEventHandler
+    2866 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler MilestoneCreatedEventHandler
+    2868 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    2869 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    2871 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler ColumnClickedEventHandler
+    2924 26 Sep 2020 02:12:59 INFO UI [JavaFX Application Thread] - Registered event handler BoardSavedEventHandler
+    3756 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - Registered event handler UpdateDummyRepoEventHandler
+    3758 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - Registered event handler ClearLogicModelEventHandler
+    3759 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    3762 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    3764 26 Sep 2020 02:13:00 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Refresh Timer
+    3785 26 Sep 2020 02:13:00 INFO Logic [JavaFX Application Thread] - Opening dummy/dummy
+    3796 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - About to trigger event BoardSavedEvent
+    3797 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - Triggered event BoardSavedEvent
+    3801 26 Sep 2020 02:13:00 INFO DownloadRepoTask [pool-5-thread-1] - dummy/dummy | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    3811 26 Sep 2020 02:13:00 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    3811 26 Sep 2020 02:13:00 INFO UpdateUsersTask [pool-5-thread-5] - dummy/dummy | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    3811 26 Sep 2020 02:13:00 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    3811 26 Sep 2020 02:13:00 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    3813 26 Sep 2020 02:13:00 INFO BrowserComponent [JavaFX Application Thread] - Located chromedriver_linux
+    3813 26 Sep 2020 02:13:00 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    3816 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - Registered event handler UILogicRefreshEventHandler
+    3830 26 Sep 2020 02:13:00 INFO UI [pool-5-thread-2] - About to trigger event RepoOpenedEvent
+    3833 26 Sep 2020 02:13:00 INFO UI [pool-5-thread-2] - Triggered event RepoOpenedEvent
+    3959 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    4048 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    4052 26 Sep 2020 02:13:00 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    4793 26 Sep 2020 02:13:01 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    4796 26 Sep 2020 02:13:01 INFO UI [Test worker] - About to trigger event ClearLogicModelEvent
+    4797 26 Sep 2020 02:13:01 INFO UI [Test worker] - Triggered event ClearLogicModelEvent
+    4798 26 Sep 2020 02:13:01 INFO Logic [Test worker] - Attempting to reset dummy/dummy
+    4798 26 Sep 2020 02:13:01 INFO Logic [Test worker] - Clearing dummy/dummy successful.
+    4800 26 Sep 2020 02:13:01 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    4800 26 Sep 2020 02:13:01 INFO Logic [pool-7-thread-1] - Opening dummy/dummy
+    4800 26 Sep 2020 02:13:01 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    4801 26 Sep 2020 02:13:01 INFO DownloadRepoTask [pool-5-thread-2] - dummy/dummy | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    4801 26 Sep 2020 02:13:01 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    4802 26 Sep 2020 02:13:01 INFO UpdateLabelsTask [pool-5-thread-4] - dummy/dummy | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    4802 26 Sep 2020 02:13:01 INFO UpdateUsersTask [pool-5-thread-1] - dummy/dummy | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    4802 26 Sep 2020 02:13:01 INFO UpdateIssuesTask [pool-5-thread-2] - dummy/dummy | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    4802 26 Sep 2020 02:13:01 INFO UpdateMilestonesTask [pool-5-thread-5] - dummy/dummy | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    4803 26 Sep 2020 02:13:01 INFO UpdateModelTask [pool-5-thread-3] - dummy/dummy | Updated model with 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    4804 26 Sep 2020 02:13:01 INFO Logic [JavaFX Application Thread] - Refreshing 
+    4805 26 Sep 2020 02:13:01 INFO UI [pool-5-thread-3] - About to trigger event RepoOpenedEvent
+    4807 26 Sep 2020 02:13:01 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+
+guitests.ModelUpdateUITest > addIssueTest STANDARD_ERROR
+    Exception in thread "pool-5-thread-3" java.lang.IllegalStateException: Not on FX application thread; currentThread = pool-5-thread-3
+    	at com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:204)
+    	at com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:364)
+    	at javafx.scene.Scene.addToDirtyList(Scene.java:485)
+    	at javafx.scene.Node.addToSceneDirtyList(Node.java:424)
+    	at javafx.scene.Node.impl_markDirty(Node.java:415)
+    	at javafx.scene.shape.Shape.impl_markDirty(Shape.java:942)
+    	at javafx.scene.Node.impl_geomChanged(Node.java:3784)
+    	at javafx.scene.text.Text.impl_geomChanged(Text.java:763)
+    	at javafx.scene.text.Text.needsTextLayout(Text.java:194)
+    	at javafx.scene.text.Text.needsFullTextLayout(Text.java:189)
+    	at javafx.scene.text.Text.access$200(Text.java:96)
+    	at javafx.scene.text.Text$2.invalidated(Text.java:386)
+    	at javafx.beans.property.StringPropertyBase.markInvalid(StringPropertyBase.java:109)
+    	at javafx.beans.property.StringPropertyBase.access$000(StringPropertyBase.java:49)
+
+guitests.ModelUpdateUITest > addIssueTest STANDARD_OUT
+    4808 26 Sep 2020 02:13:01 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+
+guitests.ModelUpdateUITest > addIssueTest STANDARD_ERROR
+    	at javafx.beans.property.StringPropertyBase$Listener.invalidated(StringPropertyBase.java:229)
+    	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:137)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.binding.StringBinding.invalidate(StringBinding.java:171)
+    	at com.sun.javafx.binding.BindingHelperObserver.invalidated(BindingHelperObserver.java:51)
+
+guitests.ModelUpdateUITest > addIssueTest STANDARD_OUT
+    4809 26 Sep 2020 02:13:01 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+
+guitests.ModelUpdateUITest > addIssueTest STANDARD_ERROR
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:349)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.scene.control.TextInputControl$TextProperty.fireValueChangedEvent(TextInputControl.java:1123)
+    	at javafx.scene.control.TextInputControl$TextProperty.markInvalid(TextInputControl.java:1127)
+    	at javafx.scene.control.TextInputControl$TextProperty.invalidate(TextInputControl.java:1066)
+    	at javafx.scene.control.TextInputControl$TextProperty.access$1300(TextInputControl.java:1038)
+    	at javafx.scene.control.TextInputControl.lambda$new$163(TextInputControl.java:134)
+    	at javafx.scene.control.TextInputControl$$Lambda$183/688870687.invalidated(Unknown Source)
+    	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:137)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.scene.control.TextField$TextFieldContent.delete(TextField.java:97)
+    	at javafx.scene.control.TextInputControl$TextProperty.doSet(TextInputControl.java:1135)
+    	at javafx.scene.control.TextInputControl$TextProperty.set(TextInputControl.java:1061)
+    	at javafx.scene.control.TextInputControl.setText(TextInputControl.java:282)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.updateDisplayNode(ComboBoxListViewSkin.java:494)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.getDisplayNode(ComboBoxListViewSkin.java:288)
+    	at com.sun.javafx.scene.control.skin.ComboBoxBaseSkin.updateDisplayArea(ComboBoxBaseSkin.java:141)
+    	at com.sun.javafx.scene.control.skin.ComboBoxBaseSkin.handleControlPropertyChanged(ComboBoxBaseSkin.java:134)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.handleControlPropertyChanged(ComboBoxListViewSkin.java:231)
+    	at com.sun.javafx.scene.control.skin.BehaviorSkinBase.lambda$registerChangeListener$60(BehaviorSkinBase.java:197)
+    	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$$Lambda$168/1511236188.call(Unknown Source)
+
+guitests.ModelUpdateUITest > addIssueTest STANDARD_OUT
+    4810 26 Sep 2020 02:13:01 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+
+guitests.ModelUpdateUITest > addIssueTest STANDARD_ERROR
+    	at com.sun.javafx.scene.control.MultiplePropertyChangeListenerHandler$1.changed(MultiplePropertyChangeListenerHandler.java:55)
+    	at javafx.beans.value.WeakChangeListener.changed(WeakChangeListener.java:89)
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:361)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:105)
+    	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
+    	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:145)
+    	at javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:167)
+    	at javafx.scene.control.ComboBox.updateValue(ComboBox.java:468)
+    	at javafx.scene.control.ComboBox.access$300(ComboBox.java:187)
+    	at javafx.scene.control.ComboBox$4.changed(ComboBox.java:453)
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:361)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.property.ReadOnlyObjectWrapper$ReadOnlyPropertyImpl.fireValueChangedEvent(ReadOnlyObjectWrapper.java:176)
+    	at javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:142)
+    	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
+    	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:145)
+    	at javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:102)
+    	at javafx.scene.control.ComboBox$ComboBoxSelectionModel.lambda$new$152(ComboBox.java:499)
+    	at javafx.scene.control.ComboBox$ComboBoxSelectionModel$$Lambda$84/69153324.invalidated(Unknown Source)
+    	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:137)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.property.ReadOnlyIntegerWrapper$ReadOnlyPropertyImpl.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:176)
+    	at javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:142)
+    	at javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:113)
+    	at javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:146)
+    	at javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:68)
+    	at javafx.scene.control.ComboBox$ComboBoxSelectionModel$1.onChanged(ComboBox.java:521)
+    	at javafx.collections.WeakListChangeListener.onChanged(WeakListChangeListener.java:88)
+    	at com.sun.javafx.collections.ListListenerHelper$Generic.fireValueChangedEvent(ListListenerHelper.java:329)
+    	at com.sun.javafx.collections.ListListenerHelper.fireValueChangedEvent(ListListenerHelper.java:73)
+    	at javafx.collections.ObservableListBase.fireChange(ObservableListBase.java:233)
+    	at javafx.collections.ListChangeBuilder.commit(ListChangeBuilder.java:482)
+    	at javafx.collections.ListChangeBuilder.endChange(ListChangeBuilder.java:541)
+    	at javafx.collections.ObservableListBase.endChange(ObservableListBase.java:205)
+    	at com.sun.javafx.collections.ObservableListWrapper.clear(ObservableListWrapper.java:157)
+    	at ui.RepositorySelector.refreshContents(RepositorySelector.java:65)
+    	at ui.UI.onRepoOpened(UI.java:207)
+    	at ui.UI.lambda$initPreApplicationState$28(UI.java:147)
+    	at ui.UI$$Lambda$66/88018938.handle(Unknown Source)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:483)
+    	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+    	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+    	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+    	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+    	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+    	at ui.UI.triggerEvent(UI.java:324)
+    	at backend.Logic.lambda$null$5(Logic.java:112)
+    	at backend.Logic$$Lambda$311/1503559407.run(Unknown Source)
+    	at java.util.concurrent.CompletableFuture$ThenRun.run(CompletableFuture.java:810)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenRun.run(CompletableFuture.java:816)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenApply.run(CompletableFuture.java:723)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ExceptionCompletion.run(CompletableFuture.java:1255)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenCopy.run(CompletableFuture.java:1333)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ExceptionCompletion.run(CompletableFuture.java:1255)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenApply.run(CompletableFuture.java:723)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2345)
+    	at backend.github.UpdateModelTask.run(UpdateModelTask.java:49)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    	at java.lang.Thread.run(Thread.java:745)
+    Exception in thread "pool-5-thread-3" java.lang.IllegalStateException: Not on FX application thread; currentThread = pool-5-thread-3
+    	at com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:204)
+    	at com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:364)
+    	at javafx.scene.Scene.addToDirtyList(Scene.java:485)
+    	at javafx.scene.Node.addToSceneDirtyList(Node.java:424)
+    	at javafx.scene.Node.impl_markDirty(Node.java:415)
+    	at javafx.scene.shape.Shape.impl_markDirty(Shape.java:942)
+    	at javafx.scene.Node.transformedBoundsChanged(Node.java:3815)
+    	at javafx.scene.Node.impl_geomChanged(Node.java:3779)
+    	at javafx.scene.text.Text.impl_geomChanged(Text.java:763)
+    	at javafx.scene.text.Text.needsTextLayout(Text.java:194)
+    	at javafx.scene.text.Text.needsFullTextLayout(Text.java:189)
+    	at javafx.scene.text.Text.access$200(Text.java:96)
+    	at javafx.scene.text.Text$2.invalidated(Text.java:386)
+    	at javafx.beans.property.StringPropertyBase.markInvalid(StringPropertyBase.java:109)
+    	at javafx.beans.property.StringPropertyBase.access$000(StringPropertyBase.java:49)
+    	at javafx.beans.property.StringPropertyBase$Listener.invalidated(StringPropertyBase.java:229)
+    	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:137)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.binding.StringBinding.invalidate(StringBinding.java:171)
+    	at com.sun.javafx.binding.BindingHelperObserver.invalidated(BindingHelperObserver.java:51)
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:349)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.scene.control.TextInputControl$TextProperty.fireValueChangedEvent(TextInputControl.java:1123)
+    	at javafx.scene.control.TextInputControl$TextProperty.markInvalid(TextInputControl.java:1127)
+    	at javafx.scene.control.TextInputControl$TextProperty.set(TextInputControl.java:1062)
+    	at javafx.scene.control.TextInputControl.setText(TextInputControl.java:282)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.updateDisplayNode(ComboBoxListViewSkin.java:494)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.getDisplayNode(ComboBoxListViewSkin.java:288)
+    	at com.sun.javafx.scene.control.skin.ComboBoxBaseSkin.updateDisplayArea(ComboBoxBaseSkin.java:141)
+    	at com.sun.javafx.scene.control.skin.ComboBoxBaseSkin.handleControlPropertyChanged(ComboBoxBaseSkin.java:134)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.handleControlPropertyChanged(ComboBoxListViewSkin.java:231)
+    	at com.sun.javafx.scene.control.skin.BehaviorSkinBase.lambda$registerChangeListener$60(BehaviorSkinBase.java:197)
+    	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$$Lambda$168/1511236188.call(Unknown Source)
+    	at com.sun.javafx.scene.control.MultiplePropertyChangeListenerHandler$1.changed(MultiplePropertyChangeListenerHandler.java:55)
+    	at javafx.beans.value.WeakChangeListener.changed(WeakChangeListener.java:89)
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:361)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:105)
+    	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
+    	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:145)
+    	at javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:167)
+    	at javafx.scene.control.ComboBox.updateValue(ComboBox.java:468)
+    	at javafx.scene.control.ComboBox.access$300(ComboBox.java:187)
+    	at javafx.scene.control.ComboBox$4.changed(ComboBox.java:453)
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:361)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.property.ReadOnlyObjectWrapper$ReadOnlyPropertyImpl.fireValueChangedEvent(ReadOnlyObjectWrapper.java:176)
+    	at javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:142)
+    	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
+    	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:145)
+    	at javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:102)
+    	at javafx.scene.control.ComboBox$ComboBoxSelectionModel.lambda$new$152(ComboBox.java:499)
+    	at javafx.scene.control.ComboBox$ComboBoxSelectionModel$$Lambda$84/69153324.invalidated(Unknown Source)
+    	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:137)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.property.ReadOnlyIntegerWrapper$ReadOnlyPropertyImpl.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:176)
+    	at javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:142)
+    	at javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:113)
+    	at javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:146)
+    	at javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:68)
+    	at javafx.scene.control.ComboBox$ComboBoxSelectionModel$1.onChanged(ComboBox.java:521)
+    	at javafx.collections.WeakListChangeListener.onChanged(WeakListChangeListener.java:88)
+    	at com.sun.javafx.collections.ListListenerHelper$Generic.fireValueChangedEvent(ListListenerHelper.java:329)
+    	at com.sun.javafx.collections.ListListenerHelper.fireValueChangedEvent(ListListenerHelper.java:73)
+    	at javafx.collections.ObservableListBase.fireChange(ObservableListBase.java:233)
+    	at javafx.collections.ListChangeBuilder.commit(ListChangeBuilder.java:482)
+    	at javafx.collections.ListChangeBuilder.endChange(ListChangeBuilder.java:541)
+    	at javafx.collections.ObservableListBase.endChange(ObservableListBase.java:205)
+    	at com.sun.javafx.collections.ObservableListWrapper.clear(ObservableListWrapper.java:157)
+    	at ui.RepositorySelector.refreshContents(RepositorySelector.java:65)
+    	at ui.UI.onRepoOpened(UI.java:207)
+    	at ui.UI.lambda$initPreApplicationState$28(UI.java:147)
+    	at ui.UI$$Lambda$66/88018938.handle(Unknown Source)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:483)
+    	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+    	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+    	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+    	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+    	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+    	at ui.UI.triggerEvent(UI.java:324)
+    	at backend.Logic.lambda$null$5(Logic.java:112)
+    	at backend.Logic$$Lambda$311/1503559407.run(Unknown Source)
+    	at java.util.concurrent.CompletableFuture$ThenRun.run(CompletableFuture.java:810)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenRun.run(CompletableFuture.java:816)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenApply.run(CompletableFuture.java:723)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ExceptionCompletion.run(CompletableFuture.java:1255)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenCopy.run(CompletableFuture.java:1333)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ExceptionCompletion.run(CompletableFuture.java:1255)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenApply.run(CompletableFuture.java:723)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2345)
+    	at backend.github.UpdateModelTask.run(UpdateModelTask.java:49)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    	at java.lang.Thread.run(Thread.java:745)
+    Exception in thread "pool-5-thread-3" java.lang.IllegalStateException: Not on FX application thread; currentThread = pool-5-thread-3
+    	at com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:204)
+    	at com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:364)
+    	at javafx.scene.Scene.addToDirtyList(Scene.java:485)
+    	at javafx.scene.Node.addToSceneDirtyList(Node.java:424)
+    	at javafx.scene.Node.impl_markDirty(Node.java:415)
+    	at javafx.scene.Node.impl_geomChanged(Node.java:3784)
+    	at javafx.scene.Parent.childBoundsChanged(Parent.java:1728)
+    	at javafx.scene.Node.notifyParentOfBoundsChange(Node.java:3856)
+    	at javafx.scene.Node.transformedBoundsChanged(Node.java:3818)
+    	at javafx.scene.Node.impl_geomChanged(Node.java:3779)
+    	at javafx.scene.text.Text.impl_geomChanged(Text.java:763)
+    	at javafx.scene.text.Text.needsTextLayout(Text.java:194)
+    	at javafx.scene.text.Text.needsFullTextLayout(Text.java:189)
+    	at javafx.scene.text.Text.access$200(Text.java:96)
+    	at javafx.scene.text.Text$2.invalidated(Text.java:386)
+    	at javafx.beans.property.StringPropertyBase.markInvalid(StringPropertyBase.java:109)
+    	at javafx.beans.property.StringPropertyBase.access$000(StringPropertyBase.java:49)
+    	at javafx.beans.property.StringPropertyBase$Listener.invalidated(StringPropertyBase.java:229)
+    	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:137)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.binding.StringBinding.invalidate(StringBinding.java:171)
+    	at com.sun.javafx.binding.BindingHelperObserver.invalidated(BindingHelperObserver.java:51)
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:349)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.scene.control.TextInputControl$TextProperty.fireValueChangedEvent(TextInputControl.java:1123)
+    	at javafx.scene.control.TextInputControl$TextProperty.markInvalid(TextInputControl.java:1127)
+    	at javafx.scene.control.TextInputControl$TextProperty.invalidate(TextInputControl.java:1066)
+    	at javafx.scene.control.TextInputControl$TextProperty.access$1300(TextInputControl.java:1038)
+    	at javafx.scene.control.TextInputControl.lambda$new$163(TextInputControl.java:134)
+    	at javafx.scene.control.TextInputControl$$Lambda$183/688870687.invalidated(Unknown Source)
+    	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:137)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.scene.control.TextField$TextFieldContent.insert(TextField.java:88)
+    	at javafx.scene.control.TextInputControl$TextProperty.doSet(TextInputControl.java:1136)
+    	at javafx.scene.control.TextInputControl$TextProperty.set(TextInputControl.java:1061)
+    	at javafx.scene.control.TextInputControl.setText(TextInputControl.java:282)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.updateDisplayNode(ComboBoxListViewSkin.java:496)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.getDisplayNode(ComboBoxListViewSkin.java:288)
+    	at com.sun.javafx.scene.control.skin.ComboBoxBaseSkin.updateDisplayArea(ComboBoxBaseSkin.java:141)
+    	at com.sun.javafx.scene.control.skin.ComboBoxBaseSkin.handleControlPropertyChanged(ComboBoxBaseSkin.java:134)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.handleControlPropertyChanged(ComboBoxListViewSkin.java:231)
+    	at com.sun.javafx.scene.control.skin.BehaviorSkinBase.lambda$registerChangeListener$60(BehaviorSkinBase.java:197)
+    	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$$Lambda$168/1511236188.call(Unknown Source)
+    	at com.sun.javafx.scene.control.MultiplePropertyChangeListenerHandler$1.changed(MultiplePropertyChangeListenerHandler.java:55)
+    	at javafx.beans.value.WeakChangeListener.changed(WeakChangeListener.java:89)
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:361)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:105)
+    	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
+    	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:145)
+    	at javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:167)
+    	at ui.RepositorySelector.setText(RepositorySelector.java:58)
+    	at ui.RepositorySelector.refreshContents(RepositorySelector.java:68)
+    	at ui.UI.onRepoOpened(UI.java:207)
+    	at ui.UI.lambda$initPreApplicationState$28(UI.java:147)
+    	at ui.UI$$Lambda$66/88018938.handle(Unknown Source)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:483)
+    	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+    	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+    	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+    	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+    	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+    	at ui.UI.triggerEvent(UI.java:324)
+    	at backend.Logic.lambda$null$5(Logic.java:112)
+    	at backend.Logic$$Lambda$311/1503559407.run(Unknown Source)
+    	at java.util.concurrent.CompletableFuture$ThenRun.run(CompletableFuture.java:810)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenRun.run(CompletableFuture.java:816)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenApply.run(CompletableFuture.java:723)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ExceptionCompletion.run(CompletableFuture.java:1255)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenCopy.run(CompletableFuture.java:1333)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ExceptionCompletion.run(CompletableFuture.java:1255)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenApply.run(CompletableFuture.java:723)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2345)
+    	at backend.github.UpdateModelTask.run(UpdateModelTask.java:49)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    	at java.lang.Thread.run(Thread.java:745)
+    Exception in thread "pool-5-thread-3" java.lang.IllegalStateException: Not on FX application thread; currentThread = pool-5-thread-3
+    	at com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:204)
+    	at com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.java:364)
+    	at javafx.scene.Scene.addToDirtyList(Scene.java:485)
+    	at javafx.scene.Node.addToSceneDirtyList(Node.java:424)
+    	at javafx.scene.Node.impl_markDirty(Node.java:415)
+    	at javafx.scene.Node.transformedBoundsChanged(Node.java:3815)
+    	at javafx.scene.Node.impl_geomChanged(Node.java:3779)
+    	at javafx.scene.Parent.childBoundsChanged(Parent.java:1728)
+    	at javafx.scene.Node.notifyParentOfBoundsChange(Node.java:3856)
+    	at javafx.scene.Node.transformedBoundsChanged(Node.java:3818)
+    	at javafx.scene.Node.impl_geomChanged(Node.java:3779)
+    	at javafx.scene.text.Text.impl_geomChanged(Text.java:763)
+    	at javafx.scene.text.Text.needsTextLayout(Text.java:194)
+    	at javafx.scene.text.Text.needsFullTextLayout(Text.java:189)
+    	at javafx.scene.text.Text.access$200(Text.java:96)
+    	at javafx.scene.text.Text$2.invalidated(Text.java:386)
+    	at javafx.beans.property.StringPropertyBase.markInvalid(StringPropertyBase.java:109)
+    	at javafx.beans.property.StringPropertyBase.access$000(StringPropertyBase.java:49)
+    	at javafx.beans.property.StringPropertyBase$Listener.invalidated(StringPropertyBase.java:229)
+    	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:137)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.binding.StringBinding.invalidate(StringBinding.java:171)
+    	at com.sun.javafx.binding.BindingHelperObserver.invalidated(BindingHelperObserver.java:51)
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:349)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.scene.control.TextInputControl$TextProperty.fireValueChangedEvent(TextInputControl.java:1123)
+    	at javafx.scene.control.TextInputControl$TextProperty.markInvalid(TextInputControl.java:1127)
+    	at javafx.scene.control.TextInputControl$TextProperty.set(TextInputControl.java:1062)
+    	at javafx.scene.control.TextInputControl.setText(TextInputControl.java:282)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.updateDisplayNode(ComboBoxListViewSkin.java:496)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.getDisplayNode(ComboBoxListViewSkin.java:288)
+    	at com.sun.javafx.scene.control.skin.ComboBoxBaseSkin.updateDisplayArea(ComboBoxBaseSkin.java:141)
+    	at com.sun.javafx.scene.control.skin.ComboBoxBaseSkin.handleControlPropertyChanged(ComboBoxBaseSkin.java:134)
+    	at com.sun.javafx.scene.control.skin.ComboBoxListViewSkin.handleControlPropertyChanged(ComboBoxListViewSkin.java:231)
+    	at com.sun.javafx.scene.control.skin.BehaviorSkinBase.lambda$registerChangeListener$60(BehaviorSkinBase.java:197)
+    	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$$Lambda$168/1511236188.call(Unknown Source)
+    	at com.sun.javafx.scene.control.MultiplePropertyChangeListenerHandler$1.changed(MultiplePropertyChangeListenerHandler.java:55)
+    	at javafx.beans.value.WeakChangeListener.changed(WeakChangeListener.java:89)
+    	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:361)
+    	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:81)
+    	at javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:105)
+    	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
+    	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:145)
+    	at javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:167)
+    	at ui.RepositorySelector.setText(RepositorySelector.java:58)
+    	at ui.RepositorySelector.refreshContents(RepositorySelector.java:68)
+    	at ui.UI.onRepoOpened(UI.java:207)
+    	at ui.UI.lambda$initPreApplicationState$28(UI.java:147)
+    	at ui.UI$$Lambda$66/88018938.handle(Unknown Source)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    	at java.lang.reflect.Method.invoke(Method.java:483)
+    	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+    	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+    	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+    	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+    	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+    	at ui.UI.triggerEvent(UI.java:324)
+    	at backend.Logic.lambda$null$5(Logic.java:112)
+    	at backend.Logic$$Lambda$311/1503559407.run(Unknown Source)
+    	at java.util.concurrent.CompletableFuture$ThenRun.run(CompletableFuture.java:810)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenRun.run(CompletableFuture.java:816)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenApply.run(CompletableFuture.java:723)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ExceptionCompletion.run(CompletableFuture.java:1255)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenCopy.run(CompletableFuture.java:1333)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ExceptionCompletion.run(CompletableFuture.java:1255)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.internalComplete(CompletableFuture.java:210)
+    	at java.util.concurrent.CompletableFuture$ThenApply.run(CompletableFuture.java:723)
+    	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:193)
+    	at java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2345)
+    	at backend.github.UpdateModelTask.run(UpdateModelTask.java:49)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    	at java.lang.Thread.run(Thread.java:745)
+
+guitests.ModelUpdateUITest > addIssueTest STANDARD_OUT
+    4824 26 Sep 2020 02:13:01 INFO UI [pool-5-thread-3] - Triggered event RepoOpenedEvent
+    5802 26 Sep 2020 02:13:02 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    5803 26 Sep 2020 02:13:02 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    5804 26 Sep 2020 02:13:02 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    5804 26 Sep 2020 02:13:02 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    5804 26 Sep 2020 02:13:02 INFO Logic [JavaFX Application Thread] - Refreshing 
+    5805 26 Sep 2020 02:13:02 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    5806 26 Sep 2020 02:13:02 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+
+guitests.ModelUpdateUITest > addIssueTest FAILED
+    java.lang.AssertionError: expected:<11> but was:<0>
+        at org.junit.Assert.fail(Assert.java:88)
+        at org.junit.Assert.failNotEquals(Assert.java:834)
+        at org.junit.Assert.assertEquals(Assert.java:118)
+        at org.junit.Assert.assertEquals(Assert.java:144)
+        at guitests.ModelUpdateUITest.addIssueTest(ModelUpdateUITest.java:26)
+
+guitests.ModelUpdateUITest > addMultipleIssuesTest STANDARD_OUT
+    7151 26 Sep 2020 02:13:03 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    7153 26 Sep 2020 02:13:03 INFO UI [Test worker] - About to trigger event ClearLogicModelEvent
+    7154 26 Sep 2020 02:13:03 INFO UI [Test worker] - Triggered event ClearLogicModelEvent
+    7154 26 Sep 2020 02:13:03 INFO Logic [Test worker] - Attempting to reset dummy/dummy
+    7155 26 Sep 2020 02:13:03 INFO Logic [Test worker] - dummy/dummy not currently in model.
+    7155 26 Sep 2020 02:13:03 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    7155 26 Sep 2020 02:13:03 INFO Logic [pool-7-thread-1] - Opening dummy/dummy
+    7156 26 Sep 2020 02:13:03 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    7156 26 Sep 2020 02:13:03 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    7156 26 Sep 2020 02:13:03 INFO DownloadRepoTask [pool-5-thread-3] - dummy/dummy | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    7156 26 Sep 2020 02:13:03 INFO Logic [JavaFX Application Thread] - Refreshing 
+    7157 26 Sep 2020 02:13:03 INFO UpdateIssuesTask [pool-5-thread-3] - dummy/dummy | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    7157 26 Sep 2020 02:13:03 INFO UpdateMilestonesTask [pool-5-thread-2] - dummy/dummy | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    7157 26 Sep 2020 02:13:03 INFO UpdateLabelsTask [pool-5-thread-4] - dummy/dummy | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    7157 26 Sep 2020 02:13:03 INFO UpdateUsersTask [pool-5-thread-1] - dummy/dummy | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    7158 26 Sep 2020 02:13:03 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    7158 26 Sep 2020 02:13:03 INFO UpdateModelTask [pool-5-thread-5] - dummy/dummy | Updated model with 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    7159 26 Sep 2020 02:13:03 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    7159 26 Sep 2020 02:13:03 INFO UI [pool-5-thread-5] - About to trigger event RepoOpenedEvent
+    7160 26 Sep 2020 02:13:03 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    7161 26 Sep 2020 02:13:03 INFO UI [pool-5-thread-5] - Triggered event RepoOpenedEvent
+    7179 26 Sep 2020 02:13:03 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    8157 26 Sep 2020 02:13:04 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    8158 26 Sep 2020 02:13:04 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    8158 26 Sep 2020 02:13:04 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    8159 26 Sep 2020 02:13:04 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    8159 26 Sep 2020 02:13:04 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    8160 26 Sep 2020 02:13:04 INFO UpdateUsersTask [pool-5-thread-2] - dummy/dummy | 0 user(s)) changed
+    8160 26 Sep 2020 02:13:04 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 0 milestone(s)) changed
+    8160 26 Sep 2020 02:13:04 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 1 issue(s)) changed: [#11 Issue 11]
+    8160 26 Sep 2020 02:13:04 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 0 label(s)) changed
+    8161 26 Sep 2020 02:13:04 INFO UpdateModelTask [pool-5-thread-5] - dummy/dummy | Updated model with 11 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    8162 26 Sep 2020 02:13:04 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    8180 26 Sep 2020 02:13:04 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    9160 26 Sep 2020 02:13:05 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    9161 26 Sep 2020 02:13:05 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    9161 26 Sep 2020 02:13:05 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    9162 26 Sep 2020 02:13:05 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    9162 26 Sep 2020 02:13:05 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    9162 26 Sep 2020 02:13:05 INFO UpdateUsersTask [pool-5-thread-2] - dummy/dummy | 0 user(s)) changed
+    9162 26 Sep 2020 02:13:05 INFO UpdateIssuesTask [pool-5-thread-3] - dummy/dummy | 1 issue(s)) changed: [#12 Issue 12]
+    9162 26 Sep 2020 02:13:05 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 0 milestone(s)) changed
+    9162 26 Sep 2020 02:13:05 INFO UpdateLabelsTask [pool-5-thread-1] - dummy/dummy | 0 label(s)) changed
+    9163 26 Sep 2020 02:13:05 INFO UpdateModelTask [pool-5-thread-5] - dummy/dummy | Updated model with 12 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    9165 26 Sep 2020 02:13:05 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    9180 26 Sep 2020 02:13:05 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    10162 26 Sep 2020 02:13:06 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    10163 26 Sep 2020 02:13:06 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    10164 26 Sep 2020 02:13:06 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    10164 26 Sep 2020 02:13:06 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    10165 26 Sep 2020 02:13:06 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    10166 26 Sep 2020 02:13:06 INFO UpdateLabelsTask [pool-5-thread-4] - dummy/dummy | 0 label(s)) changed
+    10166 26 Sep 2020 02:13:06 INFO UpdateMilestonesTask [pool-5-thread-3] - dummy/dummy | 0 milestone(s)) changed
+    10166 26 Sep 2020 02:13:06 INFO UpdateUsersTask [pool-5-thread-2] - dummy/dummy | 0 user(s)) changed
+    10166 26 Sep 2020 02:13:06 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 1 issue(s)) changed: [#13 Issue 13]
+    10166 26 Sep 2020 02:13:06 INFO UpdateModelTask [pool-5-thread-5] - dummy/dummy | Updated model with 13 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    10167 26 Sep 2020 02:13:06 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    10182 26 Sep 2020 02:13:06 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+
+guitests.ModelUpdateUITest > countIssuesTest STANDARD_OUT
+    11472 26 Sep 2020 02:13:08 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    11473 26 Sep 2020 02:13:08 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    11473 26 Sep 2020 02:13:08 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    11474 26 Sep 2020 02:13:08 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    11474 26 Sep 2020 02:13:08 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    11475 26 Sep 2020 02:13:08 INFO UpdateLabelsTask [pool-5-thread-2] - dummy/dummy | 0 label(s)) changed
+    11475 26 Sep 2020 02:13:08 INFO UpdateMilestonesTask [pool-5-thread-3] - dummy/dummy | 0 milestone(s)) changed
+    11475 26 Sep 2020 02:13:08 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 0 user(s)) changed
+    11475 26 Sep 2020 02:13:08 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 1 issue(s)) changed: [#14 Issue 14]
+    11476 26 Sep 2020 02:13:08 INFO UpdateModelTask [pool-5-thread-5] - dummy/dummy | Updated model with 14 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    11478 26 Sep 2020 02:13:08 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    11490 26 Sep 2020 02:13:08 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    12475 26 Sep 2020 02:13:09 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    12476 26 Sep 2020 02:13:09 INFO UI [Test worker] - About to trigger event ClearLogicModelEvent
+    12477 26 Sep 2020 02:13:09 INFO UI [Test worker] - Triggered event ClearLogicModelEvent
+    12477 26 Sep 2020 02:13:09 INFO Logic [Test worker] - Attempting to reset dummy/dummy
+    12477 26 Sep 2020 02:13:09 INFO Logic [Test worker] - Clearing dummy/dummy successful.
+    12478 26 Sep 2020 02:13:09 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    12478 26 Sep 2020 02:13:09 INFO Logic [pool-7-thread-1] - Opening dummy/dummy
+    12479 26 Sep 2020 02:13:09 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    12479 26 Sep 2020 02:13:09 INFO DownloadRepoTask [pool-5-thread-5] - dummy/dummy | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    12479 26 Sep 2020 02:13:09 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    12479 26 Sep 2020 02:13:09 INFO UpdateIssuesTask [pool-5-thread-5] - dummy/dummy | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    12479 26 Sep 2020 02:13:09 INFO Logic [JavaFX Application Thread] - Refreshing 
+    12480 26 Sep 2020 02:13:09 INFO UpdateUsersTask [pool-5-thread-2] - dummy/dummy | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    12480 26 Sep 2020 02:13:09 INFO UpdateLabelsTask [pool-5-thread-4] - dummy/dummy | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    12480 26 Sep 2020 02:13:09 INFO UpdateMilestonesTask [pool-5-thread-3] - dummy/dummy | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    12480 26 Sep 2020 02:13:09 INFO UpdateModelTask [pool-5-thread-1] - dummy/dummy | Updated model with 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    12481 26 Sep 2020 02:13:09 INFO UI [pool-5-thread-1] - About to trigger event RepoOpenedEvent
+    12481 26 Sep 2020 02:13:09 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    12482 26 Sep 2020 02:13:09 INFO UI [pool-5-thread-1] - Triggered event RepoOpenedEvent
+    12492 26 Sep 2020 02:13:09 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    12492 26 Sep 2020 02:13:09 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    12501 26 Sep 2020 02:13:09 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+Gradle Test Executor 3 finished executing tests.
+Starting process 'Gradle Test Executor 4'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 4'
+Successfully started process 'Gradle Test Executor 4'
+Gradle Test Executor 4 started executing tests.
+
+guitests.UIEventTests > createLabelTest STANDARD_OUT
+    2020-09-26 02:13:13,007 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+    2966 26 Sep 2020 02:13:13 INFO UI [JavaFX Application Thread] - Registered event handler RepoOpenedEventHandler
+    3213 26 Sep 2020 02:13:13 INFO UI [JavaFX Application Thread] - Registered event handler UpdateProgressEventHandler
+    3305 26 Sep 2020 02:13:14 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Browser Request Delay Timer
+    3308 26 Sep 2020 02:13:14 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    3311 26 Sep 2020 02:13:14 INFO UI [JavaFX Application Thread] - Registered event handler IssueCreatedEventHandler
+    3314 26 Sep 2020 02:13:14 INFO UI [JavaFX Application Thread] - Registered event handler LabelCreatedEventHandler
+    3316 26 Sep 2020 02:13:14 INFO UI [JavaFX Application Thread] - Registered event handler MilestoneCreatedEventHandler
+    3319 26 Sep 2020 02:13:14 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    3321 26 Sep 2020 02:13:14 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    3323 26 Sep 2020 02:13:14 INFO UI [JavaFX Application Thread] - Registered event handler ColumnClickedEventHandler
+    3379 26 Sep 2020 02:13:14 INFO UI [JavaFX Application Thread] - Registered event handler BoardSavedEventHandler
+    4462 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - Registered event handler UpdateDummyRepoEventHandler
+    4465 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - Registered event handler ClearLogicModelEventHandler
+    4466 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    4470 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    4473 26 Sep 2020 02:13:15 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Refresh Timer
+    4500 26 Sep 2020 02:13:15 INFO Logic [JavaFX Application Thread] - Opening dummy/dummy
+    4512 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - About to trigger event BoardSavedEvent
+    4514 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - Triggered event BoardSavedEvent
+    4515 26 Sep 2020 02:13:15 INFO DownloadRepoTask [pool-5-thread-1] - dummy/dummy | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    4527 26 Sep 2020 02:13:15 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    4527 26 Sep 2020 02:13:15 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    4527 26 Sep 2020 02:13:15 INFO UpdateUsersTask [pool-5-thread-5] - dummy/dummy | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    4527 26 Sep 2020 02:13:15 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    4529 26 Sep 2020 02:13:15 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    4534 26 Sep 2020 02:13:15 INFO BrowserComponent [JavaFX Application Thread] - Located chromedriver_linux
+    4537 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - Registered event handler UILogicRefreshEventHandler
+    4553 26 Sep 2020 02:13:15 INFO UI [pool-5-thread-2] - About to trigger event RepoOpenedEvent
+    4557 26 Sep 2020 02:13:15 INFO UI [pool-5-thread-2] - Triggered event RepoOpenedEvent
+    4681 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    4772 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    4777 26 Sep 2020 02:13:15 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    5552 26 Sep 2020 02:13:16 INFO UI [Test worker] - Registered event handler LabelCreatedEventHandler
+    6219 26 Sep 2020 02:13:16 INFO MenuControl [JavaFX Application Thread] - Menu: New > Label
+    6221 26 Sep 2020 02:13:16 INFO UI [JavaFX Application Thread] - About to trigger event LabelCreatedEvent
+    6223 26 Sep 2020 02:13:16 INFO UI [JavaFX Application Thread] - Triggered event LabelCreatedEvent
+
+guitests.UIEventTests > createMilestoneTest STANDARD_OUT
+    6588 26 Sep 2020 02:13:17 INFO UI [Test worker] - Registered event handler MilestoneCreatedEventHandler
+    7047 26 Sep 2020 02:13:17 INFO MenuControl [JavaFX Application Thread] - Menu: New > Milestone
+    7048 26 Sep 2020 02:13:17 INFO UI [JavaFX Application Thread] - About to trigger event MilestoneCreatedEvent
+    7049 26 Sep 2020 02:13:17 INFO UI [JavaFX Application Thread] - Triggered event MilestoneCreatedEvent
+
+guitests.UIEventTests > createIssueTest STANDARD_OUT
+    7409 26 Sep 2020 02:13:18 INFO UI [Test worker] - Registered event handler IssueCreatedEventHandler
+    7827 26 Sep 2020 02:13:18 INFO MenuControl [JavaFX Application Thread] - Menu: New > Issue
+    7828 26 Sep 2020 02:13:18 INFO UI [JavaFX Application Thread] - About to trigger event IssueCreatedEvent
+    7828 26 Sep 2020 02:13:18 INFO UI [JavaFX Application Thread] - Triggered event IssueCreatedEvent
+
+guitests.UIEventTests > columnClickedTest STANDARD_OUT
+    8187 26 Sep 2020 02:13:18 INFO UI [Test worker] - Registered event handler ColumnClickedEventHandler
+    8484 26 Sep 2020 02:13:19 INFO UI [JavaFX Application Thread] - About to trigger event ColumnClickedEvent
+    8491 26 Sep 2020 02:13:19 INFO UI [JavaFX Application Thread] - Triggered event ColumnClickedEvent
+Gradle Test Executor 4 finished executing tests.
+Starting process 'Gradle Test Executor 5'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 5'
+Successfully started process 'Gradle Test Executor 5'
+Gradle Test Executor 5 started executing tests.
+
+guitests.ValidLoginTest > validLoginTest STANDARD_OUT
+    2020-09-26 02:13:22,082 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+    2842 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler RepoOpenedEventHandler
+    3035 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler UpdateProgressEventHandler
+    3105 26 Sep 2020 02:13:22 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Browser Request Delay Timer
+    3107 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    3110 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler IssueCreatedEventHandler
+    3112 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler LabelCreatedEventHandler
+    3114 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler MilestoneCreatedEventHandler
+    3116 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    3118 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    3121 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler ColumnClickedEventHandler
+    3161 26 Sep 2020 02:13:22 INFO UI [JavaFX Application Thread] - Registered event handler BoardSavedEventHandler
+    4173 26 Sep 2020 02:13:23 INFO UI [JavaFX Application Thread] - Registered event handler UpdateDummyRepoEventHandler
+    4175 26 Sep 2020 02:13:23 INFO UI [JavaFX Application Thread] - Registered event handler ClearLogicModelEventHandler
+    4176 26 Sep 2020 02:13:23 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    4179 26 Sep 2020 02:13:23 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    4181 26 Sep 2020 02:13:23 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Refresh Timer
+    9896 26 Sep 2020 02:13:29 INFO Logic [pool-7-thread-1] - Logging in as test
+    10223 26 Sep 2020 02:13:29 INFO Logic [JavaFX Application Thread] - Opening HubTurbo/HubTurbo
+    10232 26 Sep 2020 02:13:30 INFO UI [JavaFX Application Thread] - About to trigger event BoardSavedEvent
+    10233 26 Sep 2020 02:13:30 INFO UI [JavaFX Application Thread] - Triggered event BoardSavedEvent
+    10238 26 Sep 2020 02:13:30 INFO DownloadRepoTask [pool-5-thread-1] - HubTurbo/HubTurbo | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    10258 26 Sep 2020 02:13:30 INFO BrowserComponent [JavaFX Application Thread] - Located chromedriver_linux
+    10258 26 Sep 2020 02:13:30 INFO UpdateIssuesTask [pool-5-thread-1] - HubTurbo/HubTurbo | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    10260 26 Sep 2020 02:13:30 INFO UpdateMilestonesTask [pool-5-thread-4] - HubTurbo/HubTurbo | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    10260 26 Sep 2020 02:13:30 INFO UpdateLabelsTask [pool-5-thread-3] - HubTurbo/HubTurbo | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    10260 26 Sep 2020 02:13:30 INFO UpdateUsersTask [pool-5-thread-5] - HubTurbo/HubTurbo | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    10261 26 Sep 2020 02:13:30 INFO UI [JavaFX Application Thread] - Registered event handler UILogicRefreshEventHandler
+    10261 26 Sep 2020 02:13:30 INFO UpdateModelTask [pool-5-thread-2] - HubTurbo/HubTurbo | Updated model with 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    10275 26 Sep 2020 02:13:30 INFO UI [pool-5-thread-2] - About to trigger event RepoOpenedEvent
+    10278 26 Sep 2020 02:13:30 INFO UI [pool-5-thread-2] - Triggered event RepoOpenedEvent
+    10362 26 Sep 2020 02:13:30 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    10382 26 Sep 2020 02:13:30 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    10384 26 Sep 2020 02:13:30 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+Gradle Test Executor 5 finished executing tests.
+Starting process 'Gradle Test Executor 6'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 6'
+Successfully started process 'Gradle Test Executor 6'
+Gradle Test Executor 6 started executing tests.
+Gradle Test Executor 6 finished executing tests.
+Starting process 'Gradle Test Executor 7'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 7'
+Successfully started process 'Gradle Test Executor 7'
+Gradle Test Executor 7 started executing tests.
+
+tests.FilterEvalTests STANDARD_OUT
+    2020-09-26 02:13:35,913 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+Gradle Test Executor 7 finished executing tests.
+Starting process 'Gradle Test Executor 8'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 8'
+Successfully started process 'Gradle Test Executor 8'
+Gradle Test Executor 8 started executing tests.
+Gradle Test Executor 8 finished executing tests.
+Starting process 'Gradle Test Executor 9'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 9'
+Successfully started process 'Gradle Test Executor 9'
+Gradle Test Executor 9 started executing tests.
+Gradle Test Executor 9 finished executing tests.
+Starting process 'Gradle Test Executor 10'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 10'
+Successfully started process 'Gradle Test Executor 10'
+Gradle Test Executor 10 started executing tests.
+
+tests.StoreTests STANDARD_OUT
+    2020-09-26 02:13:41,154 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+
+tests.StoreTests > testStoreStub STANDARD_OUT
+    2237 26 Sep 2020 02:13:41 INFO DownloadRepoTask [pool-3-thread-1] - dummy1/dummy1 | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    2249 26 Sep 2020 02:13:41 INFO UpdateIssuesTask [pool-3-thread-1] - dummy1/dummy1 | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    2250 26 Sep 2020 02:13:41 INFO UpdateLabelsTask [pool-3-thread-3] - dummy1/dummy1 | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    2250 26 Sep 2020 02:13:41 INFO UpdateUsersTask [pool-3-thread-5] - dummy1/dummy1 | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    2250 26 Sep 2020 02:13:41 INFO UpdateMilestonesTask [pool-3-thread-4] - dummy1/dummy1 | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    2251 26 Sep 2020 02:13:41 INFO UpdateModelTask [pool-3-thread-2] - dummy1/dummy1 | Updated model with 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    2277 26 Sep 2020 02:13:41 INFO DownloadRepoTask [pool-3-thread-2] - dummy1/dummy1 | Downloaded 11 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    2278 26 Sep 2020 02:13:41 INFO UpdateUsersTask [pool-3-thread-1] - dummy1/dummy1 | 0 user(s)) changed
+    2278 26 Sep 2020 02:13:41 INFO UpdateLabelsTask [pool-3-thread-3] - dummy1/dummy1 | 0 label(s)) changed
+    2278 26 Sep 2020 02:13:41 INFO UpdateIssuesTask [pool-3-thread-2] - dummy1/dummy1 | 1 issue(s)) changed: [#11 Issue 11]
+    2278 26 Sep 2020 02:13:41 INFO UpdateMilestonesTask [pool-3-thread-5] - dummy1/dummy1 | 0 milestone(s)) changed
+    2279 26 Sep 2020 02:13:41 INFO UpdateModelTask [pool-3-thread-4] - dummy1/dummy1 | Updated model with 11 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+
+tests.StoreTests > testStore STANDARD_OUT
+    2298 26 Sep 2020 02:13:41 INFO DownloadRepoTask [pool-6-thread-1] - dummy1/dummy1 | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    2299 26 Sep 2020 02:13:41 INFO UpdateIssuesTask [pool-6-thread-1] - dummy1/dummy1 | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    2300 26 Sep 2020 02:13:41 INFO UpdateLabelsTask [pool-6-thread-3] - dummy1/dummy1 | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    2300 26 Sep 2020 02:13:41 INFO UpdateMilestonesTask [pool-6-thread-4] - dummy1/dummy1 | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    2300 26 Sep 2020 02:13:41 INFO UpdateUsersTask [pool-6-thread-5] - dummy1/dummy1 | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    2301 26 Sep 2020 02:13:41 INFO UpdateModelTask [pool-6-thread-2] - dummy1/dummy1 | Updated model with 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    2303 26 Sep 2020 02:13:41 INFO UpdateIssuesTask [pool-6-thread-4] - dummy1/dummy1 | 1 issue(s)) changed: [#11 Issue 11]
+    2303 26 Sep 2020 02:13:41 INFO UpdateLabelsTask [pool-6-thread-5] - dummy1/dummy1 | 0 label(s)) changed
+    2303 26 Sep 2020 02:13:41 INFO UpdateMilestonesTask [pool-6-thread-3] - dummy1/dummy1 | 0 milestone(s)) changed
+    2303 26 Sep 2020 02:13:41 INFO UpdateUsersTask [pool-6-thread-1] - dummy1/dummy1 | 0 user(s)) changed
+    2304 26 Sep 2020 02:13:41 INFO UpdateModelTask [pool-6-thread-2] - dummy1/dummy1 | Updated model with 11 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    2406 26 Sep 2020 02:13:41 INFO WriteTask [pool-5-thread-1] - dummy1/dummy1 | Written to JSON store
+    2414 26 Sep 2020 02:13:41 INFO WriteTask [pool-5-thread-1] - dummy1/dummy1 | Written to JSON store
+    4316 26 Sep 2020 02:13:43 INFO ReadTask [pool-7-thread-1] - dummy1/dummy1 | Loaded from JSON cache
+    4342 26 Sep 2020 02:13:43 INFO UpdateIssuesTask [pool-8-thread-2] - dummy1/dummy1 | 10 issue(s)) changed: [#1 Issue 1, #2 Issue 2, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10]
+    4343 26 Sep 2020 02:13:43 INFO UpdateMilestonesTask [pool-8-thread-4] - dummy1/dummy1 | 10 milestone(s)) changed: [Milestone 1, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10]
+    4343 26 Sep 2020 02:13:43 INFO UpdateLabelsTask [pool-8-thread-3] - dummy1/dummy1 | 10 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7, Label 8, Label 9, Label 10]
+    4347 26 Sep 2020 02:13:43 INFO UpdateUsersTask [pool-8-thread-5] - dummy1/dummy1 | 10 user(s)) changed: [User 1, User 2, User 3, User 4, User 5, User 6, User 7, User 8, User 9, User 10]
+    4348 26 Sep 2020 02:13:43 INFO UpdateModelTask [pool-8-thread-1] - dummy1/dummy1 | Updated model with 11 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+Gradle Test Executor 10 finished executing tests.
+Starting process 'Gradle Test Executor 11'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 11'
+Successfully started process 'Gradle Test Executor 11'
+Gradle Test Executor 11 started executing tests.
+
+tests.TickingTimerTests > doublePauseTest STANDARD_OUT
+    2020-09-26 02:13:45,794 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+    2224 26 Sep 2020 02:13:46 INFO TickingTimer [Test worker] - Started TickingTimer test
+
+tests.TickingTimerTests > triggerTest STANDARD_OUT
+    2230 26 Sep 2020 02:13:46 INFO TickingTimer [Test worker] - Started TickingTimer test2
+    13231 26 Sep 2020 02:13:57 INFO TickingTimer [Test worker] - Stopping TickingTimer test2
+    13233 26 Sep 2020 02:13:57 INFO TickingTimer [Test worker] - Successfully stopped TickingTimer test2
+
+tests.TickingTimerTests > threadingTest STANDARD_OUT
+    13235 26 Sep 2020 02:13:57 INFO TickingTimer [Test worker] - Started TickingTimer test
+Gradle Test Executor 11 finished executing tests.
+Finished generating test XML results (0.021 secs) into: /home/travis/build/passed/HubTurbo/HubTurbo/build/test-results
+Generating HTML test report...
+Finished generating test html results (0.043 secs) into: /home/travis/build/passed/HubTurbo/HubTurbo/build/reports/tests
+:test FAILED
+:test (Thread[Daemon worker,5,main]) completed. Took 1 mins 28.937 secs.
+
+BUILD FAILED
+
+Total time: 1 mins 33.373 secs
+Stopped 0 compiler daemon(s).
+Received result DaemonCommandResult[type=CommandFailure, value=org.gradle.launcher.exec.ReportedException: org.gradle.internal.exceptions.LocationAwareException: Execution failed for task ':test'.] from daemon DaemonInfo{pid=620, address=[24e4d2b3-dba4-494e-a46a-e765afd2e4d2 port:34689, addresses:[/127.0.0.1]], idle=true, context=DefaultDaemonContext[uid=227dd04e-bb9b-42a5-8a97-553714700080,javaHome=/usr/lib/jvm/java-8-oracle,daemonRegistryDir=/home/travis/.gradle/daemon,pid=620,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+CMSClassUnloadingEnabled,-XX:+CMSPermGenSweepingEnabled,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=utf-8,-Duser.country=US,-Duser.language=en,-Duser.variant]}.
+
+travis_time:end:24dfc79a:start=1601086351265387406,finish=1601086444831258290,duration=93565870884[0K
+[31;1mThe command "./gradlew clean check -i" exited with 1.[0m
+
+Done. Your build exited with 1.

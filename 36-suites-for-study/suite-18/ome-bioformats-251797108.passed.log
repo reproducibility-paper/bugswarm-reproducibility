@@ -1,0 +1,1754 @@
+travis_time:start:2dc508c2[0Ktravis_time:end:2dc508c2:start=1602377258743844929,finish=1602377258908273973,duration=164429044,event=no_world_writable_dirs[0Ktravis_time:start:06037dc6[0Ktravis_time:end:06037dc6:start=1602377258915165099,finish=1602377258919192810,duration=4027711,event=check_unsupported[0Ktravis_time:start:06ca68d8[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:06ca68d8:start=1602377258924892319,finish=1602377258933379902,duration=8487583,event=show_system_info[0Ktravis_time:start:04331e20[0Ktravis_time:end:04331e20:start=1602377258939457764,finish=1602377258958756205,duration=19298441,event=rm_riak_source[0Ktravis_time:start:24a02048[0Ktravis_time:end:24a02048:start=1602377258964886736,finish=1602377258975047157,duration=10160421,event=fix_rwky_redis[0Ktravis_time:start:078fedae[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:078fedae:start=1602377258981090703,finish=1602377279841389562,duration=20860298859,event=wait_for_network[0Ktravis_time:start:0ed580c8[0Ktravis_time:end:0ed580c8:start=1602377279847754945,finish=1602377296396807625,duration=16549052680,event=update_apt_keys[0Ktravis_time:start:0504046d[0Ktravis_time:end:0504046d:start=1602377296403612185,finish=1602377296469399632,duration=65787447,event=fix_hhvm_source[0Ktravis_time:start:00746c75[0Ktravis_time:end:00746c75:start=1602377296476023478,finish=1602377296482642641,duration=6619163,event=update_mongo_arch[0Ktravis_time:start:0164fa48[0Ktravis_time:end:0164fa48:start=1602377296489542004,finish=1602377296535241057,duration=45699053,event=fix_sudo_enabled_trusty[0Ktravis_time:start:04ba6778[0Ktravis_time:end:04ba6778:start=1602377296542549621,finish=1602377296557973850,duration=15424229,event=clean_up_path[0Ktravis_time:start:00e3e5b8[0Ktravis_time:end:00e3e5b8:start=1602377296563778458,finish=1602377296576341722,duration=12563264,event=fix_resolv_conf[0Ktravis_time:start:071edbf0[0Ktravis_time:end:071edbf0:start=1602377296582742827,finish=1602377296600984789,duration=18241962,event=fix_etc_hosts[0Ktravis_time:start:10547fac[0Ktravis_time:start:2bf01c90[0Ktravis_time:end:2bf01c90:start=1602377296984884590,finish=1602377297004890941,duration=20006351,event=no_ipv6_localhost[0Ktravis_time:start:04ddddd9[0Ktravis_time:end:04ddddd9:start=1602377297011851063,finish=1602377297260301125,duration=248450062,event=fix_etc_mavenrc[0Ktravis_time:start:04b59820[0Ktravis_time:end:04b59820:start=1602377297267309795,finish=1602377297273709953,duration=6400158,event=fix_wwdr_certificate[0Ktravis_time:start:1084953c[0Ktravis_time:end:1084953c:start=1602377297280711192,finish=1602377297315969238,duration=35258046,event=put_localhost_first[0Ktravis_time:start:014cd940[0Ktravis_time:end:014cd940:start=1602377297322754174,finish=1602377297327742162,duration=4987988,event=home_paths[0Ktravis_time:start:12d55784[0Ktravis_time:end:12d55784:start=1602377297334275804,finish=1602377297557390060,duration=223114256,event=disable_initramfs[0Ktravis_time:start:25db6661[0Ktravis_time:end:25db6661:start=1602377297564766324,finish=1602377297585801228,duration=21034904,event=disable_ssh_roaming[0Ktravis_time:start:0cf3c0f6[0Ktravis_time:end:0cf3c0f6:start=1602377297591494122,finish=1602377297595767338,duration=4273216,event=debug_tools[0Ktravis_time:start:01e7946b[0Ktravis_time:end:01e7946b:start=1602377297601583692,finish=1602377297607208221,duration=5624529,event=uninstall_oclint[0Ktravis_time:start:01d3db72[0Ktravis_time:end:01d3db72:start=1602377297612656971,finish=1602377297618103514,duration=5446543,event=rvm_use[0Ktravis_time:start:14810dba[0Ktravis_time:end:14810dba:start=1602377297623592119,finish=1602377297637109265,duration=13517146,event=rm_etc_boto_cfg[0Ktravis_time:start:12b5d956[0Ktravis_time:end:12b5d956:start=1602377297642489101,finish=1602377297645957075,duration=3467974,event=rm_oraclejdk8_symlink[0Ktravis_time:start:2cc95d34[0Ktravis_time:end:2cc95d34:start=1602377297650550524,finish=1602377297689154613,duration=38604089,event=enable_i386[0Ktravis_time:start:1317a422[0Ktravis_time:end:1317a422:start=1602377297694899668,finish=1602377297702675688,duration=7776020,event=update_rubygems[0Ktravis_time:start:03938624[0Ktravis_time:end:03938624:start=1602377297708908974,finish=1602377297717469021,duration=8560047,event=ensure_path_components[0Ktravis_time:start:2e12b51e[0Ktravis_time:end:2e12b51e:start=1602377297724419799,finish=1602377297729520528,duration=5100729,event=redefine_curl[0Ktravis_time:start:05c87c70[0Ktravis_time:end:05c87c70:start=1602377297735719585,finish=1602377297739937968,duration=4218383,event=nonblock_pipe[0Ktravis_time:start:1c173d6a[0Ktravis_time:end:1c173d6a:start=1602377297746372271,finish=1602377303019439076,duration=5273066805,event=apt_get_update[0Ktravis_time:start:22c561c0[0Ktravis_time:end:22c561c0:start=1602377303025424862,finish=1602377303030821100,duration=5396238,event=deprecate_xcode_64[0Ktravis_time:start:0ec6e4d0[0Ktravis_time:end:0ec6e4d0:start=1602377303037614644,finish=1602377303044115762,duration=6501118,event=update_heroku[0Ktravis_time:start:00052332[0Ktravis_time:end:00052332:start=1602377303049630869,finish=1602377303053727010,duration=4096141,event=shell_session_update[0Ktravis_time:start:0248569b[0Ktravis_fold:start:docker_mtu[0Ktravis_fold:end:docker_mtu[0Ktravis_time:end:0248569b:start=1602377303059240792,finish=1602377303441493622,duration=382252830,event=set_docker_mtu[0Ktravis_time:start:004f0b8e[0Ktravis_time:end:004f0b8e:start=1602377303446522769,finish=1602377303460022448,duration=13499679,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling openjdk7[0m
+$ jdk_switcher use "openjdk7"
+Switching to OpenJDK7 (java-1.7.0-openjdk-amd64), JAVA_HOME will be set to /usr/lib/jvm/java-7-openjdk-amd64
+travis_fold:end:install_jdk[0Ktravis_fold:start:apt[0Ktravis_time:start:04e8bdf6[0K$ travis_apt_get_update
+travis_time:end:04e8bdf6:start=1602377303480408156,finish=1602377308721893122,duration=5241484966,event=prepare[0K[33;1mInstalling APT Packages[0m
+travis_time:start:01813b21[0K$ sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install git
+Reading package lists...
+Building dependency tree...
+Reading state information...
+git is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 251 not upgraded.
+travis_time:end:01813b21:start=1602377308728749790,finish=1602377310953767735,duration=2225017945,event=prepare[0Ktravis_fold:end:apt[0Ktravis_time:start:11b81136[0Ktravis_time:end:11b81136:start=1602377310961020792,finish=1602377310966178159,duration=5157367,event=fix_ps4[0Ktravis_time:start:0014c426[0K
+$ cd passed/ome/bioformats
+
+travis_time:end:0014c426:start=1602377310973065683,finish=1602377311376360764,duration=403295081,event=checkout[0Ktravis_time:start:139c194f[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export BUILD=maven
+
+travis_time:end:139c194f:start=1602377311383130987,finish=1602377312636565360,duration=1253434373,event=env[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:0c505a08[0K$ Installing caching utilities
+travis_time:end:0c505a08:start=1602377322434404135,finish=1602377325530097807,duration=3095693672,event=setup_casher[0Ktravis_time:start:2963a6cc[0K$ Installing caching utilities from the Travis CI server (https:///files/casher) failed, failing over to using GitHub (https://raw.githubusercontent.com/travis-ci/casher/bash/bin/casher)
+travis_time:end:2963a6cc:start=1602377325538434219,finish=1602377325756276928,duration=217842709,event=setup_casher[0Ktravis_time:start:00839b36[0Ktravis_time:end:00839b36:start=1602377325765300663,finish=1602377325771009803,duration=5709140,event=setup_casher[0Ktravis_time:start:051993b0[0Kattempting to download cache archive[0m
+[31;1mcould not download cache[0m
+travis_time:end:051993b0:start=1602377325777039610,finish=1602377327170109626,duration=1393070016,event=setup_casher[0Ktravis_time:start:0364fbf6[0Ktravis_time:end:0364fbf6:start=1602377327177657109,finish=1602377327183382247,duration=5725138,event=setup_casher[0Ktravis_time:start:020400b1[0Kadding /home/travis/.m2 to cache[0m
+travis_time:end:020400b1:start=1602377327190907196,finish=1602377328627300259,duration=1436393063,event=setup_casher[0Ktravis_fold:end:cache.1[0K
+$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:before_install[0Ktravis_time:start:003e6d4d[0K$ if [[ $BUILD == 'ant' ]]; then pip install --user flake8 Sphinx; fi
+travis_time:end:003e6d4d:start=1602377328884954727,finish=1602377328889948715,duration=4993988,event=before_install[0Ktravis_fold:end:before_install[0Ktravis_fold:start:install[0Ktravis_time:start:0c923df3[0K$ mvn install -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_75, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-openjdk-amd64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-109-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-webdav-jackrabbit/1.0/wagon-webdav-jackrabbit-1.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-webdav-jackrabbit/1.0/wagon-webdav-jackrabbit-1.0.pom (4 KB at 30.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-providers/1.0/wagon-providers-1.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-providers/1.0/wagon-providers-1.0.pom (3 KB at 108.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon/1.0/wagon-1.0.pom (10 KB at 400.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/20/maven-parent-20.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/20/maven-parent-20.pom (25 KB at 632.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/9/apache-9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/9/apache-9.pom (15 KB at 592.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-http-shared/1.0/wagon-http-shared-1.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-http-shared/1.0/wagon-http-shared-1.0.pom (3 KB at 141.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom (8 KB at 329.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.pom (4 KB at 186.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom (18 KB at 618.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom (16 KB at 602.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/4/apache-4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/4/apache-4.pom (5 KB at 219.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1.pom (9 KB at 418.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/15/commons-parent-15.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/15/commons-parent-15.pom (31 KB at 884.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/7/apache-7.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/7/apache-7.pom (15 KB at 503.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/jsoup/jsoup/1.6.1/jsoup-1.6.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/jsoup/jsoup/1.6.1/jsoup-1.6.1.pom (5 KB at 215.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0/wagon-provider-api-1.0.pom (2 KB at 77.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.pom (2 KB at 91.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom (9 KB at 336.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-webdav/1.5.0/jackrabbit-webdav-1.5.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-webdav/1.5.0/jackrabbit-webdav-1.5.0.pom (4 KB at 147.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-parent/1.5.0/jackrabbit-parent-1.5.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-parent/1.5.0/jackrabbit-parent-1.5.0.pom (25 KB at 755.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-jcr-commons/1.5.0/jackrabbit-jcr-commons-1.5.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-jcr-commons/1.5.0/jackrabbit-jcr-commons-1.5.0.pom (3 KB at 132.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.5.3/slf4j-api-1.5.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.5.3/slf4j-api-1.5.3.pom (3 KB at 132.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.5.3/slf4j-parent-1.5.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.5.3/slf4j-parent-1.5.3.pom (8 KB at 314.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-httpclient/commons-httpclient/3.0/commons-httpclient-3.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-httpclient/commons-httpclient/3.0/commons-httpclient-3.0.pom (8 KB at 373.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-nop/1.5.3/slf4j-nop-1.5.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-nop/1.5.3/slf4j-nop-1.5.3.pom (2 KB at 68.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-webdav-jackrabbit/1.0/wagon-webdav-jackrabbit-1.0.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-http-shared/1.0/wagon-http-shared-1.0.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-webdav-jackrabbit/1.0/wagon-webdav-jackrabbit-1.0.jar (18 KB at 162.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/wagon/wagon-http-shared/1.0/wagon-http-shared-1.0.jar (25 KB at 220.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/jsoup/jsoup/1.6.1/jsoup-1.6.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-codec/commons-codec/1.2/commons-codec-1.2.jar (30 KB at 236.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-webdav/1.5.0/jackrabbit-webdav-1.5.0.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar (60 KB at 352.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-jcr-commons/1.5.0/jackrabbit-jcr-commons-1.5.0.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/jsoup/jsoup/1.6.1/jsoup-1.6.1.jar (275 KB at 2067.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.5.3/slf4j-api-1.5.3.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.5.3/slf4j-api-1.5.3.jar (20 KB at 133.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-nop/1.5.3/slf4j-nop-1.5.3.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-nop/1.5.3/slf4j-nop-1.5.3.jar (6 KB at 31.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.2/plexus-utils-1.4.2.jar (186 KB at 1021.2 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar (156 KB at 482.3 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar (298 KB at 565.2 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-jcr-commons/1.5.0/jackrabbit-jcr-commons-1.5.0.jar (199 KB at 400.8 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/jackrabbit/jackrabbit-webdav/1.5.0/jackrabbit-webdav-1.5.0.jar (296 KB at 522.0 KB/sec)
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Bio-Formats projects
+[INFO] JAI Image I/O Tools
+[INFO] libjpeg-turbo Java bindings
+[INFO] Bio-Formats API
+[INFO] BSD Bio-Formats readers and writers
+[INFO] Bio-Formats library
+[INFO] Bio-Formats code generator
+[INFO] Bio-Formats Plugins for ImageJ
+[INFO] Bio-Formats command line tools
+[INFO] bioformats_package bundle
+[INFO] LOCI Tools bundle
+[INFO] Bio-Formats testing framework
+[INFO] Bio-Formats Sphinx documentation
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats projects 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.2.1/maven-source-plugin-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.2.1/maven-source-plugin-2.2.1.pom (7 KB at 296.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom (9 KB at 390.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom (30 KB at 1037.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/11/apache-11.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/11/apache-11.pom (15 KB at 657.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.2.1/maven-source-plugin-2.2.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-source-plugin/2.2.1/maven-source-plugin-2.2.1.jar (30 KB at 141.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/mojo/buildnumber-maven-plugin/1.2/buildnumber-maven-plugin-1.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/mojo/buildnumber-maven-plugin/1.2/buildnumber-maven-plugin-1.2.pom (13 KB at 590.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/mojo/mojo-parent/30/mojo-parent-30.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/mojo/mojo-parent/30/mojo-parent-30.pom (27 KB at 1040.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom (5 KB at 214.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/mojo/buildnumber-maven-plugin/1.2/buildnumber-maven-plugin-1.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/mojo/buildnumber-maven-plugin/1.2/buildnumber-maven-plugin-1.2.jar (26 KB at 146.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.5.1/maven-install-plugin-2.5.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.5.1/maven-install-plugin-2.5.1.pom (8 KB at 309.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/24/maven-plugins-24.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/24/maven-plugins-24.pom (11 KB at 458.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom (32 KB at 1325.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/13/apache-13.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/13/apache-13.pom (14 KB at 593.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.5.1/maven-install-plugin-2.5.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-install-plugin/2.5.1/maven-install-plugin-2.5.1.jar (33 KB at 286.7 KB/sec)
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom (3 KB at 128.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom (9 KB at 401.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom (15 KB at 647.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/3/apache-3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/3/apache-3.pom (4 KB at 167.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom (2 KB at 97.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom (3 KB at 148.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom (2 KB at 103.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom (4 KB at 44.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom (492 B at 26.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom (6 KB at 254.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/junit/junit/4.10/junit-4.10.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit/4.10/junit-4.10.pom (3 KB at 120.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom (481 B at 29.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom (6 KB at 136.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom (7 KB at 318.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom (4 KB at 169.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom (2 KB at 107.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom (3 KB at 128.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom (2 KB at 90.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom (2 KB at 90.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom (2 KB at 95.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom (7 KB at 297.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom (2 KB at 93.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom (2 KB at 90.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom (2 KB at 74.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom (424 B at 23.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom (4 KB at 191.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom (2 KB at 83.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom (3 KB at 102.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/2.0.1/maven-plugin-api-2.0.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/2.0.1/maven-plugin-api-2.0.1.pom (643 B at 34.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven/2.0.1/maven-2.0.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven/2.0.1/maven-2.0.1.pom (12 KB at 510.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom (2 KB at 115.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom (7 KB at 329.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom (2 KB at 61.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom (4 KB at 180.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom (2 KB at 74.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-api/1.8/maven-scm-api-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-api/1.8/maven-scm-api-1.8.pom (2 KB at 85.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm/1.8/maven-scm-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm/1.8/maven-scm-1.8.pom (21 KB at 871.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.3/plexus-utils-3.0.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.3/plexus-utils-3.0.3.pom (3 KB at 122.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom (19 KB at 826.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom (7 KB at 330.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom (14 KB at 575.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-manager-plexus/1.8/maven-scm-manager-plexus-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-manager-plexus/1.8/maven-scm-manager-plexus-1.8.pom (3 KB at 111.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-managers/1.8/maven-scm-managers-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-managers/1.8/maven-scm-managers-1.8.pom (2 KB at 85.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom (2 KB at 63.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-bazaar/1.8/maven-scm-provider-bazaar-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-bazaar/1.8/maven-scm-provider-bazaar-1.8.pom (3 KB at 100.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers/1.8/maven-scm-providers-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers/1.8/maven-scm-providers-1.8.pom (4 KB at 182.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/regexp/regexp/1.3/regexp-1.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/regexp/regexp/1.3/regexp-1.3.pom (145 B at 7.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svnexe/1.8/maven-scm-provider-svnexe-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svnexe/1.8/maven-scm-provider-svnexe-1.8.pom (3 KB at 116.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.8/maven-scm-providers-svn-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.8/maven-scm-providers-svn-1.8.pom (3 KB at 98.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.8/maven-scm-provider-svn-commons-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.8/maven-scm-provider-svn-commons-1.8.pom (3 KB at 138.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.pom (18 KB at 776.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/17/commons-parent-17.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/17/commons-parent-17.pom (31 KB at 1268.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-gitexe/1.8/maven-scm-provider-gitexe-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-gitexe/1.8/maven-scm-provider-gitexe-1.8.pom (3 KB at 116.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-git/1.8/maven-scm-providers-git-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-git/1.8/maven-scm-providers-git-1.8.pom (3 KB at 119.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-git-commons/1.8/maven-scm-provider-git-commons-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-git-commons/1.8/maven-scm-provider-git-commons-1.8.pom (3 KB at 116.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.8/maven-scm-provider-cvsexe-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.8/maven-scm-provider-cvsexe-1.8.pom (3 KB at 131.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-cvs/1.8/maven-scm-providers-cvs-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-cvs/1.8/maven-scm-providers-cvs-1.8.pom (2 KB at 87.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.8/maven-scm-provider-cvs-commons-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.8/maven-scm-provider-cvs-commons-1.8.pom (3 KB at 118.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-starteam/1.8/maven-scm-provider-starteam-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-starteam/1.8/maven-scm-provider-starteam-1.8.pom (3 KB at 132.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-clearcase/1.8/maven-scm-provider-clearcase-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-clearcase/1.8/maven-scm-provider-clearcase-1.8.pom (3 KB at 139.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-perforce/1.8/maven-scm-provider-perforce-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-perforce/1.8/maven-scm-provider-perforce-1.8.pom (3 KB at 135.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-hg/1.8/maven-scm-provider-hg-1.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-hg/1.8/maven-scm-provider-hg-1.8.pom (3 KB at 125.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/1.13/maven-scm-provider-svnjava-1.13.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/1.13/maven-scm-provider-svnjava-1.13.pom (10 KB at 460.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom (4 KB at 209.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.5/maven-scm-provider-svn-commons-1.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.5/maven-scm-provider-svn-commons-1.5.pom (3 KB at 103.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.5/maven-scm-providers-svn-1.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-svn/1.5/maven-scm-providers-svn-1.5.pom (3 KB at 109.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers/1.5/maven-scm-providers-1.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers/1.5/maven-scm-providers-1.5.pom (4 KB at 177.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm/1.5/maven-scm-1.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm/1.5/maven-scm-1.5.pom (15 KB at 657.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/19/maven-parent-19.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/19/maven-parent-19.pom (25 KB at 939.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-api/1.5/maven-scm-api-1.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-api/1.5/maven-scm-api-1.5.pom (2 KB at 77.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom (4 KB at 162.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom (17 KB at 744.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/net/java/dev/jna/jna/3.2.2/jna-3.2.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/net/java/dev/jna/jna/3.2.2/jna-3.2.2.pom (2 KB at 79.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/tmatesoft/svnkit/svnkit/1.3.5/svnkit-1.3.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/tmatesoft/svnkit/svnkit/1.3.5/svnkit-1.3.5.pom (2 KB at 56.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/tmatesoft/svnkit/trilead-ssh2/build213-svnkit-1.3-patch/trilead-ssh2-build213-svnkit-1.3-patch.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/tmatesoft/svnkit/trilead-ssh2/build213-svnkit-1.3-patch/trilead-ssh2-build213-svnkit-1.3-patch.pom (725 B at 37.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/tmatesoft/sqljet/sqljet/1.0.4/sqljet-1.0.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/tmatesoft/sqljet/sqljet/1.0.4/sqljet-1.0.4.pom (771 B at 37.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.pom (4 KB at 197.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/antlr/antlr-master/3.1.3/antlr-master-3.1.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/antlr/antlr-master/3.1.3/antlr-master-3.1.3.pom (9 KB at 361.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/antlr/stringtemplate/3.2/stringtemplate-3.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/antlr/stringtemplate/3.2/stringtemplate-3.2.pom (2 KB at 98.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom (632 B at 32.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-api/1.8/maven-scm-api-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-api/1.8/maven-scm-api-1.8.jar (103 KB at 4472.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-manager-plexus/1.8/maven-scm-manager-plexus-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar (6 KB at 152.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-bazaar/1.8/maven-scm-provider-bazaar-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar (14 KB at 291.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/regexp/regexp/1.3/regexp-1.3.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar (10 KB at 202.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svnexe/1.8/maven-scm-provider-svnexe-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-bazaar/1.8/maven-scm-provider-bazaar-1.8.jar (54 KB at 748.1 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-manager-plexus/1.8/maven-scm-manager-plexus-1.8.jar (11 KB at 143.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-gitexe/1.8/maven-scm-provider-gitexe-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar (30 KB at 397.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-git-commons/1.8/maven-scm-provider-git-commons-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-gitexe/1.8/maven-scm-provider-gitexe-1.8.jar (62 KB at 686.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.8/maven-scm-provider-svn-commons-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svn-commons/1.8/maven-scm-provider-svn-commons-1.8.jar (40 KB at 379.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.8/maven-scm-provider-cvsexe-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/regexp/regexp/1.3/regexp-1.3.jar (25 KB at 232.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.8/maven-scm-provider-cvs-commons-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.8/maven-scm-provider-cvsexe-1.8.jar (30 KB at 240.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-starteam/1.8/maven-scm-provider-starteam-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-starteam/1.8/maven-scm-provider-starteam-1.8.jar (73 KB at 530.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-clearcase/1.8/maven-scm-provider-clearcase-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-git-commons/1.8/maven-scm-provider-git-commons-1.8.jar (37 KB at 246.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-perforce/1.8/maven-scm-provider-perforce-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-clearcase/1.8/maven-scm-provider-clearcase-1.8.jar (70 KB at 450.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-hg/1.8/maven-scm-provider-hg-1.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-hg/1.8/maven-scm-provider-hg-1.8.jar (65 KB at 382.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/1.13/maven-scm-provider-svnjava-1.13.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-svnexe/1.8/maven-scm-provider-svnexe-1.8.jar (75 KB at 423.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/code/maven-scm-provider-svnjava/maven-scm-provider-svnjava/1.13/maven-scm-provider-svnjava-1.13.jar (51 KB at 274.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/tmatesoft/svnkit/svnkit/1.3.5/svnkit-1.3.5.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.8/maven-scm-provider-cvs-commons-1.8.jar (79 KB at 322.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/tmatesoft/svnkit/trilead-ssh2/build213-svnkit-1.3-patch/trilead-ssh2-build213-svnkit-1.3-patch.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/tmatesoft/svnkit/svnkit/1.3.5/svnkit-1.3.5.jar (1845 KB at 7068.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/tmatesoft/sqljet/sqljet/1.0.4/sqljet-1.0.4.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/tmatesoft/svnkit/trilead-ssh2/build213-svnkit-1.3-patch/trilead-ssh2-build213-svnkit-1.3-patch.jar (246 KB at 870.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-perforce/1.8/maven-scm-provider-perforce-1.8.jar (80 KB at 278.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/antlr/stringtemplate/3.2/stringtemplate-3.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/tmatesoft/sqljet/sqljet/1.0.4/sqljet-1.0.4.jar (727 KB at 2461.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.jar (148 KB at 492.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/net/java/dev/jna/jna/3.2.2/jna-3.2.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar (435 KB at 1342.1 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/net/java/dev/jna/jna/3.2.2/jna-3.2.2.jar (839 KB at 2502.1 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar (218 KB at 445.7 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar (278 KB at 560.7 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/antlr/stringtemplate/3.2/stringtemplate-3.2.jar (168 KB at 300.0 KB/sec)
+[INFO] Checking for local modifications: skipped.
+[INFO] Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildNumber: a759a3a870d7270c4d3a033624391108b94cf792 at timestamp: 1602377353535
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ pom-bio-formats >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ pom-bio-formats <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ pom-bio-formats ---
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.pom (4 KB at 146.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven/2.0.9/maven-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven/2.0.9/maven-2.0.9.pom (19 KB at 769.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/8/maven-parent-8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/8/maven-parent-8.pom (24 KB at 942.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.pom (3 KB at 124.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.pom (2 KB at 87.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.pom (2 KB at 76.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.pom (3 KB at 139.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.pom (3 KB at 105.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom (998 B at 51.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.pom (3 KB at 105.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.pom (3 KB at 146.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.pom (2 KB at 97.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.pom (2 KB at 106.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom (5 KB at 211.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom (9 KB at 404.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom (26 KB at 1072.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/10/apache-10.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/10/apache-10.pom (15 KB at 628.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom (3 KB at 144.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom (4 KB at 209.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom (9 KB at 388.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom (9 KB at 388.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom (2 KB at 89.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom (3 KB at 131.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom (19 KB at 757.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom (1018 B at 49.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.pom (4 KB at 149.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom (3 KB at 140.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.7/plexus-utils-3.0.7.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.7/plexus-utils-3.0.7.pom (3 KB at 129.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.pom (2 KB at 89.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.pom (4 KB at 153.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom (19 KB at 762.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.4/plexus-io-2.0.4.jar (57 KB at 2845.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.2/plexus-archiver-2.2.jar (181 KB at 7854.0 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.jar (227 KB at 5264.9 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar (22 KB at 417.7 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar (60 KB at 484.1 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar (119 KB at 484.6 KB/sec)
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ pom-bio-formats ---
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom (11 KB at 435.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom (41 KB at 1204.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.pom (4 KB at 197.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom (7 KB at 310.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom (965 B at 49.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.pom (4 KB at 146.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom (20 KB at 907.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar (32 KB at 1830.5 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0.15/plexus-utils-3.0.15.jar (234 KB at 3196.6 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-utils/0.4/maven-shared-utils-0.4.jar (152 KB at 506.0 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar (228 KB at 614.4 KB/sec)
+[INFO] Installing /home/travis/build/passed/ome/bioformats/pom.xml to /home/travis/.m2/repository/ome/pom-bio-formats/5.6.0-SNAPSHOT/pom-bio-formats-5.6.0-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building JAI Image I/O Tools 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom (6 KB at 299.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom (13 KB at 530.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar (34 KB at 468.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom (8 KB at 396.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar (29 KB at 141.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom (10 KB at 474.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.jar (42 KB at 274.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.16/maven-surefire-plugin-2.16.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.16/maven-surefire-plugin-2.16.pom (5 KB at 244.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire/2.16/surefire-2.16.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire/2.16/surefire-2.16.pom (19 KB at 775.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.16/maven-surefire-plugin-2.16.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.16/maven-surefire-plugin-2.16.jar (34 KB at 171.1 KB/sec)
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jai_imageio ---
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom (6 KB at 297.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom (7 KB at 334.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom (12 KB at 493.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom (889 B at 48.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom (6 KB at 285.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom (3 KB at 155.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom (3 KB at 147.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom (5 KB at 234.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom (8 KB at 342.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom (890 B at 48.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom (3 KB at 139.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom (16 KB at 686.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar (7 KB at 369.4 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar (43 KB at 501.1 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar (60 KB at 163.4 KB/sec)
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ jai_imageio ---
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.pom (8 KB at 345.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.pom (2 KB at 100.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.pom (2 KB at 100.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.pom (3 KB at 106.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.pom (2 KB at 69.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.pom (4 KB at 115.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom (4 KB at 197.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom (5 KB at 229.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom (5 KB at 231.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom (2 KB at 79.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven/2.2.1/maven-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven/2.2.1/maven-2.2.1.pom (22 KB at 1042.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/11/maven-parent-11.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-parent/11/maven-parent-11.pom (32 KB at 1318.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/5/apache-5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/5/apache-5.pom (5 KB at 200.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom (12 KB at 516.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom (3 KB at 118.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom (4 KB at 175.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom (889 B at 45.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom (2 KB at 95.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom (2 KB at 103.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom (8 KB at 386.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom (3 KB at 145.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom (3 KB at 111.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom (3 KB at 106.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom (2 KB at 77.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom (2 KB at 91.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom (2 KB at 87.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom (3 KB at 150.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom (4 KB at 168.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom (880 B at 50.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom (2 KB at 117.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom (3 KB at 118.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom (2 KB at 68.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom (3 KB at 160.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom (7 KB at 368.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom (9 KB at 372.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom (6 KB at 251.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom (3 KB at 87.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom (815 B at 41.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom (5 KB at 217.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom (17 KB at 734.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.pom (865 B at 46.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler/2.2/plexus-compiler-2.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler/2.2/plexus-compiler-2.2.pom (4 KB at 185.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (3 KB at 149.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.pom (690 B at 37.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.pom (769 B at 41.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compilers/2.2/plexus-compilers-2.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compilers/2.2/plexus-compilers-2.2.pom (2 KB at 63.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.5.5/plexus-container-default-1.5.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.5.5/plexus-container-default-1.5.5.pom (3 KB at 134.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.pom (3 KB at 110.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.2/plexus-classworlds-2.2.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.2/plexus-classworlds-2.2.2.pom (4 KB at 207.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.pom (3 KB at 152.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/xbean/xbean/3.4/xbean-3.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/xbean/xbean/3.4/xbean-3.4.pom (19 KB at 624.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/log4j/log4j/1.2.12/log4j-1.2.12.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/log4j/log4j/1.2.12/log4j-1.2.12.pom (145 B at 7.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.pom (6 KB at 290.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom (3 KB at 134.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/google/1/google-1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/google/1/google-1.pom (2 KB at 79.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/junit/junit/3.8.2/junit-3.8.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit/3.8.2/junit-3.8.2.pom (747 B at 38.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar (5 KB at 274.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.jar (151 KB at 7942.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.jar (206 KB at 4676.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/xbean/xbean-reflect/3.4/xbean-reflect-3.4.jar (131 KB at 2107.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/log4j/log4j/1.2.12/log4j-1.2.12.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.jar (25 KB at 182.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar (44 KB at 288.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar (625 KB at 3219.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/junit/junit/3.8.2/junit-3.8.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/log4j/log4j/1.2.12/log4j-1.2.12.jar (350 KB at 1649.5 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit/3.8.2/junit-3.8.2.jar (118 KB at 553.1 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.jar (19 KB at 64.8 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar (14 KB at 46.1 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.jar (5 KB at 15.6 KB/sec)
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 320 source files to /home/travis/build/passed/ome/bioformats/components/forks/jai/target/classes
+[WARNING] /home/travis/build/passed/ome/bioformats/components/forks/jai/src/com/sun/media/imageioimpl/plugins/pnm/PNMImageReader.java:[132,39] sun.security.action.GetPropertyAction is internal proprietary API and may be removed in a future release
+[WARNING] /home/travis/build/passed/ome/bioformats/components/forks/jai/src/com/sun/media/imageioimpl/plugins/pnm/PNMImageWriter.java:[144,39] sun.security.action.GetPropertyAction is internal proprietary API and may be removed in a future release
+[WARNING] /home/travis/build/passed/ome/bioformats/components/forks/jai/src/com/sun/media/imageioimpl/plugins/pnm/PNMImageWriterSpi.java: Some input files use or override a deprecated API.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/forks/jai/src/com/sun/media/imageioimpl/plugins/pnm/PNMImageWriterSpi.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/forks/jai/src/com/sun/media/imageioimpl/plugins/jpeg2000/Box.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/forks/jai/src/com/sun/media/imageioimpl/plugins/jpeg2000/Box.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jai_imageio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ jai_imageio ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ jai_imageio ---
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.16/maven-surefire-common-2.16.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.16/maven-surefire-common-2.16.pom (6 KB at 372.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.pom (2 KB at 113.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.2/maven-plugin-tools-3.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.2/maven-plugin-tools-3.2.pom (17 KB at 1152.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire-api/2.16/surefire-api-2.16.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire-api/2.16/surefire-api-2.16.pom (3 KB at 159.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.pom (3 KB at 230.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.pom (2 KB at 125.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.9/maven-reporting-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.9/maven-reporting-2.0.9.pom (2 KB at 110.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.pom (4 KB at 242.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom (17 KB at 1165.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.16/maven-surefire-common-2.16.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire-api/2.16/surefire-api-2.16.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire-booter/2.16/surefire-booter-2.16.jar (39 KB at 2276.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/surefire-api/2.16/surefire-api-2.16.jar (146 KB at 5405.7 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar (309 KB at 9948.5 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar (10 KB at 55.0 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.jar (15 KB at 81.4 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.16/maven-surefire-common-2.16.jar (259 KB at 1419.1 KB/sec)
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ jai_imageio ---
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.pom (10 KB at 646.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar (57 KB at 2994.7 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar (203 KB at 8114.2 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar (221 KB at 9198.9 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar (181 KB at 6671.0 KB/sec)
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ jai_imageio >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ jai_imageio <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ jai_imageio ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ jai_imageio ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ jai_imageio ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/pom.xml to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building libjpeg-turbo Java bindings 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 7 resources to META-INF/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ turbojpeg ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ turbojpeg ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ turbojpeg ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ turbojpeg ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ turbojpeg >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ turbojpeg <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ turbojpeg ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ turbojpeg ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ turbojpeg ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/pom.xml to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats API 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-xml/5.5.4/ome-xml-5.5.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-xml/5.5.4/ome-xml-5.5.4.pom (6 KB at 390.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-model/5.5.4/ome-model-5.5.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-model/5.5.4/ome-model-5.5.4.pom (16 KB at 1027.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-common/5.3.1/ome-common-5.3.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-common/5.3.1/ome-common-5.3.1.pom (16 KB at 1200.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.pom (7 KB at 433.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (5 KB at 392.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/esotericsoftware/minlog/minlog/1.2/minlog-1.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/esotericsoftware/minlog/minlog/1.2/minlog-1.2.pom (2 KB at 119.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.pom (3 KB at 176.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom (17 KB at 858.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/joda-time/joda-time/2.2/joda-time-2.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/joda-time/joda-time/2.2/joda-time-2.2.pom (16 KB at 1214.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/guava/guava/17.0/guava-17.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/guava/guava/17.0/guava-17.0.pom (6 KB at 423.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/guava/guava-parent/17.0/guava-parent-17.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/guava/guava-parent/17.0/guava-parent-17.0.pom (8 KB at 510.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.pom (3 KB at 202.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.7.6/slf4j-parent-1.7.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.7.6/slf4j-parent-1.7.6.pom (12 KB at 894.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-core/1.1.1/logback-core-1.1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-core/1.1.1/logback-core-1.1.1.pom (5 KB at 326.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.1.1/logback-parent-1.1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-parent/1.1.1/logback-parent-1.1.1.pom (15 KB at 1119.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.1.1/logback-classic-1.1.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.1.1/logback-classic-1.1.1.pom (12 KB at 891.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/xalan/serializer/2.7.2/serializer-2.7.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/xalan/serializer/2.7.2/serializer-2.7.2.pom (2 KB at 81.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom (2 KB at 118.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/xalan/xalan/2.7.2/xalan-2.7.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/xalan/xalan/2.7.2/xalan-2.7.2.pom (2 KB at 95.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/testng/testng/6.8/testng-6.8.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/testng/testng/6.8/testng-6.8.pom (8 KB at 502.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/3/oss-parent-3.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/3/oss-parent-3.pom (4 KB at 251.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom (2 KB at 89.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom (2 KB at 98.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/beust/jcommander/1.27/jcommander-1.27.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/beust/jcommander/1.27/jcommander-1.27.pom (8 KB at 501.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/yaml/snakeyaml/1.6/snakeyaml-1.6.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/yaml/snakeyaml/1.6/snakeyaml-1.6.pom (8 KB at 562.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-xml/5.5.4/ome-xml-5.5.4.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-common/5.3.1/ome-common-5.3.1.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/esotericsoftware/minlog/minlog/1.2/minlog-1.2.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/esotericsoftware/minlog/minlog/1.2/minlog-1.2.jar (5 KB at 346.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/google/guava/guava/17.0/guava-17.0.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.jar (41 KB at 2398.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-core/1.1.1/logback-core-1.1.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-common/5.3.1/ome-common-5.3.1.jar (124 KB at 6160.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.1.1/logback-classic-1.1.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/esotericsoftware/kryo/kryo/2.24.0/kryo-2.24.0.jar (332 KB at 11833.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/joda-time/joda-time/2.2/joda-time-2.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.1.1/logback-classic-1.1.1.jar (265 KB at 5627.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/ch/qos/logback/logback-core/1.1.1/logback-core-1.1.1.jar (418 KB at 7882.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/xalan/serializer/2.7.2/serializer-2.7.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-xml/5.5.4/ome-xml-5.5.4.jar (638 KB at 11385.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/joda-time/joda-time/2.2/joda-time-2.2.jar (561 KB at 9341.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/xalan/xalan/2.7.2/xalan-2.7.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar (29 KB at 466.9 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/testng/testng/6.8/testng-6.8.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar (190 KB at 2530.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/junit/junit/4.10/junit-4.10.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/xalan/serializer/2.7.2/serializer-2.7.2.jar (270 KB at 3599.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar (75 KB at 674.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit/4.10/junit-4.10.jar (248 KB at 2149.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/beust/jcommander/1.27/jcommander-1.27.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/testng/testng/6.8/testng-6.8.jar (795 KB at 6254.6 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/google/guava/guava/17.0/guava-17.0.jar (2191 KB at 16721.1 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/beust/jcommander/1.27/jcommander-1.27.jar (55 KB at 414.4 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/xalan/xalan/2.7.2/xalan-2.7.2.jar (3081 KB at 22822.2 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar (276 KB at 1937.3 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar (227 KB at 1531.6 KB/sec)
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 43 source files to /home/travis/build/passed/ome/bioformats/components/formats-api/target/classes
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-api/src/loci/formats/FormatTools.java: /home/travis/build/passed/ome/bioformats/components/formats-api/src/loci/formats/FormatTools.java uses or overrides a deprecated API.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-api/src/loci/formats/FormatTools.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-api/src/loci/formats/FormatReader.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-api/src/loci/formats/FormatReader.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to /home/travis/build/passed/ome/bioformats/components/formats-api/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-api ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-api >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-api <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-api ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-api ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-api ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/pom.xml to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building BSD Bio-Formats readers and writers 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/specification/5.5.4/specification-5.5.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/specification/5.5.4/specification-5.5.4.pom (3 KB at 155.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/scijava/native-lib-loader/2.1.4/native-lib-loader-2.1.4.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/scijava/native-lib-loader/2.1.4/native-lib-loader-2.1.4.pom (5 KB at 302.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/scijava/pom-scijava/9.0.0/pom-scijava-9.0.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/scijava/pom-scijava/9.0.0/pom-scijava-9.0.0.pom (65 KB at 3370.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/jgoodies/jgoodies-forms/1.7.2/jgoodies-forms-1.7.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/jgoodies/jgoodies-forms/1.7.2/jgoodies-forms-1.7.2.pom (4 KB at 251.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/jgoodies/jgoodies-common/1.7.0/jgoodies-common-1.7.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/jgoodies/jgoodies-common/1.7.0/jgoodies-common-1.7.0.pom (3 KB at 196.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/perf4j/perf4j/0.9.13/perf4j-0.9.13.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/perf4j/perf4j/0.9.13/perf4j-0.9.13.pom (25 KB at 1621.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/lwf-stubs/5.3.0/lwf-stubs-5.3.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/lwf-stubs/5.3.0/lwf-stubs-5.3.0.pom (3 KB at 188.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-stubs/5.3.0/ome-stubs-5.3.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-stubs/5.3.0/ome-stubs-5.3.0.pom (16 KB at 970.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/mipav-stubs/5.3.0/mipav-stubs-5.3.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/mipav-stubs/5.3.0/mipav-stubs-5.3.0.pom (3 KB at 166.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/drewnoakes/metadata-extractor/2.6.2/metadata-extractor-2.6.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/drewnoakes/metadata-extractor/2.6.2/metadata-extractor-2.6.2.pom (3 KB at 213.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.pom (2 KB at 73.4 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.pom (3 KB at 143.7 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.pom (738 B at 48.0 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/1/apache-1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/1/apache-1.pom (4 KB at 256.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/specification/5.5.4/specification-5.5.4.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/scijava/native-lib-loader/2.1.4/native-lib-loader-2.1.4.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/jgoodies/jgoodies-forms/1.7.2/jgoodies-forms-1.7.2.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/jgoodies/jgoodies-common/1.7.0/jgoodies-common-1.7.0.jar
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/perf4j/perf4j/0.9.13/perf4j-0.9.13.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/scijava/native-lib-loader/2.1.4/native-lib-loader-2.1.4.jar (18 KB at 1025.3 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/lwf-stubs/5.3.0/lwf-stubs-5.3.0.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/jgoodies/jgoodies-common/1.7.0/jgoodies-common-1.7.0.jar (34 KB at 1943.5 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/mipav-stubs/5.3.0/mipav-stubs-5.3.0.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/jgoodies/jgoodies-forms/1.7.2/jgoodies-forms-1.7.2.jar (115 KB at 5747.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/drewnoakes/metadata-extractor/2.6.2/metadata-extractor-2.6.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/perf4j/perf4j/0.9.13/perf4j-0.9.13.jar (108 KB at 5116.2 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/lwf-stubs/5.3.0/lwf-stubs-5.3.0.jar (4 KB at 116.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/mipav-stubs/5.3.0/mipav-stubs-5.3.0.jar (8 KB at 262.2 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/adobe/xmp/xmpcore/5.1.2/xmpcore-5.1.2.jar (115 KB at 2794.7 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/specification/5.5.4/specification-5.5.4.jar (638 KB at 15168.8 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar (1185 KB at 15586.0 KB/sec)
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/com/drewnoakes/metadata-extractor/2.6.2/metadata-extractor-2.6.2.jar (207 KB at 218.0 KB/sec)
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-bsd ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 161 source files to /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/classes
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-bsd/src/loci/formats/gui/LegacyQTTools.java: Some input files use or override a deprecated API.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-bsd/src/loci/formats/gui/LegacyQTTools.java: Recompile with -Xlint:deprecation for details.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-bsd/src/loci/formats/in/OMETiffReader.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-bsd/src/loci/formats/in/OMETiffReader.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-bsd ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 71 source files to /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/test-classes
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-bsd/test/loci/formats/utests/FileStitcherTest.java: Some input files use unchecked or unsafe operations.
+[WARNING] /home/travis/build/passed/ome/bioformats/components/formats-bsd/test/loci/formats/utests/FileStitcherTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-bsd ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-bsd ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-bsd >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-bsd <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-bsd ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-bsd ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-bsd ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/pom.xml to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats library 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-mdbtools/5.3.0/ome-mdbtools-5.3.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-mdbtools/5.3.0/ome-mdbtools-5.3.0.pom (14 KB at 852.1 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/metakit/5.3.0/metakit-5.3.0.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/metakit/5.3.0/metakit-5.3.0.pom (16 KB at 1083.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-poi/5.3.1/ome-poi-5.3.1.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/org/openmicroscopy/ome-poi/5.3.1/ome-poi-5.3.1.pom (15 KB at 935.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/edu/ucar/netcdf/4.3.22/netcdf-4.3.22.pom
+[INFO] Downloaded: http://insecure.repo1.maven.org/maven2/edu/ucar/netcdf/4.3.22/netcdf-4.3.22.pom (7 KB at 407.8 KB/sec)
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: http://download.oracle.com/maven/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: http://insecure.repo1.maven.org/maven2/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Bio-Formats projects ............................... SUCCESS [ 19.090 s]
+[INFO] JAI Image I/O Tools ................................ SUCCESS [ 35.677 s]
+[INFO] libjpeg-turbo Java bindings ........................ SUCCESS [  2.465 s]
+[INFO] Bio-Formats API .................................... SUCCESS [  4.850 s]
+[INFO] BSD Bio-Formats readers and writers ................ SUCCESS [ 18.134 s]
+[INFO] Bio-Formats library ................................ FAILURE [08:48 min]
+[INFO] Bio-Formats code generator ......................... SKIPPED
+[INFO] Bio-Formats Plugins for ImageJ ..................... SKIPPED
+[INFO] Bio-Formats command line tools ..................... SKIPPED
+[INFO] bioformats_package bundle .......................... SKIPPED
+[INFO] LOCI Tools bundle .................................. SKIPPED
+[INFO] Bio-Formats testing framework ...................... SKIPPED
+[INFO] Bio-Formats Sphinx documentation ................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10:15 min
+[INFO] Finished at: 2020-10-11T00:59:06+00:00
+[INFO] Final Memory: 21M/410M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project formats-gpl: Could not resolve dependencies for project ome:formats-gpl:jar:5.6.0-SNAPSHOT: Failed to collect dependencies at ome:jxrlib-all:jar:0.2.1: Failed to read artifact descriptor for ome:jxrlib-all:jar:0.2.1: Could not transfer artifact ome:jxrlib-all:pom:0.2.1 from/to sonatype (https://oss.sonatype.org/content/repositories/releases/): Access denied to: https://oss.sonatype.org/content/repositories/releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom , ReasonPhrase:Forbidden. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :formats-gpl
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_75, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-openjdk-amd64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-109-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Bio-Formats projects
+[INFO] JAI Image I/O Tools
+[INFO] libjpeg-turbo Java bindings
+[INFO] Bio-Formats API
+[INFO] BSD Bio-Formats readers and writers
+[INFO] Bio-Formats library
+[INFO] Bio-Formats code generator
+[INFO] Bio-Formats Plugins for ImageJ
+[INFO] Bio-Formats command line tools
+[INFO] bioformats_package bundle
+[INFO] LOCI Tools bundle
+[INFO] Bio-Formats testing framework
+[INFO] Bio-Formats Sphinx documentation
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats projects 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] Checking for local modifications: skipped.
+[INFO] Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildNumber: a759a3a870d7270c4d3a033624391108b94cf792 at timestamp: 1602377949635
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ pom-bio-formats >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ pom-bio-formats <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ pom-bio-formats ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ pom-bio-formats ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/pom.xml to /home/travis/.m2/repository/ome/pom-bio-formats/5.6.0-SNAPSHOT/pom-bio-formats-5.6.0-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building JAI Image I/O Tools 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jai_imageio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ jai_imageio ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jai_imageio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ jai_imageio ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ jai_imageio ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ jai_imageio ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ jai_imageio >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ jai_imageio <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ jai_imageio ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ jai_imageio ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ jai_imageio ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/pom.xml to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building libjpeg-turbo Java bindings 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 7 resources to META-INF/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ turbojpeg ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ turbojpeg ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ turbojpeg ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ turbojpeg ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ turbojpeg >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ turbojpeg <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ turbojpeg ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ turbojpeg ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ turbojpeg ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/pom.xml to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats API 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-api ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-api >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-api <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-api ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-api ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-api ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/pom.xml to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building BSD Bio-Formats readers and writers 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-bsd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-bsd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-bsd ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-bsd ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-bsd >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-bsd <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-bsd ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-bsd ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-bsd ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/pom.xml to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats library 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Bio-Formats projects ............................... SUCCESS [  0.743 s]
+[INFO] JAI Image I/O Tools ................................ SUCCESS [  2.092 s]
+[INFO] libjpeg-turbo Java bindings ........................ SUCCESS [  0.586 s]
+[INFO] Bio-Formats API .................................... SUCCESS [  0.507 s]
+[INFO] BSD Bio-Formats readers and writers ................ SUCCESS [  0.673 s]
+[INFO] Bio-Formats library ................................ FAILURE [08:44 min]
+[INFO] Bio-Formats code generator ......................... SKIPPED
+[INFO] Bio-Formats Plugins for ImageJ ..................... SKIPPED
+[INFO] Bio-Formats command line tools ..................... SKIPPED
+[INFO] bioformats_package bundle .......................... SKIPPED
+[INFO] LOCI Tools bundle .................................. SKIPPED
+[INFO] Bio-Formats testing framework ...................... SKIPPED
+[INFO] Bio-Formats Sphinx documentation ................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 08:49 min
+[INFO] Finished at: 2020-10-11T01:07:58+00:00
+[INFO] Final Memory: 17M/491M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project formats-gpl: Could not resolve dependencies for project ome:formats-gpl:jar:5.6.0-SNAPSHOT: Failed to collect dependencies at ome:jxrlib-all:jar:0.2.1: Failed to read artifact descriptor for ome:jxrlib-all:jar:0.2.1: Could not transfer artifact ome:jxrlib-all:pom:0.2.1 from/to sonatype (https://oss.sonatype.org/content/repositories/releases/): Access denied to: https://oss.sonatype.org/content/repositories/releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom , ReasonPhrase:Forbidden. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :formats-gpl
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_75, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-openjdk-amd64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-109-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Bio-Formats projects
+[INFO] JAI Image I/O Tools
+[INFO] libjpeg-turbo Java bindings
+[INFO] Bio-Formats API
+[INFO] BSD Bio-Formats readers and writers
+[INFO] Bio-Formats library
+[INFO] Bio-Formats code generator
+[INFO] Bio-Formats Plugins for ImageJ
+[INFO] Bio-Formats command line tools
+[INFO] bioformats_package bundle
+[INFO] LOCI Tools bundle
+[INFO] Bio-Formats testing framework
+[INFO] Bio-Formats Sphinx documentation
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats projects 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] Checking for local modifications: skipped.
+[INFO] Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildNumber: a759a3a870d7270c4d3a033624391108b94cf792 at timestamp: 1602378481892
+[INFO] Executing: /bin/sh -c cd /home/travis/build/passed/ome/bioformats && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/passed/ome/bioformats
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ pom-bio-formats >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ pom-bio-formats ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ pom-bio-formats <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ pom-bio-formats ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ pom-bio-formats ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/pom.xml to /home/travis/.m2/repository/ome/pom-bio-formats/5.6.0-SNAPSHOT/pom-bio-formats-5.6.0-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building JAI Image I/O Tools 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jai_imageio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ jai_imageio ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jai_imageio ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/jai/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ jai_imageio ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ jai_imageio ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ jai_imageio ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ jai_imageio >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ jai_imageio ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ jai_imageio <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ jai_imageio ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ jai_imageio ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ jai_imageio ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/pom.xml to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/jai/target/jai_imageio-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/jai_imageio/5.6.0-SNAPSHOT/jai_imageio-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building libjpeg-turbo Java bindings 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 7 resources to META-INF/lib
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ turbojpeg ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ turbojpeg ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/test
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ turbojpeg ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ turbojpeg ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ turbojpeg ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ turbojpeg >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ turbojpeg ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ turbojpeg <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ turbojpeg ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ turbojpeg ---
+[INFO] Skipping packaging of the test-jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ turbojpeg ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/pom.xml to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/forks/turbojpeg/target/turbojpeg-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/turbojpeg/5.6.0-SNAPSHOT/turbojpeg-5.6.0-SNAPSHOT-sources.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats API 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-api ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-api >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-api ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-api <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-api ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-api ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-api ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/pom.xml to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-api/target/formats-api-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-api/5.6.0-SNAPSHOT/formats-api-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building BSD Bio-Formats readers and writers 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ formats-bsd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ formats-bsd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ formats-bsd ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ formats-bsd ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ formats-bsd ---
+[INFO] 
+[INFO] >>> maven-source-plugin:2.2.1:jar (default) > generate-sources @ formats-bsd >>>
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.2:create (default) @ formats-bsd ---
+[INFO] 
+[INFO] <<< maven-source-plugin:2.2.1:jar (default) < generate-sources @ formats-bsd <<<
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar (default) @ formats-bsd ---
+[INFO] Building jar: /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:test-jar (default) @ formats-bsd ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.1:install (default-install) @ formats-bsd ---
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/pom.xml to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT.pom
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-sources.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/travis/build/passed/ome/bioformats/components/formats-bsd/target/formats-bsd-5.6.0-SNAPSHOT-tests.jar to /home/travis/.m2/repository/ome/formats-bsd/5.6.0-SNAPSHOT/formats-bsd-5.6.0-SNAPSHOT-tests.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Bio-Formats library 5.6.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/edu/ucar/thredds-parent/4.3.22/thredds-parent-4.3.22.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/woolz/JWlz/1.4.0/JWlz-1.4.0.pom
+[INFO] Downloading: https://oss.sonatype.org/content/repositories/releases/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: https://repository.apache.org/content/repositories/releases/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: http://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] Downloading: http://artifacts.openmicroscopy.org/artifactory/maven/ch/systems/cisd/jhdf5/14.12.0/jhdf5-14.12.0.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Bio-Formats projects ............................... SUCCESS [  0.683 s]
+[INFO] JAI Image I/O Tools ................................ SUCCESS [  1.899 s]
+[INFO] libjpeg-turbo Java bindings ........................ SUCCESS [  0.304 s]
+[INFO] Bio-Formats API .................................... SUCCESS [  0.197 s]
+[INFO] BSD Bio-Formats readers and writers ................ SUCCESS [  0.392 s]
+[INFO] Bio-Formats library ................................ FAILURE [08:48 min]
+[INFO] Bio-Formats code generator ......................... SKIPPED
+[INFO] Bio-Formats Plugins for ImageJ ..................... SKIPPED
+[INFO] Bio-Formats command line tools ..................... SKIPPED
+[INFO] bioformats_package bundle .......................... SKIPPED
+[INFO] LOCI Tools bundle .................................. SKIPPED
+[INFO] Bio-Formats testing framework ...................... SKIPPED
+[INFO] Bio-Formats Sphinx documentation ................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 08:52 min
+[INFO] Finished at: 2020-10-11T01:16:53+00:00
+[INFO] Final Memory: 17M/491M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project formats-gpl: Could not resolve dependencies for project ome:formats-gpl:jar:5.6.0-SNAPSHOT: Failed to collect dependencies at ome:jxrlib-all:jar:0.2.1: Failed to read artifact descriptor for ome:jxrlib-all:jar:0.2.1: Could not transfer artifact ome:jxrlib-all:pom:0.2.1 from/to sonatype (https://oss.sonatype.org/content/repositories/releases/): Access denied to: https://oss.sonatype.org/content/repositories/releases/ome/jxrlib-all/0.2.1/jxrlib-all-0.2.1.pom , ReasonPhrase:Forbidden. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :formats-gpl
+travis_time:end:0c923df3:start=1602377328897915408,finish=1602379014219005621,duration=1685321090213,event=install[0K[31;1mThe command "mvn install -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -DskipTests=true -Dmaven.javadoc.skip=true -B -V" failed and exited with 1 during .[0m
+
+Your build has been stopped.

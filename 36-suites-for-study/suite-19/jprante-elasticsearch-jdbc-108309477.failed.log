@@ -1,0 +1,150 @@
+travis_time:start:0e53c63c[0Ktravis_time:end:0e53c63c:start=1602970764437504632,finish=1602970764627398822,duration=189894190,event=no_world_writable_dirs[0Ktravis_time:start:08490048[0Ktravis_time:end:08490048:start=1602970764635154270,finish=1602970764640582408,duration=5428138,event=check_unsupported[0Ktravis_time:start:23dd33db[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:23dd33db:start=1602970764647630644,finish=1602970764658996102,duration=11365458,event=show_system_info[0Ktravis_time:start:261c9b7b[0Ktravis_time:end:261c9b7b:start=1602970764666433568,finish=1602970765022637123,duration=356203555,event=rm_riak_source[0Ktravis_time:start:01c4675b[0Ktravis_time:end:01c4675b:start=1602970765030236861,finish=1602970765043936016,duration=13699155,event=fix_rwky_redis[0Ktravis_time:start:00ce19be[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:00ce19be:start=1602970765051254933,finish=1602970785990828562,duration=20939573629,event=wait_for_network[0Ktravis_time:start:045c91c0[0Ktravis_time:end:045c91c0:start=1602970785998615245,finish=1602970790633289019,duration=4634673774,event=update_apt_keys[0Ktravis_time:start:14a014f8[0Ktravis_time:end:14a014f8:start=1602970790639960479,finish=1602970790705518809,duration=65558330,event=fix_hhvm_source[0Ktravis_time:start:03e4e0da[0Ktravis_time:end:03e4e0da:start=1602970790712797386,finish=1602970790719566518,duration=6769132,event=update_mongo_arch[0Ktravis_time:start:00fc38b6[0Ktravis_time:end:00fc38b6:start=1602970790727122855,finish=1602970790774423993,duration=47301138,event=fix_sudo_enabled_trusty[0Ktravis_time:start:212479a0[0Ktravis_time:end:212479a0:start=1602970790782484350,finish=1602970790799802689,duration=17318339,event=clean_up_path[0Ktravis_time:start:06b1cf51[0Ktravis_time:end:06b1cf51:start=1602970790806940075,finish=1602970790823958698,duration=17018623,event=fix_resolv_conf[0Ktravis_time:start:0509a200[0Ktravis_time:end:0509a200:start=1602970790832236998,finish=1602970790851322494,duration=19085496,event=fix_etc_hosts[0Ktravis_time:start:00dae440[0Ktravis_time:start:24a38d00[0Ktravis_time:end:24a38d00:start=1602970790919379744,finish=1602970790936750138,duration=17370394,event=no_ipv6_localhost[0Ktravis_time:start:038032ea[0Ktravis_time:end:038032ea:start=1602970790943201510,finish=1602970790956270137,duration=13068627,event=fix_etc_mavenrc[0Ktravis_time:start:01398c54[0Ktravis_time:end:01398c54:start=1602970790962024419,finish=1602970790969389516,duration=7365097,event=fix_wwdr_certificate[0Ktravis_time:start:17d55d76[0Ktravis_time:end:17d55d76:start=1602970790975719953,finish=1602970791020240090,duration=44520137,event=put_localhost_first[0Ktravis_time:start:036e87e2[0Ktravis_time:end:036e87e2:start=1602970791026656766,finish=1602970791032012972,duration=5356206,event=home_paths[0Ktravis_time:start:1c34de48[0Ktravis_time:end:1c34de48:start=1602970791038911945,finish=1602970791131009160,duration=92097215,event=disable_initramfs[0Ktravis_time:start:0127f500[0Ktravis_time:end:0127f500:start=1602970791138630587,finish=1602970791161372300,duration=22741713,event=disable_ssh_roaming[0Ktravis_time:start:0586bfd0[0Ktravis_time:end:0586bfd0:start=1602970791167739466,finish=1602970791172530203,duration=4790737,event=debug_tools[0Ktravis_time:start:1a6f6d09[0Ktravis_time:end:1a6f6d09:start=1602970791179367554,finish=1602970791185701982,duration=6334428,event=uninstall_oclint[0Ktravis_time:start:3277b57f[0Ktravis_time:end:3277b57f:start=1602970791191924154,finish=1602970791198490597,duration=6566443,event=rvm_use[0Ktravis_time:start:3ad568a0[0Ktravis_time:end:3ad568a0:start=1602970791205299084,finish=1602970791220345220,duration=15046136,event=rm_etc_boto_cfg[0Ktravis_time:start:1022a16e[0Ktravis_time:end:1022a16e:start=1602970791226735270,finish=1602970791232154186,duration=5418916,event=rm_oraclejdk8_symlink[0Ktravis_time:start:0b552c00[0Ktravis_time:end:0b552c00:start=1602970791239267834,finish=1602970791287454244,duration=48186410,event=enable_i386[0Ktravis_time:start:16843044[0Ktravis_time:end:16843044:start=1602970791294624088,finish=1602970791302987397,duration=8363309,event=update_rubygems[0Ktravis_time:start:0d4802b8[0Ktravis_time:end:0d4802b8:start=1602970791310163483,finish=1602970791319474762,duration=9311279,event=ensure_path_components[0Ktravis_time:start:15c81b1f[0Ktravis_time:end:15c81b1f:start=1602970791326982367,finish=1602970791332354552,duration=5372185,event=redefine_curl[0Ktravis_time:start:114ff8a6[0Ktravis_time:end:114ff8a6:start=1602970791339777175,finish=1602970791344710986,duration=4933811,event=nonblock_pipe[0Ktravis_time:start:0ecd9ca7[0Ktravis_time:end:0ecd9ca7:start=1602970791351981754,finish=1602970797162688284,duration=5810706530,event=apt_get_update[0Ktravis_time:start:20350951[0Ktravis_time:end:20350951:start=1602970797170521175,finish=1602970797176179684,duration=5658509,event=deprecate_xcode_64[0Ktravis_time:start:295ef907[0Ktravis_time:end:295ef907:start=1602970797183232017,finish=1602970797191887379,duration=8655362,event=update_heroku[0Ktravis_time:start:196c382e[0Ktravis_time:end:196c382e:start=1602970797198470402,finish=1602970797203228141,duration=4757739,event=shell_session_update[0Ktravis_time:start:1efa775f[0Ktravis_fold:start:docker_mtu[0Ktravis_fold:end:docker_mtu[0Ktravis_time:end:1efa775f:start=1602970797210446319,finish=1602970797269388210,duration=58941891,event=set_docker_mtu[0Ktravis_time:start:093bbce8[0Ktravis_time:end:093bbce8:start=1602970797276559856,finish=1602970797294601736,duration=18041880,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk8[0m
+$ jdk_switcher use "oraclejdk8"
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+travis_fold:end:install_jdk[0Ktravis_time:start:1e33d8e8[0Ktravis_time:end:1e33d8e8:start=1602970797359141905,finish=1602970797364277854,duration=5135949,event=fix_ps4[0Ktravis_time:start:12a22170[0K
+$ cd failed/jprante/elasticsearch-jdbc
+
+travis_time:end:12a22170:start=1602970797371047857,finish=1602970797534007067,duration=162959210,event=checkout[0Ktravis_time:start:02cac684[0Ktravis_time:end:02cac684:start=1602970797542110778,finish=1602970797948337042,duration=406226264,event=env[0K$ export TERM=dumb
+$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:install[0Ktravis_time:start:0255bd12[0K$ gradle assemble
+:compileJava
+Download https://repo1.maven.org/maven2/org/elasticsearch/elasticsearch/2.2.0/elasticsearch-2.2.0.pom
+Download https://repo1.maven.org/maven2/org/elasticsearch/parent/2.2.0/parent-2.2.0.pom
+Download https://repo1.maven.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Download https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.5/log4j-slf4j-impl-2.5.pom
+Download https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j/2.5/log4j-2.5.pom
+Download https://repo1.maven.org/maven2/org/apache/apache/9/apache-9.pom
+Download https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.5/log4j-core-2.5.pom
+Download https://repo1.maven.org/maven2/com/vividsolutions/jts/1.13/jts-1.13.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-core/5.4.1/lucene-core-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-parent/5.4.1/lucene-parent-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-solr-grandparent/5.4.1/lucene-solr-grandparent-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/apache/13/apache-13.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-backward-codecs/5.4.1/lucene-backward-codecs-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-analyzers-common/5.4.1/lucene-analyzers-common-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-queries/5.4.1/lucene-queries-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-memory/5.4.1/lucene-memory-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-highlighter/5.4.1/lucene-highlighter-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-queryparser/5.4.1/lucene-queryparser-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-suggest/5.4.1/lucene-suggest-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-join/5.4.1/lucene-join-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-spatial/5.4.1/lucene-spatial-5.4.1.pom
+Download https://repo1.maven.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom
+Download https://repo1.maven.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+Download https://repo1.maven.org/maven2/org/elasticsearch/securesm/1.0/securesm-1.0.pom
+Download https://repo1.maven.org/maven2/com/carrotsearch/hppc/0.7.1/hppc-0.7.1.pom
+Download https://repo1.maven.org/maven2/com/carrotsearch/hppc-parent/0.7.1/hppc-parent-0.7.1.pom
+Download https://repo1.maven.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+Download https://repo1.maven.org/maven2/joda-time/joda-time/2.8.2/joda-time-2.8.2.pom
+Download https://repo1.maven.org/maven2/org/joda/joda-convert/1.2/joda-convert-1.2.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.6.2/jackson-core-2.6.2.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.6.1/jackson-parent-2.6.1.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/oss-parent/23/oss-parent-23.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.6.2/jackson-dataformat-smile-2.6.2.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.6.2/jackson-dataformat-yaml-2.6.2.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.6.2/jackson-dataformat-cbor-2.6.2.pom
+Download https://repo1.maven.org/maven2/io/netty/netty/3.10.5.Final/netty-3.10.5.Final.pom
+Download https://repo1.maven.org/maven2/com/ning/compress-lzf/1.0.2/compress-lzf-1.0.2.pom
+Download https://repo1.maven.org/maven2/com/tdunning/t-digest/3.0/t-digest-3.0.pom
+Download https://repo1.maven.org/maven2/org/hdrhistogram/HdrHistogram/2.1.6/HdrHistogram-2.1.6.pom
+Download https://repo1.maven.org/maven2/commons-cli/commons-cli/1.3.1/commons-cli-1.3.1.pom
+Download https://repo1.maven.org/maven2/org/apache/commons/commons-parent/37/commons-parent-37.pom
+Download https://repo1.maven.org/maven2/org/apache/apache/16/apache-16.pom
+Download https://repo1.maven.org/maven2/com/twitter/jsr166e/1.1.0/jsr166e-1.1.0.pom
+Download https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.pom
+Download https://repo1.maven.org/maven2/org/slf4j/slf4j-parent/1.7.12/slf4j-parent-1.7.12.pom
+Download https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.5/log4j-api-2.5.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-sandbox/5.4.1/lucene-sandbox-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-misc/5.4.1/lucene-misc-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-grouping/5.4.1/lucene-grouping-5.4.1.pom
+Download https://repo1.maven.org/maven2/org/apache/lucene/lucene-spatial3d/5.4.1/lucene-spatial3d-5.4.1.pom
+Download https://repo1.maven.org/maven2/com/spatial4j/spatial4j/0.5/spatial4j-0.5.pom
+Download https://repo1.maven.org/maven2/org/yaml/snakeyaml/1.15/snakeyaml-1.15.pom
+
+BUILD FAILED
+
+Total time: 15.104 secs
+:compileJava
+
+BUILD FAILED
+
+Total time: 6.302 secs
+:compileJava
+
+BUILD FAILED
+
+Total time: 8.148 secs
+travis_time:end:0255bd12:start=1602970798261181345,finish=1602970833105647841,duration=34844466496,event=install[0K[31;1mThe command "gradle assemble" failed and exited with 1 during .[0m
+
+Your build has been stopped.

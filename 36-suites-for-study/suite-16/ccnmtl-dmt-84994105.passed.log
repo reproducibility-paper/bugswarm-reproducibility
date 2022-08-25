@@ -1,0 +1,114 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: python
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+$ cd passed/ccnmtl/dmt
+travis_fold:start:install_firefox[0K$ export FIREFOX_SOURCE_URL='https://download.mozilla.org/?product=firefox-28.0&lang=en-US&os=linux64'
+[33;1mInstalling Firefox 28.0[0m
+travis_time:start:3402d118[0K$ wget -O /tmp/firefox-28.0.tar.bz2 $FIREFOX_SOURCE_URL
+
+travis_time:end:3402d118:start=1601110518410040253,finish=1601110519615953991,duration=1205913738[0K$ export PATH=$HOME/firefox-28.0/firefox:$PATH
+travis_fold:end:install_firefox[0Ktravis_fold:start:postgresql[0K[33;1mStarting PostgreSQL v9.3[0m
+travis_time:start:02f392aa[0K$ sudo service postgresql stop
+ * Stopping PostgreSQL 9.1 database server
+   ...done.
+ * Stopping PostgreSQL 9.2 database server
+   ...done.
+ * Stopping PostgreSQL 9.3 database server
+   ...done.
+ * Stopping PostgreSQL 9.4 database server
+   ...done.
+
+travis_time:end:02f392aa:start=1601110523944504719,finish=1601110524630637469,duration=686132750[0Ktravis_time:start:16d36862[0K$ sudo service postgresql start 9.3
+ * Starting PostgreSQL 9.3 database server
+   ...done.
+
+travis_time:end:16d36862:start=1601110524638148282,finish=1601110526887428745,duration=2249280463[0Ktravis_time:start:17bba366[0K$ sudo -u postgres createuser -s -p 5432 travis &>/dev/null
+
+travis_time:end:17bba366:start=1601110526895764411,finish=1601110526951508314,duration=55743903[0Ktravis_time:start:1105f716[0K$ sudo -u postgres createdb -O travis -p 5432 travis &>/dev/null
+
+travis_time:end:1105f716:start=1601110526959233342,finish=1601110527231415977,duration=272182635[0Ktravis_time:start:00090171[0K$ sudo -u postgres createuser -s -p 5433 travis &>/dev/null
+
+travis_time:end:00090171:start=1601110527241517453,finish=1601110527290461588,duration=48944135[0Ktravis_time:start:2c713692[0K$ sudo -u postgres createdb -O travis -p 5433 travis &>/dev/null
+
+travis_time:end:2c713692:start=1601110527297354767,finish=1601110527350267263,duration=52912496[0Ktravis_fold:end:postgresql[0Ktravis_time:start:0ceb7496[0K$ source ~/virtualenv/python2.7/bin/activate
+
+travis_time:end:0ceb7496:start=1601110528733725396,finish=1601110528744199128,duration=10473732[0K$ python --version
+$ pip --version
+pip 6.0.7 from /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages (python 2.7)
+travis_fold:start:before_install.1[0Ktravis_time:start:026d7a0e[0K$ export DISPLAY=:99.0
+
+travis_time:end:026d7a0e:start=1601110529024687744,finish=1601110529034171081,duration=9483337[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:05d22f0e[0K$ sh -e /etc/init.d/xvfb start
+Starting virtual X frame buffer: Xvfb.
+
+travis_time:end:05d22f0e:start=1601110529044950461,finish=1601110529056617028,duration=11666567[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:install[0Ktravis_time:start:0842e43a[0K$ ./bootstrap.py
+Using real prefix '/opt/python/2.7.9'
+New python executable in /home/travis/build/passed/ccnmtl/dmt/ve/bin/python
+Installing setuptools, pip...done.
+Collecting wheel==0.24.0
+
+travis_time:end:0842e43a:start=1601110529067092539,finish=1601110558486788537,duration=29419695998[0K
+[31;1mThe command "./bootstrap.py" failed and exited with 1 during .[0m
+
+Your build has been stopped.
