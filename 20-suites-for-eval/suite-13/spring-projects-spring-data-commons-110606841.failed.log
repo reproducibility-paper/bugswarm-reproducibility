@@ -1,0 +1,627 @@
+travis_time:start:06ea9474[0Ktravis_time:end:06ea9474:start=1646493204908095428,finish=1646493205064792172,duration=156696744,event=no_world_writable_dirs[0Ktravis_time:start:0ebbefa0[0Ktravis_time:end:0ebbefa0:start=1646493205071255353,finish=1646493205075609527,duration=4354174,event=check_unsupported[0Ktravis_time:start:25867999[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:25867999:start=1646493205081235515,finish=1646493205089978172,duration=8742657,event=show_system_info[0Ktravis_time:start:24ad2040[0Ktravis_time:end:24ad2040:start=1646493205095926764,finish=1646493205111619442,duration=15692678,event=rm_riak_source[0Ktravis_time:start:13529288[0Ktravis_time:end:13529288:start=1646493205117026096,finish=1646493205126582023,duration=9555927,event=fix_rwky_redis[0Ktravis_time:start:0e81f660[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:0e81f660:start=1646493205132041474,finish=1646493225840811622,duration=20708770148,event=wait_for_network[0Ktravis_time:start:03b28884[0Ktravis_time:end:03b28884:start=1646493225848232276,finish=1646493407802456922,duration=181954224646,event=update_apt_keys[0Ktravis_time:start:02690353[0Ktravis_time:end:02690353:start=1646493407808028718,finish=1646493407878334305,duration=70305587,event=fix_hhvm_source[0Ktravis_time:start:0b493bc8[0Ktravis_time:end:0b493bc8:start=1646493407883327399,finish=1646493407887385250,duration=4057851,event=update_mongo_arch[0Ktravis_time:start:02e0c230[0Ktravis_time:end:02e0c230:start=1646493407893116912,finish=1646493407933033770,duration=39916858,event=fix_sudo_enabled_trusty[0Ktravis_time:start:0859668c[0Ktravis_time:end:0859668c:start=1646493407939208281,finish=1646493407952961643,duration=13753362,event=clean_up_path[0Ktravis_time:start:08d18330[0Ktravis_time:end:08d18330:start=1646493407958210927,finish=1646493407970871508,duration=12660581,event=fix_resolv_conf[0Ktravis_time:start:3286cb12[0Ktravis_time:end:3286cb12:start=1646493407976871067,finish=1646493407993623476,duration=16752409,event=fix_etc_hosts[0Ktravis_time:start:04a2f254[0Ktravis_time:end:04a2f254:start=1646493407999471822,finish=1646493408016659963,duration=17188141,event=fix_mvn_settings_xml[0Ktravis_time:start:013945d0[0Ktravis_time:end:013945d0:start=1646493408022145876,finish=1646493408071295929,duration=49150053,event=no_ipv6_localhost[0Ktravis_time:start:02a08a87[0Ktravis_time:end:02a08a87:start=1646493408077459740,finish=1646493408204646646,duration=127186906,event=fix_etc_mavenrc[0Ktravis_time:start:11edecc4[0Ktravis_time:end:11edecc4:start=1646493408211451128,finish=1646493408217885904,duration=6434776,event=fix_wwdr_certificate[0Ktravis_time:start:1b9c936e[0Ktravis_time:end:1b9c936e:start=1646493408224066587,finish=1646493408259807148,duration=35740561,event=put_localhost_first[0Ktravis_time:start:0031539d[0Ktravis_time:end:0031539d:start=1646493408265775222,finish=1646493408270649942,duration=4874720,event=home_paths[0Ktravis_time:start:1282f872[0Ktravis_time:end:1282f872:start=1646493408276802899,finish=1646493408366722519,duration=89919620,event=disable_initramfs[0Ktravis_time:start:0e193b5b[0Ktravis_time:end:0e193b5b:start=1646493408372531261,finish=1646493408393104506,duration=20573245,event=disable_ssh_roaming[0Ktravis_time:start:051e03ff[0Ktravis_time:end:051e03ff:start=1646493408398441270,finish=1646493408402594703,duration=4153433,event=debug_tools[0Ktravis_time:start:1282409b[0Ktravis_time:end:1282409b:start=1646493408409140059,finish=1646493408416035386,duration=6895327,event=uninstall_oclint[0Ktravis_time:start:0d3acc91[0Ktravis_time:end:0d3acc91:start=1646493408422826013,finish=1646493408429449316,duration=6623303,event=rvm_use[0Ktravis_time:start:274262c4[0Ktravis_time:end:274262c4:start=1646493408435965672,finish=1646493408450107721,duration=14142049,event=rm_etc_boto_cfg[0Ktravis_time:start:04e93baf[0Ktravis_time:end:04e93baf:start=1646493408456058676,finish=1646493408460644964,duration=4586288,event=rm_oraclejdk8_symlink[0Ktravis_time:start:0013d8ad[0Ktravis_time:end:0013d8ad:start=1646493408466978009,finish=1646493408513831013,duration=46853004,event=enable_i386[0Ktravis_time:start:3683b470[0Ktravis_time:end:3683b470:start=1646493408518983596,finish=1646493408524608372,duration=5624776,event=update_rubygems[0Ktravis_time:start:00382516[0Ktravis_time:end:00382516:start=1646493408529394106,finish=1646493408535852349,duration=6458243,event=ensure_path_components[0Ktravis_time:start:030988e6[0Ktravis_time:end:030988e6:start=1646493408541857461,finish=1646493408545896278,duration=4038817,event=redefine_curl[0Ktravis_time:start:066b1fcc[0Ktravis_time:end:066b1fcc:start=1646493408551607529,finish=1646493408556034462,duration=4426933,event=nonblock_pipe[0Ktravis_time:start:1844a008[0Ktravis_time:end:1844a008:start=1646493408561346079,finish=1646493410910104909,duration=2348758830,event=apt_get_update[0Ktravis_time:start:040d3e80[0Ktravis_time:end:040d3e80:start=1646493410916717418,finish=1646493410921110833,duration=4393415,event=deprecate_xcode_64[0Ktravis_time:start:079d33e2[0Ktravis_time:end:079d33e2:start=1646493410927551813,finish=1646493410934460671,duration=6908858,event=update_heroku[0Ktravis_time:start:1342532a[0Ktravis_time:end:1342532a:start=1646493410941185513,finish=1646493410945660168,duration=4474655,event=shell_session_update[0Ktravis_time:start:0ee82ba8[0Ktravis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0Ktravis_time:end:0ee82ba8:start=1646493410951730630,finish=1646493410987875410,duration=36144780,event=set_docker_mtu[0Ktravis_time:start:062fd8d8[0Ktravis_time:end:062fd8d8:start=1646493410994664091,finish=1646493411011053627,duration=16389536,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk8[0m
+$ jdk_switcher use "oraclejdk8"
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+travis_fold:end:install_jdk[0Ktravis_time:start:1ac68e36[0Ktravis_time:end:1ac68e36:start=1646493411035621586,finish=1646493411040787002,duration=5165416,event=fix_ps4[0Ktravis_time:start:089ac6c6[0K
+$ cd failed/spring-projects/spring-data-commons
+
+travis_time:end:089ac6c6:start=1646493411048276217,finish=1646493411053480828,duration=5204611,event=checkout[0Ktravis_time:start:02f1b8a2[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export PROFILE=spring42
+
+travis_time:end:02f1b8a2:start=1646493411060661713,finish=1646493411362330974,duration=301669261,event=env[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:078968e8[0K$ Installing caching utilities
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 2 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 3 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed 3 times.[0m
+
+travis_time:end:078968e8:start=1646493420124751849,finish=1646493423209458074,duration=3084706225,event=setup_casher[0Ktravis_time:start:05a5847c[0K$ Installing caching utilities from the Travis CI server (https:///files/casher) failed, failing over to using GitHub (https://raw.githubusercontent.com/travis-ci/casher/bash/bin/casher)
+travis_time:end:05a5847c:start=1646493423216567674,finish=1646493423492504046,duration=275936372,event=setup_casher[0Ktravis_time:start:18bb45ec[0Ktravis_time:end:18bb45ec:start=1646493423504019914,finish=1646493423510020217,duration=6000303,event=setup_casher[0Ktravis_time:start:19c54bae[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+attempting to download cache archive[0m
+[31;1mcould not download cache[0m
+travis_time:end:19c54bae:start=1646493423517698729,finish=1646493424935345825,duration=1417647096,event=setup_casher[0Ktravis_time:start:057a24a0[0Ktravis_time:end:057a24a0:start=1646493424943172744,finish=1646493424949256913,duration=6084169,event=setup_casher[0Ktravis_time:start:001c160a[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+adding /home/travis/.m2 to cache[0m
+travis_time:end:001c160a:start=1646493424956045759,finish=1646493437872429975,duration=12916384216,event=setup_casher[0Ktravis_fold:end:cache.1[0K
+$ java -Xmx32m -version
+java version "1.8.0_31"
+Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.8.0_31
+travis_fold:start:install[0Ktravis_time:start:0a547868[0K$ true
+travis_time:end:0a547868:start=1646493438155028297,finish=1646493438160204401,duration=5176104,event=install[0Ktravis_fold:end:install[0Ktravis_time:start:03023c28[0K$ mvn clean dependency:list test -P${PROFILE} -Dsort
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=192m; support was removed in 8.0
+[INFO] Scanning for projects...
+Downloading: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-parent/1.8.0.BUILD-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.apache.org/snapshots/org/springframework/data/build/spring-data-parent/1.8.0.BUILD-SNAPSHOT/maven-metadata.xml
+511/802 B   802/802 B               Downloaded: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-parent/1.8.0.BUILD-SNAPSHOT/maven-metadata.xml (802 B at 1.0 KB/sec)
+            [WARNING] Could not transfer metadata org.springframework.data.build:spring-data-parent:1.8.0.BUILD-SNAPSHOT/maven-metadata.xml from/to apache-snapshots (https://repository.apache.org/snapshots/): Connect to repository.apache.org:443 [repository.apache.org/136.243.146.148] failed: Connection timed out
+Downloading: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-build/1.8.0.BUILD-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.apache.org/snapshots/org/springframework/data/build/spring-data-build/1.8.0.BUILD-SNAPSHOT/maven-metadata.xml
+511/801 B   801/801 B               Downloaded: https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-build/1.8.0.BUILD-SNAPSHOT/maven-metadata.xml (801 B at 1.4 KB/sec)
+            [WARNING] Could not transfer metadata org.springframework.data.build:spring-data-build:1.8.0.BUILD-SNAPSHOT/maven-metadata.xml from/to apache-snapshots (https://repository.apache.org/snapshots/): Connect to repository.apache.org:443 [repository.apache.org/136.243.146.148] failed: Connection timed out
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Spring Data Core 1.12.0.DATACMNS-820-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ spring-data-commons ---
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:list (default-cli) @ spring-data-commons ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    aopalliance:aopalliance:jar:1.0:compile
+[INFO]    ch.qos.logback:logback-classic:jar:1.1.6:test
+[INFO]    ch.qos.logback:logback-core:jar:1.1.6:test
+[INFO]    com.fasterxml.jackson.core:jackson-annotations:jar:2.6.0:compile
+[INFO]    com.fasterxml.jackson.core:jackson-core:jar:2.6.5:compile
+[INFO]    com.fasterxml.jackson.core:jackson-databind:jar:2.6.5:compile
+[INFO]    com.google.code.findbugs:annotations:jar:2.0.1:compile
+[INFO]    com.google.code.findbugs:jsr305:jar:1.3.9:compile
+[INFO]    com.google.guava:guava:jar:19.0:compile
+[INFO]    com.infradna.tool:bridge-method-annotation:jar:1.13:compile
+[INFO]    com.mysema.codegen:codegen:jar:0.6.8:compile
+[INFO]    com.mysema.commons:mysema-commons-lang:jar:0.2.4:compile
+[INFO]    com.querydsl:querydsl-apt:jar:4.1.0:provided
+[INFO]    com.querydsl:querydsl-codegen:jar:4.1.0:compile
+[INFO]    com.querydsl:querydsl-collections:jar:4.1.0:compile
+[INFO]    com.querydsl:querydsl-core:jar:4.1.0:compile
+[INFO]    com.sun.xml.bind:jaxb-impl:jar:2.2.3U1:test
+[INFO]    javax.activation:activation:jar:1.1:test
+[INFO]    javax.annotation:jsr250-api:jar:1.0:compile
+[INFO]    javax.ejb:ejb-api:jar:3.0:compile
+[INFO]    javax.el:el-api:jar:1.0:test
+[INFO]    javax.enterprise:cdi-api:jar:1.0:provided
+[INFO]    javax.inject:javax.inject:jar:1:compile
+[INFO]    javax.servlet:javax.servlet-api:jar:3.0.1:provided
+[INFO]    javax.transaction:javax.transaction-api:jar:1.2:test
+[INFO]    javax.xml.bind:jaxb-api:jar:2.2.2:test
+[INFO]    javax.xml.stream:stax-api:jar:1.0-2:test
+[INFO]    joda-time:joda-time:jar:2.9.2:compile
+[INFO]    junit:junit:jar:4.12:test
+[INFO]    org.apache.geronimo.specs:geronimo-atinject_1.0_spec:jar:1.0:test
+[INFO]    org.apache.geronimo.specs:geronimo-jcdi_1.0_spec:jar:1.0:test
+[INFO]    org.apache.openwebbeans.test:cditest-owb:jar:1.2.8:test
+[INFO]    org.apache.openwebbeans.test:cditest:jar:1.2.8:test
+[INFO]    org.apache.openwebbeans:openwebbeans-impl:jar:1.2.8:test
+[INFO]    org.apache.openwebbeans:openwebbeans-spi:jar:1.2.8:test
+[INFO]    org.apache.xbean:xbean-asm5-shaded:jar:4.1:test
+[INFO]    org.apache.xbean:xbean-finder-shaded:jar:4.1:test
+[INFO]    org.codehaus.groovy:groovy-all:jar:2.4.4:test
+[INFO]    org.eclipse.jdt.core.compiler:ecj:jar:4.3.1:compile
+[INFO]    org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO]    org.hamcrest:hamcrest-library:jar:1.3:test
+[INFO]    org.javassist:javassist:jar:3.18.2-GA:compile
+[INFO]    org.jboss.interceptor:jboss-interceptor-api:jar:1.1:provided
+[INFO]    org.mockito:mockito-core:jar:1.10.19:test
+[INFO]    org.objenesis:objenesis:jar:2.1:test
+[INFO]    org.projectlombok:lombok:jar:1.16.8:compile
+[INFO]    org.reflections:reflections:jar:0.9.9:compile
+[INFO]    org.scala-lang:scala-library:jar:2.11.7:compile
+[INFO]    org.slf4j:jcl-over-slf4j:jar:1.7.19:runtime
+[INFO]    org.slf4j:slf4j-api:jar:1.7.19:compile
+[INFO]    org.springframework.hateoas:spring-hateoas:jar:0.19.0.RELEASE:compile
+[INFO]    org.springframework:spring-aop:jar:4.2.5.RELEASE:compile
+[INFO]    org.springframework:spring-beans:jar:4.2.5.RELEASE:compile
+[INFO]    org.springframework:spring-context:jar:4.2.5.RELEASE:compile
+[INFO]    org.springframework:spring-core:jar:4.2.5.RELEASE:compile
+[INFO]    org.springframework:spring-expression:jar:4.2.5.RELEASE:compile
+[INFO]    org.springframework:spring-oxm:jar:4.2.5.RELEASE:compile
+[INFO]    org.springframework:spring-test:jar:4.2.5.RELEASE:test
+[INFO]    org.springframework:spring-tx:jar:4.2.5.RELEASE:compile
+[INFO]    org.springframework:spring-web:jar:4.2.5.RELEASE:compile
+[INFO]    org.springframework:spring-webmvc:jar:4.2.5.RELEASE:compile
+[INFO]    org.threeten:threetenbp:jar:1.3.1:compile
+[INFO]    xmlunit:xmlunit:jar:1.6:test
+[INFO] 
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-rules) @ spring-data-commons ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ spring-data-commons ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 16 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ spring-data-commons ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 352 source files to /home/travis/build/failed/spring-projects/spring-data-commons/target/classes
+[INFO] /home/travis/build/failed/spring-projects/spring-data-commons/src/main/java/org/springframework/data/convert/JodaTimeConverters.java: Some input files use or override a deprecated API.
+[INFO] /home/travis/build/failed/spring-projects/spring-data-commons/src/main/java/org/springframework/data/convert/JodaTimeConverters.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- com.springsource.bundlor.maven:1.0.0.RELEASE:bundlor (bundlor) @ spring-data-commons ---
+Manifest written to '/home/travis/build/failed/spring-projects/spring-data-commons/target/classes/META-INF/MANIFEST.MF'
+[INFO] 
+[INFO] --- apt-maven-plugin:1.1.3:test-process (default) @ spring-data-commons ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ spring-data-commons ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ spring-data-commons ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 216 source files to /home/travis/build/failed/spring-projects/spring-data-commons/target/test-classes
+[INFO] /home/travis/build/failed/spring-projects/spring-data-commons/src/test/java/org/springframework/data/convert/BytecodeGeneratingEntityInstantiatorUnitTests.java: Some input files use or override a deprecated API.
+[INFO] /home/travis/build/failed/spring-projects/spring-data-commons/src/test/java/org/springframework/data/convert/BytecodeGeneratingEntityInstantiatorUnitTests.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ spring-data-commons ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.springframework.data.config.TypeFilterParserUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.347 sec - in org.springframework.data.config.TypeFilterParserUnitTests
+Running org.springframework.data.domain.jaxb.SpringDataJaxbUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.276 sec - in org.springframework.data.domain.jaxb.SpringDataJaxbUnitTests
+Running org.springframework.data.domain.RangeUnitTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.domain.RangeUnitTests
+Running org.springframework.data.domain.DirectionUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.domain.DirectionUnitTests
+Running org.springframework.data.domain.PageRequestUnitTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.domain.PageRequestUnitTests
+Running org.springframework.data.domain.PageImplUnitTests
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.springframework.data.domain.PageImplUnitTests
+Running org.springframework.data.domain.SortUnitTests
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.domain.SortUnitTests
+Running org.springframework.data.repository.config.DefaultRepositoryConfigurationUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.springframework.data.repository.config.DefaultRepositoryConfigurationUnitTests
+Running org.springframework.data.repository.config.AnnotationRepositoryConfigurationSourceUnitTests
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.164 sec - in org.springframework.data.repository.config.AnnotationRepositoryConfigurationSourceUnitTests
+Running org.springframework.data.repository.config.RepositoryBeanDefinitionRegistrarSupportUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.222 sec - in org.springframework.data.repository.config.RepositoryBeanDefinitionRegistrarSupportUnitTests
+Running org.springframework.data.repository.config.ResourceReaderRepositoryPopulatorBeanDefinitionParserIntegrationTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.419 sec - in org.springframework.data.repository.config.ResourceReaderRepositoryPopulatorBeanDefinitionParserIntegrationTests
+Running org.springframework.data.repository.config.RepositoryBeanNameGeneratorUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.repository.config.RepositoryBeanNameGeneratorUnitTests
+Running org.springframework.data.repository.config.RepositoryConfigurationExtensionSupportUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.springframework.data.repository.config.RepositoryConfigurationExtensionSupportUnitTests
+Running org.springframework.data.repository.config.RepositoryComponentProviderUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.167 sec - in org.springframework.data.repository.config.RepositoryComponentProviderUnitTests
+Running org.springframework.data.repository.config.XmlRepositoryConfigurationSourceUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec - in org.springframework.data.repository.config.XmlRepositoryConfigurationSourceUnitTests
+Running org.springframework.data.repository.config.RepositoryBeanDefinitionRegistrarSupportIntegrationTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.719 sec - in org.springframework.data.repository.config.RepositoryBeanDefinitionRegistrarSupportIntegrationTests
+Running org.springframework.data.repository.init.Jackson2ResourceReaderIntegrationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec - in org.springframework.data.repository.init.Jackson2ResourceReaderIntegrationTests
+Running org.springframework.data.repository.init.ResourceReaderRepositoryInitializerUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.235 sec - in org.springframework.data.repository.init.ResourceReaderRepositoryInitializerUnitTests
+Running org.springframework.data.repository.cdi.CdiRepositoryBeanUnitTests
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec - in org.springframework.data.repository.cdi.CdiRepositoryBeanUnitTests
+Running org.springframework.data.repository.cdi.WebbeansCdiRepositoryExtensionSupportIntegrationTests
+Mar 05, 2022 3:21:59 PM org.apache.webbeans.lifecycle.AbstractLifeCycle bootstrapApplication
+INFO: OpenWebBeans Container is starting...
+Mar 05, 2022 3:21:59 PM org.apache.webbeans.corespi.scanner.AbstractMetaDataDiscovery addWebBeansXmlLocation
+INFO: added beans.xml marker: file:/home/travis/build/failed/spring-projects/spring-data-commons/target/test-classes/META-INF/beans.xml
+Mar 05, 2022 3:22:00 PM org.apache.webbeans.config.BeansDeployer validateInjectionPoints
+INFO: All injection points were validated successfully.
+Mar 05, 2022 3:22:00 PM org.apache.webbeans.lifecycle.AbstractLifeCycle bootstrapApplication
+INFO: OpenWebBeans Container has started, it took [544] ms.
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.655 sec - in org.springframework.data.repository.cdi.WebbeansCdiRepositoryExtensionSupportIntegrationTests
+Running org.springframework.data.repository.support.DomainClassConverterIntegrationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.springframework.data.repository.support.DomainClassConverterIntegrationTests
+Running org.springframework.data.repository.support.CrudRepositoryInvokerUnitTests
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in org.springframework.data.repository.support.CrudRepositoryInvokerUnitTests
+Running org.springframework.data.repository.support.ReflectionRepositoryInvokerUnitTests
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 sec - in org.springframework.data.repository.support.ReflectionRepositoryInvokerUnitTests
+Running org.springframework.data.repository.support.DomainClassPropertyEditorRegistrarUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in org.springframework.data.repository.support.DomainClassPropertyEditorRegistrarUnitTests
+Running org.springframework.data.repository.support.DomainClassPropertyEditorUnitTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.springframework.data.repository.support.DomainClassPropertyEditorUnitTests
+Running org.springframework.data.repository.support.MethodParametersUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.repository.support.MethodParametersUnitTests
+Running org.springframework.data.repository.support.RepositoriesIntegrationTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.repository.support.RepositoriesIntegrationTests
+Running org.springframework.data.repository.support.DefaultRepositoryInvokerFactoryIntegrationTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.springframework.data.repository.support.DefaultRepositoryInvokerFactoryIntegrationTests
+Running org.springframework.data.repository.support.PaginginAndSortingRepositoryInvokerUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in org.springframework.data.repository.support.PaginginAndSortingRepositoryInvokerUnitTests
+Running org.springframework.data.repository.support.DomainClassConverterUnitTests
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec - in org.springframework.data.repository.support.DomainClassConverterUnitTests
+Running org.springframework.data.repository.support.AnnotationAttributeUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.repository.support.AnnotationAttributeUnitTests
+Running org.springframework.data.repository.support.RepositoriesUnitTests
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in org.springframework.data.repository.support.RepositoriesUnitTests
+Running org.springframework.data.repository.query.ResultProcessorUnitTests
+Tests run: 9, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.042 sec <<< FAILURE! - in org.springframework.data.repository.query.ResultProcessorUnitTests
+createsListOfProjectionsFromEntity(org.springframework.data.repository.query.ResultProcessorUnitTests)  Time elapsed: 0.012 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.springframework.data.repository.query.ResultProcessorUnitTests.createsListOfProjectionsFromEntity(ResultProcessorUnitTests.java:120)
+
+createsDynamicProjectionFromEntity(org.springframework.data.repository.query.ResultProcessorUnitTests)  Time elapsed: 0.024 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.springframework.data.repository.query.ResultProcessorUnitTests.createsDynamicProjectionFromEntity(ResultProcessorUnitTests.java:148)
+
+createsPageOfProjectionsFromEntity(org.springframework.data.repository.query.ResultProcessorUnitTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.springframework.data.repository.query.ResultProcessorUnitTests.createsPageOfProjectionsFromEntity(ResultProcessorUnitTests.java:135)
+
+Running org.springframework.data.repository.query.parser.PartTreeUnitTests
+Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec - in org.springframework.data.repository.query.parser.PartTreeUnitTests
+Running org.springframework.data.repository.query.parser.OrderBySourceUnitTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.repository.query.parser.OrderBySourceUnitTests
+Running org.springframework.data.repository.query.ReturnedTypeUnitTests
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.repository.query.ReturnedTypeUnitTests
+Running org.springframework.data.repository.query.QueryMethodUnitTests
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.springframework.data.repository.query.QueryMethodUnitTests
+Running org.springframework.data.repository.query.SimpleParameterAccessorUnitTests
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.springframework.data.repository.query.SimpleParameterAccessorUnitTests
+Running org.springframework.data.repository.query.ParametersUnitTests
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.springframework.data.repository.query.ParametersUnitTests
+Running org.springframework.data.repository.query.ExtensionAwareEvaluationContextProviderUnitTests
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in org.springframework.data.repository.query.ExtensionAwareEvaluationContextProviderUnitTests
+Running org.springframework.data.repository.query.ParametersParameterAccessorUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.repository.query.ParametersParameterAccessorUnitTests
+Running org.springframework.data.repository.core.support.TransactionRepositoryFactoryBeanSupportUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.springframework.data.repository.core.support.TransactionRepositoryFactoryBeanSupportUnitTests
+Running org.springframework.data.repository.core.support.CustomAnnotationTransactionAttributeSourceUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.repository.core.support.CustomAnnotationTransactionAttributeSourceUnitTests
+Running org.springframework.data.repository.core.support.PersistableEntityInformationUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.repository.core.support.PersistableEntityInformationUnitTests
+Running org.springframework.data.repository.core.support.TransactionRepositoryProxyPostProcessorUnitTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in org.springframework.data.repository.core.support.TransactionRepositoryProxyPostProcessorUnitTests
+Running org.springframework.data.repository.core.support.DefaultRepositoryMetadataUnitTests
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.repository.core.support.DefaultRepositoryMetadataUnitTests
+Running org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessorIntegrationTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessorIntegrationTests
+Running org.springframework.data.repository.core.support.QueryExecutorMethodInterceptorUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.springframework.data.repository.core.support.QueryExecutorMethodInterceptorUnitTests
+Running org.springframework.data.repository.core.support.PersistentEntityInformationUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.springframework.data.repository.core.support.PersistentEntityInformationUnitTests
+Running org.springframework.data.repository.core.support.PersistenceExceptionTranslationRepositoryProxyPostProcessorUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.repository.core.support.PersistenceExceptionTranslationRepositoryProxyPostProcessorUnitTests
+Running org.springframework.data.repository.core.support.AnnotationRepositoryMetadataUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.repository.core.support.AnnotationRepositoryMetadataUnitTests
+Running org.springframework.data.repository.core.support.DefaultRepositoryInformationUnitTests
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.repository.core.support.DefaultRepositoryInformationUnitTests
+Running org.springframework.data.repository.core.support.RepositoryFactoryBeanSupportUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.repository.core.support.RepositoryFactoryBeanSupportUnitTests
+Running org.springframework.data.repository.core.support.ReflectionEntityInformationUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.repository.core.support.ReflectionEntityInformationUnitTests
+Running org.springframework.data.repository.core.support.RepositoryFactorySupportUnitTests
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.705 sec - in org.springframework.data.repository.core.support.RepositoryFactorySupportUnitTests
+Running org.springframework.data.repository.core.support.QueryExecutionResultHandlerUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.repository.core.support.QueryExecutionResultHandlerUnitTests
+Running org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessorUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessorUnitTests
+Running org.springframework.data.repository.core.support.DefaultCrudMethodsUnitTests
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.springframework.data.repository.core.support.DefaultCrudMethodsUnitTests
+Running org.springframework.data.repository.core.support.AbstractEntityInformationUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.repository.core.support.AbstractEntityInformationUnitTests
+Running org.springframework.data.repository.core.support.AbstractRepositoryMetadataUnitTests
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.repository.core.support.AbstractRepositoryMetadataUnitTests
+Running org.springframework.data.repository.util.QueryExecutionConvertersUnitTests
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.springframework.data.repository.util.QueryExecutionConvertersUnitTests
+Running org.springframework.data.repository.util.ClassUtilsUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.repository.util.ClassUtilsUnitTests
+Running org.springframework.data.web.config.PageableResourcesAssemblerIntegrationTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.228 sec - in org.springframework.data.web.config.PageableResourcesAssemblerIntegrationTests
+Running org.springframework.data.web.config.SpringDataWebConfigurationUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in org.springframework.data.web.config.SpringDataWebConfigurationUnitTests
+Running org.springframework.data.web.config.EnableSpringDataWebSupportIntegrationTests
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.745 sec - in org.springframework.data.web.config.EnableSpringDataWebSupportIntegrationTests
+Running org.springframework.data.web.MapDataBinderUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.springframework.data.web.MapDataBinderUnitTests
+Running org.springframework.data.web.querydsl.QuerydslPredicateArgumentResolverUnitTests
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in org.springframework.data.web.querydsl.QuerydslPredicateArgumentResolverUnitTests
+Running org.springframework.data.web.PagedResourcesAssemblerArgumentResolverUnitTests
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.springframework.data.web.PagedResourcesAssemblerArgumentResolverUnitTests
+Running org.springframework.data.web.PagedResourcesAssemblerUnitTests
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.springframework.data.web.PagedResourcesAssemblerUnitTests
+Running org.springframework.data.web.HateoasSortHandlerMethodArgumentResolverUnitTests
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.springframework.data.web.HateoasSortHandlerMethodArgumentResolverUnitTests
+Running org.springframework.data.web.SortHandlerMethodArgumentResolverUnitTests
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.web.SortHandlerMethodArgumentResolverUnitTests
+Running org.springframework.data.web.PageableHandlerMethodArgumentResolverUnitTests
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.springframework.data.web.PageableHandlerMethodArgumentResolverUnitTests
+Running org.springframework.data.web.HateoasPageableHandlerMethodArgumentResolverUnitTests
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.springframework.data.web.HateoasPageableHandlerMethodArgumentResolverUnitTests
+Running org.springframework.data.mapping.model.CamelCaseAbbreviatingFieldNamingStrategyUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.springframework.data.mapping.model.CamelCaseAbbreviatingFieldNamingStrategyUnitTests
+Running org.springframework.data.mapping.model.AbstractPersistentPropertyUnitTests
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.mapping.model.AbstractPersistentPropertyUnitTests
+Running org.springframework.data.mapping.model.SpelExpressionParameterProviderUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.springframework.data.mapping.model.SpelExpressionParameterProviderUnitTests
+Running org.springframework.data.mapping.model.PersistentEntityParameterValueProviderUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.springframework.data.mapping.model.PersistentEntityParameterValueProviderUnitTests
+Running org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategyUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategyUnitTests
+Running org.springframework.data.mapping.model.ConvertingPropertyAccessorUnitTests
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.mapping.model.ConvertingPropertyAccessorUnitTests
+Running org.springframework.data.mapping.model.AnnotationBasedPersistentPropertyUnitTests
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in org.springframework.data.mapping.model.AnnotationBasedPersistentPropertyUnitTests
+Running org.springframework.data.mapping.model.IdPropertyIdentifierAccessorUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.mapping.model.IdPropertyIdentifierAccessorUnitTests
+Running org.springframework.data.mapping.model.BasicPersistentEntityUnitTests
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.springframework.data.mapping.model.BasicPersistentEntityUnitTests
+Running org.springframework.data.mapping.SimpleTypeHolderUnitTests
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.mapping.SimpleTypeHolderUnitTests
+Running org.springframework.data.mapping.context.PersistentEntitiesUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.mapping.context.PersistentEntitiesUnitTests
+Running org.springframework.data.mapping.context.DefaultPersistenPropertyPathUnitTests
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.springframework.data.mapping.context.DefaultPersistenPropertyPathUnitTests
+Running org.springframework.data.mapping.context.PropertyMatchUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.mapping.context.PropertyMatchUnitTests
+Running org.springframework.data.mapping.context.AbstractMappingContextIntegrationTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.458 sec - in org.springframework.data.mapping.context.AbstractMappingContextIntegrationTests
+Running org.springframework.data.mapping.context.AbstractMappingContextUnitTests
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec - in org.springframework.data.mapping.context.AbstractMappingContextUnitTests
+Running org.springframework.data.mapping.context.MappingContextEventUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.springframework.data.mapping.context.MappingContextEventUnitTests
+Running org.springframework.data.mapping.context.MappingContextIsNewStrategyFactoryUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.springframework.data.mapping.context.MappingContextIsNewStrategyFactoryUnitTests
+Running org.springframework.data.mapping.PreferredConstructorDiscovererUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.mapping.PreferredConstructorDiscovererUnitTests
+Running org.springframework.data.mapping.PropertyReferenceExceptionUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.mapping.PropertyReferenceExceptionUnitTests
+Running org.springframework.data.mapping.ParameterUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.mapping.ParameterUnitTests
+Running org.springframework.data.mapping.MappingMetadataTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.mapping.MappingMetadataTests
+Running org.springframework.data.mapping.PropertyPathUnitTests
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in org.springframework.data.mapping.PropertyPathUnitTests
+Running org.springframework.data.convert.ThreeTenBackPortConvertersUnitTests
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec - in org.springframework.data.convert.ThreeTenBackPortConvertersUnitTests
+Running org.springframework.data.convert.ClassGeneratingEntityInstantiatorUnitTests
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec - in org.springframework.data.convert.ClassGeneratingEntityInstantiatorUnitTests
+Running org.springframework.data.convert.MappingContextTypeInformationMapperUnitTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in org.springframework.data.convert.MappingContextTypeInformationMapperUnitTests
+Running org.springframework.data.convert.ConfigurableTypeInformationMapperUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.convert.ConfigurableTypeInformationMapperUnitTests
+Running org.springframework.data.convert.ReflectionEntityInstantiatorUnitTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.springframework.data.convert.ReflectionEntityInstantiatorUnitTests
+Running org.springframework.data.convert.SimpleTypeInformationMapperUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.convert.SimpleTypeInformationMapperUnitTests
+Running org.springframework.data.convert.BytecodeGeneratingEntityInstantiatorUnitTests
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.convert.BytecodeGeneratingEntityInstantiatorUnitTests
+Running org.springframework.data.convert.EntityInstantiatorsUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.springframework.data.convert.EntityInstantiatorsUnitTests
+Running org.springframework.data.convert.Jsr310ConvertersUnitTests
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.convert.Jsr310ConvertersUnitTests
+Running org.springframework.data.convert.DefaultTypeMapperUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.springframework.data.convert.DefaultTypeMapperUnitTests
+Running org.springframework.data.geo.GeoResultsUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in org.springframework.data.geo.GeoResultsUnitTests
+Running org.springframework.data.geo.GeoModuleIntegrationTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec - in org.springframework.data.geo.GeoModuleIntegrationTests
+Running org.springframework.data.geo.PolygonUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.springframework.data.geo.PolygonUnitTests
+Running org.springframework.data.geo.DistanceUnitTests
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.geo.DistanceUnitTests
+Running org.springframework.data.geo.CircleUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.geo.CircleUnitTests
+Running org.springframework.data.geo.GeoResultUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.geo.GeoResultUnitTests
+Running org.springframework.data.geo.PointUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.geo.PointUnitTests
+Running org.springframework.data.geo.format.PointFormatterUnitTests
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in org.springframework.data.geo.format.PointFormatterUnitTests
+Running org.springframework.data.geo.format.DistanceFormatterUnitTests
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.springframework.data.geo.format.DistanceFormatterUnitTests
+Running org.springframework.data.geo.BoxUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.geo.BoxUnitTests
+Running org.springframework.data.querydsl.QuerydslRepositoryInvokerAdapterUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.springframework.data.querydsl.QuerydslRepositoryInvokerAdapterUnitTests
+Running org.springframework.data.querydsl.SimpleEntityPathResolverUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.querydsl.SimpleEntityPathResolverUnitTests
+Running org.springframework.data.querydsl.QPageRequestUnitTests
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.querydsl.QPageRequestUnitTests
+Running org.springframework.data.querydsl.binding.QuerydslBindingsFactoryUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.querydsl.binding.QuerydslBindingsFactoryUnitTests
+Running org.springframework.data.querydsl.binding.QuerydslBindingsUnitTests
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.springframework.data.querydsl.binding.QuerydslBindingsUnitTests
+Running org.springframework.data.querydsl.binding.QuerydslDefaultBindingUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.querydsl.binding.QuerydslDefaultBindingUnitTests
+Running org.springframework.data.querydsl.binding.QuerydslPredicateBuilderUnitTests
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.764 sec - in org.springframework.data.querydsl.binding.QuerydslPredicateBuilderUnitTests
+Running org.springframework.data.querydsl.QSortUnitTests
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec - in org.springframework.data.querydsl.QSortUnitTests
+Running org.springframework.data.support.CachingIsNewStrategyFactoryUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.springframework.data.support.CachingIsNewStrategyFactoryUnitTests
+Running org.springframework.data.support.PersistableIsNewStrategyUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.support.PersistableIsNewStrategyUnitTests
+Running org.springframework.data.auditing.DefaultAuditableBeanWrapperFactoryUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.auditing.DefaultAuditableBeanWrapperFactoryUnitTests
+Running org.springframework.data.auditing.ReflectionAuditingBeanWrapperUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in org.springframework.data.auditing.ReflectionAuditingBeanWrapperUnitTests
+Running org.springframework.data.auditing.AuditingHandlerUnitTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.auditing.AuditingHandlerUnitTests
+Running org.springframework.data.auditing.IsNewAwareAuditingHandlerUnitTests
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.springframework.data.auditing.IsNewAwareAuditingHandlerUnitTests
+Running org.springframework.data.auditing.MappingAuditableBeanWrapperFactoryUnitTests
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in org.springframework.data.auditing.MappingAuditableBeanWrapperFactoryUnitTests
+Running org.springframework.data.auditing.config.AuditingBeanDefinitionRegistrarSupportUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.auditing.config.AuditingBeanDefinitionRegistrarSupportUnitTests
+Running org.springframework.data.auditing.AnnotationAuditingMetadataUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.auditing.AnnotationAuditingMetadataUnitTests
+Running org.springframework.data.util.ParsingUtilsUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.util.ParsingUtilsUnitTests
+Running org.springframework.data.util.DataCmns511Tests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.util.DataCmns511Tests
+Running org.springframework.data.util.TupleUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.util.TupleUnitTests
+Running org.springframework.data.util.AnnotationDetectionFieldCallbackUnitTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.util.AnnotationDetectionFieldCallbackUnitTests
+Running org.springframework.data.util.VersionUnitTests
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.util.VersionUnitTests
+Running org.springframework.data.util.ClassTypeInformationUnitTests
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in org.springframework.data.util.ClassTypeInformationUnitTests
+Running org.springframework.data.util.AnnotatedTypeScannerUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.springframework.data.util.AnnotatedTypeScannerUnitTests
+Running org.springframework.data.util.AnnotationDetectionMethodCallbackUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.util.AnnotationDetectionMethodCallbackUnitTests
+Running org.springframework.data.util.ParameterizedTypeUnitTests
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.springframework.data.util.ParameterizedTypeUnitTests
+Running org.springframework.data.util.ReflectionUtilsUnitTests
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.util.ReflectionUtilsUnitTests
+Running org.springframework.data.util.TypeDiscovererUnitTests
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.springframework.data.util.TypeDiscovererUnitTests
+Running org.springframework.data.util.StreamUtilsTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.springframework.data.util.StreamUtilsTests
+Running org.springframework.data.util.DirectFieldAccessFallbackBeanWrapperUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.util.DirectFieldAccessFallbackBeanWrapperUnitTests
+Running org.springframework.data.projection.SpelAwareProxyProjectionFactoryUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in org.springframework.data.projection.SpelAwareProxyProjectionFactoryUnitTests
+Running org.springframework.data.projection.MapAccessingMethodInterceptorUnitTests
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.springframework.data.projection.MapAccessingMethodInterceptorUnitTests
+Running org.springframework.data.projection.SpelEvaluatingMethodInterceptorUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in org.springframework.data.projection.SpelEvaluatingMethodInterceptorUnitTests
+Running org.springframework.data.projection.ProxyProjectionFactoryUnitTests
+Tests run: 16, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.012 sec <<< FAILURE! - in org.springframework.data.projection.ProxyProjectionFactoryUnitTests
+doesNotProjectPrimitiveArray(org.springframework.data.projection.ProxyProjectionFactoryUnitTests)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.springframework.data.projection.ProxyProjectionFactoryUnitTests.doesNotProjectPrimitiveArray(ProxyProjectionFactoryUnitTests.java:203)
+
+createsProjectingProxy(org.springframework.data.projection.ProxyProjectionFactoryUnitTests)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.springframework.data.projection.ProxyProjectionFactoryUnitTests.createsProjectingProxy(ProxyProjectionFactoryUnitTests.java:90)
+
+projectsNonPrimitiveArray(org.springframework.data.projection.ProxyProjectionFactoryUnitTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.springframework.data.projection.ProxyProjectionFactoryUnitTests.projectsNonPrimitiveArray(ProxyProjectionFactoryUnitTests.java:221)
+
+convertsPrimitiveValues(org.springframework.data.projection.ProxyProjectionFactoryUnitTests)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.springframework.data.projection.ProxyProjectionFactoryUnitTests.convertsPrimitiveValues(ProxyProjectionFactoryUnitTests.java:235)
+
+Running org.springframework.data.projection.ProjectingMethodInterceptorUnitTests
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.springframework.data.projection.ProjectingMethodInterceptorUnitTests
+Running org.springframework.data.projection.DefaultProjectionInformationUnitTests
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.projection.DefaultProjectionInformationUnitTests
+Running org.springframework.data.projection.PropertyAccessingMethodInterceptorUnitTests
+Tests run: 4, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE! - in org.springframework.data.projection.PropertyAccessingMethodInterceptorUnitTests
+triggersPropertyAccessOnTarget(org.springframework.data.projection.PropertyAccessingMethodInterceptorUnitTests)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException
+	at org.springframework.data.projection.PropertyAccessingMethodInterceptorUnitTests.triggersPropertyAccessOnTarget(PropertyAccessingMethodInterceptorUnitTests.java:52)
+
+throwsAppropriateExceptionIfThePropertyCannotBeFound(org.springframework.data.projection.PropertyAccessingMethodInterceptorUnitTests)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.springframework.beans.NotReadablePropertyException> but was<java.lang.NullPointerException>
+	at org.springframework.data.projection.PropertyAccessingMethodInterceptorUnitTests.throwsAppropriateExceptionIfThePropertyCannotBeFound(PropertyAccessingMethodInterceptorUnitTests.java:62)
+
+Running org.springframework.data.transaction.ChainedTransactionManagerTests
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.transaction.ChainedTransactionManagerTests
+Running org.springframework.data.annotation.TypeAliasUnitTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.springframework.data.annotation.TypeAliasUnitTests
+Running org.springframework.data.history.RevisionsUnitTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.springframework.data.history.RevisionsUnitTests
+Running org.springframework.data.history.RevisionUnitTests
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.springframework.data.history.RevisionUnitTests
+Running org.springframework.data.authentication.UserCredentialsUnitTests
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.springframework.data.authentication.UserCredentialsUnitTests
+
+Results :
+
+Tests in error: 
+  PropertyAccessingMethodInterceptorUnitTests.throwsAppropriateExceptionIfThePropertyCannotBeFound » 
+  PropertyAccessingMethodInterceptorUnitTests.triggersPropertyAccessOnTarget:52 » NullPointer
+  ProxyProjectionFactoryUnitTests.convertsPrimitiveValues:235 » NullPointer
+  ProxyProjectionFactoryUnitTests.createsProjectingProxy:90 » NullPointer
+  ProxyProjectionFactoryUnitTests.doesNotProjectPrimitiveArray:203 » NullPointer
+  ProxyProjectionFactoryUnitTests.projectsNonPrimitiveArray:221 » NullPointer
+  ResultProcessorUnitTests.createsDynamicProjectionFromEntity:148 » NullPointer
+  ResultProcessorUnitTests.createsListOfProjectionsFromEntity:120 » NullPointer
+  ResultProcessorUnitTests.createsPageOfProjectionsFromEntity:135 » NullPointer
+
+Tests run: 1153, Failures: 0, Errors: 9, Skipped: 1
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 04:52 min
+[INFO] Finished at: 2022-03-05T15:22:11+00:00
+[INFO] Final Memory: 35M/315M
+[INFO] ------------------------------------------------------------------------
+[WARNING] The requested profile "spring42" could not be activated because it does not exist.
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.19.1:test (default-test) on project spring-data-commons: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/travis/build/failed/spring-projects/spring-data-commons/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+travis_time:end:03023c28:start=1646493438167018940,finish=1646493732019289318,duration=293852270378,event=script[0K[31;1mThe command "mvn clean dependency:list test -P${PROFILE} -Dsort" exited with 1.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:20fd1850[0Ktravis_time:end:20fd1850:start=1646493732026579234,finish=1646493732031905350,duration=5326116,event=cache[0Ktravis_time:start:1d72b788[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading /[0m
+[31;1mfailed to upload cache[0m
+travis_time:end:1d72b788:start=1646493732039725433,finish=1646493735505897644,duration=3466172211,event=cache[0Ktravis_fold:end:cache.2[0K
+
+Done. Your build exited with 1.

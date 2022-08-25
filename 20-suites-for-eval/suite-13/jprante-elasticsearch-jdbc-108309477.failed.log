@@ -1,0 +1,173 @@
+travis_time:start:07f09ca2[0Ktravis_time:end:07f09ca2:start=1646569631405645721,finish=1646569631577357480,duration=171711759,event=no_world_writable_dirs[0Ktravis_time:start:310ca5a3[0Ktravis_time:end:310ca5a3:start=1646569631584689810,finish=1646569631589556634,duration=4866824,event=check_unsupported[0Ktravis_time:start:03d4c930[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:03d4c930:start=1646569631596239515,finish=1646569631607081911,duration=10842396,event=show_system_info[0Ktravis_time:start:0d76e9e0[0Ktravis_time:end:0d76e9e0:start=1646569631614230770,finish=1646569631633814111,duration=19583341,event=rm_riak_source[0Ktravis_time:start:12193f30[0Ktravis_time:end:12193f30:start=1646569631641059910,finish=1646569631651536952,duration=10477042,event=fix_rwky_redis[0Ktravis_time:start:018675d0[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:018675d0:start=1646569631658062734,finish=1646569652579639606,duration=20921576872,event=wait_for_network[0Ktravis_time:start:01a8164f[0Ktravis_time:end:01a8164f:start=1646569652587306965,finish=1646569833650636608,duration=181063329643,event=update_apt_keys[0Ktravis_time:start:005338c9[0Ktravis_time:end:005338c9:start=1646569833657460211,finish=1646569833727042921,duration=69582710,event=fix_hhvm_source[0Ktravis_time:start:01c1132a[0Ktravis_time:end:01c1132a:start=1646569833734375420,finish=1646569833740846337,duration=6470917,event=update_mongo_arch[0Ktravis_time:start:0094e530[0Ktravis_time:end:0094e530:start=1646569833748171354,finish=1646569833798027216,duration=49855862,event=fix_sudo_enabled_trusty[0Ktravis_time:start:059dd730[0Ktravis_time:end:059dd730:start=1646569833804613274,finish=1646569833821056417,duration=16443143,event=clean_up_path[0Ktravis_time:start:0017a120[0Ktravis_time:end:0017a120:start=1646569833826109985,finish=1646569833835797973,duration=9687988,event=fix_resolv_conf[0Ktravis_time:start:000126cc[0Ktravis_time:end:000126cc:start=1646569833839693310,finish=1646569833852949391,duration=13256081,event=fix_etc_hosts[0Ktravis_time:start:06f0fe50[0Ktravis_time:start:011a3714[0Ktravis_time:end:011a3714:start=1646569834112078812,finish=1646569834130727854,duration=18649042,event=no_ipv6_localhost[0Ktravis_time:start:00a7ae0a[0Ktravis_time:end:00a7ae0a:start=1646569834137274133,finish=1646569834703487792,duration=566213659,event=fix_etc_mavenrc[0Ktravis_time:start:24d06ec0[0Ktravis_time:end:24d06ec0:start=1646569834709471429,finish=1646569834715024606,duration=5553177,event=fix_wwdr_certificate[0Ktravis_time:start:24511704[0Ktravis_time:end:24511704:start=1646569834720000402,finish=1646569834759612982,duration=39612580,event=put_localhost_first[0Ktravis_time:start:2375ae58[0Ktravis_time:end:2375ae58:start=1646569834765112274,finish=1646569834769584873,duration=4472599,event=home_paths[0Ktravis_time:start:06a6d86b[0Ktravis_time:end:06a6d86b:start=1646569834775087288,finish=1646569834813536195,duration=38448907,event=disable_initramfs[0Ktravis_time:start:0e00fd31[0Ktravis_time:end:0e00fd31:start=1646569834820635288,finish=1646569834843933550,duration=23298262,event=disable_ssh_roaming[0Ktravis_time:start:05cbf509[0Ktravis_time:end:05cbf509:start=1646569834849804340,finish=1646569834854417821,duration=4613481,event=debug_tools[0Ktravis_time:start:019ec180[0Ktravis_time:end:019ec180:start=1646569834861010752,finish=1646569834868021180,duration=7010428,event=uninstall_oclint[0Ktravis_time:start:19ec0218[0Ktravis_time:end:19ec0218:start=1646569834875127840,finish=1646569834881955239,duration=6827399,event=rvm_use[0Ktravis_time:start:1e20a478[0Ktravis_time:end:1e20a478:start=1646569834888439812,finish=1646569834901913722,duration=13473910,event=rm_etc_boto_cfg[0Ktravis_time:start:041e377f[0Ktravis_time:end:041e377f:start=1646569834907630541,finish=1646569834912569150,duration=4938609,event=rm_oraclejdk8_symlink[0Ktravis_time:start:26777d33[0Ktravis_time:end:26777d33:start=1646569834918833933,finish=1646569834965469290,duration=46635357,event=enable_i386[0Ktravis_time:start:0d5d4b6d[0Ktravis_time:end:0d5d4b6d:start=1646569834971646378,finish=1646569834982201326,duration=10554948,event=update_rubygems[0Ktravis_time:start:28079e86[0Ktravis_time:end:28079e86:start=1646569834987401126,finish=1646569834995316608,duration=7915482,event=ensure_path_components[0Ktravis_time:start:1ed357e8[0Ktravis_time:end:1ed357e8:start=1646569835001967746,finish=1646569835006094263,duration=4126517,event=redefine_curl[0Ktravis_time:start:03e6f808[0Ktravis_time:end:03e6f808:start=1646569835011438873,finish=1646569835016411371,duration=4972498,event=nonblock_pipe[0Ktravis_time:start:18f1721a[0Ktravis_time:end:18f1721a:start=1646569835022025196,finish=1646569837925381379,duration=2903356183,event=apt_get_update[0Ktravis_time:start:0e1bb764[0Ktravis_time:end:0e1bb764:start=1646569837931067703,finish=1646569837935572446,duration=4504743,event=deprecate_xcode_64[0Ktravis_time:start:2be1a380[0Ktravis_time:end:2be1a380:start=1646569837941120104,finish=1646569837947994357,duration=6874253,event=update_heroku[0Ktravis_time:start:2239e59b[0Ktravis_time:end:2239e59b:start=1646569837953241834,finish=1646569837957868688,duration=4626854,event=shell_session_update[0Ktravis_time:start:0d53d777[0Ktravis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0Ktravis_time:end:0d53d777:start=1646569837963493161,finish=1646569837999431244,duration=35938083,event=set_docker_mtu[0Ktravis_time:start:18684af8[0Ktravis_time:end:18684af8:start=1646569838005837746,finish=1646569838020609967,duration=14772221,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk8[0m
+$ jdk_switcher use "oraclejdk8"
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+travis_fold:end:install_jdk[0Ktravis_time:start:13719510[0Ktravis_time:end:13719510:start=1646569838043204404,finish=1646569838048199534,duration=4995130,event=fix_ps4[0Ktravis_time:start:18d1fd2c[0K
+$ cd failed/jprante/elasticsearch-jdbc
+
+travis_time:end:18d1fd2c:start=1646569838054828223,finish=1646569838343159872,duration=288331649,event=checkout[0Ktravis_time:start:157c584c[0Ktravis_time:end:157c584c:start=1646569838350610842,finish=1646569839247537363,duration=896926521,event=env[0K$ export TERM=dumb
+$ java -Xmx32m -version
+java version "1.8.0_31"
+Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.8.0_31
+travis_fold:start:install[0Ktravis_time:start:09a86168[0K$ gradle assemble
+:compileJava
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not resolve all dependencies for configuration ':compile'.
+> Could not find org.xbib.elasticsearch.plugins:elasticsearch-helper:2.2.0.0.
+  Searched in the following locations:
+      file:/home/travis/.m2/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      file:/home/travis/.m2/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+      https://repo1.maven.org/maven2/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      https://repo1.maven.org/maven2/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+      https://jcenter.bintray.com/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      https://jcenter.bintray.com/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+      https://xbib.org/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      https://xbib.org/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+  Required by:
+      org.xbib.elasticsearch.importer:elasticsearch-jdbc:2.2.0.0
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 14.404 secs
+
+[31;1mThe command "eval gradle assemble " failed. Retrying, 2 of 3.[0m
+
+:compileJava
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not resolve all dependencies for configuration ':compile'.
+> Could not find org.xbib.elasticsearch.plugins:elasticsearch-helper:2.2.0.0.
+  Searched in the following locations:
+      file:/home/travis/.m2/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      file:/home/travis/.m2/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+      https://repo1.maven.org/maven2/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      https://repo1.maven.org/maven2/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+      https://jcenter.bintray.com/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      https://jcenter.bintray.com/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+      https://xbib.org/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      https://xbib.org/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+  Required by:
+      org.xbib.elasticsearch.importer:elasticsearch-jdbc:2.2.0.0
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 6.583 secs
+
+[31;1mThe command "eval gradle assemble " failed. Retrying, 3 of 3.[0m
+
+:compileJava
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not resolve all dependencies for configuration ':compile'.
+> Could not find org.xbib.elasticsearch.plugins:elasticsearch-helper:2.2.0.0.
+  Searched in the following locations:
+      file:/home/travis/.m2/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      file:/home/travis/.m2/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+      https://repo1.maven.org/maven2/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      https://repo1.maven.org/maven2/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+      https://jcenter.bintray.com/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      https://jcenter.bintray.com/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+      https://xbib.org/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.pom
+      https://xbib.org/repository/org/xbib/elasticsearch/plugins/elasticsearch-helper/2.2.0.0/elasticsearch-helper-2.2.0.0.jar
+  Required by:
+      org.xbib.elasticsearch.importer:elasticsearch-jdbc:2.2.0.0
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 6.459 secs
+
+[31;1mThe command "eval gradle assemble " failed 3 times.[0m
+
+travis_time:end:09a86168:start=1646569840088952521,finish=1646569873153424138,duration=33064471617,event=install[0K[31;1mThe command "gradle assemble" failed and exited with 1 during .[0m
+
+Your build has been stopped.

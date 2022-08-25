@@ -1,0 +1,831 @@
+travis_time:start:0459bcb8[0Ktravis_time:end:0459bcb8:start=1653081969639744614,finish=1653081970172686957,duration=532942343,event=no_world_writable_dirs[0Ktravis_time:start:0f731e08[0Ktravis_time:end:0f731e08:start=1653081970179582189,finish=1653081970184271529,duration=4689340,event=check_unsupported[0Ktravis_time:start:09b50a07[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:09b50a07:start=1653081970190672457,finish=1653081970198677975,duration=8005518,event=show_system_info[0Ktravis_time:start:0122c328[0Ktravis_time:end:0122c328:start=1653081970203329040,finish=1653081970219093321,duration=15764281,event=rm_riak_source[0Ktravis_time:start:08d7ad4e[0Ktravis_time:end:08d7ad4e:start=1653081970223647721,finish=1653081970233010447,duration=9362726,event=fix_rwky_redis[0Ktravis_time:start:0f7cc68c[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:0f7cc68c:start=1653081970237967736,finish=1653081991181511506,duration=20943543770,event=wait_for_network[0Ktravis_time:start:04145230[0Ktravis_time:end:04145230:start=1653081991187275353,finish=1653082094241687017,duration=103054411664,event=update_apt_keys[0Ktravis_time:start:2041193a[0Ktravis_time:end:2041193a:start=1653082094247754456,finish=1653082094705605767,duration=457851311,event=fix_hhvm_source[0Ktravis_time:start:0d256114[0Ktravis_time:end:0d256114:start=1653082094711643131,finish=1653082094716495327,duration=4852196,event=update_mongo_arch[0Ktravis_time:start:236cc4c9[0Ktravis_time:end:236cc4c9:start=1653082094722284794,finish=1653082094770870641,duration=48585847,event=fix_sudo_enabled_trusty[0Ktravis_time:start:11a2eb18[0Ktravis_time:end:11a2eb18:start=1653082094777260386,finish=1653082094792431445,duration=15171059,event=clean_up_path[0Ktravis_time:start:3378a6d6[0Ktravis_time:end:3378a6d6:start=1653082094798076463,finish=1653082094811976047,duration=13899584,event=fix_resolv_conf[0Ktravis_time:start:05334f93[0Ktravis_time:end:05334f93:start=1653082094817926637,finish=1653082094835437859,duration=17511222,event=fix_etc_hosts[0Ktravis_time:start:00cee8ed[0Ktravis_time:end:00cee8ed:start=1653082094841294829,finish=1653082094855956391,duration=14661562,event=fix_mvn_settings_xml[0Ktravis_time:start:2f529fb4[0Ktravis_time:end:2f529fb4:start=1653082094861579668,finish=1653082094882026392,duration=20446724,event=no_ipv6_localhost[0Ktravis_time:start:0d15cf52[0Ktravis_time:end:0d15cf52:start=1653082094887196767,finish=1653082095216026288,duration=328829521,event=fix_etc_mavenrc[0Ktravis_time:start:0875a27e[0Ktravis_time:end:0875a27e:start=1653082095220790446,finish=1653082095226110472,duration=5320026,event=fix_wwdr_certificate[0Ktravis_time:start:111f3b6c[0Ktravis_time:end:111f3b6c:start=1653082095232762874,finish=1653082095267002787,duration=34239913,event=put_localhost_first[0Ktravis_time:start:1dfc3d9c[0Ktravis_time:end:1dfc3d9c:start=1653082095272255023,finish=1653082095275941371,duration=3686348,event=home_paths[0Ktravis_time:start:2d802a02[0Ktravis_time:end:2d802a02:start=1653082095280886801,finish=1653082095391745214,duration=110858413,event=disable_initramfs[0Ktravis_time:start:09165328[0Ktravis_time:end:09165328:start=1653082095398270352,finish=1653082095731366366,duration=333096014,event=disable_ssh_roaming[0Ktravis_time:start:1d9ded1c[0Ktravis_time:end:1d9ded1c:start=1653082095736510844,finish=1653082095740689970,duration=4179126,event=debug_tools[0Ktravis_time:start:05442318[0Ktravis_time:end:05442318:start=1653082095745922511,finish=1653082095751677069,duration=5754558,event=uninstall_oclint[0Ktravis_time:start:011c22c0[0Ktravis_time:end:011c22c0:start=1653082095757671899,finish=1653082095762807826,duration=5135927,event=rvm_use[0Ktravis_time:start:0e505c90[0Ktravis_time:end:0e505c90:start=1653082095768169275,finish=1653082095780983426,duration=12814151,event=rm_etc_boto_cfg[0Ktravis_time:start:06ad5c40[0Ktravis_time:end:06ad5c40:start=1653082095787039378,finish=1653082095791275548,duration=4236170,event=rm_oraclejdk8_symlink[0Ktravis_time:start:0196cc35[0Ktravis_time:end:0196cc35:start=1653082095797031030,finish=1653082095851531999,duration=54500969,event=enable_i386[0Ktravis_time:start:035df92a[0Ktravis_time:end:035df92a:start=1653082095857894652,finish=1653082095864504530,duration=6609878,event=update_rubygems[0Ktravis_time:start:128b3c06[0Ktravis_time:end:128b3c06:start=1653082095870172068,finish=1653082095877855467,duration=7683399,event=ensure_path_components[0Ktravis_time:start:0445b270[0Ktravis_time:end:0445b270:start=1653082095882974894,finish=1653082095887424239,duration=4449345,event=redefine_curl[0Ktravis_time:start:00f6042a[0Ktravis_time:end:00f6042a:start=1653082095892607910,finish=1653082095897011480,duration=4403570,event=nonblock_pipe[0Ktravis_time:start:1b4d0b78[0Ktravis_time:end:1b4d0b78:start=1653082095903369113,finish=1653082099035021881,duration=3131652768,event=apt_get_update[0Ktravis_time:start:129d6128[0Ktravis_time:end:129d6128:start=1653082099041950749,finish=1653082099046942641,duration=4991892,event=deprecate_xcode_64[0Ktravis_time:start:006412a2[0Ktravis_time:end:006412a2:start=1653082099053111107,finish=1653082099060742630,duration=7631523,event=update_heroku[0Ktravis_time:start:1059f898[0Ktravis_time:end:1059f898:start=1653082099066745516,finish=1653082099071192242,duration=4446726,event=shell_session_update[0Ktravis_time:start:2ce8dab5[0Ktravis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0Ktravis_time:end:2ce8dab5:start=1653082099077414159,finish=1653082099113149578,duration=35735419,event=set_docker_mtu[0Ktravis_time:start:06c6979b[0Ktravis_time:end:06c6979b:start=1653082099119333684,finish=1653082099135756951,duration=16423267,event=resolvconf[0Ktravis_time:start:05440479[0Ktravis_time:end:05440479:start=1653082099142220025,finish=1653082101281697789,duration=2139477764,event=maven_https[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk8[0m
+$ jdk_switcher use "oraclejdk8"
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+travis_fold:end:install_jdk[0Ktravis_time:start:337494d2[0Ktravis_time:end:337494d2:start=1653082101300930813,finish=1653082101304649337,duration=3718524,event=fix_ps4[0Ktravis_time:start:057eae4c[0K
+$ cd failed/petergeneric/stdlib
+
+travis_time:end:057eae4c:start=1653082101310195909,finish=1653082101314843339,duration=4647430,event=checkout[0Ktravis_time:start:03f9a71f[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export COVERITY_SCAN_TOKEN=[secure]
+
+travis_time:end:03f9a71f:start=1653082101320058726,finish=1653082101888095801,duration=568037075,event=env[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:0100ac08[0K$ Installing caching utilities
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 2 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 3 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed 3 times.[0m
+
+travis_time:end:0100ac08:start=1653082104502374945,finish=1653082107604448252,duration=3102073307,event=setup_casher[0Ktravis_time:start:0225eed3[0K$ Installing caching utilities from the Travis CI server (https:///files/casher) failed, failing over to using GitHub (https://raw.githubusercontent.com/travis-ci/casher/bash/bin/casher)
+travis_time:end:0225eed3:start=1653082107611750321,finish=1653082107805551055,duration=193800734,event=setup_casher[0Ktravis_time:start:1325a144[0Ktravis_time:end:1325a144:start=1653082107815414461,finish=1653082107821594225,duration=6179764,event=setup_casher[0Ktravis_time:start:00e10b42[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+attempting to download cache archive[0m
+[31;1mcould not download cache[0m
+travis_time:end:00e10b42:start=1653082107828020479,finish=1653082109213307921,duration=1385287442,event=setup_casher[0Ktravis_time:start:1427a4f6[0Ktravis_time:end:1427a4f6:start=1653082109220446479,finish=1653082109225487455,duration=5040976,event=setup_casher[0Ktravis_time:start:2db1f5e0[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+adding /home/travis/.m2 to cache[0m
+travis_time:end:2db1f5e0:start=1653082109232438879,finish=1653082157845358974,duration=48612920095,event=setup_casher[0Ktravis_fold:end:cache.1[0K
+$ java -Xmx32m -version
+java version "1.8.0_31"
+Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.8.0_31
+travis_fold:start:install[0Ktravis_time:start:0db68245[0K$ mvn -o install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=192m; support was removed in 8.0
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.8.0_31, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-109-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 17 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 17 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] application framework parent
+[INFO] stdlib
+[INFO] application framework guice modules parent
+[INFO] stdlib guice common
+[INFO] user-manager
+[INFO] user manager rest api
+[INFO] stdlib guice webapp
+[INFO] stdlib guice metrics
+[INFO] stdlib guice freemarker webapp
+[INFO] stdlib guice testing support
+[INFO] stdlib guice hibernate
+[INFO] stdlib guice hibernate testing support
+[INFO] stdlib guice liquibase support
+[INFO] carbon client
+[INFO] configuration
+[INFO] Configuration Service
+[INFO] user manager service
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building application framework parent 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-parent ---
+[INFO] maven is executed in offline mode, Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/travis/build/failed/petergeneric/stdlib && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/failed/petergeneric/stdlib
+[INFO] Storing buildNumber: 95dd3932ab7f78fb4d7e780f916ab0e7ac26c993 at timestamp: 1653082161573
+[INFO] Storing buildScmBranch: master
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib-parent ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/pom.xml to /home/travis/.m2/repository/com/peterphi/std/stdlib-parent/9.1.2-SNAPSHOT/stdlib-parent-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building stdlib 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stdlib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/stdlib/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ stdlib ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ stdlib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/stdlib/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ stdlib ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ stdlib ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ stdlib ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/stdlib/target/stdlib-9.1.2-SNAPSHOT.jar to /home/travis/.m2/repository/com/peterphi/std/stdlib/9.1.2-SNAPSHOT/stdlib-9.1.2-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/stdlib/pom.xml to /home/travis/.m2/repository/com/peterphi/std/stdlib/9.1.2-SNAPSHOT/stdlib-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building application framework guice modules parent 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-guice-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-guice-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib-guice-parent ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/guice/pom.xml to /home/travis/.m2/repository/com/peterphi/std/guice/stdlib-guice-parent/9.1.2-SNAPSHOT/stdlib-guice-parent-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building stdlib guice common 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The artifact xml-apis:xml-apis:jar:2.0.2 has been relocated to xml-apis:xml-apis:jar:1.0.b2
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-guice-common ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-guice-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stdlib-guice-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ stdlib-guice-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ stdlib-guice-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ stdlib-guice-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ stdlib-guice-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ stdlib-guice-common ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib-guice-common ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/guice/common/target/stdlib-guice-common-9.1.2-SNAPSHOT.jar to /home/travis/.m2/repository/com/peterphi/std/guice/stdlib-guice-common/9.1.2-SNAPSHOT/stdlib-guice-common-9.1.2-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/guice/common/pom.xml to /home/travis/.m2/repository/com/peterphi/std/guice/stdlib-guice-common/9.1.2-SNAPSHOT/stdlib-guice-common-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building user-manager 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ user-manager-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ user-manager-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ user-manager-parent ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/user-manager/pom.xml to /home/travis/.m2/repository/com/peterphi/user-manager/user-manager-parent/9.1.2-SNAPSHOT/user-manager-parent-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building user manager rest api 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ user-manager-api ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ user-manager-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ user-manager-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/user-manager/api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ user-manager-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ user-manager-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/user-manager/api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ user-manager-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ user-manager-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ user-manager-api ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ user-manager-api ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/user-manager/api/target/user-manager-api-9.1.2-SNAPSHOT.jar to /home/travis/.m2/repository/com/peterphi/user-manager/user-manager-api/9.1.2-SNAPSHOT/user-manager-api-9.1.2-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/user-manager/api/pom.xml to /home/travis/.m2/repository/com/peterphi/user-manager/user-manager-api/9.1.2-SNAPSHOT/user-manager-api-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building stdlib guice webapp 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The artifact xml-apis:xml-apis:jar:2.0.2 has been relocated to xml-apis:xml-apis:jar:1.0.b2
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-guice-webapp ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-guice-webapp ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stdlib-guice-webapp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ stdlib-guice-webapp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 80 source files to /home/travis/build/failed/petergeneric/stdlib/guice/webapp/target/classes
+[INFO] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/service/jwt/JSONUtil.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/service/jwt/JSONUtil.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallUser.java:[65,66] cannot find symbol
+  symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+  location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallJWTUser.java:[283,66] cannot find symbol
+  symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+  location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] application framework parent ....................... SUCCESS [  0.753 s]
+[INFO] stdlib ............................................. SUCCESS [  1.924 s]
+[INFO] application framework guice modules parent ......... SUCCESS [  0.247 s]
+[INFO] stdlib guice common ................................ SUCCESS [  1.301 s]
+[INFO] user-manager ....................................... SUCCESS [  0.132 s]
+[INFO] user manager rest api .............................. SUCCESS [  0.438 s]
+[INFO] stdlib guice webapp ................................ FAILURE [  4.933 s]
+[INFO] stdlib guice metrics ............................... SKIPPED
+[INFO] stdlib guice freemarker webapp ..................... SKIPPED
+[INFO] stdlib guice testing support ....................... SKIPPED
+[INFO] stdlib guice hibernate ............................. SKIPPED
+[INFO] stdlib guice hibernate testing support ............. SKIPPED
+[INFO] stdlib guice liquibase support ..................... SKIPPED
+[INFO] carbon client ...................................... SKIPPED
+[INFO] configuration ...................................... SKIPPED
+[INFO] Configuration Service .............................. SKIPPED
+[INFO] user manager service ............................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 11.433 s
+[INFO] Finished at: 2022-05-20T21:29:30+00:00
+[INFO] Final Memory: 26M/363M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.3:compile (default-compile) on project stdlib-guice-webapp: Compilation failure: Compilation failure:
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallUser.java:[65,66] cannot find symbol
+[ERROR] symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+[ERROR] location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallJWTUser.java:[283,66] cannot find symbol
+[ERROR] symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+[ERROR] location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :stdlib-guice-webapp
+
+[31;1mThe command "eval mvn -o install -DskipTests=true -Dmaven.javadoc.skip=true -B -V " failed. Retrying, 2 of 3.[0m
+
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=192m; support was removed in 8.0
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.8.0_31, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-109-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 17 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 17 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] application framework parent
+[INFO] stdlib
+[INFO] application framework guice modules parent
+[INFO] stdlib guice common
+[INFO] user-manager
+[INFO] user manager rest api
+[INFO] stdlib guice webapp
+[INFO] stdlib guice metrics
+[INFO] stdlib guice freemarker webapp
+[INFO] stdlib guice testing support
+[INFO] stdlib guice hibernate
+[INFO] stdlib guice hibernate testing support
+[INFO] stdlib guice liquibase support
+[INFO] carbon client
+[INFO] configuration
+[INFO] Configuration Service
+[INFO] user manager service
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building application framework parent 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-parent ---
+[INFO] maven is executed in offline mode, Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/travis/build/failed/petergeneric/stdlib && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/failed/petergeneric/stdlib
+[INFO] Storing buildNumber: 95dd3932ab7f78fb4d7e780f916ab0e7ac26c993 at timestamp: 1653082176090
+[INFO] Storing buildScmBranch: master
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib-parent ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/pom.xml to /home/travis/.m2/repository/com/peterphi/std/stdlib-parent/9.1.2-SNAPSHOT/stdlib-parent-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building stdlib 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stdlib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/stdlib/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ stdlib ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ stdlib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/stdlib/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ stdlib ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ stdlib ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ stdlib ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/stdlib/target/stdlib-9.1.2-SNAPSHOT.jar to /home/travis/.m2/repository/com/peterphi/std/stdlib/9.1.2-SNAPSHOT/stdlib-9.1.2-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/stdlib/pom.xml to /home/travis/.m2/repository/com/peterphi/std/stdlib/9.1.2-SNAPSHOT/stdlib-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building application framework guice modules parent 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-guice-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-guice-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib-guice-parent ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/guice/pom.xml to /home/travis/.m2/repository/com/peterphi/std/guice/stdlib-guice-parent/9.1.2-SNAPSHOT/stdlib-guice-parent-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building stdlib guice common 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The artifact xml-apis:xml-apis:jar:2.0.2 has been relocated to xml-apis:xml-apis:jar:1.0.b2
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-guice-common ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-guice-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stdlib-guice-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ stdlib-guice-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ stdlib-guice-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ stdlib-guice-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ stdlib-guice-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ stdlib-guice-common ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib-guice-common ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/guice/common/target/stdlib-guice-common-9.1.2-SNAPSHOT.jar to /home/travis/.m2/repository/com/peterphi/std/guice/stdlib-guice-common/9.1.2-SNAPSHOT/stdlib-guice-common-9.1.2-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/guice/common/pom.xml to /home/travis/.m2/repository/com/peterphi/std/guice/stdlib-guice-common/9.1.2-SNAPSHOT/stdlib-guice-common-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building user-manager 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ user-manager-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ user-manager-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ user-manager-parent ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/user-manager/pom.xml to /home/travis/.m2/repository/com/peterphi/user-manager/user-manager-parent/9.1.2-SNAPSHOT/user-manager-parent-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building user manager rest api 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ user-manager-api ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ user-manager-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ user-manager-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/user-manager/api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ user-manager-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ user-manager-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/user-manager/api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ user-manager-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ user-manager-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ user-manager-api ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ user-manager-api ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/user-manager/api/target/user-manager-api-9.1.2-SNAPSHOT.jar to /home/travis/.m2/repository/com/peterphi/user-manager/user-manager-api/9.1.2-SNAPSHOT/user-manager-api-9.1.2-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/user-manager/api/pom.xml to /home/travis/.m2/repository/com/peterphi/user-manager/user-manager-api/9.1.2-SNAPSHOT/user-manager-api-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building stdlib guice webapp 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The artifact xml-apis:xml-apis:jar:2.0.2 has been relocated to xml-apis:xml-apis:jar:1.0.b2
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-guice-webapp ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-guice-webapp ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stdlib-guice-webapp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ stdlib-guice-webapp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 80 source files to /home/travis/build/failed/petergeneric/stdlib/guice/webapp/target/classes
+[INFO] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/service/jwt/JSONUtil.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/service/jwt/JSONUtil.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallUser.java:[65,66] cannot find symbol
+  symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+  location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallJWTUser.java:[283,66] cannot find symbol
+  symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+  location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] application framework parent ....................... SUCCESS [  0.695 s]
+[INFO] stdlib ............................................. SUCCESS [  0.789 s]
+[INFO] application framework guice modules parent ......... SUCCESS [  0.051 s]
+[INFO] stdlib guice common ................................ SUCCESS [  0.533 s]
+[INFO] user-manager ....................................... SUCCESS [  0.008 s]
+[INFO] user manager rest api .............................. SUCCESS [  0.089 s]
+[INFO] stdlib guice webapp ................................ FAILURE [  1.702 s]
+[INFO] stdlib guice metrics ............................... SKIPPED
+[INFO] stdlib guice freemarker webapp ..................... SKIPPED
+[INFO] stdlib guice testing support ....................... SKIPPED
+[INFO] stdlib guice hibernate ............................. SKIPPED
+[INFO] stdlib guice hibernate testing support ............. SKIPPED
+[INFO] stdlib guice liquibase support ..................... SKIPPED
+[INFO] carbon client ...................................... SKIPPED
+[INFO] configuration ...................................... SKIPPED
+[INFO] Configuration Service .............................. SKIPPED
+[INFO] user manager service ............................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.230 s
+[INFO] Finished at: 2022-05-20T21:29:39+00:00
+[INFO] Final Memory: 26M/375M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.3:compile (default-compile) on project stdlib-guice-webapp: Compilation failure: Compilation failure:
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallUser.java:[65,66] cannot find symbol
+[ERROR] symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+[ERROR] location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallJWTUser.java:[283,66] cannot find symbol
+[ERROR] symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+[ERROR] location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :stdlib-guice-webapp
+
+[31;1mThe command "eval mvn -o install -DskipTests=true -Dmaven.javadoc.skip=true -B -V " failed. Retrying, 3 of 3.[0m
+
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=192m; support was removed in 8.0
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.8.0_31, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-109-generic", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 17 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 17 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] application framework parent
+[INFO] stdlib
+[INFO] application framework guice modules parent
+[INFO] stdlib guice common
+[INFO] user-manager
+[INFO] user manager rest api
+[INFO] stdlib guice webapp
+[INFO] stdlib guice metrics
+[INFO] stdlib guice freemarker webapp
+[INFO] stdlib guice testing support
+[INFO] stdlib guice hibernate
+[INFO] stdlib guice hibernate testing support
+[INFO] stdlib guice liquibase support
+[INFO] carbon client
+[INFO] configuration
+[INFO] Configuration Service
+[INFO] user manager service
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building application framework parent 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-parent ---
+[INFO] maven is executed in offline mode, Updating project files from SCM: skipped.
+[INFO] Executing: /bin/sh -c cd /home/travis/build/failed/petergeneric/stdlib && git rev-parse --verify HEAD
+[INFO] Working directory: /home/travis/build/failed/petergeneric/stdlib
+[INFO] Storing buildNumber: 95dd3932ab7f78fb4d7e780f916ab0e7ac26c993 at timestamp: 1653082186220
+[INFO] Storing buildScmBranch: master
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib-parent ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/pom.xml to /home/travis/.m2/repository/com/peterphi/std/stdlib-parent/9.1.2-SNAPSHOT/stdlib-parent-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building stdlib 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stdlib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/stdlib/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ stdlib ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ stdlib ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/stdlib/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ stdlib ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ stdlib ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ stdlib ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/stdlib/target/stdlib-9.1.2-SNAPSHOT.jar to /home/travis/.m2/repository/com/peterphi/std/stdlib/9.1.2-SNAPSHOT/stdlib-9.1.2-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/stdlib/pom.xml to /home/travis/.m2/repository/com/peterphi/std/stdlib/9.1.2-SNAPSHOT/stdlib-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building application framework guice modules parent 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-guice-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-guice-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib-guice-parent ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/guice/pom.xml to /home/travis/.m2/repository/com/peterphi/std/guice/stdlib-guice-parent/9.1.2-SNAPSHOT/stdlib-guice-parent-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building stdlib guice common 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The artifact xml-apis:xml-apis:jar:2.0.2 has been relocated to xml-apis:xml-apis:jar:1.0.b2
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-guice-common ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-guice-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stdlib-guice-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ stdlib-guice-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ stdlib-guice-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ stdlib-guice-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ stdlib-guice-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ stdlib-guice-common ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ stdlib-guice-common ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/guice/common/target/stdlib-guice-common-9.1.2-SNAPSHOT.jar to /home/travis/.m2/repository/com/peterphi/std/guice/stdlib-guice-common/9.1.2-SNAPSHOT/stdlib-guice-common-9.1.2-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/guice/common/pom.xml to /home/travis/.m2/repository/com/peterphi/std/guice/stdlib-guice-common/9.1.2-SNAPSHOT/stdlib-guice-common-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building user-manager 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ user-manager-parent ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ user-manager-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ user-manager-parent ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/user-manager/pom.xml to /home/travis/.m2/repository/com/peterphi/user-manager/user-manager-parent/9.1.2-SNAPSHOT/user-manager-parent-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building user manager rest api 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ user-manager-api ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ user-manager-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ user-manager-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/user-manager/api/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ user-manager-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ user-manager-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/petergeneric/stdlib/user-manager/api/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ user-manager-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19:test (default-test) @ user-manager-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ user-manager-api ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ user-manager-api ---
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/user-manager/api/target/user-manager-api-9.1.2-SNAPSHOT.jar to /home/travis/.m2/repository/com/peterphi/user-manager/user-manager-api/9.1.2-SNAPSHOT/user-manager-api-9.1.2-SNAPSHOT.jar
+[INFO] Installing /home/travis/build/failed/petergeneric/stdlib/user-manager/api/pom.xml to /home/travis/.m2/repository/com/peterphi/user-manager/user-manager-api/9.1.2-SNAPSHOT/user-manager-api-9.1.2-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building stdlib guice webapp 9.1.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The artifact xml-apis:xml-apis:jar:2.0.2 has been relocated to xml-apis:xml-apis:jar:1.0.b2
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ stdlib-guice-webapp ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ stdlib-guice-webapp ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stdlib-guice-webapp ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ stdlib-guice-webapp ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 80 source files to /home/travis/build/failed/petergeneric/stdlib/guice/webapp/target/classes
+[INFO] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/service/jwt/JSONUtil.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/service/jwt/JSONUtil.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallUser.java:[65,66] cannot find symbol
+  symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+  location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallJWTUser.java:[283,66] cannot find symbol
+  symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+  location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] application framework parent ....................... SUCCESS [  0.526 s]
+[INFO] stdlib ............................................. SUCCESS [  0.804 s]
+[INFO] application framework guice modules parent ......... SUCCESS [  0.155 s]
+[INFO] stdlib guice common ................................ SUCCESS [  0.273 s]
+[INFO] user-manager ....................................... SUCCESS [  0.009 s]
+[INFO] user manager rest api .............................. SUCCESS [  0.048 s]
+[INFO] stdlib guice webapp ................................ FAILURE [  1.716 s]
+[INFO] stdlib guice metrics ............................... SKIPPED
+[INFO] stdlib guice freemarker webapp ..................... SKIPPED
+[INFO] stdlib guice testing support ....................... SKIPPED
+[INFO] stdlib guice hibernate ............................. SKIPPED
+[INFO] stdlib guice hibernate testing support ............. SKIPPED
+[INFO] stdlib guice liquibase support ..................... SKIPPED
+[INFO] carbon client ...................................... SKIPPED
+[INFO] configuration ...................................... SKIPPED
+[INFO] Configuration Service .............................. SKIPPED
+[INFO] user manager service ............................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.426 s
+[INFO] Finished at: 2022-05-20T21:29:49+00:00
+[INFO] Final Memory: 26M/358M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.3:compile (default-compile) on project stdlib-guice-webapp: Compilation failure: Compilation failure:
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallUser.java:[65,66] cannot find symbol
+[ERROR] symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+[ERROR] location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[ERROR] /home/travis/build/failed/petergeneric/stdlib/guice/webapp/src/main/java/com/peterphi/std/guice/web/rest/auth/userprovider/HttpCallJWTUser.java:[283,66] cannot find symbol
+[ERROR] symbol:   variable ROLE_SPECIAL_AUTHENTICATED
+[ERROR] location: class com.peterphi.std.guice.web.rest.auth.userprovider.WebappAuthenticationModule
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :stdlib-guice-webapp
+
+[31;1mThe command "eval mvn -o install -DskipTests=true -Dmaven.javadoc.skip=true -B -V " failed 3 times.[0m
+
+travis_time:end:0db68245:start=1653082158179107431,finish=1653082197795505399,duration=39616397968,event=install[0K[31;1mThe command "mvn -o install -DskipTests=true -Dmaven.javadoc.skip=true -B -V" failed and exited with 1 during .[0m
+
+Your build has been stopped.

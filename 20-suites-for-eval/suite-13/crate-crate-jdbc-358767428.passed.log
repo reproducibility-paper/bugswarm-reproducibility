@@ -1,0 +1,991 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: trusty
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Tue Dec  5 20:11:19 UTC 2017
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 14.04.5 LTS
+Release:	14.04
+Codename:	trusty
+[34m[1mCookbooks Version[0m
+7c2c6a6 https://github.com/travis-ci/travis-cookbooks/tree/7c2c6a6
+[34m[1mgit version[0m
+git version 2.15.1
+[34m[1mbash version[0m
+GNU bash, version 4.3.11(1)-release (x86_64-pc-linux-gnu)
+[34m[1mgcc version[0m
+gcc (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mdocker version[0m
+Client:
+ Version:      17.09.0-ce
+ API version:  1.32
+ Go version:   go1.8.3
+ Git commit:   afdb6d4
+ Built:        Tue Sep 26 22:39:28 2017
+ OS/Arch:      linux/amd64
+[34m[1mclang version[0m
+clang version 5.0.0 (tags/RELEASE_500/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /usr/local/clang-5.0.0/bin
+[34m[1mjq version[0m
+jq-1.5
+[34m[1mbats version[0m
+Bats 0.4.0
+[34m[1mshellcheck version[0m
+0.4.6
+[34m[1mshfmt version[0m
+v2.0.0
+[34m[1mccache version[0m
+ccache version 3.1.9
+
+Copyright (C) 2002-2007 Andrew Tridgell
+Copyright (C) 2009-2011 Joel Rosdahl
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 3 of the License, or (at your option) any later
+version.
+[34m[1mcmake version[0m
+cmake version 3.9.2
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+[34m[1mheroku version[0m
+heroku-cli/6.14.39-addc925 (linux-x64) node-v9.2.0
+[34m[1mimagemagick version[0m
+Version: ImageMagick 6.7.7-10 2017-07-31 Q16 http://www.imagemagick.org
+[34m[1mmd5deep version[0m
+4.2
+[34m[1mmercurial version[0m
+Mercurial Distributed SCM (version 4.2.2)
+(see https://mercurial-scm.org for more information)
+
+Copyright (C) 2005-2017 Matt Mackall and others
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[34m[1mmysql version[0m
+mysql  Ver 14.14 Distrib 5.6.33, for debian-linux-gnu (x86_64) using  EditLine wrapper
+[34m[1mopenssl version[0m
+OpenSSL 1.0.1f 6 Jan 2014
+[34m[1mpacker version[0m
+Packer v1.0.2
+
+Your version of Packer is out of date! The latest version
+is 1.1.2. You can update by downloading from www.packer.io
+[34m[1mpostgresql client version[0m
+psql (PostgreSQL) 9.6.6
+[34m[1mragel version[0m
+Ragel State Machine Compiler version 6.8 Feb 2013
+Copyright (c) 2001-2009 by Adrian Thurston
+[34m[1msubversion version[0m
+svn, version 1.8.8 (r1568071)
+   compiled Aug 10 2017, 17:20:39 on x86_64-pc-linux-gnu
+
+Copyright (C) 2013 The Apache Software Foundation.
+This software consists of contributions made by many people;
+see the NOTICE file for more information.
+Subversion is open source software, see http://subversion.apache.org/
+
+The following repository access (RA) modules are available:
+
+* ra_svn : Module for accessing a repository using the svn network protocol.
+  - with Cyrus SASL authentication
+  - handles 'svn' scheme
+* ra_local : Module for accessing a repository on local disk.
+  - handles 'file' scheme
+* ra_serf : Module for accessing a repository via WebDAV protocol using serf.
+  - using serf 1.3.3
+  - handles 'http' scheme
+  - handles 'https' scheme
+
+[34m[1msudo version[0m
+Sudo version 1.8.9p5
+Configure options: --prefix=/usr -v --with-all-insults --with-pam --with-fqdn --with-logging=syslog --with-logfac=authpriv --with-env-editor --with-editor=/usr/bin/editor --with-timeout=15 --with-password-timeout=0 --with-passprompt=[sudo] password for %p:  --without-lecture --with-tty-tickets --disable-root-mailer --enable-admin-flag --with-sendmail=/usr/sbin/sendmail --with-timedir=/var/lib/sudo --mandir=/usr/share/man --libexecdir=/usr/lib/sudo --with-sssd --with-sssd-lib=/usr/lib/x86_64-linux-gnu --with-selinux
+Sudoers policy plugin version 1.8.9p5
+Sudoers file grammar version 43
+
+Sudoers path: /etc/sudoers
+Authentication methods: 'pam'
+Syslog facility if syslog is being used for logging: authpriv
+Syslog priority to use when user authenticates successfully: notice
+Syslog priority to use when user authenticates unsuccessfully: alert
+Send mail if the user is not in sudoers
+Use a separate timestamp for each user/tty combo
+Lecture user the first time they run sudo
+Root may run sudo
+Allow some information gathering to give useful error messages
+Require fully-qualified hostnames in the sudoers file
+Visudo will honor the EDITOR environment variable
+Set the LOGNAME and USER environment variables
+Length at which to wrap log file lines (0 for no wrap): 80
+Authentication timestamp timeout: 15.0 minutes
+Password prompt timeout: 0.0 minutes
+Number of tries to enter a password: 3
+Umask to use or 0777 to use user's: 022
+Path to mail program: /usr/sbin/sendmail
+Flags for mail program: -t
+Address to send mail to: root
+Subject line for mail messages: *** SECURITY information for %h ***
+Incorrect password message: Sorry, try again.
+Path to authentication timestamp dir: /var/lib/sudo
+Default password prompt: [sudo] password for %p: 
+Default user to run commands as: root
+Value to override user's $PATH with: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+Path to the editor for use by visudo: /usr/bin/editor
+When to require a password for 'list' pseudocommand: any
+When to require a password for 'verify' pseudocommand: all
+File descriptors >= 3 will be closed before executing a command
+Environment variables to check for sanity:
+	TZ
+	TERM
+	LINGUAS
+	LC_*
+	LANGUAGE
+	LANG
+	COLORTERM
+Environment variables to remove:
+	RUBYOPT
+	RUBYLIB
+	PYTHONUSERBASE
+	PYTHONINSPECT
+	PYTHONPATH
+	PYTHONHOME
+	TMPPREFIX
+	ZDOTDIR
+	READNULLCMD
+	NULLCMD
+	FPATH
+	PERL5DB
+	PERL5OPT
+	PERL5LIB
+	PERLLIB
+	PERLIO_DEBUG 
+	JAVA_TOOL_OPTIONS
+	SHELLOPTS
+	GLOBIGNORE
+	PS4
+	BASH_ENV
+	ENV
+	TERMCAP
+	TERMPATH
+	TERMINFO_DIRS
+	TERMINFO
+	_RLD*
+	LD_*
+	PATH_LOCALE
+	NLSPATH
+	HOSTALIASES
+	RES_OPTIONS
+	LOCALDOMAIN
+	CDPATH
+	IFS
+Environment variables to preserve:
+	JAVA_HOME
+	TRAVIS
+	CI
+	DEBIAN_FRONTEND
+	XAUTHORIZATION
+	XAUTHORITY
+	PS2
+	PS1
+	PATH
+	LS_COLORS
+	KRB5CCNAME
+	HOSTNAME
+	HOME
+	DISPLAY
+	COLORS
+Locale to use while parsing sudoers: C
+Directory in which to store input/output logs: /var/log/sudo-io
+File in which to store the input/output log: %{seq}
+Add an entry to the utmp/utmpx file when allocating a pty
+PAM service name to use
+PAM service name to use for login shells
+Create a new PAM session for the command to run in
+Maximum I/O log sequence number: 0
+
+Local IP address and netmask pairs:
+	172.17.0.2/255.255.0.0
+
+Sudoers I/O plugin version 1.8.9p5
+[34m[1mgzip version[0m
+gzip 1.6
+Copyright (C) 2007, 2010, 2011 Free Software Foundation, Inc.
+Copyright (C) 1993 Jean-loup Gailly.
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Jean-loup Gailly.
+[34m[1mzip version[0m
+Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license.
+This is Zip 3.0 (July 5th 2008), by Info-ZIP.
+Currently maintained by E. Gordon.  Please send bug reports to
+the authors using the web page at www.info-zip.org; see README for details.
+
+Latest sources and executables are at ftp://ftp.info-zip.org/pub/infozip,
+as of above date; see http://www.info-zip.org/ for other sites.
+
+Compiled with gcc 4.8.2 for Unix (Linux ELF) on Oct 21 2013.
+
+Zip special compilation options:
+	USE_EF_UT_TIME       (store Universal Time)
+	BZIP2_SUPPORT        (bzip2 library version 1.0.6, 6-Sept-2010)
+	    bzip2 code and library copyright (c) Julian R Seward
+	    (See the bzip2 license for terms of use)
+	SYMLINK_SUPPORT      (symbolic links supported)
+	LARGE_FILE_SUPPORT   (can read and write large files on file system)
+	ZIP64_SUPPORT        (use Zip64 to store large files in archives)
+	UNICODE_SUPPORT      (store and read UTF-8 Unicode paths)
+	STORE_UNIX_UIDs_GIDs (store UID/GID sizes/values using new extra field)
+	UIDGID_NOT_16BIT     (old Unix 16-bit UID/GID extra field not used)
+	[encryption, version 2.91 of 05 Jan 2007] (modified for Zip 3)
+
+Encryption notice:
+	The encryption code of this program is not copyrighted and is
+	put in the public domain.  It was originally written in Europe
+	and, to the best of our knowledge, can be freely distributed
+	in both source and object forms from any country, including
+	the USA under License Exception TSU of the U.S. Export
+	Administration Regulations (section 740.13(e)) of 6 June 2002.
+
+Zip environment options:
+             ZIP:  [none]
+          ZIPOPT:  [none]
+[34m[1mvim version[0m
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Nov 24 2016 16:43:18)
+Included patches: 1-52
+Extra patches: 8.0.0056
+Modified by pkg-vim-maintainers@lists.alioth.debian.org
+Compiled by buildd@
+Huge version without GUI.  Features included (+) or not (-):
++acl             +farsi           +mouse_netterm   +syntax
++arabic          +file_in_path    +mouse_sgr       +tag_binary
++autocmd         +find_in_path    -mouse_sysmouse  +tag_old_static
+-balloon_eval    +float           +mouse_urxvt     -tag_any_white
+-browse          +folding         +mouse_xterm     -tcl
+++builtin_terms  -footer          +multi_byte      +terminfo
++byte_offset     +fork()          +multi_lang      +termresponse
++cindent         +gettext         -mzscheme        +textobjects
+-clientserver    -hangul_input    +netbeans_intg   +title
+-clipboard       +iconv           +path_extra      -toolbar
++cmdline_compl   +insert_expand   -perl            +user_commands
++cmdline_hist    +jumplist        +persistent_undo +vertsplit
++cmdline_info    +keymap          +postscript      +virtualedit
++comments        +langmap         +printer         +visual
++conceal         +libcall         +profile         +visualextra
++cryptv          +linebreak       +python          +viminfo
++cscope          +lispindent      -python3         +vreplace
++cursorbind      +listcmds        +quickfix        +wildignore
++cursorshape     +localmap        +reltime         +wildmenu
++dialog_con      -lua             +rightleft       +windows
++diff            +menu            -ruby            +writebackup
++digraphs        +mksession       +scrollbind      -X11
+-dnd             +modify_fname    +signs           -xfontset
+-ebcdic          +mouse           +smartindent     -xim
++emacs_tags      -mouseshape      -sniff           -xsmp
++eval            +mouse_dec       +startuptime     -xterm_clipboard
++ex_extra        +mouse_gpm       +statusline      -xterm_save
++extra_search    -mouse_jsbterm   -sun_workshop    -xpm
+   system vimrc file: "$VIM/vimrc"
+     user vimrc file: "$HOME/.vimrc"
+ 2nd user vimrc file: "~/.vim/vimrc"
+      user exrc file: "$HOME/.exrc"
+  fall-back for $VIM: "/usr/share/vim"
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1      
+Linking: gcc   -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl    -L/usr/lib/python2.7/config-x86_64-linux-gnu -lpython2.7 -lpthread -ldl -lutil -lm -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions      
+[34m[1miptables version[0m
+iptables v1.4.21
+[34m[1mcurl version[0m
+curl 7.35.0 (x86_64-pc-linux-gnu) libcurl/7.35.0 OpenSSL/1.0.1f zlib/1.2.8 libidn/1.28 librtmp/2.3
+[34m[1mwget version[0m
+GNU Wget 1.15 built on linux-gnu.
+[34m[1mrsync version[0m
+rsync  version 3.1.0  protocol version 31
+[34m[1mgimme version[0m
+v1.2.0
+[34m[1mnvm version[0m
+0.33.6
+[34m[1mperlbrew version[0m
+/home/travis/perl5/perlbrew/bin/perlbrew  - App::perlbrew/0.80
+[34m[1mphpenv version[0m
+rbenv 1.1.1-25-g6aa70b6
+[34m[1mrvm version[0m
+rvm 1.29.3 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+[34m[1mdefault ruby version[0m
+ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mElasticSearch version[0m
+5.5.0
+[34m[1mInstalled Firefox version[0m
+firefox 56.0.2
+[34m[1mMongoDB version[0m
+MongoDB 3.4.10
+[34m[1mPhantomJS version[0m
+2.1.1
+[34m[1mPre-installed PostgreSQL versions[0m
+9.2.24
+9.3.20
+9.4.15
+9.5.10
+9.6.6
+[34m[1mRabbitMQ Version[0m
+3.6.14
+[34m[1mRedis version[0m
+redis-server 4.0.6
+[34m[1mriak version[0m
+2.2.3
+[34m[1mPre-installed Go versions[0m
+1.7.4
+[34m[1mant version[0m
+Apache Ant(TM) version 1.9.3 compiled on April 8 2014
+[34m[1mmvn version[0m
+Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T07:58:13Z)
+Maven home: /usr/local/maven-3.5.2
+Java version: 1.8.0_151, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.4.0-101-generic", arch: "amd64", family: "unix"
+[34m[1mgradle version[0m
+
+------------------------------------------------------------
+Gradle 4.0.1
+------------------------------------------------------------
+
+Build time:   2017-07-07 14:02:41 UTC
+Revision:     38e5dc0f772daecca1d2681885d3d85414eb6826
+
+Groovy:       2.4.11
+Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015
+JVM:          1.8.0_151 (Oracle Corporation 25.151-b12)
+OS:           Linux 4.4.0-101-generic amd64
+
+[34m[1mlein version[0m
+Leiningen 2.8.1 on Java 1.8.0_151 Java HotSpot(TM) 64-Bit Server VM
+[34m[1mPre-installed Node.js versions[0m
+v4.8.6
+v6.12.0
+v6.12.1
+v8.9
+v8.9.1
+[34m[1mphpenv versions[0m
+  system
+  5.6
+* 5.6.32 (set by /home/travis/.phpenv/version)
+  7.0
+  7.0.25
+  7.1
+  7.1.11
+  hhvm
+  hhvm-stable
+[34m[1mcomposer --version[0m
+Composer version 1.5.2 2017-09-11 16:59:25
+[34m[1mPre-installed Ruby versions[0m
+ruby-2.2.7
+ruby-2.3.4
+ruby-2.4.1
+travis_fold:end:system_info[0K
+W: GPG error: http://dl.google.com/linux/chrome/deb stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 78BD65473CB3BD13
+W: The repository 'http://dl.google.com/linux/chrome/deb stable InRelease' is not signed.
+W: There is no public key available for the following key IDs:
+78BD65473CB3BD13  
+W: GPG error: http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 Release: The following signatures were invalid: KEYEXPIRED 1515625755
+W: The repository 'http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 Release' is not signed.
+W: The repository 'http://apt.postgresql.org/pub/repos/apt trusty-pgdg Release' does not have a Release file.
+W: The repository 'http://www.apache.org/dist/cassandra/debian 39x Release' does not have a Release file.
+W: GPG error: https://packagecloud.io/github/git-lfs/ubuntu trusty InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 6B05F25D762E3157
+W: The repository 'https://packagecloud.io/github/git-lfs/ubuntu trusty InRelease' is not signed.
+W: There is no public key available for the following key IDs:
+6B05F25D762E3157  
+W: The repository 'https://packagecloud.io/basho/riak/ubuntu trusty Release' does not have a Release file.
+W: GPG error: https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu trusty InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY F6609E60DC62814E
+W: The repository 'https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu trusty InRelease' is not signed.
+W: There is no public key available for the following key IDs:
+F6609E60DC62814E  
+W: http://ppa.launchpad.net/couchdb/stable/ubuntu/dists/trusty/Release.gpg: Signature by key 15866BAFD9BCC4F3C1E0DFC7D69548E1C17EAB57 uses weak digest algorithm (SHA1)
+E: Failed to fetch http://apt.postgresql.org/pub/repos/apt/dists/trusty-pgdg/main/binary-amd64/Packages  404  Not Found [IP: 147.75.85.69 80]
+E: Failed to fetch http://apt.postgresql.org/pub/repos/apt/dists/trusty-pgdg/main/binary-i386/Packages  404  Not Found [IP: 147.75.85.69 80]
+E: Failed to fetch https://www.apache.org/dist/cassandra/debian/dists/39x/main/binary-amd64/Packages  gnutls_handshake() failed: Handshake failed
+E: Failed to fetch https://www.apache.org/dist/cassandra/debian/dists/39x/main/binary-i386/Packages  gnutls_handshake() failed: Handshake failed
+E: Failed to fetch https://packagecloud.io/basho/riak/ubuntu/dists/trusty/main/source/Sources  HttpError402
+E: Failed to fetch https://packagecloud.io/basho/riak/ubuntu/dists/trusty/main/binary-amd64/Packages  HttpError402
+E: Failed to fetch https://packagecloud.io/basho/riak/ubuntu/dists/trusty/main/binary-i386/Packages  HttpError402
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+sed: cannot rename /etc/hosts: Device or resource busy
+sed: cannot rename /etc/hosts: Device or resource busy
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd passed/crate/crate-jdbc
+travis_fold:start:git.submodule[0Ktravis_time:start:0cb022ae[0K$ git submodule update --init --recursive
+
+travis_time:end:0cb022ae:start=1646569438711571364,finish=1646569438974233632,duration=262662268[0Ktravis_fold:end:git.submodule[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export CRATE_VERSION=0.56.4
+
+$ export TERM=dumb
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:00a99e6c[0K
+travis_time:end:00a99e6c:start=1646569440060128059,finish=1646569440071417060,duration=11289001[0Ktravis_time:start:02eaeae8[0K/home/travis/.casher/bin/casher:213:in `cache_archive_name': undefined method `[]' for nil:NilClass (NoMethodError)
+	from /home/travis/.casher/bin/casher:65:in `block in fetch'
+	from /home/travis/.casher/bin/casher:64:in `each'
+	from /home/travis/.casher/bin/casher:64:in `fetch'
+	from /home/travis/.casher/bin/casher:53:in `block in run'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:88:in `block in timeout'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:32:in `block in catch'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:32:in `catch'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:32:in `catch'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:103:in `timeout'
+	from /home/travis/.casher/bin/casher:53:in `run'
+	from /home/travis/.casher/bin/casher:263:in `<main>'
+[32;1mattempting to download cache archive[0m
+
+travis_time:end:02eaeae8:start=1646569440084872417,finish=1646569441055934861,duration=971062444[0Ktravis_time:start:1133d040[0K
+travis_time:end:1133d040:start=1646569441069132602,finish=1646569441079743381,duration=10610779[0Ktravis_time:start:10aee7d3[0K[32;1madding /home/travis/.m2 to cache[0m
+
+travis_time:end:10aee7d3:start=1646569441093247831,finish=1646569442110103184,duration=1016855353[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+java version "1.8.0_151"
+Java(TM) SE Runtime Environment (build 1.8.0_151-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)
+$ javac -J-Xmx32m -version
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+javac 1.8.0_151
+travis_fold:start:install[0Ktravis_time:start:04c720d4[0K$ JAVA_HOME=$(jdk_switcher home openjdk8) ./gradlew classes testClasses
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+Starting a Gradle Daemon, 2 incompatible and 1 stopped Daemons could not be reused, use --status for details
+:pg:preprocessJava
+Preproces: upstream/pgjdbc/src/main/java -> /home/travis/build/passed/crate/crate-jdbc/pg/build/jcp/main/java
+Preproces: upstream/pgjdbc/src/main/resources -> /home/travis/build/passed/crate/crate-jdbc/pg/build/jcp/main/resources
+:pg:compileJava UP-TO-DATE
+:pg:processResources UP-TO-DATE
+:pg:classes UP-TO-DATE
+:pg:jar UP-TO-DATE
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:compileTestJava UP-TO-DATE
+:processTestResources NO-SOURCE
+:testClasses UP-TO-DATE
+:pg:compileTestJava NO-SOURCE
+:pg:processTestResources NO-SOURCE
+:pg:testClasses UP-TO-DATE
+
+BUILD SUCCESSFUL in 41s
+7 actionable tasks: 1 executed, 6 up-to-date
+
+travis_time:end:04c720d4:start=1646569442398207978,finish=1646569484887217288,duration=42489009310[0Ktravis_fold:end:install[0Ktravis_time:start:30fe2654[0K$ ./gradlew test -s
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+Starting a Gradle Daemon, 2 incompatible and 2 stopped Daemons could not be reused, use --status for details
+:pg:preprocessJava
+Preproces: upstream/pgjdbc/src/main/java -> /home/travis/build/passed/crate/crate-jdbc/pg/build/jcp/main/java
+Preproces: upstream/pgjdbc/src/main/resources -> /home/travis/build/passed/crate/crate-jdbc/pg/build/jcp/main/resources
+:pg:compileJava UP-TO-DATE
+:pg:processResources UP-TO-DATE
+:pg:classes UP-TO-DATE
+:pg:jar UP-TO-DATE
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:compileTestJava UP-TO-DATE
+:processTestResources NO-SOURCE
+:testClasses UP-TO-DATE
+:testPicked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+
+
+io.crate.client.jdbc.integrationtests.CrateJDBCByPassSpecSettingTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+[2022-03-06 12:24:56,501][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2022-03-06 12:24:56,616][INFO ][node                     ] [Pala di San Martino] version[2.3.4], pid[2783], build[${build/NA]
+[2022-03-06 12:24:56,616][INFO ][node                     ] [Pala di San Martino] initializing ...
+[2022-03-06 12:24:56,864][INFO ][io.crate.plugin          ] [Pala di San Martino] plugins loaded: [crate-sigar] 
+[2022-03-06 12:24:57,960][INFO ][plugins                  ] [Pala di San Martino] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2022-03-06 12:24:57,983][INFO ][env                      ] [Pala di San Martino] using [1] data paths, mounts [[/ (overlay)]], net usable_space [84.4tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2022-03-06 12:24:57,983][INFO ][env                      ] [Pala di San Martino] heap size [1.9gb], compressed ordinary object pointers [true]
+[2022-03-06 12:24:57,983][WARN ][env                      ] [Pala di San Martino] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2022-03-06 12:24:58,229][INFO ][http                     ] [Pala di San Martino] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2022-03-06 12:24:58,247][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_41d826c6-1514-4177-8450-3566f69f4285/plugins/elasticsearch-repository-hdfs/
+[2022-03-06 12:24:58,317][INFO ][io.crate.module          ] [Pala di San Martino] configuring crate. version: 0.56.4
+[2022-03-06 12:24:58,519][INFO ][io.crate.module          ] [Pala di San Martino] configuring crate. version: 0.56.4
+[2022-03-06 12:24:59,924][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5505]
+[2022-03-06 12:24:59,924][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2022-03-06 12:25:01,076][INFO ][io.crate.rest            ] [Pala di San Martino] Elasticsearch HTTP REST API not enabled
+[2022-03-06 12:25:01,119][INFO ][node                     ] [Pala di San Martino] initialized
+[2022-03-06 12:25:01,119][INFO ][node                     ] [Pala di San Martino] starting ...
+[2022-03-06 12:25:01,255][INFO ][io.crate.blob.BlobService] [Pala di San Martino] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2022-03-06 12:25:01,361][INFO ][http                     ] [Pala di San Martino] publish_address {127.0.0.1:4548}, bound_addresses {127.0.0.1:4548}
+[2022-03-06 12:25:01,448][INFO ][transport                ] [Pala di San Martino] publish_address {127.0.0.1:4357}, bound_addresses {127.0.0.1:4357}
+[2022-03-06 12:25:01,453][INFO ][discovery                ] [Pala di San Martino] TestingCluster/udmx1EeQSbm1BiFhvDf4ew
+    Stopping crate server process...
+[2022-03-06 12:25:02,360][INFO ][node                     ] [Pala di San Martino] stopping ...
+[2022-03-06 12:25:02,411][INFO ][node                     ] [Pala di San Martino] stopped
+[2022-03-06 12:25:02,411][INFO ][node                     ] [Pala di San Martino] closing ...
+[2022-03-06 12:25:02,416][INFO ][node                     ] [Pala di San Martino] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCConnectionTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+[2022-03-06 12:25:03,943][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2022-03-06 12:25:04,080][INFO ][node                     ] [Ballunspitze] version[2.3.4], pid[3141], build[${build/NA]
+[2022-03-06 12:25:04,080][INFO ][node                     ] [Ballunspitze] initializing ...
+[2022-03-06 12:25:04,355][INFO ][io.crate.plugin          ] [Ballunspitze] plugins loaded: [crate-sigar] 
+[2022-03-06 12:25:05,192][INFO ][plugins                  ] [Ballunspitze] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2022-03-06 12:25:05,213][INFO ][env                      ] [Ballunspitze] using [1] data paths, mounts [[/ (overlay)]], net usable_space [84.4tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2022-03-06 12:25:05,213][INFO ][env                      ] [Ballunspitze] heap size [1.9gb], compressed ordinary object pointers [true]
+[2022-03-06 12:25:05,213][WARN ][env                      ] [Ballunspitze] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2022-03-06 12:25:05,407][INFO ][http                     ] [Ballunspitze] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2022-03-06 12:25:05,417][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_49f4c2fc-f73a-4b7f-b120-b9f53c03ec72/plugins/elasticsearch-repository-hdfs/
+[2022-03-06 12:25:05,464][INFO ][io.crate.module          ] [Ballunspitze] configuring crate. version: 0.56.4
+[2022-03-06 12:25:05,603][INFO ][io.crate.module          ] [Ballunspitze] configuring crate. version: 0.56.4
+[2022-03-06 12:25:06,683][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5469]
+[2022-03-06 12:25:06,683][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2022-03-06 12:25:07,807][INFO ][io.crate.rest            ] [Ballunspitze] Elasticsearch HTTP REST API not enabled
+[2022-03-06 12:25:07,851][INFO ][node                     ] [Ballunspitze] initialized
+[2022-03-06 12:25:07,851][INFO ][node                     ] [Ballunspitze] starting ...
+[2022-03-06 12:25:07,999][INFO ][io.crate.blob.BlobService] [Ballunspitze] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2022-03-06 12:25:08,146][INFO ][http                     ] [Ballunspitze] publish_address {127.0.0.1:4595}, bound_addresses {127.0.0.1:4595}
+[2022-03-06 12:25:08,229][INFO ][transport                ] [Ballunspitze] publish_address {127.0.0.1:4252}, bound_addresses {127.0.0.1:4252}
+[2022-03-06 12:25:08,236][INFO ][discovery                ] [Ballunspitze] TestingCluster/aYNjG4pSQy6z9vNNJDmKHA
+[2022-03-06 12:25:09,165][DEBUG][action.admin.indices.create] [Ballunspitze] no known master node, scheduling a retry
+[2022-03-06 12:25:11,270][INFO ][cluster.service          ] [Ballunspitze] new_master {Ballunspitze}{aYNjG4pSQy6z9vNNJDmKHA}{127.0.0.1}{127.0.0.1:4252}{info.extended.type=sigar, http_address=127.0.0.1:4595}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2022-03-06 12:25:11,274][INFO ][node                     ] [Ballunspitze] started
+[2022-03-06 12:25:11,763][INFO ][gateway                  ] [Ballunspitze] recovered [0] indices into cluster_state
+[2022-03-06 12:25:11,942][INFO ][cluster.metadata         ] [Ballunspitze] [test] creating index, cause [api], templates [], shards [1]/[0], mappings [default]
+[2022-03-06 12:25:13,445][INFO ][cluster.routing.allocation] [Ballunspitze] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[test][0]] ...]).
+[2022-03-06 12:25:13,652][DEBUG][action.bulk              ] create new coordinator for node aYNjG4pSQy6z9vNNJDmKHA and shard [test][0]
+    Stopping crate server process...
+[2022-03-06 12:25:16,166][INFO ][node                     ] [Ballunspitze] stopping ...
+[2022-03-06 12:25:19,129][INFO ][node                     ] [Ballunspitze] stopped
+[2022-03-06 12:25:19,129][INFO ][node                     ] [Ballunspitze] closing ...
+[2022-03-06 12:25:19,139][INFO ][node                     ] [Ballunspitze] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCDriverTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+[2022-03-06 12:25:20,245][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2022-03-06 12:25:20,377][INFO ][node                     ] [Pirchkogel] version[2.3.4], pid[3532], build[${build/NA]
+[2022-03-06 12:25:20,377][INFO ][node                     ] [Pirchkogel] initializing ...
+[2022-03-06 12:25:20,652][INFO ][io.crate.plugin          ] [Pirchkogel] plugins loaded: [crate-sigar] 
+[2022-03-06 12:25:21,635][INFO ][plugins                  ] [Pirchkogel] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2022-03-06 12:25:21,654][INFO ][env                      ] [Pirchkogel] using [1] data paths, mounts [[/ (overlay)]], net usable_space [84.4tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2022-03-06 12:25:21,654][INFO ][env                      ] [Pirchkogel] heap size [1.9gb], compressed ordinary object pointers [true]
+[2022-03-06 12:25:21,654][WARN ][env                      ] [Pirchkogel] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2022-03-06 12:25:21,841][INFO ][http                     ] [Pirchkogel] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2022-03-06 12:25:21,877][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_b9ac0656-13b6-413c-901d-2c573cd157a4/plugins/elasticsearch-repository-hdfs/
+[2022-03-06 12:25:21,949][INFO ][io.crate.module          ] [Pirchkogel] configuring crate. version: 0.56.4
+[2022-03-06 12:25:22,136][INFO ][io.crate.module          ] [Pirchkogel] configuring crate. version: 0.56.4
+[2022-03-06 12:25:23,527][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5459]
+[2022-03-06 12:25:23,527][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2022-03-06 12:25:24,854][INFO ][io.crate.rest            ] [Pirchkogel] Elasticsearch HTTP REST API not enabled
+[2022-03-06 12:25:24,912][INFO ][node                     ] [Pirchkogel] initialized
+[2022-03-06 12:25:24,912][INFO ][node                     ] [Pirchkogel] starting ...
+[2022-03-06 12:25:25,083][INFO ][io.crate.blob.BlobService] [Pirchkogel] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2022-03-06 12:25:25,243][INFO ][http                     ] [Pirchkogel] publish_address {127.0.0.1:4584}, bound_addresses {127.0.0.1:4584}
+[2022-03-06 12:25:25,386][INFO ][transport                ] [Pirchkogel] publish_address {127.0.0.1:4327}, bound_addresses {127.0.0.1:4327}
+[2022-03-06 12:25:25,392][INFO ][discovery                ] [Pirchkogel] TestingCluster/0R8ouhHlTwmGDfdD9FV2jg
+    Stopping crate server process...
+[2022-03-06 12:25:25,581][INFO ][node                     ] [Pirchkogel] stopping ...
+[2022-03-06 12:25:25,646][INFO ][node                     ] [Pirchkogel] stopped
+[2022-03-06 12:25:25,646][INFO ][node                     ] [Pirchkogel] closing ...
+[2022-03-06 12:25:25,652][INFO ][node                     ] [Pirchkogel] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCFetchSizeIntegrationTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+[2022-03-06 12:25:26,954][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2022-03-06 12:25:27,099][INFO ][node                     ] [Hirscheck] version[2.3.4], pid[3889], build[${build/NA]
+[2022-03-06 12:25:27,099][INFO ][node                     ] [Hirscheck] initializing ...
+[2022-03-06 12:25:27,362][INFO ][io.crate.plugin          ] [Hirscheck] plugins loaded: [crate-sigar] 
+[2022-03-06 12:25:28,144][INFO ][plugins                  ] [Hirscheck] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2022-03-06 12:25:28,164][INFO ][env                      ] [Hirscheck] using [1] data paths, mounts [[/ (overlay)]], net usable_space [84.4tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2022-03-06 12:25:28,165][INFO ][env                      ] [Hirscheck] heap size [1.9gb], compressed ordinary object pointers [true]
+[2022-03-06 12:25:28,165][WARN ][env                      ] [Hirscheck] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2022-03-06 12:25:28,364][INFO ][http                     ] [Hirscheck] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2022-03-06 12:25:28,374][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_52f4bd54-f143-4963-aa5b-a9d5667b89c0/plugins/elasticsearch-repository-hdfs/
+[2022-03-06 12:25:28,436][INFO ][io.crate.module          ] [Hirscheck] configuring crate. version: 0.56.4
+[2022-03-06 12:25:28,603][INFO ][io.crate.module          ] [Hirscheck] configuring crate. version: 0.56.4
+[2022-03-06 12:25:29,725][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5467]
+[2022-03-06 12:25:29,726][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2022-03-06 12:25:30,875][INFO ][io.crate.rest            ] [Hirscheck] Elasticsearch HTTP REST API not enabled
+[2022-03-06 12:25:30,937][INFO ][node                     ] [Hirscheck] initialized
+[2022-03-06 12:25:30,937][INFO ][node                     ] [Hirscheck] starting ...
+[2022-03-06 12:25:31,150][INFO ][io.crate.blob.BlobService] [Hirscheck] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2022-03-06 12:25:31,302][INFO ][http                     ] [Hirscheck] publish_address {127.0.0.1:4562}, bound_addresses {127.0.0.1:4562}
+[2022-03-06 12:25:31,472][INFO ][transport                ] [Hirscheck] publish_address {127.0.0.1:4354}, bound_addresses {127.0.0.1:4354}
+[2022-03-06 12:25:31,478][INFO ][discovery                ] [Hirscheck] TestingCluster/I6t3qtKXTy-_352U_q0PDg
+    Stopping crate server process...
+[2022-03-06 12:25:32,150][INFO ][node                     ] [Hirscheck] stopping ...
+java.lang.StackOverflowError
+	at org.apache.log4j.spi.LoggingEvent.<init>(LoggingEvent.java:165)
+	at org.apache.log4j.Category.forcedLog(Category.java:391)
+	at org.apache.log4j.Category.log(Category.java:856)
+	at org.elasticsearch.common.logging.log4j.Log4jESLogger.internalError(Log4jESLogger.java:145)
+	at org.elasticsearch.common.logging.support.AbstractESLogger.error(AbstractESLogger.java:128)
+	at io.crate.protocols.postgres.ConnectionContext$MessageHandler.exceptionCaught(ConnectionContext.java:323)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.exceptionCaught(FrameDecoder.java:377)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireExceptionCaught(Channels.java:525)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.cleanUpWriteBuffer(AbstractNioWorker.java:443)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.writeFromUserCode(AbstractNioWorker.java:128)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.handleAcceptedSocket(NioServerSocketPipelineSink.java:99)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.eventSunk(NioServerSocketPipelineSink.java:36)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:574)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendErrorResponse(Messages.java:231)
+	at io.crate.protocols.postgres.ConnectionContext$MessageHandler.exceptionCaught(ConnectionContext.java:320)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.exceptionCaught(FrameDecoder.java:377)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireExceptionCaught(Channels.java:525)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.cleanUpWriteBuffer(AbstractNioWorker.java:443)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.writeFromUserCode(AbstractNioWorker.java:128)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.handleAcceptedSocket(NioServerSocketPipelineSink.java:99)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.eventSunk(NioServerSocketPipelineSink.java:36)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:574)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendErrorResponse(Messages.java:231)
+	at io.crate.protocols.postgres.ConnectionContext$MessageHandler.exceptionCaught(ConnectionContext.java:320)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.exceptionCaught(FrameDecoder.java:377)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireExceptionCaught(Channels.java:525)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.cleanUpWriteBuffer(AbstractNioWorker.java:443)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.writeFromUserCode(AbstractNioWorker.java:128)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.handleAcceptedSocket(NioServerSocketPipelineSink.java:99)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.eventSunk(NioServerSocketPipelineSink.java:36)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:574)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendErrorResponse(Messages.java:231)
+	at io.crate.protocols.postgres.ConnectionContext$MessageHandler.exceptionCaught(ConnectionContext.java:320)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.exceptionCaught(FrameDecoder.java:377)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireExceptionCaught(Channels.java:525)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.cleanUpWriteBuffer(AbstractNioWorker.java:443)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.writeFromUserCode(AbstractNioWorker.java:128)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.handleAcceptedSocket(NioServerSocketPipelineSink.java:99)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.eventSunk(NioServerSocketPipelineSink.java:36)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:574)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendErrorResponse(Messages.java:231)
+	at io.crate.protocols.postgres.ConnectionContext$MessageHandler.exceptionCaught(ConnectionContext.java:320)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.exceptionCaught(FrameDecoder.java:377)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireExceptionCaught(Channels.java:525)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.cleanUpWriteBuffer(AbstractNioWorker.java:443)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.writeFromUserCode(AbstractNioWorker.java:128)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.handleAcceptedSocket(NioServerSocketPipelineSink.java:99)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.eventSunk(NioServerSocketPipelineSink.java:36)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:574)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendErrorResponse(Messages.java:231)
+	at io.crate.protocols.postgres.ConnectionContext$MessageHandler.exceptionCaught(ConnectionContext.java:320)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.exceptionCaught(FrameDecoder.java:377)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireExceptionCaught(Channels.java:525)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.cleanUpWriteBuffer(AbstractNioWorker.java:443)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.writeFromUserCode(AbstractNioWorker.java:128)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.handleAcceptedSocket(NioServerSocketPipelineSink.java:99)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.eventSunk(NioServerSocketPipelineSink.java:36)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:574)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendErrorResponse(Messages.java:231)
+	at io.crate.protocols.postgres.ConnectionContext$MessageHandler.exceptionCaught(ConnectionContext.java:320)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.exceptionCaught(FrameDecoder.java:377)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:112)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireExceptionCaught(Channels.java:525)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.cleanUpWriteBuffer(AbstractNioWorker.java:443)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.writeFromUserCode(AbstractNioWorker.java:128)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.handleAcceptedSocket(NioServerSocketPipelineSink.java:99)
+	at org.jboss.netty.channel.socket.nio.NioServerSocketPipelineSink.eventSunk(NioServerSocketPipelineSink.java:36)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:574)
+[2022-03-06 12:25:32,996][WARN ][discovery.zen.ping.unicast] [Hirscheck] failed to send ping to [{#zen_unicast_1#}{127.0.0.1}{127.0.0.1:4354}]
+SendRequestTransportException[[Hirscheck][127.0.0.1:4354][internal:discovery/zen/unicast]]; nested: TransportException[TransportService is closed stopped can't send request];
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:336)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.sendPingRequestToNode(UnicastZenPing.java:440)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.sendPings(UnicastZenPing.java:426)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing$2.doRun(UnicastZenPing.java:249)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: TransportException[TransportService is closed stopped can't send request]
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:316)
+	... 7 more
+[2022-03-06 12:25:32,996][WARN ][discovery.zen.ping.unicast] [Hirscheck] failed to send ping to [{Hirscheck}{I6t3qtKXTy-_352U_q0PDg}{127.0.0.1}{127.0.0.1:4354}{info.extended.type=sigar, http_address=127.0.0.1:4562}]
+SendRequestTransportException[[Hirscheck][127.0.0.1:4354][internal:discovery/zen/unicast]]; nested: TransportException[TransportService is closed stopped can't send request];
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:336)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.sendPingRequestToNode(UnicastZenPing.java:440)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.sendPings(UnicastZenPing.java:426)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing$2.doRun(UnicastZenPing.java:249)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: TransportException[TransportService is closed stopped can't send request]
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:316)
+	... 7 more
+[2022-03-06 12:25:33,867][WARN ][netty.channel.DefaultChannelPipeline] An exception was thrown by an exception handler.
+java.util.concurrent.RejectedExecutionException: Worker has already been shutdown
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.registerTask(AbstractNioSelector.java:120)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:72)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:56)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioChannelSink.execute(AbstractNioChannelSink.java:34)
+	at org.jboss.netty.channel.DefaultChannelPipeline.execute(DefaultChannelPipeline.java:636)
+	at org.jboss.netty.channel.Channels.fireExceptionCaughtLater(Channels.java:496)
+	at org.jboss.netty.channel.AbstractChannelSink.exceptionCaught(AbstractChannelSink.java:46)
+	at org.jboss.netty.channel.DefaultChannelPipeline.notifyHandlerException(DefaultChannelPipeline.java:658)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:577)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendErrorResponse(Messages.java:231)
+	at io.crate.protocols.postgres.ResultSetReceiver.fail(ResultSetReceiver.java:79)
+	at io.crate.protocols.postgres.SimplePortal$ResultReceiverRetryWrapper.fail(SimplePortal.java:273)
+	at io.crate.action.sql.RowReceiverToResultReceiver.fail(RowReceiverToResultReceiver.java:67)
+	at io.crate.executor.transport.executionphases.InterceptingRowReceiver$1.onFailure(InterceptingRowReceiver.java:133)
+	at io.crate.executor.MultiActionListener.countdown(MultiActionListener.java:68)
+	at io.crate.executor.MultiActionListener.onFailure(MultiActionListener.java:59)
+	at io.crate.executor.transport.DefaultTransportResponseHandler.handleException(DefaultTransportResponseHandler.java:62)
+	at org.elasticsearch.transport.TransportService$3.doRun(TransportService.java:349)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-03-06 12:25:33,868][INFO ][node                     ] [Hirscheck] stopped
+[2022-03-06 12:25:33,868][WARN ][netty.channel.DefaultChannelPipeline] An exception was thrown by an exception handler.
+java.util.concurrent.RejectedExecutionException: Worker has already been shutdown
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.registerTask(AbstractNioSelector.java:120)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:72)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:56)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioChannelSink.execute(AbstractNioChannelSink.java:34)
+	at org.jboss.netty.channel.DefaultChannelPipeline.execute(DefaultChannelPipeline.java:636)
+	at org.jboss.netty.channel.Channels.fireExceptionCaughtLater(Channels.java:496)
+	at org.jboss.netty.channel.AbstractChannelSink.exceptionCaught(AbstractChannelSink.java:46)
+	at org.jboss.netty.channel.DefaultChannelPipeline.notifyHandlerException(DefaultChannelPipeline.java:658)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:577)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendReadyForQuery(Messages.java:140)
+	at io.crate.protocols.postgres.ConnectionContext$ReadyForQueryListener.onFailure(ConnectionContext.java:222)
+	at io.crate.concurrent.CompletionMultiListener.onFailure(CompletionMultiListener.java:63)
+	at io.crate.protocols.postgres.ResultSetReceiver.fail(ResultSetReceiver.java:80)
+	at io.crate.protocols.postgres.SimplePortal$ResultReceiverRetryWrapper.fail(SimplePortal.java:273)
+	at io.crate.action.sql.RowReceiverToResultReceiver.fail(RowReceiverToResultReceiver.java:67)
+	at io.crate.executor.transport.executionphases.InterceptingRowReceiver$1.onFailure(InterceptingRowReceiver.java:133)
+	at io.crate.executor.MultiActionListener.countdown(MultiActionListener.java:68)
+	at io.crate.executor.MultiActionListener.onFailure(MultiActionListener.java:59)
+	at io.crate.executor.transport.DefaultTransportResponseHandler.handleException(DefaultTransportResponseHandler.java:62)
+	at org.elasticsearch.transport.TransportService$3.doRun(TransportService.java:349)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2022-03-06 12:25:33,868][INFO ][node                     ] [Hirscheck] closing ...
+[2022-03-06 12:25:33,874][INFO ][node                     ] [Hirscheck] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCMetaDataIntegrationTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+[2022-03-06 12:25:35,281][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2022-03-06 12:25:35,432][INFO ][node                     ] [Piz Zupò] version[2.3.4], pid[4250], build[${build/NA]
+[2022-03-06 12:25:35,432][INFO ][node                     ] [Piz Zupò] initializing ...
+[2022-03-06 12:25:35,783][INFO ][io.crate.plugin          ] [Piz Zupò] plugins loaded: [crate-sigar] 
+[2022-03-06 12:25:36,660][INFO ][plugins                  ] [Piz Zupò] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2022-03-06 12:25:36,711][INFO ][env                      ] [Piz Zupò] using [1] data paths, mounts [[/ (overlay)]], net usable_space [84.4tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2022-03-06 12:25:36,711][INFO ][env                      ] [Piz Zupò] heap size [1.9gb], compressed ordinary object pointers [true]
+[2022-03-06 12:25:36,711][WARN ][env                      ] [Piz Zupò] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2022-03-06 12:25:36,934][INFO ][http                     ] [Piz Zupò] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2022-03-06 12:25:36,950][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_e8f53410-7740-44d2-97fd-667e55905efe/plugins/elasticsearch-repository-hdfs/
+[2022-03-06 12:25:37,011][INFO ][io.crate.module          ] [Piz Zupò] configuring crate. version: 0.56.4
+[2022-03-06 12:25:37,189][INFO ][io.crate.module          ] [Piz Zupò] configuring crate. version: 0.56.4
+[2022-03-06 12:25:38,383][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5501]
+[2022-03-06 12:25:38,383][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2022-03-06 12:25:39,583][INFO ][io.crate.rest            ] [Piz Zupò] Elasticsearch HTTP REST API not enabled
+[2022-03-06 12:25:39,635][INFO ][node                     ] [Piz Zupò] initialized
+[2022-03-06 12:25:39,635][INFO ][node                     ] [Piz Zupò] starting ...
+[2022-03-06 12:25:39,771][INFO ][io.crate.blob.BlobService] [Piz Zupò] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2022-03-06 12:25:39,884][INFO ][http                     ] [Piz Zupò] publish_address {127.0.0.1:4510}, bound_addresses {127.0.0.1:4510}
+[2022-03-06 12:25:39,954][INFO ][transport                ] [Piz Zupò] publish_address {127.0.0.1:4400}, bound_addresses {127.0.0.1:4400}
+[2022-03-06 12:25:39,962][INFO ][discovery                ] [Piz Zupò] TestingCluster/LK-q_FDQQLyL1YSaKThkyw
+[2022-03-06 12:25:40,363][DEBUG][action.admin.indices.create] [Piz Zupò] no known master node, scheduling a retry
+[2022-03-06 12:25:42,997][INFO ][cluster.service          ] [Piz Zupò] new_master {Piz Zupò}{LK-q_FDQQLyL1YSaKThkyw}{127.0.0.1}{127.0.0.1:4400}{info.extended.type=sigar, http_address=127.0.0.1:4510}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2022-03-06 12:25:43,001][INFO ][node                     ] [Piz Zupò] started
+[2022-03-06 12:25:46,880][INFO ][gateway                  ] [Piz Zupò] recovered [0] indices into cluster_state
+[2022-03-06 12:25:47,040][INFO ][cluster.metadata         ] [Piz Zupò] [test.cluster] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2022-03-06 12:25:48,575][INFO ][cluster.routing.allocation] [Piz Zupò] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[test.cluster][0], [test.cluster][1], [test.cluster][2], [test.cluster][3]] ...]).
+[2022-03-06 12:25:50,841][INFO ][cluster.metadata         ] [Piz Zupò] [names] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2022-03-06 12:25:53,227][INFO ][cluster.routing.allocation] [Piz Zupò] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[names][2], [names][1], [names][3], [names][0]] ...]).
+[2022-03-06 12:25:53,540][INFO ][cluster.metadata         ] [Piz Zupò] [my_schema.names] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2022-03-06 12:25:55,294][INFO ][cluster.routing.allocation] [Piz Zupò] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[my_schema.names][1], [my_schema.names][3], [my_schema.names][2], [my_schema.names][0]] ...]).
+[2022-03-06 12:25:55,715][INFO ][cluster.metadata         ] [Piz Zupò] [t_multi_pks] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2022-03-06 12:25:56,838][INFO ][cluster.routing.allocation] [Piz Zupò] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[t_multi_pks][3], [t_multi_pks][0], [t_multi_pks][2], [t_multi_pks][1]] ...]).
+    Stopping crate server process...
+[2022-03-06 12:25:56,905][INFO ][node                     ] [Piz Zupò] stopping ...
+[2022-03-06 12:25:57,018][INFO ][node                     ] [Piz Zupò] stopped
+[2022-03-06 12:25:57,018][INFO ][node                     ] [Piz Zupò] closing ...
+[2022-03-06 12:25:57,027][INFO ][node                     ] [Piz Zupò] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCTypesTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+[2022-03-06 12:25:58,301][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2022-03-06 12:25:58,445][INFO ][node                     ] [Großglockner] version[2.3.4], pid[4653], build[${build/NA]
+[2022-03-06 12:25:58,445][INFO ][node                     ] [Großglockner] initializing ...
+[2022-03-06 12:25:58,711][INFO ][io.crate.plugin          ] [Großglockner] plugins loaded: [crate-sigar] 
+[2022-03-06 12:25:59,547][INFO ][plugins                  ] [Großglockner] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2022-03-06 12:25:59,565][INFO ][env                      ] [Großglockner] using [1] data paths, mounts [[/ (overlay)]], net usable_space [84.4tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2022-03-06 12:25:59,565][INFO ][env                      ] [Großglockner] heap size [1.9gb], compressed ordinary object pointers [true]
+[2022-03-06 12:25:59,565][WARN ][env                      ] [Großglockner] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2022-03-06 12:25:59,730][INFO ][http                     ] [Großglockner] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2022-03-06 12:25:59,739][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_65807025-5d4d-444f-a6c0-db457fdc7efa/plugins/elasticsearch-repository-hdfs/
+[2022-03-06 12:25:59,786][INFO ][io.crate.module          ] [Großglockner] configuring crate. version: 0.56.4
+[2022-03-06 12:25:59,948][INFO ][io.crate.module          ] [Großglockner] configuring crate. version: 0.56.4
+[2022-03-06 12:26:01,197][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5480]
+[2022-03-06 12:26:01,197][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2022-03-06 12:26:02,341][INFO ][io.crate.rest            ] [Großglockner] Elasticsearch HTTP REST API not enabled
+[2022-03-06 12:26:02,384][INFO ][node                     ] [Großglockner] initialized
+[2022-03-06 12:26:02,384][INFO ][node                     ] [Großglockner] starting ...
+[2022-03-06 12:26:02,555][INFO ][io.crate.blob.BlobService] [Großglockner] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2022-03-06 12:26:02,681][INFO ][http                     ] [Großglockner] publish_address {127.0.0.1:4524}, bound_addresses {127.0.0.1:4524}
+[2022-03-06 12:26:02,802][INFO ][transport                ] [Großglockner] publish_address {127.0.0.1:4340}, bound_addresses {127.0.0.1:4340}
+[2022-03-06 12:26:02,807][INFO ][discovery                ] [Großglockner] TestingCluster/2K3kvyZrQxSD7W8t_Rl_4w
+[2022-03-06 12:26:03,420][DEBUG][action.admin.indices.create] [Großglockner] no known master node, scheduling a retry
+[2022-03-06 12:26:05,842][INFO ][cluster.service          ] [Großglockner] new_master {Großglockner}{2K3kvyZrQxSD7W8t_Rl_4w}{127.0.0.1}{127.0.0.1:4340}{info.extended.type=sigar, http_address=127.0.0.1:4524}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2022-03-06 12:26:05,847][INFO ][node                     ] [Großglockner] started
+[2022-03-06 12:26:06,506][INFO ][gateway                  ] [Großglockner] recovered [0] indices into cluster_state
+[2022-03-06 12:26:06,712][INFO ][cluster.metadata         ] [Großglockner] [test] creating index, cause [api], templates [], shards [1]/[0], mappings [default]
+[2022-03-06 12:26:07,730][INFO ][cluster.routing.allocation] [Großglockner] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[test][0]] ...]).
+[2022-03-06 12:26:08,434][INFO ][cluster.metadata         ] [Großglockner] [arraytest] creating index, cause [api], templates [], shards [1]/[0], mappings [default]
+[2022-03-06 12:26:09,039][INFO ][cluster.routing.allocation] [Großglockner] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[arraytest][0]] ...]).
+[2022-03-06 12:26:09,161][INFO ][cluster.metadata         ] [Großglockner] [arraytest] update_mapping [default]
+[2022-03-06 12:26:09,874][INFO ][cluster.metadata         ] [Großglockner] [test_obj] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2022-03-06 12:26:11,129][INFO ][cluster.routing.allocation] [Großglockner] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[test_obj][1], [test_obj][0], [test_obj][2], [test_obj][3]] ...]).
+    Stopping crate server process...
+[2022-03-06 12:26:13,864][INFO ][node                     ] [Großglockner] stopping ...
+[2022-03-06 12:26:14,362][INFO ][node                     ] [Großglockner] stopped
+[2022-03-06 12:26:14,362][INFO ][node                     ] [Großglockner] closing ...
+[2022-03-06 12:26:14,373][INFO ][node                     ] [Großglockner] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCUnsupportedFeaturesTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+Picked up _JAVA_OPTIONS: -Xmx2048m -Xms512m
+[2022-03-06 12:26:15,604][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2022-03-06 12:26:15,743][INFO ][node                     ] [Kasereck] version[2.3.4], pid[5104], build[${build/NA]
+[2022-03-06 12:26:15,743][INFO ][node                     ] [Kasereck] initializing ...
+[2022-03-06 12:26:16,026][INFO ][io.crate.plugin          ] [Kasereck] plugins loaded: [crate-sigar] 
+[2022-03-06 12:26:17,063][INFO ][plugins                  ] [Kasereck] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2022-03-06 12:26:17,085][INFO ][env                      ] [Kasereck] using [1] data paths, mounts [[/ (overlay)]], net usable_space [84.4tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2022-03-06 12:26:17,086][INFO ][env                      ] [Kasereck] heap size [1.9gb], compressed ordinary object pointers [true]
+[2022-03-06 12:26:17,086][WARN ][env                      ] [Kasereck] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2022-03-06 12:26:17,296][INFO ][http                     ] [Kasereck] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2022-03-06 12:26:17,307][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_9e04468c-ed80-4b31-8909-dad6683f7265/plugins/elasticsearch-repository-hdfs/
+[2022-03-06 12:26:17,356][INFO ][io.crate.module          ] [Kasereck] configuring crate. version: 0.56.4
+[2022-03-06 12:26:17,501][INFO ][io.crate.module          ] [Kasereck] configuring crate. version: 0.56.4
+[2022-03-06 12:26:18,711][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5432]
+[2022-03-06 12:26:18,712][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2022-03-06 12:26:19,893][INFO ][io.crate.rest            ] [Kasereck] Elasticsearch HTTP REST API not enabled
+[2022-03-06 12:26:19,942][INFO ][node                     ] [Kasereck] initialized
+[2022-03-06 12:26:19,942][INFO ][node                     ] [Kasereck] starting ...
+[2022-03-06 12:26:20,123][INFO ][io.crate.blob.BlobService] [Kasereck] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2022-03-06 12:26:20,294][INFO ][http                     ] [Kasereck] publish_address {127.0.0.1:4580}, bound_addresses {127.0.0.1:4580}
+[2022-03-06 12:26:20,388][INFO ][transport                ] [Kasereck] publish_address {127.0.0.1:4347}, bound_addresses {127.0.0.1:4347}
+[2022-03-06 12:26:20,393][INFO ][discovery                ] [Kasereck] TestingCluster/ZKDg6FeXSxqP1NpenuB0Wg
+    Stopping crate server process...
+[2022-03-06 12:26:20,756][INFO ][node                     ] [Kasereck] stopping ...
+[2022-03-06 12:26:20,825][INFO ][node                     ] [Kasereck] stopped
+[2022-03-06 12:26:20,825][INFO ][node                     ] [Kasereck] closing ...
+[2022-03-06 12:26:20,831][INFO ][node                     ] [Kasereck] closed
+:pg:compileTestJava NO-SOURCE
+:pg:processTestResources NO-SOURCE
+:pg:testClasses UP-TO-DATE
+:pg:test SKIPPED
+
+BUILD SUCCESSFUL in 1m 36s
+8 actionable tasks: 2 executed, 6 up-to-date
+
+travis_time:end:30fe2654:start=1646569484899178900,finish=1646569581658374677,duration=96759195777[0K
+[32;1mThe command "./gradlew test -s" exited with 0.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:01d0ff60[0K
+travis_time:end:01d0ff60:start=1646569581672161518,finish=1646569581681776232,duration=9614714[0Ktravis_time:start:079c80ae[0K/home/travis/.casher/bin/casher:190: warning: Insecure world writable dir /usr/local/clang-5.0.0/bin in PATH, mode 040777
+[32;1mchanges detected, packing new archive[0m
+/home/travis/.casher/bin/casher:213:in `cache_archive_name': undefined method `[]' for nil:NilClass (NoMethodError)
+	from /home/travis/.casher/bin/casher:143:in `push'
+	from /home/travis/.casher/bin/casher:53:in `block in run'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:88:in `block in timeout'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:32:in `block in catch'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:32:in `catch'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:32:in `catch'
+	from /home/travis/.rvm/rubies/ruby-2.2.7/lib/ruby/2.2.0/timeout.rb:103:in `timeout'
+	from /home/travis/.casher/bin/casher:53:in `run'
+	from /home/travis/.casher/bin/casher:263:in `<main>'
+
+travis_time:end:079c80ae:start=1646569581694059904,finish=1646569583621257650,duration=1927197746[0Ktravis_fold:end:cache.2[0K
+Done. Your build exited with 0.
