@@ -1,0 +1,944 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+[31;1mTimeout waiting for network availability.[0m
+sed: cannot rename /etc/hosts: Device or resource busy
+travis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk8[0m
+$ jdk_switcher use "oraclejdk8"
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+travis_fold:end:install_jdk[0K
+$ cd failed/graphhopper/graphhopper
+
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export BASEURL=https://www-eu.apache.org/dist/maven/maven-3/VERSION/binaries/apache-maven-VERSION-bin.zip
+$ export FILE=apache-maven-VERSION-bin.zip
+$ export DIR=apache-maven-VERSION
+$ export VERSION=3.3.9
+$ export CI_DEPLOY_USERNAME=[secure]
+$ export CI_DEPLOY_PASSWORD=[secure]
+
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:000243e4[0K$ Installing caching utilities
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 2 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 3 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed 3 times.[0m
+
+travis_time:end:000243e4:start=1660538126381576100,finish=1660538129460816813,duration=3079240713[0Ktravis_time:start:0b36d00f[0K$ Installing caching utilities from the Travis CI server (https:///files/casher) failed, failing over to using GitHub (https://raw.githubusercontent.com/travis-ci/casher/bash/bin/casher)
+travis_time:end:0b36d00f:start=1660538129467169254,finish=1660538129655296616,duration=188127362[0Ktravis_time:start:05b5f360[0Ktravis_time:end:05b5f360:start=1660538129665595172,finish=1660538129671098027,duration=5502855[0Ktravis_time:start:08dee00a[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+attempting to download cache archive[0m
+[31;1mcould not download cache[0m
+travis_time:end:08dee00a:start=1660538129677893461,finish=1660538131136918377,duration=1459024916[0Ktravis_time:start:03b8f4f9[0Ktravis_time:end:03b8f4f9:start=1660538131144260823,finish=1660538131149274546,duration=5013723[0Ktravis_time:start:08dd1160[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+adding /home/travis/.m2 to cache[0m
+travis_time:end:08dd1160:start=1660538131155812902,finish=1660538154341802275,duration=23185989373[0Ktravis_fold:end:cache.1[0K
+$ java -Xmx32m -version
+java version "1.8.0_31"
+Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.8.0_31
+travis_fold:start:before_install.1[0Ktravis_time:start:3025db8c[0K$ if [ "$TRAVIS_OS_NAME" == "linux" ]; then wget --no-check-certificate $(echo -n $BASEURL | sed -e 's#VERSION#'$VERSION'#g'); unzip -qq $(echo -n $FILE | sed -e 's#VERSION#'$VERSION'#'); export M2_HOME=$PWD/$(echo -n $DIR | sed -e 's#VERSION#'$VERSION'#'); export PATH=$M2_HOME/bin:$PATH; fi
+--2022-08-15 04:35:54--  https://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
+Resolving www-eu.apache.org (www-eu.apache.org)... 65.108.131.22, 2a01:4f9:6b:2ecf::1
+Connecting to www-eu.apache.org (www-eu.apache.org)|65.108.131.22|:443... connected.
+WARNING: no certificate subject alternative name matches
+	requested host name `www-eu.apache.org'.
+HTTP request sent, awaiting response... 302 Found
+Location: https://downloads.apache.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip [following]
+--2022-08-15 04:35:55--  https://downloads.apache.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
+Resolving downloads.apache.org (downloads.apache.org)... 135.181.214.104, 88.99.95.219, 2a01:4f9:3a:2c57::2, ...
+Connecting to downloads.apache.org (downloads.apache.org)|135.181.214.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 8617253 (8.2M) [application/zip]
+Saving to: `apache-maven-3.3.9-bin.zip'
+
+     0K .......... .......... .......... .......... ..........  0% 93.8K 89s
+    50K .......... .......... .......... .......... ..........  1% 1.20M 48s
+   100K .......... .......... .......... .......... ..........  1%  364K 39s
+   150K .......... .......... .......... .......... ..........  2% 1.25M 31s
+   200K .......... .......... .......... .......... ..........  2%  366K 29s
+   250K .......... .......... .......... .......... ..........  3% 19.6M 24s
+   300K .......... .......... .......... .......... ..........  4% 20.1M 21s
+   350K .......... .......... .......... .......... ..........  4% 19.7M 18s
+   400K .......... .......... .......... .......... ..........  5% 1.37M 16s
+   450K .......... .......... .......... .......... ..........  5%  372K 17s
+   500K .......... .......... .......... .......... ..........  6% 20.0M 15s
+   550K .......... .......... .......... .......... ..........  7% 20.9M 14s
+   600K .......... .......... .......... .......... ..........  7% 22.5M 13s
+   650K .......... .......... .......... .......... ..........  8% 31.9M 12s
+   700K .......... .......... .......... .......... ..........  8% 29.4M 11s
+   750K .......... .......... .......... .......... ..........  9% 28.3M 10s
+   800K .......... .......... .......... .......... .......... 10% 1.67M 10s
+   850K .......... .......... .......... .......... .......... 10% 27.3M 9s
+   900K .......... .......... .......... .......... .......... 11% 29.5M 9s
+   950K .......... .......... .......... .......... .......... 11%  378K 9s
+  1000K .......... .......... .......... .......... .......... 12% 37.2M 9s
+  1050K .......... .......... .......... .......... .......... 13% 33.7M 8s
+  1100K .......... .......... .......... .......... .......... 13% 41.9M 8s
+  1150K .......... .......... .......... .......... .......... 14% 35.4M 7s
+  1200K .......... .......... .......... .......... .......... 14% 33.6M 7s
+  1250K .......... .......... .......... .......... .......... 15% 54.2M 7s
+  1300K .......... .......... .......... .......... .......... 16% 44.0M 7s
+  1350K .......... .......... .......... .......... .......... 16% 46.7M 6s
+  1400K .......... .......... .......... .......... .......... 17% 49.2M 6s
+  1450K .......... .......... .......... .......... .......... 17% 69.0M 6s
+  1500K .......... .......... .......... .......... .......... 18% 62.3M 6s
+  1550K .......... .......... .......... .......... .......... 19% 65.8M 5s
+  1600K .......... .......... .......... .......... .......... 19% 1.80M 5s
+  1650K .......... .......... .......... .......... .......... 20% 64.7M 5s
+  1700K .......... .......... .......... .......... .......... 20% 60.7M 5s
+  1750K .......... .......... .......... .......... .......... 21% 47.1M 5s
+  1800K .......... .......... .......... .......... .......... 21% 37.5M 5s
+  1850K .......... .......... .......... .......... .......... 22% 43.5M 4s
+  1900K .......... .......... .......... .......... .......... 23% 78.5M 4s
+  1950K .......... .......... .......... .......... .......... 23%  382K 5s
+  2000K .......... .......... .......... .......... .......... 24% 57.4M 4s
+  2050K .......... .......... .......... .......... .......... 24% 76.0M 4s
+  2100K .......... .......... .......... .......... .......... 25% 85.6M 4s
+  2150K .......... .......... .......... .......... .......... 26% 72.9M 4s
+  2200K .......... .......... .......... .......... .......... 26% 70.0M 4s
+  2250K .......... .......... .......... .......... .......... 27% 93.4M 4s
+  2300K .......... .......... .......... .......... .......... 27% 63.5M 4s
+  2350K .......... .......... .......... .......... .......... 28% 71.1M 4s
+  2400K .......... .......... .......... .......... .......... 29% 72.9M 3s
+  2450K .......... .......... .......... .......... .......... 29% 81.2M 3s
+  2500K .......... .......... .......... .......... .......... 30% 83.0M 3s
+  2550K .......... .......... .......... .......... .......... 30%  101M 3s
+  2600K .......... .......... .......... .......... .......... 31% 69.9M 3s
+  2650K .......... .......... .......... .......... .......... 32% 90.1M 3s
+  2700K .......... .......... .......... .......... .......... 32% 94.8M 3s
+  2750K .......... .......... .......... .......... .......... 33% 92.9M 3s
+  2800K .......... .......... .......... .......... .......... 33% 45.8M 3s
+  2850K .......... .......... .......... .......... .......... 34% 97.4M 3s
+  2900K .......... .......... .......... .......... .......... 35% 95.4M 3s
+  2950K .......... .......... .......... .......... .......... 35% 96.4M 3s
+  3000K .......... .......... .......... .......... .......... 36% 87.7M 3s
+  3050K .......... .......... .......... .......... .......... 36% 97.8M 2s
+  3100K .......... .......... .......... .......... .......... 37% 98.4M 2s
+  3150K .......... .......... .......... .......... .......... 38%  102M 2s
+  3200K .......... .......... .......... .......... .......... 38% 1.91M 2s
+  3250K .......... .......... .......... .......... .......... 39% 89.6M 2s
+  3300K .......... .......... .......... .......... .......... 39% 89.0M 2s
+  3350K .......... .......... .......... .......... .......... 40% 91.1M 2s
+  3400K .......... .......... .......... .......... .......... 40% 83.7M 2s
+  3450K .......... .......... .......... .......... .......... 41% 90.7M 2s
+  3500K .......... .......... .......... .......... .......... 42% 91.7M 2s
+  3550K .......... .......... .......... .......... .......... 42%  117M 2s
+  3600K .......... .......... .......... .......... .......... 43% 98.7M 2s
+  3650K .......... .......... .......... .......... .......... 43%  116M 2s
+  3700K .......... .......... .......... .......... .......... 44%  119M 2s
+  3750K .......... .......... .......... .......... .......... 45%  116M 2s
+  3800K .......... .......... .......... .......... .......... 45%  107M 2s
+  3850K .......... .......... .......... .......... .......... 46% 1.35M 2s
+  3900K .......... .......... .......... .......... .......... 46%  531K 2s
+  3950K .......... .......... .......... .......... .......... 47% 73.9M 2s
+  4000K .......... .......... .......... .......... .......... 48% 71.3M 2s
+  4050K .......... .......... .......... .......... .......... 48% 56.3M 2s
+  4100K .......... .......... .......... .......... .......... 49% 58.2M 2s
+  4150K .......... .......... .......... .......... .......... 49% 70.8M 2s
+  4200K .......... .......... .......... .......... .......... 50% 84.6M 2s
+  4250K .......... .......... .......... .......... .......... 51% 97.2M 2s
+  4300K .......... .......... .......... .......... .......... 51% 92.3M 1s
+  4350K .......... .......... .......... .......... .......... 52% 89.4M 1s
+  4400K .......... .......... .......... .......... .......... 52% 75.4M 1s
+  4450K .......... .......... .......... .......... .......... 53% 87.3M 1s
+  4500K .......... .......... .......... .......... .......... 54% 91.7M 1s
+  4550K .......... .......... .......... .......... .......... 54% 82.1M 1s
+  4600K .......... .......... .......... .......... .......... 55% 82.5M 1s
+  4650K .......... .......... .......... .......... .......... 55% 90.7M 1s
+  4700K .......... .......... .......... .......... .......... 56% 93.3M 1s
+  4750K .......... .......... .......... .......... .......... 57% 93.7M 1s
+  4800K .......... .......... .......... .......... .......... 57% 69.2M 1s
+  4850K .......... .......... .......... .......... .......... 58% 89.3M 1s
+  4900K .......... .......... .......... .......... .......... 58% 80.7M 1s
+  4950K .......... .......... .......... .......... .......... 59% 63.5M 1s
+  5000K .......... .......... .......... .......... .......... 60% 73.6M 1s
+  5050K .......... .......... .......... .......... .......... 60% 89.9M 1s
+  5100K .......... .......... .......... .......... .......... 61% 83.1M 1s
+  5150K .......... .......... .......... .......... .......... 61%  171M 1s
+  5200K .......... .......... .......... .......... .......... 62%  160M 1s
+  5250K .......... .......... .......... .......... .......... 62%  195M 1s
+  5300K .......... .......... .......... .......... .......... 63%  190M 1s
+  5350K .......... .......... .......... .......... .......... 64%  190M 1s
+  5400K .......... .......... .......... .......... .......... 64%  169M 1s
+  5450K .......... .......... .......... .......... .......... 65%  190M 1s
+  5500K .......... .......... .......... .......... .......... 65%  180M 1s
+  5550K .......... .......... .......... .......... .......... 66%  129M 1s
+  5600K .......... .......... .......... .......... .......... 67%  109M 1s
+  5650K .......... .......... .......... .......... .......... 67%  128M 1s
+  5700K .......... .......... .......... .......... .......... 68%  114M 1s
+  5750K .......... .......... .......... .......... .......... 68%  150M 1s
+  5800K .......... .......... .......... .......... .......... 69%  176M 1s
+  5850K .......... .......... .......... .......... .......... 70%  192M 1s
+  5900K .......... .......... .......... .......... .......... 70%  198M 1s
+  5950K .......... .......... .......... .......... .......... 71%  196M 1s
+  6000K .......... .......... .......... .......... .......... 71%  156M 1s
+  6050K .......... .......... .......... .......... .......... 72%  213M 1s
+  6100K .......... .......... .......... .......... .......... 73% 2.12M 1s
+  6150K .......... .......... .......... .......... .......... 73% 79.6M 1s
+  6200K .......... .......... .......... .......... .......... 74% 83.3M 1s
+  6250K .......... .......... .......... .......... .......... 74% 94.1M 1s
+  6300K .......... .......... .......... .......... .......... 75% 95.3M 1s
+  6350K .......... .......... .......... .......... .......... 76% 86.7M 1s
+  6400K .......... .......... .......... .......... .......... 76% 57.8M 1s
+  6450K .......... .......... .......... .......... .......... 77%  112M 0s
+  6500K .......... .......... .......... .......... .......... 77%  111M 0s
+  6550K .......... .......... .......... .......... .......... 78%  113M 0s
+  6600K .......... .......... .......... .......... .......... 79% 99.4M 0s
+  6650K .......... .......... .......... .......... .......... 79%  110M 0s
+  6700K .......... .......... .......... .......... .......... 80%  114M 0s
+  6750K .......... .......... .......... .......... .......... 80%  114M 0s
+  6800K .......... .......... .......... .......... .......... 81%  112M 0s
+  6850K .......... .......... .......... .......... .......... 81%  144M 0s
+  6900K .......... .......... .......... .......... .......... 82%  664K 0s
+  6950K .......... .......... .......... .......... .......... 83%  981K 0s
+  7000K .......... .......... .......... .......... .......... 83% 42.8M 0s
+  7050K .......... .......... .......... .......... .......... 84% 59.8M 0s
+  7100K .......... .......... .......... .......... .......... 84% 76.3M 0s
+  7150K .......... .......... .......... .......... .......... 85% 67.8M 0s
+  7200K .......... .......... .......... .......... .......... 86% 55.9M 0s
+  7250K .......... .......... .......... .......... .......... 86% 67.9M 0s
+  7300K .......... .......... .......... .......... .......... 87% 58.1M 0s
+  7350K .......... .......... .......... .......... .......... 87% 45.9M 0s
+  7400K .......... .......... .......... .......... .......... 88% 71.7M 0s
+  7450K .......... .......... .......... .......... .......... 89%  106M 0s
+  7500K .......... .......... .......... .......... .......... 89%  108M 0s
+  7550K .......... .......... .......... .......... .......... 90%  107M 0s
+  7600K .......... .......... .......... .......... .......... 90% 46.8M 0s
+  7650K .......... .......... .......... .......... .......... 91% 65.8M 0s
+  7700K .......... .......... .......... .......... .......... 92% 66.8M 0s
+  7750K .......... .......... .......... .......... .......... 92% 67.4M 0s
+  7800K .......... .......... .......... .......... .......... 93% 61.0M 0s
+  7850K .......... .......... .......... .......... .......... 93% 59.9M 0s
+  7900K .......... .......... .......... .......... .......... 94%  140M 0s
+  7950K .......... .......... .......... .......... .......... 95%  165M 0s
+  8000K .......... .......... .......... .......... .......... 95%  144M 0s
+  8050K .......... .......... .......... .......... .......... 96%  173M 0s
+  8100K .......... .......... .......... .......... .......... 96%  175M 0s
+  8150K .......... .......... .......... .......... .......... 97%  167M 0s
+  8200K .......... .......... .......... .......... .......... 98%  156M 0s
+  8250K .......... .......... .......... .......... .......... 98%  172M 0s
+  8300K .......... .......... .......... .......... .......... 99%  174M 0s
+  8350K .......... .......... .......... .......... .......... 99%  134M 0s
+  8400K .......... .....                                      100% 96.0M=1.8s
+
+2022-08-15 04:35:57 (4.60 MB/s) - `apache-maven-3.3.9-bin.zip' saved [8617253/8617253]
+
+travis_time:end:3025db8c:start=1660538154608491952,finish=1660538158106068274,duration=3497576322[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:02a28eb8[0K$ if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$JVM" == "latest" ]; then sudo apt-get update -qq; sudo /bin/echo -e oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections; sudo apt-get -o Dpkg::Options::="--force-confnew" install -y oracle-java9-installer oracle-java9-set-default oracle-java9-unlimited-jce-policy; sudo update-java-alternatives -s java-9-oracle; fi
+travis_time:end:02a28eb8:start=1660538158113615732,finish=1660538158119600870,duration=5985138[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:install[0Ktravis_time:start:0c3ee0f0[0K$ true
+travis_time:end:0c3ee0f0:start=1660538158127732556,finish=1660538158132525464,duration=4792908[0Ktravis_fold:end:install[0Ktravis_time:start:30f70f80[0K$ mvn clean test verify -Dhttps.protocols=TLSv1.2 -B
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=192m; support was removed in 8.0
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] GraphHopper Parent Project
+[INFO] GraphHopper Core
+[INFO] GraphHopper Reader for OpenStreetMap Data
+[INFO] GraphHopper Reader for Gtfs Data
+[INFO] GraphHopper Reader JSON
+[INFO] GraphHopper Tools
+[INFO] GraphHopper Web
+[INFO] GraphHopper Reader for Shapefile Data
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphHopper Parent Project 0.9-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ graphhopper-parent ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.19.1:integration-test (default) @ graphhopper-parent ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.19.1:verify (default) @ graphhopper-parent ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphHopper Core 0.9-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ graphhopper-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphhopper-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 46 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ graphhopper-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 266 source files to /home/travis/build/failed/graphhopper/graphhopper/core/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphhopper-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ graphhopper-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 130 source files to /home/travis/build/failed/graphhopper/graphhopper/core/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ graphhopper-core ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphhopper.reader.OSMElementTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in com.graphhopper.reader.OSMElementTest
+Running com.graphhopper.reader.osm.conditional.ConditionalParserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 sec - in com.graphhopper.reader.osm.conditional.ConditionalParserTest
+Running com.graphhopper.reader.osm.conditional.DateRangeParserTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in com.graphhopper.reader.osm.conditional.DateRangeParserTest
+Running com.graphhopper.reader.osm.conditional.ConditionalOSMTagInspectorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.graphhopper.reader.osm.conditional.ConditionalOSMTagInspectorTest
+Running com.graphhopper.reader.dem.CGIARProviderTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.221 sec - in com.graphhopper.reader.dem.CGIARProviderTest
+Running com.graphhopper.reader.dem.TunnelElevationInterpolatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in com.graphhopper.reader.dem.TunnelElevationInterpolatorTest
+Running com.graphhopper.reader.dem.BridgeElevationInterpolatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.graphhopper.reader.dem.BridgeElevationInterpolatorTest
+Running com.graphhopper.reader.dem.ElevationInterpolatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.reader.dem.ElevationInterpolatorTest
+Running com.graphhopper.reader.dem.HeightTileTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.graphhopper.reader.dem.HeightTileTest
+Running com.graphhopper.reader.dem.SRTMProviderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.494 sec - in com.graphhopper.reader.dem.SRTMProviderTest
+Running com.graphhopper.reader.OSMNodeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.reader.OSMNodeTest
+Running com.graphhopper.reader.PrinctonReaderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in com.graphhopper.reader.PrinctonReaderTest
+Running com.graphhopper.routing.util.MotorcycleFlagEncoderTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.graphhopper.routing.util.MotorcycleFlagEncoderTest
+Running com.graphhopper.routing.util.BikeFlagEncoderTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in com.graphhopper.routing.util.BikeFlagEncoderTest
+Running com.graphhopper.routing.util.Bike2WeightFlagEncoderTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in com.graphhopper.routing.util.Bike2WeightFlagEncoderTest
+Running com.graphhopper.routing.util.FootFlagEncoderTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.graphhopper.routing.util.FootFlagEncoderTest
+Running com.graphhopper.routing.util.MountainBikeFlagEncoderTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.graphhopper.routing.util.MountainBikeFlagEncoderTest
+Running com.graphhopper.routing.util.spatialrules.SpatialRuleLookupArrayTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in com.graphhopper.routing.util.spatialrules.SpatialRuleLookupArrayTest
+Running com.graphhopper.routing.util.spatialrules.PolygonTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.util.spatialrules.PolygonTest
+Running com.graphhopper.routing.util.AbstractFlagEncoderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.util.AbstractFlagEncoderTest
+Running com.graphhopper.routing.util.HikeFlagEncoderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.util.HikeFlagEncoderTest
+Running com.graphhopper.routing.util.CarFlagEncoderTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.graphhopper.routing.util.CarFlagEncoderTest
+Running com.graphhopper.routing.util.Car4WDFlagEncoderTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.graphhopper.routing.util.Car4WDFlagEncoderTest
+Running com.graphhopper.routing.util.tour.SinglePointTourTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.util.tour.SinglePointTourTest
+Running com.graphhopper.routing.util.DataFlagEncoderTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec - in com.graphhopper.routing.util.DataFlagEncoderTest
+Running com.graphhopper.routing.util.EncodedValueTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.util.EncodedValueTest
+Running com.graphhopper.routing.util.NameSimilarityEdgeFilterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.graphhopper.routing.util.NameSimilarityEdgeFilterTest
+Running com.graphhopper.routing.util.RacingBikeFlagEncoderTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.graphhopper.routing.util.RacingBikeFlagEncoderTest
+Running com.graphhopper.routing.util.EncodingManagerTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.graphhopper.routing.util.EncodingManagerTest
+Running com.graphhopper.routing.util.EncodedDoubleValueTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.util.EncodedDoubleValueTest
+Running com.graphhopper.routing.ch.CHAlgoFactoryDecoratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.ch.CHAlgoFactoryDecoratorTest
+Running com.graphhopper.routing.ch.DijkstraBidirectionCHTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.377 sec - in com.graphhopper.routing.ch.DijkstraBidirectionCHTest
+Running com.graphhopper.routing.ch.PrepareContractionHierarchiesTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 sec - in com.graphhopper.routing.ch.PrepareContractionHierarchiesTest
+Running com.graphhopper.routing.ch.PrepareEncoderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.ch.PrepareEncoderTest
+Running com.graphhopper.routing.weighting.AbstractWeightingTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.weighting.AbstractWeightingTest
+Running com.graphhopper.routing.weighting.ShortFastestWeightingTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.routing.weighting.ShortFastestWeightingTest
+Running com.graphhopper.routing.weighting.GenericWeightingTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in com.graphhopper.routing.weighting.GenericWeightingTest
+Running com.graphhopper.routing.weighting.FastestWeightingTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.graphhopper.routing.weighting.FastestWeightingTest
+Running com.graphhopper.routing.lm.LandmarkStorageTest
+2022-08-15 04:36:15,993 [main] WARN  com.graphhopper.routing.lm.LandmarkStorage - next start node not found in big enough network of size 2, first element is 5, 0.0,0.0
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in com.graphhopper.routing.lm.LandmarkStorageTest
+Running com.graphhopper.routing.lm.PrepareLandmarksTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec - in com.graphhopper.routing.lm.PrepareLandmarksTest
+Running com.graphhopper.routing.lm.LMAlgoFactoryDecoratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.graphhopper.routing.lm.LMAlgoFactoryDecoratorTest
+Running com.graphhopper.routing.template.RoundTripRoutingTemplateTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec - in com.graphhopper.routing.template.RoundTripRoutingTemplateTest
+Running com.graphhopper.routing.PathBidirRefTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in com.graphhopper.routing.PathBidirRefTest
+Running com.graphhopper.routing.AStarTest
+Tests run: 96, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.319 sec - in com.graphhopper.routing.AStarTest
+Running com.graphhopper.routing.QueryGraphTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec - in com.graphhopper.routing.QueryGraphTest
+Running com.graphhopper.routing.subnetwork.PrepareRoutingSubnetworksTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in com.graphhopper.routing.subnetwork.PrepareRoutingSubnetworksTest
+Running com.graphhopper.routing.subnetwork.SubnetworkStorageTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.graphhopper.routing.subnetwork.SubnetworkStorageTest
+Running com.graphhopper.routing.DijkstraTest
+Tests run: 96, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.307 sec - in com.graphhopper.routing.DijkstraTest
+Running com.graphhopper.routing.EdgeBasedRoutingAlgorithmTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec - in com.graphhopper.routing.EdgeBasedRoutingAlgorithmTest
+Running com.graphhopper.routing.PathTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 sec - in com.graphhopper.routing.PathTest
+Running com.graphhopper.routing.DijkstraOneToManyTest
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec - in com.graphhopper.routing.DijkstraOneToManyTest
+Running com.graphhopper.routing.AStarBidirectionTest
+Tests run: 100, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.359 sec - in com.graphhopper.routing.AStarBidirectionTest
+Running com.graphhopper.routing.AlternativeRouteTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.graphhopper.routing.AlternativeRouteTest
+Running com.graphhopper.routing.DijkstraBidirectionRefTest
+Tests run: 96, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.313 sec - in com.graphhopper.routing.DijkstraBidirectionRefTest
+Running com.graphhopper.storage.index.Location2IDQuadtreeTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.456 sec - in com.graphhopper.storage.index.Location2IDQuadtreeTest
+Running com.graphhopper.storage.index.Location2IDFullIndexTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.185 sec - in com.graphhopper.storage.index.Location2IDFullIndexTest
+Running com.graphhopper.storage.index.LocationIndexTreeCHTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.577 sec - in com.graphhopper.storage.index.LocationIndexTreeCHTest
+Running com.graphhopper.storage.index.LocationIndexTreeTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.457 sec - in com.graphhopper.storage.index.LocationIndexTreeTest
+Running com.graphhopper.storage.index.Location2IDFullWithEdgesIndexTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.192 sec - in com.graphhopper.storage.index.Location2IDFullWithEdgesIndexTest
+Running com.graphhopper.storage.index.BresenhamLineTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.graphhopper.storage.index.BresenhamLineTest
+Running com.graphhopper.storage.GraphEdgeIdFinderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.graphhopper.storage.GraphEdgeIdFinderTest
+Running com.graphhopper.storage.UnsafeDataAccessTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.graphhopper.storage.UnsafeDataAccessTest
+Running com.graphhopper.storage.EdgeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.storage.EdgeTest
+Running com.graphhopper.storage.GraphHopperStorageCHTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.708 sec - in com.graphhopper.storage.GraphHopperStorageCHTest
+Running com.graphhopper.storage.GraphHopperStorageTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.387 sec - in com.graphhopper.storage.GraphHopperStorageTest
+Running com.graphhopper.storage.GraphStorageViaMMapTest
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.796 sec - in com.graphhopper.storage.GraphStorageViaMMapTest
+Running com.graphhopper.storage.RAMDirectoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.graphhopper.storage.RAMDirectoryTest
+Running com.graphhopper.storage.MMapDirectoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 sec - in com.graphhopper.storage.MMapDirectoryTest
+Running com.graphhopper.storage.RAMDataAccessTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in com.graphhopper.storage.RAMDataAccessTest
+Running com.graphhopper.storage.VLongStorageTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.storage.VLongStorageTest
+Running com.graphhopper.storage.GraphHopperStorageWithTurnCostsTest
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.718 sec - in com.graphhopper.storage.GraphHopperStorageWithTurnCostsTest
+Running com.graphhopper.storage.MMapDataAccessTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.701 sec - in com.graphhopper.storage.MMapDataAccessTest
+Running com.graphhopper.storage.SimpleFSLockFactoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.graphhopper.storage.SimpleFSLockFactoryTest
+Running com.graphhopper.storage.StorablePropertiesTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.graphhopper.storage.StorablePropertiesTest
+Running com.graphhopper.storage.NativeFSLockFactoryTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.graphhopper.storage.NativeFSLockFactoryTest
+Running com.graphhopper.storage.RAMIntDataAccessTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.graphhopper.storage.RAMIntDataAccessTest
+Running com.graphhopper.storage.GraphHopperStorageForDataFlagEncoderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 sec - in com.graphhopper.storage.GraphHopperStorageForDataFlagEncoderTest
+Running com.graphhopper.util.shapes.GHPoint3DTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.shapes.GHPoint3DTest
+Running com.graphhopper.util.shapes.BBoxTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.graphhopper.util.shapes.BBoxTest
+Running com.graphhopper.util.shapes.GHPointTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.shapes.GHPointTest
+Running com.graphhopper.util.shapes.CircleTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.shapes.CircleTest
+Running com.graphhopper.util.BitUtilBigTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.BitUtilBigTest
+Running com.graphhopper.util.SimpleIntDequeTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.SimpleIntDequeTest
+Running com.graphhopper.util.TranslationMapTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.TranslationMapTest
+Running com.graphhopper.util.DepthFirstSearchTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in com.graphhopper.util.DepthFirstSearchTest
+Running com.graphhopper.util.BreadthFirstSearchTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in com.graphhopper.util.BreadthFirstSearchTest
+Running com.graphhopper.util.GHUtilityTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec - in com.graphhopper.util.GHUtilityTest
+Running com.graphhopper.util.ConfigMapTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.ConfigMapTest
+Running com.graphhopper.util.FinishInstructionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.FinishInstructionTest
+Running com.graphhopper.util.PointListTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.PointListTest
+Running com.graphhopper.util.DistanceCalcEarthTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.DistanceCalcEarthTest
+Running com.graphhopper.util.InstructionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.InstructionTest
+Running com.graphhopper.util.CHEdgeIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.CHEdgeIteratorTest
+Running com.graphhopper.util.DouglasPeuckerTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.graphhopper.util.DouglasPeuckerTest
+Running com.graphhopper.util.BitUtilLittleTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.BitUtilLittleTest
+Running com.graphhopper.util.AngleCalcTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.AngleCalcTest
+Running com.graphhopper.util.PMapTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.util.PMapTest
+Running com.graphhopper.util.HelperTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.graphhopper.util.HelperTest
+Running com.graphhopper.util.InstructionListTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.252 sec - in com.graphhopper.util.InstructionListTest
+Running com.graphhopper.coll.GHTreeMapComposedTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.coll.GHTreeMapComposedTest
+Running com.graphhopper.coll.GHTBitSetTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.coll.GHTBitSetTest
+Running com.graphhopper.coll.BitSetImplTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.coll.BitSetImplTest
+Running com.graphhopper.coll.GHLongIntBTreeTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec - in com.graphhopper.coll.GHLongIntBTreeTest
+Running com.graphhopper.coll.GHSortedCollectionTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.coll.GHSortedCollectionTest
+Running com.graphhopper.coll.CompressedArrayTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec - in com.graphhopper.coll.CompressedArrayTest
+Running com.graphhopper.coll.GHIntArrayListTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.coll.GHIntArrayListTest
+Running com.graphhopper.coll.OSMIDMapTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in com.graphhopper.coll.OSMIDMapTest
+Running com.graphhopper.geohash.LinearKeyAlgoTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.geohash.LinearKeyAlgoTest
+Running com.graphhopper.geohash.SpatialKeyAlgoTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.geohash.SpatialKeyAlgoTest
+Running com.graphhopper.GHRequestTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.GHRequestTest
+Running com.graphhopper.GHResponseTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.graphhopper.GHResponseTest
+Running com.graphhopper.search.NameIndexTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec - in com.graphhopper.search.NameIndexTest
+Running com.graphhopper.apache.commons.lang3.StringUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.graphhopper.apache.commons.lang3.StringUtilsTest
+Running com.graphhopper.apache.commons.collections.IntDoubleBinaryHeapTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in com.graphhopper.apache.commons.collections.IntDoubleBinaryHeapTest
+Running com.graphhopper.GraphHopperAPITest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.486 sec - in com.graphhopper.GraphHopperAPITest
+
+Results :
+
+Tests run: 1316, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphhopper-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 46 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ graphhopper-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphhopper-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ graphhopper-core ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ graphhopper-core ---
+[INFO] Skipping execution of surefire because it has already been run for this configuration
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ graphhopper-core ---
+[INFO] Building jar: /home/travis/build/failed/graphhopper/graphhopper/core/target/graphhopper-core-0.9-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:test-jar (default) @ graphhopper-core ---
+[INFO] Building jar: /home/travis/build/failed/graphhopper/graphhopper/core/target/graphhopper-core-0.9-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.19.1:integration-test (default) @ graphhopper-core ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphhopper.routing.RoutingAlgorithmIT
+# RoutingAlgorithmIT algoEntry(astar):0.17570527, per run:0.021963159
+# RoutingAlgorithmIT algoEntry(dijkstra):0.12252533, per run:0.015315666
+# RoutingAlgorithmIT algoEntry(astarbi):0.06762635, per run:0.008453294
+# RoutingAlgorithmIT algoEntry(dijkstrabi):0.0650376, per run:0.0081297
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.247 sec - in com.graphhopper.routing.RoutingAlgorithmIT
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.19.1:verify (default) @ graphhopper-core ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphHopper Reader for OpenStreetMap Data 0.9-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ graphhopper-reader-osm ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphhopper-reader-osm ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/graphhopper/graphhopper/reader-osm/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ graphhopper-reader-osm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to /home/travis/build/failed/graphhopper/graphhopper/reader-osm/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphhopper-reader-osm ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ graphhopper-reader-osm ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/travis/build/failed/graphhopper/graphhopper/reader-osm/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ graphhopper-reader-osm ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphhopper.reader.osm.GraphHopperOSMTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.076 sec - in com.graphhopper.reader.osm.GraphHopperOSMTest
+Running com.graphhopper.reader.osm.OSMReaderTest
+2022-08-15 04:36:41,971 [main] WARN  com.graphhopper.reader.osm.OSMReader - Parsing error in way with OSMID=17 : Cannot parse duration tag value: P01:10
+2022-08-15 04:36:41,974 [main] WARN  com.graphhopper.routing.util.AbstractFlagEncoder - Unrealistic long duration ignored in way with way ID=18 : Duration tag value=P1M (=44640 minutes)
+2022-08-15 04:36:41,974 [main] WARN  com.graphhopper.routing.util.AbstractFlagEncoder - Unrealistic long duration ignored in way with way ID=18 : Duration tag value=P1M (=44640 minutes)
+2022-08-15 04:36:41,974 [main] WARN  com.graphhopper.routing.util.AbstractFlagEncoder - Unrealistic long duration ignored in way with way ID=18 : Duration tag value=P1M (=44640 minutes)
+2022-08-15 04:36:42,524 [main] WARN  com.graphhopper.reader.osm.OSMReader - Parsing error in way with OSMID=17 : Cannot parse duration tag value: P01:10
+2022-08-15 04:36:42,524 [main] WARN  com.graphhopper.routing.util.AbstractFlagEncoder - Unrealistic long duration ignored in way with way ID=18 : Duration tag value=P1M (=44640 minutes)
+2022-08-15 04:36:42,524 [main] WARN  com.graphhopper.routing.util.AbstractFlagEncoder - Unrealistic long duration ignored in way with way ID=18 : Duration tag value=P1M (=44640 minutes)
+2022-08-15 04:36:42,525 [main] WARN  com.graphhopper.routing.util.AbstractFlagEncoder - Unrealistic long duration ignored in way with way ID=18 : Duration tag value=P1M (=44640 minutes)
+2022-08-15 04:36:42,571 [main] WARN  com.graphhopper.reader.osm.OSMReader - Parsing error in way with OSMID=17 : Cannot parse duration tag value: P01:10
+2022-08-15 04:36:42,572 [main] WARN  com.graphhopper.routing.util.AbstractFlagEncoder - Unrealistic long duration ignored in way with way ID=18 : Duration tag value=P1M (=44640 minutes)
+2022-08-15 04:36:42,572 [main] WARN  com.graphhopper.routing.util.AbstractFlagEncoder - Unrealistic long duration ignored in way with way ID=18 : Duration tag value=P1M (=44640 minutes)
+2022-08-15 04:36:42,572 [main] WARN  com.graphhopper.routing.util.AbstractFlagEncoder - Unrealistic long duration ignored in way with way ID=18 : Duration tag value=P1M (=44640 minutes)
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.893 sec - in com.graphhopper.reader.osm.OSMReaderTest
+Running com.graphhopper.reader.osm.OSMTagParserTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in com.graphhopper.reader.osm.OSMTagParserTest
+Running com.graphhopper.reader.osm.OSMTurnRelationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in com.graphhopper.reader.osm.OSMTurnRelationTest
+
+Results :
+
+Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphhopper-reader-osm ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/graphhopper/graphhopper/reader-osm/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ graphhopper-reader-osm ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphhopper-reader-osm ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 14 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ graphhopper-reader-osm ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ graphhopper-reader-osm ---
+[INFO] Skipping execution of surefire because it has already been run for this configuration
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ graphhopper-reader-osm ---
+[INFO] Building jar: /home/travis/build/failed/graphhopper/graphhopper/reader-osm/target/graphhopper-reader-osm-0.9-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.19.1:integration-test (default) @ graphhopper-reader-osm ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphhopper.GraphHopperIT
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.012 sec - in com.graphhopper.GraphHopperIT
+Running com.graphhopper.routing.RoutingAlgorithmWithOSMIT
+testMonacoParallel takes a bit time...
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.405 sec - in com.graphhopper.routing.RoutingAlgorithmWithOSMIT
+
+Results :
+
+Tests run: 50, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.19.1:verify (default) @ graphhopper-reader-osm ---
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GraphHopper Reader for Gtfs Data 0.9-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ graphhopper-reader-gtfs ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphhopper-reader-gtfs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/graphhopper/graphhopper/reader-gtfs/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ graphhopper-reader-gtfs ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 26 source files to /home/travis/build/failed/graphhopper/graphhopper/reader-gtfs/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphhopper-reader-gtfs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/graphhopper/graphhopper/reader-gtfs/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ graphhopper-reader-gtfs ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /home/travis/build/failed/graphhopper/graphhopper/reader-gtfs/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ graphhopper-reader-gtfs ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphhopper.gtfs.fare.FareTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.867 sec - in com.graphhopper.gtfs.fare.FareTest
+
+Results :
+
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphhopper-reader-gtfs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/graphhopper/graphhopper/reader-gtfs/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ graphhopper-reader-gtfs ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphhopper-reader-gtfs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/failed/graphhopper/graphhopper/reader-gtfs/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ graphhopper-reader-gtfs ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ graphhopper-reader-gtfs ---
+[INFO] Skipping execution of surefire because it has already been run for this configuration
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ graphhopper-reader-gtfs ---
+[INFO] Building jar: /home/travis/build/failed/graphhopper/graphhopper/reader-gtfs/target/graphhopper-reader-gtfs-0.9-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.19.1:integration-test (default) @ graphhopper-reader-gtfs ---
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.graphhopper.RealtimeIT
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 1.461 sec <<< FAILURE! - in com.graphhopper.RealtimeIT
+testSkipDepartureStop(com.graphhopper.RealtimeIT)  Time elapsed: 0.047 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.RealtimeIT.testSkipDepartureStop(RealtimeIT.java:75)
+
+testBlockTrips(com.graphhopper.RealtimeIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.RealtimeIT.testBlockTrips(RealtimeIT.java:167)
+
+testSkipTransferStop(com.graphhopper.RealtimeIT)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.RealtimeIT.testSkipTransferStop(RealtimeIT.java:137)
+
+testSkipArrivalStop(com.graphhopper.RealtimeIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.RealtimeIT.testSkipArrivalStop(RealtimeIT.java:106)
+
+Running com.graphhopper.GraphHopperGtfsIT
+Tests run: 15, Failures: 0, Errors: 15, Skipped: 0, Time elapsed: 0.762 sec <<< FAILURE! - in com.graphhopper.GraphHopperGtfsIT
+testRoute1ProfileEarliestArrival(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testRoute1ProfileEarliestArrival(GraphHopperGtfsIT.java:144)
+
+testRoute1GoesAt744(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testRoute1GoesAt744(GraphHopperGtfsIT.java:103)
+
+testWeekendRouteWorksOnlyOnWeekend(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testWeekendRouteWorksOnlyOnWeekend(GraphHopperGtfsIT.java:249)
+
+testTransferRules(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testTransferRules(GraphHopperGtfsIT.java:299)
+
+testRoute1DoesNotGoAt654(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testRoute1DoesNotGoAt654(GraphHopperGtfsIT.java:85)
+
+testBlockTrips(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testBlockTrips(GraphHopperGtfsIT.java:278)
+
+testRoute1ProfileLatestDeparture(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testRoute1ProfileLatestDeparture(GraphHopperGtfsIT.java:171)
+
+testRouteWithLaterDepartureTime(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.assertTravelTimeIs(GraphHopperGtfsIT.java:351)
+	at com.graphhopper.GraphHopperGtfsIT.testRouteWithLaterDepartureTime(GraphHopperGtfsIT.java:234)
+
+testRoute1ArriveBy(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testRoute1ArriveBy(GraphHopperGtfsIT.java:123)
+
+testRoute1(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testRoute1(GraphHopperGtfsIT.java:68)
+
+testRoute2(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.assertTravelTimeIs(GraphHopperGtfsIT.java:351)
+	at com.graphhopper.GraphHopperGtfsIT.assertTravelTimeIs(GraphHopperGtfsIT.java:359)
+	at com.graphhopper.GraphHopperGtfsIT.testRoute2(GraphHopperGtfsIT.java:186)
+
+testRoute3(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.assertTravelTimeIs(GraphHopperGtfsIT.java:351)
+	at com.graphhopper.GraphHopperGtfsIT.assertTravelTimeIs(GraphHopperGtfsIT.java:359)
+	at com.graphhopper.GraphHopperGtfsIT.testRoute3(GraphHopperGtfsIT.java:193)
+
+testRoute4(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.assertTravelTimeIs(GraphHopperGtfsIT.java:351)
+	at com.graphhopper.GraphHopperGtfsIT.assertTravelTimeIs(GraphHopperGtfsIT.java:359)
+	at com.graphhopper.GraphHopperGtfsIT.testRoute4(GraphHopperGtfsIT.java:200)
+
+testRoute5(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.testRoute5(GraphHopperGtfsIT.java:213)
+
+testRoute6(com.graphhopper.GraphHopperGtfsIT)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.NullPointerException: text
+	at com.graphhopper.GraphHopperGtfsIT.assertNoRoute(GraphHopperGtfsIT.java:370)
+	at com.graphhopper.GraphHopperGtfsIT.testRoute6(GraphHopperGtfsIT.java:226)
+
+
+Results :
+
+Tests in error: 
+  GraphHopperGtfsIT.testBlockTrips:278 » NullPointer text
+  GraphHopperGtfsIT.testRoute1:68 » NullPointer text
+  GraphHopperGtfsIT.testRoute1ArriveBy:123 » NullPointer text
+  GraphHopperGtfsIT.testRoute1DoesNotGoAt654:85 » NullPointer text
+  GraphHopperGtfsIT.testRoute1GoesAt744:103 » NullPointer text
+  GraphHopperGtfsIT.testRoute1ProfileEarliestArrival:144 » NullPointer text
+  GraphHopperGtfsIT.testRoute1ProfileLatestDeparture:171 » NullPointer text
+  GraphHopperGtfsIT.testRoute2:186->assertTravelTimeIs:359->assertTravelTimeIs:351 » NullPointer
+  GraphHopperGtfsIT.testRoute3:193->assertTravelTimeIs:359->assertTravelTimeIs:351 » NullPointer
+  GraphHopperGtfsIT.testRoute4:200->assertTravelTimeIs:359->assertTravelTimeIs:351 » NullPointer
+  GraphHopperGtfsIT.testRoute5:213 » NullPointer text
+  GraphHopperGtfsIT.testRoute6:226->assertNoRoute:370 » NullPointer text
+  GraphHopperGtfsIT.testRouteWithLaterDepartureTime:234->assertTravelTimeIs:351 » NullPointer
+  GraphHopperGtfsIT.testTransferRules:299 » NullPointer text
+  GraphHopperGtfsIT.testWeekendRouteWorksOnlyOnWeekend:249 » NullPointer text
+  RealtimeIT.testBlockTrips:167 » NullPointer text
+  RealtimeIT.testSkipArrivalStop:106 » NullPointer text
+  RealtimeIT.testSkipDepartureStop:75 » NullPointer text
+  RealtimeIT.testSkipTransferStop:137 » NullPointer text
+
+Tests run: 19, Failures: 0, Errors: 19, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.19.1:verify (default) @ graphhopper-reader-gtfs ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] GraphHopper Parent Project ......................... SUCCESS [  0.449 s]
+[INFO] GraphHopper Core ................................... SUCCESS [ 35.456 s]
+[INFO] GraphHopper Reader for OpenStreetMap Data .......... SUCCESS [ 32.107 s]
+[INFO] GraphHopper Reader for Gtfs Data ................... FAILURE [ 11.642 s]
+[INFO] GraphHopper Reader JSON ............................ SKIPPED
+[INFO] GraphHopper Tools .................................. SKIPPED
+[INFO] GraphHopper Web .................................... SKIPPED
+[INFO] GraphHopper Reader for Shapefile Data .............. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:20 min
+[INFO] Finished at: 2022-08-15T04:37:19+00:00
+[INFO] Final Memory: 14M/290M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-failsafe-plugin:2.19.1:verify (default) on project graphhopper-reader-gtfs: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/travis/build/failed/graphhopper/graphhopper/reader-gtfs/target/failsafe-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :graphhopper-reader-gtfs
+travis_time:end:30f70f80:start=1660538158139077346,finish=1660538239987402468,duration=81848325122[0K[31;1mThe command "mvn clean test verify -Dhttps.protocols=TLSv1.2 -B" exited with 1.[0m
+
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:16f5eb98[0Ktravis_time:end:16f5eb98:start=1660538239996339072,finish=1660538240002035361,duration=5696289[0Ktravis_time:start:12338ecb[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading /[0m
+[31;1mfailed to upload cache[0m
+travis_time:end:12338ecb:start=1660538240009412088,finish=1660538243430768329,duration=3421356241[0Ktravis_fold:end:cache.2[0K
+
+Done. Your build exited with 1.

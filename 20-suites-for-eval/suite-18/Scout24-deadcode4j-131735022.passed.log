@@ -1,0 +1,555 @@
+travis_time:start:0b5f64ac[0Ktravis_time:end:0b5f64ac:start=1657384778807172389,finish=1657384778883671578,duration=76499189,event=no_world_writable_dirs[0Ktravis_time:start:073a7680[0Ktravis_time:end:073a7680:start=1657384778886864769,finish=1657384778888859002,duration=1994233,event=check_unsupported[0Ktravis_time:start:005ae366[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+Runtime kernel version: 4.15.0-109-generic
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_time:end:005ae366:start=1657384778891707630,finish=1657384778895944276,duration=4236646,event=show_system_info[0Ktravis_time:start:0ceed8d3[0Ktravis_time:end:0ceed8d3:start=1657384778899096738,finish=1657384778908337371,duration=9240633,event=rm_riak_source[0Ktravis_time:start:01a483ec[0Ktravis_time:end:01a483ec:start=1657384778911715069,finish=1657384778917263780,duration=5548711,event=fix_rwky_redis[0Ktravis_time:start:0c826140[0K[31;1mTimeout waiting for network availability.[0m
+travis_time:end:0c826140:start=1657384778920231858,finish=1657384799481663720,duration=20561431862,event=wait_for_network[0Ktravis_time:start:0332ef30[0Ktravis_time:end:0332ef30:start=1657384799489805580,finish=1657384890233571358,duration=90743765778,event=update_apt_keys[0Ktravis_time:start:09b4cea6[0Ktravis_time:end:09b4cea6:start=1657384890238774804,finish=1657384890315244222,duration=76469418,event=fix_hhvm_source[0Ktravis_time:start:17a05e1a[0Ktravis_time:end:17a05e1a:start=1657384890320421603,finish=1657384890324932157,duration=4510554,event=update_mongo_arch[0Ktravis_time:start:389b257f[0Ktravis_time:end:389b257f:start=1657384890329947407,finish=1657384890379985544,duration=50038137,event=fix_sudo_enabled_trusty[0Ktravis_time:start:1b3f253e[0Ktravis_time:end:1b3f253e:start=1657384890385548665,finish=1657384890400899137,duration=15350472,event=clean_up_path[0Ktravis_time:start:0001bec7[0Ktravis_time:end:0001bec7:start=1657384890406424538,finish=1657384890419513157,duration=13088619,event=fix_resolv_conf[0Ktravis_time:start:0a61197e[0Ktravis_time:end:0a61197e:start=1657384890423804777,finish=1657384890437417230,duration=13612453,event=fix_etc_hosts[0Ktravis_time:start:280365b0[0Ktravis_time:start:1109b58a[0Ktravis_time:end:1109b58a:start=1657384890455130624,finish=1657384890470222574,duration=15091950,event=no_ipv6_localhost[0Ktravis_time:start:101a8683[0Ktravis_time:end:101a8683:start=1657384890475641309,finish=1657384891138322526,duration=662681217,event=fix_etc_mavenrc[0Ktravis_time:start:0087a1ce[0Ktravis_time:end:0087a1ce:start=1657384891143674537,finish=1657384891149082626,duration=5408089,event=fix_wwdr_certificate[0Ktravis_time:start:0e75f07a[0Ktravis_time:end:0e75f07a:start=1657384891154005778,finish=1657384891186973243,duration=32967465,event=put_localhost_first[0Ktravis_time:start:05e7fc6b[0Ktravis_time:end:05e7fc6b:start=1657384891191916314,finish=1657384891195327683,duration=3411369,event=home_paths[0Ktravis_time:start:042bb294[0Ktravis_time:end:042bb294:start=1657384891200776535,finish=1657384892032521023,duration=831744488,event=disable_initramfs[0Ktravis_time:start:028b0900[0Ktravis_time:end:028b0900:start=1657384892037320714,finish=1657384892550771219,duration=513450505,event=disable_ssh_roaming[0Ktravis_time:start:08591a80[0Ktravis_time:end:08591a80:start=1657384892555560277,finish=1657384892559342126,duration=3781849,event=debug_tools[0Ktravis_time:start:26ab697b[0Ktravis_time:end:26ab697b:start=1657384892564802897,finish=1657384892568888867,duration=4085970,event=uninstall_oclint[0Ktravis_time:start:0f1312f0[0Ktravis_time:end:0f1312f0:start=1657384892573835822,finish=1657384892578648708,duration=4812886,event=rvm_use[0Ktravis_time:start:15583de6[0Ktravis_time:end:15583de6:start=1657384892583319689,finish=1657384892594675526,duration=11355837,event=rm_etc_boto_cfg[0Ktravis_time:start:0574a54c[0Ktravis_time:end:0574a54c:start=1657384892599189122,finish=1657384892602274729,duration=3085607,event=rm_oraclejdk8_symlink[0Ktravis_time:start:0a3d25c6[0Ktravis_time:end:0a3d25c6:start=1657384892606841144,finish=1657384892652016224,duration=45175080,event=enable_i386[0Ktravis_time:start:145a80fc[0Ktravis_time:end:145a80fc:start=1657384892656932617,finish=1657384892662225105,duration=5292488,event=update_rubygems[0Ktravis_time:start:0037f9d6[0Ktravis_time:end:0037f9d6:start=1657384892667100585,finish=1657384892674319308,duration=7218723,event=ensure_path_components[0Ktravis_time:start:077f61c2[0Ktravis_time:end:077f61c2:start=1657384892679457916,finish=1657384892683102405,duration=3644489,event=redefine_curl[0Ktravis_time:start:04eae3f0[0Ktravis_time:end:04eae3f0:start=1657384892687396515,finish=1657384892691305103,duration=3908588,event=nonblock_pipe[0Ktravis_time:start:2a64b3a8[0Ktravis_time:end:2a64b3a8:start=1657384892695346068,finish=1657384895789277287,duration=3093931219,event=apt_get_update[0Ktravis_time:start:1849702e[0Ktravis_time:end:1849702e:start=1657384895795531277,finish=1657384895798879962,duration=3348685,event=deprecate_xcode_64[0Ktravis_time:start:0d0e1c20[0Ktravis_time:end:0d0e1c20:start=1657384895804017394,finish=1657384895810103608,duration=6086214,event=update_heroku[0Ktravis_time:start:1b8adbd8[0Ktravis_time:end:1b8adbd8:start=1657384895815193039,finish=1657384895818368513,duration=3175474,event=shell_session_update[0Ktravis_time:start:0e5f9730[0Ktravis_fold:start:docker_mtu[0Ktee: /etc/docker/daemon.json: No such file or directory
+docker: unrecognized service
+travis_fold:end:docker_mtu[0Ktravis_time:end:0e5f9730:start=1657384895823855376,finish=1657384895851403082,duration=27547706,event=set_docker_mtu[0Ktravis_time:start:0a5e2437[0Ktravis_time:end:0a5e2437:start=1657384895855926397,finish=1657384895867490605,duration=11564208,event=resolvconf[0K
+travis_fold:start:install_jdk[0K[33;1mInstalling oraclejdk8[0m
+$ jdk_switcher use "oraclejdk8"
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+travis_fold:end:install_jdk[0Ktravis_time:start:23e8c261[0Ktravis_time:end:23e8c261:start=1657384895883387962,finish=1657384895886187617,duration=2799655,event=fix_ps4[0Ktravis_time:start:0b571100[0K
+$ cd passed/Scout24/deadcode4j
+
+travis_time:end:0b571100:start=1657384895890139448,finish=1657384895893500917,duration=3361469,event=checkout[0Ktravis_time:start:0c69a490[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export MVN_VERSION=3.2.5
+
+travis_time:end:0c69a490:start=1657384895898138335,finish=1657384896498187630,duration=600049295,event=env[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:0dd91e00[0K$ Installing caching utilities
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 2 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed. Retrying, 3 of 3.[0m
+
+
+[31;1mThe command "eval curl -sf  -o $CASHER_DIR/bin/casher https:///files/casher " failed 3 times.[0m
+
+travis_time:end:0dd91e00:start=1657384897717407229,finish=1657384900799240417,duration=3081833188,event=setup_casher[0Ktravis_time:start:15c92260[0K$ Installing caching utilities from the Travis CI server (https:///files/casher) failed, failing over to using GitHub (https://raw.githubusercontent.com/travis-ci/casher/bash/bin/casher)
+travis_time:end:15c92260:start=1657384900805714059,finish=1657384900902349487,duration=96635428,event=setup_casher[0Ktravis_time:start:04a0c0e0[0Ktravis_time:end:04a0c0e0:start=1657384900914982599,finish=1657384900919188967,duration=4206368,event=setup_casher[0Ktravis_time:start:02efca43[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+attempting to download cache archive[0m
+[31;1mcould not download cache[0m
+travis_time:end:02efca43:start=1657384900924623391,finish=1657384902229699431,duration=1305076040,event=setup_casher[0Ktravis_time:start:0bb3ef9c[0Ktravis_time:end:0bb3ef9c:start=1657384902234947310,finish=1657384902239729850,duration=4782540,event=setup_casher[0Ktravis_time:start:060d24f2[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+adding /home/travis/.m2/repository to cache[0m
+travis_time:end:060d24f2:start=1657384902246175373,finish=1657384904230019826,duration=1983844453,event=setup_casher[0Ktravis_fold:end:cache.1[0K
+$ java -Xmx32m -version
+java version "1.8.0_31"
+Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.8.0_31
+travis_fold:start:before_install.1[0Ktravis_time:start:0195c492[0K$ MVN_URL=https://archive.apache.org/dist/maven/maven-3/$MVN_VERSION/binaries/apache-maven-$MVN_VERSION-bin.tar.gz
+travis_time:end:0195c492:start=1657384904653131571,finish=1657384904657958673,duration=4827102,event=before_install[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:0bbd8f14[0K$ wget -q -O /tmp/maven.tar.gz $MVN_URL
+travis_time:end:0bbd8f14:start=1657384904665075349,finish=1657384919934370104,duration=15269294755,event=before_install[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:before_install.3[0Ktravis_time:start:1857e8f0[0K$ tar xzf /tmp/maven.tar.gz
+travis_time:end:1857e8f0:start=1657384919941076105,finish=1657384920210680828,duration=269604723,event=before_install[0Ktravis_fold:end:before_install.3[0Ktravis_fold:start:before_install.4[0Ktravis_time:start:075bbfd4[0K$ export M2_HOME=`pwd`/apache-maven-$MVN_VERSION
+travis_time:end:075bbfd4:start=1657384920216960034,finish=1657384920223244229,duration=6284195,event=before_install[0Ktravis_fold:end:before_install.4[0Ktravis_fold:start:before_install.5[0Ktravis_time:start:057a8bb8[0K$ export PATH=$M2_HOME/bin:$PATH
+travis_time:end:057a8bb8:start=1657384920229395638,finish=1657384920233545805,duration=4150167,event=before_install[0Ktravis_fold:end:before_install.5[0Ktravis_fold:start:before_install.6[0Ktravis_time:start:06dc0530[0K$ export MAVEN_SKIP_RC=true
+travis_time:end:06dc0530:start=1657384920240007005,finish=1657384920244294844,duration=4287839,event=before_install[0Ktravis_fold:end:before_install.6[0Ktravis_fold:start:install.1[0Ktravis_time:start:075f6a55[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -B -U clean verify org.apache.maven.plugins:maven-war-plugin:2.4:help -Dinvoker.skip=true -Dmaven.main.skip=true -Dmaven.plugin.skip=true -Dmaven.test.skip=true -PenableCoverage,travis
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ deadcode4j-maven-plugin ---
+[INFO] Deleting /home/travis/build/passed/Scout24/deadcode4j/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-argLine) @ deadcode4j-maven-plugin ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/passed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/passed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:helpmojo (help-goal) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/Scout24/deadcode4j/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ deadcode4j-maven-plugin ---
+[INFO] Not compiling main sources
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (default-descriptor) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (mojo-descriptor) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ deadcode4j-maven-plugin ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ deadcode4j-maven-plugin ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ deadcode4j-maven-plugin ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ deadcode4j-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ deadcode4j-maven-plugin ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /home/travis/build/passed/Scout24/deadcode4j/target/deadcode4j-maven-plugin-2.2.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:addPluginArtifactMetadata (default-addPluginArtifactMetadata) @ deadcode4j-maven-plugin ---
+[WARNING] Execution skipped
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:install (default) @ deadcode4j-maven-plugin ---
+[INFO] Skipping artifact installation per configuration.
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (copyTestClasses) @ deadcode4j-maven-plugin ---
+[INFO] Skipping Antrun execution
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-invoker.mavenOpts) @ deadcode4j-maven-plugin ---
+[INFO] invoker.mavenOpts set to -javaagent:/home/travis/.m2/passed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/passed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.17:integration-test (default) @ deadcode4j-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:integration-test (test-find) @ deadcode4j-maven-plugin ---
+[INFO] Skipping invocation per configuration. If this is incorrect, ensure the skipInvocation parameter is not set to true.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:integration-test (test-help) @ deadcode4j-maven-plugin ---
+[INFO] Skipping invocation per configuration. If this is incorrect, ensure the skipInvocation parameter is not set to true.
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.7:run (clean) @ deadcode4j-maven-plugin ---
+[INFO] Skipping Antrun execution
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.17:verify (default) @ deadcode4j-maven-plugin ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-invoker-plugin:1.8:verify (default) @ deadcode4j-maven-plugin ---
+[INFO] Skipping invocation per configuration. If this is incorrect, ensure the skipInvocation parameter is not set to true.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-war-plugin:2.4:help (default-cli) @ deadcode4j-maven-plugin ---
+[INFO] Apache Maven WAR Plugin 2.4
+  Builds a Web Application Archive (WAR) file from the project output and its
+  dependencies.
+
+This plugin has 5 goals:
+
+war:exploded
+  Create an exploded webapp in a specified directory.
+
+war:help
+  Display help information on maven-war-plugin.
+  Call mvn war:help -Ddetail=true -Dgoal=<goal-name> to display parameter
+  details.
+
+war:inplace
+  Generate the webapp in the WAR source directory.
+
+war:manifest
+  Generate a manifest for this webapp. The manifest file is created in the
+  warSourceDirectory.
+
+war:war
+  Build a WAR file.
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:45 min
+[INFO] Finished at: 2022-07-09T16:44:47+00:00
+[INFO] Final Memory: 31M/1140M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:075f6a55:start=1657384920251545510,finish=1657385087383497273,duration=167131951763,event=install[0Ktravis_fold:end:install.1[0Ktravis_fold:start:install.2[0Ktravis_time:start:02d6a194[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -B org.apache.maven.plugins:maven-dependency-plugin:2.10:get -Dartifact=org.apache.maven.surefire:surefire-junit4:2.17
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:get (default-cli) @ deadcode4j-maven-plugin ---
+[INFO] Resolving org.apache.maven.surefire:surefire-junit4:jar:2.17 with transitive dependencies
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 38.997 s
+[INFO] Finished at: 2022-07-09T16:45:27+00:00
+[INFO] Final Memory: 26M/1963M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:02d6a194:start=1657385087389264020,finish=1657385127583023686,duration=40193759666,event=install[0Ktravis_fold:end:install.2[0Ktravis_fold:start:install.3[0Ktravis_time:start:2a02cd30[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -B org.apache.maven.plugins:maven-dependency-plugin:2.10:get -Dartifact=org.apache.maven.surefire:surefire-junit47:2.17
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:get (default-cli) @ deadcode4j-maven-plugin ---
+[INFO] Resolving org.apache.maven.surefire:surefire-junit47:jar:2.17 with transitive dependencies
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 7.526 s
+[INFO] Finished at: 2022-07-09T16:45:36+00:00
+[INFO] Final Memory: 27M/1963M
+[INFO] ------------------------------------------------------------------------
+travis_time:end:2a02cd30:start=1657385127589167583,finish=1657385136272894521,duration=8683726938,event=install[0Ktravis_fold:end:install.3[0Ktravis_time:start:0ad1238a[0K$ mvn -o -Dhttps.protocols=TLSv1.2 -B -o clean verify -PenableCoverage,travis
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building deadcode4j Maven Plugin 2.2.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ deadcode4j-maven-plugin ---
+[INFO] Deleting /home/travis/build/passed/Scout24/deadcode4j/target
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.1.201405082137:prepare-agent (configure-argLine) @ deadcode4j-maven-plugin ---
+[INFO] argLine set to -javaagent:/home/travis/.m2/passed/org/jacoco/org.jacoco.agent/0.7.1.201405082137/org.jacoco.agent-0.7.1.201405082137-runtime.jar=destfile=/home/travis/build/passed/Scout24/deadcode4j/target/jacoco.exec,append=true,excludes=**/HelpMojo.class
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:helpmojo (help-goal) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 0 mojo descriptors.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/travis/build/passed/Scout24/deadcode4j/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ deadcode4j-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 80 source files to /home/travis/build/passed/Scout24/deadcode4j/target/classes
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (default-descriptor) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 3 mojo descriptors.
+[INFO] 
+[INFO] --- maven-plugin-plugin:3.2:descriptor (mojo-descriptor) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to read mojo metadata.
+[INFO] Applying mojo extractor for language: java
+[INFO] Mojo extractor for language: java found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: bsh
+[INFO] Mojo extractor for language: bsh found 0 mojo descriptors.
+[INFO] Applying mojo extractor for language: java-annotations
+[INFO] Mojo extractor for language: java-annotations found 3 mojo descriptors.
+[INFO] 
+[INFO] --- plexus-component-metadata:1.5.5:generate-metadata (default) @ deadcode4j-maven-plugin ---
+[INFO] Discovered 2 component descriptors(s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ deadcode4j-maven-plugin ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 20 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ deadcode4j-maven-plugin ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 182 source files to /home/travis/build/passed/Scout24/deadcode4j/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ deadcode4j-maven-plugin ---
+[INFO] Surefire report directory: /home/travis/build/passed/Scout24/deadcode4j/target/surefire-reports
+[INFO] parallel='classes', perCoreThreadCount=false, threadCount=4, useUnlimitedThreads=false, threadCountSuites=0, threadCountClasses=0, threadCountMethods=0, parallelOptimized=true
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running de.is24.deadcode4j.analyzer.A_SpringNamespaceHandlerAnalyzer
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Testing de.is24.deadcode4j.analyzer.SpringNamespaceHandlerAnalyzer
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Testing de.is24.deadcode4j.analyzer.SpringNamespaceHandlerAnalyzer
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.417 sec - in de.is24.deadcode4j.analyzer.A_SpringNamespaceHandlerAnalyzer
+Running de.is24.deadcode4j.analyzer.An_XmlAnalyzer
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Testing de.is24.deadcode4j.analyzer.An_XmlAnalyzer$2 analyzing [.foo] files
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Testing de.is24.deadcode4j.analyzer.An_XmlAnalyzer$1 analyzing [.xml] files
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Testing de.is24.deadcode4j.analyzer.An_XmlAnalyzer$1 analyzing [.xml] files
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+SLF4J: No Maven Log set; using NOPLoggerFactory! Make sure to call StaticLoggerBinder.getSingleton().setLog(Log log)!
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.51 sec - in de.is24.deadcode4j.analyzer.An_XmlAnalyzer
+Running de.is24.guava.A_SequentialLoadingCacheTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in de.is24.guava.A_SequentialLoadingCacheTest
+Running de.is24.deadcode4j.analyzer.A_JerseyWebXmlAnalyzer
+Testing de.is24.deadcode4j.analyzer.JerseyWebXmlAnalyzer analyzing [web.xml] files
+[DEBUG] de.is24.deadcode4j.analyzer.JerseyWebXmlAnalyzer: Analyzing XML file [/home/travis/build/passed/Scout24/deadcode4j/target/test-classes/de/is24/deadcode4j/analyzer/jersey.web.xml]...
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_Jersey_] to [jersey.dummy.filter.Application].
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_Jersey_] to [jersey.dummy.servlet.Application].
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in de.is24.deadcode4j.analyzer.A_JerseyWebXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_SpringWebXmlAnalyzer
+Testing de.is24.deadcode4j.analyzer.SpringWebXmlAnalyzer analyzing [web.xml] files
+[DEBUG] de.is24.deadcode4j.analyzer.SpringWebXmlAnalyzer: Analyzing XML file [/home/travis/build/passed/Scout24/deadcode4j/target/test-classes/de/is24/deadcode4j/analyzer/spring.web.xml]...
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_Spring-Context_] to [root.contextClass].
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_Spring-ContextInitializer_] to [root.initializerClass].
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_Spring-ContextInitializer_] to [root.secondInitializerClass].
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_Spring-ContextInitializer_] to [SpringXmlBean].
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_Spring-Context_] to [servlet.contextClass].
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_Spring-ContextInitializer_] to [servlet.initializerClass].
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in de.is24.deadcode4j.analyzer.A_SpringWebXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer
+Testing de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1: Analyzing class [DeadServlet]...
+[DEBUG] de.is24.deadcode4j.analyzer.javassist.ClassPathFilter: Found those classes in the class path: [java.lang.Thread]
+Testing de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1: Analyzing class [SubClassThatShouldBeLive]...
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [junit] to [SubClassThatShouldBeLive].
+Testing de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$2
+[DEBUG] de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$2: Analyzing class [DeadServlet]...
+[DEBUG] de.is24.deadcode4j.analyzer.javassist.ClassPathFilter: Found those classes in the class path: [javax.servlet.http.HttpServlet, java.lang.Thread]
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [junit] to [DeadServlet].
+Testing de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$2
+[DEBUG] de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$2: Analyzing class [SubClassThatShouldBeLive]...
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [junit] to [SubClassThatShouldBeLive].
+Testing de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1: Analyzing class [SubClassOfSubClassThatShouldBeLive]...
+[DEBUG] de.is24.deadcode4j.analyzer.javassist.ClassPathFilter: Found those classes in the class path: [java.lang.Thread]
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [junit] to [SubClassOfSubClassThatShouldBeLive].
+Testing de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1: Analyzing class [A]...
+[DEBUG] de.is24.deadcode4j.analyzer.javassist.ClassPathFilter: Found those classes in the class path: [java.lang.Thread]
+Testing de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer$1: Analyzing class [B]...
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec - in de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer
+Running de.is24.deadcode4j.analyzer.A_WebXmlAnalyzer
+Testing de.is24.deadcode4j.analyzer.WebXmlAnalyzer analyzing [web.xml] files
+[DEBUG] de.is24.deadcode4j.analyzer.WebXmlAnalyzer: Analyzing XML file [/home/travis/build/passed/Scout24/deadcode4j/target/test-classes/web.xml]...
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_web.xml_] to [WebAppListener].
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_web.xml_] to [WebAppFilter].
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [_web.xml_] to [WebAppServlet].
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in de.is24.deadcode4j.analyzer.A_WebXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer
+Testing de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Analyzing class [SubClassOfAnnotatedClass]...
+[DEBUG] de.is24.deadcode4j.analyzer.javassist.ClassPathFilter: Found those classes in the class path: [de.is24.deadcode4j.junit.Annotation]
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Found those inheritable annotations: [de.is24.deadcode4j.junit.Annotation]
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [junit] to [SubClassOfAnnotatedClass].
+Testing de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Analyzing class [AnnotatedClass]...
+[DEBUG] de.is24.deadcode4j.analyzer.javassist.ClassPathFilter: Found those classes in the class path: [de.is24.deadcode4j.junit.Annotation]
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Found those inheritable annotations: [de.is24.deadcode4j.junit.Annotation]
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [junit] to [AnnotatedClass].
+Testing de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Analyzing class [DeadServlet]...
+Testing de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Analyzing class [ClassAnnotatedWithAnnotatedAnnotation]...
+[DEBUG] de.is24.deadcode4j.analyzer.javassist.ClassPathFilter: Found those classes in the class path: [de.is24.deadcode4j.junit.Annotation]
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Found those inheritable annotations: [de.is24.deadcode4j.junit.Annotation]
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [junit] to [ClassAnnotatedWithAnnotatedAnnotation].
+Testing de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$2
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$2: Analyzing class [AnnotatedClass]...
+[DEBUG] de.is24.deadcode4j.analyzer.javassist.ClassPathFilter: Found those classes in the class path: [de.is24.deadcode4j.junit.Annotation, java.lang.Deprecated]
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$2: Found those inheritable annotations: [de.is24.deadcode4j.junit.Annotation]
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [junit] to [AnnotatedClass].
+Testing de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$2
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$2: Analyzing class [DeadServlet]...
+[DEBUG] de.is24.deadcode4j.AnalysisContext: Added dependencies from [junit] to [DeadServlet].
+Testing de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Analyzing class [A]...
+[DEBUG] de.is24.deadcode4j.analyzer.javassist.ClassPathFilter: Found those classes in the class path: [de.is24.deadcode4j.junit.Annotation]
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Found those inheritable annotations: [de.is24.deadcode4j.junit.Annotation]
+Testing de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1
+[DEBUG] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer$1: Analyzing class [B]...
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec - in de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer
+Running de.is24.deadcode4j.analyzer.A_CustomAnnotationsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomAnnotationsAnalyzer
+Running de.is24.deadcode4j.analyzer.An_ExtendedXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_ExtendedXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.An_IgnoreClassesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_IgnoreClassesAnalyzer
+Running de.is24.deadcode4j.analyzer.A_TypeErasureAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_TypeErasureAnalyzer
+Running de.is24.deadcode4j.analyzer.javassist.A_CtClasses
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.javassist.A_CtClasses
+Running de.is24.javaparser.An_ImportDeclarations
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.javaparser.An_ImportDeclarations
+Running de.is24.deadcode4j.analyzer.A_MainClassAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_MainClassAnalyzer
+Running de.is24.deadcode4j.analyzer.A_CustomXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomXmlAnalyzer
+Running de.is24.javaparser.A_Nodes
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.javaparser.A_Nodes
+Running de.is24.deadcode4j.A_Utils
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_Utils
+Running de.is24.maven.slf4j.An_AbstractSlf4jMojo
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.maven.slf4j.An_AbstractSlf4jMojo
+Running de.is24.deadcode4j.plugin.A_UsageStatisticsManager
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.A_UsageStatisticsManager
+Running de.is24.deadcode4j.A_Module
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_Module
+Running de.is24.deadcode4j.analyzer.A_JavaFileAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_JavaFileAnalyzer
+Running de.is24.deadcode4j.plugin.A_ModuleGenerator
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.A_ModuleGenerator
+Running de.is24.deadcode4j.analyzer.A_SimpleXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SimpleXmlAnalyzer
+Running de.is24.deadcode4j.A_DeadCodeFinder
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_DeadCodeFinder
+Running de.is24.deadcode4j.A_DeadCodeComputer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_DeadCodeComputer
+Running de.is24.deadcode4j.analyzer.webxml.A_BaseWebXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.webxml.A_BaseWebXmlAnalyzer
+Running de.is24.deadcode4j.An_IntermediateResults
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.An_IntermediateResults
+Running de.is24.maven.An_UpdateChecker
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.maven.An_UpdateChecker
+Running de.is24.guava.A_NonNullFunctions
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.guava.A_NonNullFunctions
+Running de.is24.deadcode4j.A_Repository
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.A_Repository
+Running de.is24.deadcode4j.plugin.packaginghandler.A_PackagingHandler
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.packaginghandler.A_PackagingHandler
+Running de.is24.deadcode4j.analyzer.A_SpringXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SpringXmlAnalyzer
+Running de.is24.deadcode4j.plugin.A_DeadCodeLogger
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.plugin.A_DeadCodeLogger
+Running de.is24.deadcode4j.analyzer.An_InterfacesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.An_InterfacesAnalyzer
+Running de.is24.deadcode4j.analyzer.A_LogbackXmlAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_LogbackXmlAnalyzer
+Running de.is24.deadcode4j.analyzer.A_TldAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_TldAnalyzer
+Running de.is24.deadcode4j.An_IntermediateResultSet
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.An_IntermediateResultSet
+Running de.is24.deadcode4j.analyzer.A_SpringDataCustomRepositoriesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_SpringDataCustomRepositoriesAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ServletContainerInitializerAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ServletContainerInitializerAnalyzer
+Running de.is24.maven.slf4j.A_LoggerForMavenLog
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in de.is24.maven.slf4j.A_LoggerForMavenLog
+Running de.is24.deadcode4j.analyzer.A_CustomSuperClassAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomSuperClassAnalyzer
+Running de.is24.deadcode4j.An_IntermediateResultMap
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.An_IntermediateResultMap
+Running de.is24.deadcode4j.analyzer.A_ByteCodeAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ByteCodeAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ReferenceToConstantsAnalyzer
+Testing de.is24.deadcode4j.analyzer.ReferenceToConstantsAnalyzer
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ReferenceToConstantsAnalyzer
+Running de.is24.deadcode4j.analyzer.A_HibernateAnnotationsAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_HibernateAnnotationsAnalyzer
+Running de.is24.deadcode4j.analyzer.A_ClassDependencyAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_ClassDependencyAnalyzer
+Running de.is24.deadcode4j.analyzer.A_CustomInterfacesAnalyzer
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in de.is24.deadcode4j.analyzer.A_CustomInterfacesAnalyzer
+
+Results :
+
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:20 min
+[INFO] Finished at: 2022-07-09T16:46:58+00:00
+[INFO] Final Memory: 39M/1128M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.17:test (default-test) on project deadcode4j-maven-plugin: Execution default-test of goal org.apache.maven.plugins:maven-surefire-plugin:2.17:test failed: There was an error in the forked process
+[ERROR] org.apache.maven.surefire.testset.TestSetFailedException: The test run has finished abruptly after timeout of 8.0 seconds.
+[ERROR] These tests were executed in prior of the shutdown operation:
+[ERROR] de.is24.deadcode4j.analyzer.A_JerseyWebXmlAnalyzer
+[ERROR] de.is24.deadcode4j.analyzer.A_SpringWebXmlAnalyzer
+[ERROR] de.is24.deadcode4j.analyzer.A_SuperClassAnalyzer
+[ERROR] de.is24.deadcode4j.analyzer.A_WebXmlAnalyzer
+[ERROR] de.is24.deadcode4j.analyzer.An_AnnotationsAnalyzer
+[ERROR] de.is24.guava.A_SequentialLoadingCacheTest
+[ERROR] de.is24.maven.slf4j.A_LoggerForMavenLog
+[ERROR] null
+[ERROR] 
+[ERROR] at org.apache.maven.surefire.junitcore.JUnitCoreWrapper.execute(JUnitCoreWrapper.java:66)
+[ERROR] at org.apache.maven.surefire.junitcore.JUnitCoreProvider.invoke(JUnitCoreProvider.java:134)
+[ERROR] at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+[ERROR] at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+[ERROR] at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+travis_time:end:0ad1238a:start=1657385136281232482,finish=1657385218556839370,duration=82275606888,event=script[0K[31;1mThe command "mvn -o -Dhttps.protocols=TLSv1.2 -B -o clean verify -PenableCoverage,travis" exited with 1.[0m
+travis_fold:start:before_cache[0Ktravis_time:start:002a0c7e[0K$ rm -rf $HOME/.m2/repository/de/is24/mavenplugins/deadcode4j-maven-plugin/
+travis_time:end:002a0c7e:start=1657385218561155198,finish=1657385218564749271,duration=3594073,event=before_cache[0Ktravis_fold:end:before_cache[0Ktravis_fold:start:cache.2[0Kstore build cache
+travis_time:start:0033e4c9[0Ktravis_time:end:0033e4c9:start=1657385218568547571,finish=1657385218571339417,duration=2791846,event=cache[0Ktravis_time:start:162238d0[0KYAML safe loading is not available. Please upgrade psych to a version that supports safe loading (>= 2.0).
+[32;1mchanges detected, packing new archive[0m
+[32;1muploading /[0m
+[31;1mfailed to upload cache[0m
+travis_time:end:162238d0:start=1657385218575110462,finish=1657385219596563703,duration=1021453241,event=cache[0Ktravis_fold:end:cache.2[0K
+
+Done. Your build exited with 1.
