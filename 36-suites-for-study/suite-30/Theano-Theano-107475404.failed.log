@@ -1,0 +1,1517 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: python
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+grep: /etc/apt/sources.list.d/*: No such file or directory
+sed: cannot rename /etc/hosts: Device or resource busy
+sed: cannot rename /etc/hosts: Device or resource busy
+$ cd failed/Theano/Theano
+travis_fold:start:apt[0K[33;1mInstalling APT Packages (BETA)[0m
+$ export DEBIAN_FRONTEND=noninteractive
+travis_time:start:0fc8bb84[0K$ sudo -E apt-get -yq update &>> ~/apt-get-update.log
+
+travis_time:end:0fc8bb84:start=1614451158071713210,finish=1614451162598906218,duration=4527193008[0Ktravis_time:start:0481a2ad[0K$ sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended dvipng
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  ed libkpathsea5 luatex preview-latex-style tex-common texlive-base
+  texlive-binaries texlive-common texlive-doc-base texlive-latex-base
+  texlive-pictures
+Suggested packages:
+  perl-tk xpdf-reader pdf-viewer texpower dot2tex
+Recommended packages:
+  texlive-luatex doc-base lmodern texlive-fonts-recommended-doc tipa
+  texlive-latex-base-doc texlive-latex-extra-doc texlive-latex-recommended-doc
+  prosper latex-beamer latex-xcolor texlive-pictures-doc pgf
+The following NEW packages will be installed:
+  dvipng ed libkpathsea5 luatex preview-latex-style tex-common texlive-base
+  texlive-binaries texlive-common texlive-doc-base texlive-fonts-recommended
+  texlive-latex-base texlive-latex-extra texlive-latex-recommended
+  texlive-pictures
+0 upgraded, 15 newly installed, 0 to remove and 238 not upgraded.
+Need to get 48.6 MB of archives.
+After this operation, 129 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ precise/main ed amd64 1.5-3 [57.9 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ precise/main libkpathsea5 amd64 2009-11ubuntu2 [56.7 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ precise/main tex-common all 2.10 [709 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu/ precise/main texlive-common all 2009-15 [94.4 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu/ precise/main texlive-binaries amd64 2009-11ubuntu2 [8,054 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu/ precise/main dvipng amd64 1.14-1 [80.6 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu/ precise/main luatex amd64 0.70.1-1ubuntu1 [2,458 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu/ precise/main preview-latex-style all 11.86-2ubuntu1 [108 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu/ precise/main texlive-doc-base all 2009-2 [1,339 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu/ precise/main texlive-base all 2009-15 [14.7 MB]
+Get:11 http://us.archive.ubuntu.com/ubuntu/ precise/main texlive-fonts-recommended all 2009-15 [7,247 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu/ precise/main texlive-latex-base all 2009-15 [1,406 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu/ precise/main texlive-pictures all 2009-15 [856 kB]
+Get:14 http://us.archive.ubuntu.com/ubuntu/ precise/main texlive-latex-extra all 2009-10ubuntu1 [4,717 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu/ precise/main texlive-latex-recommended all 2009-15 [6,752 kB]
+Preconfiguring packages ...
+Fetched 48.6 MB in 1s (24.9 MB/s)
+Selecting previously unselected package ed.
+(Reading database ... 72431 files and directories currently installed.)
+Unpacking ed (from .../archives/ed_1.5-3_amd64.deb) ...
+Selecting previously unselected package libkpathsea5.
+Unpacking libkpathsea5 (from .../libkpathsea5_2009-11ubuntu2_amd64.deb) ...
+Selecting previously unselected package tex-common.
+Unpacking tex-common (from .../tex-common_2.10_all.deb) ...
+Selecting previously unselected package texlive-common.
+Unpacking texlive-common (from .../texlive-common_2009-15_all.deb) ...
+Selecting previously unselected package texlive-binaries.
+Unpacking texlive-binaries (from .../texlive-binaries_2009-11ubuntu2_amd64.deb) ...
+Selecting previously unselected package dvipng.
+Unpacking dvipng (from .../dvipng_1.14-1_amd64.deb) ...
+Selecting previously unselected package luatex.
+Unpacking luatex (from .../luatex_0.70.1-1ubuntu1_amd64.deb) ...
+Selecting previously unselected package preview-latex-style.
+Unpacking preview-latex-style (from .../preview-latex-style_11.86-2ubuntu1_all.deb) ...
+Selecting previously unselected package texlive-doc-base.
+Unpacking texlive-doc-base (from .../texlive-doc-base_2009-2_all.deb) ...
+Selecting previously unselected package texlive-base.
+Unpacking texlive-base (from .../texlive-base_2009-15_all.deb) ...
+Selecting previously unselected package texlive-fonts-recommended.
+Unpacking texlive-fonts-recommended (from .../texlive-fonts-recommended_2009-15_all.deb) ...
+Selecting previously unselected package texlive-latex-base.
+Unpacking texlive-latex-base (from .../texlive-latex-base_2009-15_all.deb) ...
+Selecting previously unselected package texlive-pictures.
+Unpacking texlive-pictures (from .../texlive-pictures_2009-15_all.deb) ...
+Selecting previously unselected package texlive-latex-extra.
+Unpacking texlive-latex-extra (from .../texlive-latex-extra_2009-10ubuntu1_all.deb) ...
+Selecting previously unselected package texlive-latex-recommended.
+Unpacking texlive-latex-recommended (from .../texlive-latex-recommended_2009-15_all.deb) ...
+Processing triggers for man-db ...
+Setting up ed (1.5-3) ...
+Setting up libkpathsea5 (2009-11ubuntu2) ...
+Setting up tex-common (2.10) ...
+
+Creating config file /etc/texmf/texmf.d/05TeXMF.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/15Plain.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/45TeXinputs.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/55Fonts.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/65BibTeX.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/75DviPS.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/80DVIPDFMx.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/85Misc.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/90TeXDoc.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/95NonPath.cnf with new version
+
+Creating config file /etc/texmf/updmap.d/00updmap.cfg with new version
+
+Creating config file /etc/texmf/texmf.cnf with new version
+Running mktexlsr. This may take some time... done.
+texlive-base is not ready, delaying updmap-sys call
+texlive-base is not ready, skipping fmtutil-sys --all call
+Setting up texlive-common (2009-15) ...
+Setting up texlive-binaries (2009-11ubuntu2) ...
+update-alternatives: using /usr/bin/xdvi-xaw to provide /usr/bin/xdvi.bin (xdvi.bin) in auto mode.
+update-alternatives: using /usr/bin/bibtex.original to provide /usr/bin/bibtex (bibtex) in auto mode.
+Building format(s) --refresh.
+	This may take some time... done.
+Setting up dvipng (1.14-1) ...
+Setting up luatex (0.70.1-1ubuntu1) ...
+texlive-base is not ready, cannot create formats
+Setting up preview-latex-style (11.86-2ubuntu1) ...
+Setting up texlive-doc-base (2009-2) ...
+Processing triggers for tex-common ...
+Running mktexlsr. This may take some time... done.
+Setting up texlive-base (2009-15) ...
+
+Creating config file /etc/texmf/dvips/config/config.ps with new version
+
+Creating config file /etc/texmf/tex/generic/config/pdftexconfig.tex with new version
+
+Creating config file /etc/texmf/dvipdfmx/dvipdfmx.cfg with new version
+
+Creating config file /etc/texmf/xdvi/XDvi with new version
+Replacing config file /etc/texmf/dvips/config/config.ps with new version
+Replacing config file /etc/texmf/dvipdfmx/dvipdfmx.cfg with new version
+Replacing config file /etc/texmf/xdvi/XDvi with new version
+Replacing config file /etc/texmf/tex/generic/config/pdftexconfig.tex with new version
+pdftex paper size has changed, refreshing formats
+fmtutil: no format depends on engine `pdftex'.
+Running mktexlsr. This may take some time... done.
+Building format(s) --all --cnffile /etc/texmf/fmt.d/10texlive-base.cnf.
+	This may take some time... done.
+Processing triggers for tex-common ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Building e-tex based formats --byhyphen /var/lib/texmf/tex/generic/config/language.def.
+	This may take some time... done.
+Setting up texlive-pictures (2009-15) ...
+Setting up texlive-fonts-recommended (2009-15) ...
+Setting up texlive-latex-base (2009-15) ...
+Running mktexlsr. This may take some time... done.
+Building format(s) --all --cnffile /etc/texmf/fmt.d/10texlive-latex-base.cnf.
+	This may take some time... done.
+Processing triggers for tex-common ...
+Running mktexlsr. This may take some time... done.
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Setting up texlive-latex-extra (2009-10ubuntu1) ...
+Setting up texlive-latex-recommended (2009-15) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+Processing triggers for tex-common ...
+Running mktexlsr. This may take some time... done.
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+
+travis_time:end:0481a2ad:start=1614451162610643560,finish=1614451217230103410,duration=54619459850[0Ktravis_fold:end:apt[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export PART="theano/tests/test_flake8.py"
+$ export DOC=1
+
+travis_time:start:12f64154[0K$ source ~/virtualenv/python3.3/bin/activate
+
+travis_time:end:12f64154:start=1614451217663971274,finish=1614451217674705250,duration=10733976[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:327f1dba[0K$ Installing caching utilities
+
+travis_time:end:327f1dba:start=1614451218100640671,finish=1614451218162619703,duration=61979032[0Ktravis_time:start:1106b140[0K
+travis_time:end:1106b140:start=1614451218177798303,finish=1614451218187918550,duration=10120247[0Ktravis_time:start:13898962[0K/home/travis/.casher/bin/casher:213:in `cache_archive_name': undefined method `[]' for nil:NilClass (NoMethodError)
+	from /home/travis/.casher/bin/casher:65:in `block in fetch'
+	from /home/travis/.casher/bin/casher:64:in `each'
+	from /home/travis/.casher/bin/casher:64:in `fetch'
+	from /home/travis/.casher/bin/casher:53:in `block in run'
+	from /home/travis/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/timeout.rb:69:in `timeout'
+	from /home/travis/.casher/bin/casher:53:in `run'
+	from /home/travis/.casher/bin/casher:263:in `<main>'
+[32;1mattempting to download cache archive[0m
+
+travis_time:end:13898962:start=1614451218199872145,finish=1614451219035639054,duration=835766909[0Ktravis_time:start:00f4ba20[0K
+travis_time:end:00f4ba20:start=1614451219045296344,finish=1614451219054403581,duration=9107237[0Ktravis_time:start:19365dd1[0K[32;1madding /home/travis/download to cache[0m
+[32;1mcreating directory /home/travis/download[0m
+[32;1madding /home/travis/.cache/pip to cache[0m
+
+travis_time:end:19365dd1:start=1614451219064831048,finish=1614451219881874782,duration=817043734[0Ktravis_fold:end:cache.1[0K$ python --version
+Python 3.3.5
+$ pip --version
+pip 6.0.7 from /home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages (python 3.3)
+travis_fold:start:before_install.1[0Ktravis_time:start:21419148[0K$ mkdir -p download
+
+travis_time:end:21419148:start=1614451220977534739,finish=1614451220988751644,duration=11216905[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:19b61aa6[0K$ cd download
+
+travis_time:end:19b61aa6:start=1614451220999202186,finish=1614451221007330251,duration=8128065[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:before_install.3[0Ktravis_time:start:0f7690d8[0K$ wget -c http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+--2021-02-27 18:40:21--  http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
+Resolving repo.continuum.io (repo.continuum.io)... 104.18.200.79, 104.18.201.79, 2606:4700::6812:c94f, ...
+Connecting to repo.continuum.io (repo.continuum.io)|104.18.200.79|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://repo.anaconda.com/miniconda/Miniconda-latest-Linux-x86_64.sh [following]
+--2021-02-27 18:40:21--  https://repo.anaconda.com/miniconda/Miniconda-latest-Linux-x86_64.sh
+Resolving repo.anaconda.com (repo.anaconda.com)... 104.16.131.3, 104.16.130.3, 2606:4700::6810:8303, ...
+Connecting to repo.anaconda.com (repo.anaconda.com)|104.16.131.3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 27208383 (26M) [application/x-sh]
+Saving to: `miniconda.sh'
+
+     0K .......... .......... .......... .......... ..........  0% 9.99M 3s
+    50K .......... .......... .......... .......... ..........  0% 9.38M 3s
+   100K .......... .......... .......... .......... ..........  0% 29.0M 2s
+   150K .......... .......... .......... .......... ..........  0% 12.0M 2s
+   200K .......... .......... .......... .......... ..........  0% 23.5M 2s
+   250K .......... .......... .......... .......... ..........  1% 43.1M 2s
+   300K .......... .......... .......... .......... ..........  1% 47.6M 2s
+   350K .......... .......... .......... .......... ..........  1% 32.9M 1s
+   400K .......... .......... .......... .......... ..........  1% 52.2M 1s
+   450K .......... .......... .......... .......... ..........  1%  120M 1s
+   500K .......... .......... .......... .......... ..........  2% 52.0M 1s
+   550K .......... .......... .......... .......... ..........  2% 41.0M 1s
+   600K .......... .......... .......... .......... ..........  2% 45.8M 1s
+   650K .......... .......... .......... .......... ..........  2% 40.6M 1s
+   700K .......... .......... .......... .......... ..........  2%  121M 1s
+   750K .......... .......... .......... .......... ..........  3% 98.5M 1s
+   800K .......... .......... .......... .......... ..........  3%  127M 1s
+   850K .......... .......... .......... .......... ..........  3%  120M 1s
+   900K .......... .......... .......... .......... ..........  3%  108M 1s
+   950K .......... .......... .......... .......... ..........  3% 95.1M 1s
+  1000K .......... .......... .......... .......... ..........  3%  116M 1s
+  1050K .......... .......... .......... .......... ..........  4%  128M 1s
+  1100K .......... .......... .......... .......... ..........  4%  114M 1s
+  1150K .......... .......... .......... .......... ..........  4%  108M 1s
+  1200K .......... .......... .......... .......... ..........  4%  127M 1s
+  1250K .......... .......... .......... .......... ..........  4%  107M 1s
+  1300K .......... .......... .......... .......... ..........  5%  113M 1s
+  1350K .......... .......... .......... .......... ..........  5% 95.7M 1s
+  1400K .......... .......... .......... .......... ..........  5%  112M 1s
+  1450K .......... .......... .......... .......... ..........  5%  130M 1s
+  1500K .......... .......... .......... .......... ..........  5%  112M 1s
+  1550K .......... .......... .......... .......... ..........  6%  101M 1s
+  1600K .......... .......... .......... .......... ..........  6%  131M 1s
+  1650K .......... .......... .......... .......... ..........  6%  119M 1s
+  1700K .......... .......... .......... .......... ..........  6%  121M 1s
+  1750K .......... .......... .......... .......... ..........  6% 79.6M 1s
+  1800K .......... .......... .......... .......... ..........  6%  121M 0s
+  1850K .......... .......... .......... .......... ..........  7%  123M 0s
+  1900K .......... .......... .......... .......... ..........  7% 97.5M 0s
+  1950K .......... .......... .......... .......... ..........  7%  110M 0s
+  2000K .......... .......... .......... .......... ..........  7%  121M 0s
+  2050K .......... .......... .......... .......... ..........  7%  121M 0s
+  2100K .......... .......... .......... .......... ..........  8% 98.4M 0s
+  2150K .......... .......... .......... .......... ..........  8% 95.3M 0s
+  2200K .......... .......... .......... .......... ..........  8%  125M 0s
+  2250K .......... .......... .......... .......... ..........  8%  113M 0s
+  2300K .......... .......... .......... .......... ..........  8%  113M 0s
+  2350K .......... .......... .......... .......... ..........  9%  118M 0s
+  2400K .......... .......... .......... .......... ..........  9%  114M 0s
+  2450K .......... .......... .......... .......... ..........  9%  108M 0s
+  2500K .......... .......... .......... .......... ..........  9%  141M 0s
+  2550K .......... .......... .......... .......... ..........  9% 84.9M 0s
+  2600K .......... .......... .......... .......... ..........  9%  129M 0s
+  2650K .......... .......... .......... .......... .......... 10%  113M 0s
+  2700K .......... .......... .......... .......... .......... 10%  123M 0s
+  2750K .......... .......... .......... .......... .......... 10%  112M 0s
+  2800K .......... .......... .......... .......... .......... 10%  110M 0s
+  2850K .......... .......... .......... .......... .......... 10%  113M 0s
+  2900K .......... .......... .......... .......... .......... 11%  129M 0s
+  2950K .......... .......... .......... .......... .......... 11% 84.2M 0s
+  3000K .......... .......... .......... .......... .......... 11%  129M 0s
+  3050K .......... .......... .......... .......... .......... 11%  114M 0s
+  3100K .......... .......... .......... .......... .......... 11%  112M 0s
+  3150K .......... .......... .......... .......... .......... 12%  118M 0s
+  3200K .......... .......... .......... .......... .......... 12%  118M 0s
+  3250K .......... .......... .......... .......... .......... 12%  112M 0s
+  3300K .......... .......... .......... .......... .......... 12%  129M 0s
+  3350K .......... .......... .......... .......... .......... 12% 84.4M 0s
+  3400K .......... .......... .......... .......... .......... 12%  129M 0s
+  3450K .......... .......... .......... .......... .......... 13%  118M 0s
+  3500K .......... .......... .......... .......... .......... 13%  121M 0s
+  3550K .......... .......... .......... .......... .......... 13% 94.0M 0s
+  3600K .......... .......... .......... .......... .......... 13%  118M 0s
+  3650K .......... .......... .......... .......... .......... 13%  118M 0s
+  3700K .......... .......... .......... .......... .......... 14% 99.3M 0s
+  3750K .......... .......... .......... .......... .......... 14% 85.8M 0s
+  3800K .......... .......... .......... .......... .......... 14%  121M 0s
+  3850K .......... .......... .......... .......... .......... 14%  121M 0s
+  3900K .......... .......... .......... .......... .......... 14%  109M 0s
+  3950K .......... .......... .......... .......... .......... 15%  116M 0s
+  4000K .......... .......... .......... .......... .......... 15%  114M 0s
+  4050K .......... .......... .......... .......... .......... 15%  100M 0s
+  4100K .......... .......... .......... .......... .......... 15%  129M 0s
+  4150K .......... .......... .......... .......... .......... 15% 93.8M 0s
+  4200K .......... .......... .......... .......... .......... 15%  112M 0s
+  4250K .......... .......... .......... .......... .......... 16%  111M 0s
+  4300K .......... .......... .......... .......... .......... 16%  133M 0s
+  4350K .......... .......... .......... .......... .......... 16%  107M 0s
+  4400K .......... .......... .......... .......... .......... 16%  108M 0s
+  4450K .......... .......... .......... .......... .......... 16%  118M 0s
+  4500K .......... .......... .......... .......... .......... 17%  125M 0s
+  4550K .......... .......... .......... .......... .......... 17% 95.2M 0s
+  4600K .......... .......... .......... .......... .......... 17%  110M 0s
+  4650K .......... .......... .......... .......... .......... 17%  125M 0s
+  4700K .......... .......... .......... .......... .......... 17%  115M 0s
+  4750K .......... .......... .......... .......... .......... 18%  108M 0s
+  4800K .......... .......... .......... .......... .......... 18%  113M 0s
+  4850K .......... .......... .......... .......... .......... 18%  128M 0s
+  4900K .......... .......... .......... .......... .......... 18%  114M 0s
+  4950K .......... .......... .......... .......... .......... 18% 84.4M 0s
+  5000K .......... .......... .......... .......... .......... 19%  128M 0s
+  5050K .......... .......... .......... .......... .......... 19%  112M 0s
+  5100K .......... .......... .......... .......... .......... 19%  113M 0s
+  5150K .......... .......... .......... .......... .......... 19%  122M 0s
+  5200K .......... .......... .......... .......... .......... 19%  114M 0s
+  5250K .......... .......... .......... .......... .......... 19%  110M 0s
+  5300K .......... .......... .......... .......... .......... 20%  109M 0s
+  5350K .......... .......... .......... .......... .......... 20% 85.0M 0s
+  5400K .......... .......... .......... .......... .......... 20%  121M 0s
+  5450K .......... .......... .......... .......... .......... 20%  109M 0s
+  5500K .......... .......... .......... .......... .......... 20%  108M 0s
+  5550K .......... .......... .......... .......... .......... 21%  101M 0s
+  5600K .......... .......... .......... .......... .......... 21%  122M 0s
+  5650K .......... .......... .......... .......... .......... 21%  110M 0s
+  5700K .......... .......... .......... .......... .......... 21%  107M 0s
+  5750K .......... .......... .......... .......... .......... 21% 93.7M 0s
+  5800K .......... .......... .......... .......... .......... 22% 99.6M 0s
+  5850K .......... .......... .......... .......... .......... 22%  129M 0s
+  5900K .......... .......... .......... .......... .......... 22%  112M 0s
+  5950K .......... .......... .......... .......... .......... 22% 90.4M 0s
+  6000K .......... .......... .......... .......... .......... 22%  142M 0s
+  6050K .......... .......... .......... .......... .......... 22%  105M 0s
+  6100K .......... .......... .......... .......... .......... 23%  123M 0s
+  6150K .......... .......... .......... .......... .......... 23% 58.8M 0s
+  6200K .......... .......... .......... .......... .......... 23% 80.4M 0s
+  6250K .......... .......... .......... .......... .......... 23% 94.6M 0s
+  6300K .......... .......... .......... .......... .......... 23%  134M 0s
+  6350K .......... .......... .......... .......... .......... 24%  114M 0s
+  6400K .......... .......... .......... .......... .......... 24%  130M 0s
+  6450K .......... .......... .......... .......... .......... 24%  126M 0s
+  6500K .......... .......... .......... .......... .......... 24%  118M 0s
+  6550K .......... .......... .......... .......... .......... 24%  103M 0s
+  6600K .......... .......... .......... .......... .......... 25%  124M 0s
+  6650K .......... .......... .......... .......... .......... 25%  125M 0s
+  6700K .......... .......... .......... .......... .......... 25%  126M 0s
+  6750K .......... .......... .......... .......... .......... 25%  118M 0s
+  6800K .......... .......... .......... .......... .......... 25%  130M 0s
+  6850K .......... .......... .......... .......... .......... 25%  130M 0s
+  6900K .......... .......... .......... .......... .......... 26%  135M 0s
+  6950K .......... .......... .......... .......... .......... 26% 97.9M 0s
+  7000K .......... .......... .......... .......... .......... 26%  129M 0s
+  7050K .......... .......... .......... .......... .......... 26%  112M 0s
+  7100K .......... .......... .......... .......... .......... 26% 75.7M 0s
+  7150K .......... .......... .......... .......... .......... 27% 76.9M 0s
+  7200K .......... .......... .......... .......... .......... 27%  123M 0s
+  7250K .......... .......... .......... .......... .......... 27%  136M 0s
+  7300K .......... .......... .......... .......... .......... 27%  138M 0s
+  7350K .......... .......... .......... .......... .......... 27%  110M 0s
+  7400K .......... .......... .......... .......... .......... 28% 65.5M 0s
+  7450K .......... .......... .......... .......... .......... 28% 65.2M 0s
+  7500K .......... .......... .......... .......... .......... 28% 87.7M 0s
+  7550K .......... .......... .......... .......... .......... 28%  101M 0s
+  7600K .......... .......... .......... .......... .......... 28%  107M 0s
+  7650K .......... .......... .......... .......... .......... 28%  105M 0s
+  7700K .......... .......... .......... .......... .......... 29%  108M 0s
+  7750K .......... .......... .......... .......... .......... 29% 85.6M 0s
+  7800K .......... .......... .......... .......... .......... 29%  106M 0s
+  7850K .......... .......... .......... .......... .......... 29%  108M 0s
+  7900K .......... .......... .......... .......... .......... 29%  109M 0s
+  7950K .......... .......... .......... .......... .......... 30% 92.7M 0s
+  8000K .......... .......... .......... .......... .......... 30%  106M 0s
+  8050K .......... .......... .......... .......... .......... 30%  127M 0s
+  8100K .......... .......... .......... .......... .......... 30%  160M 0s
+  8150K .......... .......... .......... .......... .......... 30%  126M 0s
+  8200K .......... .......... .......... .......... .......... 31%  159M 0s
+  8250K .......... .......... .......... .......... .......... 31%  158M 0s
+  8300K .......... .......... .......... .......... .......... 31%  157M 0s
+  8350K .......... .......... .......... .......... .......... 31%  141M 0s
+  8400K .......... .......... .......... .......... .......... 31%  153M 0s
+  8450K .......... .......... .......... .......... .......... 31%  151M 0s
+  8500K .......... .......... .......... .......... .......... 32%  135M 0s
+  8550K .......... .......... .......... .......... .......... 32% 79.7M 0s
+  8600K .......... .......... .......... .......... .......... 32%  112M 0s
+  8650K .......... .......... .......... .......... .......... 32%  144M 0s
+  8700K .......... .......... .......... .......... .......... 32%  122M 0s
+  8750K .......... .......... .......... .......... .......... 33%  113M 0s
+  8800K .......... .......... .......... .......... .......... 33%  127M 0s
+  8850K .......... .......... .......... .......... .......... 33% 95.6M 0s
+  8900K .......... .......... .......... .......... .......... 33%  111M 0s
+  8950K .......... .......... .......... .......... .......... 33%  103M 0s
+  9000K .......... .......... .......... .......... .......... 34% 87.4M 0s
+  9050K .......... .......... .......... .......... .......... 34%  107M 0s
+  9100K .......... .......... .......... .......... .......... 34%  109M 0s
+  9150K .......... .......... .......... .......... .......... 34%  122M 0s
+  9200K .......... .......... .......... .......... .......... 34%  137M 0s
+  9250K .......... .......... .......... .......... .......... 35%  103M 0s
+  9300K .......... .......... .......... .......... .......... 35% 80.7M 0s
+  9350K .......... .......... .......... .......... .......... 35% 64.5M 0s
+  9400K .......... .......... .......... .......... .......... 35%  110M 0s
+  9450K .......... .......... .......... .......... .......... 35%  114M 0s
+  9500K .......... .......... .......... .......... .......... 35%  109M 0s
+  9550K .......... .......... .......... .......... .......... 36%  102M 0s
+  9600K .......... .......... .......... .......... .......... 36%  104M 0s
+  9650K .......... .......... .......... .......... .......... 36%  115M 0s
+  9700K .......... .......... .......... .......... .......... 36%  104M 0s
+  9750K .......... .......... .......... .......... .......... 36% 88.8M 0s
+  9800K .......... .......... .......... .......... .......... 37%  109M 0s
+  9850K .......... .......... .......... .......... .......... 37%  116M 0s
+  9900K .......... .......... .......... .......... .......... 37%  125M 0s
+  9950K .......... .......... .......... .......... .......... 37% 99.1M 0s
+ 10000K .......... .......... .......... .......... .......... 37%  155M 0s
+ 10050K .......... .......... .......... .......... .......... 38%  145M 0s
+ 10100K .......... .......... .......... .......... .......... 38%  157M 0s
+ 10150K .......... .......... .......... .......... .......... 38%  142M 0s
+ 10200K .......... .......... .......... .......... .......... 38%  158M 0s
+ 10250K .......... .......... .......... .......... .......... 38% 84.0M 0s
+ 10300K .......... .......... .......... .......... .......... 38%  137M 0s
+ 10350K .......... .......... .......... .......... .......... 39% 95.9M 0s
+ 10400K .......... .......... .......... .......... .......... 39%  102M 0s
+ 10450K .......... .......... .......... .......... .......... 39%  116M 0s
+ 10500K .......... .......... .......... .......... .......... 39%  127M 0s
+ 10550K .......... .......... .......... .......... .......... 39%  111M 0s
+ 10600K .......... .......... .......... .......... .......... 40%  119M 0s
+ 10650K .......... .......... .......... .......... .......... 40%  127M 0s
+ 10700K .......... .......... .......... .......... .......... 40%  114M 0s
+ 10750K .......... .......... .......... .......... .......... 40%  112M 0s
+ 10800K .......... .......... .......... .......... .......... 40%  122M 0s
+ 10850K .......... .......... .......... .......... .......... 41% 84.5M 0s
+ 10900K .......... .......... .......... .......... .......... 41% 83.4M 0s
+ 10950K .......... .......... .......... .......... .......... 41% 63.8M 0s
+ 11000K .......... .......... .......... .......... .......... 41% 92.0M 0s
+ 11050K .......... .......... .......... .......... .......... 41%  133M 0s
+ 11100K .......... .......... .......... .......... .......... 41%  130M 0s
+ 11150K .......... .......... .......... .......... .......... 42%  112M 0s
+ 11200K .......... .......... .......... .......... .......... 42%  125M 0s
+ 11250K .......... .......... .......... .......... .......... 42%  125M 0s
+ 11300K .......... .......... .......... .......... .......... 42%  118M 0s
+ 11350K .......... .......... .......... .......... .......... 42%  102M 0s
+ 11400K .......... .......... .......... .......... .......... 43%  124M 0s
+ 11450K .......... .......... .......... .......... .......... 43%  122M 0s
+ 11500K .......... .......... .......... .......... .......... 43%  123M 0s
+ 11550K .......... .......... .......... .......... .......... 43%  116M 0s
+ 11600K .......... .......... .......... .......... .......... 43% 69.7M 0s
+ 11650K .......... .......... .......... .......... .......... 44%  106M 0s
+ 11700K .......... .......... .......... .......... .......... 44%  131M 0s
+ 11750K .......... .......... .......... .......... .......... 44% 94.6M 0s
+ 11800K .......... .......... .......... .......... .......... 44%  114M 0s
+ 11850K .......... .......... .......... .......... .......... 44% 93.0M 0s
+ 11900K .......... .......... .......... .......... .......... 44%  102M 0s
+ 11950K .......... .......... .......... .......... .......... 45%  116M 0s
+ 12000K .......... .......... .......... .......... .......... 45%  133M 0s
+ 12050K .......... .......... .......... .......... .......... 45%  116M 0s
+ 12100K .......... .......... .......... .......... .......... 45%  110M 0s
+ 12150K .......... .......... .......... .......... .......... 45% 95.5M 0s
+ 12200K .......... .......... .......... .......... .......... 46% 95.7M 0s
+ 12250K .......... .......... .......... .......... .......... 46% 97.4M 0s
+ 12300K .......... .......... .......... .......... .......... 46% 95.4M 0s
+ 12350K .......... .......... .......... .......... .......... 46%  127M 0s
+ 12400K .......... .......... .......... .......... .......... 46%  144M 0s
+ 12450K .......... .......... .......... .......... .......... 47%  135M 0s
+ 12500K .......... .......... .......... .......... .......... 47%  135M 0s
+ 12550K .......... .......... .......... .......... .......... 47% 90.0M 0s
+ 12600K .......... .......... .......... .......... .......... 47%  119M 0s
+ 12650K .......... .......... .......... .......... .......... 47%  121M 0s
+ 12700K .......... .......... .......... .......... .......... 47% 96.6M 0s
+ 12750K .......... .......... .......... .......... .......... 48% 68.5M 0s
+ 12800K .......... .......... .......... .......... .......... 48%  103M 0s
+ 12850K .......... .......... .......... .......... .......... 48%  131M 0s
+ 12900K .......... .......... .......... .......... .......... 48%  129M 0s
+ 12950K .......... .......... .......... .......... .......... 48%  103M 0s
+ 13000K .......... .......... .......... .......... .......... 49%  128M 0s
+ 13050K .......... .......... .......... .......... .......... 49%  129M 0s
+ 13100K .......... .......... .......... .......... .......... 49%  106M 0s
+ 13150K .......... .......... .......... .......... .......... 49% 99.9M 0s
+ 13200K .......... .......... .......... .......... .......... 49%  139M 0s
+ 13250K .......... .......... .......... .......... .......... 50%  142M 0s
+ 13300K .......... .......... .......... .......... .......... 50%  108M 0s
+ 13350K .......... .......... .......... .......... .......... 50% 92.3M 0s
+ 13400K .......... .......... .......... .......... .......... 50% 81.3M 0s
+ 13450K .......... .......... .......... .......... .......... 50% 99.2M 0s
+ 13500K .......... .......... .......... .......... .......... 50% 95.3M 0s
+ 13550K .......... .......... .......... .......... .......... 51% 88.1M 0s
+ 13600K .......... .......... .......... .......... .......... 51% 94.0M 0s
+ 13650K .......... .......... .......... .......... .......... 51%  131M 0s
+ 13700K .......... .......... .......... .......... .......... 51% 91.5M 0s
+ 13750K .......... .......... .......... .......... .......... 51% 85.5M 0s
+ 13800K .......... .......... .......... .......... .......... 52%  132M 0s
+ 13850K .......... .......... .......... .......... .......... 52%  102M 0s
+ 13900K .......... .......... .......... .......... .......... 52%  102M 0s
+ 13950K .......... .......... .......... .......... .......... 52%  102M 0s
+ 14000K .......... .......... .......... .......... .......... 52%  113M 0s
+ 14050K .......... .......... .......... .......... .......... 53%  132M 0s
+ 14100K .......... .......... .......... .......... .......... 53%  111M 0s
+ 14150K .......... .......... .......... .......... .......... 53% 60.9M 0s
+ 14200K .......... .......... .......... .......... .......... 53% 87.1M 0s
+ 14250K .......... .......... .......... .......... .......... 53%  125M 0s
+ 14300K .......... .......... .......... .......... .......... 54%  133M 0s
+ 14350K .......... .......... .......... .......... .......... 54%  121M 0s
+ 14400K .......... .......... .......... .......... .......... 54%  122M 0s
+ 14450K .......... .......... .......... .......... .......... 54%  121M 0s
+ 14500K .......... .......... .......... .......... .......... 54%  111M 0s
+ 14550K .......... .......... .......... .......... .......... 54% 93.2M 0s
+ 14600K .......... .......... .......... .......... .......... 55%  112M 0s
+ 14650K .......... .......... .......... .......... .......... 55%  126M 0s
+ 14700K .......... .......... .......... .......... .......... 55%  146M 0s
+ 14750K .......... .......... .......... .......... .......... 55%  126M 0s
+ 14800K .......... .......... .......... .......... .......... 55%  144M 0s
+ 14850K .......... .......... .......... .......... .......... 56%  104M 0s
+ 14900K .......... .......... .......... .......... .......... 56% 96.3M 0s
+ 14950K .......... .......... .......... .......... .......... 56% 72.4M 0s
+ 15000K .......... .......... .......... .......... .......... 56%  124M 0s
+ 15050K .......... .......... .......... .......... .......... 56%  133M 0s
+ 15100K .......... .......... .......... .......... .......... 57%  132M 0s
+ 15150K .......... .......... .......... .......... .......... 57%  129M 0s
+ 15200K .......... .......... .......... .......... .......... 57%  108M 0s
+ 15250K .......... .......... .......... .......... .......... 57% 69.3M 0s
+ 15300K .......... .......... .......... .......... .......... 57% 90.8M 0s
+ 15350K .......... .......... .......... .......... .......... 57% 94.2M 0s
+ 15400K .......... .......... .......... .......... .......... 58%  115M 0s
+ 15450K .......... .......... .......... .......... .......... 58%  101M 0s
+ 15500K .......... .......... .......... .......... .......... 58%  110M 0s
+ 15550K .......... .......... .......... .......... .......... 58% 83.1M 0s
+ 15600K .......... .......... .......... .......... .......... 58%  105M 0s
+ 15650K .......... .......... .......... .......... .......... 59%  125M 0s
+ 15700K .......... .......... .......... .......... .......... 59% 92.2M 0s
+ 15750K .......... .......... .......... .......... .......... 59% 67.8M 0s
+ 15800K .......... .......... .......... .......... .......... 59%  122M 0s
+ 15850K .......... .......... .......... .......... .......... 59%  130M 0s
+ 15900K .......... .......... .......... .......... .......... 60% 77.2M 0s
+ 15950K .......... .......... .......... .......... .......... 60% 97.1M 0s
+ 16000K .......... .......... .......... .......... .......... 60%  110M 0s
+ 16050K .......... .......... .......... .......... .......... 60%  107M 0s
+ 16100K .......... .......... .......... .......... .......... 60%  110M 0s
+ 16150K .......... .......... .......... .......... .......... 60% 79.0M 0s
+ 16200K .......... .......... .......... .......... .......... 61%  112M 0s
+ 16250K .......... .......... .......... .......... .......... 61%  131M 0s
+ 16300K .......... .......... .......... .......... .......... 61%  119M 0s
+ 16350K .......... .......... .......... .......... .......... 61%  119M 0s
+ 16400K .......... .......... .......... .......... .......... 61%  122M 0s
+ 16450K .......... .......... .......... .......... .......... 62%  126M 0s
+ 16500K .......... .......... .......... .......... .......... 62% 88.6M 0s
+ 16550K .......... .......... .......... .......... .......... 62% 91.8M 0s
+ 16600K .......... .......... .......... .......... .......... 62%  152M 0s
+ 16650K .......... .......... .......... .......... .......... 62% 79.4M 0s
+ 16700K .......... .......... .......... .......... .......... 63% 80.7M 0s
+ 16750K .......... .......... .......... .......... .......... 63% 78.0M 0s
+ 16800K .......... .......... .......... .......... .......... 63% 87.6M 0s
+ 16850K .......... .......... .......... .......... .......... 63% 81.8M 0s
+ 16900K .......... .......... .......... .......... .......... 63% 86.9M 0s
+ 16950K .......... .......... .......... .......... .......... 63% 84.1M 0s
+ 17000K .......... .......... .......... .......... .......... 64%  121M 0s
+ 17050K .......... .......... .......... .......... .......... 64%  121M 0s
+ 17100K .......... .......... .......... .......... .......... 64%  121M 0s
+ 17150K .......... .......... .......... .......... .......... 64%  108M 0s
+ 17200K .......... .......... .......... .......... .......... 64%  126M 0s
+ 17250K .......... .......... .......... .......... .......... 65%  122M 0s
+ 17300K .......... .......... .......... .......... .......... 65%  120M 0s
+ 17350K .......... .......... .......... .......... .......... 65% 98.3M 0s
+ 17400K .......... .......... .......... .......... .......... 65%  126M 0s
+ 17450K .......... .......... .......... .......... .......... 65% 89.5M 0s
+ 17500K .......... .......... .......... .......... .......... 66%  118M 0s
+ 17550K .......... .......... .......... .......... .......... 66%  107M 0s
+ 17600K .......... .......... .......... .......... .......... 66% 77.2M 0s
+ 17650K .......... .......... .......... .......... .......... 66%  112M 0s
+ 17700K .......... .......... .......... .......... .......... 66%  120M 0s
+ 17750K .......... .......... .......... .......... .......... 66% 99.0M 0s
+ 17800K .......... .......... .......... .......... .......... 67%  122M 0s
+ 17850K .......... .......... .......... .......... .......... 67% 91.5M 0s
+ 17900K .......... .......... .......... .......... .......... 67%  112M 0s
+ 17950K .......... .......... .......... .......... .......... 67%  123M 0s
+ 18000K .......... .......... .......... .......... .......... 67% 86.5M 0s
+ 18050K .......... .......... .......... .......... .......... 68% 96.5M 0s
+ 18100K .......... .......... .......... .......... .......... 68%  104M 0s
+ 18150K .......... .......... .......... .......... .......... 68% 94.1M 0s
+ 18200K .......... .......... .......... .......... .......... 68% 95.9M 0s
+ 18250K .......... .......... .......... .......... .......... 68% 82.3M 0s
+ 18300K .......... .......... .......... .......... .......... 69% 85.1M 0s
+ 18350K .......... .......... .......... .......... .......... 69%  117M 0s
+ 18400K .......... .......... .......... .......... .......... 69%  109M 0s
+ 18450K .......... .......... .......... .......... .......... 69%  121M 0s
+ 18500K .......... .......... .......... .......... .......... 69%  108M 0s
+ 18550K .......... .......... .......... .......... .......... 70% 85.2M 0s
+ 18600K .......... .......... .......... .......... .......... 70%  112M 0s
+ 18650K .......... .......... .......... .......... .......... 70%  129M 0s
+ 18700K .......... .......... .......... .......... .......... 70%  113M 0s
+ 18750K .......... .......... .......... .......... .......... 70%  108M 0s
+ 18800K .......... .......... .......... .......... .......... 70% 63.6M 0s
+ 18850K .......... .......... .......... .......... .......... 71%  129M 0s
+ 18900K .......... .......... .......... .......... .......... 71%  101M 0s
+ 18950K .......... .......... .......... .......... .......... 71% 71.8M 0s
+ 19000K .......... .......... .......... .......... .......... 71%  113M 0s
+ 19050K .......... .......... .......... .......... .......... 71% 75.6M 0s
+ 19100K .......... .......... .......... .......... .......... 72%  130M 0s
+ 19150K .......... .......... .......... .......... .......... 72% 72.4M 0s
+ 19200K .......... .......... .......... .......... .......... 72% 78.0M 0s
+ 19250K .......... .......... .......... .......... .......... 72% 95.4M 0s
+ 19300K .......... .......... .......... .......... .......... 72% 94.0M 0s
+ 19350K .......... .......... .......... .......... .......... 73% 67.7M 0s
+ 19400K .......... .......... .......... .......... .......... 73%  108M 0s
+ 19450K .......... .......... .......... .......... .......... 73% 97.9M 0s
+ 19500K .......... .......... .......... .......... .......... 73%  101M 0s
+ 19550K .......... .......... .......... .......... .......... 73% 66.4M 0s
+ 19600K .......... .......... .......... .......... .......... 73%  115M 0s
+ 19650K .......... .......... .......... .......... .......... 74% 83.7M 0s
+ 19700K .......... .......... .......... .......... .......... 74%  114M 0s
+ 19750K .......... .......... .......... .......... .......... 74% 92.5M 0s
+ 19800K .......... .......... .......... .......... .......... 74% 92.9M 0s
+ 19850K .......... .......... .......... .......... .......... 74%  116M 0s
+ 19900K .......... .......... .......... .......... .......... 75%  129M 0s
+ 19950K .......... .......... .......... .......... .......... 75% 59.5M 0s
+ 20000K .......... .......... .......... .......... .......... 75%  130M 0s
+ 20050K .......... .......... .......... .......... .......... 75% 84.1M 0s
+ 20100K .......... .......... .......... .......... .......... 75% 75.5M 0s
+ 20150K .......... .......... .......... .......... .......... 76%  105M 0s
+ 20200K .......... .......... .......... .......... .......... 76%  114M 0s
+ 20250K .......... .......... .......... .......... .......... 76%  113M 0s
+ 20300K .......... .......... .......... .......... .......... 76%  122M 0s
+ 20350K .......... .......... .......... .......... .......... 76% 87.9M 0s
+ 20400K .......... .......... .......... .......... .......... 76%  112M 0s
+ 20450K .......... .......... .......... .......... .......... 77%  114M 0s
+ 20500K .......... .......... .......... .......... .......... 77%  112M 0s
+ 20550K .......... .......... .......... .......... .......... 77%  105M 0s
+ 20600K .......... .......... .......... .......... .......... 77%  116M 0s
+ 20650K .......... .......... .......... .......... .......... 77% 64.0M 0s
+ 20700K .......... .......... .......... .......... .......... 78% 65.0M 0s
+ 20750K .......... .......... .......... .......... .......... 78% 62.1M 0s
+ 20800K .......... .......... .......... .......... .......... 78%  109M 0s
+ 20850K .......... .......... .......... .......... .......... 78%  121M 0s
+ 20900K .......... .......... .......... .......... .......... 78% 61.8M 0s
+ 20950K .......... .......... .......... .......... .......... 79% 74.3M 0s
+ 21000K .......... .......... .......... .......... .......... 79%  118M 0s
+ 21050K .......... .......... .......... .......... .......... 79%  109M 0s
+ 21100K .......... .......... .......... .......... .......... 79%  108M 0s
+ 21150K .......... .......... .......... .......... .......... 79% 94.0M 0s
+ 21200K .......... .......... .......... .......... .......... 79%  122M 0s
+ 21250K .......... .......... .......... .......... .......... 80%  107M 0s
+ 21300K .......... .......... .......... .......... .......... 80%  116M 0s
+ 21350K .......... .......... .......... .......... .......... 80%  114M 0s
+ 21400K .......... .......... .......... .......... .......... 80%  117M 0s
+ 21450K .......... .......... .......... .......... .......... 80%  117M 0s
+ 21500K .......... .......... .......... .......... .......... 81%  124M 0s
+ 21550K .......... .......... .......... .......... .......... 81% 86.7M 0s
+ 21600K .......... .......... .......... .......... .......... 81%  112M 0s
+ 21650K .......... .......... .......... .......... .......... 81%  129M 0s
+ 21700K .......... .......... .......... .......... .......... 81% 68.3M 0s
+ 21750K .......... .......... .......... .......... .......... 82% 67.6M 0s
+ 21800K .......... .......... .......... .......... .......... 82% 56.9M 0s
+ 21850K .......... .......... .......... .......... .......... 82%  120M 0s
+ 21900K .......... .......... .......... .......... .......... 82% 57.0M 0s
+ 21950K .......... .......... .......... .......... .......... 82% 93.5M 0s
+ 22000K .......... .......... .......... .......... .......... 82%  107M 0s
+ 22050K .......... .......... .......... .......... .......... 83%  122M 0s
+ 22100K .......... .......... .......... .......... .......... 83%  103M 0s
+ 22150K .......... .......... .......... .......... .......... 83%  117M 0s
+ 22200K .......... .......... .......... .......... .......... 83%  111M 0s
+ 22250K .......... .......... .......... .......... .......... 83%  121M 0s
+ 22300K .......... .......... .......... .......... .......... 84% 25.2M 0s
+ 22350K .......... .......... .......... .......... .......... 84% 93.5M 0s
+ 22400K .......... .......... .......... .......... .......... 84% 86.9M 0s
+ 22450K .......... .......... .......... .......... .......... 84%  113M 0s
+ 22500K .......... .......... .......... .......... .......... 84%  127M 0s
+ 22550K .......... .......... .......... .......... .......... 85%  109M 0s
+ 22600K .......... .......... .......... .......... .......... 85%  108M 0s
+ 22650K .......... .......... .......... .......... .......... 85% 92.9M 0s
+ 22700K .......... .......... .......... .......... .......... 85% 55.1M 0s
+ 22750K .......... .......... .......... .......... .......... 85% 51.3M 0s
+ 22800K .......... .......... .......... .......... .......... 85%  112M 0s
+ 22850K .......... .......... .......... .......... .......... 86% 55.8M 0s
+ 22900K .......... .......... .......... .......... .......... 86%  112M 0s
+ 22950K .......... .......... .......... .......... .......... 86% 95.6M 0s
+ 23000K .......... .......... .......... .......... .......... 86% 59.2M 0s
+ 23050K .......... .......... .......... .......... .......... 86% 55.6M 0s
+ 23100K .......... .......... .......... .......... .......... 87%  110M 0s
+ 23150K .......... .......... .......... .......... .......... 87% 49.7M 0s
+ 23200K .......... .......... .......... .......... .......... 87%  109M 0s
+ 23250K .......... .......... .......... .......... .......... 87%  120M 0s
+ 23300K .......... .......... .......... .......... .......... 87% 98.0M 0s
+ 23350K .......... .......... .......... .......... .......... 88%  101M 0s
+ 23400K .......... .......... .......... .......... .......... 88%  106M 0s
+ 23450K .......... .......... .......... .......... .......... 88% 34.4M 0s
+ 23500K .......... .......... .......... .......... .......... 88%  119M 0s
+ 23550K .......... .......... .......... .......... .......... 88% 94.8M 0s
+ 23600K .......... .......... .......... .......... .......... 89% 57.8M 0s
+ 23650K .......... .......... .......... .......... .......... 89% 16.4M 0s
+ 23700K .......... .......... .......... .......... .......... 89%  122M 0s
+ 23750K .......... .......... .......... .......... .......... 89% 49.5M 0s
+ 23800K .......... .......... .......... .......... .......... 89%  111M 0s
+ 23850K .......... .......... .......... .......... .......... 89%  123M 0s
+ 23900K .......... .......... .......... .......... .......... 90% 5.43M 0s
+ 23950K .......... .......... .......... .......... .......... 90% 81.4M 0s
+ 24000K .......... .......... .......... .......... .......... 90% 57.7M 0s
+ 24050K .......... .......... .......... .......... .......... 90% 1.24M 0s
+ 24100K .......... .......... .......... .......... .......... 90%  141M 0s
+ 24150K .......... .......... .......... .......... .......... 91%  148M 0s
+ 24200K .......... .......... .......... .......... .......... 91%  197M 0s
+ 24250K .......... .......... .......... .......... .......... 91%  195M 0s
+ 24300K .......... .......... .......... .......... .......... 91%  132M 0s
+ 24350K .......... .......... .......... .......... .......... 91%  146M 0s
+ 24400K .......... .......... .......... .......... .......... 92%  197M 0s
+ 24450K .......... .......... .......... .......... .......... 92%  195M 0s
+ 24500K .......... .......... .......... .......... .......... 92%  201M 0s
+ 24550K .......... .......... .......... .......... .......... 92%  177M 0s
+ 24600K .......... .......... .......... .......... .......... 92%  204M 0s
+ 24650K .......... .......... .......... .......... .......... 92%  197M 0s
+ 24700K .......... .......... .......... .......... .......... 93%  196M 0s
+ 24750K .......... .......... .......... .......... .......... 93%  161M 0s
+ 24800K .......... .......... .......... .......... .......... 93%  196M 0s
+ 24850K .......... .......... .......... .......... .......... 93%  202M 0s
+ 24900K .......... .......... .......... .......... .......... 93%  197M 0s
+ 24950K .......... .......... .......... .......... .......... 94%  183M 0s
+ 25000K .......... .......... .......... .......... .......... 94%  196M 0s
+ 25050K .......... .......... .......... .......... .......... 94%  193M 0s
+ 25100K .......... .......... .......... .......... .......... 94%  182M 0s
+ 25150K .......... .......... .......... .......... .......... 94%  163M 0s
+ 25200K .......... .......... .......... .......... .......... 95%  199M 0s
+ 25250K .......... .......... .......... .......... .......... 95%  155M 0s
+ 25300K .......... .......... .......... .......... .......... 95%  157M 0s
+ 25350K .......... .......... .......... .......... .......... 95%  181M 0s
+ 25400K .......... .......... .......... .......... .......... 95%  174M 0s
+ 25450K .......... .......... .......... .......... .......... 95%  192M 0s
+ 25500K .......... .......... .......... .......... .......... 96%  201M 0s
+ 25550K .......... .......... .......... .......... .......... 96%  162M 0s
+ 25600K .......... .......... .......... .......... .......... 96%  199M 0s
+ 25650K .......... .......... .......... .......... .......... 96%  202M 0s
+ 25700K .......... .......... .......... .......... .......... 96%  198M 0s
+ 25750K .......... .......... .......... .......... .......... 97%  183M 0s
+ 25800K .......... .......... .......... .......... .......... 97%  200M 0s
+ 25850K .......... .......... .......... .......... .......... 97%  183M 0s
+ 25900K .......... .......... .......... .......... .......... 97%  197M 0s
+ 25950K .......... .......... .......... .......... .......... 97%  159M 0s
+ 26000K .......... .......... .......... .......... .......... 98%  199M 0s
+ 26050K .......... .......... .......... .......... .......... 98%  202M 0s
+ 26100K .......... .......... .......... .......... .......... 98%  197M 0s
+ 26150K .......... .......... .......... .......... .......... 98%  180M 0s
+ 26200K .......... .......... .......... .......... .......... 98%  193M 0s
+ 26250K .......... .......... .......... .......... .......... 98%  200M 0s
+ 26300K .......... .......... .......... .......... .......... 99%  194M 0s
+ 26350K .......... .......... .......... .......... .......... 99%  162M 0s
+ 26400K .......... .......... .......... .......... .......... 99%  197M 0s
+ 26450K .......... .......... .......... .......... .......... 99%  201M 0s
+ 26500K .......... .......... .......... .......... .......... 99%  201M 0s
+ 26550K .......... ..........                                 100%  166M=0.3s
+
+2021-02-27 18:40:21 (82.5 MB/s) - `miniconda.sh' saved [27208383/27208383]
+
+
+travis_time:end:0f7690d8:start=1614451221017177021,finish=1614451221487521410,duration=470344389[0Ktravis_fold:end:before_install.3[0Ktravis_fold:start:before_install.4[0Ktravis_time:start:055779c0[0K$ chmod +x miniconda.sh
+
+travis_time:end:055779c0:start=1614451221497481193,finish=1614451221507438254,duration=9957061[0Ktravis_fold:end:before_install.4[0Ktravis_fold:start:before_install.5[0Ktravis_time:start:0d33d4a4[0K$ ./miniconda.sh -b
+PREFIX=/home/travis/miniconda2
+installing: _cache-0.0-py27_x0 ...
+installing: python-2.7.11-0 ...
+installing: conda-env-2.4.5-py27_0 ...
+installing: openssl-1.0.2g-0 ...
+installing: pycosat-0.6.1-py27_0 ...
+installing: pyyaml-3.11-py27_1 ...
+installing: readline-6.2-2 ...
+installing: requests-2.9.1-py27_0 ...
+installing: sqlite-3.9.2-0 ...
+installing: tk-8.5.18-0 ...
+installing: yaml-0.1.6-0 ...
+installing: zlib-1.2.8-0 ...
+installing: conda-4.0.5-py27_0 ...
+installing: pycrypto-2.6.1-py27_0 ...
+installing: pip-8.1.1-py27_1 ...
+installing: wheel-0.29.0-py27_0 ...
+installing: setuptools-20.3-py27_0 ...
+Python 2.7.11 :: Continuum Analytics, Inc.
+creating default environment...
+installation finished.
+
+travis_time:end:0d33d4a4:start=1614451221518495521,finish=1614451227370983138,duration=5852487617[0Ktravis_fold:end:before_install.5[0Ktravis_fold:start:before_install.6[0Ktravis_time:start:073049e8[0K$ cd ..
+
+travis_time:end:073049e8:start=1614451227381816526,finish=1614451227389806884,duration=7990358[0Ktravis_fold:end:before_install.6[0Ktravis_fold:start:before_install.7[0Ktravis_time:start:134ee98f[0K$ export PATH=/home/travis/miniconda2/bin:$PATH
+
+travis_time:end:134ee98f:start=1614451227400682579,finish=1614451227408868512,duration=8185933[0Ktravis_fold:end:before_install.7[0Ktravis_fold:start:before_install.8[0Ktravis_time:start:2bb54e97[0K$ conda update --yes conda
+Fetching package metadata: ....
+.Solving package specifications: .........
+
+Package plan for installation in environment /home/travis/miniconda2:
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    conda-env-2.6.0            |                0          502 B
+    libffi-3.2.1               |                1          38 KB
+    sqlite-3.13.0              |                0         4.0 MB
+    python-2.7.13              |                0        11.5 MB
+    asn1crypto-0.22.0          |           py27_0         145 KB
+    enum34-1.1.6               |           py27_0          53 KB
+    idna-2.6                   |           py27_0         122 KB
+    ipaddress-1.0.18           |           py27_0          31 KB
+    pycparser-2.18             |           py27_0         165 KB
+    pyparsing-2.2.0            |           py27_0          94 KB
+    requests-2.12.4            |           py27_0         762 KB
+    ruamel_yaml-0.11.14        |           py27_1         361 KB
+    six-1.10.0                 |           py27_0          16 KB
+    cffi-1.10.0                |           py27_0         329 KB
+    packaging-16.8             |           py27_0          30 KB
+    cryptography-1.8.1         |           py27_0         850 KB
+    pyopenssl-17.0.0           |           py27_0          74 KB
+    conda-4.3.30               |   py27h6ae6dc7_0         507 KB
+    ------------------------------------------------------------
+                                           Total:        19.0 MB
+
+The following NEW packages will be INSTALLED:
+
+    asn1crypto:   0.22.0-py27_0        
+    cffi:         1.10.0-py27_0        
+    cryptography: 1.8.1-py27_0         
+    enum34:       1.1.6-py27_0         
+    idna:         2.6-py27_0           
+    ipaddress:    1.0.18-py27_0        
+    libffi:       3.2.1-1              
+    packaging:    16.8-py27_0          
+    pycparser:    2.18-py27_0          
+    pyopenssl:    17.0.0-py27_0        
+    pyparsing:    2.2.0-py27_0         
+    ruamel_yaml:  0.11.14-py27_1       
+    six:          1.10.0-py27_0        
+
+The following packages will be UPDATED:
+
+    conda:        4.0.5-py27_0 --> 4.3.30-py27h6ae6dc7_0
+    conda-env:    2.4.5-py27_0 --> 2.6.0-0              
+    python:       2.7.11-0     --> 2.7.13-0             
+    requests:     2.9.1-py27_0 --> 2.12.4-py27_0        
+    sqlite:       3.9.2-0      --> 3.13.0-0             
+
+Fetching packages ...
+conda-env-2.6.   0% |                              | ETA:  --:--:--   0.00  B/sconda-env-2.6. 100% |###############################| ETA:  0:00:00 392.53 kB/sconda-env-2.6. 100% |###############################| Time: 0:00:00 270.64 kB/s
+libffi-3.2.1-1   0% |                              | ETA:  --:--:--   0.00  B/slibffi-3.2.1-1  41% |############                   | Time: 0:00:00  16.20 MB/slibffi-3.2.1-1  83% |#########################      | Time: 0:00:00  18.77 MB/slibffi-3.2.1-1 100% |###############################| Time: 0:00:00  17.08 MB/slibffi-3.2.1-1 100% |###############################| Time: 0:00:00  14.95 MB/slibffi-3.2.1-1 100% |###############################| Time: 0:00:00  13.35 MB/s
+sqlite-3.13.0-   0% |                              | ETA:  --:--:--   0.00  B/ssqlite-3.13.0-   0% |                               | Time: 0:00:00  15.88 MB/ssqlite-3.13.0-   0% |                               | Time: 0:00:00  18.41 MB/ssqlite-3.13.0-   1% |                               | Time: 0:00:00  13.77 MB/ssqlite-3.13.0-   1% |                               | Time: 0:00:00  11.26 MB/ssqlite-3.13.0-   1% |                               | Time: 0:00:00  11.77 MB/ssqlite-3.13.0-   2% |                               | Time: 0:00:00  11.48 MB/ssqlite-3.13.0-   2% |                               | Time: 0:00:00   9.33 MB/ssqlite-3.13.0-   3% |                               | Time: 0:00:00  10.13 MB/ssqlite-3.13.0-   3% |#                              | Time: 0:00:00  10.82 MB/ssqlite-3.13.0-   3% |#                              | Time: 0:00:00  11.52 MB/ssqlite-3.13.0-   4% |#                              | Time: 0:00:00  12.18 MB/ssqlite-3.13.0-   4% |#                              | Time: 0:00:00  12.74 MB/ssqlite-3.13.0-   5% |#                              | Time: 0:00:00  12.46 MB/ssqlite-3.13.0-   5% |#                              | Time: 0:00:00  12.84 MB/ssqlite-3.13.0-   5% |#                              | Time: 0:00:00  11.30 MB/ssqlite-3.13.0-   6% |#                              | Time: 0:00:00  11.69 MB/ssqlite-3.13.0-   6% |##                             | Time: 0:00:00  12.12 MB/ssqlite-3.13.0-   7% |##                             | Time: 0:00:00  12.53 MB/ssqlite-3.13.0-   7% |##                             | Time: 0:00:00  12.95 MB/ssqlite-3.13.0-   7% |##                             | Time: 0:00:00  13.34 MB/ssqlite-3.13.0-   8% |##                             | Time: 0:00:00  13.71 MB/ssqlite-3.13.0-   8% |##                             | Time: 0:00:00  14.06 MB/ssqlite-3.13.0-   9% |##                             | Time: 0:00:00  14.41 MB/ssqlite-3.13.0-   9% |##                             | Time: 0:00:00  14.76 MB/ssqlite-3.13.0-   9% |###                            | Time: 0:00:00  15.08 MB/ssqlite-3.13.0-  10% |###                            | Time: 0:00:00  15.39 MB/ssqlite-3.13.0-  10% |###                            | Time: 0:00:00  15.83 MB/ssqlite-3.13.0-  11% |###                            | Time: 0:00:00  16.27 MB/ssqlite-3.13.0-  11% |###                            | Time: 0:00:00  16.69 MB/ssqlite-3.13.0-  11% |###                            | Time: 0:00:00  17.11 MB/ssqlite-3.13.0-  12% |###                            | Time: 0:00:00  17.01 MB/ssqlite-3.13.0-  12% |###                            | Time: 0:00:00  17.19 MB/ssqlite-3.13.0-  12% |####                           | Time: 0:00:00  17.42 MB/ssqlite-3.13.0-  13% |####                           | Time: 0:00:00  17.62 MB/ssqlite-3.13.0-  13% |####                           | Time: 0:00:00  17.85 MB/ssqlite-3.13.0-  14% |####                           | Time: 0:00:00  18.06 MB/ssqlite-3.13.0-  14% |####                           | Time: 0:00:00  18.27 MB/ssqlite-3.13.0-  14% |####                           | Time: 0:00:00  18.49 MB/ssqlite-3.13.0-  15% |####                           | Time: 0:00:00  18.68 MB/ssqlite-3.13.0-  15% |####                           | Time: 0:00:00  18.88 MB/ssqlite-3.13.0-  16% |####                           | Time: 0:00:00  19.07 MB/ssqlite-3.13.0-  16% |#####                          | Time: 0:00:00  19.24 MB/ssqlite-3.13.0-  16% |#####                          | Time: 0:00:00  19.41 MB/ssqlite-3.13.0-  17% |#####                          | Time: 0:00:00  19.57 MB/ssqlite-3.13.0-  17% |#####                          | Time: 0:00:00  19.73 MB/ssqlite-3.13.0-  18% |#####                          | Time: 0:00:00  19.90 MB/ssqlite-3.13.0-  18% |#####                          | Time: 0:00:00  20.05 MB/ssqlite-3.13.0-  18% |#####                          | Time: 0:00:00  20.20 MB/ssqlite-3.13.0-  19% |#####                          | Time: 0:00:00  20.33 MB/ssqlite-3.13.0-  19% |######                         | Time: 0:00:00  20.47 MB/ssqlite-3.13.0-  20% |######                         | Time: 0:00:00  20.60 MB/ssqlite-3.13.0-  20% |######                         | Time: 0:00:00  20.74 MB/ssqlite-3.13.0-  20% |######                         | Time: 0:00:00  20.87 MB/ssqlite-3.13.0-  21% |######                         | Time: 0:00:00  21.01 MB/ssqlite-3.13.0-  21% |######                         | Time: 0:00:00  21.13 MB/ssqlite-3.13.0-  22% |######                         | Time: 0:00:00  21.23 MB/ssqlite-3.13.0-  22% |######                         | Time: 0:00:00  21.45 MB/ssqlite-3.13.0-  22% |#######                        | Time: 0:00:00  21.71 MB/ssqlite-3.13.0-  23% |#######                        | Time: 0:00:00  21.96 MB/ssqlite-3.13.0-  23% |#######                        | Time: 0:00:00  22.21 MB/ssqlite-3.13.0-  23% |#######                        | Time: 0:00:00  22.45 MB/ssqlite-3.13.0-  24% |#######                        | Time: 0:00:00  22.69 MB/ssqlite-3.13.0-  24% |#######                        | Time: 0:00:00  22.93 MB/ssqlite-3.13.0-  25% |#######                        | Time: 0:00:00  23.16 MB/ssqlite-3.13.0-  25% |#######                        | Time: 0:00:00  23.39 MB/ssqlite-3.13.0-  25% |########                       | Time: 0:00:00  23.62 MB/ssqlite-3.13.0-  26% |########                       | Time: 0:00:00  23.85 MB/ssqlite-3.13.0-  26% |########                       | Time: 0:00:00  24.07 MB/ssqlite-3.13.0-  27% |########                       | Time: 0:00:00  24.30 MB/ssqlite-3.13.0-  27% |########                       | Time: 0:00:00  24.52 MB/ssqlite-3.13.0-  27% |########                       | Time: 0:00:00  24.74 MB/ssqlite-3.13.0-  28% |########                       | Time: 0:00:00  24.95 MB/ssqlite-3.13.0-  28% |########                       | Time: 0:00:00  25.17 MB/ssqlite-3.13.0-  29% |#########                      | Time: 0:00:00  25.39 MB/ssqlite-3.13.0-  29% |#########                      | Time: 0:00:00  25.60 MB/ssqlite-3.13.0-  29% |#########                      | Time: 0:00:00  25.81 MB/ssqlite-3.13.0-  30% |#########                      | Time: 0:00:00  26.02 MB/ssqlite-3.13.0-  30% |#########                      | Time: 0:00:00  26.23 MB/ssqlite-3.13.0-  31% |#########                      | Time: 0:00:00  26.43 MB/ssqlite-3.13.0-  31% |#########                      | Time: 0:00:00  26.63 MB/ssqlite-3.13.0-  31% |#########                      | Time: 0:00:00  26.83 MB/ssqlite-3.13.0-  32% |#########                      | Time: 0:00:00  27.03 MB/ssqlite-3.13.0-  32% |##########                     | Time: 0:00:00  27.22 MB/ssqlite-3.13.0-  33% |##########                     | Time: 0:00:00  27.42 MB/ssqlite-3.13.0-  33% |##########                     | Time: 0:00:00  27.61 MB/ssqlite-3.13.0-  33% |##########                     | Time: 0:00:00  27.80 MB/ssqlite-3.13.0-  34% |##########                     | Time: 0:00:00  27.99 MB/ssqlite-3.13.0-  34% |##########                     | Time: 0:00:00  28.17 MB/ssqlite-3.13.0-  34% |##########                     | Time: 0:00:00  28.35 MB/ssqlite-3.13.0-  35% |##########                     | Time: 0:00:00  28.54 MB/ssqlite-3.13.0-  35% |###########                    | Time: 0:00:00  28.73 MB/ssqlite-3.13.0-  36% |###########                    | Time: 0:00:00  28.90 MB/ssqlite-3.13.0-  36% |###########                    | Time: 0:00:00  29.08 MB/ssqlite-3.13.0-  36% |###########                    | Time: 0:00:00  29.26 MB/ssqlite-3.13.0-  37% |###########                    | Time: 0:00:00  29.44 MB/ssqlite-3.13.0-  37% |###########                    | Time: 0:00:00  29.61 MB/ssqlite-3.13.0-  38% |###########                    | Time: 0:00:00  29.78 MB/ssqlite-3.13.0-  38% |###########                    | Time: 0:00:00  29.96 MB/ssqlite-3.13.0-  38% |############                   | Time: 0:00:00  30.12 MB/ssqlite-3.13.0-  39% |############                   | Time: 0:00:00  30.29 MB/ssqlite-3.13.0-  39% |############                   | Time: 0:00:00  30.45 MB/ssqlite-3.13.0-  40% |############                   | Time: 0:00:00  30.62 MB/ssqlite-3.13.0-  40% |############                   | Time: 0:00:00  30.78 MB/ssqlite-3.13.0-  40% |############                   | Time: 0:00:00  30.94 MB/ssqlite-3.13.0-  41% |############                   | Time: 0:00:00  31.09 MB/ssqlite-3.13.0-  41% |############                   | Time: 0:00:00  31.25 MB/ssqlite-3.13.0-  42% |#############                  | Time: 0:00:00  31.40 MB/ssqlite-3.13.0-  42% |#############                  | Time: 0:00:00  31.56 MB/ssqlite-3.13.0-  42% |#############                  | Time: 0:00:00  31.72 MB/ssqlite-3.13.0-  43% |#############                  | Time: 0:00:00  31.89 MB/ssqlite-3.13.0-  43% |#############                  | Time: 0:00:00  32.05 MB/ssqlite-3.13.0-  44% |#############                  | Time: 0:00:00  32.21 MB/ssqlite-3.13.0-  44% |#############                  | Time: 0:00:00  32.37 MB/ssqlite-3.13.0-  44% |#############                  | Time: 0:00:00  32.52 MB/ssqlite-3.13.0-  45% |##############                 | Time: 0:00:00  32.68 MB/ssqlite-3.13.0-  45% |##############                 | Time: 0:00:00  32.83 MB/ssqlite-3.13.0-  45% |##############                 | Time: 0:00:00  32.99 MB/ssqlite-3.13.0-  46% |##############                 | Time: 0:00:00  33.14 MB/ssqlite-3.13.0-  46% |##############                 | Time: 0:00:00  33.29 MB/ssqlite-3.13.0-  47% |##############                 | Time: 0:00:00  33.45 MB/ssqlite-3.13.0-  47% |##############                 | Time: 0:00:00  33.60 MB/ssqlite-3.13.0-  47% |##############                 | Time: 0:00:00  33.74 MB/ssqlite-3.13.0-  48% |##############                 | Time: 0:00:00  33.89 MB/ssqlite-3.13.0-  48% |###############                | Time: 0:00:00  34.03 MB/ssqlite-3.13.0-  49% |###############                | Time: 0:00:00  34.18 MB/ssqlite-3.13.0-  49% |###############                | Time: 0:00:00  34.32 MB/ssqlite-3.13.0-  49% |###############                | Time: 0:00:00  34.47 MB/ssqlite-3.13.0-  50% |###############                | Time: 0:00:00  34.61 MB/ssqlite-3.13.0-  50% |###############                | Time: 0:00:00  34.75 MB/ssqlite-3.13.0-  51% |###############                | Time: 0:00:00  34.90 MB/ssqlite-3.13.0-  51% |###############                | Time: 0:00:00  35.03 MB/ssqlite-3.13.0-  51% |################               | Time: 0:00:00  35.17 MB/ssqlite-3.13.0-  52% |################               | Time: 0:00:00  35.31 MB/ssqlite-3.13.0-  52% |################               | Time: 0:00:00  35.44 MB/ssqlite-3.13.0-  53% |################               | Time: 0:00:00  35.58 MB/ssqlite-3.13.0-  53% |################               | Time: 0:00:00  35.71 MB/ssqlite-3.13.0-  53% |################               | Time: 0:00:00  35.85 MB/ssqlite-3.13.0-  54% |################               | Time: 0:00:00  35.98 MB/ssqlite-3.13.0-  54% |################               | Time: 0:00:00  36.11 MB/ssqlite-3.13.0-  55% |#################              | Time: 0:00:00  36.23 MB/ssqlite-3.13.0-  55% |#################              | Time: 0:00:00  36.36 MB/ssqlite-3.13.0-  55% |#################              | Time: 0:00:00  36.49 MB/ssqlite-3.13.0-  56% |#################              | Time: 0:00:00  36.62 MB/ssqlite-3.13.0-  56% |#################              | Time: 0:00:00  36.74 MB/ssqlite-3.13.0-  57% |#################              | Time: 0:00:00  36.87 MB/ssqlite-3.13.0-  57% |#################              | Time: 0:00:00  36.99 MB/ssqlite-3.13.0-  57% |#################              | Time: 0:00:00  37.12 MB/ssqlite-3.13.0-  58% |##################             | Time: 0:00:00  37.24 MB/ssqlite-3.13.0-  58% |##################             | Time: 0:00:00  37.37 MB/ssqlite-3.13.0-  58% |##################             | Time: 0:00:00  37.49 MB/ssqlite-3.13.0-  59% |##################             | Time: 0:00:00  37.61 MB/ssqlite-3.13.0-  59% |##################             | Time: 0:00:00  37.73 MB/ssqlite-3.13.0-  60% |##################             | Time: 0:00:00  37.84 MB/ssqlite-3.13.0-  60% |##################             | Time: 0:00:00  37.96 MB/ssqlite-3.13.0-  60% |##################             | Time: 0:00:00  38.08 MB/ssqlite-3.13.0-  61% |###################            | Time: 0:00:00  38.20 MB/ssqlite-3.13.0-  61% |###################            | Time: 0:00:00  38.30 MB/ssqlite-3.13.0-  62% |###################            | Time: 0:00:00  38.41 MB/ssqlite-3.13.0-  62% |###################            | Time: 0:00:00  38.52 MB/ssqlite-3.13.0-  62% |###################            | Time: 0:00:00  38.64 MB/ssqlite-3.13.0-  63% |###################            | Time: 0:00:00  38.75 MB/ssqlite-3.13.0-  63% |###################            | Time: 0:00:00  38.87 MB/ssqlite-3.13.0-  64% |###################            | Time: 0:00:00  38.97 MB/ssqlite-3.13.0-  64% |###################            | Time: 0:00:00  39.09 MB/ssqlite-3.13.0-  64% |####################           | Time: 0:00:00  39.20 MB/ssqlite-3.13.0-  65% |####################           | Time: 0:00:00  39.30 MB/ssqlite-3.13.0-  65% |####################           | Time: 0:00:00  39.41 MB/ssqlite-3.13.0-  66% |####################           | Time: 0:00:00  39.52 MB/ssqlite-3.13.0-  66% |####################           | Time: 0:00:00  39.63 MB/ssqlite-3.13.0-  66% |####################           | Time: 0:00:00  39.74 MB/ssqlite-3.13.0-  67% |####################           | Time: 0:00:00  39.84 MB/ssqlite-3.13.0-  67% |####################           | Time: 0:00:00  39.95 MB/ssqlite-3.13.0-  68% |#####################          | Time: 0:00:00  40.06 MB/ssqlite-3.13.0-  68% |#####################          | Time: 0:00:00  40.15 MB/ssqlite-3.13.0-  68% |#####################          | Time: 0:00:00  40.23 MB/ssqlite-3.13.0-  69% |#####################          | Time: 0:00:00  40.33 MB/ssqlite-3.13.0-  69% |#####################          | Time: 0:00:00  40.42 MB/ssqlite-3.13.0-  69% |#####################          | Time: 0:00:00  40.51 MB/ssqlite-3.13.0-  70% |#####################          | Time: 0:00:00  40.59 MB/ssqlite-3.13.0-  70% |#####################          | Time: 0:00:00  40.68 MB/ssqlite-3.13.0-  71% |######################         | Time: 0:00:00  40.77 MB/ssqlite-3.13.0-  71% |######################         | Time: 0:00:00  40.85 MB/ssqlite-3.13.0-  71% |######################         | Time: 0:00:00  40.94 MB/ssqlite-3.13.0-  72% |######################         | Time: 0:00:00  41.03 MB/ssqlite-3.13.0-  72% |######################         | Time: 0:00:00  41.12 MB/ssqlite-3.13.0-  73% |######################         | Time: 0:00:00  41.21 MB/ssqlite-3.13.0-  73% |######################         | Time: 0:00:00  41.29 MB/ssqlite-3.13.0-  73% |######################         | Time: 0:00:00  41.38 MB/ssqlite-3.13.0-  74% |#######################        | Time: 0:00:00  41.47 MB/ssqlite-3.13.0-  74% |#######################        | Time: 0:00:00  41.55 MB/ssqlite-3.13.0-  75% |#######################        | Time: 0:00:00  41.63 MB/ssqlite-3.13.0-  75% |#######################        | Time: 0:00:00  41.71 MB/ssqlite-3.13.0-  75% |#######################        | Time: 0:00:00  41.79 MB/ssqlite-3.13.0-  76% |#######################        | Time: 0:00:00  41.87 MB/ssqlite-3.13.0-  76% |#######################        | Time: 0:00:00  41.96 MB/ssqlite-3.13.0-  77% |#######################        | Time: 0:00:00  42.03 MB/ssqlite-3.13.0-  77% |########################       | Time: 0:00:00  42.11 MB/ssqlite-3.13.0-  77% |########################       | Time: 0:00:00  42.19 MB/ssqlite-3.13.0-  78% |########################       | Time: 0:00:00  42.27 MB/ssqlite-3.13.0-  78% |########################       | Time: 0:00:00  42.35 MB/ssqlite-3.13.0-  79% |########################       | Time: 0:00:00  42.43 MB/ssqlite-3.13.0-  79% |########################       | Time: 0:00:00  42.51 MB/ssqlite-3.13.0-  79% |########################       | Time: 0:00:00  42.59 MB/ssqlite-3.13.0-  80% |########################       | Time: 0:00:00  42.67 MB/ssqlite-3.13.0-  80% |########################       | Time: 0:00:00  42.75 MB/ssqlite-3.13.0-  80% |#########################      | Time: 0:00:00  42.82 MB/ssqlite-3.13.0-  81% |#########################      | Time: 0:00:00  42.90 MB/ssqlite-3.13.0-  81% |#########################      | Time: 0:00:00  42.96 MB/ssqlite-3.13.0-  82% |#########################      | Time: 0:00:00  43.04 MB/ssqlite-3.13.0-  82% |#########################      | Time: 0:00:00  43.11 MB/ssqlite-3.13.0-  82% |#########################      | Time: 0:00:00  43.19 MB/ssqlite-3.13.0-  83% |#########################      | Time: 0:00:00  43.26 MB/ssqlite-3.13.0-  83% |#########################      | Time: 0:00:00  43.34 MB/ssqlite-3.13.0-  84% |##########################     | Time: 0:00:00  43.41 MB/ssqlite-3.13.0-  84% |##########################     | Time: 0:00:00  43.49 MB/ssqlite-3.13.0-  84% |##########################     | Time: 0:00:00  43.56 MB/ssqlite-3.13.0-  85% |##########################     | Time: 0:00:00  43.63 MB/ssqlite-3.13.0-  85% |##########################     | Time: 0:00:00  43.71 MB/ssqlite-3.13.0-  86% |##########################     | Time: 0:00:00  43.80 MB/ssqlite-3.13.0-  86% |##########################     | Time: 0:00:00  43.87 MB/ssqlite-3.13.0-  86% |##########################     | Time: 0:00:00  43.95 MB/ssqlite-3.13.0-  87% |###########################    | Time: 0:00:00  44.03 MB/ssqlite-3.13.0-  87% |###########################    | Time: 0:00:00  44.11 MB/ssqlite-3.13.0-  88% |###########################    | Time: 0:00:00  44.18 MB/ssqlite-3.13.0-  88% |###########################    | Time: 0:00:00  44.25 MB/ssqlite-3.13.0-  88% |###########################    | Time: 0:00:00  44.33 MB/ssqlite-3.13.0-  89% |###########################    | Time: 0:00:00  44.41 MB/ssqlite-3.13.0-  89% |###########################    | Time: 0:00:00  44.48 MB/ssqlite-3.13.0-  90% |###########################    | Time: 0:00:00  44.56 MB/ssqlite-3.13.0-  90% |############################   | Time: 0:00:00  44.63 MB/ssqlite-3.13.0-  90% |############################   | Time: 0:00:00  44.71 MB/ssqlite-3.13.0-  91% |############################   | Time: 0:00:00  44.79 MB/ssqlite-3.13.0-  91% |############################   | Time: 0:00:00  44.86 MB/ssqlite-3.13.0-  91% |############################   | Time: 0:00:00  44.94 MB/ssqlite-3.13.0-  92% |############################   | Time: 0:00:00  45.01 MB/ssqlite-3.13.0-  92% |############################   | Time: 0:00:00  45.09 MB/ssqlite-3.13.0-  93% |############################   | Time: 0:00:00  45.16 MB/ssqlite-3.13.0-  93% |#############################  | Time: 0:00:00  45.23 MB/ssqlite-3.13.0-  93% |#############################  | Time: 0:00:00  45.31 MB/ssqlite-3.13.0-  94% |#############################  | Time: 0:00:00  45.38 MB/ssqlite-3.13.0-  94% |#############################  | Time: 0:00:00  45.45 MB/ssqlite-3.13.0-  95% |#############################  | Time: 0:00:00  45.52 MB/ssqlite-3.13.0-  95% |#############################  | Time: 0:00:00  45.59 MB/ssqlite-3.13.0-  95% |#############################  | Time: 0:00:00  45.66 MB/ssqlite-3.13.0-  96% |#############################  | Time: 0:00:00  45.73 MB/ssqlite-3.13.0-  96% |#############################  | Time: 0:00:00  45.80 MB/ssqlite-3.13.0-  97% |############################## | Time: 0:00:00  45.87 MB/ssqlite-3.13.0-  97% |############################## | Time: 0:00:00  45.94 MB/ssqlite-3.13.0-  97% |############################## | Time: 0:00:00  46.01 MB/ssqlite-3.13.0-  98% |############################## | Time: 0:00:00  46.08 MB/ssqlite-3.13.0-  98% |############################## | Time: 0:00:00  46.15 MB/ssqlite-3.13.0-  99% |############################## | Time: 0:00:00  46.22 MB/ssqlite-3.13.0-  99% |############################## | Time: 0:00:00  46.29 MB/ssqlite-3.13.0-  99% |############################## | Time: 0:00:00  46.36 MB/ssqlite-3.13.0- 100% |###############################| Time: 0:00:00  46.32 MB/ssqlite-3.13.0- 100% |###############################| Time: 0:00:00  46.25 MB/ssqlite-3.13.0- 100% |###############################| Time: 0:00:00  46.17 MB/s
+python-2.7.13-   0% |                              | ETA:  --:--:--   0.00  B/spython-2.7.13-   0% |                               | Time: 0:00:00  15.38 MB/spython-2.7.13-   0% |                               | Time: 0:00:00  17.16 MB/spython-2.7.13-   0% |                               | Time: 0:00:00  18.12 MB/spython-2.7.13-   0% |                               | Time: 0:00:00  19.35 MB/spython-2.7.13-   0% |                               | Time: 0:00:00   9.03 MB/spython-2.7.13-   0% |                               | Time: 0:00:00  10.37 MB/spython-2.7.13-   0% |                               | Time: 0:00:00  11.41 MB/spython-2.7.13-   1% |                               | Time: 0:00:00  12.03 MB/spython-2.7.13-   1% |                               | Time: 0:00:00   9.81 MB/spython-2.7.13-   1% |                               | Time: 0:00:00   9.70 MB/spython-2.7.13-   1% |                               | Time: 0:00:00  10.22 MB/spython-2.7.13-   1% |                               | Time: 0:00:00  10.19 MB/spython-2.7.13-   1% |                               | Time: 0:00:00  10.24 MB/spython-2.7.13-   1% |                               | Time: 0:00:00  10.57 MB/spython-2.7.13-   2% |                               | Time: 0:00:00  11.03 MB/spython-2.7.13-   2% |                               | Time: 0:00:00  11.54 MB/spython-2.7.13-   2% |                               | Time: 0:00:00  11.87 MB/spython-2.7.13-   2% |                               | Time: 0:00:00  12.09 MB/spython-2.7.13-   2% |                               | Time: 0:00:00  12.43 MB/spython-2.7.13-   2% |                               | Time: 0:00:00  12.67 MB/spython-2.7.13-   2% |                               | Time: 0:00:00  12.95 MB/spython-2.7.13-   2% |                               | Time: 0:00:00  13.30 MB/spython-2.7.13-   3% |                               | Time: 0:00:00  13.63 MB/spython-2.7.13-   3% |#                              | Time: 0:00:00  13.94 MB/spython-2.7.13-   3% |#                              | Time: 0:00:00  14.24 MB/spython-2.7.13-   3% |#                              | Time: 0:00:00  14.07 MB/spython-2.7.13-   3% |#                              | Time: 0:00:00  14.43 MB/spython-2.7.13-   3% |#                              | Time: 0:00:00  14.62 MB/spython-2.7.13-   3% |#                              | Time: 0:00:00  14.82 MB/spython-2.7.13-   4% |#                              | Time: 0:00:00  15.08 MB/spython-2.7.13-   4% |#                              | Time: 0:00:00  15.35 MB/spython-2.7.13-   4% |#                              | Time: 0:00:00  15.62 MB/spython-2.7.13-   4% |#                              | Time: 0:00:00  15.88 MB/spython-2.7.13-   4% |#                              | Time: 0:00:00  16.14 MB/spython-2.7.13-   4% |#                              | Time: 0:00:00  16.39 MB/spython-2.7.13-   4% |#                              | Time: 0:00:00  16.63 MB/spython-2.7.13-   5% |#                              | Time: 0:00:00  16.86 MB/spython-2.7.13-   5% |#                              | Time: 0:00:00  17.10 MB/spython-2.7.13-   5% |#                              | Time: 0:00:00  17.29 MB/spython-2.7.13-   5% |#                              | Time: 0:00:00  17.58 MB/spython-2.7.13-   5% |#                              | Time: 0:00:00  17.86 MB/spython-2.7.13-   5% |#                              | Time: 0:00:00  18.13 MB/spython-2.7.13-   5% |#                              | Time: 0:00:00  18.41 MB/spython-2.7.13-   5% |#                              | Time: 0:00:00  18.68 MB/spython-2.7.13-   6% |#                              | Time: 0:00:00  18.95 MB/spython-2.7.13-   6% |#                              | Time: 0:00:00  19.22 MB/spython-2.7.13-   6% |#                              | Time: 0:00:00  19.48 MB/spython-2.7.13-   6% |##                             | Time: 0:00:00  19.72 MB/spython-2.7.13-   6% |##                             | Time: 0:00:00  19.97 MB/spython-2.7.13-   6% |##                             | Time: 0:00:00  20.20 MB/spython-2.7.13-   6% |##                             | Time: 0:00:00  20.45 MB/spython-2.7.13-   7% |##                             | Time: 0:00:00  20.68 MB/spython-2.7.13-   7% |##                             | Time: 0:00:00  20.91 MB/spython-2.7.13-   7% |##                             | Time: 0:00:00  21.14 MB/spython-2.7.13-   7% |##                             | Time: 0:00:00  21.38 MB/spython-2.7.13-   7% |##                             | Time: 0:00:00  21.61 MB/spython-2.7.13-   7% |##                             | Time: 0:00:00  21.84 MB/spython-2.7.13-   7% |##                             | Time: 0:00:00  22.05 MB/spython-2.7.13-   8% |##                             | Time: 0:00:00  22.27 MB/spython-2.7.13-   8% |##                             | Time: 0:00:00  22.48 MB/spython-2.7.13-   8% |##                             | Time: 0:00:00  22.67 MB/spython-2.7.13-   8% |##                             | Time: 0:00:00  22.88 MB/spython-2.7.13-   8% |##                             | Time: 0:00:00  23.07 MB/spython-2.7.13-   8% |##                             | Time: 0:00:00  23.26 MB/spython-2.7.13-   8% |##                             | Time: 0:00:00  23.47 MB/spython-2.7.13-   8% |##                             | Time: 0:00:00  23.66 MB/spython-2.7.13-   9% |##                             | Time: 0:00:00  23.84 MB/spython-2.7.13-   9% |##                             | Time: 0:00:00  24.03 MB/spython-2.7.13-   9% |##                             | Time: 0:00:00  24.23 MB/spython-2.7.13-   9% |##                             | Time: 0:00:00  24.42 MB/spython-2.7.13-   9% |##                             | Time: 0:00:00  24.59 MB/spython-2.7.13-   9% |###                            | Time: 0:00:00  24.76 MB/spython-2.7.13-   9% |###                            | Time: 0:00:00  24.93 MB/spython-2.7.13-  10% |###                            | Time: 0:00:00  25.10 MB/spython-2.7.13-  10% |###                            | Time: 0:00:00  25.24 MB/spython-2.7.13-  10% |###                            | Time: 0:00:00  25.44 MB/spython-2.7.13-  10% |###                            | Time: 0:00:00  25.68 MB/spython-2.7.13-  10% |###                            | Time: 0:00:00  25.92 MB/spython-2.7.13-  10% |###                            | Time: 0:00:00  26.14 MB/spython-2.7.13-  10% |###                            | Time: 0:00:00  26.35 MB/spython-2.7.13-  11% |###                            | Time: 0:00:00  26.58 MB/spython-2.7.13-  11% |###                            | Time: 0:00:00  26.82 MB/spython-2.7.13-  11% |###                            | Time: 0:00:00  27.05 MB/spython-2.7.13-  11% |###                            | Time: 0:00:00  27.28 MB/spython-2.7.13-  11% |###                            | Time: 0:00:00  27.50 MB/spython-2.7.13-  11% |###                            | Time: 0:00:00  27.71 MB/spython-2.7.13-  11% |###                            | Time: 0:00:00  27.93 MB/spython-2.7.13-  11% |###                            | Time: 0:00:00  28.15 MB/spython-2.7.13-  12% |###                            | Time: 0:00:00  28.38 MB/spython-2.7.13-  12% |###                            | Time: 0:00:00  28.60 MB/spython-2.7.13-  12% |###                            | Time: 0:00:00  28.82 MB/spython-2.7.13-  12% |###                            | Time: 0:00:00  29.04 MB/spython-2.7.13-  12% |###                            | Time: 0:00:00  29.26 MB/spython-2.7.13-  12% |###                            | Time: 0:00:00  29.48 MB/spython-2.7.13-  12% |####                           | Time: 0:00:00  29.67 MB/spython-2.7.13-  13% |####                           | Time: 0:00:00  29.86 MB/spython-2.7.13-  13% |####                           | Time: 0:00:00  30.05 MB/spython-2.7.13-  13% |####                           | Time: 0:00:00  30.24 MB/spython-2.7.13-  13% |####                           | Time: 0:00:00  30.44 MB/spython-2.7.13-  13% |####                           | Time: 0:00:00  30.63 MB/spython-2.7.13-  13% |####                           | Time: 0:00:00  30.82 MB/spython-2.7.13-  13% |####                           | Time: 0:00:00  31.01 MB/spython-2.7.13-  14% |####                           | Time: 0:00:00  31.21 MB/spython-2.7.13-  14% |####                           | Time: 0:00:00  31.40 MB/spython-2.7.13-  14% |####                           | Time: 0:00:00  31.60 MB/spython-2.7.13-  14% |####                           | Time: 0:00:00  31.79 MB/spython-2.7.13-  14% |####                           | Time: 0:00:00  31.98 MB/spython-2.7.13-  14% |####                           | Time: 0:00:00  32.17 MB/spython-2.7.13-  14% |####                           | Time: 0:00:00  32.36 MB/spython-2.7.13-  14% |####                           | Time: 0:00:00  32.55 MB/spython-2.7.13-  15% |####                           | Time: 0:00:00  32.74 MB/spython-2.7.13-  15% |####                           | Time: 0:00:00  32.92 MB/spython-2.7.13-  15% |####                           | Time: 0:00:00  33.08 MB/spython-2.7.13-  15% |####                           | Time: 0:00:00  33.25 MB/spython-2.7.13-  15% |####                           | Time: 0:00:00  33.42 MB/spython-2.7.13-  15% |####                           | Time: 0:00:00  33.56 MB/spython-2.7.13-  15% |####                           | Time: 0:00:00  33.74 MB/spython-2.7.13-  16% |####                           | Time: 0:00:00  33.92 MB/spython-2.7.13-  16% |#####                          | Time: 0:00:00  33.58 MB/spython-2.7.13-  16% |#####                          | Time: 0:00:00  33.51 MB/spython-2.7.13-  16% |#####                          | Time: 0:00:00  33.51 MB/spython-2.7.13-  16% |#####                          | Time: 0:00:00  33.52 MB/spython-2.7.13-  16% |#####                          | Time: 0:00:00  33.54 MB/spython-2.7.13-  16% |#####                          | Time: 0:00:00  33.53 MB/spython-2.7.13-  17% |#####                          | Time: 0:00:00  33.54 MB/spython-2.7.13-  17% |#####                          | Time: 0:00:00  33.59 MB/spython-2.7.13-  17% |#####                          | Time: 0:00:00  33.62 MB/spython-2.7.13-  17% |#####                          | Time: 0:00:00  33.67 MB/spython-2.7.13-  17% |#####                          | Time: 0:00:00  33.70 MB/spython-2.7.13-  17% |#####                          | Time: 0:00:00  33.75 MB/spython-2.7.13-  17% |#####                          | Time: 0:00:00  33.79 MB/spython-2.7.13-  17% |#####                          | Time: 0:00:00  33.83 MB/spython-2.7.13-  18% |#####                          | Time: 0:00:00  33.87 MB/spython-2.7.13-  18% |#####                          | Time: 0:00:00  33.84 MB/spython-2.7.13-  18% |#####                          | Time: 0:00:00  33.94 MB/spython-2.7.13-  18% |#####                          | Time: 0:00:00  34.04 MB/spython-2.7.13-  18% |#####                          | Time: 0:00:00  34.13 MB/spython-2.7.13-  18% |#####                          | Time: 0:00:00  34.23 MB/spython-2.7.13-  18% |#####                          | Time: 0:00:00  34.33 MB/spython-2.7.13-  19% |#####                          | Time: 0:00:00  34.42 MB/spython-2.7.13-  19% |#####                          | Time: 0:00:00  34.51 MB/spython-2.7.13-  19% |#####                          | Time: 0:00:00  34.61 MB/spython-2.7.13-  19% |######                         | Time: 0:00:00  34.72 MB/spython-2.7.13-  19% |######                         | Time: 0:00:00  34.82 MB/spython-2.7.13-  19% |######                         | Time: 0:00:00  34.90 MB/spython-2.7.13-  19% |######                         | Time: 0:00:00  34.99 MB/spython-2.7.13-  20% |######                         | Time: 0:00:00  35.07 MB/spython-2.7.13-  20% |######                         | Time: 0:00:00  35.15 MB/spython-2.7.13-  20% |######                         | Time: 0:00:00  35.25 MB/spython-2.7.13-  20% |######                         | Time: 0:00:00  35.34 MB/spython-2.7.13-  20% |######                         | Time: 0:00:00  35.44 MB/spython-2.7.13-  20% |######                         | Time: 0:00:00  35.53 MB/spython-2.7.13-  20% |######                         | Time: 0:00:00  35.62 MB/spython-2.7.13-  20% |######                         | Time: 0:00:00  35.70 MB/spython-2.7.13-  21% |######                         | Time: 0:00:00  35.79 MB/spython-2.7.13-  21% |######                         | Time: 0:00:00  35.86 MB/spython-2.7.13-  21% |######                         | Time: 0:00:00  35.94 MB/spython-2.7.13-  21% |######                         | Time: 0:00:00  36.02 MB/spython-2.7.13-  21% |######                         | Time: 0:00:00  36.11 MB/spython-2.7.13-  21% |######                         | Time: 0:00:00  36.16 MB/spython-2.7.13-  21% |######                         | Time: 0:00:00  36.23 MB/spython-2.7.13-  22% |######                         | Time: 0:00:00  36.32 MB/spython-2.7.13-  22% |######                         | Time: 0:00:00  36.40 MB/spython-2.7.13-  22% |######                         | Time: 0:00:00  36.47 MB/spython-2.7.13-  22% |######                         | Time: 0:00:00  36.53 MB/spython-2.7.13-  22% |#######                        | Time: 0:00:00  36.61 MB/spython-2.7.13-  22% |#######                        | Time: 0:00:00  36.69 MB/spython-2.7.13-  22% |#######                        | Time: 0:00:00  36.76 MB/spython-2.7.13-  22% |#######                        | Time: 0:00:00  36.83 MB/spython-2.7.13-  23% |#######                        | Time: 0:00:00  36.90 MB/spython-2.7.13-  23% |#######                        | Time: 0:00:00  36.97 MB/spython-2.7.13-  23% |#######                        | Time: 0:00:00  37.05 MB/spython-2.7.13-  23% |#######                        | Time: 0:00:00  37.11 MB/spython-2.7.13-  23% |#######                        | Time: 0:00:00  37.16 MB/spython-2.7.13-  23% |#######                        | Time: 0:00:00  37.25 MB/spython-2.7.13-  23% |#######                        | Time: 0:00:00  37.35 MB/spython-2.7.13-  24% |#######                        | Time: 0:00:00  37.45 MB/spython-2.7.13-  24% |#######                        | Time: 0:00:00  37.54 MB/spython-2.7.13-  24% |#######                        | Time: 0:00:00  37.63 MB/spython-2.7.13-  24% |#######                        | Time: 0:00:00  37.72 MB/spython-2.7.13-  24% |#######                        | Time: 0:00:00  37.81 MB/spython-2.7.13-  24% |#######                        | Time: 0:00:00  37.90 MB/spython-2.7.13-  24% |#######                        | Time: 0:00:00  37.98 MB/spython-2.7.13-  25% |#######                        | Time: 0:00:00  38.07 MB/spython-2.7.13-  25% |#######                        | Time: 0:00:00  38.17 MB/spython-2.7.13-  25% |#######                        | Time: 0:00:00  38.26 MB/spython-2.7.13-  25% |#######                        | Time: 0:00:00  38.35 MB/spython-2.7.13-  25% |#######                        | Time: 0:00:00  38.43 MB/spython-2.7.13-  25% |#######                        | Time: 0:00:00  38.52 MB/spython-2.7.13-  25% |########                       | Time: 0:00:00  38.61 MB/spython-2.7.13-  25% |########                       | Time: 0:00:00  38.70 MB/spython-2.7.13-  26% |########                       | Time: 0:00:00  38.79 MB/spython-2.7.13-  26% |########                       | Time: 0:00:00  38.89 MB/spython-2.7.13-  26% |########                       | Time: 0:00:00  38.98 MB/spython-2.7.13-  26% |########                       | Time: 0:00:00  39.07 MB/spython-2.7.13-  26% |########                       | Time: 0:00:00  39.17 MB/spython-2.7.13-  26% |########                       | Time: 0:00:00  39.25 MB/spython-2.7.13-  26% |########                       | Time: 0:00:00  39.33 MB/spython-2.7.13-  27% |########                       | Time: 0:00:00  39.42 MB/spython-2.7.13-  27% |########                       | Time: 0:00:00  39.51 MB/spython-2.7.13-  27% |########                       | Time: 0:00:00  39.59 MB/spython-2.7.13-  27% |########                       | Time: 0:00:00  39.67 MB/spython-2.7.13-  27% |########                       | Time: 0:00:00  39.75 MB/spython-2.7.13-  27% |########                       | Time: 0:00:00  39.83 MB/spython-2.7.13-  27% |########                       | Time: 0:00:00  39.92 MB/spython-2.7.13-  28% |########                       | Time: 0:00:00  40.00 MB/spython-2.7.13-  28% |########                       | Time: 0:00:00  40.04 MB/spython-2.7.13-  28% |########                       | Time: 0:00:00  40.12 MB/spython-2.7.13-  28% |########                       | Time: 0:00:00  40.20 MB/spython-2.7.13-  28% |########                       | Time: 0:00:00  40.29 MB/spython-2.7.13-  28% |########                       | Time: 0:00:00  40.37 MB/spython-2.7.13-  28% |########                       | Time: 0:00:00  40.46 MB/spython-2.7.13-  28% |########                       | Time: 0:00:00  40.53 MB/spython-2.7.13-  29% |#########                      | Time: 0:00:00  40.60 MB/spython-2.7.13-  29% |#########                      | Time: 0:00:00  40.67 MB/spython-2.7.13-  29% |#########                      | Time: 0:00:00  40.74 MB/spython-2.7.13-  29% |#########                      | Time: 0:00:00  40.82 MB/spython-2.7.13-  29% |#########                      | Time: 0:00:00  40.89 MB/spython-2.7.13-  29% |#########                      | Time: 0:00:00  40.97 MB/spython-2.7.13-  29% |#########                      | Time: 0:00:00  41.05 MB/spython-2.7.13-  30% |#########                      | Time: 0:00:00  41.13 MB/spython-2.7.13-  30% |#########                      | Time: 0:00:00  41.20 MB/spython-2.7.13-  30% |#########                      | Time: 0:00:00  41.26 MB/spython-2.7.13-  30% |#########                      | Time: 0:00:00  41.33 MB/spython-2.7.13-  30% |#########                      | Time: 0:00:00  41.40 MB/spython-2.7.13-  30% |#########                      | Time: 0:00:00  41.47 MB/spython-2.7.13-  30% |#########                      | Time: 0:00:00  41.55 MB/spython-2.7.13-  31% |#########                      | Time: 0:00:00  41.63 MB/spython-2.7.13-  31% |#########                      | Time: 0:00:00  41.71 MB/spython-2.7.13-  31% |#########                      | Time: 0:00:00  41.77 MB/spython-2.7.13-  31% |#########                      | Time: 0:00:00  41.84 MB/spython-2.7.13-  31% |#########                      | Time: 0:00:00  41.91 MB/spython-2.7.13-  31% |#########                      | Time: 0:00:00  41.98 MB/spython-2.7.13-  31% |#########                      | Time: 0:00:00  42.05 MB/spython-2.7.13-  31% |#########                      | Time: 0:00:00  42.13 MB/spython-2.7.13-  32% |#########                      | Time: 0:00:00  42.20 MB/spython-2.7.13-  32% |#########                      | Time: 0:00:00  42.27 MB/spython-2.7.13-  32% |##########                     | Time: 0:00:00  42.33 MB/spython-2.7.13-  32% |##########                     | Time: 0:00:00  42.40 MB/spython-2.7.13-  32% |##########                     | Time: 0:00:00  42.35 MB/spython-2.7.13-  32% |##########                     | Time: 0:00:00  42.21 MB/spython-2.7.13-  32% |##########                     | Time: 0:00:00  42.11 MB/spython-2.7.13-  33% |##########                     | Time: 0:00:00  42.04 MB/spython-2.7.13-  33% |##########                     | Time: 0:00:00  41.97 MB/spython-2.7.13-  33% |##########                     | Time: 0:00:00  41.91 MB/spython-2.7.13-  33% |##########                     | Time: 0:00:00  41.84 MB/spython-2.7.13-  33% |##########                     | Time: 0:00:00  41.76 MB/spython-2.7.13-  33% |##########                     | Time: 0:00:00  41.70 MB/spython-2.7.13-  33% |##########                     | Time: 0:00:00  41.64 MB/spython-2.7.13-  34% |##########                     | Time: 0:00:00  41.58 MB/spython-2.7.13-  34% |##########                     | Time: 0:00:00  41.52 MB/spython-2.7.13-  34% |##########                     | Time: 0:00:00  41.47 MB/spython-2.7.13-  34% |##########                     | Time: 0:00:00  41.41 MB/spython-2.7.13-  34% |##########                     | Time: 0:00:00  41.35 MB/spython-2.7.13-  34% |##########                     | Time: 0:00:00  41.29 MB/spython-2.7.13-  34% |##########                     | Time: 0:00:00  41.24 MB/spython-2.7.13-  34% |##########                     | Time: 0:00:00  41.19 MB/spython-2.7.13-  35% |##########                     | Time: 0:00:00  41.14 MB/spython-2.7.13-  35% |##########                     | Time: 0:00:00  41.09 MB/spython-2.7.13-  35% |##########                     | Time: 0:00:00  41.04 MB/spython-2.7.13-  35% |###########                    | Time: 0:00:00  40.99 MB/spython-2.7.13-  35% |###########                    | Time: 0:00:00  40.96 MB/spython-2.7.13-  35% |###########                    | Time: 0:00:00  41.02 MB/spython-2.7.13-  35% |###########                    | Time: 0:00:00  41.08 MB/spython-2.7.13-  36% |###########                    | Time: 0:00:00  41.14 MB/spython-2.7.13-  36% |###########                    | Time: 0:00:00  41.20 MB/spython-2.7.13-  36% |###########                    | Time: 0:00:00  41.27 MB/spython-2.7.13-  36% |###########                    | Time: 0:00:00  41.33 MB/spython-2.7.13-  36% |###########                    | Time: 0:00:00  41.40 MB/spython-2.7.13-  36% |###########                    | Time: 0:00:00  41.45 MB/spython-2.7.13-  36% |###########                    | Time: 0:00:00  41.51 MB/spython-2.7.13-  37% |###########                    | Time: 0:00:00  41.58 MB/spython-2.7.13-  37% |###########                    | Time: 0:00:00  41.64 MB/spython-2.7.13-  37% |###########                    | Time: 0:00:00  41.70 MB/spython-2.7.13-  37% |###########                    | Time: 0:00:00  41.75 MB/spython-2.7.13-  37% |###########                    | Time: 0:00:00  41.81 MB/spython-2.7.13-  37% |###########                    | Time: 0:00:00  41.87 MB/spython-2.7.13-  37% |###########                    | Time: 0:00:00  41.93 MB/spython-2.7.13-  37% |###########                    | Time: 0:00:00  41.99 MB/spython-2.7.13-  38% |###########                    | Time: 0:00:00  42.05 MB/spython-2.7.13-  38% |###########                    | Time: 0:00:00  42.11 MB/spython-2.7.13-  38% |###########                    | Time: 0:00:00  42.17 MB/spython-2.7.13-  38% |###########                    | Time: 0:00:00  42.22 MB/spython-2.7.13-  38% |###########                    | Time: 0:00:00  42.28 MB/spython-2.7.13-  38% |############                   | Time: 0:00:00  42.34 MB/spython-2.7.13-  38% |############                   | Time: 0:00:00  42.40 MB/spython-2.7.13-  39% |############                   | Time: 0:00:00  42.47 MB/spython-2.7.13-  39% |############                   | Time: 0:00:00  42.52 MB/spython-2.7.13-  39% |############                   | Time: 0:00:00  42.57 MB/spython-2.7.13-  39% |############                   | Time: 0:00:00  42.62 MB/spython-2.7.13-  39% |############                   | Time: 0:00:00  42.68 MB/spython-2.7.13-  39% |############                   | Time: 0:00:00  42.74 MB/spython-2.7.13-  39% |############                   | Time: 0:00:00  42.79 MB/spython-2.7.13-  40% |############                   | Time: 0:00:00  42.84 MB/spython-2.7.13-  40% |############                   | Time: 0:00:00  42.88 MB/spython-2.7.13-  40% |############                   | Time: 0:00:00  42.94 MB/spython-2.7.13-  40% |############                   | Time: 0:00:00  43.00 MB/spython-2.7.13-  40% |############                   | Time: 0:00:00  43.05 MB/spython-2.7.13-  40% |############                   | Time: 0:00:00  43.10 MB/spython-2.7.13-  40% |############                   | Time: 0:00:00  43.16 MB/spython-2.7.13-  40% |############                   | Time: 0:00:00  43.22 MB/spython-2.7.13-  41% |############                   | Time: 0:00:00  43.27 MB/spython-2.7.13-  41% |############                   | Time: 0:00:00  43.32 MB/spython-2.7.13-  41% |############                   | Time: 0:00:00  43.37 MB/spython-2.7.13-  41% |############                   | Time: 0:00:00  43.42 MB/spython-2.7.13-  41% |############                   | Time: 0:00:00  43.48 MB/spython-2.7.13-  41% |############                   | Time: 0:00:00  43.54 MB/spython-2.7.13-  41% |############                   | Time: 0:00:00  43.59 MB/spython-2.7.13-  42% |#############                  | Time: 0:00:00  43.63 MB/spython-2.7.13-  42% |#############                  | Time: 0:00:00  43.68 MB/spython-2.7.13-  42% |#############                  | Time: 0:00:00  43.72 MB/spython-2.7.13-  42% |#############                  | Time: 0:00:00  43.77 MB/spython-2.7.13-  42% |#############                  | Time: 0:00:00  43.82 MB/spython-2.7.13-  42% |#############                  | Time: 0:00:00  43.87 MB/spython-2.7.13-  42% |#############                  | Time: 0:00:00  43.91 MB/spython-2.7.13-  43% |#############                  | Time: 0:00:00  43.96 MB/spython-2.7.13-  43% |#############                  | Time: 0:00:00  44.00 MB/spython-2.7.13-  43% |#############                  | Time: 0:00:00  44.04 MB/spython-2.7.13-  43% |#############                  | Time: 0:00:00  44.09 MB/spython-2.7.13-  43% |#############                  | Time: 0:00:00  44.14 MB/spython-2.7.13-  43% |#############                  | Time: 0:00:00  44.20 MB/spython-2.7.13-  43% |#############                  | Time: 0:00:00  44.24 MB/spython-2.7.13-  43% |#############                  | Time: 0:00:00  44.29 MB/spython-2.7.13-  44% |#############                  | Time: 0:00:00  44.34 MB/spython-2.7.13-  44% |#############                  | Time: 0:00:00  44.39 MB/spython-2.7.13-  44% |#############                  | Time: 0:00:00  44.44 MB/spython-2.7.13-  44% |#############                  | Time: 0:00:00  44.48 MB/spython-2.7.13-  44% |#############                  | Time: 0:00:00  44.52 MB/spython-2.7.13-  44% |#############                  | Time: 0:00:00  44.57 MB/spython-2.7.13-  44% |#############                  | Time: 0:00:00  44.62 MB/spython-2.7.13-  45% |#############                  | Time: 0:00:00  44.67 MB/spython-2.7.13-  45% |##############                 | Time: 0:00:00  44.71 MB/spython-2.7.13-  45% |##############                 | Time: 0:00:00  44.76 MB/spython-2.7.13-  45% |##############                 | Time: 0:00:00  44.81 MB/spython-2.7.13-  45% |##############                 | Time: 0:00:00  44.86 MB/spython-2.7.13-  45% |##############                 | Time: 0:00:00  44.91 MB/spython-2.7.13-  45% |##############                 | Time: 0:00:00  44.95 MB/spython-2.7.13-  45% |##############                 | Time: 0:00:00  44.99 MB/spython-2.7.13-  46% |##############                 | Time: 0:00:00  45.03 MB/spython-2.7.13-  46% |##############                 | Time: 0:00:00  45.07 MB/spython-2.7.13-  46% |##############                 | Time: 0:00:00  45.11 MB/spython-2.7.13-  46% |##############                 | Time: 0:00:00  45.16 MB/spython-2.7.13-  46% |##############                 | Time: 0:00:00  45.20 MB/spython-2.7.13-  46% |##############                 | Time: 0:00:00  45.23 MB/spython-2.7.13-  46% |##############                 | Time: 0:00:00  45.27 MB/spython-2.7.13-  47% |##############                 | Time: 0:00:00  45.31 MB/spython-2.7.13-  47% |##############                 | Time: 0:00:00  45.35 MB/spython-2.7.13-  47% |##############                 | Time: 0:00:00  45.40 MB/spython-2.7.13-  47% |##############                 | Time: 0:00:00  45.45 MB/spython-2.7.13-  47% |##############                 | Time: 0:00:00  45.49 MB/spython-2.7.13-  47% |##############                 | Time: 0:00:00  45.53 MB/spython-2.7.13-  47% |##############                 | Time: 0:00:00  45.57 MB/spython-2.7.13-  48% |##############                 | Time: 0:00:00  45.61 MB/spython-2.7.13-  48% |##############                 | Time: 0:00:00  45.66 MB/spython-2.7.13-  48% |##############                 | Time: 0:00:00  45.70 MB/spython-2.7.13-  48% |###############                | Time: 0:00:00  45.74 MB/spython-2.7.13-  48% |###############                | Time: 0:00:00  45.78 MB/spython-2.7.13-  48% |###############                | Time: 0:00:00  45.83 MB/spython-2.7.13-  48% |###############                | Time: 0:00:00  45.88 MB/spython-2.7.13-  48% |###############                | Time: 0:00:00  45.92 MB/spython-2.7.13-  49% |###############                | Time: 0:00:00  45.96 MB/spython-2.7.13-  49% |###############                | Time: 0:00:00  46.00 MB/spython-2.7.13-  49% |###############                | Time: 0:00:00  46.04 MB/spython-2.7.13-  49% |###############                | Time: 0:00:00  46.08 MB/spython-2.7.13-  49% |###############                | Time: 0:00:00  46.12 MB/spython-2.7.13-  49% |###############                | Time: 0:00:00  46.16 MB/spython-2.7.13-  49% |###############                | Time: 0:00:00  46.20 MB/spython-2.7.13-  50% |###############                | Time: 0:00:00  46.24 MB/spython-2.7.13-  50% |###############                | Time: 0:00:00  46.28 MB/spython-2.7.13-  50% |###############                | Time: 0:00:00  46.33 MB/spython-2.7.13-  50% |###############                | Time: 0:00:00  46.37 MB/spython-2.7.13-  50% |###############                | Time: 0:00:00  46.40 MB/spython-2.7.13-  50% |###############                | Time: 0:00:00  46.44 MB/spython-2.7.13-  50% |###############                | Time: 0:00:00  46.48 MB/spython-2.7.13-  51% |###############                | Time: 0:00:00  46.52 MB/spython-2.7.13-  51% |###############                | Time: 0:00:00  46.56 MB/spython-2.7.13-  51% |###############                | Time: 0:00:00  46.59 MB/spython-2.7.13-  51% |###############                | Time: 0:00:00  46.63 MB/spython-2.7.13-  51% |###############                | Time: 0:00:00  46.66 MB/spython-2.7.13-  51% |################               | Time: 0:00:00  46.70 MB/spython-2.7.13-  51% |################               | Time: 0:00:00  46.74 MB/spython-2.7.13-  51% |################               | Time: 0:00:00  46.79 MB/spython-2.7.13-  52% |################               | Time: 0:00:00  46.82 MB/spython-2.7.13-  52% |################               | Time: 0:00:00  46.86 MB/spython-2.7.13-  52% |################               | Time: 0:00:00  46.90 MB/spython-2.7.13-  52% |################               | Time: 0:00:00  46.94 MB/spython-2.7.13-  52% |################               | Time: 0:00:00  46.98 MB/spython-2.7.13-  52% |################               | Time: 0:00:00  47.01 MB/spython-2.7.13-  52% |################               | Time: 0:00:00  47.05 MB/spython-2.7.13-  53% |################               | Time: 0:00:00  47.09 MB/spython-2.7.13-  53% |################               | Time: 0:00:00  47.13 MB/spython-2.7.13-  53% |################               | Time: 0:00:00  47.17 MB/spython-2.7.13-  53% |################               | Time: 0:00:00  47.20 MB/spython-2.7.13-  53% |################               | Time: 0:00:00  47.22 MB/spython-2.7.13-  53% |################               | Time: 0:00:00  47.25 MB/spython-2.7.13-  53% |################               | Time: 0:00:00  47.29 MB/spython-2.7.13-  54% |################               | Time: 0:00:00  47.32 MB/spython-2.7.13-  54% |################               | Time: 0:00:00  47.36 MB/spython-2.7.13-  54% |################               | Time: 0:00:00  47.40 MB/spython-2.7.13-  54% |################               | Time: 0:00:00  47.44 MB/spython-2.7.13-  54% |################               | Time: 0:00:00  47.48 MB/spython-2.7.13-  54% |################               | Time: 0:00:00  47.52 MB/spython-2.7.13-  54% |#################              | Time: 0:00:00  47.55 MB/spython-2.7.13-  54% |#################              | Time: 0:00:00  47.59 MB/spython-2.7.13-  55% |#################              | Time: 0:00:00  47.62 MB/spython-2.7.13-  55% |#################              | Time: 0:00:00  47.66 MB/spython-2.7.13-  55% |#################              | Time: 0:00:00  47.70 MB/spython-2.7.13-  55% |#################              | Time: 0:00:00  47.73 MB/spython-2.7.13-  55% |#################              | Time: 0:00:00  47.76 MB/spython-2.7.13-  55% |#################              | Time: 0:00:00  47.79 MB/spython-2.7.13-  55% |#################              | Time: 0:00:00  47.83 MB/spython-2.7.13-  56% |#################              | Time: 0:00:00  47.87 MB/spython-2.7.13-  56% |#################              | Time: 0:00:00  47.90 MB/spython-2.7.13-  56% |#################              | Time: 0:00:00  47.93 MB/spython-2.7.13-  56% |#################              | Time: 0:00:00  47.96 MB/spython-2.7.13-  56% |#################              | Time: 0:00:00  47.93 MB/spython-2.7.13-  56% |#################              | Time: 0:00:00  47.79 MB/spython-2.7.13-  56% |#################              | Time: 0:00:00  47.74 MB/spython-2.7.13-  57% |#################              | Time: 0:00:00  47.69 MB/spython-2.7.13-  57% |#################              | Time: 0:00:00  47.64 MB/spython-2.7.13-  57% |#################              | Time: 0:00:00  47.60 MB/spython-2.7.13-  57% |#################              | Time: 0:00:00  47.56 MB/spython-2.7.13-  57% |#################              | Time: 0:00:00  47.54 MB/spython-2.7.13-  57% |#################              | Time: 0:00:00  47.52 MB/spython-2.7.13-  57% |#################              | Time: 0:00:00  47.48 MB/spython-2.7.13-  57% |#################              | Time: 0:00:00  47.45 MB/spython-2.7.13-  58% |##################             | Time: 0:00:00  47.42 MB/spython-2.7.13-  58% |##################             | Time: 0:00:00  47.39 MB/spython-2.7.13-  58% |##################             | Time: 0:00:00  47.37 MB/spython-2.7.13-  58% |##################             | Time: 0:00:00  47.33 MB/spython-2.7.13-  58% |##################             | Time: 0:00:00  47.31 MB/spython-2.7.13-  58% |##################             | Time: 0:00:00  47.28 MB/spython-2.7.13-  58% |##################             | Time: 0:00:00  47.24 MB/spython-2.7.13-  59% |##################             | Time: 0:00:00  47.22 MB/spython-2.7.13-  59% |##################             | Time: 0:00:00  47.19 MB/spython-2.7.13-  59% |##################             | Time: 0:00:00  47.15 MB/spython-2.7.13-  59% |##################             | Time: 0:00:00  47.13 MB/spython-2.7.13-  59% |##################             | Time: 0:00:00  47.11 MB/spython-2.7.13-  59% |##################             | Time: 0:00:00  47.08 MB/spython-2.7.13-  59% |##################             | Time: 0:00:00  47.11 MB/spython-2.7.13-  60% |##################             | Time: 0:00:00  47.14 MB/spython-2.7.13-  60% |##################             | Time: 0:00:00  47.17 MB/spython-2.7.13-  60% |##################             | Time: 0:00:00  47.21 MB/spython-2.7.13-  60% |##################             | Time: 0:00:00  47.24 MB/spython-2.7.13-  60% |##################             | Time: 0:00:00  47.27 MB/spython-2.7.13-  60% |##################             | Time: 0:00:00  47.31 MB/spython-2.7.13-  60% |##################             | Time: 0:00:00  47.34 MB/spython-2.7.13-  60% |##################             | Time: 0:00:00  47.38 MB/spython-2.7.13-  61% |##################             | Time: 0:00:00  47.41 MB/spython-2.7.13-  61% |##################             | Time: 0:00:00  47.44 MB/spython-2.7.13-  61% |###################            | Time: 0:00:00  47.47 MB/spython-2.7.13-  61% |###################            | Time: 0:00:00  47.50 MB/spython-2.7.13-  61% |###################            | Time: 0:00:00  47.54 MB/spython-2.7.13-  61% |###################            | Time: 0:00:00  47.57 MB/spython-2.7.13-  61% |###################            | Time: 0:00:00  47.56 MB/spython-2.7.13-  62% |###################            | Time: 0:00:00  47.59 MB/spython-2.7.13-  62% |###################            | Time: 0:00:00  47.61 MB/spython-2.7.13-  62% |###################            | Time: 0:00:00  47.64 MB/spython-2.7.13-  62% |###################            | Time: 0:00:00  47.67 MB/spython-2.7.13-  62% |###################            | Time: 0:00:00  47.70 MB/spython-2.7.13-  62% |###################            | Time: 0:00:00  47.74 MB/spython-2.7.13-  62% |###################            | Time: 0:00:00  47.77 MB/spython-2.7.13-  63% |###################            | Time: 0:00:00  47.81 MB/spython-2.7.13-  63% |###################            | Time: 0:00:00  47.84 MB/spython-2.7.13-  63% |###################            | Time: 0:00:00  47.87 MB/spython-2.7.13-  63% |###################            | Time: 0:00:00  47.90 MB/spython-2.7.13-  63% |###################            | Time: 0:00:00  47.93 MB/spython-2.7.13-  63% |###################            | Time: 0:00:00  47.96 MB/spython-2.7.13-  63% |###################            | Time: 0:00:00  48.00 MB/spython-2.7.13-  63% |###################            | Time: 0:00:00  48.02 MB/spython-2.7.13-  64% |###################            | Time: 0:00:00  48.04 MB/spython-2.7.13-  64% |###################            | Time: 0:00:00  48.07 MB/spython-2.7.13-  64% |###################            | Time: 0:00:00  48.11 MB/spython-2.7.13-  64% |###################            | Time: 0:00:00  48.14 MB/spython-2.7.13-  64% |####################           | Time: 0:00:00  48.17 MB/spython-2.7.13-  64% |####################           | Time: 0:00:00  48.19 MB/spython-2.7.13-  64% |####################           | Time: 0:00:00  48.23 MB/spython-2.7.13-  65% |####################           | Time: 0:00:00  48.26 MB/spython-2.7.13-  65% |####################           | Time: 0:00:00  48.29 MB/spython-2.7.13-  65% |####################           | Time: 0:00:00  48.32 MB/spython-2.7.13-  65% |####################           | Time: 0:00:00  48.34 MB/spython-2.7.13-  65% |####################           | Time: 0:00:00  48.37 MB/spython-2.7.13-  65% |####################           | Time: 0:00:00  48.40 MB/spython-2.7.13-  65% |####################           | Time: 0:00:00  48.44 MB/spython-2.7.13-  66% |####################           | Time: 0:00:00  48.47 MB/spython-2.7.13-  66% |####################           | Time: 0:00:00  48.49 MB/spython-2.7.13-  66% |####################           | Time: 0:00:00  48.50 MB/spython-2.7.13-  66% |####################           | Time: 0:00:00  48.53 MB/spython-2.7.13-  66% |####################           | Time: 0:00:00  48.56 MB/spython-2.7.13-  66% |####################           | Time: 0:00:00  48.59 MB/spython-2.7.13-  66% |####################           | Time: 0:00:00  48.62 MB/spython-2.7.13-  66% |####################           | Time: 0:00:00  48.65 MB/spython-2.7.13-  67% |####################           | Time: 0:00:00  48.67 MB/spython-2.7.13-  67% |####################           | Time: 0:00:00  48.70 MB/spython-2.7.13-  67% |####################           | Time: 0:00:00  48.73 MB/spython-2.7.13-  67% |####################           | Time: 0:00:00  48.76 MB/spython-2.7.13-  67% |####################           | Time: 0:00:00  48.78 MB/spython-2.7.13-  67% |#####################          | Time: 0:00:00  48.81 MB/spython-2.7.13-  67% |#####################          | Time: 0:00:00  48.83 MB/spython-2.7.13-  68% |#####################          | Time: 0:00:00  48.86 MB/spython-2.7.13-  68% |#####################          | Time: 0:00:00  48.88 MB/spython-2.7.13-  68% |#####################          | Time: 0:00:00  48.92 MB/spython-2.7.13-  68% |#####################          | Time: 0:00:00  48.95 MB/spython-2.7.13-  68% |#####################          | Time: 0:00:00  48.96 MB/spython-2.7.13-  68% |#####################          | Time: 0:00:00  48.99 MB/spython-2.7.13-  68% |#####################          | Time: 0:00:00  49.02 MB/spython-2.7.13-  68% |#####################          | Time: 0:00:00  49.05 MB/spython-2.7.13-  69% |#####################          | Time: 0:00:00  49.08 MB/spython-2.7.13-  69% |#####################          | Time: 0:00:00  49.10 MB/spython-2.7.13-  69% |#####################          | Time: 0:00:00  49.13 MB/spython-2.7.13-  69% |#####################          | Time: 0:00:00  49.16 MB/spython-2.7.13-  69% |#####################          | Time: 0:00:00  49.19 MB/spython-2.7.13-  69% |#####################          | Time: 0:00:00  49.21 MB/spython-2.7.13-  69% |#####################          | Time: 0:00:00  49.24 MB/spython-2.7.13-  70% |#####################          | Time: 0:00:00  49.26 MB/spython-2.7.13-  70% |#####################          | Time: 0:00:00  49.29 MB/spython-2.7.13-  70% |#####################          | Time: 0:00:00  49.32 MB/spython-2.7.13-  70% |#####################          | Time: 0:00:00  49.35 MB/spython-2.7.13-  70% |#####################          | Time: 0:00:00  49.38 MB/spython-2.7.13-  70% |#####################          | Time: 0:00:00  49.38 MB/spython-2.7.13-  70% |#####################          | Time: 0:00:00  49.40 MB/spython-2.7.13-  71% |######################         | Time: 0:00:00  49.42 MB/spython-2.7.13-  71% |######################         | Time: 0:00:00  49.45 MB/spython-2.7.13-  71% |######################         | Time: 0:00:00  49.48 MB/spython-2.7.13-  71% |######################         | Time: 0:00:00  49.50 MB/spython-2.7.13-  71% |######################         | Time: 0:00:00  49.52 MB/spython-2.7.13-  71% |######################         | Time: 0:00:00  49.55 MB/spython-2.7.13-  71% |######################         | Time: 0:00:00  49.58 MB/spython-2.7.13-  71% |######################         | Time: 0:00:00  49.61 MB/spython-2.7.13-  72% |######################         | Time: 0:00:00  49.63 MB/spython-2.7.13-  72% |######################         | Time: 0:00:00  49.66 MB/spython-2.7.13-  72% |######################         | Time: 0:00:00  49.69 MB/spython-2.7.13-  72% |######################         | Time: 0:00:00  49.71 MB/spython-2.7.13-  72% |######################         | Time: 0:00:00  49.74 MB/spython-2.7.13-  72% |######################         | Time: 0:00:00  49.76 MB/spython-2.7.13-  72% |######################         | Time: 0:00:00  49.79 MB/spython-2.7.13-  73% |######################         | Time: 0:00:00  49.80 MB/spython-2.7.13-  73% |######################         | Time: 0:00:00  49.82 MB/spython-2.7.13-  73% |######################         | Time: 0:00:00  49.84 MB/spython-2.7.13-  73% |######################         | Time: 0:00:00  49.87 MB/spython-2.7.13-  73% |######################         | Time: 0:00:00  49.90 MB/spython-2.7.13-  73% |######################         | Time: 0:00:00  49.92 MB/spython-2.7.13-  73% |######################         | Time: 0:00:00  49.95 MB/spython-2.7.13-  74% |######################         | Time: 0:00:00  49.98 MB/spython-2.7.13-  74% |######################         | Time: 0:00:00  50.00 MB/spython-2.7.13-  74% |#######################        | Time: 0:00:00  50.03 MB/spython-2.7.13-  74% |#######################        | Time: 0:00:00  50.05 MB/spython-2.7.13-  74% |#######################        | Time: 0:00:00  50.08 MB/spython-2.7.13-  74% |#######################        | Time: 0:00:00  50.10 MB/spython-2.7.13-  74% |#######################        | Time: 0:00:00  50.13 MB/spython-2.7.13-  74% |#######################        | Time: 0:00:00  50.16 MB/spython-2.7.13-  75% |#######################        | Time: 0:00:00  50.18 MB/spython-2.7.13-  75% |#######################        | Time: 0:00:00  50.19 MB/spython-2.7.13-  75% |#######################        | Time: 0:00:00  50.21 MB/spython-2.7.13-  75% |#######################        | Time: 0:00:00  50.23 MB/spython-2.7.13-  75% |#######################        | Time: 0:00:00  50.26 MB/spython-2.7.13-  75% |#######################        | Time: 0:00:00  50.28 MB/spython-2.7.13-  75% |#######################        | Time: 0:00:00  50.31 MB/spython-2.7.13-  76% |#######################        | Time: 0:00:00  50.33 MB/spython-2.7.13-  76% |#######################        | Time: 0:00:00  50.35 MB/spython-2.7.13-  76% |#######################        | Time: 0:00:00  50.37 MB/spython-2.7.13-  76% |#######################        | Time: 0:00:00  50.40 MB/spython-2.7.13-  76% |#######################        | Time: 0:00:00  50.42 MB/spython-2.7.13-  76% |#######################        | Time: 0:00:00  50.45 MB/spython-2.7.13-  76% |#######################        | Time: 0:00:00  50.47 MB/spython-2.7.13-  77% |#######################        | Time: 0:00:00  50.49 MB/spython-2.7.13-  77% |#######################        | Time: 0:00:00  50.52 MB/spython-2.7.13-  77% |#######################        | Time: 0:00:00  50.54 MB/spython-2.7.13-  77% |########################       | Time: 0:00:00  50.57 MB/spython-2.7.13-  77% |########################       | Time: 0:00:00  50.59 MB/spython-2.7.13-  77% |########################       | Time: 0:00:00  50.61 MB/spython-2.7.13-  77% |########################       | Time: 0:00:00  50.63 MB/spython-2.7.13-  77% |########################       | Time: 0:00:00  50.66 MB/spython-2.7.13-  78% |########################       | Time: 0:00:00  50.68 MB/spython-2.7.13-  78% |########################       | Time: 0:00:00  50.70 MB/spython-2.7.13-  78% |########################       | Time: 0:00:00  50.72 MB/spython-2.7.13-  78% |########################       | Time: 0:00:00  50.75 MB/spython-2.7.13-  78% |########################       | Time: 0:00:00  50.77 MB/spython-2.7.13-  78% |########################       | Time: 0:00:00  50.80 MB/spython-2.7.13-  78% |########################       | Time: 0:00:00  50.82 MB/spython-2.7.13-  79% |########################       | Time: 0:00:00  50.84 MB/spython-2.7.13-  79% |########################       | Time: 0:00:00  50.86 MB/spython-2.7.13-  79% |########################       | Time: 0:00:00  50.88 MB/spython-2.7.13-  79% |########################       | Time: 0:00:00  50.90 MB/spython-2.7.13-  79% |########################       | Time: 0:00:00  50.92 MB/spython-2.7.13-  79% |########################       | Time: 0:00:00  50.94 MB/spython-2.7.13-  79% |########################       | Time: 0:00:00  50.96 MB/spython-2.7.13-  80% |########################       | Time: 0:00:00  50.98 MB/spython-2.7.13-  80% |########################       | Time: 0:00:00  51.00 MB/spython-2.7.13-  80% |########################       | Time: 0:00:00  51.02 MB/spython-2.7.13-  80% |########################       | Time: 0:00:00  51.05 MB/spython-2.7.13-  80% |########################       | Time: 0:00:00  51.07 MB/spython-2.7.13-  80% |#########################      | Time: 0:00:00  51.09 MB/spython-2.7.13-  80% |#########################      | Time: 0:00:00  51.11 MB/spython-2.7.13-  80% |#########################      | Time: 0:00:00  51.13 MB/spython-2.7.13-  81% |#########################      | Time: 0:00:00  51.16 MB/spython-2.7.13-  81% |#########################      | Time: 0:00:00  51.18 MB/spython-2.7.13-  81% |#########################      | Time: 0:00:00  51.20 MB/spython-2.7.13-  81% |#########################      | Time: 0:00:00  51.22 MB/spython-2.7.13-  81% |#########################      | Time: 0:00:00  51.24 MB/spython-2.7.13-  81% |#########################      | Time: 0:00:00  51.27 MB/spython-2.7.13-  81% |#########################      | Time: 0:00:00  51.29 MB/spython-2.7.13-  82% |#########################      | Time: 0:00:00  51.31 MB/spython-2.7.13-  82% |#########################      | Time: 0:00:00  51.33 MB/spython-2.7.13-  82% |#########################      | Time: 0:00:00  51.35 MB/spython-2.7.13-  82% |#########################      | Time: 0:00:00  51.37 MB/spython-2.7.13-  82% |#########################      | Time: 0:00:00  51.39 MB/spython-2.7.13-  82% |#########################      | Time: 0:00:00  51.41 MB/spython-2.7.13-  82% |#########################      | Time: 0:00:00  51.43 MB/spython-2.7.13-  83% |#########################      | Time: 0:00:00  51.45 MB/spython-2.7.13-  83% |#########################      | Time: 0:00:00  51.47 MB/spython-2.7.13-  83% |#########################      | Time: 0:00:00  51.50 MB/spython-2.7.13-  83% |#########################      | Time: 0:00:00  51.52 MB/spython-2.7.13-  83% |#########################      | Time: 0:00:00  51.54 MB/spython-2.7.13-  83% |#########################      | Time: 0:00:00  51.56 MB/spython-2.7.13-  83% |#########################      | Time: 0:00:00  51.58 MB/spython-2.7.13-  83% |##########################     | Time: 0:00:00  51.60 MB/spython-2.7.13-  84% |##########################     | Time: 0:00:00  51.62 MB/spython-2.7.13-  84% |##########################     | Time: 0:00:00  51.63 MB/spython-2.7.13-  84% |##########################     | Time: 0:00:00  51.65 MB/spython-2.7.13-  84% |##########################     | Time: 0:00:00  51.66 MB/spython-2.7.13-  84% |##########################     | Time: 0:00:00  51.68 MB/spython-2.7.13-  84% |##########################     | Time: 0:00:00  51.70 MB/spython-2.7.13-  84% |##########################     | Time: 0:00:00  51.72 MB/spython-2.7.13-  85% |##########################     | Time: 0:00:00  51.74 MB/spython-2.7.13-  85% |##########################     | Time: 0:00:00  51.75 MB/spython-2.7.13-  85% |##########################     | Time: 0:00:00  51.77 MB/spython-2.7.13-  85% |##########################     | Time: 0:00:00  51.79 MB/spython-2.7.13-  85% |##########################     | Time: 0:00:00  51.81 MB/spython-2.7.13-  85% |##########################     | Time: 0:00:00  51.83 MB/spython-2.7.13-  85% |##########################     | Time: 0:00:00  51.85 MB/spython-2.7.13-  86% |##########################     | Time: 0:00:00  51.87 MB/spython-2.7.13-  86% |##########################     | Time: 0:00:00  51.89 MB/spython-2.7.13-  86% |##########################     | Time: 0:00:00  51.91 MB/spython-2.7.13-  86% |##########################     | Time: 0:00:00  51.92 MB/spython-2.7.13-  86% |##########################     | Time: 0:00:00  51.94 MB/spython-2.7.13-  86% |##########################     | Time: 0:00:00  51.95 MB/spython-2.7.13-  86% |##########################     | Time: 0:00:00  51.97 MB/spython-2.7.13-  86% |##########################     | Time: 0:00:00  51.99 MB/spython-2.7.13-  87% |###########################    | Time: 0:00:00  52.01 MB/spython-2.7.13-  87% |###########################    | Time: 0:00:00  52.02 MB/spython-2.7.13-  87% |###########################    | Time: 0:00:00  52.04 MB/spython-2.7.13-  87% |###########################    | Time: 0:00:00  52.06 MB/spython-2.7.13-  87% |###########################    | Time: 0:00:00  52.07 MB/spython-2.7.13-  87% |###########################    | Time: 0:00:00  52.09 MB/spython-2.7.13-  87% |###########################    | Time: 0:00:00  52.11 MB/spython-2.7.13-  88% |###########################    | Time: 0:00:00  52.13 MB/spython-2.7.13-  88% |###########################    | Time: 0:00:00  52.15 MB/spython-2.7.13-  88% |###########################    | Time: 0:00:00  52.16 MB/spython-2.7.13-  88% |###########################    | Time: 0:00:00  52.18 MB/spython-2.7.13-  88% |###########################    | Time: 0:00:00  52.20 MB/spython-2.7.13-  88% |###########################    | Time: 0:00:00  52.21 MB/spython-2.7.13-  88% |###########################    | Time: 0:00:00  52.22 MB/spython-2.7.13-  89% |###########################    | Time: 0:00:00  52.24 MB/spython-2.7.13-  89% |###########################    | Time: 0:00:00  52.26 MB/spython-2.7.13-  89% |###########################    | Time: 0:00:00  52.28 MB/spython-2.7.13-  89% |###########################    | Time: 0:00:00  52.29 MB/spython-2.7.13-  89% |###########################    | Time: 0:00:00  52.31 MB/spython-2.7.13-  89% |###########################    | Time: 0:00:00  52.33 MB/spython-2.7.13-  89% |###########################    | Time: 0:00:00  52.34 MB/spython-2.7.13-  89% |###########################    | Time: 0:00:00  52.36 MB/spython-2.7.13-  90% |###########################    | Time: 0:00:00  52.38 MB/spython-2.7.13-  90% |###########################    | Time: 0:00:00  52.40 MB/spython-2.7.13-  90% |############################   | Time: 0:00:00  52.41 MB/spython-2.7.13-  90% |############################   | Time: 0:00:00  52.43 MB/spython-2.7.13-  90% |############################   | Time: 0:00:00  52.45 MB/spython-2.7.13-  90% |############################   | Time: 0:00:00  52.47 MB/spython-2.7.13-  90% |############################   | Time: 0:00:00  52.48 MB/spython-2.7.13-  91% |############################   | Time: 0:00:00  52.49 MB/spython-2.7.13-  91% |############################   | Time: 0:00:00  52.51 MB/spython-2.7.13-  91% |############################   | Time: 0:00:00  52.53 MB/spython-2.7.13-  91% |############################   | Time: 0:00:00  52.54 MB/spython-2.7.13-  91% |############################   | Time: 0:00:00  52.56 MB/spython-2.7.13-  91% |############################   | Time: 0:00:00  52.58 MB/spython-2.7.13-  91% |############################   | Time: 0:00:00  52.59 MB/spython-2.7.13-  91% |############################   | Time: 0:00:00  52.61 MB/spython-2.7.13-  92% |############################   | Time: 0:00:00  52.63 MB/spython-2.7.13-  92% |############################   | Time: 0:00:00  52.64 MB/spython-2.7.13-  92% |############################   | Time: 0:00:00  52.66 MB/spython-2.7.13-  92% |############################   | Time: 0:00:00  52.67 MB/spython-2.7.13-  92% |############################   | Time: 0:00:00  52.69 MB/spython-2.7.13-  92% |############################   | Time: 0:00:00  52.71 MB/spython-2.7.13-  92% |############################   | Time: 0:00:00  52.72 MB/spython-2.7.13-  93% |############################   | Time: 0:00:00  52.74 MB/spython-2.7.13-  93% |############################   | Time: 0:00:00  52.76 MB/spython-2.7.13-  93% |############################   | Time: 0:00:00  52.78 MB/spython-2.7.13-  93% |############################   | Time: 0:00:00  52.80 MB/spython-2.7.13-  93% |#############################  | Time: 0:00:00  52.82 MB/spython-2.7.13-  93% |#############################  | Time: 0:00:00  52.84 MB/spython-2.7.13-  93% |#############################  | Time: 0:00:00  52.86 MB/spython-2.7.13-  94% |#############################  | Time: 0:00:00  52.88 MB/spython-2.7.13-  94% |#############################  | Time: 0:00:00  52.90 MB/spython-2.7.13-  94% |#############################  | Time: 0:00:00  52.92 MB/spython-2.7.13-  94% |#############################  | Time: 0:00:00  52.95 MB/spython-2.7.13-  94% |#############################  | Time: 0:00:00  52.97 MB/spython-2.7.13-  94% |#############################  | Time: 0:00:00  52.99 MB/spython-2.7.13-  94% |#############################  | Time: 0:00:00  53.01 MB/spython-2.7.13-  94% |#############################  | Time: 0:00:00  53.03 MB/spython-2.7.13-  95% |#############################  | Time: 0:00:00  53.05 MB/spython-2.7.13-  95% |#############################  | Time: 0:00:00  53.07 MB/spython-2.7.13-  95% |#############################  | Time: 0:00:00  53.09 MB/spython-2.7.13-  95% |#############################  | Time: 0:00:00  53.11 MB/spython-2.7.13-  95% |#############################  | Time: 0:00:00  53.13 MB/spython-2.7.13-  95% |#############################  | Time: 0:00:00  53.15 MB/spython-2.7.13-  95% |#############################  | Time: 0:00:00  53.17 MB/spython-2.7.13-  96% |#############################  | Time: 0:00:00  53.19 MB/spython-2.7.13-  96% |#############################  | Time: 0:00:00  53.21 MB/spython-2.7.13-  96% |#############################  | Time: 0:00:00  53.23 MB/spython-2.7.13-  96% |#############################  | Time: 0:00:00  53.25 MB/spython-2.7.13-  96% |#############################  | Time: 0:00:00  53.27 MB/spython-2.7.13-  96% |#############################  | Time: 0:00:00  53.29 MB/spython-2.7.13-  96% |############################## | Time: 0:00:00  53.31 MB/spython-2.7.13-  97% |############################## | Time: 0:00:00  53.33 MB/spython-2.7.13-  97% |############################## | Time: 0:00:00  53.35 MB/spython-2.7.13-  97% |############################## | Time: 0:00:00  53.37 MB/spython-2.7.13-  97% |############################## | Time: 0:00:00  53.39 MB/spython-2.7.13-  97% |############################## | Time: 0:00:00  53.41 MB/spython-2.7.13-  97% |############################## | Time: 0:00:00  53.43 MB/spython-2.7.13-  97% |############################## | Time: 0:00:00  53.45 MB/spython-2.7.13-  97% |############################## | Time: 0:00:00  53.47 MB/spython-2.7.13-  98% |############################## | Time: 0:00:00  53.49 MB/spython-2.7.13-  98% |############################## | Time: 0:00:00  53.51 MB/spython-2.7.13-  98% |############################## | Time: 0:00:00  53.53 MB/spython-2.7.13-  98% |############################## | Time: 0:00:00  53.55 MB/spython-2.7.13-  98% |############################## | Time: 0:00:00  53.57 MB/spython-2.7.13-  98% |############################## | Time: 0:00:00  53.59 MB/spython-2.7.13-  98% |############################## | Time: 0:00:00  53.61 MB/spython-2.7.13-  99% |############################## | Time: 0:00:00  53.63 MB/spython-2.7.13-  99% |############################## | Time: 0:00:00  53.65 MB/spython-2.7.13-  99% |############################## | Time: 0:00:00  53.67 MB/spython-2.7.13-  99% |############################## | Time: 0:00:00  53.69 MB/spython-2.7.13-  99% |############################## | Time: 0:00:00  53.71 MB/spython-2.7.13-  99% |############################## | Time: 0:00:00  53.73 MB/spython-2.7.13-  99% |############################## | Time: 0:00:00  53.74 MB/spython-2.7.13- 100% |###############################| Time: 0:00:00  53.74 MB/spython-2.7.13- 100% |###############################| Time: 0:00:00  53.71 MB/spython-2.7.13- 100% |###############################| Time: 0:00:00  53.67 MB/s
+asn1crypto-0.2   0% |                              | ETA:  --:--:--   0.00  B/sasn1crypto-0.2  11% |###                            | Time: 0:00:00  17.84 MB/sasn1crypto-0.2  22% |######                         | Time: 0:00:00  20.49 MB/sasn1crypto-0.2  33% |##########                     | Time: 0:00:00  22.53 MB/sasn1crypto-0.2  44% |#############                  | Time: 0:00:00  11.38 MB/sasn1crypto-0.2  55% |#################              | Time: 0:00:00  11.35 MB/sasn1crypto-0.2  66% |####################           | Time: 0:00:00  12.43 MB/sasn1crypto-0.2  77% |#######################        | Time: 0:00:00  13.28 MB/sasn1crypto-0.2  88% |###########################    | Time: 0:00:00  11.97 MB/sasn1crypto-0.2  99% |############################## | Time: 0:00:00  12.36 MB/sasn1crypto-0.2 100% |###############################| Time: 0:00:00  11.98 MB/sasn1crypto-0.2 100% |###############################| Time: 0:00:00  11.67 MB/sasn1crypto-0.2 100% |###############################| Time: 0:00:00  11.38 MB/s
+enum34-1.1.6-p   0% |                              | ETA:  --:--:--   0.00  B/senum34-1.1.6-p  29% |#########                      | Time: 0:00:00  15.54 MB/senum34-1.1.6-p  59% |##################             | Time: 0:00:00  17.87 MB/senum34-1.1.6-p  89% |###########################    | Time: 0:00:00  19.00 MB/senum34-1.1.6-p 100% |###############################| Time: 0:00:00  17.41 MB/senum34-1.1.6-p 100% |###############################| Time: 0:00:00  15.77 MB/senum34-1.1.6-p 100% |###############################| Time: 0:00:00  14.42 MB/s
+idna-2.6-py27_   0% |                              | ETA:  --:--:--   0.00  B/sidna-2.6-py27_  13% |####                           | Time: 0:00:00  19.62 MB/sidna-2.6-py27_  26% |########                       | Time: 0:00:00  21.64 MB/sidna-2.6-py27_  39% |############                   | Time: 0:00:00  23.62 MB/sidna-2.6-py27_  52% |################               | Time: 0:00:00  12.68 MB/sidna-2.6-py27_  65% |####################           | Time: 0:00:00  13.51 MB/sidna-2.6-py27_  78% |########################       | Time: 0:00:00  14.57 MB/sidna-2.6-py27_  91% |############################   | Time: 0:00:00  15.70 MB/sidna-2.6-py27_ 100% |###############################| Time: 0:00:00  16.11 MB/sidna-2.6-py27_ 100% |###############################| Time: 0:00:00  15.61 MB/sidna-2.6-py27_ 100% |###############################| Time: 0:00:00  15.14 MB/s
+ipaddress-1.0.   0% |                              | ETA:  --:--:--   0.00  B/sipaddress-1.0.  51% |################               | Time: 0:00:00  15.20 MB/sipaddress-1.0. 100% |###############################| Time: 0:00:00  17.71 MB/sipaddress-1.0. 100% |###############################| Time: 0:00:00  15.09 MB/sipaddress-1.0. 100% |###############################| Time: 0:00:00  13.31 MB/s
+pycparser-2.18   0% |                              | ETA:  --:--:--   0.00  B/spycparser-2.18   9% |###                            | Time: 0:00:00  19.72 MB/spycparser-2.18  19% |######                         | Time: 0:00:00  23.21 MB/spycparser-2.18  29% |#########                      | Time: 0:00:00  17.39 MB/spycparser-2.18  38% |############                   | Time: 0:00:00  11.33 MB/spycparser-2.18  48% |###############                | Time: 0:00:00  11.61 MB/spycparser-2.18  58% |##################             | Time: 0:00:00  12.45 MB/spycparser-2.18  67% |#####################          | Time: 0:00:00  13.55 MB/spycparser-2.18  77% |########################       | Time: 0:00:00  12.24 MB/spycparser-2.18  87% |###########################    | Time: 0:00:00  12.45 MB/spycparser-2.18  96% |############################## | Time: 0:00:00  13.37 MB/spycparser-2.18 100% |###############################| Time: 0:00:00  13.49 MB/spycparser-2.18 100% |###############################| Time: 0:00:00  13.30 MB/spycparser-2.18 100% |###############################| Time: 0:00:00  13.11 MB/s
+pyparsing-2.2.   0% |                              | ETA:  --:--:--   0.00  B/spyparsing-2.2.  17% |#####                          | Time: 0:00:00  17.58 MB/spyparsing-2.2.  34% |##########                     | Time: 0:00:00  20.42 MB/spyparsing-2.2.  51% |###############                | Time: 0:00:00  20.32 MB/spyparsing-2.2.  68% |#####################          | Time: 0:00:00  11.45 MB/spyparsing-2.2.  85% |##########################     | Time: 0:00:00  11.13 MB/spyparsing-2.2. 100% |###############################| Time: 0:00:00  12.31 MB/spyparsing-2.2. 100% |###############################| Time: 0:00:00  11.97 MB/spyparsing-2.2. 100% |###############################| Time: 0:00:00  11.67 MB/s
+requests-2.12.   0% |                              | ETA:  --:--:--   0.00  B/srequests-2.12.   2% |                               | Time: 0:00:00  30.57 MB/srequests-2.12.   4% |#                              | Time: 0:00:00  36.69 MB/srequests-2.12.   6% |#                              | Time: 0:00:00  16.66 MB/srequests-2.12.   8% |##                             | Time: 0:00:00  12.23 MB/srequests-2.12.  10% |###                            | Time: 0:00:00  10.46 MB/srequests-2.12.  12% |###                            | Time: 0:00:00  11.58 MB/srequests-2.12.  14% |####                           | Time: 0:00:00  11.85 MB/srequests-2.12.  16% |#####                          | Time: 0:00:00  12.65 MB/srequests-2.12.  18% |#####                          | Time: 0:00:00  13.45 MB/srequests-2.12.  20% |######                         | Time: 0:00:00  13.51 MB/srequests-2.12.  23% |#######                        | Time: 0:00:00  14.32 MB/srequests-2.12.  25% |#######                        | Time: 0:00:00  15.14 MB/srequests-2.12.  27% |########                       | Time: 0:00:00  15.57 MB/srequests-2.12.  29% |#########                      | Time: 0:00:00  15.68 MB/srequests-2.12.  31% |#########                      | Time: 0:00:00  16.38 MB/srequests-2.12.  33% |##########                     | Time: 0:00:00  17.08 MB/srequests-2.12.  35% |###########                    | Time: 0:00:00  17.73 MB/srequests-2.12.  37% |###########                    | Time: 0:00:00  18.37 MB/srequests-2.12.  39% |############                   | Time: 0:00:00  18.78 MB/srequests-2.12.  41% |#############                  | Time: 0:00:00  19.36 MB/srequests-2.12.  44% |#############                  | Time: 0:00:00  19.93 MB/srequests-2.12.  46% |##############                 | Time: 0:00:00  20.48 MB/srequests-2.12.  48% |##############                 | Time: 0:00:00  20.95 MB/srequests-2.12.  50% |###############                | Time: 0:00:00  21.44 MB/srequests-2.12.  52% |################               | Time: 0:00:00  21.92 MB/srequests-2.12.  54% |################               | Time: 0:00:00  22.36 MB/srequests-2.12.  56% |#################              | Time: 0:00:00  22.80 MB/srequests-2.12.  58% |##################             | Time: 0:00:00  23.20 MB/srequests-2.12.  60% |##################             | Time: 0:00:00  23.59 MB/srequests-2.12.  62% |###################            | Time: 0:00:00  23.99 MB/srequests-2.12.  65% |####################           | Time: 0:00:00  24.39 MB/srequests-2.12.  67% |####################           | Time: 0:00:00  24.75 MB/srequests-2.12.  69% |#####################          | Time: 0:00:00  25.09 MB/srequests-2.12.  71% |######################         | Time: 0:00:00  25.42 MB/srequests-2.12.  73% |######################         | Time: 0:00:00  25.75 MB/srequests-2.12.  75% |#######################        | Time: 0:00:00  26.06 MB/srequests-2.12.  77% |########################       | Time: 0:00:00  26.38 MB/srequests-2.12.  79% |########################       | Time: 0:00:00  26.71 MB/srequests-2.12.  81% |#########################      | Time: 0:00:00  26.98 MB/srequests-2.12.  83% |##########################     | Time: 0:00:00  27.31 MB/srequests-2.12.  86% |##########################     | Time: 0:00:00  27.71 MB/srequests-2.12.  88% |###########################    | Time: 0:00:00  28.12 MB/srequests-2.12.  90% |###########################    | Time: 0:00:00  28.51 MB/srequests-2.12.  92% |############################   | Time: 0:00:00  28.89 MB/srequests-2.12.  94% |#############################  | Time: 0:00:00  29.26 MB/srequests-2.12.  96% |#############################  | Time: 0:00:00  29.63 MB/srequests-2.12.  98% |############################## | Time: 0:00:00  29.99 MB/srequests-2.12. 100% |###############################| Time: 0:00:00  30.10 MB/srequests-2.12. 100% |###############################| Time: 0:00:00  29.93 MB/srequests-2.12. 100% |###############################| Time: 0:00:00  29.75 MB/s
+ruamel_yaml-0.   0% |                              | ETA:  --:--:--   0.00  B/sruamel_yaml-0.   4% |#                              | Time: 0:00:00  16.37 MB/sruamel_yaml-0.   8% |##                             | Time: 0:00:00  18.84 MB/sruamel_yaml-0.  13% |####                           | Time: 0:00:00  20.01 MB/sruamel_yaml-0.  17% |#####                          | Time: 0:00:00  10.99 MB/sruamel_yaml-0.  22% |######                         | Time: 0:00:00  11.86 MB/sruamel_yaml-0.  26% |########                       | Time: 0:00:00  12.96 MB/sruamel_yaml-0.  31% |#########                      | Time: 0:00:00  14.07 MB/sruamel_yaml-0.  35% |###########                    | Time: 0:00:00  12.17 MB/sruamel_yaml-0.  39% |############                   | Time: 0:00:00  12.53 MB/sruamel_yaml-0.  44% |#############                  | Time: 0:00:00  13.39 MB/sruamel_yaml-0.  48% |###############                | Time: 0:00:00  14.23 MB/sruamel_yaml-0.  53% |################               | Time: 0:00:00  14.29 MB/sruamel_yaml-0.  57% |#################              | Time: 0:00:00  14.69 MB/sruamel_yaml-0.  62% |###################            | Time: 0:00:00  15.09 MB/sruamel_yaml-0.  66% |####################           | Time: 0:00:00  15.59 MB/sruamel_yaml-0.  70% |######################         | Time: 0:00:00  12.63 MB/sruamel_yaml-0.  75% |#######################        | Time: 0:00:00  12.61 MB/sruamel_yaml-0.  79% |########################       | Time: 0:00:00  12.96 MB/sruamel_yaml-0.  84% |##########################     | Time: 0:00:00  13.37 MB/sruamel_yaml-0.  88% |###########################    | Time: 0:00:00  13.71 MB/sruamel_yaml-0.  93% |############################   | Time: 0:00:00  14.09 MB/sruamel_yaml-0.  97% |############################## | Time: 0:00:00  14.49 MB/sruamel_yaml-0. 100% |###############################| Time: 0:00:00  14.60 MB/sruamel_yaml-0. 100% |###############################| Time: 0:00:00  14.43 MB/sruamel_yaml-0. 100% |###############################| Time: 0:00:00  14.27 MB/s
+six-1.10.0-py2   0% |                              | ETA:  --:--:--   0.00  B/ssix-1.10.0-py2  97% |############################## | Time: 0:00:00  17.07 MB/ssix-1.10.0-py2 100% |###############################| Time: 0:00:00  11.86 MB/ssix-1.10.0-py2 100% |###############################| Time: 0:00:00   9.63 MB/ssix-1.10.0-py2 100% |###############################| Time: 0:00:00   8.04 MB/s
+cffi-1.10.0-py   0% |                              | ETA:  --:--:--   0.00  B/scffi-1.10.0-py   4% |#                              | Time: 0:00:00  29.01 MB/scffi-1.10.0-py   9% |###                            | Time: 0:00:00  32.55 MB/scffi-1.10.0-py  14% |####                           | Time: 0:00:00  14.52 MB/scffi-1.10.0-py  19% |######                         | Time: 0:00:00  12.12 MB/scffi-1.10.0-py  24% |#######                        | Time: 0:00:00  12.72 MB/scffi-1.10.0-py  29% |#########                      | Time: 0:00:00  11.82 MB/scffi-1.10.0-py  34% |##########                     | Time: 0:00:00  13.14 MB/scffi-1.10.0-py  38% |############                   | Time: 0:00:00  12.43 MB/scffi-1.10.0-py  43% |#############                  | Time: 0:00:00  12.92 MB/scffi-1.10.0-py  48% |###############                | Time: 0:00:00  13.69 MB/scffi-1.10.0-py  53% |################               | Time: 0:00:00  14.60 MB/scffi-1.10.0-py  58% |##################             | Time: 0:00:00  15.11 MB/scffi-1.10.0-py  63% |###################            | Time: 0:00:00  15.70 MB/scffi-1.10.0-py  68% |#####################          | Time: 0:00:00  15.81 MB/scffi-1.10.0-py  73% |######################         | Time: 0:00:00  16.42 MB/scffi-1.10.0-py  77% |########################       | Time: 0:00:00  17.19 MB/scffi-1.10.0-py  82% |#########################      | Time: 0:00:00  17.49 MB/scffi-1.10.0-py  87% |###########################    | Time: 0:00:00  18.19 MB/scffi-1.10.0-py  92% |############################   | Time: 0:00:00  18.61 MB/scffi-1.10.0-py  97% |############################## | Time: 0:00:00  19.29 MB/scffi-1.10.0-py 100% |###############################| Time: 0:00:00  19.54 MB/scffi-1.10.0-py 100% |###############################| Time: 0:00:00  19.37 MB/scffi-1.10.0-py 100% |###############################| Time: 0:00:00  19.19 MB/s
+packaging-16.8   0% |                              | ETA:  --:--:--   0.00  B/spackaging-16.8  54% |################               | Time: 0:00:00  20.98 MB/spackaging-16.8 100% |###############################| Time: 0:00:00  23.03 MB/spackaging-16.8 100% |###############################| Time: 0:00:00  19.65 MB/spackaging-16.8 100% |###############################| Time: 0:00:00  17.19 MB/s
+cryptography-1   0% |                              | ETA:  --:--:--   0.00  B/scryptography-1   1% |                               | Time: 0:00:00  13.25 MB/scryptography-1   3% |#                              | Time: 0:00:00  16.92 MB/scryptography-1   5% |#                              | Time: 0:00:00  19.51 MB/scryptography-1   7% |##                             | Time: 0:00:00  10.94 MB/scryptography-1   9% |##                             | Time: 0:00:00  11.75 MB/scryptography-1  11% |###                            | Time: 0:00:00  12.54 MB/scryptography-1  13% |####                           | Time: 0:00:00  10.31 MB/scryptography-1  15% |####                           | Time: 0:00:00  11.27 MB/scryptography-1  16% |#####                          | Time: 0:00:00  12.09 MB/scryptography-1  18% |#####                          | Time: 0:00:00  12.95 MB/scryptography-1  20% |######                         | Time: 0:00:00  13.74 MB/scryptography-1  22% |#######                        | Time: 0:00:00  14.01 MB/scryptography-1  24% |#######                        | Time: 0:00:00  14.28 MB/scryptography-1  26% |########                       | Time: 0:00:00  14.05 MB/scryptography-1  28% |########                       | Time: 0:00:00  14.42 MB/scryptography-1  30% |#########                      | Time: 0:00:00  14.73 MB/scryptography-1  32% |#########                      | Time: 0:00:00  15.10 MB/scryptography-1  33% |##########                     | Time: 0:00:00  15.39 MB/scryptography-1  35% |###########                    | Time: 0:00:00  15.79 MB/scryptography-1  37% |###########                    | Time: 0:00:00  16.19 MB/scryptography-1  39% |############                   | Time: 0:00:00  16.57 MB/scryptography-1  41% |############                   | Time: 0:00:00  16.89 MB/scryptography-1  43% |#############                  | Time: 0:00:00  17.19 MB/scryptography-1  45% |##############                 | Time: 0:00:00  17.47 MB/scryptography-1  47% |##############                 | Time: 0:00:00  17.75 MB/scryptography-1  48% |###############                | Time: 0:00:00  18.05 MB/scryptography-1  50% |###############                | Time: 0:00:00  18.33 MB/scryptography-1  52% |################               | Time: 0:00:00  18.56 MB/scryptography-1  54% |################               | Time: 0:00:00  18.77 MB/scryptography-1  56% |#################              | Time: 0:00:00  19.20 MB/scryptography-1  58% |##################             | Time: 0:00:00  19.63 MB/scryptography-1  60% |##################             | Time: 0:00:00  20.04 MB/scryptography-1  62% |###################            | Time: 0:00:00  20.44 MB/scryptography-1  64% |###################            | Time: 0:00:00  20.84 MB/scryptography-1  65% |####################           | Time: 0:00:00  21.25 MB/scryptography-1  67% |#####################          | Time: 0:00:00  21.65 MB/scryptography-1  69% |#####################          | Time: 0:00:00  22.05 MB/scryptography-1  71% |######################         | Time: 0:00:00  22.43 MB/scryptography-1  73% |######################         | Time: 0:00:00  22.81 MB/scryptography-1  75% |#######################        | Time: 0:00:00  23.19 MB/scryptography-1  77% |#######################        | Time: 0:00:00  23.56 MB/scryptography-1  79% |########################       | Time: 0:00:00  23.92 MB/scryptography-1  80% |#########################      | Time: 0:00:00  24.26 MB/scryptography-1  82% |#########################      | Time: 0:00:00  24.61 MB/scryptography-1  84% |##########################     | Time: 0:00:00  24.95 MB/scryptography-1  86% |##########################     | Time: 0:00:00  25.29 MB/scryptography-1  88% |###########################    | Time: 0:00:00  25.62 MB/scryptography-1  90% |############################   | Time: 0:00:00  25.95 MB/scryptography-1  92% |############################   | Time: 0:00:00  26.26 MB/scryptography-1  94% |#############################  | Time: 0:00:00  26.58 MB/scryptography-1  96% |#############################  | Time: 0:00:00  26.89 MB/scryptography-1  97% |############################## | Time: 0:00:00  27.20 MB/scryptography-1  99% |############################## | Time: 0:00:00  27.51 MB/scryptography-1 100% |###############################| Time: 0:00:00  27.38 MB/scryptography-1 100% |###############################| Time: 0:00:00  27.26 MB/scryptography-1 100% |###############################| Time: 0:00:00  27.10 MB/s
+pyopenssl-17.0   0% |                              | ETA:  --:--:--   0.00  B/spyopenssl-17.0  21% |######                         | Time: 0:00:00  14.11 MB/spyopenssl-17.0  43% |#############                  | Time: 0:00:00  15.22 MB/spyopenssl-17.0  65% |####################           | Time: 0:00:00  17.13 MB/spyopenssl-17.0  86% |##########################     | Time: 0:00:00  18.72 MB/spyopenssl-17.0 100% |###############################| Time: 0:00:00  10.68 MB/spyopenssl-17.0 100% |###############################| Time: 0:00:00  10.19 MB/spyopenssl-17.0 100% |###############################| Time: 0:00:00   9.83 MB/s
+conda-4.3.30-p   0% |                              | ETA:  --:--:--   0.00  B/sconda-4.3.30-p   3% |                               | Time: 0:00:00  17.67 MB/sconda-4.3.30-p   6% |#                              | Time: 0:00:00  21.01 MB/sconda-4.3.30-p   9% |##                             | Time: 0:00:00  23.16 MB/sconda-4.3.30-p  12% |###                            | Time: 0:00:00  11.83 MB/sconda-4.3.30-p  15% |####                           | Time: 0:00:00  11.60 MB/sconda-4.3.30-p  18% |#####                          | Time: 0:00:00  12.71 MB/sconda-4.3.30-p  22% |######                         | Time: 0:00:00  11.43 MB/sconda-4.3.30-p  25% |#######                        | Time: 0:00:00  12.27 MB/sconda-4.3.30-p  28% |########                       | Time: 0:00:00  13.08 MB/sconda-4.3.30-p  31% |#########                      | Time: 0:00:00  13.77 MB/sconda-4.3.30-p  34% |##########                     | Time: 0:00:00  14.43 MB/sconda-4.3.30-p  37% |###########                    | Time: 0:00:00  15.02 MB/sconda-4.3.30-p  41% |############                   | Time: 0:00:00  15.58 MB/sconda-4.3.30-p  44% |#############                  | Time: 0:00:00  16.10 MB/sconda-4.3.30-p  47% |##############                 | Time: 0:00:00  16.62 MB/sconda-4.3.30-p  50% |###############                | Time: 0:00:00  17.15 MB/sconda-4.3.30-p  53% |################               | Time: 0:00:00  17.64 MB/sconda-4.3.30-p  56% |#################              | Time: 0:00:00  18.09 MB/sconda-4.3.30-p  59% |##################             | Time: 0:00:00  18.54 MB/sconda-4.3.30-p  63% |###################            | Time: 0:00:00  18.95 MB/sconda-4.3.30-p  66% |####################           | Time: 0:00:00  19.28 MB/sconda-4.3.30-p  69% |#####################          | Time: 0:00:00  19.63 MB/sconda-4.3.30-p  72% |######################         | Time: 0:00:00  19.95 MB/sconda-4.3.30-p  75% |#######################        | Time: 0:00:00  20.25 MB/sconda-4.3.30-p  78% |########################       | Time: 0:00:00  20.55 MB/sconda-4.3.30-p  82% |#########################      | Time: 0:00:00  20.91 MB/sconda-4.3.30-p  85% |##########################     | Time: 0:00:00  21.45 MB/sconda-4.3.30-p  88% |###########################    | Time: 0:00:00  21.99 MB/sconda-4.3.30-p  91% |############################   | Time: 0:00:00  22.52 MB/sconda-4.3.30-p  94% |#############################  | Time: 0:00:00  23.04 MB/sconda-4.3.30-p  97% |############################## | Time: 0:00:00  23.55 MB/sconda-4.3.30-p 100% |###############################| Time: 0:00:00  23.82 MB/sconda-4.3.30-p 100% |###############################| Time: 0:00:00  23.67 MB/sconda-4.3.30-p 100% |###############################| Time: 0:00:00  23.50 MB/s
+Extracting packages ...
+[                    ]|                                                  |   0%[conda-env           ]|                                                  |   0%[libffi              ]|##                                                |   5%[sqlite              ]|#####                                             |  11%[python              ]|########                                          |  16%[asn1crypto          ]|###########                                       |  22%[enum34              ]|#############                                     |  27%[idna                ]|################                                  |  33%[ipaddress           ]|###################                               |  38%[pycparser           ]|######################                            |  44%[pyparsing           ]|#########################                         |  50%[requests            ]|###########################                       |  55%[ruamel_yaml         ]|##############################                    |  61%[six                 ]|#################################                 |  66%[cffi                ]|####################################              |  72%[packaging           ]|######################################            |  77%[cryptography        ]|#########################################         |  83%[pyopenssl           ]|############################################      |  88%[conda               ]|###############################################   |  94%[      COMPLETE      ]|##################################################| 100%
+Unlinking packages ...
+[      COMPLETE      ]|                                                  |   0%[conda               ]|                                                  |   0%[conda               ]|                                                  |   0%[conda-env           ]|##########                                        |  20%[python              ]|####################                              |  40%[requests            ]|##############################                    |  60%[sqlite              ]|########################################          |  80%[      COMPLETE      ]|##################################################| 100%
+Linking packages ...
+[      COMPLETE      ]|                                                  |   0%[conda-env           ]|                                                  |   0%[conda-env           ]|                                                  |   0%[libffi              ]|##                                                |   5%[sqlite              ]|#####                                             |  11%[python              ]|########                                          |  16%[asn1crypto          ]|###########                                       |  22%[enum34              ]|#############                                     |  27%[idna                ]|################                                  |  33%[ipaddress           ]|###################                               |  38%[pycparser           ]|######################                            |  44%[pyparsing           ]|#########################                         |  50%[requests            ]|###########################                       |  55%[ruamel_yaml         ]|##############################                    |  61%[six                 ]|#################################                 |  66%[cffi                ]|####################################              |  72%[packaging           ]|######################################            |  77%[cryptography        ]|#########################################         |  83%[pyopenssl           ]|############################################      |  88%[conda               ]|###############################################   |  94%[      COMPLETE      ]|##################################################| 100%
+
+travis_time:end:2bb54e97:start=1614451227418873254,finish=1614451238663376652,duration=11244503398[0Ktravis_fold:end:before_install.8[0Ktravis_fold:start:install.1[0Ktravis_time:start:25181f40[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then conda create --yes -q -n pyenv mkl python=2.6 numpy=1.7.1 scipy=0.11 nose=1.3.0 pyparsing=1.5 pip flake8=2.3 six=1.9.0 pep8=1.6.2 pyflakes=0.8.1 sphinx; fi
+
+travis_time:end:25181f40:start=1614451238676362799,finish=1614451238685179926,duration=8817127[0Ktravis_fold:end:install.1[0Ktravis_fold:start:install.2[0Ktravis_time:start:007ec69c[0K$ if [[ $TRAVIS_PYTHON_VERSION == '3.3' ]]; then conda create --yes -q -n pyenv mkl python=3.3 numpy=1.9.1 scipy=0.14.0 nose=1.3.4 pyparsing=1.5 pip flake8=2.3 six=1.9.0 pep8=1.6.2 pyflakes=0.8.1 sphinx; fi
+
+
+Package plan for installation in environment /home/travis/miniconda2/envs/pyenv:
+
+The following NEW packages will be INSTALLED:
+
+    _libgcc_mutex:    0.1-main               
+    alabaster:        0.7.12-pyhd3eb1b0_0    
+    babel:            2.9.0-pyhd3eb1b0_0     
+    docutils:         0.12-py33_0            
+    flake8:           2.3.0-py33_0           
+    intel-openmp:     2020.2-254             
+    jinja2:           2.11.3-pyhd3eb1b0_0    
+    libedit:          3.1.20191231-h14c3975_1
+    libgcc-ng:        9.1.0-hdf63c60_0       
+    libstdcxx-ng:     9.1.0-hdf63c60_0       
+    markupsafe:       0.23-py33_0            
+    mccabe:           0.3-py33_1             
+    mkl:              2020.2-256             
+    ncurses:          6.2-he6710b0_1         
+    nose:             1.3.4-py33_1           
+    numpy:            1.9.1-py33_0           
+    openssl:          1.0.1k-1               
+    pep8:             1.6.2-py33_0           
+    pip:              8.0.3-py33_0           
+    pyflakes:         0.8.1-py33_0           
+    pygments:         2.5.2-py_0             
+    pyparsing:        1.5.6-py33_0           
+    python:           3.3.5-4                
+    pytz:             2021.1-pyhd3eb1b0_0    
+    readline:         6.2-2                  
+    scipy:            0.14.0-np19py33_0      
+    setuptools:       20.1.1-py33_0          
+    six:              1.9.0-py33_0           
+    snowballstemmer:  1.2.0-py33_0           
+    sphinx:           1.3.1-py33_0           
+    sphinx_rtd_theme: 0.4.3-py_0             
+    sqlite:           3.33.0-h62c20be_0      
+    system:           5.8-2                  
+    tk:               8.5.18-0               
+    wheel:            0.36.2-pyhd3eb1b0_0    
+    xz:               5.0.5-1                
+    zlib:             1.2.11-h7b6447c_3      
+
+
+
+travis_time:end:007ec69c:start=1614451238695212953,finish=1614451371309918446,duration=132614705493[0Ktravis_fold:end:install.2[0Ktravis_fold:start:install.3[0Ktravis_time:start:04acda0d[0K$ source activate pyenv
+
+travis_time:end:04acda0d:start=1614451371319644058,finish=1614451372005685028,duration=686040970[0Ktravis_fold:end:install.3[0Ktravis_fold:start:install.4[0Ktravis_time:start:24ccc5dc[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install pydot==1.0.2; fi
+
+travis_time:end:24ccc5dc:start=1614451372014525395,finish=1614451372020738907,duration=6213512[0Ktravis_fold:end:install.4[0Ktravis_fold:start:install.5[0Ktravis_time:start:2f99e950[0K$ pip install . --no-deps
+Processing /home/travis/build/failed/Theano/Theano
+Installing collected packages: Theano
+  Running setup.py install for Theano: started
+    Running setup.py install for Theano: finished with status 'done'
+Successfully installed Theano-0.8.0.dev0
+
+travis_time:end:2f99e950:start=1614451372030856488,finish=1614451396323125939,duration=24292269451[0Ktravis_fold:end:install.5[0Ktravis_time:start:065c4780[0K$ export THEANO_FLAGS=$THEANO_FLAGS,warn.ignore_bug_before=all,on_opt_error=raise,on_shape_error=raise,gcc.cxxflags=-pipe
+
+travis_time:end:065c4780:start=1614451396334070104,finish=1614451396344108371,duration=10038267[0K
+[32;1mThe command "export THEANO_FLAGS=$THEANO_FLAGS,warn.ignore_bug_before=all,on_opt_error=raise,on_shape_error=raise,gcc.cxxflags=-pipe" exited with 0.[0m
+travis_time:start:0466de02[0K$ python --version
+Python 3.3.5 :: Continuum Analytics, Inc.
+
+travis_time:end:0466de02:start=1614451396356384521,finish=1614451396369723592,duration=13339071[0K
+[32;1mThe command "python --version" exited with 0.[0m
+travis_time:start:120a3b64[0K$ uname -a
+Linux 28d8763f681d 4.15.0-109-generic #110-Ubuntu SMP Tue Jun 23 02:39:32 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+travis_time:end:120a3b64:start=1614451396381281759,finish=1614451396392859692,duration=11577933[0K
+[32;1mThe command "uname -a" exited with 0.[0m
+travis_time:start:0cfea021[0K$ free -m
+             total       used       free     shared    buffers     cached
+Mem:        192081     179541      12539          0       3887     153565
+-/+ buffers/cache:      22088     169992
+Swap:        65982         79      65903
+
+travis_time:end:0cfea021:start=1614451396403750324,finish=1614451396415312730,duration=11562406[0K
+[32;1mThe command "free -m" exited with 0.[0m
+travis_time:start:0045e598[0K$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          91T  8.7T   83T  10% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs            94G     0   94G   0% /sys/fs/cgroup
+/dev/sda         91T  8.7T   83T  10% /etc/resolv.conf
+/dev/sda         91T  8.7T   83T  10% /etc/hostname
+/dev/sda         91T  8.7T   83T  10% /etc/hosts
+shm              64M     0   64M   0% /dev/shm
+tmpfs            94G     0   94G   0% /proc/acpi
+tmpfs            64M     0   64M   0% /proc/kcore
+tmpfs            64M     0   64M   0% /proc/keys
+tmpfs            64M     0   64M   0% /proc/timer_list
+tmpfs            64M     0   64M   0% /proc/sched_debug
+tmpfs            94G     0   94G   0% /proc/scsi
+tmpfs            94G     0   94G   0% /sys/firmware
+
+travis_time:end:0045e598:start=1614451396427278696,finish=1614451396439448995,duration=12170299[0K
+[32;1mThe command "df -h" exited with 0.[0m
+travis_time:start:3f3807ee[0K$ ulimit -a
+core file size          (blocks, -c) unlimited
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 767649
+max locked memory       (kbytes, -l) 16384
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1048576
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) unlimited
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+
+travis_time:end:3f3807ee:start=1614451396451071217,finish=1614451396461143326,duration=10072109[0K
+[32;1mThe command "ulimit -a" exited with 0.[0m
+travis_time:start:0ce41e46[0K$ cd ..
+
+travis_time:end:0ce41e46:start=1614451396472831774,finish=1614451396481438651,duration=8606877[0K
+[32;1mThe command "cd .." exited with 0.[0m
+travis_time:start:0ec054a0[0K$ cd $(python -c 'import theano; import os; print(os.path.split(theano.__file__)[0])')
+
+travis_time:end:0ec054a0:start=1614451396492940823,finish=1614451397572038212,duration=1079097389[0K
+[32;1mThe command "cd $(python -c 'import theano; import os; print(os.path.split(theano.__file__)[0])')" exited with 0.[0m
+travis_time:start:187877db[0K$ echo "$PART"
+theano/tests/test_flake8.py
+
+travis_time:end:187877db:start=1614451397585474217,finish=1614451397594256521,duration=8782304[0K
+[32;1mThe command "echo "$PART"" exited with 0.[0m
+travis_time:start:0c391353[0K$ cd -; cd Theano
+/home/travis/build/failed/Theano
+
+travis_time:end:0c391353:start=1614451397605321217,finish=1614451397614498498,duration=9177281[0K
+[32;1mThe command "cd -; cd Theano" exited with 0.[0m
+travis_time:start:2bfd4828[0K$ theano-nose -v $PART
+Test if flake8 is respected. ... FAIL
+
+======================================================================
+FAIL: Test if flake8 is respected.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/miniconda2/envs/pyenv/lib/python3.3/site-packages/nose-1.3.4-py3.3.egg/nose/case.py", line 198, in runTest
+    self.test(*self.arg)
+  File "/home/travis/build/failed/Theano/Theano/theano/tests/test_flake8.py", line 215, in test_format_flake8
+    raise AssertionError("FLAKE8 Format not respected")
+nose.proxy.AssertionError: FLAKE8 Format not respected
+-------------------- >> begin captured stdout << ---------------------
+/home/travis/build/failed/Theano/Theano/theano/scalar/basic.py:24:1: F401 'PY3' imported but unused
+
+--------------------- >> end captured stdout << ----------------------
+
+----------------------------------------------------------------------
+Ran 1 test in 21.083s
+
+FAILED (failures=1)
+
+travis_time:end:2bfd4828:start=1614451397625988917,finish=1614451419963919974,duration=22337931057[0K
+[31;1mThe command "theano-nose -v $PART" exited with 1.[0m
+travis_time:start:096826b8[0K$ if [[ $DOC == "1" ]]; then python doc/scripts/docgen.py --nopdf --check; fi
+Running Sphinx v1.3.1
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 173 source files that are out of date
+updating environment: 173 added, 0 changed, 0 removed
+reading sources... [  0%] LICENSE
+reading sources... [  1%] NEWS
+reading sources... [  1%] acknowledgement
+reading sources... [  2%] cifarSC2011/advanced_theano
+reading sources... [  2%] cifarSC2011/boot_camp_overview
+reading sources... [  3%] cifarSC2011/gpundarray
+reading sources... [  4%] cifarSC2011/index
+reading sources... [  4%] cifarSC2011/introduction
+reading sources... [  5%] cifarSC2011/pyCUDA
+reading sources... [  5%] cifarSC2011/theano
+reading sources... [  6%] citation
+reading sources... [  6%] core_development_guide
+reading sources... [  7%] crei2013/advanced_theano
+reading sources... [  8%] crei2013/gpundarray
+reading sources... [  8%] crei2013/index
+reading sources... [  9%] crei2013/introduction
+reading sources... [  9%] crei2013/theano
+reading sources... [ 10%] dev_start_guide
+reading sources... [ 10%] developer/compat
+reading sources... [ 11%] developer/index
+reading sources... [ 12%] developer/scan
+reading sources... [ 12%] developer/tensor
+reading sources... [ 13%] extending/cop
+reading sources... [ 13%] extending/ctype
+reading sources... [ 14%] extending/extending_faq
+reading sources... [ 15%] extending/fibby
+reading sources... [ 15%] extending/graphstructures
+reading sources... [ 16%] extending/index
+reading sources... [ 16%] extending/inplace
+reading sources... [ 17%] extending/op
+reading sources... [ 17%] extending/optimization
+reading sources... [ 18%] extending/other_ops
+reading sources... [ 19%] extending/pipeline
+reading sources... [ 19%] extending/theano_vs_c
+reading sources... [ 20%] extending/tips
+reading sources... [ 20%] extending/type
+reading sources... [ 21%] extending/unittest
+reading sources... [ 21%] extending/using_params
+reading sources... [ 22%] faq
+reading sources... [ 23%] glossary
+reading sources... [ 23%] index
+reading sources... [ 24%] install
+reading sources... [ 24%] install_centos6
+reading sources... [ 25%] install_ubuntu
+reading sources... [ 26%] install_windows
+reading sources... [ 26%] internal/dev_start_guide
+reading sources... [ 27%] internal/how_to_release
+reading sources... [ 27%] internal/index
+reading sources... [ 28%] internal/metadocumentation
+reading sources... [ 28%] internal/python
+reading sources... [ 29%] internal/release
+reading sources... [ 30%] introduction
+reading sources... [ 30%] library/compile/debugmode
+reading sources... [ 31%] library/compile/function
+reading sources... [ 31%] library/compile/index
+reading sources... [ 32%] library/compile/io
+reading sources... [ 32%] library/compile/mode
+reading sources... [ 33%] library/compile/nanguardmode
+reading sources... [ 34%] library/compile/opfromgraph
+reading sources... [ 34%] library/compile/ops
+reading sources... [ 35%] library/compile/profilemode
+reading sources... [ 35%] library/compile/shared
+reading sources... [ 36%] library/config
+reading sources... [ 36%] library/d3viz/index
+reading sources... [ 37%] library/gof/fgraph
+reading sources... [ 38%] library/gof/graph
+reading sources... [ 38%] library/gof/index
+reading sources... [ 39%] library/gof/toolbox
+reading sources... [ 39%] library/gof/type
+reading sources... [ 40%] library/gof/utils
+reading sources... [ 41%] library/gradient
+reading sources... [ 41%] library/index
+reading sources... [ 42%] library/misc/pkl_utils
+reading sources... [ 42%] library/printing
+reading sources... [ 43%] library/sandbox/cuda/dnn
+reading sources... [ 43%] library/sandbox/cuda/index
+reading sources... [ 44%] library/sandbox/cuda/op
+reading sources... [ 45%] library/sandbox/cuda/type
+reading sources... [ 45%] library/sandbox/cuda/var
+reading sources... [ 46%] library/sandbox/gpuarray/dnn
+reading sources... [ 46%] library/sandbox/gpuarray/extra
+reading sources... [ 47%] library/sandbox/gpuarray/index
+reading sources... [ 47%] library/sandbox/gpuarray/op
+reading sources... [ 48%] library/sandbox/gpuarray/type
+reading sources... [ 49%] library/sandbox/index
+reading sources... [ 49%] library/sandbox/linalg
+reading sources... [ 50%] library/sandbox/neighbours
+reading sources... [ 50%] library/sandbox/rng_mrg
+reading sources... [ 51%] library/scalar/index
+reading sources... [ 52%] library/scan
+reading sources... [ 52%] library/sparse/index
+reading sources... [ 53%] library/sparse/sandbox
+reading sources... [ 53%] library/tensor/basic
+reading sources... [ 54%] library/tensor/extra_ops
+reading sources... [ 54%] library/tensor/index
+reading sources... [ 55%] library/tensor/io
+reading sources... [ 56%] library/tensor/nlinalg
+reading sources... [ 56%] library/tensor/nnet/blocksparse
+reading sources... [ 57%] library/tensor/nnet/bn
+reading sources... [ 57%] library/tensor/nnet/conv
+reading sources... [ 58%] library/tensor/nnet/index
+reading sources... [ 58%] library/tensor/nnet/neighbours
+reading sources... [ 59%] library/tensor/nnet/nnet
+reading sources... [ 60%] library/tensor/raw_random
+reading sources... [ 60%] library/tensor/shared_randomstreams
+reading sources... [ 61%] library/tensor/signal/conv
+reading sources... [ 61%] library/tensor/signal/downsample
+reading sources... [ 62%] library/tensor/signal/index
+reading sources... [ 63%] library/tensor/slinalg
+reading sources... [ 63%] library/tensor/utils
+reading sources... [ 64%] library/typed_list
+reading sources... [ 64%] links
+reading sources... [ 65%] nice_quotes
+reading sources... [ 65%] optimizations
+reading sources... [ 66%] proposals/complex_gradient
+reading sources... [ 67%] proposals/conditional
+reading sources... [ 67%] proposals/dp_optimization
+reading sources... [ 68%] proposals/graphical_models
+reading sources... [ 68%] proposals/index
+reading sources... [ 69%] proposals/intermediate_language
+reading sources... [ 69%] proposals/mongodb_cache
+reading sources... [ 70%] proposals/opt_patterns2
+reading sources... [ 71%] proposals/pfunc
+reading sources... [ 71%] proposals/premerge
+reading sources... [ 72%] proposals/tensor_attributes
+reading sources... [ 72%] sandbox/broadcasting
+reading sources... [ 73%] sandbox/ccodegen
+reading sources... [ 73%] sandbox/compilation
+reading sources... [ 74%] sandbox/debugging_with_stepmode
+reading sources... [ 75%] sandbox/elemwise_compiler
+reading sources... [ 75%] sandbox/fg
+reading sources... [ 76%] sandbox/function
+reading sources... [ 76%] sandbox/functional
+reading sources... [ 77%] sandbox/hosting
+reading sources... [ 78%] sandbox/how_to_make_ops
+reading sources... [ 78%] sandbox/index
+reading sources... [ 79%] sandbox/index2
+reading sources... [ 79%] sandbox/interactive_debugger
+reading sources... [ 80%] sandbox/logistic_regression_example
+reading sources... [ 80%] sandbox/max_gotcha
+reading sources... [ 81%] sandbox/performance
+reading sources... [ 82%] sandbox/randomnumbers
+reading sources... [ 82%] sandbox/rethinkccodegen
+reading sources... [ 83%] sandbox/sandbox
+reading sources... [ 83%] sandbox/software
+reading sources... [ 84%] sandbox/sparse
+reading sources... [ 84%] sandbox/tensoroptools
+reading sources... [ 85%] tutorial/adding
+reading sources... [ 86%] tutorial/aliasing
+reading sources... [ 86%] tutorial/conditions
+reading sources... [ 87%] tutorial/debug_faq
+reading sources... [ 87%] tutorial/examples
+reading sources... [ 88%] tutorial/extending_theano
+reading sources... [ 89%] tutorial/extending_theano_c
+reading sources... [ 89%] tutorial/faq_tutorial
+reading sources... [ 90%] tutorial/gpu_data_convert
+reading sources... [ 90%] tutorial/gradients
+reading sources... [ 91%] tutorial/index
+reading sources... [ 91%] tutorial/loading_and_saving
+reading sources... [ 92%] tutorial/loop
+reading sources... [ 93%] tutorial/modes
+reading sources... [ 93%] tutorial/multi_cores
+reading sources... [ 94%] tutorial/nan_tutorial
+reading sources... [ 94%] tutorial/numpy
+reading sources... [ 95%] tutorial/printing_drawing
+reading sources... [ 95%] tutorial/profiling
+reading sources... [ 96%] tutorial/python
+reading sources... [ 97%] tutorial/python-memory-management
+reading sources... [ 97%] tutorial/shape_info
+reading sources... [ 98%] tutorial/sparse
+reading sources... [ 98%] tutorial/symbolic_graphs
+reading sources... [ 99%] tutorial/using_gpu
+reading sources... [100%] tutorial/using_multi_gpu
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+writing output... [  0%] LICENSE
+writing output... [  1%] NEWS
+writing output... [  1%] acknowledgement
+writing output... [  2%] cifarSC2011/advanced_theano
+writing output... [  2%] cifarSC2011/boot_camp_overview
+writing output... [  3%] cifarSC2011/gpundarray
+writing output... [  4%] cifarSC2011/index
+writing output... [  4%] cifarSC2011/introduction
+writing output... [  5%] cifarSC2011/pyCUDA
+writing output... [  5%] cifarSC2011/theano
+writing output... [  6%] citation
+writing output... [  6%] core_development_guide
+writing output... [  7%] crei2013/advanced_theano
+writing output... [  8%] crei2013/gpundarray
+writing output... [  8%] crei2013/index
+writing output... [  9%] crei2013/introduction
+writing output... [  9%] crei2013/theano
+writing output... [ 10%] dev_start_guide
+writing output... [ 10%] developer/compat
+writing output... [ 11%] developer/index
+writing output... [ 12%] developer/scan
+writing output... [ 12%] developer/tensor
+writing output... [ 13%] extending/cop
+writing output... [ 13%] extending/ctype
+writing output... [ 14%] extending/extending_faq
+writing output... [ 15%] extending/fibby
+writing output... [ 15%] extending/graphstructures
+writing output... [ 16%] extending/index
+writing output... [ 16%] extending/inplace
+writing output... [ 17%] extending/op
+writing output... [ 17%] extending/optimization
+writing output... [ 18%] extending/other_ops
+writing output... [ 19%] extending/pipeline
+writing output... [ 19%] extending/theano_vs_c
+writing output... [ 20%] extending/tips
+writing output... [ 20%] extending/type
+writing output... [ 21%] extending/unittest
+writing output... [ 21%] extending/using_params
+writing output... [ 22%] faq
+writing output... [ 23%] glossary
+writing output... [ 23%] index
+writing output... [ 24%] install
+writing output... [ 24%] install_centos6
+writing output... [ 25%] install_ubuntu
+writing output... [ 26%] install_windows
+writing output... [ 26%] internal/dev_start_guide
+writing output... [ 27%] internal/how_to_release
+writing output... [ 27%] internal/index
+writing output... [ 28%] internal/metadocumentation
+writing output... [ 28%] internal/python
+writing output... [ 29%] internal/release
+writing output... [ 30%] introduction
+writing output... [ 30%] library/compile/debugmode
+writing output... [ 31%] library/compile/function
+writing output... [ 31%] library/compile/index
+writing output... [ 32%] library/compile/io
+writing output... [ 32%] library/compile/mode
+writing output... [ 33%] library/compile/nanguardmode
+writing output... [ 34%] library/compile/opfromgraph
+writing output... [ 34%] library/compile/ops
+writing output... [ 35%] library/compile/profilemode
+writing output... [ 35%] library/compile/shared
+writing output... [ 36%] library/config
+writing output... [ 36%] library/d3viz/index
+writing output... [ 37%] library/gof/fgraph
+writing output... [ 38%] library/gof/graph
+writing output... [ 38%] library/gof/index
+writing output... [ 39%] library/gof/toolbox
+writing output... [ 39%] library/gof/type
+writing output... [ 40%] library/gof/utils
+writing output... [ 41%] library/gradient
+writing output... [ 41%] library/index
+writing output... [ 42%] library/misc/pkl_utils
+writing output... [ 42%] library/printing
+writing output... [ 43%] library/sandbox/cuda/dnn
+writing output... [ 43%] library/sandbox/cuda/index
+writing output... [ 44%] library/sandbox/cuda/op
+writing output... [ 45%] library/sandbox/cuda/type
+writing output... [ 45%] library/sandbox/cuda/var
+writing output... [ 46%] library/sandbox/gpuarray/dnn
+writing output... [ 46%] library/sandbox/gpuarray/extra
+writing output... [ 47%] library/sandbox/gpuarray/index
+writing output... [ 47%] library/sandbox/gpuarray/op
+writing output... [ 48%] library/sandbox/gpuarray/type
+writing output... [ 49%] library/sandbox/index
+writing output... [ 49%] library/sandbox/linalg
+writing output... [ 50%] library/sandbox/neighbours
+writing output... [ 50%] library/sandbox/rng_mrg
+writing output... [ 51%] library/scalar/index
+writing output... [ 52%] library/scan
+writing output... [ 52%] library/sparse/index
+writing output... [ 53%] library/sparse/sandbox
+writing output... [ 53%] library/tensor/basic
+writing output... [ 54%] library/tensor/extra_ops
+writing output... [ 54%] library/tensor/index
+writing output... [ 55%] library/tensor/io
+writing output... [ 56%] library/tensor/nlinalg
+writing output... [ 56%] library/tensor/nnet/blocksparse
+writing output... [ 57%] library/tensor/nnet/bn
+writing output... [ 57%] library/tensor/nnet/conv
+writing output... [ 58%] library/tensor/nnet/index
+writing output... [ 58%] library/tensor/nnet/neighbours
+writing output... [ 59%] library/tensor/nnet/nnet
+writing output... [ 60%] library/tensor/raw_random
+writing output... [ 60%] library/tensor/shared_randomstreams
+writing output... [ 61%] library/tensor/signal/conv
+writing output... [ 61%] library/tensor/signal/downsample
+writing output... [ 62%] library/tensor/signal/index
+writing output... [ 63%] library/tensor/slinalg
+writing output... [ 63%] library/tensor/utils
+writing output... [ 64%] library/typed_list
+writing output... [ 64%] links
+writing output... [ 65%] nice_quotes
+writing output... [ 65%] optimizations
+writing output... [ 66%] proposals/complex_gradient
+writing output... [ 67%] proposals/conditional
+writing output... [ 67%] proposals/dp_optimization
+writing output... [ 68%] proposals/graphical_models
+writing output... [ 68%] proposals/index
+writing output... [ 69%] proposals/intermediate_language
+writing output... [ 69%] proposals/mongodb_cache
+writing output... [ 70%] proposals/opt_patterns2
+writing output... [ 71%] proposals/pfunc
+writing output... [ 71%] proposals/premerge
+writing output... [ 72%] proposals/tensor_attributes
+writing output... [ 72%] sandbox/broadcasting
+writing output... [ 73%] sandbox/ccodegen
+writing output... [ 73%] sandbox/compilation
+writing output... [ 74%] sandbox/debugging_with_stepmode
+writing output... [ 75%] sandbox/elemwise_compiler
+writing output... [ 75%] sandbox/fg
+writing output... [ 76%] sandbox/function
+writing output... [ 76%] sandbox/functional
+writing output... [ 77%] sandbox/hosting
+writing output... [ 78%] sandbox/how_to_make_ops
+writing output... [ 78%] sandbox/index
+writing output... [ 79%] sandbox/index2
+writing output... [ 79%] sandbox/interactive_debugger
+writing output... [ 80%] sandbox/logistic_regression_example
+writing output... [ 80%] sandbox/max_gotcha
+writing output... [ 81%] sandbox/performance
+writing output... [ 82%] sandbox/randomnumbers
+writing output... [ 82%] sandbox/rethinkccodegen
+writing output... [ 83%] sandbox/sandbox
+writing output... [ 83%] sandbox/software
+writing output... [ 84%] sandbox/sparse
+writing output... [ 84%] sandbox/tensoroptools
+writing output... [ 85%] tutorial/adding
+writing output... [ 86%] tutorial/aliasing
+writing output... [ 86%] tutorial/conditions
+writing output... [ 87%] tutorial/debug_faq
+writing output... [ 87%] tutorial/examples
+writing output... [ 88%] tutorial/extending_theano
+writing output... [ 89%] tutorial/extending_theano_c
+writing output... [ 89%] tutorial/faq_tutorial
+writing output... [ 90%] tutorial/gpu_data_convert
+writing output... [ 90%] tutorial/gradients
+writing output... [ 91%] tutorial/index
+writing output... [ 91%] tutorial/loading_and_saving
+writing output... [ 92%] tutorial/loop
+writing output... [ 93%] tutorial/modes
+writing output... [ 93%] tutorial/multi_cores
+writing output... [ 94%] tutorial/nan_tutorial
+writing output... [ 94%] tutorial/numpy
+writing output... [ 95%] tutorial/printing_drawing
+writing output... [ 95%] tutorial/profiling
+writing output... [ 96%] tutorial/python
+writing output... [ 97%] tutorial/python-memory-management
+writing output... [ 97%] tutorial/shape_info
+writing output... [ 98%] tutorial/sparse
+writing output... [ 98%] tutorial/symbolic_graphs
+writing output... [ 99%] tutorial/using_gpu
+writing output... [100%] tutorial/using_multi_gpu
+
+generating indices... genindex py-modindex
+writing additional pages... search
+copying images... [  3%] crei2013/../hpcs2011_tutorial/pics/f_unoptimized.png
+copying images... [  6%] images/talk2010.png
+copying images... [  9%] tutorial/apply.png
+copying images... [ 12%] tutorial/./pics/d3viz.png
+copying images... [ 15%] cifarSC2011/../hpcs2011_tutorial/pics/f_unoptimized.png
+copying images... [ 18%] cifarSC2011/./pics/logreg_pydotprint_train.png
+copying images... [ 21%] tutorial/logistic.png
+copying images... [ 25%] cifarSC2011/../hpcs2011_tutorial/pics/pipeline.png
+copying images... [ 28%] crei2013/./pics/logreg_pydotprint_train.png
+copying images... [ 31%] crei2013/../hpcs2011_tutorial/pics/pipeline.png
+copying images... [ 34%] library/tensor/nnet/sigmoid_prec.png
+copying images... [ 37%] tutorial/./pics/symbolic_graph_unopt.png
+copying images... [ 40%] cifarSC2011/../hpcs2011_tutorial/pics/conv.png
+copying images... [ 43%] tutorial/./pics/logreg_pydotprint_train.png
+copying images... [ 46%] cifarSC2011/../hpcs2011_tutorial/pics/multiple_graph.png
+copying images... [ 50%] extending/apply.png
+copying images... [ 53%] cifarSC2011/../hpcs2011_tutorial/pics/f_optimized.png
+copying images... [ 56%] cifarSC2011/./pics/logreg_pydotprint_predict.png
+copying images... [ 59%] cifarSC2011/../hpcs2011_tutorial/pics/mlp.png
+copying images... [ 62%] library/tensor/nnet/../../../images/blocksparse.png
+copying images... [ 65%] library/d3viz/index_files/index_10_0.png
+copying images... [ 68%] tutorial/./pics/symbolic_graph_opt.png
+copying images... [ 71%] tutorial/./pics/logreg_pydotprint_prediction.png
+copying images... [ 75%] tutorial/dlogistic.png
+copying images... [ 78%] crei2013/./pics/logreg_pydotprint_predict.png
+copying images... [ 81%] library/d3viz/index_files/index_24_0.png
+copying images... [ 84%] tutorial/./pics/logreg_pydotprint_predict.png
+copying images... [ 87%] crei2013/../hpcs2011_tutorial/pics/f_optimized.png
+copying images... [ 90%] cifarSC2011/./pics/logreg_pydotprint_prediction.png
+copying images... [ 93%] tutorial/../hpcs2011_tutorial/pics/apply_node.png
+copying images... [ 96%] crei2013/./pics/logreg_pydotprint_prediction.png
+copying images... [100%] library/tensor/bcast.png
+
+copying downloadable files... [ 12%] /home/travis/build/failed/Theano/Theano/doc/tutorial/adding_solution_1.py
+copying downloadable files... [ 25%] /home/travis/build/failed/Theano/Theano/doc/tutorial/extending_theano_solution_1.py
+copying downloadable files... [ 37%] /home/travis/build/failed/Theano/Theano/doc/library/d3viz/examples/mlp2.pdf
+copying downloadable files... [ 50%] /home/travis/build/failed/Theano/Theano/doc/tutorial/using_gpu_solution_1.py
+copying downloadable files... [ 62%] /home/travis/build/failed/Theano/Theano/doc/tutorial/loop_solution_1.py
+copying downloadable files... [ 75%] /home/travis/build/failed/Theano/Theano/doc/library/d3viz/examples/mlp2.png
+copying downloadable files... [ 87%] /home/travis/build/failed/Theano/Theano/doc/library/d3viz/index.ipynb
+copying downloadable files... [100%] /home/travis/build/failed/Theano/Theano/doc/tutorial/modes_solution_1.py
+
+copying static files... done
+copying extra files... done
+dumping search index in English (code: en) ... done
+dumping object inventory... done
+build succeeded.
+/home/travis/build/failed/Theano/Theano/theano/misc/pycuda_init.py:34: UserWarning: PyCUDA import failed in theano.misc.pycuda_init
+  warnings.warn("PyCUDA import failed in theano.misc.pycuda_init")
+/home/travis/build/failed/Theano/Theano/theano/tensor/signal/downsample.py:5: UserWarning: downsample module has been moved to the pool module.
+  warnings.warn("downsample module has been moved to the pool module.")
+
+travis_time:end:096826b8:start=1614451419974620612,finish=1614451465874602989,duration=45899982377[0K
+[32;1mThe command "if [[ $DOC == "1" ]]; then python doc/scripts/docgen.py --nopdf --check; fi" exited with 0.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:18721164[0K
+travis_time:end:18721164:start=1614451465886811803,finish=1614451465896288575,duration=9476772[0Ktravis_time:start:02ed3ddb[0K/home/travis/.casher/bin/casher:190: warning: Insecure world writable dir /home/travis/build/failed/Theano/Theano/. in PATH, mode 040777
+[32;1mchanges detected, packing new archive[0m
+/home/travis/.casher/bin/casher:213:in `cache_archive_name': undefined method `[]' for nil:NilClass (NoMethodError)
+	from /home/travis/.casher/bin/casher:143:in `push'
+	from /home/travis/.casher/bin/casher:53:in `block in run'
+	from /home/travis/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/timeout.rb:69:in `timeout'
+	from /home/travis/.casher/bin/casher:53:in `run'
+	from /home/travis/.casher/bin/casher:263:in `<main>'
+
+travis_time:end:02ed3ddb:start=1614451465906717732,finish=1614451467722935245,duration=1816217513[0Ktravis_fold:end:cache.2[0Ktravis_fold:start:after_failure[0Ktravis_time:start:2e8543b0[0K$ cat /home/travis/.pip/pip.log
+cat: /home/travis/.pip/pip.log: No such file or directory
+
+travis_time:end:2e8543b0:start=1614451467733964611,finish=1614451467744568033,duration=10603422[0Ktravis_fold:end:after_failure[0K
+Done. Your build exited with 1.

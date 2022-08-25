@@ -1,0 +1,1305 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: python
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+grep: /etc/apt/sources.list.d/*: No such file or directory
+sed: cannot rename /etc/hosts: Device or resource busy
+sed: cannot rename /etc/hosts: Device or resource busy
+$ cd failed/tornadoweb/tornado
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export DEPS=true
+
+travis_time:start:017695f0[0K$ source ~/virtualenv/pypy/bin/activate
+
+travis_time:end:017695f0:start=1612645945261907428,finish=1612645945271208857,duration=9301429[0K$ python --version
+Python 2.7.8 (10f1b29a2bd2, Feb 02 2015, 21:22:43)
+[PyPy 2.5.0 with GCC 4.6.3]
+$ pip --version
+pip 6.0.7 from /home/travis/virtualenv/pypy-2.5.0/site-packages (python 2.7)
+travis_fold:start:install.1[0Ktravis_time:start:00bee3d0[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then travis_retry pip install unittest2==1.1.0; fi
+
+travis_time:end:00bee3d0:start=1612645945799234555,finish=1612645945808116205,duration=8881650[0Ktravis_fold:end:install.1[0Ktravis_fold:start:install.2[0Ktravis_time:start:0a314a98[0K$ if [[ $TRAVIS_PYTHON_VERSION == 2* && $DEPS == true ]]; then travis_retry pip install futures==3.0.3 mock==1.3.0 Monotime==1.0 trollius==2.0; fi
+
+travis_time:end:0a314a98:start=1612645945818725583,finish=1612645945827073074,duration=8347491[0Ktravis_fold:end:install.2[0Ktravis_fold:start:install.3[0Ktravis_time:start:0664d920[0K$ if [[ $TRAVIS_PYTHON_VERSION == 'pypy' && $DEPS == true ]]; then travis_retry pip install futures==3.0.3 mock==1.3.0; fi
+Collecting futures==3.0.3
+  Downloading https://files.pythonhosted.org/packages/26/7d/a7e1130b63514cd7192f0ba0b53bdda7f96df88641ee0c97bfed8477f324/futures-3.0.3-py2-none-any.whl
+Collecting mock==1.3.0
+  Downloading https://files.pythonhosted.org/packages/b2/50/664a70b87408bb6c14c1af2337efa64eb8d1af80c933531758b8fb41ec25/mock-1.3.0-py2.py3-none-any.whl (56kB)
+Collecting pbr>=0.11 (from mock==1.3.0)
+  Downloading https://files.pythonhosted.org/packages/fb/48/69046506f6ac61c1eaa9a0d42d22d54673b69e176d30ca98e3f61513e980/pbr-5.5.1-py2.py3-none-any.whl (106kB)
+Collecting six>=1.7 (from mock==1.3.0)
+  Downloading https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl
+Collecting funcsigs (from mock==1.3.0)
+  Downloading https://files.pythonhosted.org/packages/69/cb/f5be453359271714c01b9bd06126eaf2e368f1fddfff30818754b5ac2328/funcsigs-1.0.2-py2.py3-none-any.whl
+Installing collected packages: funcsigs, six, pbr, mock, futures
+
+
+
+  Found existing installation: mock 1.0.1
+    Uninstalling mock-1.0.1:
+      Successfully uninstalled mock-1.0.1
+
+
+Successfully installed funcsigs-1.0.2 futures-3.0.3 mock-1.3.0 pbr-5.5.1 six-1.15.0
+
+travis_time:end:0664d920:start=1612645945837637581,finish=1612645948104101419,duration=2266463838[0Ktravis_fold:end:install.3[0Ktravis_fold:start:install.4[0Ktravis_time:start:00beee28[0K$ if [[ $TRAVIS_PYTHON_VERSION != 'pypy'* && $DEPS == true ]]; then travis_retry pip install pycurl==7.19.5.1; fi
+
+travis_time:end:00beee28:start=1612645948116299387,finish=1612645948125685689,duration=9386302[0Ktravis_fold:end:install.4[0Ktravis_fold:start:install.5[0Ktravis_time:start:0cef4974[0K$ if [[ $TRAVIS_PYTHON_VERSION == '3.2' && $DEPS == true ]]; then travis_retry pip install mock==1.3.0; fi
+
+travis_time:end:0cef4974:start=1612645948136862099,finish=1612645948145503561,duration=8641462[0Ktravis_fold:end:install.5[0Ktravis_fold:start:install.6[0Ktravis_time:start:02a33784[0K$ if [[ $TRAVIS_PYTHON_VERSION != '3.2' && $TRAVIS_PYTHON_VERSION != 'pypy'* && $DEPS == true ]]; then travis_retry pip install Twisted==15.4.0; fi
+
+travis_time:end:02a33784:start=1612645948156523802,finish=1612645948163774818,duration=7251016[0Ktravis_fold:end:install.6[0Ktravis_fold:start:install.7[0Ktravis_time:start:0dd5d232[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.7' && $DEPS == true ]]; then travis_retry pip install sphinx==1.3.1 sphinx_rtd_theme==0.1.9; fi
+
+travis_time:end:0dd5d232:start=1612645948174483846,finish=1612645948183410759,duration=8926913[0Ktravis_fold:end:install.7[0Ktravis_fold:start:install.8[0Ktravis_time:start:060dd672[0K$ if [[ $TRAVIS_PYTHON_VERSION == '3.5' && $DEPS == true ]]; then travis_retry pip install sphinx==1.3.1 sphinx_rtd_theme==0.1.9; fi
+
+travis_time:end:060dd672:start=1612645948195111844,finish=1612645948204325084,duration=9213240[0Ktravis_fold:end:install.8[0Ktravis_fold:start:install.9[0Ktravis_time:start:2df20cdc[0K$ if [[ $TRAVIS_PYTHON_VERSION != 'pypy'* ]]; then export TORNADO_EXTENSION=1; fi
+
+travis_time:end:2df20cdc:start=1612645948215905397,finish=1612645948225170249,duration=9264852[0Ktravis_fold:end:install.9[0Ktravis_fold:start:install.10[0Ktravis_time:start:00541d34[0K$ travis_retry python setup.py install
+running install
+Checking .pth file support in /home/travis/virtualenv/pypy-2.5.0/site-packages/
+/home/travis/virtualenv/pypy-2.5.0/bin/python -E -c pass
+TEST PASSED: /home/travis/virtualenv/pypy-2.5.0/site-packages/ appears to support .pth files
+running bdist_egg
+running egg_info
+creating tornado.egg-info
+writing tornado.egg-info/PKG-INFO
+writing dependency_links to tornado.egg-info/dependency_links.txt
+writing requirements to tornado.egg-info/requires.txt
+writing top-level names to tornado.egg-info/top_level.txt
+writing manifest file 'tornado.egg-info/SOURCES.txt'
+reading manifest file 'tornado.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+no previously-included directories found matching 'docs/build'
+warning: no files found matching 'tornado/test/README'
+writing manifest file 'tornado.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib
+creating build/lib/tornado
+copying tornado/__init__.py -> build/lib/tornado
+copying tornado/_locale_data.py -> build/lib/tornado
+copying tornado/auth.py -> build/lib/tornado
+copying tornado/autoreload.py -> build/lib/tornado
+copying tornado/concurrent.py -> build/lib/tornado
+copying tornado/curl_httpclient.py -> build/lib/tornado
+copying tornado/escape.py -> build/lib/tornado
+copying tornado/gen.py -> build/lib/tornado
+copying tornado/http1connection.py -> build/lib/tornado
+copying tornado/httpclient.py -> build/lib/tornado
+copying tornado/httpserver.py -> build/lib/tornado
+copying tornado/httputil.py -> build/lib/tornado
+copying tornado/ioloop.py -> build/lib/tornado
+copying tornado/iostream.py -> build/lib/tornado
+copying tornado/locale.py -> build/lib/tornado
+copying tornado/locks.py -> build/lib/tornado
+copying tornado/log.py -> build/lib/tornado
+copying tornado/netutil.py -> build/lib/tornado
+copying tornado/options.py -> build/lib/tornado
+copying tornado/process.py -> build/lib/tornado
+copying tornado/queues.py -> build/lib/tornado
+copying tornado/simple_httpclient.py -> build/lib/tornado
+copying tornado/stack_context.py -> build/lib/tornado
+copying tornado/tcpclient.py -> build/lib/tornado
+copying tornado/tcpserver.py -> build/lib/tornado
+copying tornado/template.py -> build/lib/tornado
+copying tornado/testing.py -> build/lib/tornado
+copying tornado/util.py -> build/lib/tornado
+copying tornado/web.py -> build/lib/tornado
+copying tornado/websocket.py -> build/lib/tornado
+copying tornado/wsgi.py -> build/lib/tornado
+creating build/lib/tornado/test
+copying tornado/test/__init__.py -> build/lib/tornado/test
+copying tornado/test/__main__.py -> build/lib/tornado/test
+copying tornado/test/asyncio_test.py -> build/lib/tornado/test
+copying tornado/test/auth_test.py -> build/lib/tornado/test
+copying tornado/test/concurrent_test.py -> build/lib/tornado/test
+copying tornado/test/curl_httpclient_test.py -> build/lib/tornado/test
+copying tornado/test/escape_test.py -> build/lib/tornado/test
+copying tornado/test/gen_test.py -> build/lib/tornado/test
+copying tornado/test/httpclient_test.py -> build/lib/tornado/test
+copying tornado/test/httpserver_test.py -> build/lib/tornado/test
+copying tornado/test/httputil_test.py -> build/lib/tornado/test
+copying tornado/test/import_test.py -> build/lib/tornado/test
+copying tornado/test/ioloop_test.py -> build/lib/tornado/test
+copying tornado/test/iostream_test.py -> build/lib/tornado/test
+copying tornado/test/locale_test.py -> build/lib/tornado/test
+copying tornado/test/locks_test.py -> build/lib/tornado/test
+copying tornado/test/log_test.py -> build/lib/tornado/test
+copying tornado/test/netutil_test.py -> build/lib/tornado/test
+copying tornado/test/options_test.py -> build/lib/tornado/test
+copying tornado/test/process_test.py -> build/lib/tornado/test
+copying tornado/test/queues_test.py -> build/lib/tornado/test
+copying tornado/test/resolve_test_helper.py -> build/lib/tornado/test
+copying tornado/test/runtests.py -> build/lib/tornado/test
+copying tornado/test/simple_httpclient_test.py -> build/lib/tornado/test
+copying tornado/test/stack_context_test.py -> build/lib/tornado/test
+copying tornado/test/tcpclient_test.py -> build/lib/tornado/test
+copying tornado/test/tcpserver_test.py -> build/lib/tornado/test
+copying tornado/test/template_test.py -> build/lib/tornado/test
+copying tornado/test/testing_test.py -> build/lib/tornado/test
+copying tornado/test/twisted_test.py -> build/lib/tornado/test
+copying tornado/test/util.py -> build/lib/tornado/test
+copying tornado/test/util_test.py -> build/lib/tornado/test
+copying tornado/test/web_test.py -> build/lib/tornado/test
+copying tornado/test/websocket_test.py -> build/lib/tornado/test
+copying tornado/test/wsgi_test.py -> build/lib/tornado/test
+creating build/lib/tornado/platform
+copying tornado/platform/__init__.py -> build/lib/tornado/platform
+copying tornado/platform/asyncio.py -> build/lib/tornado/platform
+copying tornado/platform/auto.py -> build/lib/tornado/platform
+copying tornado/platform/caresresolver.py -> build/lib/tornado/platform
+copying tornado/platform/common.py -> build/lib/tornado/platform
+copying tornado/platform/epoll.py -> build/lib/tornado/platform
+copying tornado/platform/interface.py -> build/lib/tornado/platform
+copying tornado/platform/kqueue.py -> build/lib/tornado/platform
+copying tornado/platform/posix.py -> build/lib/tornado/platform
+copying tornado/platform/select.py -> build/lib/tornado/platform
+copying tornado/platform/twisted.py -> build/lib/tornado/platform
+copying tornado/platform/windows.py -> build/lib/tornado/platform
+creating build/lib/tornado/test/csv_translations
+copying tornado/test/csv_translations/fr_FR.csv -> build/lib/tornado/test/csv_translations
+creating build/lib/tornado/test/gettext_translations
+creating build/lib/tornado/test/gettext_translations/fr_FR
+creating build/lib/tornado/test/gettext_translations/fr_FR/LC_MESSAGES
+copying tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.mo -> build/lib/tornado/test/gettext_translations/fr_FR/LC_MESSAGES
+copying tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.po -> build/lib/tornado/test/gettext_translations/fr_FR/LC_MESSAGES
+copying tornado/test/options_test.cfg -> build/lib/tornado/test
+creating build/lib/tornado/test/static
+copying tornado/test/static/robots.txt -> build/lib/tornado/test/static
+copying tornado/test/static/sample.xml -> build/lib/tornado/test/static
+copying tornado/test/static/sample.xml.gz -> build/lib/tornado/test/static
+copying tornado/test/static/sample.xml.bz2 -> build/lib/tornado/test/static
+creating build/lib/tornado/test/static/dir
+copying tornado/test/static/dir/index.html -> build/lib/tornado/test/static/dir
+copying tornado/test/static_foo.txt -> build/lib/tornado/test
+creating build/lib/tornado/test/templates
+copying tornado/test/templates/utf8.html -> build/lib/tornado/test/templates
+copying tornado/test/test.crt -> build/lib/tornado/test
+copying tornado/test/test.key -> build/lib/tornado/test
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/__init__.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/_locale_data.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/auth.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/autoreload.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/concurrent.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/curl_httpclient.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/escape.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/gen.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/http1connection.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/httpclient.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/httpserver.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/httputil.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/ioloop.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/iostream.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/locale.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/locks.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/log.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/netutil.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/options.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/process.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/queues.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/simple_httpclient.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/stack_context.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/tcpclient.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/tcpserver.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/template.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/testing.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/util.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/web.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/websocket.py -> build/bdist.linux-x86_64/egg/tornado
+copying build/lib/tornado/wsgi.py -> build/bdist.linux-x86_64/egg/tornado
+creating build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/__init__.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/__main__.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/asyncio_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/auth_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/concurrent_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/curl_httpclient_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/escape_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/gen_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/httpclient_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/httpserver_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/httputil_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/import_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/ioloop_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/iostream_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/locale_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/locks_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/log_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/netutil_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/options_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/process_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/queues_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/resolve_test_helper.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/runtests.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/simple_httpclient_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/stack_context_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/tcpclient_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/tcpserver_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/template_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/testing_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/twisted_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/util.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/util_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/web_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/websocket_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/wsgi_test.py -> build/bdist.linux-x86_64/egg/tornado/test
+creating build/bdist.linux-x86_64/egg/tornado/test/csv_translations
+copying build/lib/tornado/test/csv_translations/fr_FR.csv -> build/bdist.linux-x86_64/egg/tornado/test/csv_translations
+creating build/bdist.linux-x86_64/egg/tornado/test/gettext_translations
+creating build/bdist.linux-x86_64/egg/tornado/test/gettext_translations/fr_FR
+creating build/bdist.linux-x86_64/egg/tornado/test/gettext_translations/fr_FR/LC_MESSAGES
+copying build/lib/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.mo -> build/bdist.linux-x86_64/egg/tornado/test/gettext_translations/fr_FR/LC_MESSAGES
+copying build/lib/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.po -> build/bdist.linux-x86_64/egg/tornado/test/gettext_translations/fr_FR/LC_MESSAGES
+copying build/lib/tornado/test/options_test.cfg -> build/bdist.linux-x86_64/egg/tornado/test
+creating build/bdist.linux-x86_64/egg/tornado/test/static
+copying build/lib/tornado/test/static/robots.txt -> build/bdist.linux-x86_64/egg/tornado/test/static
+copying build/lib/tornado/test/static/sample.xml -> build/bdist.linux-x86_64/egg/tornado/test/static
+copying build/lib/tornado/test/static/sample.xml.gz -> build/bdist.linux-x86_64/egg/tornado/test/static
+copying build/lib/tornado/test/static/sample.xml.bz2 -> build/bdist.linux-x86_64/egg/tornado/test/static
+creating build/bdist.linux-x86_64/egg/tornado/test/static/dir
+copying build/lib/tornado/test/static/dir/index.html -> build/bdist.linux-x86_64/egg/tornado/test/static/dir
+copying build/lib/tornado/test/static_foo.txt -> build/bdist.linux-x86_64/egg/tornado/test
+creating build/bdist.linux-x86_64/egg/tornado/test/templates
+copying build/lib/tornado/test/templates/utf8.html -> build/bdist.linux-x86_64/egg/tornado/test/templates
+copying build/lib/tornado/test/test.crt -> build/bdist.linux-x86_64/egg/tornado/test
+copying build/lib/tornado/test/test.key -> build/bdist.linux-x86_64/egg/tornado/test
+creating build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/__init__.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/asyncio.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/auto.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/caresresolver.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/common.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/epoll.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/interface.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/kqueue.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/posix.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/select.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/twisted.py -> build/bdist.linux-x86_64/egg/tornado/platform
+copying build/lib/tornado/platform/windows.py -> build/bdist.linux-x86_64/egg/tornado/platform
+byte-compiling build/bdist.linux-x86_64/egg/tornado/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/_locale_data.py to _locale_data.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/auth.py to auth.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/autoreload.py to autoreload.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/concurrent.py to concurrent.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/curl_httpclient.py to curl_httpclient.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/escape.py to escape.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/gen.py to gen.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/http1connection.py to http1connection.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/httpclient.py to httpclient.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/httpserver.py to httpserver.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/httputil.py to httputil.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/ioloop.py to ioloop.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/iostream.py to iostream.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/locale.py to locale.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/locks.py to locks.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/log.py to log.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/netutil.py to netutil.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/options.py to options.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/process.py to process.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/queues.py to queues.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/simple_httpclient.py to simple_httpclient.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/stack_context.py to stack_context.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/tcpclient.py to tcpclient.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/tcpserver.py to tcpserver.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/template.py to template.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/testing.py to testing.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/util.py to util.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/web.py to web.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/websocket.py to websocket.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/wsgi.py to wsgi.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/__main__.py to __main__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/asyncio_test.py to asyncio_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/auth_test.py to auth_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/concurrent_test.py to concurrent_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/curl_httpclient_test.py to curl_httpclient_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/escape_test.py to escape_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/gen_test.py to gen_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/httpclient_test.py to httpclient_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/httpserver_test.py to httpserver_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/httputil_test.py to httputil_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/import_test.py to import_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/ioloop_test.py to ioloop_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/iostream_test.py to iostream_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/locale_test.py to locale_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/locks_test.py to locks_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/log_test.py to log_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/netutil_test.py to netutil_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/options_test.py to options_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/process_test.py to process_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/queues_test.py to queues_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/resolve_test_helper.py to resolve_test_helper.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/runtests.py to runtests.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/simple_httpclient_test.py to simple_httpclient_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/stack_context_test.py to stack_context_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/tcpclient_test.py to tcpclient_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/tcpserver_test.py to tcpserver_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/template_test.py to template_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/testing_test.py to testing_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/twisted_test.py to twisted_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/util.py to util.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/util_test.py to util_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/web_test.py to web_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/websocket_test.py to websocket_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/test/wsgi_test.py to wsgi_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/asyncio.py to asyncio.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/auto.py to auto.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/caresresolver.py to caresresolver.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/common.py to common.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/epoll.py to epoll.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/interface.py to interface.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/kqueue.py to kqueue.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/posix.py to posix.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/select.py to select.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/twisted.py to twisted.pyc
+byte-compiling build/bdist.linux-x86_64/egg/tornado/platform/windows.py to windows.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying tornado.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying tornado.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying tornado.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying tornado.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying tornado.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+tornado.autoreload: module references __file__
+tornado.testing: module references __file__
+tornado.test.httpserver_test: module references __file__
+tornado.test.iostream_test: module references __file__
+tornado.test.locale_test: module references __file__
+tornado.test.options_test: module references __file__
+tornado.test.template_test: module references __file__
+tornado.test.web_test: module references __file__
+creating dist
+creating 'dist/tornado-4.3b1-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing tornado-4.3b1-py2.7.egg
+creating /home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg
+Extracting tornado-4.3b1-py2.7.egg to /home/travis/virtualenv/pypy-2.5.0/site-packages
+Adding tornado 4.3b1 to easy-install.pth file
+
+Installed /home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg
+Processing dependencies for tornado==4.3b1
+Searching for backports-abc>=0.4
+Reading https://pypi.python.org/simple/backports_abc/
+Best match: backports-abc 0.5
+Downloading https://files.pythonhosted.org/packages/68/3c/1317a9113c377d1e33711ca8de1e80afbaf4a3c950dd0edfaf61f9bfe6d8/backports_abc-0.5.tar.gz#sha256=033be54514a03e255df75c5aee8f9e672f663f93abb723444caec8fe43437bde
+Processing backports_abc-0.5.tar.gz
+Writing /tmp/easy_install-CNnvWN/backports_abc-0.5/setup.cfg
+Running backports_abc-0.5/setup.py -q bdist_egg --dist-dir /tmp/easy_install-CNnvWN/backports_abc-0.5/egg-dist-tmp-4aRxgm
+zip_safe flag not set; analyzing archive contents...
+Moving backports_abc-0.5-py2.7.egg to /home/travis/virtualenv/pypy-2.5.0/site-packages
+Adding backports-abc 0.5 to easy-install.pth file
+
+Installed /home/travis/virtualenv/pypy-2.5.0/site-packages/backports_abc-0.5-py2.7.egg
+Searching for certifi
+Reading https://pypi.python.org/simple/certifi/
+Best match: certifi 2020.12.5
+Downloading https://files.pythonhosted.org/packages/06/a9/cd1fd8ee13f73a4d4f491ee219deeeae20afefa914dfb4c130cfc9dc397a/certifi-2020.12.5.tar.gz#sha256=1a4995114262bffbc2413b159f2a1a480c969de6e6eb13ee966d470af86af59c
+Processing certifi-2020.12.5.tar.gz
+Writing /tmp/easy_install-h1sq4_/certifi-2020.12.5/setup.cfg
+Running certifi-2020.12.5/setup.py -q bdist_egg --dist-dir /tmp/easy_install-h1sq4_/certifi-2020.12.5/egg-dist-tmp-W8wVP3
+/opt/python/pypy-2.5.0/lib-python/2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'project_urls'
+  warnings.warn(msg)
+/home/travis/virtualenv/pypy-2.5.0/site-packages/setuptools/dist.py:283: UserWarning: The version specified requires normalization, consider using '2020.12.5' instead of '2020.12.05'.
+  self.metadata.version,
+warning: no previously-included files found matching '.github/'
+warning: manifest_maker: MANIFEST.in, line 4: 'recursive-exclude' expects <dir> <pattern1> <pattern2> ...
+
+creating /home/travis/virtualenv/pypy-2.5.0/site-packages/certifi-2020.12.5-py2.7.egg
+Extracting certifi-2020.12.5-py2.7.egg to /home/travis/virtualenv/pypy-2.5.0/site-packages
+Adding certifi 2020.12.5 to easy-install.pth file
+
+Installed /home/travis/virtualenv/pypy-2.5.0/site-packages/certifi-2020.12.5-py2.7.egg
+Searching for singledispatch
+Reading https://pypi.python.org/simple/singledispatch/
+Best match: singledispatch 3.4.0.3
+Downloading https://files.pythonhosted.org/packages/d9/e9/513ad8dc17210db12cb14f2d4d190d618fb87dd38814203ea71c87ba5b68/singledispatch-3.4.0.3.tar.gz#sha256=5b06af87df13818d14f08a028e42f566640aef80805c3b50c5056b086e3c2b9c
+Processing singledispatch-3.4.0.3.tar.gz
+Writing /tmp/easy_install-QLxAwQ/singledispatch-3.4.0.3/setup.cfg
+Running singledispatch-3.4.0.3/setup.py -q bdist_egg --dist-dir /tmp/easy_install-QLxAwQ/singledispatch-3.4.0.3/egg-dist-tmp-8sRNzE
+Moving singledispatch-3.4.0.3-py2.7.egg to /home/travis/virtualenv/pypy-2.5.0/site-packages
+Adding singledispatch 3.4.0.3 to easy-install.pth file
+
+Installed /home/travis/virtualenv/pypy-2.5.0/site-packages/singledispatch-3.4.0.3-py2.7.egg
+Searching for backports.ssl-match-hostname
+Reading https://pypi.python.org/simple/backports.ssl_match_hostname/
+Best match: backports.ssl-match-hostname 3.7.0.1
+Downloading https://files.pythonhosted.org/packages/ff/2b/8265224812912bc5b7a607c44bf7b027554e1b9775e9ee0de8032e3de4b2/backports.ssl_match_hostname-3.7.0.1.tar.gz#sha256=bb82e60f9fbf4c080eabd957c39f0641f0fc247d9a16e31e26d594d8f42b9fd2
+Processing backports.ssl_match_hostname-3.7.0.1.tar.gz
+Writing /tmp/easy_install-AlaohN/backports.ssl_match_hostname-3.7.0.1/setup.cfg
+Running backports.ssl_match_hostname-3.7.0.1/setup.py -q bdist_egg --dist-dir /tmp/easy_install-AlaohN/backports.ssl_match_hostname-3.7.0.1/egg-dist-tmp-JZPK0j
+zip_safe flag not set; analyzing archive contents...
+backports.__init__: module references __path__
+creating /home/travis/virtualenv/pypy-2.5.0/site-packages/backports.ssl_match_hostname-3.7.0.1-py2.7.egg
+Extracting backports.ssl_match_hostname-3.7.0.1-py2.7.egg to /home/travis/virtualenv/pypy-2.5.0/site-packages
+Adding backports.ssl-match-hostname 3.7.0.1 to easy-install.pth file
+
+Installed /home/travis/virtualenv/pypy-2.5.0/site-packages/backports.ssl_match_hostname-3.7.0.1-py2.7.egg
+Searching for six==1.15.0
+Best match: six 1.15.0
+Adding six 1.15.0 to easy-install.pth file
+
+Using /home/travis/virtualenv/pypy-2.5.0/site-packages
+Finished processing dependencies for tornado==4.3b1
+
+travis_time:end:00541d34:start=1612645948236347360,finish=1612645953272384179,duration=5036036819[0Ktravis_fold:end:install.10[0Ktravis_fold:start:install.11[0Ktravis_time:start:043a0661[0K$ if [[ $TRAVIS_PYTHON_VERSION == '3.2' ]]; then travis_retry pip install 'coverage<4.0'; fi
+
+travis_time:end:043a0661:start=1612645953284095714,finish=1612645953292783621,duration=8687907[0Ktravis_fold:end:install.11[0Ktravis_fold:start:install.12[0Ktravis_time:start:29272152[0K$ travis_retry pip install codecov==1.5.1
+Collecting codecov==1.5.1
+  Downloading https://files.pythonhosted.org/packages/54/4a/e6458756857b4016d177d5b9d8d79714137751d27b49bcb28612a2f01d0c/codecov-1.5.1.tar.gz
+Collecting requests>=2.0.0 (from codecov==1.5.1)
+  Downloading https://files.pythonhosted.org/packages/29/c1/24814557f1d22c56d50280771a17307e6bf87b70727d975fd6b2ce6b014a/requests-2.25.1-py2.py3-none-any.whl (61kB)
+Collecting coverage (from codecov==1.5.1)
+  Downloading https://files.pythonhosted.org/packages/29/83/9429871de6c7ec9ff113e12246af75aad4f0a7f31c66d0a499a0b7443a71/coverage-5.4.tar.gz (687kB)
+    /opt/python/pypy-2.5.0/lib-python/2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'long_description_content_type'
+      warnings.warn(msg)
+    /opt/python/pypy-2.5.0/lib-python/2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /opt/python/pypy-2.5.0/lib-python/2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+Collecting chardet<5,>=3.0.2 (from requests>=2.0.0->codecov==1.5.1)
+  Downloading https://files.pythonhosted.org/packages/19/c7/fa589626997dd07bd87d9269342ccb74b1720384a4d739a1872bd84fbe68/chardet-4.0.0-py2.py3-none-any.whl (178kB)
+Collecting idna<3,>=2.5 (from requests>=2.0.0->codecov==1.5.1)
+  Downloading https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl (58kB)
+Collecting urllib3<1.27,>=1.21.1 (from requests>=2.0.0->codecov==1.5.1)
+  Downloading https://files.pythonhosted.org/packages/23/fc/8a49991f7905261f9ca9df5aa9b58363c3c821ce3e7f671895442b7100f2/urllib3-1.26.3-py2.py3-none-any.whl (137kB)
+Requirement already satisfied (use --upgrade to upgrade): certifi>=2017.4.17 in /home/travis/virtualenv/pypy-2.5.0/site-packages/certifi-2020.12.5-py2.7.egg (from requests>=2.0.0->codecov==1.5.1)
+Installing collected packages: urllib3, idna, chardet, coverage, requests, codecov
+
+
+
+  Running setup.py install for coverage
+    /opt/python/pypy-2.5.0/lib-python/2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'long_description_content_type'
+      warnings.warn(msg)
+    /opt/python/pypy-2.5.0/lib-python/2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /opt/python/pypy-2.5.0/lib-python/2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    Installing coverage script to /home/travis/virtualenv/pypy-2.5.0/bin
+    Installing coverage-2.7 script to /home/travis/virtualenv/pypy-2.5.0/bin
+    Installing coverage2 script to /home/travis/virtualenv/pypy-2.5.0/bin
+
+  Running setup.py install for codecov
+    Installing codecov script to /home/travis/virtualenv/pypy-2.5.0/bin
+Successfully installed chardet-4.0.0 codecov-1.5.1 coverage-5.4 idna-2.10 requests-2.25.1 urllib3-1.26.3
+
+travis_time:end:29272152:start=1612645953303474788,finish=1612645960606960098,duration=7303485310[0Ktravis_fold:end:install.12[0Ktravis_fold:start:install.13[0Ktravis_time:start:05fbeacc[0K$ curl-config --version; pip freeze
+libcurl 7.22.0
+backports-abc==0.5
+backports.ssl-match-hostname==3.7.0.1
+certifi==2020.12.5
+cffi==0.8.6
+chardet==4.0.0
+codecov==1.5.1
+coverage==5.4
+funcsigs==1.0.2
+futures==3.0.3
+greenlet==0.4.5
+idna==2.10
+mock==1.3.0
+nose==1.3.4
+pbr==5.5.1
+py==1.4.26
+pytest==2.6.4
+readline==6.2.4.1
+requests==2.25.1
+singledispatch==3.4.0.3
+six==1.15.0
+tornado==4.3b1
+urllib3==1.26.3
+wheel==0.24.0
+
+travis_time:end:05fbeacc:start=1612645960618659688,finish=1612645961131153531,duration=512493843[0Ktravis_fold:end:install.13[0Ktravis_time:start:0fd4066c[0K$ cd maint
+
+travis_time:end:0fd4066c:start=1612645961142181680,finish=1612645961150296084,duration=8114404[0K
+[32;1mThe command "cd maint" exited with 0.[0m
+travis_time:start:00140b16[0K$ cp ../.coveragerc .
+
+travis_time:end:00140b16:start=1612645961160949221,finish=1612645961173180805,duration=12231584[0K
+[32;1mThe command "cp ../.coveragerc ." exited with 0.[0m
+travis_time:start:0026e890[0K$ if [[ $TRAVIS_PYTHON_VERSION != 'pypy'* ]]; then export TORNADO_EXTENSION=1; fi
+
+travis_time:end:0026e890:start=1612645961184824413,finish=1612645961193369603,duration=8545190[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION != 'pypy'* ]]; then export TORNADO_EXTENSION=1; fi" exited with 0.[0m
+travis_time:start:03829cb6[0K$ export TARGET="-m tornado.test.runtests"
+
+travis_time:end:03829cb6:start=1612645961203213114,finish=1612645961210467410,duration=7254296[0K
+[32;1mThe command "export TARGET="-m tornado.test.runtests"" exited with 0.[0m
+travis_time:start:0fd1f080[0K$ export ASYNC_TEST_TIMEOUT=15
+
+travis_time:end:0fd1f080:start=1612645961220092971,finish=1612645961227630603,duration=7537632[0K
+[32;1mThe command "export ASYNC_TEST_TIMEOUT=15" exited with 0.[0m
+travis_time:start:00f7861d[0K$ if [[ $TRAVIS_PYTHON_VERSION != 2.6 && $TRAVIS_PYTHON_VERSION != nightly ]]; then export TARGET="-m coverage run $TARGET"; fi
+
+travis_time:end:00f7861d:start=1612645961237444993,finish=1612645961245503683,duration=8058690[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION != 2.6 && $TRAVIS_PYTHON_VERSION != nightly ]]; then export TARGET="-m coverage run $TARGET"; fi" exited with 0.[0m
+travis_time:start:133e8a9a[0K$ python $TARGET
+.............ssss..........................................................ssssssssssssssssssssssssssssssss...........ssss..s...s........................................s................s..........s.......s.........................s......................................................ss..............ssss.......................................................ss........s.........................s............................................s..................ssssssssssssssssssssssssssssss................................................s.......s.................ss.ss.....ssss.................................................................s......................................................s...................E.ss.....s................E.ss.....s..ss...........................EEsss...................................................s...ss........ssssssssssssss.................................................................s.............sss........................................................................................F.............s.........................................................s...................................................................F.................................................s...................................................................F................
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPSClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_dual (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 108, in test_connect_ipv6_dual
+    self.do_test_connect(socket.AF_INET6, 'localhost')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_ipv6 (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 101, in test_connect_ipv6_ipv6
+    self.do_test_connect(socket.AF_INET6, '::1')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.web_test.XSRFCookieKwargsTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|e6d1ed09|254d49112d1f85a5ef6352c3bc539af3|1612645998; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIAdapterWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|9afa00fe|677f81add3cf4f8d8cbc9117847e730f|1612646006; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIApplicationWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|fe613a36|0bfc3efd39a24d9ca206b46c91fb4896|1612646012; httponly; Path=/'
+
+----------------------------------------------------------------------
+Ran 1315 tests in 45.749s
+
+FAILED (failures=3, errors=4, skipped=135)
+Some tests were skipped because: Not CPython implementation, PEP 380
+(yield from) not available, PEP 492 (async/await) not available,
+SO_REUSEPORT is not supported, asyncio module not present, dual-stack
+servers often have port conflicts on travis, needs fix, pycares module
+not present, pycurl module not present, pypy gc causes problems with
+openssl, ssl.SSLContext not present, ssl.create_default_context not
+present, timing tests unreliable on travis, tornado.speedups module
+not present, twisted module not present
+[E 210206 21:13:33 testing:731] FAIL
+[E 210206 21:13:33 runtests:175] logged 0 warnings and 1 errors
+
+travis_time:end:133e8a9a:start=1612645961255756730,finish=1612646013593715263,duration=52337958533[0K
+[31;1mThe command "python $TARGET" exited with 1.[0m
+travis_time:start:1a4a57ce[0K$ python $TARGET --ioloop=tornado.platform.select.SelectIOLoop
+.............ssss..........................................................ssssssssssssssssssssssssssssssss...........ssss..s...s........................................s................s..........s.......s.........................s......................................................ss..............ssss.......................................................ss........s.........................s............................................s..................ssssssssssssssssssssssssssssss................................................s.......s.................ss.ss.....ssss.................................................................s......................................................s...................E.ss.....s................E.ss.....s..ss...........................EEsss...................................................s...ss........ssssssssssssss.................................................................s.............sss........................................................................................F.............s.........................................................s...................................................................F.................................................s...................................................................F................
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPSClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_dual (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 108, in test_connect_ipv6_dual
+    self.do_test_connect(socket.AF_INET6, 'localhost')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_ipv6 (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 101, in test_connect_ipv6_ipv6
+    self.do_test_connect(socket.AF_INET6, '::1')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.web_test.XSRFCookieKwargsTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|f56404ed|1c5e274b1b4e6b1206f3d428cae04160|1612646053; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIAdapterWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|8b0ec33e|ef99c7129bef5ae414e7b5543c9c0b35|1612646060; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIApplicationWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|7fd9db0d|08de4d868326dc34db53a32efeb2b700|1612646066; httponly; Path=/'
+
+----------------------------------------------------------------------
+Ran 1315 tests in 47.377s
+
+FAILED (failures=3, errors=4, skipped=135)
+Some tests were skipped because: Not CPython implementation, PEP 380
+(yield from) not available, PEP 492 (async/await) not available,
+SO_REUSEPORT is not supported, asyncio module not present, dual-stack
+servers often have port conflicts on travis, needs fix, pycares module
+not present, pycurl module not present, pypy gc causes problems with
+openssl, ssl.SSLContext not present, ssl.create_default_context not
+present, timing tests unreliable on travis, tornado.speedups module
+not present, twisted module not present
+[E 210206 21:14:27 testing:731] FAIL
+[E 210206 21:14:27 runtests:175] logged 0 warnings and 1 errors
+
+travis_time:end:1a4a57ce:start=1612646013605613460,finish=1612646067830530374,duration=54224916914[0K
+[31;1mThe command "python $TARGET --ioloop=tornado.platform.select.SelectIOLoop" exited with 1.[0m
+travis_time:start:03fa4217[0K$ python -O $TARGET
+.............ssss..........................................................ssssssssssssssssssssssssssssssss...........ssss..s...s........................................s................s..........s.......s.........................s......................................................ss..............ssss.......................................................ss........s.........................s............................................s..................ssssssssssssssssssssssssssssss................................................s.......s.................ss.ss.....ssss.................................................................s......................................................s...................E.ss.....s................E.ss.....s..ss...........................EEsss...................................................s...ss........ssssssssssssss.................................................................s.............sss........................................................................................F.............s.........................................................s...................................................................F.................................................s...................................................................F................
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPSClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_dual (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 108, in test_connect_ipv6_dual
+    self.do_test_connect(socket.AF_INET6, 'localhost')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_ipv6 (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 101, in test_connect_ipv6_ipv6
+    self.do_test_connect(socket.AF_INET6, '::1')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.web_test.XSRFCookieKwargsTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|38341f16|5c89bd27149094d09db6ae708cd0786b|1612646106; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIAdapterWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|17a79b5d|b7633e76186fe3d2e06bb536942e59e5|1612646113; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIApplicationWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|5360f19f|d84e3fa993d587bb5ccd1d647d882f4e|1612646119; httponly; Path=/'
+
+----------------------------------------------------------------------
+Ran 1315 tests in 46.596s
+
+FAILED (failures=3, errors=4, skipped=135)
+Some tests were skipped because: Not CPython implementation, PEP 380
+(yield from) not available, PEP 492 (async/await) not available,
+SO_REUSEPORT is not supported, asyncio module not present, dual-stack
+servers often have port conflicts on travis, needs fix, pycares module
+not present, pycurl module not present, pypy gc causes problems with
+openssl, ssl.SSLContext not present, ssl.create_default_context not
+present, timing tests unreliable on travis, tornado.speedups module
+not present, twisted module not present
+[E 210206 21:15:21 testing:731] FAIL
+[E 210206 21:15:21 runtests:175] logged 0 warnings and 1 errors
+
+travis_time:end:03fa4217:start=1612646067841593076,finish=1612646121391841157,duration=53550248081[0K
+[31;1mThe command "python -O $TARGET" exited with 1.[0m
+travis_time:start:1567c950[0K$ LANG=C python $TARGET
+.............ssss..........................................................ssssssssssssssssssssssssssssssss...........ssss..s...s........................................s................s..........s.......s.........................s......................................................ss..............ssss.......................................................ss........s.........................s............................................s..................ssssssssssssssssssssssssssssss................................................s.......s.................ss.ss.....ssss.................................................................s......................................................s...................E.ss.....s................E.ss.....s..ss...........................EEsss...................................................s...ss........ssssssssssssss.................................................................s.............sss........................................................................................F.............s.........................................................s...................................................................F.................................................s...................................................................F................
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPSClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_dual (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 108, in test_connect_ipv6_dual
+    self.do_test_connect(socket.AF_INET6, 'localhost')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_ipv6 (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 101, in test_connect_ipv6_ipv6
+    self.do_test_connect(socket.AF_INET6, '::1')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.web_test.XSRFCookieKwargsTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|2a6c5ec9|11088d6d76c924be554685b0ea62f3a4|1612646161; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIAdapterWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|9ea9ae91|41cb4d64b700b4f15e28b3c702c6ff5b|1612646169; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIApplicationWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|d3e360f3|28211dc7fb4ae528d0c06d472e988ce2|1612646177; httponly; Path=/'
+
+----------------------------------------------------------------------
+Ran 1315 tests in 51.412s
+
+FAILED (failures=3, errors=4, skipped=135)
+Some tests were skipped because: Not CPython implementation, PEP 380
+(yield from) not available, PEP 492 (async/await) not available,
+SO_REUSEPORT is not supported, asyncio module not present, dual-stack
+servers often have port conflicts on travis, needs fix, pycares module
+not present, pycurl module not present, pypy gc causes problems with
+openssl, ssl.SSLContext not present, ssl.create_default_context not
+present, timing tests unreliable on travis, tornado.speedups module
+not present, twisted module not present
+[E 210206 21:16:19 testing:731] FAIL
+[E 210206 21:16:19 runtests:175] logged 0 warnings and 1 errors
+
+travis_time:end:1567c950:start=1612646121403064208,finish=1612646179304163724,duration=57901099516[0K
+[31;1mThe command "LANG=C python $TARGET" exited with 1.[0m
+travis_time:start:05d1c239[0K$ LANG=en_US.utf-8 python $TARGET
+.............ssss..........................................................ssssssssssssssssssssssssssssssss...........ssss..s...s........................................s................s..........s.......s.........................s......................................................ss..............ssss.......................................................ss........s.........................s............................................s..................ssssssssssssssssssssssssssssss................................................s.......s.................ss.ss.....ssss.................................................................s......................................................s...................E.ss.....s................E.ss.....s..ss...........................EEsss...................................................s...ss........ssssssssssssss.................................................................s.............sss........................................................................................F.............s.........................................................s...................................................................F.................................................s...................................................................F................
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_ipv6 (tornado.test.simple_httpclient_test.SimpleHTTPSClientTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/simple_httpclient_test.py", line 259, in test_ipv6
+    [sock] = bind_sockets(None, '::1', family=socket.AF_INET6)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_dual (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 108, in test_connect_ipv6_dual
+    self.do_test_connect(socket.AF_INET6, 'localhost')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+ERROR: test_connect_ipv6_ipv6 (tornado.test.tcpclient_test.TCPClientTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 101, in test_connect_ipv6_ipv6
+    self.do_test_connect(socket.AF_INET6, '::1')
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 525, in post_coroutine
+    timeout=timeout)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/ioloop.py", line 453, in run_sync
+    return future_cell[0].result()
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/concurrent.py", line 232, in result
+    raise_exc_info(self._exc_info)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/gen.py", line 282, in wrapper
+    yielded = next(result)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 85, in do_test_connect
+    port = self.start_server(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 61, in start_server
+    self.server = TestTCPServer(family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/tcpclient_test.py", line 39, in __init__
+    sockets = bind_sockets(None, 'localhost', family)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/netutil.py", line 196, in bind_sockets
+    sock.bind(sockaddr)
+  File "<string>", line 1, in bind
+error: [Errno 99] Cannot assign requested address
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.web_test.XSRFCookieKwargsTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|b49f7558|aa3bcb753bb8f710020bfd66efca6fab|1612646216; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIAdapterWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|356ed206|6928fa48c05d8667ec2dcae875c78276|1612646224; httponly; Path=/'
+
+======================================================================
+FAIL: test_xsrf_httponly (tornado.test.wsgi_test.WSGIApplicationWrappedTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/testing.py", line 132, in __call__
+    result = self.orig_method(*args, **kwargs)
+  File "/home/travis/virtualenv/pypy-2.5.0/site-packages/tornado-4.3b1-py2.7.egg/tornado/test/web_test.py", line 2610, in test_xsrf_httponly
+    self.assertIn('HttpOnly;', response.headers['Set-Cookie'])
+AssertionError: 'HttpOnly;' not found in '_xsrf=2|53f39843|351603595a6f3d59df86207641312ca1|1612646229; httponly; Path=/'
+
+----------------------------------------------------------------------
+Ran 1315 tests in 45.643s
+
+FAILED (failures=3, errors=4, skipped=135)
+Some tests were skipped because: Not CPython implementation, PEP 380
+(yield from) not available, PEP 492 (async/await) not available,
+SO_REUSEPORT is not supported, asyncio module not present, dual-stack
+servers often have port conflicts on travis, needs fix, pycares module
+not present, pycurl module not present, pypy gc causes problems with
+openssl, ssl.SSLContext not present, ssl.create_default_context not
+present, timing tests unreliable on travis, tornado.speedups module
+not present, twisted module not present
+[E 210206 21:17:11 testing:731] FAIL
+[E 210206 21:17:11 runtests:175] logged 0 warnings and 1 errors
+
+travis_time:end:05d1c239:start=1612646179316647567,finish=1612646231699946275,duration=52383298708[0K
+[31;1mThe command "LANG=en_US.utf-8 python $TARGET" exited with 1.[0m
+travis_time:start:04faa898[0K$ if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then python -bb $TARGET; fi
+
+travis_time:end:04faa898:start=1612646231712523390,finish=1612646231722006691,duration=9483301[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then python -bb $TARGET; fi" exited with 0.[0m
+travis_time:start:0f032338[0K$ if [[ $TRAVIS_PYTHON_VERSION != pypy* && $DEPS == true ]]; then python $TARGET --resolver=tornado.netutil.ThreadedResolver; fi
+
+travis_time:end:0f032338:start=1612646231733892317,finish=1612646231743295119,duration=9402802[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION != pypy* && $DEPS == true ]]; then python $TARGET --resolver=tornado.netutil.ThreadedResolver; fi" exited with 0.[0m
+travis_time:start:02084598[0K$ if [[ $TRAVIS_PYTHON_VERSION == 2* && $DEPS == true ]]; then python $TARGET --httpclient=tornado.curl_httpclient.CurlAsyncHTTPClient; fi
+
+travis_time:end:02084598:start=1612646231755388653,finish=1612646231764570075,duration=9181422[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == 2* && $DEPS == true ]]; then python $TARGET --httpclient=tornado.curl_httpclient.CurlAsyncHTTPClient; fi" exited with 0.[0m
+travis_time:start:0b7b3a38[0K$ if [[ $TRAVIS_PYTHON_VERSION == 2* && $DEPS == true ]]; then python $TARGET --ioloop_time_monotonic; fi
+
+travis_time:end:0b7b3a38:start=1612646231776268727,finish=1612646231785748045,duration=9479318[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == 2* && $DEPS == true ]]; then python $TARGET --ioloop_time_monotonic; fi" exited with 0.[0m
+travis_time:start:2099ab31[0K$ if [[ $TRAVIS_PYTHON_VERSION != '3.2' && $TRAVIS_PYTHON_VERSION != 'pypy'* && $DEPS == true ]]; then python $TARGET --ioloop=tornado.platform.twisted.TwistedIOLoop; fi
+
+travis_time:end:2099ab31:start=1612646231797647604,finish=1612646231806630895,duration=8983291[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION != '3.2' && $TRAVIS_PYTHON_VERSION != 'pypy'* && $DEPS == true ]]; then python $TARGET --ioloop=tornado.platform.twisted.TwistedIOLoop; fi" exited with 0.[0m
+travis_time:start:2fee603c[0K$ if [[ $TRAVIS_PYTHON_VERSION == 3.4 || $TRAVIS_PYTHON_VERSION == 3.5 ]]; then python $TARGET --ioloop=tornado.platform.asyncio.AsyncIOLoop; fi
+
+travis_time:end:2fee603c:start=1612646231818084778,finish=1612646231827814661,duration=9729883[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == 3.4 || $TRAVIS_PYTHON_VERSION == 3.5 ]]; then python $TARGET --ioloop=tornado.platform.asyncio.AsyncIOLoop; fi" exited with 0.[0m
+travis_time:start:0f27dbdb[0K$ if [[ $TRAVIS_PYTHON_VERSION == 2* && $DEPS == true ]]; then python $TARGET --ioloop=tornado.platform.asyncio.AsyncIOLoop; fi
+
+travis_time:end:0f27dbdb:start=1612646231839606746,finish=1612646231848958729,duration=9351983[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == 2* && $DEPS == true ]]; then python $TARGET --ioloop=tornado.platform.asyncio.AsyncIOLoop; fi" exited with 0.[0m
+travis_time:start:0da196ab[0K$ if [[ $TRAVIS_PYTHON_VERSION == 2* && $DEPS == true ]]; then python $TARGET --resolver=tornado.platform.twisted.TwistedResolver; fi
+
+travis_time:end:0da196ab:start=1612646231860935022,finish=1612646231870430852,duration=9495830[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == 2* && $DEPS == true ]]; then python $TARGET --resolver=tornado.platform.twisted.TwistedResolver; fi" exited with 0.[0m
+travis_time:start:2b67eec9[0K$ if [[ $TRAVIS_PYTHON_VERSION == 3* && $TRAVIS_PYTHON_VERSION != '3.2' ]]; then python $TARGET --ioloop_time_monotonic; fi
+
+travis_time:end:2b67eec9:start=1612646231881818688,finish=1612646231891032845,duration=9214157[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == 3* && $TRAVIS_PYTHON_VERSION != '3.2' ]]; then python $TARGET --ioloop_time_monotonic; fi" exited with 0.[0m
+travis_time:start:007d57f9[0K$ if [[ $TRAVIS_PYTHON_VERSION != 2.6 && $TRAVIS_PYTHON_VERSION != nightly ]]; then coverage xml; fi
+
+travis_time:end:007d57f9:start=1612646231902589890,finish=1612646237257950367,duration=5355360477[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION != 2.6 && $TRAVIS_PYTHON_VERSION != nightly ]]; then coverage xml; fi" exited with 0.[0m
+travis_time:start:002acc84[0K$ export TORNADO_EXTENSION=0
+
+travis_time:end:002acc84:start=1612646237270231320,finish=1612646237280117359,duration=9886039[0K
+[32;1mThe command "export TORNADO_EXTENSION=0" exited with 0.[0m
+travis_time:start:0fe7dec7[0K$ if [[ $TRAVIS_PYTHON_VERSION == '3.5' && $DEPS == true ]]; then cd ../docs && mkdir sphinx-out && sphinx-build -E -n -W -b html . sphinx-out; fi
+
+travis_time:end:0fe7dec7:start=1612646237291625756,finish=1612646237301278272,duration=9652516[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == '3.5' && $DEPS == true ]]; then cd ../docs && mkdir sphinx-out && sphinx-build -E -n -W -b html . sphinx-out; fi" exited with 0.[0m
+travis_time:start:35f53641[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.7' && $DEPS == true ]]; then cd ../docs && mkdir sphinx-doctest-out && sphinx-build -E -n -b doctest . sphinx-out; fi
+
+travis_time:end:35f53641:start=1612646237312256019,finish=1612646237321087684,duration=8831665[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == '2.7' && $DEPS == true ]]; then cd ../docs && mkdir sphinx-doctest-out && sphinx-build -E -n -b doctest . sphinx-out; fi" exited with 0.[0m
+travis_time:start:04ff9eb4[0K$ if [[ $TRAVIS_PYTHON_VERSION == '3.5' && $DEPS == true ]]; then cd ../docs && mkdir sphinx-doctest-out && sphinx-build -E -n -b doctest . sphinx-out; fi
+
+travis_time:end:04ff9eb4:start=1612646237332728474,finish=1612646237341395546,duration=8667072[0K
+[32;1mThe command "if [[ $TRAVIS_PYTHON_VERSION == '3.5' && $DEPS == true ]]; then cd ../docs && mkdir sphinx-doctest-out && sphinx-build -E -n -b doctest . sphinx-out; fi" exited with 0.[0m
+
+Done. Your build exited with 1.

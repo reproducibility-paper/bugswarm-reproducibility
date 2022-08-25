@@ -1,0 +1,769 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 52.206.222.245 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 52.206.222.245 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+sed: cannot rename /etc/hosts: Device or resource busy
+sed: cannot rename /etc/hosts: Device or resource busy
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd passed/HubTurbo/HubTurbo
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export TERM=dumb
+
+$ export TERM=dumb
+$ java -Xmx32m -version
+java version "1.8.0_31"
+Java(TM) SE Runtime Environment (build 1.8.0_31-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.31-b07, mixed mode)
+$ javac -J-Xmx32m -version
+javac 1.8.0_31
+travis_fold:start:before_install.1[0Ktravis_time:start:27ef429d[0K$ export DISPLAY=:99.0
+
+travis_time:end:27ef429d:start=1610005107945728019,finish=1610005107953991542,duration=8263523[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:1d5e230c[0K$ sh -e /etc/init.d/xvfb start
+Starting virtual X frame buffer: Xvfb.
+
+travis_time:end:1d5e230c:start=1610005107964424329,finish=1610005107976155129,duration=11730800[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:install[0Ktravis_time:start:0280a307[0K$ ./gradlew assemble
+Downloading https://services.gradle.org/distributions/gradle-2.3-all.zip
+............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping /home/travis/.gradle/wrapper/dists/gradle-2.3-all/w01pvxy5gty3tegjrai84pm3/gradle-2.3-all.zip to /home/travis/.gradle/wrapper/dists/gradle-2.3-all/w01pvxy5gty3tegjrai84pm3
+Set executable permissions for: /home/travis/.gradle/wrapper/dists/gradle-2.3-all/w01pvxy5gty3tegjrai84pm3/gradle-2.3/bin/gradle
+Download https://plugins.gradle.org/m2/org/kt3k/gradle/plugin/coveralls-gradle-plugin/2.3.1/coveralls-gradle-plugin-2.3.1.pom
+Download https://plugins.gradle.org/m2/com/github/jengelman/gradle/plugins/shadow/1.2.1/shadow-1.2.1.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpmime/4.3/httpmime-4.3.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcomponents-client/4.3/httpcomponents-client-4.3.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/project/7/project-7.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/13/apache-13.pom
+Download https://plugins.gradle.org/m2/org/eclipse/jgit/org.eclipse.jgit/3.6.0.201412230720-r/org.eclipse.jgit-3.6.0.201412230720-r.pom
+Download https://plugins.gradle.org/m2/org/eclipse/jgit/org.eclipse.jgit-parent/3.6.0.201412230720-r/org.eclipse.jgit-parent-3.6.0.201412230720-r.pom
+Download https://plugins.gradle.org/m2/org/codehaus/groovy/modules/http-builder/http-builder/0.7.1/http-builder-0.7.1.pom
+Download https://plugins.gradle.org/m2/org/jdom/jdom2/2.0.5/jdom2-2.0.5.pom
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm/5.0.3/asm-5.0.3.pom
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-parent/5.0.3/asm-parent-5.0.3.pom
+Download https://plugins.gradle.org/m2/org/ow2/ow2/1.3/ow2-1.3.pom
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.pom
+Download https://plugins.gradle.org/m2/commons-io/commons-io/2.4/commons-io-2.4.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/25/commons-parent-25.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/9/apache-9.pom
+Download https://plugins.gradle.org/m2/org/apache/ant/ant/1.9.4/ant-1.9.4.pom
+Download https://plugins.gradle.org/m2/org/apache/ant/ant-parent/1.9.4/ant-parent-1.9.4.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpclient/4.3/httpclient-4.3.pom
+Download https://plugins.gradle.org/m2/com/jcraft/jsch/0.1.50/jsch-0.1.50.pom
+Download https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom
+Download https://plugins.gradle.org/m2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.pom
+Download https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom
+Download https://plugins.gradle.org/m2/net/sf/json-lib/json-lib/2.3/json-lib-2.3.pom
+Download https://plugins.gradle.org/m2/net/sourceforge/nekohtml/nekohtml/1.9.16/nekohtml-1.9.16.pom
+Download https://plugins.gradle.org/m2/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/3/apache-3.pom
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.pom
+Download https://plugins.gradle.org/m2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.pom
+Download https://plugins.gradle.org/m2/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/11/commons-parent-11.pom
+Download https://plugins.gradle.org/m2/org/apache/apache/4/apache-4.pom
+Download https://plugins.gradle.org/m2/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/9/commons-parent-9.pom
+Download https://plugins.gradle.org/m2/commons-lang/commons-lang/2.4/commons-lang-2.4.pom
+Download https://plugins.gradle.org/m2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/5/commons-parent-5.pom
+Download https://plugins.gradle.org/m2/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.pom
+Download https://plugins.gradle.org/m2/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.pom
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcomponents-core/4.3/httpcomponents-core-4.3.pom
+Download https://plugins.gradle.org/m2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/22/commons-parent-22.pom
+Download https://plugins.gradle.org/m2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+Download https://plugins.gradle.org/m2/org/apache/commons/commons-parent/28/commons-parent-28.pom
+Download https://plugins.gradle.org/m2/org/kt3k/gradle/plugin/coveralls-gradle-plugin/2.3.1/coveralls-gradle-plugin-2.3.1.jar
+Download https://plugins.gradle.org/m2/com/github/jengelman/gradle/plugins/shadow/1.2.1/shadow-1.2.1.jar
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpmime/4.3/httpmime-4.3.jar
+Download https://plugins.gradle.org/m2/org/eclipse/jgit/org.eclipse.jgit/3.6.0.201412230720-r/org.eclipse.jgit-3.6.0.201412230720-r.jar
+Download https://plugins.gradle.org/m2/org/codehaus/groovy/modules/http-builder/http-builder/0.7.1/http-builder-0.7.1.jar
+Download https://plugins.gradle.org/m2/org/jdom/jdom2/2.0.5/jdom2-2.0.5.jar
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.jar
+Download https://plugins.gradle.org/m2/commons-io/commons-io/2.4/commons-io-2.4.jar
+Download https://plugins.gradle.org/m2/org/apache/ant/ant/1.9.4/ant-1.9.4.jar
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpclient/4.3/httpclient-4.3.jar
+Download https://plugins.gradle.org/m2/com/jcraft/jsch/0.1.50/jsch-0.1.50.jar
+Download https://plugins.gradle.org/m2/com/googlecode/javaewah/JavaEWAH/0.7.9/JavaEWAH-0.7.9.jar
+Download https://plugins.gradle.org/m2/net/sf/json-lib/json-lib/2.3/json-lib-2.3-jdk15.jar
+Download https://plugins.gradle.org/m2/net/sourceforge/nekohtml/nekohtml/1.9.16/nekohtml-1.9.16.jar
+Download https://plugins.gradle.org/m2/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar
+Download https://plugins.gradle.org/m2/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.jar
+Download https://plugins.gradle.org/m2/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar
+Download https://plugins.gradle.org/m2/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar
+Download https://plugins.gradle.org/m2/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar
+Download https://plugins.gradle.org/m2/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+Download https://plugins.gradle.org/m2/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar
+Download https://plugins.gradle.org/m2/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar
+Download https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar
+Download https://plugins.gradle.org/m2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+Download https://plugins.gradle.org/m2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j-api/2.2/log4j-api-2.2.pom
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j/2.2/log4j-2.2.pom
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j-core/2.2/log4j-core-2.2.pom
+Download https://jcenter.bintray.com/org/controlsfx/controlsfx/8.20.8/controlsfx-8.20.8.pom
+Download https://jcenter.bintray.com/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+Download https://jcenter.bintray.com/com/google/guava/guava/18.0/guava-18.0.pom
+Download https://jcenter.bintray.com/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Download https://jcenter.bintray.com/net/java/dev/jna/jna/4.1.0/jna-4.1.0.pom
+Download https://jcenter.bintray.com/org/commonjava/googlecode/markdown4j/markdown4j/2.2-cj-1.0/markdown4j-2.2-cj-1.0.pom
+Download https://jcenter.bintray.com/org/commonjava/commonjava/2/commonjava-2.pom
+Download https://jcenter.bintray.com/org/controlsfx/openjfx-dialogs/1.0.2/openjfx-dialogs-1.0.2.pom
+Download https://jcenter.bintray.com/org/apache/servicemix/bundles/org.apache.servicemix.bundles.egit.github.core/2.1.5_1/org.apache.servicemix.bundles.egit.github.core-2.1.5_1.pom
+Download https://jcenter.bintray.com/org/apache/servicemix/bundles/bundles-pom/11/bundles-pom-11.pom
+Download https://jcenter.bintray.com/org/apache/servicemix/servicemix-pom/5/servicemix-pom-5.pom
+Download https://jcenter.bintray.com/org/apache/apache/7/apache-7.pom
+Download https://jcenter.bintray.com/org/ocpsoft/prettytime/prettytime/3.2.7.Final/prettytime-3.2.7.Final.pom
+Download https://jcenter.bintray.com/org/ocpsoft/prettytime/prettytime-parent/3.2.7.Final/prettytime-parent-3.2.7.Final.pom
+Download https://jcenter.bintray.com/org/ocpsoft/ocpsoft-parent/10/ocpsoft-parent-10.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-java/2.45.0/selenium-java-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-parent/2.45.0/selenium-parent-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-server/2.45.0/selenium-server-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-chrome-driver/2.45.0/selenium-chrome-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-htmlunit-driver/2.45.0/selenium-htmlunit-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-firefox-driver/2.45.0/selenium-firefox-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-ie-driver/2.45.0/selenium-ie-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-safari-driver/2.45.0/selenium-safari-driver-2.45.0.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-support/2.45.0/selenium-support-2.45.0.pom
+Download https://jcenter.bintray.com/org/webbitserver/webbit/0.4.14/webbit-0.4.14.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-leg-rc/2.45.0/selenium-leg-rc-2.45.0.pom
+Download https://jcenter.bintray.com/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.pom
+Download https://jcenter.bintray.com/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.pom
+Download https://jcenter.bintray.com/mx4j/mx4j-tools/3.0.1/mx4j-tools-3.0.1.pom
+Download https://jcenter.bintray.com/org/mortbay/jetty/servlet-api-2.5/6.1.9/servlet-api-2.5-6.1.9.pom
+Download https://jcenter.bintray.com/org/mortbay/jetty/project/6.1.9/project-6.1.9.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/jetty-repacked/7.6.1/jetty-repacked-7.6.1.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/jetty-rc-repacked/5/jetty-rc-repacked-5.pom
+Download https://jcenter.bintray.com/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.pom
+Download https://jcenter.bintray.com/org/yaml/snakeyaml/1.8/snakeyaml-1.8.pom
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.9/commons-codec-1.9.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/32/commons-parent-32.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-remote-driver/2.45.0/selenium-remote-driver-2.45.0.pom
+Download https://jcenter.bintray.com/net/sourceforge/htmlunit/htmlunit/2.15/htmlunit-2.15.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-client/4.3.6/httpcomponents-client-4.3.6.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-exec/1.1/commons-exec-1.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/17/commons-parent-17.pom
+Download https://jcenter.bintray.com/net/java/dev/jna/platform/3.4.0/platform-3.4.0.pom
+Download https://jcenter.bintray.com/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.pom
+Download https://jcenter.bintray.com/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.pom
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-api/2.45.0/selenium-api-2.45.0.pom
+Download https://jcenter.bintray.com/xalan/xalan/2.7.1/xalan-2.7.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/33/commons-parent-33.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpmime/4.3.3/httpmime-4.3.3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-client/4.3.3/httpcomponents-client-4.3.3.pom
+Download https://jcenter.bintray.com/net/sourceforge/htmlunit/htmlunit-core-js/2.15/htmlunit-core-js-2.15.pom
+Download https://jcenter.bintray.com/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.pom
+Download https://jcenter.bintray.com/net/sourceforge/nekohtml/nekohtml/1.9.21/nekohtml-1.9.21.pom
+Download https://jcenter.bintray.com/net/sourceforge/cssparser/cssparser/0.9.14/cssparser-0.9.14.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-websocket/8.1.15.v20140411/jetty-websocket-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-project/8.1.15.v20140411/jetty-project-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-parent/20/jetty-parent-20.pom
+Download https://jcenter.bintray.com/xalan/serializer/2.7.1/serializer-2.7.1.pom
+Download https://jcenter.bintray.com/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.pom
+Download https://jcenter.bintray.com/org/w3c/css/sac/1.3/sac-1.3.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-util/8.1.15.v20140411/jetty-util-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-io/8.1.15.v20140411/jetty-io-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-http/8.1.15.v20140411/jetty-http-8.1.15.v20140411.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-core/4.3.3/httpcomponents-core-4.3.3.pom
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j-api/2.2/log4j-api-2.2.jar
+Download https://jcenter.bintray.com/org/apache/logging/log4j/log4j-core/2.2/log4j-core-2.2.jar
+Download https://jcenter.bintray.com/org/controlsfx/controlsfx/8.20.8/controlsfx-8.20.8.jar
+Download https://jcenter.bintray.com/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar
+Download https://jcenter.bintray.com/com/google/guava/guava/18.0/guava-18.0.jar
+Download https://jcenter.bintray.com/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar
+Download https://jcenter.bintray.com/org/commonjava/googlecode/markdown4j/markdown4j/2.2-cj-1.0/markdown4j-2.2-cj-1.0.jar
+Download https://jcenter.bintray.com/org/controlsfx/openjfx-dialogs/1.0.2/openjfx-dialogs-1.0.2.jar
+Download https://jcenter.bintray.com/org/apache/servicemix/bundles/org.apache.servicemix.bundles.egit.github.core/2.1.5_1/org.apache.servicemix.bundles.egit.github.core-2.1.5_1.jar
+Download https://jcenter.bintray.com/org/ocpsoft/prettytime/prettytime/3.2.7.Final/prettytime-3.2.7.Final.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-java/2.45.0/selenium-java-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-server/2.45.0/selenium-server-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-chrome-driver/2.45.0/selenium-chrome-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-htmlunit-driver/2.45.0/selenium-htmlunit-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-firefox-driver/2.45.0/selenium-firefox-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-ie-driver/2.45.0/selenium-ie-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-safari-driver/2.45.0/selenium-safari-driver-2.45.0.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-support/2.45.0/selenium-support-2.45.0.jar
+Download https://jcenter.bintray.com/org/webbitserver/webbit/0.4.14/webbit-0.4.14.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-leg-rc/2.45.0/selenium-leg-rc-2.45.0.jar
+Download https://jcenter.bintray.com/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar
+Download https://jcenter.bintray.com/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar
+Download https://jcenter.bintray.com/mx4j/mx4j-tools/3.0.1/mx4j-tools-3.0.1.jar
+Download https://jcenter.bintray.com/org/mortbay/jetty/servlet-api-2.5/6.1.9/servlet-api-2.5-6.1.9.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/jetty-repacked/7.6.1/jetty-repacked-7.6.1.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/jetty-rc-repacked/5/jetty-rc-repacked-5.jar
+Download https://jcenter.bintray.com/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar
+Download https://jcenter.bintray.com/org/yaml/snakeyaml/1.8/snakeyaml-1.8.jar
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.9/commons-codec-1.9.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-remote-driver/2.45.0/selenium-remote-driver-2.45.0.jar
+Download https://jcenter.bintray.com/net/sourceforge/htmlunit/htmlunit/2.15/htmlunit-2.15.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.jar
+Download https://jcenter.bintray.com/org/apache/commons/commons-exec/1.1/commons-exec-1.1.jar
+Download https://jcenter.bintray.com/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar
+Download https://jcenter.bintray.com/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.jar
+Download https://jcenter.bintray.com/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar
+Download https://jcenter.bintray.com/org/seleniumhq/selenium/selenium-api/2.45.0/selenium-api-2.45.0.jar
+Download https://jcenter.bintray.com/xalan/xalan/2.7.1/xalan-2.7.1.jar
+Download https://jcenter.bintray.com/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpmime/4.3.3/httpmime-4.3.3.jar
+Download https://jcenter.bintray.com/net/sourceforge/htmlunit/htmlunit-core-js/2.15/htmlunit-core-js-2.15.jar
+Download https://jcenter.bintray.com/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar
+Download https://jcenter.bintray.com/net/sourceforge/nekohtml/nekohtml/1.9.21/nekohtml-1.9.21.jar
+Download https://jcenter.bintray.com/net/sourceforge/cssparser/cssparser/0.9.14/cssparser-0.9.14.jar
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-websocket/8.1.15.v20140411/jetty-websocket-8.1.15.v20140411.jar
+Download https://jcenter.bintray.com/xalan/serializer/2.7.1/serializer-2.7.1.jar
+Download https://jcenter.bintray.com/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar
+Download https://jcenter.bintray.com/org/w3c/css/sac/1.3/sac-1.3.jar
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-util/8.1.15.v20140411/jetty-util-8.1.15.v20140411.jar
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-io/8.1.15.v20140411/jetty-io-8.1.15.v20140411.jar
+Download https://jcenter.bintray.com/org/eclipse/jetty/jetty-http/8.1.15.v20140411/jetty-http-8.1.15.v20140411.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.jar
+:compileJavaNote: /home/travis/build/passed/HubTurbo/HubTurbo/src/main/java/util/DialogMessage.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/travis/build/passed/HubTurbo/HubTurbo/src/main/java/github/GitHubClientExtended.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+:processResources
+:classes
+:jar
+:shadowJar
+:assemble
+
+BUILD SUCCESSFUL
+
+Total time: 1 mins 3.906 secs
+
+travis_time:end:0280a307:start=1610005107986405385,finish=1610005172749258660,duration=64762853275[0Ktravis_fold:end:install[0Ktravis_time:start:00d4f940[0K$ ./gradlew clean check -i
+Connected to daemon DaemonInfo{pid=622, address=[6f875dff-0570-4840-ab15-c4579ebc8771 port:46039, addresses:[/127.0.0.1]], idle=true, context=DefaultDaemonContext[uid=bd1b3d5e-a66a-450b-a118-f57da97addcd,javaHome=/usr/lib/jvm/java-8-oracle,daemonRegistryDir=/home/travis/.gradle/daemon,pid=622,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+CMSClassUnloadingEnabled,-XX:+CMSPermGenSweepingEnabled,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=utf-8,-Duser.country=US,-Duser.language=en,-Duser.variant]}. Dispatching request Build{id=c4e72f5b-4579-4f39-9c65-c4b611ea66e1.1, currentDir=/home/travis/build/passed/HubTurbo/HubTurbo}.
+The client will now receive all logging from the daemon (pid: 622). The daemon log file: /home/travis/.gradle/daemon/2.3/daemon-622.out.log
+Starting 2nd build in daemon [uptime: 46.721 secs, performance: 100%, memory: 86% of 1.0 GB]
+Executing build with daemon context: DefaultDaemonContext[uid=bd1b3d5e-a66a-450b-a118-f57da97addcd,javaHome=/usr/lib/jvm/java-8-oracle,daemonRegistryDir=/home/travis/.gradle/daemon,pid=622,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+CMSClassUnloadingEnabled,-XX:+CMSPermGenSweepingEnabled,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=utf-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Closing daemon's stdin at end of input.
+The daemon will no longer process any standard input.
+Starting Build
+Settings evaluated using settings file '/home/travis/build/passed/HubTurbo/HubTurbo/settings.gradle'.
+Projects loaded. Root project using build file '/home/travis/build/passed/HubTurbo/HubTurbo/build.gradle'.
+Included projects: [root project 'HubTurbo']
+Evaluating root project 'HubTurbo' using build file '/home/travis/build/passed/HubTurbo/HubTurbo/build.gradle'.
+All projects evaluated.
+Selected primary task 'clean' from project :
+Selected primary task 'check' from project :
+Tasks to be executed: [task ':clean', task ':compileJava', task ':processResources', task ':classes', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':check']
+:clean (Thread[Daemon worker,5,main]) started.
+:clean
+In-memory cache of /home/travis/build/passed/HubTurbo/HubTurbo/.gradle/2.3/taskArtifacts/fileHashes.bin: Size{421}, CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0}
+In-memory cache of /home/travis/build/passed/HubTurbo/HubTurbo/.gradle/2.3/taskArtifacts/outputFileStates.bin: Size{5}, CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0}
+In-memory cache of /home/travis/build/passed/HubTurbo/HubTurbo/.gradle/2.3/taskArtifacts/fileSnapshots.bin: Size{8}, CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0}
+In-memory cache of /home/travis/build/passed/HubTurbo/HubTurbo/.gradle/2.3/taskArtifacts/taskArtifacts.bin: Size{4}, CacheStats{hitCount=0, missCount=0, loadSuccessCount=0, loadExceptionCount=0, totalLoadTime=0, evictionCount=0}
+Executing task ':clean' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+:clean (Thread[Daemon worker,5,main]) completed. Took 0.037 secs.
+:compileJava (Thread[Daemon worker,5,main]) started.
+:compileJava
+Executing task ':compileJava' (up-to-date check took 0.081 secs) due to:
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/dependency-cache has changed.
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/classes/main has changed.
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/classes/main/github/update/IssueUpdateService$2.class has been removed.
+All input files are considered out-of-date for incremental task ':compileJava'.
+Compiling with JDK Java compiler API.
+Note: /home/travis/build/passed/HubTurbo/HubTurbo/src/main/java/util/DialogMessage.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/travis/build/passed/HubTurbo/HubTurbo/src/main/java/github/GitHubClientExtended.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+:compileJava (Thread[Daemon worker,5,main]) completed. Took 1.004 secs.
+:processResources (Thread[Daemon worker,5,main]) started.
+:processResources
+Executing task ':processResources' (up-to-date check took 0.005 secs) due to:
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/resources/main has changed.
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/resources/main/log4j2.xml has been removed.
+  Output file /home/travis/build/passed/HubTurbo/HubTurbo/build/resources/main/ui/hubturbo.css has been removed.
+:processResources (Thread[Daemon worker,5,main]) completed. Took 0.143 secs.
+:classes (Thread[Daemon worker,5,main]) started.
+:classes
+Skipping task ':classes' as it has no actions.
+:classes (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+:compileTestJava (Thread[Daemon worker,5,main]) started.
+:compileTestJava
+Download https://jcenter.bintray.com/junit/junit/4.12/junit-4.12.pom
+Download https://jcenter.bintray.com/org/loadui/testFx/3.1.0/testFx-3.1.0.pom
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.pom
+Download https://jcenter.bintray.com/junit/junit/4.12/junit-4.12.jar
+Download https://jcenter.bintray.com/org/loadui/testFx/3.1.0/testFx-3.1.0.jar
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+Download https://jcenter.bintray.com/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar
+Executing task ':compileTestJava' (up-to-date check took 0.533 secs) due to:
+  No history is available.
+All input files are considered out-of-date for incremental task ':compileTestJava'.
+Compiling with JDK Java compiler API.
+:compileTestJava (Thread[Daemon worker,5,main]) completed. Took 0.744 secs.
+:processTestResources (Thread[Daemon worker,5,main]) started.
+:processTestResources
+Executing task ':processTestResources' (up-to-date check took 0.078 secs) due to:
+  No history is available.
+:processTestResources (Thread[Daemon worker,5,main]) completed. Took 0.089 secs.
+:testClasses (Thread[Daemon worker,5,main]) started.
+:testClasses
+Skipping task ':testClasses' as it has no actions.
+:testClasses (Thread[Daemon worker,5,main]) completed. Took 0.0 secs.
+:test (Thread[Daemon worker,5,main]) started.
+:test
+Executing task ':test' (up-to-date check took 0.027 secs) due to:
+  No history is available.
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.build/0.7.4.201502262128/org.jacoco.build-0.7.4.201502262128.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128.jar
+[ant:null] Building jar: /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar
+Starting process 'Gradle Test Executor 1'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 1'
+Successfully started process 'Gradle Test Executor 1'
+Gradle Test Executor 1 started executing tests.
+Xlib:  extension "RANDR" missing on display ":99.0".
+
+guitests.TestGuiTest > clickAround STANDARD_OUT
+    2021-01-07 07:39:38,501 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+    2244 07 Jan 2021 07:39:38 INFO UI [JavaFX Application Thread] - Registered event handler RepoOpenedEventHandler
+    2411 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler UpdateProgressEventHandler
+    2468 07 Jan 2021 07:39:39 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Browser Request Delay Timer
+    2470 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    2472 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler IssueCreatedEventHandler
+    2474 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler LoginEventHandler
+    2475 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler LabelCreatedEventHandler
+    2477 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler MilestoneCreatedEventHandler
+    2478 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    2479 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    2481 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler ColumnClickedEventHandler
+    2513 07 Jan 2021 07:39:39 INFO UI [JavaFX Application Thread] - Registered event handler BoardSavedEventHandler
+    3381 07 Jan 2021 07:39:40 INFO UI [JavaFX Application Thread] - Registered event handler UpdateDummyRepoEventHandler
+    3382 07 Jan 2021 07:39:40 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    3387 07 Jan 2021 07:39:40 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    3401 07 Jan 2021 07:39:40 INFO Logic [JavaFX Application Thread] - Opening dummy/dummy
+    3407 07 Jan 2021 07:39:40 INFO DownloadRepoTask [pool-5-thread-1] - dummy/dummy | Downloaded 10 issue(s), 10 label(s), 10 milestone(s), 10 user(s)
+    3414 07 Jan 2021 07:39:40 INFO UI [JavaFX Application Thread] - About to trigger event BoardSavedEvent
+    3416 07 Jan 2021 07:39:40 INFO UI [JavaFX Application Thread] - Triggered event BoardSavedEvent
+    3424 07 Jan 2021 07:39:40 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 11 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7 0.2773779520566977, Label 8, Label 9, Label 10, Label 11]
+    3424 07 Jan 2021 07:39:40 INFO UpdateUsersTask [pool-5-thread-5] - dummy/dummy | 11 user(s)) changed: [User 1, User 2, User 3 0.7533493471535533, User 4, User 5, User 6, User 7, User 8, User 9, User 10, User 11]
+    3424 07 Jan 2021 07:39:40 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 11 milestone(s)) changed: [Milestone 1 0.11503973178861504, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10, Milestone 11]
+    3424 07 Jan 2021 07:39:40 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 11 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8, #9 Issue 9, #10 Issue 10, #11 Issue 11]
+    3426 07 Jan 2021 07:39:40 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 11 issue(s), 11 label(s), 11 milestone(s), 11 user(s)
+    3428 07 Jan 2021 07:39:40 INFO RepoIO [pool-5-thread-2] - dummy/dummy | Nothing changed; not writing to store
+    3430 07 Jan 2021 07:39:40 INFO UI [pool-5-thread-2] - About to trigger event RepoOpenedEvent
+    3436 07 Jan 2021 07:39:40 INFO UI [pool-5-thread-2] - Triggered event RepoOpenedEvent
+    3440 07 Jan 2021 07:39:40 INFO BrowserComponent [JavaFX Application Thread] - Could not find chromedriver_linux; extracted it from jar
+    3442 07 Jan 2021 07:39:40 INFO UI [JavaFX Application Thread] - Registered event handler UILogicRefreshEventHandler
+    3578 07 Jan 2021 07:39:40 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    3657 07 Jan 2021 07:39:40 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    3660 07 Jan 2021 07:39:40 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    5207 07 Jan 2021 07:39:41 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    5210 07 Jan 2021 07:39:41 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    5212 07 Jan 2021 07:39:41 INFO UpdateUsersTask [pool-5-thread-3] - dummy/dummy | 12 user(s)) changed: [User 1, User 2, User 3 0.7533493471535533, User 4, User 5, User 6 0.7580516845065498, User 7, User 8, User 9, User 10, User 11, User 12]
+    5212 07 Jan 2021 07:39:41 INFO UpdateLabelsTask [pool-5-thread-4] - dummy/dummy | 12 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7 0.2773779520566977, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12]
+    5212 07 Jan 2021 07:39:41 INFO UpdateMilestonesTask [pool-5-thread-5] - dummy/dummy | 12 milestone(s)) changed: [Milestone 1 0.11503973178861504, Milestone 2, Milestone 3, Milestone 4, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10, Milestone 11 0.36198655632440213, Milestone 12]
+    5212 07 Jan 2021 07:39:41 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 12 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10, #11 Issue 11, #12 Issue 12]
+    5213 07 Jan 2021 07:39:41 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 12 issue(s), 12 label(s), 12 milestone(s), 12 user(s)
+    5223 07 Jan 2021 07:39:41 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    5234 07 Jan 2021 07:39:41 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    5240 07 Jan 2021 07:39:41 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    5849 07 Jan 2021 07:39:42 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    5852 07 Jan 2021 07:39:42 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    5853 07 Jan 2021 07:39:42 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    5854 07 Jan 2021 07:39:42 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    5855 07 Jan 2021 07:39:42 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    5856 07 Jan 2021 07:39:42 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 13 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4, User 5, User 6 0.7580516845065498, User 7, User 8, User 9, User 10, User 11, User 12, User 13]
+    5856 07 Jan 2021 07:39:42 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 14 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14]
+    5856 07 Jan 2021 07:39:42 INFO UpdateMilestonesTask [pool-5-thread-3] - dummy/dummy | 13 milestone(s)) changed: [Milestone 1 0.11503973178861504, Milestone 2, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10, Milestone 11 0.36198655632440213, Milestone 12, Milestone 13]
+    5856 07 Jan 2021 07:39:42 INFO UpdateLabelsTask [pool-5-thread-5] - dummy/dummy | 13 label(s)) changed: [Label 1, Label 2, Label 3, Label 4, Label 5, Label 6, Label 7 0.2773779520566977, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.9346732537416925, Label 13]
+    5857 07 Jan 2021 07:39:42 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 14 issue(s), 13 label(s), 13 milestone(s), 13 user(s)
+    5859 07 Jan 2021 07:39:42 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    5869 07 Jan 2021 07:39:42 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    5872 07 Jan 2021 07:39:42 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    6723 07 Jan 2021 07:39:43 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    6724 07 Jan 2021 07:39:43 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    6726 07 Jan 2021 07:39:43 INFO UpdateMilestonesTask [pool-5-thread-3] - dummy/dummy | 14 milestone(s)) changed: [Milestone 1 0.11503973178861504, Milestone 2, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12, Milestone 13, Milestone 14]
+    6726 07 Jan 2021 07:39:43 INFO UpdateLabelsTask [pool-5-thread-5] - dummy/dummy | 14 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.2773779520566977, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.9346732537416925, Label 13, Label 14]
+    6726 07 Jan 2021 07:39:43 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 14 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4, User 5, User 6 0.7580516845065498, User 7, User 8, User 9, User 10, User 11, User 12 0.9551719064304242, User 13, User 14]
+    6726 07 Jan 2021 07:39:43 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 15 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14, #15 Issue 15]
+    6727 07 Jan 2021 07:39:43 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 15 issue(s), 14 label(s), 14 milestone(s), 14 user(s)
+    6728 07 Jan 2021 07:39:43 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    6735 07 Jan 2021 07:39:43 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    6738 07 Jan 2021 07:39:43 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    7334 07 Jan 2021 07:39:44 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    7336 07 Jan 2021 07:39:44 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    7336 07 Jan 2021 07:39:44 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    7337 07 Jan 2021 07:39:44 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    7337 07 Jan 2021 07:39:44 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    7338 07 Jan 2021 07:39:44 INFO UpdateLabelsTask [pool-5-thread-4] - dummy/dummy | 15 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.7132847732971429, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.9346732537416925, Label 13, Label 14, Label 15]
+    7339 07 Jan 2021 07:39:44 INFO UpdateUsersTask [pool-5-thread-3] - dummy/dummy | 15 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4, User 5, User 6 0.7580516845065498, User 7, User 8, User 9, User 10, User 11, User 12 0.9551719064304242, User 13, User 14 0.8495404836636936, User 15]
+    7339 07 Jan 2021 07:39:44 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 17 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8389330244899786, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14, #15 Issue 15, #16 Issue 16, #17 Issue 17]
+    7339 07 Jan 2021 07:39:44 INFO UpdateMilestonesTask [pool-5-thread-5] - dummy/dummy | 15 milestone(s)) changed: [Milestone 1 0.11503973178861504, Milestone 2, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12, Milestone 13, Milestone 14, Milestone 15]
+    7340 07 Jan 2021 07:39:44 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 17 issue(s), 15 label(s), 15 milestone(s), 15 user(s)
+    7348 07 Jan 2021 07:39:44 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    7357 07 Jan 2021 07:39:44 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    7363 07 Jan 2021 07:39:44 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    8206 07 Jan 2021 07:39:44 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    8207 07 Jan 2021 07:39:44 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    8208 07 Jan 2021 07:39:44 INFO UpdateLabelsTask [pool-5-thread-4] - dummy/dummy | 16 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.5966186283707162, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.9346732537416925, Label 13, Label 14, Label 15, Label 16]
+    8208 07 Jan 2021 07:39:44 INFO UpdateMilestonesTask [pool-5-thread-5] - dummy/dummy | 16 milestone(s)) changed: [Milestone 1 0.11503973178861504, Milestone 2, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7, Milestone 8, Milestone 9, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16]
+    8208 07 Jan 2021 07:39:44 INFO UpdateUsersTask [pool-5-thread-3] - dummy/dummy | 16 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5, User 6 0.7580516845065498, User 7, User 8, User 9, User 10, User 11, User 12 0.9551719064304242, User 13, User 14 0.8495404836636936, User 15, User 16]
+    8208 07 Jan 2021 07:39:44 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 18 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.30777911579646533, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8389330244899786, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14, #15 Issue 15, #16 Issue 16, #17 Issue 17, #18 Issue 18]
+    8210 07 Jan 2021 07:39:44 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 18 issue(s), 16 label(s), 16 milestone(s), 16 user(s)
+    8212 07 Jan 2021 07:39:44 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    8219 07 Jan 2021 07:39:44 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    8223 07 Jan 2021 07:39:44 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    8807 07 Jan 2021 07:39:45 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    8809 07 Jan 2021 07:39:45 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    8810 07 Jan 2021 07:39:45 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    8810 07 Jan 2021 07:39:45 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    8811 07 Jan 2021 07:39:45 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    8812 07 Jan 2021 07:39:45 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 17 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.5966186283707162, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.9346732537416925, Label 13, Label 14, Label 15 0.980291779783081, Label 16, Label 17]
+    8812 07 Jan 2021 07:39:45 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 17 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10, User 11, User 12 0.9551719064304242, User 13, User 14 0.8495404836636936, User 15, User 16, User 17]
+    8812 07 Jan 2021 07:39:45 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 20 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.30777911579646533, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8389330244899786, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14, #15 Issue 15, #16 Issue 16, #17 Issue 17, #18 Issue 18 0.32961461736502273, #19 Issue 19, #20 Issue 20]
+    8812 07 Jan 2021 07:39:45 INFO UpdateMilestonesTask [pool-5-thread-5] - dummy/dummy | 17 milestone(s)) changed: [Milestone 1 0.11503973178861504, Milestone 2, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17]
+    8813 07 Jan 2021 07:39:45 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 20 issue(s), 17 label(s), 17 milestone(s), 17 user(s)
+    8816 07 Jan 2021 07:39:45 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    8822 07 Jan 2021 07:39:45 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    8829 07 Jan 2021 07:39:45 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    9681 07 Jan 2021 07:39:46 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    9683 07 Jan 2021 07:39:46 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    9685 07 Jan 2021 07:39:46 INFO UpdateUsersTask [pool-5-thread-3] - dummy/dummy | 18 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10 0.4393169626948782, User 11, User 12 0.9551719064304242, User 13, User 14 0.8495404836636936, User 15, User 16, User 17, User 18]
+    9685 07 Jan 2021 07:39:46 INFO UpdateLabelsTask [pool-5-thread-5] - dummy/dummy | 18 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.5966186283707162, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.2322422301882392, Label 13, Label 14, Label 15 0.980291779783081, Label 16, Label 17, Label 18]
+    9685 07 Jan 2021 07:39:46 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 21 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.30777911579646533, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8389330244899786, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17, #18 Issue 18 0.32961461736502273, #19 Issue 19, #20 Issue 20, #21 Issue 21]
+    9685 07 Jan 2021 07:39:46 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 18 milestone(s)) changed: [Milestone 1 0.11503973178861504, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17, Milestone 18]
+    9686 07 Jan 2021 07:39:46 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 21 issue(s), 18 label(s), 18 milestone(s), 18 user(s)
+    9688 07 Jan 2021 07:39:46 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    9694 07 Jan 2021 07:39:46 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    9699 07 Jan 2021 07:39:46 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    10286 07 Jan 2021 07:39:46 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    10288 07 Jan 2021 07:39:46 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    10289 07 Jan 2021 07:39:46 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    10289 07 Jan 2021 07:39:46 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    10290 07 Jan 2021 07:39:46 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    10291 07 Jan 2021 07:39:46 INFO UpdateMilestonesTask [pool-5-thread-5] - dummy/dummy | 19 milestone(s)) changed: [Milestone 1 0.11503973178861504, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18, Milestone 19]
+    10291 07 Jan 2021 07:39:46 INFO UpdateUsersTask [pool-5-thread-3] - dummy/dummy | 19 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10 0.4393169626948782, User 11, User 12 0.9551719064304242, User 13 0.24670217756413648, User 14 0.8495404836636936, User 15, User 16, User 17, User 18, User 19]
+    10291 07 Jan 2021 07:39:46 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 23 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.30777911579646533, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8389330244899786, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.9126780670975946, #20 Issue 20, #21 Issue 21, #22 Issue 22, #23 Issue 23]
+    10291 07 Jan 2021 07:39:46 INFO UpdateLabelsTask [pool-5-thread-4] - dummy/dummy | 19 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.5966186283707162, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.2322422301882392, Label 13, Label 14, Label 15 0.980291779783081, Label 16 0.47186883969130544, Label 17, Label 18, Label 19]
+    10292 07 Jan 2021 07:39:46 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 23 issue(s), 19 label(s), 19 milestone(s), 19 user(s)
+    10293 07 Jan 2021 07:39:46 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    10297 07 Jan 2021 07:39:46 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    10302 07 Jan 2021 07:39:46 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    11151 07 Jan 2021 07:39:47 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    11152 07 Jan 2021 07:39:47 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    11153 07 Jan 2021 07:39:47 INFO UpdateMilestonesTask [pool-5-thread-3] - dummy/dummy | 20 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18, Milestone 19, Milestone 20]
+    11153 07 Jan 2021 07:39:47 INFO UpdateLabelsTask [pool-5-thread-4] - dummy/dummy | 20 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.5966186283707162, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.05357629509090489, Label 13, Label 14, Label 15 0.980291779783081, Label 16 0.47186883969130544, Label 17, Label 18, Label 19, Label 20]
+    11153 07 Jan 2021 07:39:47 INFO UpdateUsersTask [pool-5-thread-5] - dummy/dummy | 20 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10 0.4393169626948782, User 11, User 12 0.9551719064304242, User 13 0.39007208104512836, User 14 0.8495404836636936, User 15, User 16, User 17, User 18, User 19, User 20]
+    11154 07 Jan 2021 07:39:47 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 24 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.30777911579646533, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8389330244899786, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.9126780670975946, #20 Issue 20, #21 Issue 21, #22 Issue 22, #23 Issue 23, #24 Issue 24]
+    11155 07 Jan 2021 07:39:47 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 24 issue(s), 20 label(s), 20 milestone(s), 20 user(s)
+    11157 07 Jan 2021 07:39:47 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    11164 07 Jan 2021 07:39:47 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    11166 07 Jan 2021 07:39:47 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    11738 07 Jan 2021 07:39:48 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    11739 07 Jan 2021 07:39:48 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    11740 07 Jan 2021 07:39:48 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    11741 07 Jan 2021 07:39:48 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    11741 07 Jan 2021 07:39:48 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    11742 07 Jan 2021 07:39:48 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 21 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10 0.4393169626948782, User 11, User 12 0.9551719064304242, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17, User 18, User 19, User 20, User 21]
+    11742 07 Jan 2021 07:39:48 INFO UpdateMilestonesTask [pool-5-thread-5] - dummy/dummy | 21 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18, Milestone 19, Milestone 20, Milestone 21]
+    11742 07 Jan 2021 07:39:48 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 21 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.5966186283707162, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.05357629509090489, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.47186883969130544, Label 17, Label 18, Label 19, Label 20, Label 21]
+    11742 07 Jan 2021 07:39:48 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 26 issue(s)) changed: [#1 Issue 1, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.30777911579646533, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.9126780670975946, #20 Issue 20, #21 Issue 21, #22 Issue 22, #23 Issue 23, #24 Issue 24, #25 Issue 25, #26 Issue 26]
+    11743 07 Jan 2021 07:39:48 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 26 issue(s), 21 label(s), 21 milestone(s), 21 user(s)
+    11744 07 Jan 2021 07:39:48 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    11750 07 Jan 2021 07:39:48 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    11751 07 Jan 2021 07:39:48 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    12610 07 Jan 2021 07:39:49 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    12612 07 Jan 2021 07:39:49 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    12613 07 Jan 2021 07:39:49 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 22 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.05357629509090489, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.47186883969130544, Label 17, Label 18, Label 19, Label 20, Label 21, Label 22]
+    12613 07 Jan 2021 07:39:49 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 27 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.30777911579646533, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.9126780670975946, #20 Issue 20, #21 Issue 21, #22 Issue 22, #23 Issue 23, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27]
+    12613 07 Jan 2021 07:39:49 INFO UpdateMilestonesTask [pool-5-thread-5] - dummy/dummy | 22 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18, Milestone 19, Milestone 20, Milestone 21, Milestone 22]
+    12613 07 Jan 2021 07:39:49 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 22 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10 0.24174670630365203, User 11, User 12 0.9551719064304242, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17, User 18, User 19, User 20, User 21, User 22]
+    12614 07 Jan 2021 07:39:49 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 27 issue(s), 22 label(s), 22 milestone(s), 22 user(s)
+    12615 07 Jan 2021 07:39:49 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    12622 07 Jan 2021 07:39:49 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    12622 07 Jan 2021 07:39:49 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    13210 07 Jan 2021 07:39:49 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    13211 07 Jan 2021 07:39:49 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    13211 07 Jan 2021 07:39:49 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    13211 07 Jan 2021 07:39:49 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    13212 07 Jan 2021 07:39:49 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    13213 07 Jan 2021 07:39:49 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 23 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.05357629509090489, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.47186883969130544, Label 17, Label 18, Label 19, Label 20 0.4344197671644533, Label 21, Label 22, Label 23]
+    13213 07 Jan 2021 07:39:49 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 23 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18 0.9114584040956039, Milestone 19, Milestone 20, Milestone 21, Milestone 22, Milestone 23]
+    13213 07 Jan 2021 07:39:49 INFO UpdateUsersTask [pool-5-thread-5] - dummy/dummy | 23 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10 0.24174670630365203, User 11, User 12 0.9551719064304242, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17, User 18, User 19, User 20 0.7895081941597939, User 21, User 22, User 23]
+    13213 07 Jan 2021 07:39:49 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 29 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.30777911579646533, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12 0.6216222558764117, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.9126780670975946, #20 Issue 20, #21 Issue 21, #22 Issue 22, #23 Issue 23, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27, #28 Issue 28, #29 Issue 29]
+    13214 07 Jan 2021 07:39:49 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 29 issue(s), 23 label(s), 23 milestone(s), 23 user(s)
+    13215 07 Jan 2021 07:39:49 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    13220 07 Jan 2021 07:39:49 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    13224 07 Jan 2021 07:39:49 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    14079 07 Jan 2021 07:39:50 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    14081 07 Jan 2021 07:39:50 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    14082 07 Jan 2021 07:39:50 INFO UpdateLabelsTask [pool-5-thread-5] - dummy/dummy | 24 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.05357629509090489, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.47186883969130544, Label 17, Label 18, Label 19, Label 20 0.5859874656663241, Label 21, Label 22, Label 23, Label 24]
+    14082 07 Jan 2021 07:39:50 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 24 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18 0.9114584040956039, Milestone 19, Milestone 20, Milestone 21, Milestone 22 0.749638584114428, Milestone 23, Milestone 24]
+    14082 07 Jan 2021 07:39:50 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 30 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.30777911579646533, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12 0.6216222558764117, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.9126780670975946, #20 Issue 20 0.5377784576904447, #21 Issue 21, #22 Issue 22, #23 Issue 23, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27, #28 Issue 28, #29 Issue 29, #30 Issue 30]
+    14082 07 Jan 2021 07:39:50 INFO UpdateUsersTask [pool-5-thread-3] - dummy/dummy | 24 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5 0.185290035684202, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10 0.24174670630365203, User 11, User 12 0.9551719064304242, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17, User 18, User 19, User 20 0.7895081941597939, User 21, User 22, User 23, User 24]
+    14083 07 Jan 2021 07:39:50 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 30 issue(s), 24 label(s), 24 milestone(s), 24 user(s)
+    14087 07 Jan 2021 07:39:50 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    14092 07 Jan 2021 07:39:50 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    14096 07 Jan 2021 07:39:50 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    14660 07 Jan 2021 07:39:51 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    14661 07 Jan 2021 07:39:51 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    14661 07 Jan 2021 07:39:51 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    14661 07 Jan 2021 07:39:51 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    14662 07 Jan 2021 07:39:51 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    14663 07 Jan 2021 07:39:51 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 25 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18 0.9114584040956039, Milestone 19, Milestone 20, Milestone 21, Milestone 22 0.749638584114428, Milestone 23 0.010852249875692555, Milestone 24, Milestone 25]
+    14663 07 Jan 2021 07:39:51 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 25 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.1971723769908743, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.47186883969130544, Label 17, Label 18, Label 19, Label 20 0.5859874656663241, Label 21, Label 22, Label 23, Label 24, Label 25]
+    14663 07 Jan 2021 07:39:51 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 32 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.548950522040221, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12 0.6216222558764117, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.9126780670975946, #20 Issue 20 0.5377784576904447, #21 Issue 21, #22 Issue 22, #23 Issue 23, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27, #28 Issue 28, #29 Issue 29, #30 Issue 30, #31 Issue 31, #32 Issue 32]
+    14663 07 Jan 2021 07:39:51 INFO UpdateUsersTask [pool-5-thread-5] - dummy/dummy | 25 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5 0.185290035684202, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10 0.24174670630365203, User 11, User 12 0.26741718684794447, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17, User 18, User 19, User 20 0.7895081941597939, User 21, User 22, User 23, User 24, User 25]
+    14664 07 Jan 2021 07:39:51 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 32 issue(s), 25 label(s), 25 milestone(s), 25 user(s)
+    14665 07 Jan 2021 07:39:51 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    14671 07 Jan 2021 07:39:51 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    14675 07 Jan 2021 07:39:51 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    15515 07 Jan 2021 07:39:52 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    15516 07 Jan 2021 07:39:52 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    15517 07 Jan 2021 07:39:52 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 26 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5 0.185290035684202, User 6 0.7580516845065498, User 7, User 8 0.8331200132666164, User 9, User 10 0.24174670630365203, User 11, User 12 0.26741718684794447, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17 0.07636150936260311, User 18, User 19, User 20 0.7895081941597939, User 21, User 22, User 23, User 24, User 25, User 26]
+    15517 07 Jan 2021 07:39:52 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 33 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.548950522040221, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12 0.6216222558764117, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.05555609887265878, #20 Issue 20 0.5377784576904447, #21 Issue 21, #22 Issue 22, #23 Issue 23, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27, #28 Issue 28, #29 Issue 29, #30 Issue 30, #31 Issue 31, #32 Issue 32, #33 Issue 33]
+    15517 07 Jan 2021 07:39:52 INFO UpdateMilestonesTask [pool-5-thread-3] - dummy/dummy | 26 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6 0.03432441123365404, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18 0.9114584040956039, Milestone 19, Milestone 20, Milestone 21, Milestone 22 0.749638584114428, Milestone 23 0.010852249875692555, Milestone 24, Milestone 25, Milestone 26]
+    15518 07 Jan 2021 07:39:52 INFO UpdateLabelsTask [pool-5-thread-5] - dummy/dummy | 26 label(s)) changed: [Label 1, Label 2 0.41542628151904526, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.7195574335205022, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.47186883969130544, Label 17, Label 18, Label 19, Label 20 0.5859874656663241, Label 21, Label 22, Label 23, Label 24, Label 25, Label 26]
+    15518 07 Jan 2021 07:39:52 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 33 issue(s), 26 label(s), 26 milestone(s), 26 user(s)
+    15521 07 Jan 2021 07:39:52 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    15526 07 Jan 2021 07:39:52 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    15526 07 Jan 2021 07:39:52 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    16107 07 Jan 2021 07:39:52 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    16108 07 Jan 2021 07:39:52 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    16108 07 Jan 2021 07:39:52 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    16108 07 Jan 2021 07:39:52 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    16108 07 Jan 2021 07:39:52 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    16109 07 Jan 2021 07:39:52 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 27 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5 0.185290035684202, User 6 0.6235542644996653, User 7, User 8 0.8331200132666164, User 9, User 10 0.24174670630365203, User 11, User 12 0.26741718684794447, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17 0.07636150936260311, User 18, User 19, User 20 0.7895081941597939, User 21, User 22, User 23, User 24, User 25, User 26, User 27]
+    16109 07 Jan 2021 07:39:52 INFO UpdateLabelsTask [pool-5-thread-1] - dummy/dummy | 27 label(s)) changed: [Label 1, Label 2 0.32352677333645263, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.7195574335205022, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.47186883969130544, Label 17, Label 18, Label 19, Label 20 0.5859874656663241, Label 21, Label 22, Label 23, Label 24, Label 25, Label 26, Label 27]
+    16109 07 Jan 2021 07:39:52 INFO UpdateMilestonesTask [pool-5-thread-3] - dummy/dummy | 27 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6 0.6233890015337338, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.36198655632440213, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18 0.9114584040956039, Milestone 19, Milestone 20, Milestone 21, Milestone 22 0.749638584114428, Milestone 23 0.010852249875692555, Milestone 24, Milestone 25, Milestone 26, Milestone 27]
+    16109 07 Jan 2021 07:39:52 INFO UpdateIssuesTask [pool-5-thread-5] - dummy/dummy | 35 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.548950522040221, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12 0.6216222558764117, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.05555609887265878, #20 Issue 20 0.5377784576904447, #21 Issue 21, #22 Issue 22, #23 Issue 23, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27, #28 Issue 28, #29 Issue 29, #30 Issue 30, #31 Issue 31, #32 Issue 32 0.0772826360674117, #33 Issue 33, #34 Issue 34, #35 Issue 35]
+    16110 07 Jan 2021 07:39:52 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 35 issue(s), 27 label(s), 27 milestone(s), 27 user(s)
+    16112 07 Jan 2021 07:39:52 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    16116 07 Jan 2021 07:39:52 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    16122 07 Jan 2021 07:39:52 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    16968 07 Jan 2021 07:39:53 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    16969 07 Jan 2021 07:39:53 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    16970 07 Jan 2021 07:39:53 INFO UpdateMilestonesTask [pool-5-thread-1] - dummy/dummy | 28 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6 0.6233890015337338, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.18395611175716287, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18 0.9114584040956039, Milestone 19, Milestone 20, Milestone 21, Milestone 22 0.749638584114428, Milestone 23 0.010852249875692555, Milestone 24, Milestone 25, Milestone 26, Milestone 27, Milestone 28]
+    16970 07 Jan 2021 07:39:53 INFO UpdateIssuesTask [pool-5-thread-5] - dummy/dummy | 36 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.548950522040221, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12 0.6216222558764117, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.15595353798326905, #20 Issue 20 0.5377784576904447, #21 Issue 21, #22 Issue 22, #23 Issue 23, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27, #28 Issue 28, #29 Issue 29, #30 Issue 30, #31 Issue 31, #32 Issue 32 0.0772826360674117, #33 Issue 33, #34 Issue 34, #35 Issue 35, #36 Issue 36]
+    16970 07 Jan 2021 07:39:53 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 28 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.4874370001736996, User 5 0.185290035684202, User 6 0.6235542644996653, User 7, User 8 0.6499905914641888, User 9, User 10 0.24174670630365203, User 11, User 12 0.26741718684794447, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17 0.07636150936260311, User 18, User 19, User 20 0.7895081941597939, User 21, User 22, User 23, User 24, User 25, User 26, User 27, User 28]
+    16970 07 Jan 2021 07:39:53 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 28 label(s)) changed: [Label 1, Label 2 0.32352677333645263, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.7195574335205022, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.9265406732340059, Label 17, Label 18, Label 19, Label 20 0.5859874656663241, Label 21, Label 22, Label 23, Label 24, Label 25, Label 26, Label 27, Label 28]
+    16971 07 Jan 2021 07:39:53 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 36 issue(s), 28 label(s), 28 milestone(s), 28 user(s)
+    16972 07 Jan 2021 07:39:53 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    16978 07 Jan 2021 07:39:53 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    16980 07 Jan 2021 07:39:53 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    17546 07 Jan 2021 07:39:54 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    17547 07 Jan 2021 07:39:54 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    17548 07 Jan 2021 07:39:54 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    17548 07 Jan 2021 07:39:54 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    17548 07 Jan 2021 07:39:54 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    17549 07 Jan 2021 07:39:54 INFO UpdateIssuesTask [pool-5-thread-5] - dummy/dummy | 38 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.548950522040221, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12 0.6216222558764117, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.15595353798326905, #20 Issue 20 0.5377784576904447, #21 Issue 21, #22 Issue 22, #23 Issue 23 0.900610099574979, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27, #28 Issue 28, #29 Issue 29, #30 Issue 30, #31 Issue 31, #32 Issue 32 0.0772826360674117, #33 Issue 33, #34 Issue 34, #35 Issue 35, #36 Issue 36, #37 Issue 37, #38 Issue 38]
+    17549 07 Jan 2021 07:39:54 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 29 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6 0.6233890015337338, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.18395611175716287, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18 0.9114584040956039, Milestone 19 0.5326603102243699, Milestone 20, Milestone 21, Milestone 22 0.749638584114428, Milestone 23 0.010852249875692555, Milestone 24, Milestone 25, Milestone 26, Milestone 27, Milestone 28, Milestone 29]
+    17549 07 Jan 2021 07:39:54 INFO UpdateUsersTask [pool-5-thread-1] - dummy/dummy | 29 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.06950303114267442, User 5 0.185290035684202, User 6 0.6235542644996653, User 7, User 8 0.6499905914641888, User 9, User 10 0.24174670630365203, User 11, User 12 0.26741718684794447, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17 0.07636150936260311, User 18, User 19, User 20 0.7895081941597939, User 21, User 22, User 23, User 24, User 25, User 26, User 27, User 28, User 29]
+    17549 07 Jan 2021 07:39:54 INFO UpdateLabelsTask [pool-5-thread-3] - dummy/dummy | 29 label(s)) changed: [Label 1 0.7563634100986095, Label 2 0.32352677333645263, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.7195574335205022, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.9265406732340059, Label 17, Label 18, Label 19, Label 20 0.5859874656663241, Label 21, Label 22, Label 23, Label 24, Label 25, Label 26, Label 27, Label 28, Label 29]
+    17550 07 Jan 2021 07:39:54 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 38 issue(s), 29 label(s), 29 milestone(s), 29 user(s)
+    17550 07 Jan 2021 07:39:54 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    17558 07 Jan 2021 07:39:54 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    17558 07 Jan 2021 07:39:54 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    18400 07 Jan 2021 07:39:55 INFO MenuControl [JavaFX Application Thread] - Menu: View > Refresh
+    18401 07 Jan 2021 07:39:55 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    18402 07 Jan 2021 07:39:55 INFO UpdateIssuesTask [pool-5-thread-3] - dummy/dummy | 39 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4, #5 Issue 5, #6 Issue 6 0.548950522040221, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12 0.6216222558764117, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.15595353798326905, #20 Issue 20 0.7089183653866887, #21 Issue 21, #22 Issue 22, #23 Issue 23 0.900610099574979, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27, #28 Issue 28, #29 Issue 29, #30 Issue 30, #31 Issue 31, #32 Issue 32 0.0772826360674117, #33 Issue 33, #34 Issue 34, #35 Issue 35, #36 Issue 36, #37 Issue 37, #38 Issue 38, #39 Issue 39]
+    18402 07 Jan 2021 07:39:55 INFO UpdateMilestonesTask [pool-5-thread-4] - dummy/dummy | 30 milestone(s)) changed: [Milestone 1 0.445900849446789, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6 0.6233890015337338, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.18395611175716287, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14 0.6218775019866254, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18 0.9114584040956039, Milestone 19 0.5326603102243699, Milestone 20, Milestone 21, Milestone 22 0.749638584114428, Milestone 23 0.010852249875692555, Milestone 24, Milestone 25, Milestone 26, Milestone 27, Milestone 28, Milestone 29, Milestone 30]
+    18402 07 Jan 2021 07:39:55 INFO UpdateUsersTask [pool-5-thread-5] - dummy/dummy | 30 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.06950303114267442, User 5 0.185290035684202, User 6 0.6235542644996653, User 7, User 8 0.6499905914641888, User 9, User 10 0.24174670630365203, User 11, User 12 0.032325927038730606, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17 0.07636150936260311, User 18, User 19, User 20 0.7895081941597939, User 21, User 22, User 23, User 24, User 25, User 26, User 27, User 28, User 29, User 30]
+    18402 07 Jan 2021 07:39:55 INFO UpdateLabelsTask [pool-5-thread-1] - dummy/dummy | 30 label(s)) changed: [Label 1 0.7563634100986095, Label 2 0.32352677333645263, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9, Label 10, Label 11 0.24627973044201157, Label 12 0.7195574335205022, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.9265406732340059, Label 17, Label 18, Label 19, Label 20 0.5859874656663241, Label 21, Label 22 0.9670319773519557, Label 23, Label 24, Label 25, Label 26, Label 27, Label 28, Label 29, Label 30]
+    18403 07 Jan 2021 07:39:55 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 39 issue(s), 30 label(s), 30 milestone(s), 30 user(s)
+    18404 07 Jan 2021 07:39:55 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    18409 07 Jan 2021 07:39:55 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+    18411 07 Jan 2021 07:39:55 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    18983 07 Jan 2021 07:39:55 INFO UI [Test worker] - About to trigger event UpdateDummyRepoEvent
+    18984 07 Jan 2021 07:39:55 INFO UI [Test worker] - Triggered event UpdateDummyRepoEvent
+    18984 07 Jan 2021 07:39:55 INFO UI [Test worker] - About to trigger event UILogicRefreshEvent
+    18984 07 Jan 2021 07:39:55 INFO UI [Test worker] - Triggered event UILogicRefreshEvent
+    18984 07 Jan 2021 07:39:55 INFO Logic [JavaFX Application Thread] - Refreshing dummy/dummy
+    18985 07 Jan 2021 07:39:55 INFO UpdateMilestonesTask [pool-5-thread-3] - dummy/dummy | 31 milestone(s)) changed: [Milestone 1 0.9013249250645785, Milestone 2 0.37453368304229406, Milestone 3, Milestone 4 0.37368277631638913, Milestone 5 0.37724084554933246, Milestone 6 0.6233890015337338, Milestone 7 0.1398371512046679, Milestone 8, Milestone 9 0.5006767999916559, Milestone 10 0.8675672752193053, Milestone 11 0.18395611175716287, Milestone 12 0.10173398162417358, Milestone 13, Milestone 14 0.6218775019866254, Milestone 15 0.48713910722904075, Milestone 16, Milestone 17 0.2952654639015728, Milestone 18 0.9114584040956039, Milestone 19 0.5326603102243699, Milestone 20, Milestone 21, Milestone 22 0.749638584114428, Milestone 23 0.010852249875692555, Milestone 24, Milestone 25, Milestone 26, Milestone 27, Milestone 28, Milestone 29, Milestone 30, Milestone 31]
+    18985 07 Jan 2021 07:39:55 INFO UpdateLabelsTask [pool-5-thread-5] - dummy/dummy | 31 label(s)) changed: [Label 1 0.7563634100986095, Label 2 0.32352677333645263, Label 3, Label 4, Label 5, Label 6, Label 7 0.3186599558508305, Label 8, Label 9 0.4156545068483004, Label 10, Label 11 0.24627973044201157, Label 12 0.7195574335205022, Label 13, Label 14, Label 15 0.5532928813693841, Label 16 0.9265406732340059, Label 17, Label 18, Label 19, Label 20 0.5859874656663241, Label 21, Label 22 0.9670319773519557, Label 23, Label 24, Label 25, Label 26, Label 27, Label 28, Label 29, Label 30, Label 31]
+    18985 07 Jan 2021 07:39:55 INFO UpdateIssuesTask [pool-5-thread-1] - dummy/dummy | 41 issue(s)) changed: [#1 Issue 1 0.6097866214071865, #2 Issue 2 0.47790188732501404, #3 Issue 3, #4 Issue 4 0.17962578624039838, #5 Issue 5, #6 Issue 6 0.548950522040221, #7 Issue 7 0.7578558246314896, #8 Issue 8 0.7946237090766309, #9 Issue 9, #10 Issue 10 0.8671627670060941, #11 Issue 11, #12 Issue 12 0.6216222558764117, #13 Issue 13 0.587173936730837, #14 Issue 14 0.9823264364961598, #15 Issue 15, #16 Issue 16, #17 Issue 17 0.9131390249165888, #18 Issue 18 0.32961461736502273, #19 Issue 19 0.15595353798326905, #20 Issue 20 0.7089183653866887, #21 Issue 21, #22 Issue 22, #23 Issue 23 0.900610099574979, #24 Issue 24, #25 Issue 25, #26 Issue 26, #27 Issue 27, #28 Issue 28, #29 Issue 29, #30 Issue 30, #31 Issue 31, #32 Issue 32 0.0772826360674117, #33 Issue 33, #34 Issue 34, #35 Issue 35, #36 Issue 36, #37 Issue 37, #38 Issue 38, #39 Issue 39, #40 Issue 40, #41 Issue 41]
+    18985 07 Jan 2021 07:39:55 INFO UpdateUsersTask [pool-5-thread-4] - dummy/dummy | 31 user(s)) changed: [User 1, User 2, User 3 0.9399670291716545, User 4 0.06950303114267442, User 5 0.185290035684202, User 6 0.6235542644996653, User 7, User 8 0.6499905914641888, User 9, User 10 0.24174670630365203, User 11, User 12 0.032325927038730606, User 13 0.39007208104512836, User 14 0.6865577507052132, User 15, User 16, User 17 0.07636150936260311, User 18, User 19, User 20 0.7895081941597939, User 21, User 22, User 23, User 24, User 25, User 26, User 27, User 28 0.8061411253645416, User 29, User 30, User 31]
+    18987 07 Jan 2021 07:39:55 INFO UpdateModelTask [pool-5-thread-2] - dummy/dummy | Updated model with 41 issue(s), 31 label(s), 31 milestone(s), 31 user(s)
+    18989 07 Jan 2021 07:39:55 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    18994 07 Jan 2021 07:39:55 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+    18994 07 Jan 2021 07:39:55 INFO WriteTask [pool-4-thread-1] - dummy/dummy | Written to JSON store
+Gradle Test Executor 1 finished executing tests.
+Starting process 'Gradle Test Executor 2'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 2'
+Successfully started process 'Gradle Test Executor 2'
+Gradle Test Executor 2 started executing tests.
+Xlib:  extension "RANDR" missing on display ":99.0".
+
+guitests.TestGuiTest2 > testBadLoginAgain STANDARD_OUT
+    2021-01-07 07:39:59,736 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+    2445 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler RepoOpenedEventHandler
+    2588 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler UpdateProgressEventHandler
+    2639 07 Jan 2021 07:40:00 INFO TickingTimer [JavaFX Application Thread] - Started TickingTimer Browser Request Delay Timer
+    2640 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    2642 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler IssueCreatedEventHandler
+    2643 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler LoginEventHandler
+    2645 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler LabelCreatedEventHandler
+    2646 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler MilestoneCreatedEventHandler
+    2647 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler ModelUpdatedEventHandler
+    2648 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler IssueSelectedEventHandler
+    2650 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler ColumnClickedEventHandler
+    2678 07 Jan 2021 07:40:00 INFO UI [JavaFX Application Thread] - Registered event handler BoardSavedEventHandler
+    3472 07 Jan 2021 07:40:01 INFO UI [JavaFX Application Thread] - Registered event handler UpdateDummyRepoEventHandler
+    3473 07 Jan 2021 07:40:01 INFO UI [JavaFX Application Thread] - About to trigger event ModelUpdatedEvent
+    3477 07 Jan 2021 07:40:01 INFO UI [JavaFX Application Thread] - Triggered event ModelUpdatedEvent
+Gradle Test Executor 2 finished executing tests.
+Starting process 'Gradle Test Executor 3'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 3'
+Successfully started process 'Gradle Test Executor 3'
+Gradle Test Executor 3 started executing tests.
+Gradle Test Executor 3 finished executing tests.
+Starting process 'Gradle Test Executor 4'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 4'
+Successfully started process 'Gradle Test Executor 4'
+Gradle Test Executor 4 started executing tests.
+
+tests.FilterEvalTests > updated STANDARD_OUT
+    2021-01-07 07:40:07,535 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+Gradle Test Executor 4 finished executing tests.
+Starting process 'Gradle Test Executor 5'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 5'
+Successfully started process 'Gradle Test Executor 5'
+Gradle Test Executor 5 started executing tests.
+Gradle Test Executor 5 finished executing tests.
+Starting process 'Gradle Test Executor 6'. Working directory: /home/travis/build/passed/HubTurbo/HubTurbo Command: /usr/lib/jvm/java-8-oracle/bin/java -Djava.security.manager=jarjar.org.gradle.process.internal.child.BootstrapSecurityManager -javaagent:build/tmp/expandedArchives/org.jacoco.agent-0.7.4.201502262128.jar_dnibj84r518qfgg9zfvgoi1cd/jacocoagent.jar=destfile=build/jacoco/test.exec,append=true,dumponexit=true,output=file,jmx=false -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/travis/.gradle/caches/2.3/workerMain/gradle-worker.jar jarjar.org.gradle.process.internal.launcher.GradleWorkerMain 'Gradle Test Executor 6'
+Successfully started process 'Gradle Test Executor 6'
+Gradle Test Executor 6 started executing tests.
+
+tests.TickingTimerTests > doublePauseTest STANDARD_OUT
+    2021-01-07 07:40:10,498 INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+    1626 07 Jan 2021 07:40:10 INFO TickingTimer [Test worker] - Started TickingTimer test
+
+tests.TickingTimerTests > threadingTest STANDARD_OUT
+    1629 07 Jan 2021 07:40:10 INFO TickingTimer [Test worker] - Started TickingTimer test
+Gradle Test Executor 6 finished executing tests.
+Finished generating test XML results (0.015 secs) into: /home/travis/build/passed/HubTurbo/HubTurbo/build/test-results
+Generating HTML test report...
+Finished generating test html results (0.041 secs) into: /home/travis/build/passed/HubTurbo/HubTurbo/build/reports/tests
+:test (Thread[Daemon worker,5,main]) completed. Took 35.921 secs.
+:check (Thread[Daemon worker,5,main]) started.
+:check
+Skipping task ':check' as it has no actions.
+:check (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+
+BUILD SUCCESSFUL
+
+Total time: 38.975 secs
+Stopped 0 compiler daemon(s).
+Received result DaemonCommandResult[type=Success, value=null] from daemon DaemonInfo{pid=622, address=[6f875dff-0570-4840-ab15-c4579ebc8771 port:46039, addresses:[/127.0.0.1]], idle=true, context=DefaultDaemonContext[uid=bd1b3d5e-a66a-450b-a118-f57da97addcd,javaHome=/usr/lib/jvm/java-8-oracle,daemonRegistryDir=/home/travis/.gradle/daemon,pid=622,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=512m,-XX:+CMSClassUnloadingEnabled,-XX:+CMSPermGenSweepingEnabled,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=utf-8,-Duser.country=US,-Duser.language=en,-Duser.variant]}.
+
+travis_time:end:00d4f940:start=1610005172759623041,finish=1610005211885384632,duration=39125761591[0K
+[32;1mThe command "./gradlew clean check -i" exited with 0.[0m
+travis_fold:start:after_success[0Ktravis_time:start:20bbab00[0K$ ./gradlew jacocoRootReport coveralls
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:test UP-TO-DATE
+:jacocoRootReport
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.ant/0.7.4.201502262128/org.jacoco.ant-0.7.4.201502262128.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.core/0.7.4.201502262128/org.jacoco.core-0.7.4.201502262128.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.report/0.7.4.201502262128/org.jacoco.report-0.7.4.201502262128.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-parent/5.0.1/asm-parent-5.0.1.pom
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.ant/0.7.4.201502262128/org.jacoco.ant-0.7.4.201502262128.jar
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.core/0.7.4.201502262128/org.jacoco.core-0.7.4.201502262128.jar
+Download https://jcenter.bintray.com/org/jacoco/org.jacoco.report/0.7.4.201502262128/org.jacoco.report-0.7.4.201502262128.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1.jar
+:coveralls
+service name: travis-ci
+service job id: 
+repo token: null
+:coveralls FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':coveralls'.
+> javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 4.189 secs
+
+travis_time:end:20bbab00:start=1610005211895914609,finish=1610005216283351441,duration=4387436832[0Ktravis_fold:end:after_success[0K
+Done. Your build exited with 0.
