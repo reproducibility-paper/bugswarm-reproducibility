@@ -1,0 +1,260 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd failed/TNG/JGiven
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export SONATYPE_PASSWORD=[secure]
+$ export SONATYPE_USERNAME=[secure]
+
+$ export TERM=dumb
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:0797ead6[0K$ Installing caching utilities
+
+travis_time:end:0797ead6:start=1598931568346791553,finish=1598931568735789812,duration=388998259[0Ktravis_time:start:10590fce[0K
+travis_time:end:10590fce:start=1598931568749989646,finish=1598931568758918605,duration=8928959[0Ktravis_time:start:0fecca5b[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:0fecca5b:start=1598931568769713720,finish=1598931569545981549,duration=776267829[0Ktravis_time:start:24e016ae[0K
+travis_time:end:24e016ae:start=1598931569557121720,finish=1598931569566590579,duration=9468859[0Ktravis_time:start:1437a3b0[0K[32;1madding /home/travis/.gradle to cache[0m
+[32;1mcreating directory /home/travis/.gradle[0m
+
+travis_time:end:1437a3b0:start=1598931569577184775,finish=1598931570340402714,duration=763217939[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:before_install[0Ktravis_time:start:0660d275[0K$ npm install -g bower
+/home/travis/.nvm/v0.10.36/bin/bower -> /home/travis/.nvm/v0.10.36/lib/node_modules/bower/bin/bower
+bower@1.8.8 /home/travis/.nvm/v0.10.36/lib/node_modules/bower
+
+travis_time:end:0660d275:start=1598931570626656028,finish=1598931577243240908,duration=6616584880[0Ktravis_fold:end:before_install[0Ktravis_fold:start:install[0Ktravis_time:start:019b473a[0K$ ./gradlew classes
+Downloading https://services.gradle.org/distributions/gradle-2.4-bin.zip
+.............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping /home/travis/.gradle/wrapper/dists/gradle-2.4-bin/qtpfibs0bk58et4qkc9rtloo1/gradle-2.4-bin.zip to /home/travis/.gradle/wrapper/dists/gradle-2.4-bin/qtpfibs0bk58et4qkc9rtloo1
+Set executable permissions for: /home/travis/.gradle/wrapper/dists/gradle-2.4-bin/qtpfibs0bk58et4qkc9rtloo1/gradle-2.4/bin/gradle
+Download https://jcenter.bintray.com/org/kt3k/gradle/plugin/coveralls-gradle-plugin/2.0.1/coveralls-gradle-plugin-2.0.1.pom
+Download https://jcenter.bintray.com/org/asciidoctor/asciidoctor-gradle-plugin/1.5.2/asciidoctor-gradle-plugin-1.5.2.pom
+Download https://jcenter.bintray.com/com/github/ben-manes/gradle-versions-plugin/0.11.3/gradle-versions-plugin-0.11.3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpmime/4.3/httpmime-4.3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-client/4.3/httpcomponents-client-4.3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/project/7/project-7.pom
+Download https://jcenter.bintray.com/org/apache/apache/13/apache-13.pom
+Download https://jcenter.bintray.com/org/codehaus/groovy/modules/http-builder/http-builder/0.7.1/http-builder-0.7.1.pom
+Download https://jcenter.bintray.com/com/thoughtworks/xstream/xstream/1.4.7/xstream-1.4.7.pom
+Download https://jcenter.bintray.com/com/thoughtworks/xstream/xstream-parent/1.4.7/xstream-parent-1.4.7.pom
+Download https://jcenter.bintray.com/org/codehaus/codehaus-parent/3/codehaus-parent-3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.3/httpclient-4.3.pom
+Download https://jcenter.bintray.com/net/sf/json-lib/json-lib/2.3/json-lib-2.3.pom
+Download https://jcenter.bintray.com/net/sourceforge/nekohtml/nekohtml/1.9.16/nekohtml-1.9.16.pom
+Download https://jcenter.bintray.com/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.pom
+Download https://jcenter.bintray.com/org/apache/apache/3/apache-3.pom
+Download https://jcenter.bintray.com/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom
+Download https://jcenter.bintray.com/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.pom
+Download https://jcenter.bintray.com/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/11/commons-parent-11.pom
+Download https://jcenter.bintray.com/org/apache/apache/4/apache-4.pom
+Download https://jcenter.bintray.com/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/9/commons-parent-9.pom
+Download https://jcenter.bintray.com/commons-lang/commons-lang/2.4/commons-lang-2.4.pom
+Download https://jcenter.bintray.com/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/5/commons-parent-5.pom
+Download https://jcenter.bintray.com/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.pom
+Download https://jcenter.bintray.com/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-core/4.3/httpcomponents-core-4.3.pom
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.6/commons-codec-1.6.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/22/commons-parent-22.pom
+Download https://jcenter.bintray.com/org/apache/apache/9/apache-9.pom
+Download https://jcenter.bintray.com/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/28/commons-parent-28.pom
+Download https://jcenter.bintray.com/org/kt3k/gradle/plugin/coveralls-gradle-plugin/2.0.1/coveralls-gradle-plugin-2.0.1.jar
+Download https://jcenter.bintray.com/org/asciidoctor/asciidoctor-gradle-plugin/1.5.2/asciidoctor-gradle-plugin-1.5.2.jar
+Download https://jcenter.bintray.com/com/github/ben-manes/gradle-versions-plugin/0.11.3/gradle-versions-plugin-0.11.3.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpmime/4.3/httpmime-4.3.jar
+Download https://jcenter.bintray.com/org/codehaus/groovy/modules/http-builder/http-builder/0.7.1/http-builder-0.7.1.jar
+Download https://jcenter.bintray.com/com/thoughtworks/xstream/xstream/1.4.7/xstream-1.4.7.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.3/httpclient-4.3.jar
+Download https://jcenter.bintray.com/net/sf/json-lib/json-lib/2.3/json-lib-2.3-jdk15.jar
+Download https://jcenter.bintray.com/net/sourceforge/nekohtml/nekohtml/1.9.16/nekohtml-1.9.16.jar
+Download https://jcenter.bintray.com/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar
+Download https://jcenter.bintray.com/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar
+Download https://jcenter.bintray.com/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar
+Download https://jcenter.bintray.com/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar
+Download https://jcenter.bintray.com/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar
+Download https://jcenter.bintray.com/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+Download https://jcenter.bintray.com/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar
+Download https://jcenter.bintray.com/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+Download https://jcenter.bintray.com/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar
+:jgiven-core:compileJava
+Download https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.pom
+Download https://jcenter.bintray.com/org/slf4j/slf4j-parent/1.7.13/slf4j-parent-1.7.13.pom
+Download https://jcenter.bintray.com/com/google/guava/guava/19.0/guava-19.0.pom
+Download https://jcenter.bintray.com/com/google/guava/guava-parent/19.0/guava-parent-19.0.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Download https://jcenter.bintray.com/com/google/code/gson/gson/2.5/gson-2.5.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+Download https://jcenter.bintray.com/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.pom
+Download https://jcenter.bintray.com/com/thoughtworks/paranamer/paranamer-parent/2.8/paranamer-parent-2.8.pom
+Download https://jcenter.bintray.com/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.pom
+Download https://jcenter.bintray.com/org/fusesource/jansi/jansi/1.11/jansi-1.11.pom
+Download https://jcenter.bintray.com/org/fusesource/jansi/jansi-project/1.11/jansi-project-1.11.pom
+Download https://jcenter.bintray.com/org/fusesource/fusesource-pom/1.8/fusesource-pom-1.8.pom
+Download https://jcenter.bintray.com/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar
+Download https://jcenter.bintray.com/com/google/guava/guava/19.0/guava-19.0.jar
+Download https://jcenter.bintray.com/com/google/code/gson/gson/2.5/gson-2.5.jar
+Download https://jcenter.bintray.com/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar
+Download https://jcenter.bintray.com/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar
+Download https://jcenter.bintray.com/org/fusesource/jansi/jansi/1.11/jansi-1.11.jar
+:jgiven-core:processResources
+:jgiven-core:classes
+:jgiven-examples:compileJava
+:jgiven-examples:processResources UP-TO-DATE
+:jgiven-examples:classes
+:jgiven-core:jar
+:jgiven-html5-report:compileJava
+:jgiven-html5-report:processResources UP-TO-DATE
+:jgiven-html5-report:classes
+:jgiven-html5-report:deleteCssFiles UP-TO-DATE
+:jgiven-html5-report:copyAppFiles
+:jgiven-html5-report:bowerUpdate
+bower angular-sanitize#1.4.8       not-cached https://github.com/angular/bower-angular-sanitize.git#1.4.8
+bower angular-sanitize#1.4.8          resolve https://github.com/angular/bower-angular-sanitize.git#1.4.8
+bower angular#1.4.8                not-cached https://github.com/angular/bower-angular.git#1.4.8
+bower angular#1.4.8                   resolve https://github.com/angular/bower-angular.git#1.4.8
+bower fontawesome#4.2.0            not-cached https://github.com/FortAwesome/Font-Awesome.git#4.2.0
+bower fontawesome#4.2.0               resolve https://github.com/FortAwesome/Font-Awesome.git#4.2.0
+bower lodash#2.4.1                 not-cached https://github.com/lodash/lodash.git#2.4.1
+bower lodash#2.4.1                    resolve https://github.com/lodash/lodash.git#2.4.1
+bower foundation#5.5.2             not-cached https://github.com/zurb/bower-foundation.git#5.5.2
+bower foundation#5.5.2                resolve https://github.com/zurb/bower-foundation.git#5.5.2
+bower angular-chart.js#0.7.2       not-cached https://github.com/jtblin/angular-chart.js.git#0.7.2
+bower angular-chart.js#0.7.2          resolve https://github.com/jtblin/angular-chart.js.git#0.7.2
+bower angular-local-storage#0.1.5  not-cached https://github.com/grevory/angular-local-storage.git#0.1.5
+bower angular-local-storage#0.1.5     resolve https://github.com/grevory/angular-local-storage.git#0.1.5
+bower jquery#2.1.4                 not-cached https://github.com/jquery/jquery-dist.git#2.1.4
+bower jquery#2.1.4                    resolve https://github.com/jquery/jquery-dist.git#2.1.4
+bower angular-mocks#1.4.8          not-cached https://github.com/angular/bower-angular-mocks.git#1.4.8
+bower angular-mocks#1.4.8             resolve https://github.com/angular/bower-angular-mocks.git#1.4.8
+bower angular-bindonce#0.3.3       not-cached https://github.com/Pasvaz/bindonce.git#0.3.3
+bower angular-bindonce#0.3.3          resolve https://github.com/Pasvaz/bindonce.git#0.3.3
+bower pako#0.2.8                   not-cached https://github.com/nodeca/pako.git#0.2.8
+bower pako#0.2.8                      resolve https://github.com/nodeca/pako.git#0.2.8
+bower foundation#5.5.2               download https://github.com/zurb/bower-foundation/archive/5.5.2.tar.gz
+bower fontawesome#4.2.0              download https://github.com/FortAwesome/Font-Awesome/archive/v4.2.0.tar.gz
+bower lodash#2.4.1                   download https://github.com/lodash/lodash/archive/2.4.1.tar.gz
+bower angular-sanitize#1.4.8         download https://github.com/angular/bower-angular-sanitize/archive/v1.4.8.tar.gz
+bower angular#1.4.8                  download https://github.com/angular/bower-angular/archive/v1.4.8.tar.gz
+bower jquery#2.1.4                   download https://github.com/jquery/jquery-dist/archive/2.1.4.tar.gz
+bower angular-local-storage#0.1.5    download https://github.com/grevory/angular-local-storage/archive/0.1.5.tar.gz
+bower angular-chart.js#0.7.2         download https://github.com/jtblin/angular-chart.js/archive/0.7.2.tar.gz
+bower angular-bindonce#0.3.3         download https://github.com/Pasvaz/bindonce/archive/0.3.3.tar.gz
+bower angular-mocks#1.4.8            download https://github.com/angular/bower-angular-mocks/archive/v1.4.8.tar.gz
+bower pako#0.2.8                     download https://github.com/nodeca/pako/archive/0.2.8.tar.gz
+bower jquery#2.1.4                    extract archive.tar.gz
+bower angular-local-storage#0.1.5     extract archive.tar.gz
+bower angular-local-storage#0.1.5    resolved https://github.com/grevory/angular-local-storage.git#0.1.5
+bower fontawesome#4.2.0               extract archive.tar.gz
+bower angular-sanitize#1.4.8          extract archive.tar.gz
+bower lodash#2.4.1                    extract archive.tar.gz
+bower angular-sanitize#1.4.8         resolved https://github.com/angular/bower-angular-sanitize.git#1.4.8
+bower angular-chart.js#0.7.2          extract archive.tar.gz
+bower foundation#5.5.2                extract archive.tar.gz
+bower angular-chart.js#0.7.2         resolved https://github.com/jtblin/angular-chart.js.git#0.7.2
+bower lodash#2.4.1                   resolved https://github.com/lodash/lodash.git#2.4.1
+bower angular-mocks#1.4.8             extract archive.tar.gz
+bower foundation#5.5.2               resolved https://github.com/zurb/bower-foundation.git#5.5.2
+bower angular-mocks#1.4.8            resolved https://github.com/angular/bower-angular-mocks.git#1.4.8
+bower jquery#2.1.4                   resolved https://github.com/jquery/jquery-dist.git#2.1.4
+bower angular#1.4.8                   extract archive.tar.gz
+bower fontawesome#4.2.0              resolved https://github.com/FortAwesome/Font-Awesome.git#4.2.0
+bower angular#1.4.8                  resolved https://github.com/angular/bower-angular.git#1.4.8
+bower pako#0.2.8                      extract archive.tar.gz
+bower pako#0.2.8                     resolved https://github.com/nodeca/pako.git#0.2.8
+bower angular-bindonce#0.3.3          extract archive.tar.gz
+bower angular-bindonce#0.3.3         resolved https://github.com/Pasvaz/bindonce.git#0.3.3
+:jgiven-html5-report:bowerUpdate FAILED
+
+BUILD FAILED
+
+Total time: 11 mins 39.529 secs
+
+travis_time:end:019b473a:start=1598931577254081794,finish=1598932277309441006,duration=700055359212[0K
+[31;1mThe command "./gradlew classes" failed and exited with 1 during .[0m
+
+Your build has been stopped.

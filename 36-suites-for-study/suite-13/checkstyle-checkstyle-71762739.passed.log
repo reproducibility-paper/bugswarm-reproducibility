@@ -1,0 +1,442 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 52.206.222.245 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 52.206.222.245 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ jdk_switcher use oraclejdk7
+Switching to Oracle JDK7 (java-7-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-7-oracle
+$ cd passed/checkstyle/checkstyle
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export DESC="checkstyle"
+$ export CMD="mvn clean verify -Dhttps.protocols=TLSv1.2 -Dhttps.protocols=TLSv1.2 -DskipTests -DskipITs -Dpmd.skip=true -Dfindbugs.skip=true -Dcobertura.skip=true"
+$ export COVERAGE_CMD=""
+
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:0159cc08[0K$ Installing caching utilities
+
+travis_time:end:0159cc08:start=1599303670111195077,finish=1599303670170234140,duration=59039063[0Ktravis_time:start:1c649dcc[0K
+travis_time:end:1c649dcc:start=1599303670182417737,finish=1599303670190890073,duration=8472336[0Ktravis_time:start:079d6490[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:079d6490:start=1599303670198741185,finish=1599303670928552074,duration=729810889[0Ktravis_time:start:1c37a048[0K
+travis_time:end:1c37a048:start=1599303670938320151,finish=1599303670946558817,duration=8238666[0Ktravis_time:start:09909050[0K[32;1madding /home/travis/.m2 to cache[0m
+
+travis_time:end:09909050:start=1599303670956531577,finish=1599303671693296861,duration=736765284[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:install[0Ktravis_time:start:183f73c8[0K$ 
+
+travis_time:end:183f73c8:start=1599303671911075869,finish=1599303671919772735,duration=8696866[0Ktravis_fold:end:install[0Ktravis_time:start:042f13ab[0K$ eval $CMD
+[INFO] Scanning for projects...
+Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+4/7 KB   7/7 KB            Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom (7 KB at 51.7 KB/sec)
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building checkstyle 6.9-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-enforcer-plugin/1.4/maven-enforcer-plugin-1.4.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-enforcer-plugin/1.4/maven-enforcer-plugin-1.4.pom
+2/8 KB   3/8 KB   5/8 KB   6/8 KB   7/8 KB   8/8 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-enforcer-plugin/1.4/maven-enforcer-plugin-1.4.pom (8 KB at 21.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/enforcer/enforcer/1.4/enforcer-1.4.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/1.4/enforcer-1.4.pom
+2/7 KB   3/7 KB   5/7 KB   6/7 KB   7/7 KB   7/7 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer/1.4/enforcer-1.4.pom (7 KB at 349.6 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/maven-parent/26/maven-parent-26.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/26/maven-parent-26.pom
+2/39 KB   3/39 KB   5/39 KB   6/39 KB   7/39 KB   9/39 KB   10/39 KB   11/39 KB   13/39 KB   14/39 KB   15/39 KB   17/39 KB   18/39 KB   19/39 KB   21/39 KB   22/39 KB   23/39 KB   25/39 KB   26/39 KB   27/39 KB   29/39 KB   30/39 KB   31/39 KB   33/39 KB   34/39 KB   35/39 KB   37/39 KB   38/39 KB   39/39 KB   39/39 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/26/maven-parent-26.pom (39 KB at 1339.7 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/apache/16/apache-16.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/16/apache-16.pom
+2/16 KB    3/16 KB   5/16 KB   6/16 KB   7/16 KB   9/16 KB   10/16 KB   11/16 KB   13/16 KB   14/16 KB   15/16 KB   16/16 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/16/apache-16.pom (16 KB at 835.3 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-enforcer-plugin/1.4/maven-enforcer-plugin-1.4.jar
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-enforcer-plugin/1.4/maven-enforcer-plugin-1.4.jar
+2/31 KB    3/31 KB   5/31 KB   6/31 KB   7/31 KB   9/31 KB   10/31 KB   11/31 KB   13/31 KB   14/31 KB   15/31 KB   17/31 KB   18/31 KB   19/31 KB   21/31 KB   22/31 KB   23/31 KB   25/31 KB   26/31 KB   27/31 KB   29/31 KB   30/31 KB   31/31 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-enforcer-plugin/1.4/maven-enforcer-plugin-1.4.jar (31 KB at 1613.3 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/antlr-maven-plugin/2.2/antlr-maven-plugin-2.2.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/antlr-maven-plugin/2.2/antlr-maven-plugin-2.2.pom
+2/6 KB     3/6 KB   5/6 KB   6/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/antlr-maven-plugin/2.2/antlr-maven-plugin-2.2.pom (6 KB at 306.0 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/mojo-parent/27/mojo-parent-27.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/27/mojo-parent-27.pom
+2/27 KB   3/27 KB   5/27 KB   6/27 KB   7/27 KB   9/27 KB   10/27 KB   11/27 KB   13/27 KB   14/27 KB   15/27 KB   17/27 KB   18/27 KB   19/27 KB   21/27 KB   22/27 KB   23/27 KB   25/27 KB   26/27 KB   27/27 KB              Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/27/mojo-parent-27.pom (27 KB at 1384.5 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/codehaus-parent/3/codehaus-parent-3.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/3/codehaus-parent-3.pom
+2/5 KB     3/5 KB   5/5 KB   5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/3/codehaus-parent-3.pom (5 KB at 211.1 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/antlr-maven-plugin/2.2/antlr-maven-plugin-2.2.jar
+         Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/antlr-maven-plugin/2.2/antlr-maven-plugin-2.2.jar
+2/39 KB   3/39 KB   5/39 KB   6/39 KB   7/39 KB   9/39 KB   10/39 KB   11/39 KB   13/39 KB   14/39 KB   15/39 KB   17/39 KB   18/39 KB   19/39 KB   21/39 KB   22/39 KB   23/39 KB   25/39 KB   26/39 KB   27/39 KB   29/39 KB   30/39 KB   31/39 KB   33/39 KB   34/39 KB   35/39 KB   37/39 KB   38/39 KB   39/39 KB   39/39 KB              Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/antlr-maven-plugin/2.2/antlr-maven-plugin-2.2.jar (39 KB at 1343.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/antlr/antlr4-maven-plugin/4.5.1/antlr4-maven-plugin-4.5.1.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/antlr/antlr4-maven-plugin/4.5.1/antlr4-maven-plugin-4.5.1.pom
+2/6 KB     3/6 KB   5/6 KB   6/6 KB   6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/antlr/antlr4-maven-plugin/4.5.1/antlr4-maven-plugin-4.5.1.pom (6 KB at 310.3 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/antlr/antlr4-master/4.5.1/antlr4-master-4.5.1.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.5.1/antlr4-master-4.5.1.pom
+2/4 KB   3/4 KB   4/4 KB            Downloaded: https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.5.1/antlr4-master-4.5.1.pom (4 KB at 206.1 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/antlr/antlr4-maven-plugin/4.5.1/antlr4-maven-plugin-4.5.1.jar
+         Downloading: https://repo.maven.apache.org/maven2/org/antlr/antlr4-maven-plugin/4.5.1/antlr4-maven-plugin-4.5.1.jar
+2/23 KB   3/23 KB   5/23 KB   6/23 KB   7/23 KB   9/23 KB   10/23 KB   11/23 KB   13/23 KB   14/23 KB   15/23 KB   17/23 KB   18/23 KB   19/23 KB   21/23 KB   22/23 KB   23/23 KB              Downloaded: https://repo.maven.apache.org/maven2/org/antlr/antlr4-maven-plugin/4.5.1/antlr4-maven-plugin-4.5.1.jar (23 KB at 900.7 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-failsafe-plugin/2.18.1/maven-failsafe-plugin-2.18.1.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-failsafe-plugin/2.18.1/maven-failsafe-plugin-2.18.1.pom
+4/9 KB     8/9 KB   9/9 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-failsafe-plugin/2.18.1/maven-failsafe-plugin-2.18.1.pom (9 KB at 514.2 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/surefire/surefire/2.18.1/surefire-2.18.1.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.18.1/surefire-2.18.1.pom
+4/17 KB   8/17 KB   12/17 KB   16/17 KB   17/17 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.18.1/surefire-2.18.1.pom (17 KB at 682.8 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-failsafe-plugin/2.18.1/maven-failsafe-plugin-2.18.1.jar
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-failsafe-plugin/2.18.1/maven-failsafe-plugin-2.18.1.jar
+4/81 KB    8/81 KB   12/81 KB   16/81 KB   20/81 KB   24/81 KB   28/81 KB   32/81 KB   36/81 KB   40/81 KB   44/81 KB   48/81 KB   52/81 KB   56/81 KB   60/81 KB   64/81 KB   68/81 KB   72/81 KB   76/81 KB   80/81 KB   81/81 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-failsafe-plugin/2.18.1/maven-failsafe-plugin-2.18.1.jar (81 KB at 2431.0 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.pom
+4/6 KB     6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.pom (6 KB at 302.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-plugins/27/maven-plugins-27.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/27/maven-plugins-27.pom
+4/12 KB   8/12 KB   12/12 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/27/maven-plugins-27.pom (12 KB at 739.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.jar
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.jar
+4/26 KB    8/26 KB   12/26 KB   16/26 KB   20/26 KB   24/26 KB   26/26 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.6/maven-jar-plugin-2.6.jar (26 KB at 1317.5 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-pmd-plugin/3.5/maven-pmd-plugin-3.5.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-pmd-plugin/3.5/maven-pmd-plugin-3.5.pom
+4/12 KB    8/12 KB   12/12 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-pmd-plugin/3.5/maven-pmd-plugin-3.5.pom (12 KB at 730.4 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-pmd-plugin/3.5/maven-pmd-plugin-3.5.jar
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-pmd-plugin/3.5/maven-pmd-plugin-3.5.jar
+4/96 KB    8/96 KB   12/96 KB   16/96 KB   20/96 KB   24/96 KB   28/96 KB   32/96 KB   36/96 KB   40/96 KB   44/96 KB   48/96 KB   52/96 KB   56/96 KB   60/96 KB   64/96 KB   68/96 KB   72/96 KB   76/96 KB   80/96 KB   84/96 KB   88/96 KB   92/96 KB   96/96 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-pmd-plugin/3.5/maven-pmd-plugin-3.5.jar (96 KB at 3534.7 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/findbugs-maven-plugin/3.0.1/findbugs-maven-plugin-3.0.1.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/3.0.1/findbugs-maven-plugin-3.0.1.pom
+4/21 KB    8/21 KB   12/21 KB   16/21 KB   20/21 KB   21/21 KB              Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/3.0.1/findbugs-maven-plugin-3.0.1.pom (21 KB at 1104.0 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom
+4/24 KB    8/24 KB   12/24 KB   16/24 KB   20/24 KB   24/24 KB              Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom (24 KB at 1250.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom
+4/5 KB     5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom (5 KB at 313.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/findbugs-maven-plugin/3.0.1/findbugs-maven-plugin-3.0.1.jar
+         Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/3.0.1/findbugs-maven-plugin-3.0.1.jar
+4/141 KB   8/141 KB   12/141 KB   16/141 KB   20/141 KB   24/141 KB   28/141 KB   32/141 KB   36/141 KB   40/141 KB   44/141 KB   48/141 KB   52/141 KB   56/141 KB   60/141 KB   64/141 KB   68/141 KB   72/141 KB   76/141 KB   80/141 KB   84/141 KB   88/141 KB   92/141 KB   96/141 KB   100/141 KB   104/141 KB   108/141 KB   112/141 KB   116/141 KB   120/141 KB   124/141 KB   128/141 KB   132/141 KB   136/141 KB   140/141 KB   141/141 KB                Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/3.0.1/findbugs-maven-plugin-3.0.1.jar (141 KB at 4016.4 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.pom
+             Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.pom
+4/8 KB       8/8 KB            Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.pom (8 KB at 444.1 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/mojo-parent/28/mojo-parent-28.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/28/mojo-parent-28.pom
+4/26 KB   8/26 KB   12/26 KB   16/26 KB   20/26 KB   24/26 KB   26/26 KB              Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/28/mojo-parent-28.pom (26 KB at 1433.5 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.jar
+           Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.jar
+4/34 KB    8/34 KB   12/34 KB   16/34 KB   20/34 KB   24/34 KB   28/34 KB   32/34 KB   34/34 KB              Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/xml-maven-plugin/1.0/xml-maven-plugin-1.0.jar (34 KB at 1746.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-clean-plugin/2.6.1/maven-clean-plugin-2.6.1.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.6.1/maven-clean-plugin-2.6.1.pom
+4/5 KB     5/5 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.6.1/maven-clean-plugin-2.6.1.pom (5 KB at 346.4 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-plugins/26/maven-plugins-26.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/26/maven-plugins-26.pom
+4/12 KB   8/12 KB   12/12 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/26/maven-plugins-26.pom (12 KB at 693.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/maven-parent/25/maven-parent-25.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom
+4/37 KB    8/37 KB   12/37 KB   16/37 KB   20/37 KB   24/37 KB   28/37 KB   32/37 KB   36/37 KB   37/37 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom (37 KB at 1924.3 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/apache/15/apache-15.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom
+4/15 KB    8/15 KB   12/15 KB   15/15 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom (15 KB at 929.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-clean-plugin/2.6.1/maven-clean-plugin-2.6.1.jar
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.6.1/maven-clean-plugin-2.6.1.jar
+4/29 KB    8/29 KB   12/29 KB   16/29 KB   20/29 KB   24/29 KB   28/29 KB   29/29 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/2.6.1/maven-clean-plugin-2.6.1.jar (29 KB at 1587.0 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.pom
+4/7 KB     7/7 KB            Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.pom (7 KB at 475.8 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/mojo-parent/33/mojo-parent-33.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/33/mojo-parent-33.pom
+4/26 KB   8/26 KB   12/26 KB   16/26 KB   20/26 KB   24/26 KB   26/26 KB              Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/33/mojo-parent-33.pom (26 KB at 1601.2 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.jar
+           Downloading: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.jar
+4/47 KB    8/47 KB   12/47 KB   16/47 KB   20/47 KB   24/47 KB   28/47 KB   32/47 KB   36/47 KB   40/47 KB   44/47 KB   47/47 KB              Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.9.1/build-helper-maven-plugin-1.9.1.jar (47 KB at 2422.6 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-resources-plugin/2.7/maven-resources-plugin-2.7.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.7/maven-resources-plugin-2.7.pom
+4/8 KB     8/8 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.7/maven-resources-plugin-2.7.pom (8 KB at 537.6 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-plugins/25/maven-plugins-25.pom
+         Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/25/maven-plugins-25.pom
+4/10 KB   8/10 KB   10/10 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/25/maven-plugins-25.pom (10 KB at 621.8 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/maven-parent/24/maven-parent-24.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/24/maven-parent-24.pom
+4/37 KB    8/37 KB   12/37 KB   16/37 KB   20/37 KB   24/37 KB   28/37 KB   32/37 KB   36/37 KB   37/37 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/24/maven-parent-24.pom (37 KB at 1896.5 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/apache/14/apache-14.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/apache/14/apache-14.pom
+4/15 KB    8/15 KB   12/15 KB   15/15 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/apache/14/apache-14.pom (15 KB at 896.3 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-resources-plugin/2.7/maven-resources-plugin-2.7.jar
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.7/maven-resources-plugin-2.7.jar
+4/31 KB    8/31 KB   12/31 KB   16/31 KB   20/31 KB   24/31 KB   28/31 KB   31/31 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.7/maven-resources-plugin-2.7.jar (31 KB at 1706.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-compiler-plugin/3.3/maven-compiler-plugin-3.3.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.3/maven-compiler-plugin-3.3.pom
+4/12 KB    8/12 KB   12/12 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.3/maven-compiler-plugin-3.3.pom (12 KB at 614.3 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-compiler-plugin/3.3/maven-compiler-plugin-3.3.jar
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.3/maven-compiler-plugin-3.3.jar
+4/46 KB    8/46 KB   12/46 KB   16/46 KB   20/46 KB   24/46 KB   28/46 KB   32/46 KB   36/46 KB   40/46 KB   44/46 KB   46/46 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.3/maven-compiler-plugin-3.3.jar (46 KB at 2382.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.pom
+4/4 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.pom (4 KB at 215.8 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.jar
+         Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.jar
+4/36 KB   8/36 KB   12/36 KB   16/36 KB   20/36 KB   24/36 KB   28/36 KB   32/36 KB   36/36 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.jar (36 KB at 1953.3 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-surefire-plugin/2.18.1/maven-surefire-plugin-2.18.1.pom
+           Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.18.1/maven-surefire-plugin-2.18.1.pom
+4/6 KB     6/6 KB            Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.18.1/maven-surefire-plugin-2.18.1.pom (6 KB at 290.9 KB/sec)
+Downloading: https://nexus.codehaus.org/content/repositories/snapshots/org/apache/maven/plugins/maven-surefire-plugin/2.18.1/maven-surefire-plugin-2.18.1.jar
+         Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.18.1/maven-surefire-plugin-2.18.1.jar
+4/37 KB   8/37 KB   12/37 KB   16/37 KB   20/37 KB   24/37 KB   28/37 KB   32/37 KB   36/37 KB   37/37 KB              Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.18.1/maven-surefire-plugin-2.18.1.jar (37 KB at 2126.3 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.pom
+1/22 KB    5/22 KB   9/22 KB   13/22 KB   14/22 KB   16/22 KB   17/22 KB   18/22 KB   21/22 KB   22/22 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.pom (22 KB at 902.6 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/37/commons-parent-37.pom
+1/62 KB    5/62 KB   9/62 KB   13/62 KB   17/62 KB   21/62 KB   25/62 KB   29/62 KB   31/62 KB   33/62 KB   37/62 KB   41/62 KB   45/62 KB   49/62 KB   53/62 KB   57/62 KB   61/62 KB   62/62 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/37/commons-parent-37.pom (62 KB at 2052.1 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom
+632/632 B               Downloaded: http://insecure.repo1.maven.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom (632 B at 34.3 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.5.1/antlr4-runtime-4.5.1.pom
+3/3 KB               Downloaded: http://insecure.repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.5.1/antlr4-runtime-4.5.1.pom (3 KB at 118.7 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-beanutils/commons-beanutils-core/1.8.3/commons-beanutils-core-1.8.3.pom
+2/2 KB            Downloaded: http://insecure.repo1.maven.org/maven2/commons-beanutils/commons-beanutils-core/1.8.3/commons-beanutils-core-1.8.3.pom (2 KB at 88.9 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/4/apache-4.pom
+1/5 KB   5/5 KB            Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/4/apache-4.pom (5 KB at 231.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+4/18 KB   6/18 KB   10/18 KB   14/18 KB   18/18 KB   18/18 KB              Downloaded: http://insecure.repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom (18 KB at 747.3 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom
+4/16 KB    8/16 KB   12/16 KB   16/16 KB   16/16 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/5/commons-parent-5.pom (16 KB at 712.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-cli/commons-cli/1.3.1/commons-cli-1.3.1.pom
+4/11 KB    6/11 KB   10/11 KB   11/11 KB              Downloaded: http://insecure.repo1.maven.org/maven2/commons-cli/commons-cli/1.3.1/commons-cli-1.3.1.pom (11 KB at 507.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom
+4/6 KB     6/6 KB            Downloaded: http://insecure.repo1.maven.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom (6 KB at 263.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+1/8 KB   5/8 KB   8/8 KB            Downloaded: http://insecure.repo1.maven.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom (8 KB at 312.7 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+4/5 KB   5/5 KB            Downloaded: http://insecure.repo1.maven.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (5 KB at 235.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/ant/ant/1.9.6/ant-1.9.6.pom
+4/10 KB   7/10 KB   10/10 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/ant/ant/1.9.6/ant-1.9.6.pom (10 KB at 470.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/ant/ant-parent/1.9.6/ant-parent-1.9.6.pom
+4/6 KB     6/6 KB            Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/ant/ant-parent/1.9.6/ant-parent-1.9.6.pom (6 KB at 288.1 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/ant/ant-launcher/1.9.6/ant-launcher-1.9.6.pom
+3/3 KB            Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/ant/ant-launcher/1.9.6/ant-launcher-1.9.6.pom (3 KB at 120.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.pom
+4/24 KB   6/24 KB   10/24 KB   14/24 KB   18/24 KB   22/24 KB   24/24 KB              Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.pom (24 KB at 700.7 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+766/766 B               Downloaded: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom (766 B at 41.6 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+2/2 KB               Downloaded: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom (2 KB at 107.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/com/github/stefanbirkner/system-rules/1.12.1/system-rules-1.12.1.pom
+3/3 KB            Downloaded: http://insecure.repo1.maven.org/maven2/com/github/stefanbirkner/system-rules/1.12.1/system-rules-1.12.1.pom (3 KB at 128.4 KB/sec)
+Downloading: https://oss.sonatype.org/content/repositories/releases/junit/junit-dep/maven-metadata.xml
+Downloading: https://repository.apache.org/releases/junit/junit-dep/maven-metadata.xml
+Downloading: http://insecure.repo1.maven.org/maven2/junit/junit-dep/maven-metadata.xml
+Downloading: https://oss.sonatype.org/content/repositories/snapshots/junit/junit-dep/maven-metadata.xml
+563/563 B               Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit-dep/maven-metadata.xml (563 B at 28.9 KB/sec)
+Downloading: https://repository.apache.org/snapshots/junit/junit-dep/maven-metadata.xml
+                        Downloading: https://nexus.codehaus.org/snapshots/junit/junit-dep/maven-metadata.xml
+Downloading: https://oss.sonatype.org/content/repositories/snapshots/junit/junit-dep/maven-metadata.xml
+                                                [WARNING] Could not transfer metadata junit:junit-dep/maven-metadata.xml from/to sonatype (https://oss.sonatype.org/content/repositories/releases/): Access denied to: https://oss.sonatype.org/content/repositories/releases/junit/junit-dep/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Could not transfer metadata junit:junit-dep/maven-metadata.xml from/to sonatype-snapshots (https://oss.sonatype.org/content/repositories/snapshots/): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/junit/junit-dep/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Could not transfer metadata junit:junit-dep/maven-metadata.xml from/to codehaus-snapshots (https://nexus.codehaus.org/snapshots/): nexus.codehaus.org
+[WARNING] Could not transfer metadata junit:junit-dep/maven-metadata.xml from/to sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/junit/junit-dep/maven-metadata.xml , ReasonPhrase:Forbidden.
+Downloading: http://insecure.repo1.maven.org/maven2/junit/junit-dep/4.9/junit-dep-4.9.pom
+1/3 KB      3/3 KB            Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit-dep/4.9/junit-dep-4.9.pom (3 KB at 127.4 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom
+481/481 B               Downloaded: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom (481 B at 26.1 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom
+4/6 KB      6/6 KB            Downloaded: http://insecure.repo1.maven.org/maven2/org/hamcrest/hamcrest-parent/1.1/hamcrest-parent-1.1.pom (6 KB at 287.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/junit/junit-dep/4.10/junit-dep-4.10.pom
+3/3 KB            Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit-dep/4.10/junit-dep-4.10.pom (3 KB at 120.7 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/junit/junit-dep/4.11-beta-1/junit-dep-4.11-beta-1.pom
+2/2 KB            Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit-dep/4.11-beta-1/junit-dep-4.11-beta-1.pom (2 KB at 110.8 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/junit/junit/4.11-beta-1/junit-4.11-beta-1.pom
+3/3 KB            Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit/4.11-beta-1/junit-4.11-beta-1.pom (3 KB at 120.8 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/maven-metadata.xml
+Downloading: https://oss.sonatype.org/content/repositories/releases/commons-io/commons-io/maven-metadata.xml
+Downloading: https://repository.apache.org/releases/commons-io/commons-io/maven-metadata.xml
+812/812 B   Downloading: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/maven-metadata.xml
+            Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/maven-metadata.xml (812 B at 44.1 KB/sec)
+Downloading: https://repository.apache.org/snapshots/commons-io/commons-io/maven-metadata.xml
+                        Downloading: https://nexus.codehaus.org/snapshots/commons-io/commons-io/maven-metadata.xml
+Downloading: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/maven-metadata.xml
+                                    373/373 B               Downloaded: https://repository.apache.org/snapshots/commons-io/commons-io/maven-metadata.xml (373 B at 0.1 KB/sec)
+[WARNING] Could not transfer metadata commons-io:commons-io/maven-metadata.xml from/to sonatype (https://oss.sonatype.org/content/repositories/releases/): Access denied to: https://oss.sonatype.org/content/repositories/releases/commons-io/commons-io/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Could not transfer metadata commons-io:commons-io/maven-metadata.xml from/to sonatype-snapshots (https://oss.sonatype.org/content/repositories/snapshots/): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Could not transfer metadata commons-io:commons-io/maven-metadata.xml from/to codehaus-snapshots (https://nexus.codehaus.org/snapshots/): nexus.codehaus.org
+[WARNING] Could not transfer metadata commons-io:commons-io/maven-metadata.xml from/to sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/maven-metadata.xml , ReasonPhrase:Forbidden.
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.0/commons-io-2.0.pom
+4/9 KB      8/9 KB   9/9 KB            Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.0/commons-io-2.0.pom (9 KB at 420.6 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/15/commons-parent-15.pom
+4/31 KB   7/31 KB   11/31 KB   15/31 KB   19/31 KB   23/31 KB   27/31 KB   31/31 KB   31/31 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/15/commons-parent-15.pom (31 KB at 1289.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/7/apache-7.pom
+1/15 KB    5/15 KB   9/15 KB   13/15 KB   15/15 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/7/apache-7.pom (15 KB at 671.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1.pom
+4/9 KB     8/9 KB   9/9 KB            Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.0.1/commons-io-2.0.1.pom (9 KB at 463.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.pom
+4/11 KB   8/11 KB   11/11 KB              Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.1/commons-io-2.1.pom (11 KB at 472.1 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom
+4/41 KB    8/41 KB   12/41 KB   16/41 KB   20/41 KB   24/41 KB   28/41 KB   32/41 KB   36/41 KB   40/41 KB   41/41 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom (41 KB at 1574.4 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/9/apache-9.pom
+1/15 KB    5/15 KB   9/15 KB   13/15 KB   15/15 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/9/apache-9.pom (15 KB at 740.2 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom
+4/11 KB    7/11 KB   11/11 KB   11/11 KB              Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom (11 KB at 538.8 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom
+4/47 KB    7/47 KB   11/47 KB   15/47 KB   19/47 KB   23/47 KB   27/47 KB   31/47 KB   35/47 KB   39/47 KB   43/47 KB   47/47 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom (47 KB at 1709.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.3/commons-io-2.3.pom
+4/11 KB    8/11 KB   11/11 KB              Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.3/commons-io-2.3.pom (11 KB at 513.1 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom
+4/10 KB    7/10 KB   10/10 KB              Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom (10 KB at 522.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom
+1/48 KB    5/48 KB   9/48 KB   13/48 KB   17/48 KB   21/48 KB   25/48 KB   29/48 KB   33/48 KB   37/48 KB   41/48 KB   45/48 KB   48/48 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom (48 KB at 1814.3 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom
+4/13 KB    6/13 KB   10/13 KB   13/13 KB              Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom (13 KB at 683.1 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/39/commons-parent-39.pom
+4/61 KB    8/61 KB   12/61 KB   16/61 KB   20/61 KB   24/61 KB   28/61 KB   32/61 KB   36/61 KB   40/61 KB   44/61 KB   48/61 KB   52/61 KB   56/61 KB   60/61 KB   61/61 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/39/commons-parent-39.pom (61 KB at 2161.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.pom
+4/14 KB    8/14 KB   12/14 KB   14/14 KB              Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.pom (14 KB at 662.9 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom
+1/67 KB    5/67 KB   9/67 KB   13/67 KB   17/67 KB   21/67 KB   25/67 KB   29/67 KB   33/67 KB   37/67 KB   41/67 KB   45/67 KB   49/67 KB   53/67 KB   57/67 KB   61/67 KB   65/67 KB   67/67 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom (67 KB at 2212.1 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/18/apache-18.pom
+1/16 KB    5/16 KB   9/16 KB   13/16 KB   16/16 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/18/apache-18.pom (16 KB at 765.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.7/commons-io-2.7.pom
+4/16 KB    8/16 KB   12/16 KB   16/16 KB              Downloaded: http://insecure.repo1.maven.org/maven2/commons-io/commons-io/2.7/commons-io-2.7.pom (16 KB at 735.2 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/50/commons-parent-50.pom
+1/74 KB    5/74 KB   9/74 KB   13/74 KB   17/74 KB   21/74 KB   25/74 KB   29/74 KB   33/74 KB   37/74 KB   41/74 KB   45/74 KB   49/74 KB   53/74 KB   57/74 KB   61/74 KB   65/74 KB   69/74 KB   73/74 KB   74/74 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/commons/commons-parent/50/commons-parent-50.pom (74 KB at 3692.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/apache/apache/21/apache-21.pom
+4/17 KB    8/17 KB   12/17 KB   16/17 KB   17/17 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/apache/apache/21/apache-21.pom (17 KB at 1193.3 KB/sec)
+Downloading: https://nexus.codehaus.org/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/maven-metadata.xml
+Downloading: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.apache.org/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/maven-metadata.xml
+Downloading: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/maven-metadata.xml
+                                 2/2 KB              Downloaded: https://repository.apache.org/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/maven-metadata.xml (2 KB at 0.5 KB/sec)
+[WARNING] Could not transfer metadata commons-io:commons-io:2.7.1-SNAPSHOT/maven-metadata.xml from/to sonatype-snapshots (https://oss.sonatype.org/content/repositories/snapshots/): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Could not transfer metadata commons-io:commons-io:2.7.1-SNAPSHOT/maven-metadata.xml from/to codehaus-snapshots (https://nexus.codehaus.org/snapshots/): nexus.codehaus.org
+[WARNING] Could not transfer metadata commons-io:commons-io:2.7.1-SNAPSHOT/maven-metadata.xml from/to sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Failure to transfer commons-io:commons-io:2.7.1-SNAPSHOT/maven-metadata.xml from https://oss.sonatype.org/content/repositories/snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of sonatype-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata commons-io:commons-io:2.7.1-SNAPSHOT/maven-metadata.xml from/to sonatype-snapshots (https://oss.sonatype.org/content/repositories/snapshots/): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Failure to transfer commons-io:commons-io:2.7.1-SNAPSHOT/maven-metadata.xml from https://nexus.codehaus.org/snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of codehaus-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata commons-io:commons-io:2.7.1-SNAPSHOT/maven-metadata.xml from/to codehaus-snapshots (https://nexus.codehaus.org/snapshots/): nexus.codehaus.org
+[WARNING] Failure to transfer commons-io:commons-io:2.7.1-SNAPSHOT/maven-metadata.xml from https://oss.sonatype.org/content/repositories/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of sonatype-nexus-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata commons-io:commons-io:2.7.1-SNAPSHOT/maven-metadata.xml from/to sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/maven-metadata.xml , ReasonPhrase:Forbidden.
+Downloading: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/commons-io-2.7.1-20200701.131535-19.pom
+         Downloading: https://repository.apache.org/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/commons-io-2.7.1-20200701.131535-19.pom
+4/15 KB   8/15 KB   8/15 KB   12/15 KB   15/15 KB              Downloaded: https://repository.apache.org/snapshots/commons-io/commons-io/2.7.1-SNAPSHOT/commons-io-2.7.1-20200701.131535-19.pom (15 KB at 31.2 KB/sec)
+Downloading: https://nexus.codehaus.org/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml
+Downloading: https://repository.apache.org/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml
+Downloading: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml
+Downloading: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml
+                                            [WARNING] Could not transfer metadata commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from/to sonatype-snapshots (https://oss.sonatype.org/content/repositories/snapshots/): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Could not transfer metadata commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from/to apache-snapshots (https://repository.apache.org/snapshots/): Failed to transfer file: https://repository.apache.org/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml. Return code is: 502 , ReasonPhrase:Proxy Error.
+[WARNING] Could not transfer metadata commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from/to codehaus-snapshots (https://nexus.codehaus.org/snapshots/): nexus.codehaus.org
+[WARNING] Could not transfer metadata commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from/to sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Failure to transfer commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from https://oss.sonatype.org/content/repositories/snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of sonatype-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from/to sonatype-snapshots (https://oss.sonatype.org/content/repositories/snapshots/): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml , ReasonPhrase:Forbidden.
+[WARNING] Failure to transfer commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from https://repository.apache.org/snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of apache-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from/to apache-snapshots (https://repository.apache.org/snapshots/): Failed to transfer file: https://repository.apache.org/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml. Return code is: 502 , ReasonPhrase:Proxy Error.
+[WARNING] Failure to transfer commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from https://nexus.codehaus.org/snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of codehaus-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from/to codehaus-snapshots (https://nexus.codehaus.org/snapshots/): nexus.codehaus.org
+[WARNING] Failure to transfer commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from https://oss.sonatype.org/content/repositories/snapshots was cached in the local repository, resolution will not be reattempted until the update interval of sonatype-nexus-snapshots has elapsed or updates are forced. Original error: Could not transfer metadata commons-io:commons-io:2.8-SNAPSHOT/maven-metadata.xml from/to sonatype-nexus-snapshots (https://oss.sonatype.org/content/repositories/snapshots): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.8-SNAPSHOT/maven-metadata.xml , ReasonPhrase:Forbidden.
+Downloading: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.8-SNAPSHOT/commons-io-2.8-SNAPSHOT.pom
+           Downloading: https://repository.apache.org/snapshots/commons-io/commons-io/2.8-SNAPSHOT/commons-io-2.8-SNAPSHOT.pom
+           Downloading: https://nexus.codehaus.org/snapshots/commons-io/commons-io/2.8-SNAPSHOT/commons-io-2.8-SNAPSHOT.pom
+           Downloading: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.8-SNAPSHOT/commons-io-2.8-SNAPSHOT.pom
+           Downloading: http://insecure.repo1.maven.org/maven2/nl/jqno/equalsverifier/equalsverifier/1.7.2/equalsverifier-1.7.2.pom
+1/10 KB    5/10 KB   9/10 KB   10/10 KB              Downloaded: http://insecure.repo1.maven.org/maven2/nl/jqno/equalsverifier/equalsverifier/1.7.2/equalsverifier-1.7.2.pom (10 KB at 679.2 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-api-mockito/1.6.2/powermock-api-mockito-1.6.2.pom
+2/2 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-api-mockito/1.6.2/powermock-api-mockito-1.6.2.pom (2 KB at 75.8 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-api/1.6.2/powermock-api-1.6.2.pom
+781/781 B               Downloaded: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-api/1.6.2/powermock-api-1.6.2.pom (781 B at 58.7 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/powermock/powermock/1.6.2/powermock-1.6.2.pom
+1/15 KB     5/15 KB   9/15 KB   13/15 KB   15/15 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/powermock/powermock/1.6.2/powermock-1.6.2.pom (15 KB at 970.7 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.pom
+930/930 B               Downloaded: http://insecure.repo1.maven.org/maven2/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.pom (930 B at 64.9 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-api-support/1.6.2/powermock-api-support-1.6.2.pom
+2/2 KB               Downloaded: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-api-support/1.6.2/powermock-api-support-1.6.2.pom (2 KB at 98.1 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-core/1.6.2/powermock-core-1.6.2.pom
+3/3 KB            Downloaded: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-core/1.6.2/powermock-core-1.6.2.pom (3 KB at 158.1 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-reflect/1.6.2/powermock-reflect-1.6.2.pom
+987/987 B               Downloaded: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-reflect/1.6.2/powermock-reflect-1.6.2.pom (987 B at 80.3 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.pom
+3/3 KB               Downloaded: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.pom (3 KB at 190.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom
+4/17 KB   7/17 KB   11/17 KB   15/17 KB   17/17 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom (17 KB at 1255.0 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.pom
+4/10 KB    8/10 KB   10/10 KB              Downloaded: http://insecure.repo1.maven.org/maven2/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.pom (10 KB at 668.6 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-module-junit4/1.6.2/powermock-module-junit4-1.6.2.pom
+1/2 KB     2/2 KB            Downloaded: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-module-junit4/1.6.2/powermock-module-junit4-1.6.2.pom (2 KB at 144.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-modules/1.6.2/powermock-modules-1.6.2.pom
+770/770 B               Downloaded: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-modules/1.6.2/powermock-modules-1.6.2.pom (770 B at 62.7 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-module-junit4-common/1.6.2/powermock-module-junit4-common-1.6.2.pom
+1/2 KB      2/2 KB            Downloaded: http://insecure.repo1.maven.org/maven2/org/powermock/powermock-module-junit4-common/1.6.2/powermock-module-junit4-common-1.6.2.pom (2 KB at 91.5 KB/sec)
+Downloading: http://insecure.repo1.maven.org/maven2/junit/junit/4.4/junit-4.4.pom
+1/2 KB   2/2 KB            Downloaded: http://insecure.repo1.maven.org/maven2/junit/junit/4.4/junit-4.4.pom (2 KB at 91.7 KB/sec)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:31 min
+[INFO] Finished at: 2020-09-05T11:02:44+00:00
+[INFO] Final Memory: 13M/491M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project checkstyle: Could not resolve dependencies for project com.puppycrawl.tools:checkstyle:jar:6.9-SNAPSHOT: Failed to collect dependencies at com.github.stefanbirkner:system-rules:jar:1.12.1 -> commons-io:commons-io:jar:2.8-SNAPSHOT: Failed to read artifact descriptor for commons-io:commons-io:jar:2.8-SNAPSHOT: Could not transfer artifact commons-io:commons-io:pom:2.8-SNAPSHOT from/to sonatype-snapshots (https://oss.sonatype.org/content/repositories/snapshots/): Access denied to: https://oss.sonatype.org/content/repositories/snapshots/commons-io/commons-io/2.8-SNAPSHOT/commons-io-2.8-SNAPSHOT.pom , ReasonPhrase:Forbidden. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+
+travis_time:end:042f13ab:start=1599303671930184297,finish=1599303764609458696,duration=92679274399[0K
+[31;1mThe command "eval $CMD" exited with 1.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:031b38b0[0K
+travis_time:end:031b38b0:start=1599303764627092702,finish=1599303764648669299,duration=21576597[0Ktravis_time:start:0a557a50[0K[32;1mchanges detected, packing new archive[0m
+
+travis_time:end:0a557a50:start=1599303764662904097,finish=1599303766525212330,duration=1862308233[0Ktravis_fold:end:cache.2[0K
+Done. Your build exited with 1.

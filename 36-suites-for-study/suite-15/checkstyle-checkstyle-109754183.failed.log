@@ -1,0 +1,110 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd failed/checkstyle/checkstyle
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export DESC="java 8 compile"
+$ export CMD="javac \$(grep -rl --include='*.java' '//Compilable with Java8' src/test/resources-noncompilable)"
+$ export COVERAGE_CMD=""
+
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:1942ff80[0K$ Installing caching utilities
+
+travis_time:end:1942ff80:start=1600516579910761000,finish=1600516580334766017,duration=424005017[0Ktravis_time:start:08439161[0K
+travis_time:end:08439161:start=1600516580348639956,finish=1600516580358052537,duration=9412581[0Ktravis_time:start:21c074be[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:21c074be:start=1600516580368905708,finish=1600516581154268277,duration=785362569[0Ktravis_time:start:068365c0[0K
+travis_time:end:068365c0:start=1600516581165275057,finish=1600516581174679578,duration=9404521[0Ktravis_time:start:13577cb8[0K[32;1madding /home/travis/.m2 to cache[0m
+
+travis_time:end:13577cb8:start=1600516581185651877,finish=1600516581972694984,duration=787043107[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:install[0Ktravis_time:start:0341ae63[0K$ 
+
+travis_time:end:0341ae63:start=1600516582264060815,finish=1600516582273889483,duration=9828668[0Ktravis_fold:end:install[0Ktravis_time:start:19633000[0K$ eval $CMD
+
+travis_time:end:19633000:start=1600516582284752462,finish=1600516583146394765,duration=861642303[0K
+[31;1mThe command "eval $CMD" exited with 1.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:212829be[0K
+travis_time:end:212829be:start=1600516583157886755,finish=1600516583167520719,duration=9633964[0Ktravis_time:start:0b789e6c[0K[32;1mchanges detected, packing new archive[0m
+
+travis_time:end:0b789e6c:start=1600516583178388821,finish=1600516585016293240,duration=1837904419[0Ktravis_fold:end:cache.2[0K
+Done. Your build exited with 1.

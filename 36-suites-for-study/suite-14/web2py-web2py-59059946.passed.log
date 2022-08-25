@@ -1,0 +1,162 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: python
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+$ cd passed/web2py/web2py
+travis_fold:start:git.submodule[0Ktravis_time:start:15239049[0K$ git submodule update --init --recursive
+Submodule 'gluon/packages/dal' (https://github.com/web2py/pydal.git) registered for path 'gluon/packages/dal'
+Submodule path 'gluon/packages/dal': checked out '5d5357476164782936b202a50deef86387164fe7'
+
+travis_time:end:15239049:start=1600231106453461084,finish=1600231110339299920,duration=3885838836[0Ktravis_fold:end:git.submodule[0Ktravis_time:start:0c1ad71d[0K$ source ~/virtualenv/python2.6/bin/activate
+
+travis_time:end:0c1ad71d:start=1600231110515832179,finish=1600231110526262007,duration=10429828[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:23e64317[0K$ Installing caching utilities
+
+travis_time:end:23e64317:start=1600231110976645604,finish=1600231111037594317,duration=60948713[0Ktravis_time:start:14e9d52c[0K
+travis_time:end:14e9d52c:start=1600231111053991723,finish=1600231111065084421,duration=11092698[0Ktravis_time:start:0d567c83[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:0d567c83:start=1600231111077308390,finish=1600231111948982335,duration=871673945[0Ktravis_time:start:0cf164aa[0K
+travis_time:end:0cf164aa:start=1600231111961426961,finish=1600231111971984455,duration=10557494[0Ktravis_time:start:0136426d[0K[32;1madding /home/travis/.pip-cache to cache[0m
+[32;1mcreating directory /home/travis/.pip-cache[0m
+
+travis_time:end:0136426d:start=1600231111983941718,finish=1600231112833017790,duration=849076072[0Ktravis_fold:end:cache.1[0K$ python --version
+$ pip --version
+pip 6.0.7 from /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages (python 2.6)
+travis_fold:start:install[0Ktravis_time:start:39dbb369[0K$ pip install -e .
+Obtaining file:///home/travis/build/passed/web2py/web2py
+    /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages/setuptools/dist.py:292: UserWarning: The version specified ('2.10.3-stable+timestamp.2015.04.02.16.28.49') is an invalid version, this may not work as expected with newer versions of setuptools, pip, and PyPI. Please see PEP 440 for more details.
+      "details." % self.metadata.version
+    /home/travis/build/passed/web2py/web2py/setup.py:12: DeprecationWarning: Parameters to load are deprecated.  Call .resolve and .require separately.
+      """
+Installing collected packages: web2py
+  Running setup.py develop for web2py
+    /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages/setuptools/dist.py:292: UserWarning: The version specified ('2.10.3-stable+timestamp.2015.04.02.16.28.49') is an invalid version, this may not work as expected with newer versions of setuptools, pip, and PyPI. Please see PEP 440 for more details.
+      "details." % self.metadata.version
+    /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages/pkg_resources/__init__.py:2510: PEP440Warning: 'web2py (2.10.3-stable-timestamp.2015.04.02.16.28.49)' is being parsed as a legacy, non PEP 440, version. You may find odd behavior and sort order. In particular it will be sorted as less than 0.0. It is recommend to migrate to PEP 440 compatible versions.
+      PEP440Warning,
+    /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages/setuptools/command/egg_info.py:171: DeprecationWarning: Parameters to load are deprecated.  Call .resolve and .require separately.
+      writer = ep.load(installer=installer)
+    Creating /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages/web2py.egg-link (link to .)
+    Adding web2py 2.10.3-stable-timestamp.2015.04.02.16.28.49 to easy-install.pth file
+    Installed /home/travis/build/passed/web2py/web2py
+Successfully installed web2py
+
+travis_time:end:39dbb369:start=1600231113193294706,finish=1600231116141887407,duration=2948592701[0Ktravis_fold:end:install[0Ktravis_fold:start:before_script.1[0Ktravis_time:start:198af538[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install --download-cache $HOME/.pip-cache unittest2==1.0.1; fi
+DEPRECATION: --download-cache has been deprecated and will be removed in the future. Pip now automatically uses and configures its cache.
+Collecting unittest2==1.0.1
+  Downloading https://files.pythonhosted.org/packages/e3/f0/cb7c6303f03509045e1ec167db2b5a01d36bb616d710e895038bdb509fff/unittest2-1.0.1-py2.py3-none-any.whl (95kB)
+Requirement already satisfied (use --upgrade to upgrade): argparse in /home/travis/virtualenv/python2.6.9/lib/python2.6/site-packages (from unittest2==1.0.1)
+Collecting traceback2 (from unittest2==1.0.1)
+  Downloading https://files.pythonhosted.org/packages/17/0a/6ac05a3723017a967193456a2efa0aa9ac4b51456891af1e2353bb9de21e/traceback2-1.4.0-py2.py3-none-any.whl
+Collecting six>=1.4 (from unittest2==1.0.1)
+  Downloading https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl
+Collecting linecache2 (from traceback2->unittest2==1.0.1)
+  Downloading https://files.pythonhosted.org/packages/c7/a3/c5da2a44c85bfbb6eebcfc1dde24933f8704441b98fdde6528f4831757a6/linecache2-1.0.0-py2.py3-none-any.whl
+Installing collected packages: linecache2, six, traceback2, unittest2
+  Compiling /tmp/pip-build-fVqDUK/linecache2/linecache2/tests/inspect_fodder2.py ...
+  
+  
+
+
+
+
+Successfully installed linecache2-1.0.0 six-1.15.0 traceback2-1.4.0 unittest2-1.0.1
+
+travis_time:end:198af538:start=1600231116154503886,finish=1600231117464713117,duration=1310209231[0Ktravis_fold:end:before_script.1[0Ktravis_fold:start:before_script.2[0Ktravis_time:start:05553fc4[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then pip install --download-cache $HOME/.pip-cache coverage==4.0a5; fi;
+
+travis_time:end:05553fc4:start=1600231117475832530,finish=1600231117484976763,duration=9144233[0Ktravis_fold:end:before_script.2[0Ktravis_fold:start:before_script.3[0Ktravis_time:start:1094b096[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then pip install --download-cache $HOME/.pip-cache python-coveralls==2.5.0; fi
+
+travis_time:end:1094b096:start=1600231117495677420,finish=1600231117504305123,duration=8627703[0Ktravis_fold:end:before_script.3[0Ktravis_time:start:080efa76[0K$ export COVERAGE_PROCESS_START=gluon/tests/coverage.ini; ./web2py.py --run_system_tests --with_coverage
+Sleeping before web2py starts...
+1 ...
+
+Changed session ID welcome
+Changed session ID welcome
+Changed session ID welcome
+Changed session ID welcome
+Killing webserver
+
+travis_time:end:080efa76:start=1600231117514860013,finish=1600231125788140003,duration=8273279990[0K
+[32;1mThe command "export COVERAGE_PROCESS_START=gluon/tests/coverage.ini; ./web2py.py --run_system_tests --with_coverage" exited with 0.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:159637a0[0K
+travis_time:end:159637a0:start=1600231125801046514,finish=1600231125811975058,duration=10928544[0Ktravis_time:start:11e7c316[0K[32;1mchanges detected, packing new archive[0m
+
+travis_time:end:11e7c316:start=1600231125823696241,finish=1600231127633222963,duration=1809526722[0Ktravis_fold:end:cache.2[0Ktravis_fold:start:after_success.1[0Ktravis_time:start:01f9df14[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then coverage combine; fi
+
+travis_time:end:01f9df14:start=1600231127644521311,finish=1600231127653930201,duration=9408890[0Ktravis_fold:end:after_success.1[0Ktravis_fold:start:after_success.2[0Ktravis_time:start:00573282[0K$ if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then coveralls --config_file=gluon/tests/coverage.ini; fi
+
+travis_time:end:00573282:start=1600231127666805536,finish=1600231127676078175,duration=9272639[0Ktravis_fold:end:after_success.2[0K
+Done. Your build exited with 0.
+web2py Web Framework
+Created by Massimo Di Pierro, Copyright 2007-2020
+Version 2.10.3-stable+timestamp.2015.04.02.16.28.49
+Database drivers available: sqlite3, imaplib, pyodbc, pymysql, pg8000
+
+please visit:
+	http://127.0.0.1:8000/
+use "kill -SIGTERM 1349" to shutdown the web2py server
+
+

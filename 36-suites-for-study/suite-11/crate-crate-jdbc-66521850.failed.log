@@ -1,0 +1,341 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 52.206.222.245 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 52.206.222.245 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd failed/crate/crate-jdbc
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export _JAVA_OPTIONS="-Xmx1g -XX:MaxPermSize=256m"
+
+$ export TERM=dumb
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:1bf13dc4[0K$ Installing caching utilities
+
+travis_time:end:1bf13dc4:start=1598126507222928682,finish=1598126507471234418,duration=248305736[0Ktravis_time:start:2ad4ac25[0K
+travis_time:end:2ad4ac25:start=1598126507485407208,finish=1598126507495320305,duration=9913097[0Ktravis_time:start:04cdf268[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:04cdf268:start=1598126507507136284,finish=1598126508296569765,duration=789433481[0Ktravis_time:start:160373ea[0K
+travis_time:end:160373ea:start=1598126508308147260,finish=1598126508317353072,duration=9205812[0Ktravis_time:start:002c752b[0K[32;1madding /home/travis/.m2 to cache[0m
+
+travis_time:end:002c752b:start=1598126508329043891,finish=1598126509142369504,duration=813325613[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:install[0Ktravis_time:start:114de392[0K$ ./gradlew assemble
+Downloading https://services.gradle.org/distributions/gradle-2.2.1-bin.zip
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping /home/travis/.gradle/wrapper/dists/gradle-2.2.1-bin/3rn023ng4778ktj66tonmgpbv/gradle-2.2.1-bin.zip to /home/travis/.gradle/wrapper/dists/gradle-2.2.1-bin/3rn023ng4778ktj66tonmgpbv
+Set executable permissions for: /home/travis/.gradle/wrapper/dists/gradle-2.2.1-bin/3rn023ng4778ktj66tonmgpbv/gradle-2.2.1/bin/gradle
+Download https://jcenter.bintray.com/io/crate/crate-client/0.49.2/crate-client-0.49.2.pom
+Download https://jcenter.bintray.com/io/crate/crate-client/0.49.2/crate-client-0.49.2.jar
+:compileJava
+:processResources UP-TO-DATE
+:classes
+:getVersion
+gitTag: 2.4.0-2-g479af42
+version: 1.6.0-479af42
+:jar
+:jarStandalone
+:myJavadocs
+2 warnings
+:javadocJar
+:javadocJarStandalone
+:sourceJar
+:sourceJarStandalone
+:assemble
+
+BUILD SUCCESSFUL
+
+Total time: 41.258 secs
+
+travis_time:end:114de392:start=1598126509404380643,finish=1598126551123393278,duration=41719012635[0Ktravis_fold:end:install[0Ktravis_time:start:1b6e3e9c[0K$ ./gradlew test -s
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:downloadCrateRelease
+:compileTestJava
+Download https://repo1.maven.org/maven2/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.pom
+Download https://repo1.maven.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+Download https://repo1.maven.org/maven2/junit/junit/4.11/junit-4.11.pom
+Download https://repo1.maven.org/maven2/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.1.11/randomizedtesting-runner-2.1.11.pom
+Download https://repo1.maven.org/maven2/com/carrotsearch/randomizedtesting/randomizedtesting-parent/2.1.11/randomizedtesting-parent-2.1.11.pom
+Download https://repo1.maven.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+Download https://repo1.maven.org/maven2/org/mockito/mockito-core/1.10.8/mockito-core-1.10.8.pom
+Download https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+Download https://repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.pom
+Download https://repo1.maven.org/maven2/org/objenesis/objenesis-parent/2.1/objenesis-parent-2.1.pom
+Download https://repo1.maven.org/maven2/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar
+Download https://repo1.maven.org/maven2/junit/junit/4.11/junit-4.11.jar
+Download https://repo1.maven.org/maven2/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.1.11/randomizedtesting-runner-2.1.11.jar
+Download https://repo1.maven.org/maven2/org/mockito/mockito-core/1.10.8/mockito-core-1.10.8.jar
+Download https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+Download https://repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.jar
+:processTestResources UP-TO-DATE
+:testClasses
+:test
+
+io.crate.client.jdbc.integrationtests.CrateDriverTest STANDARD_OUT
+    Starting crate server process...
+
+io.crate.client.jdbc.integrationtests.CrateDriverTest STANDARD_ERROR
+    log4j:WARN No appenders could be found for logger (io.crate.shade.org.elasticsearch.common.compress.lzf).
+    log4j:WARN Please initialize the log4j system properly.
+    log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+
+io.crate.client.jdbc.integrationtests.CrateDriverTest STANDARD_OUT
+    Picked up _JAVA_OPTIONS: -Xmx1g -XX:MaxPermSize=256m
+    Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+    [2020-08-22 20:03:04,319][INFO ][node                     ] [Abraxas] version[1.4.4], pid[1534], build[${build/NA]
+    [2020-08-22 20:03:04,320][INFO ][node                     ] [Abraxas] initializing ...
+    [2020-08-22 20:03:04,432][INFO ][io.crate.plugin          ] [Abraxas] plugins loaded: [] 
+    [2020-08-22 20:03:04,434][INFO ][plugins                  ] [Abraxas] loaded [crate-core], sites [crate-admin]
+    [2020-08-22 20:03:04,458][INFO ][io.crate.plugin          ] [Abraxas] plugins loaded: [] 
+    [2020-08-22 20:03:04,743][INFO ][io.crate.module          ] [Abraxas] configuring crate. version: 0.49.2
+    [2020-08-22 20:03:07,455][INFO ][io.crate.rest            ] [Abraxas] Elasticsearch HTTP REST API not enabled
+    [2020-08-22 20:03:07,525][INFO ][node                     ] [Abraxas] initialized
+    [2020-08-22 20:03:07,525][INFO ][node                     ] [Abraxas] starting ...
+    [2020-08-22 20:03:07,526][INFO ][io.crate.blob.BlobService] [Abraxas] BlobService.doStart() io.crate.blob.BlobService@74a820bf
+    [2020-08-22 20:03:07,632][INFO ][http                     ] [Abraxas] bound_address {inet[/127.0.0.1:34489]}, publish_address {inet[/127.0.0.1:34489]}
+    [2020-08-22 20:03:07,743][INFO ][transport                ] [Abraxas] bound_address {inet[/127.0.0.1:45049]}, publish_address {inet[/127.0.0.1:45049]}
+    [2020-08-22 20:03:07,771][INFO ][discovery                ] [Abraxas] driver/CBxQ8poPQ3K4st2mGDAkAw
+    [2020-08-22 20:03:10,802][INFO ][cluster.service          ] [Abraxas] new_master [Abraxas][CBxQ8poPQ3K4st2mGDAkAw][48617a45c21d][inet[/127.0.0.1:45049]]{http_address=http://127.0.0.1:34489}, reason: zen-disco-join (elected_as_master)
+    [2020-08-22 20:03:10,816][INFO ][node                     ] [Abraxas] started
+
+io.crate.client.jdbc.integrationtests.CrateDriverTest > testDriverRegistration STANDARD_OUT
+    [2020-08-22 20:03:10,861][INFO ][gateway                  ] [Abraxas] recovered [0] indices into cluster_state
+
+io.crate.client.jdbc.integrationtests.CrateDriverTest STANDARD_OUT
+    Stopping crate server process...
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest STANDARD_OUT
+    Starting crate server process...
+    Picked up _JAVA_OPTIONS: -Xmx1g -XX:MaxPermSize=256m
+    Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+    [2020-08-22 20:03:11,841][INFO ][node                     ] [Warpath] version[1.4.4], pid[2177], build[${build/NA]
+    [2020-08-22 20:03:11,841][INFO ][node                     ] [Warpath] initializing ...
+    [2020-08-22 20:03:11,936][INFO ][io.crate.plugin          ] [Warpath] plugins loaded: [] 
+    [2020-08-22 20:03:11,937][INFO ][plugins                  ] [Warpath] loaded [crate-core], sites [crate-admin]
+    [2020-08-22 20:03:11,960][INFO ][io.crate.plugin          ] [Warpath] plugins loaded: [] 
+    [2020-08-22 20:03:12,206][INFO ][io.crate.module          ] [Warpath] configuring crate. version: 0.49.2
+    [2020-08-22 20:03:14,941][INFO ][io.crate.rest            ] [Warpath] Elasticsearch HTTP REST API not enabled
+    [2020-08-22 20:03:15,012][INFO ][node                     ] [Warpath] initialized
+    [2020-08-22 20:03:15,013][INFO ][node                     ] [Warpath] starting ...
+    [2020-08-22 20:03:15,014][INFO ][io.crate.blob.BlobService] [Warpath] BlobService.doStart() io.crate.blob.BlobService@74a820bf
+    [2020-08-22 20:03:15,089][INFO ][http                     ] [Warpath] bound_address {inet[/127.0.0.1:45555]}, publish_address {inet[/127.0.0.1:45555]}
+    [2020-08-22 20:03:15,171][INFO ][transport                ] [Warpath] bound_address {inet[/127.0.0.1:46427]}, publish_address {inet[/127.0.0.1:46427]}
+    [2020-08-22 20:03:15,186][INFO ][discovery                ] [Warpath] jdbc/e4tbIudeQiqTLiFfg8osXQ
+    [2020-08-22 20:03:18,230][INFO ][cluster.service          ] [Warpath] new_master [Warpath][e4tbIudeQiqTLiFfg8osXQ][48617a45c21d][inet[/127.0.0.1:46427]]{http_address=http://127.0.0.1:45555}, reason: zen-disco-join (elected_as_master)
+    [2020-08-22 20:03:18,241][INFO ][node                     ] [Warpath] started
+    [2020-08-22 20:03:18,294][INFO ][gateway                  ] [Warpath] recovered [0] indices into cluster_state
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testException STANDARD_OUT
+    [2020-08-22 20:03:18,971][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:19,292][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testGetSchemas STANDARD_OUT
+    [2020-08-22 20:03:19,522][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:19,610][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:19,661][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testExecuteBatchPreparedStatementFailSyntax STANDARD_OUT
+    [2020-08-22 20:03:19,846][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:19,903][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:19,951][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+    [2020-08-22 20:03:20,088][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testSelectWhenNothingMatches STANDARD_OUT
+    [2020-08-22 20:03:20,146][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:20,198][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testExecuteUpdateWhenNothingMatches STANDARD_OUT
+    [2020-08-22 20:03:20,359][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:20,401][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:20,442][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testConnectionWithCustomSchema STANDARD_OUT
+    [2020-08-22 20:03:20,556][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:20,601][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:20,656][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+    [2020-08-22 20:03:20,757][INFO ][cluster.metadata         ] [Warpath] [foo.t] creating index, cause [api], shards [5]/[0], mappings [default]
+    [2020-08-22 20:03:20,920][INFO ][cluster.metadata         ] [Warpath] [bar.t] creating index, cause [api], shards [5]/[0], mappings [default]
+    [2020-08-22 20:03:21,147][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:21,159][INFO ][cluster.metadata         ] [Warpath] [foo.t] deleting index
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testExcludeNestedColumns STANDARD_OUT
+    [2020-08-22 20:03:21,250][INFO ][cluster.metadata         ] [Warpath] [bar.t] deleting index
+    [2020-08-22 20:03:21,328][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:21,369][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testExcludeNestedColumns FAILED
+    java.lang.AssertionError at CrateJDBCIntegrationTest.java:224
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testExecuteBatchPreparedStatementFailOne STANDARD_OUT
+    [2020-08-22 20:03:21,461][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:21,520][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:21,571][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+    [2020-08-22 20:03:21,688][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testExecuteBatchStatement STANDARD_OUT
+    [2020-08-22 20:03:21,833][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:21,866][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testTypesResponseNoResult STANDARD_OUT
+    [2020-08-22 20:03:21,980][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:22,024][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:22,072][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testSelectUsingPreparedStatement STANDARD_OUT
+    [2020-08-22 20:03:22,148][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:22,188][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:22,220][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+    [2020-08-22 20:03:22,303][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testSelectAllTypes STANDARD_OUT
+    [2020-08-22 20:03:22,350][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:22,397][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testExecuteBatchPreparedStatement STANDARD_OUT
+    [2020-08-22 20:03:22,534][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:22,587][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:22,641][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testExecuteBatchPreparedStatementFailBulkTypes STANDARD_OUT
+    [2020-08-22 20:03:22,767][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:22,832][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:22,868][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest > testExecuteBatchStatementFail STANDARD_OUT
+    [2020-08-22 20:03:22,974][INFO ][cluster.metadata         ] [Warpath] [test] deleting index
+    [2020-08-22 20:03:23,024][INFO ][cluster.metadata         ] [Warpath] [test] creating index, cause [api], shards [1]/[0], mappings [default]
+    [2020-08-22 20:03:23,061][INFO ][cluster.metadata         ] [Warpath] [test] update_mapping [default] (dynamic)
+
+io.crate.client.jdbc.integrationtests.CrateJDBCIntegrationTest STANDARD_OUT
+    Stopping crate server process...
+
+io.crate.client.jdbc.integrationtests.CrateJDBCMultiServerIntegrationTest STANDARD_OUT
+    Starting crate server process...
+    Picked up _JAVA_OPTIONS: -Xmx1g -XX:MaxPermSize=256m
+    Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+    [2020-08-22 20:03:24,028][INFO ][node                     ] [Sweetface] version[1.4.4], pid[4186], build[${build/NA]
+    [2020-08-22 20:03:24,028][INFO ][node                     ] [Sweetface] initializing ...
+    [2020-08-22 20:03:24,123][INFO ][io.crate.plugin          ] [Sweetface] plugins loaded: [] 
+    [2020-08-22 20:03:24,125][INFO ][plugins                  ] [Sweetface] loaded [crate-core], sites [crate-admin]
+    [2020-08-22 20:03:24,148][INFO ][io.crate.plugin          ] [Sweetface] plugins loaded: [] 
+    [2020-08-22 20:03:24,405][INFO ][io.crate.module          ] [Sweetface] configuring crate. version: 0.49.2
+    [2020-08-22 20:03:26,919][INFO ][io.crate.rest            ] [Sweetface] Elasticsearch HTTP REST API not enabled
+    [2020-08-22 20:03:26,987][INFO ][node                     ] [Sweetface] initialized
+    [2020-08-22 20:03:26,988][INFO ][node                     ] [Sweetface] starting ...
+    [2020-08-22 20:03:26,988][INFO ][io.crate.blob.BlobService] [Sweetface] BlobService.doStart() io.crate.blob.BlobService@5a30722c
+    [2020-08-22 20:03:27,063][INFO ][http                     ] [Sweetface] bound_address {inet[/127.0.0.1:39599]}, publish_address {inet[/127.0.0.1:39599]}
+    [2020-08-22 20:03:27,160][INFO ][transport                ] [Sweetface] bound_address {inet[/127.0.0.1:44341]}, publish_address {inet[/127.0.0.1:44341]}
+    [2020-08-22 20:03:27,175][INFO ][discovery                ] [Sweetface] MultiServerJDBCTest/s1sjzHdEQVOD41Kcrnctug
+    [2020-08-22 20:03:30,339][INFO ][cluster.service          ] [Sweetface] new_master [Sweetface][s1sjzHdEQVOD41Kcrnctug][48617a45c21d][inet[/127.0.0.1:44341]]{http_address=http://127.0.0.1:39599}, reason: zen-disco-join (elected_as_master)
+    [2020-08-22 20:03:30,354][INFO ][node                     ] [Sweetface] started
+    [2020-08-22 20:03:30,424][INFO ][gateway                  ] [Sweetface] recovered [0] indices into cluster_state
+    Starting crate server process...
+    Picked up _JAVA_OPTIONS: -Xmx1g -XX:MaxPermSize=256m
+    Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+    [2020-08-22 20:03:30,985][INFO ][node                     ] [Pete Wisdom] version[1.4.4], pid[4533], build[${build/NA]
+    [2020-08-22 20:03:30,986][INFO ][node                     ] [Pete Wisdom] initializing ...
+    [2020-08-22 20:03:31,085][INFO ][io.crate.plugin          ] [Pete Wisdom] plugins loaded: [] 
+    [2020-08-22 20:03:31,087][INFO ][plugins                  ] [Pete Wisdom] loaded [crate-core], sites [crate-admin]
+    [2020-08-22 20:03:31,110][INFO ][io.crate.plugin          ] [Pete Wisdom] plugins loaded: [] 
+    [2020-08-22 20:03:31,382][INFO ][io.crate.module          ] [Pete Wisdom] configuring crate. version: 0.49.2
+    [2020-08-22 20:03:34,210][INFO ][io.crate.rest            ] [Pete Wisdom] Elasticsearch HTTP REST API not enabled
+    [2020-08-22 20:03:34,294][INFO ][node                     ] [Pete Wisdom] initialized
+    [2020-08-22 20:03:34,294][INFO ][node                     ] [Pete Wisdom] starting ...
+    [2020-08-22 20:03:34,295][INFO ][io.crate.blob.BlobService] [Pete Wisdom] BlobService.doStart() io.crate.blob.BlobService@5a30722c
+    [2020-08-22 20:03:34,379][INFO ][http                     ] [Pete Wisdom] bound_address {inet[/127.0.0.1:39739]}, publish_address {inet[/127.0.0.1:39739]}
+    [2020-08-22 20:03:34,458][INFO ][transport                ] [Pete Wisdom] bound_address {inet[/127.0.0.1:33763]}, publish_address {inet[/127.0.0.1:33763]}
+    [2020-08-22 20:03:34,472][INFO ][discovery                ] [Pete Wisdom] MultiServerJDBCTest/OXjJ6CHzQvun71vWhS5s3w
+    [2020-08-22 20:03:37,596][INFO ][cluster.service          ] [Pete Wisdom] detected_master [Sweetface][s1sjzHdEQVOD41Kcrnctug][48617a45c21d][inet[/127.0.0.1:44341]]{http_address=http://127.0.0.1:39599}, added {[Sweetface][s1sjzHdEQVOD41Kcrnctug][48617a45c21d][inet[/127.0.0.1:44341]]{http_address=http://127.0.0.1:39599},}, reason: zen-disco-receive(from master [[Sweetface][s1sjzHdEQVOD41Kcrnctug][48617a45c21d][inet[/127.0.0.1:44341]]{http_address=http://127.0.0.1:39599}])
+    [2020-08-22 20:03:37,574][INFO ][cluster.service          ] [Sweetface] added {[Pete Wisdom][OXjJ6CHzQvun71vWhS5s3w][48617a45c21d][inet[/127.0.0.1:33763]]{http_address=http://127.0.0.1:39739},}, reason: zen-disco-receive(join from node[[Pete Wisdom][OXjJ6CHzQvun71vWhS5s3w][48617a45c21d][inet[/127.0.0.1:33763]]{http_address=http://127.0.0.1:39739}])
+    Stopping crate server process...
+    [2020-08-22 20:03:39,093][INFO ][cluster.service          ] [Sweetface] removed {[Pete Wisdom][OXjJ6CHzQvun71vWhS5s3w][48617a45c21d][inet[/127.0.0.1:33763]]{http_address=http://127.0.0.1:39739},}, reason: zen-disco-node_left([Pete Wisdom][OXjJ6CHzQvun71vWhS5s3w][48617a45c21d][inet[/127.0.0.1:33763]]{http_address=http://127.0.0.1:39739})
+    Stopping crate server process...
+:test FAILED
+
+BUILD FAILED
+
+Total time: 1 mins 10.345 secs
+
+travis_time:end:1b6e3e9c:start=1598126551135842910,finish=1598126621933893535,duration=70798050625[0K
+[31;1mThe command "./gradlew test -s" exited with 1.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:00d9af4c[0K
+travis_time:end:00d9af4c:start=1598126621946369689,finish=1598126621955504625,duration=9134936[0Ktravis_time:start:15ff50d0[0K[32;1mchanges detected, packing new archive[0m
+
+travis_time:end:15ff50d0:start=1598126621966376554,finish=1598126623848859261,duration=1882482707[0Ktravis_fold:end:cache.2[0K
+Done. Your build exited with 1.

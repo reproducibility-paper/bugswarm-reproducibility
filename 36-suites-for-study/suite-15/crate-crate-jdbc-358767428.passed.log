@@ -1,0 +1,994 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: trusty
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Tue Dec  5 20:11:19 UTC 2017
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 14.04.5 LTS
+Release:	14.04
+Codename:	trusty
+[34m[1mCookbooks Version[0m
+7c2c6a6 https://github.com/travis-ci/travis-cookbooks/tree/7c2c6a6
+[34m[1mgit version[0m
+git version 2.15.1
+[34m[1mbash version[0m
+GNU bash, version 4.3.11(1)-release (x86_64-pc-linux-gnu)
+[34m[1mgcc version[0m
+gcc (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mdocker version[0m
+Client:
+ Version:      17.09.0-ce
+ API version:  1.32
+ Go version:   go1.8.3
+ Git commit:   afdb6d4
+ Built:        Tue Sep 26 22:39:28 2017
+ OS/Arch:      linux/amd64
+[34m[1mclang version[0m
+clang version 5.0.0 (tags/RELEASE_500/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /usr/local/clang-5.0.0/bin
+[34m[1mjq version[0m
+jq-1.5
+[34m[1mbats version[0m
+Bats 0.4.0
+[34m[1mshellcheck version[0m
+0.4.6
+[34m[1mshfmt version[0m
+v2.0.0
+[34m[1mccache version[0m
+ccache version 3.1.9
+
+Copyright (C) 2002-2007 Andrew Tridgell
+Copyright (C) 2009-2011 Joel Rosdahl
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 3 of the License, or (at your option) any later
+version.
+[34m[1mcmake version[0m
+cmake version 3.9.2
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+[34m[1mheroku version[0m
+heroku-cli/6.14.39-addc925 (linux-x64) node-v9.2.0
+[34m[1mimagemagick version[0m
+Version: ImageMagick 6.7.7-10 2017-07-31 Q16 http://www.imagemagick.org
+[34m[1mmd5deep version[0m
+4.2
+[34m[1mmercurial version[0m
+Mercurial Distributed SCM (version 4.2.2)
+(see https://mercurial-scm.org for more information)
+
+Copyright (C) 2005-2017 Matt Mackall and others
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[34m[1mmysql version[0m
+mysql  Ver 14.14 Distrib 5.6.33, for debian-linux-gnu (x86_64) using  EditLine wrapper
+[34m[1mopenssl version[0m
+OpenSSL 1.0.1f 6 Jan 2014
+[34m[1mpacker version[0m
+Packer v1.0.2
+
+Your version of Packer is out of date! The latest version
+is 1.1.2. You can update by downloading from www.packer.io
+[34m[1mpostgresql client version[0m
+psql (PostgreSQL) 9.6.6
+[34m[1mragel version[0m
+Ragel State Machine Compiler version 6.8 Feb 2013
+Copyright (c) 2001-2009 by Adrian Thurston
+[34m[1msubversion version[0m
+svn, version 1.8.8 (r1568071)
+   compiled Aug 10 2017, 17:20:39 on x86_64-pc-linux-gnu
+
+Copyright (C) 2013 The Apache Software Foundation.
+This software consists of contributions made by many people;
+see the NOTICE file for more information.
+Subversion is open source software, see http://subversion.apache.org/
+
+The following repository access (RA) modules are available:
+
+* ra_svn : Module for accessing a repository using the svn network protocol.
+  - with Cyrus SASL authentication
+  - handles 'svn' scheme
+* ra_local : Module for accessing a repository on local disk.
+  - handles 'file' scheme
+* ra_serf : Module for accessing a repository via WebDAV protocol using serf.
+  - using serf 1.3.3
+  - handles 'http' scheme
+  - handles 'https' scheme
+
+[34m[1msudo version[0m
+Sudo version 1.8.9p5
+Configure options: --prefix=/usr -v --with-all-insults --with-pam --with-fqdn --with-logging=syslog --with-logfac=authpriv --with-env-editor --with-editor=/usr/bin/editor --with-timeout=15 --with-password-timeout=0 --with-passprompt=[sudo] password for %p:  --without-lecture --with-tty-tickets --disable-root-mailer --enable-admin-flag --with-sendmail=/usr/sbin/sendmail --with-timedir=/var/lib/sudo --mandir=/usr/share/man --libexecdir=/usr/lib/sudo --with-sssd --with-sssd-lib=/usr/lib/x86_64-linux-gnu --with-selinux
+Sudoers policy plugin version 1.8.9p5
+Sudoers file grammar version 43
+
+Sudoers path: /etc/sudoers
+Authentication methods: 'pam'
+Syslog facility if syslog is being used for logging: authpriv
+Syslog priority to use when user authenticates successfully: notice
+Syslog priority to use when user authenticates unsuccessfully: alert
+Send mail if the user is not in sudoers
+Use a separate timestamp for each user/tty combo
+Lecture user the first time they run sudo
+Root may run sudo
+Allow some information gathering to give useful error messages
+Require fully-qualified hostnames in the sudoers file
+Visudo will honor the EDITOR environment variable
+Set the LOGNAME and USER environment variables
+Length at which to wrap log file lines (0 for no wrap): 80
+Authentication timestamp timeout: 15.0 minutes
+Password prompt timeout: 0.0 minutes
+Number of tries to enter a password: 3
+Umask to use or 0777 to use user's: 022
+Path to mail program: /usr/sbin/sendmail
+Flags for mail program: -t
+Address to send mail to: root
+Subject line for mail messages: *** SECURITY information for %h ***
+Incorrect password message: Sorry, try again.
+Path to authentication timestamp dir: /var/lib/sudo
+Default password prompt: [sudo] password for %p: 
+Default user to run commands as: root
+Value to override user's $PATH with: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+Path to the editor for use by visudo: /usr/bin/editor
+When to require a password for 'list' pseudocommand: any
+When to require a password for 'verify' pseudocommand: all
+File descriptors >= 3 will be closed before executing a command
+Environment variables to check for sanity:
+	TZ
+	TERM
+	LINGUAS
+	LC_*
+	LANGUAGE
+	LANG
+	COLORTERM
+Environment variables to remove:
+	RUBYOPT
+	RUBYLIB
+	PYTHONUSERBASE
+	PYTHONINSPECT
+	PYTHONPATH
+	PYTHONHOME
+	TMPPREFIX
+	ZDOTDIR
+	READNULLCMD
+	NULLCMD
+	FPATH
+	PERL5DB
+	PERL5OPT
+	PERL5LIB
+	PERLLIB
+	PERLIO_DEBUG 
+	JAVA_TOOL_OPTIONS
+	SHELLOPTS
+	GLOBIGNORE
+	PS4
+	BASH_ENV
+	ENV
+	TERMCAP
+	TERMPATH
+	TERMINFO_DIRS
+	TERMINFO
+	_RLD*
+	LD_*
+	PATH_LOCALE
+	NLSPATH
+	HOSTALIASES
+	RES_OPTIONS
+	LOCALDOMAIN
+	CDPATH
+	IFS
+Environment variables to preserve:
+	JAVA_HOME
+	TRAVIS
+	CI
+	DEBIAN_FRONTEND
+	XAUTHORIZATION
+	XAUTHORITY
+	PS2
+	PS1
+	PATH
+	LS_COLORS
+	KRB5CCNAME
+	HOSTNAME
+	HOME
+	DISPLAY
+	COLORS
+Locale to use while parsing sudoers: C
+Directory in which to store input/output logs: /var/log/sudo-io
+File in which to store the input/output log: %{seq}
+Add an entry to the utmp/utmpx file when allocating a pty
+PAM service name to use
+PAM service name to use for login shells
+Create a new PAM session for the command to run in
+Maximum I/O log sequence number: 0
+
+Local IP address and netmask pairs:
+	172.17.0.2/255.255.0.0
+
+Sudoers I/O plugin version 1.8.9p5
+[34m[1mgzip version[0m
+gzip 1.6
+Copyright (C) 2007, 2010, 2011 Free Software Foundation, Inc.
+Copyright (C) 1993 Jean-loup Gailly.
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Jean-loup Gailly.
+[34m[1mzip version[0m
+Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license.
+This is Zip 3.0 (July 5th 2008), by Info-ZIP.
+Currently maintained by E. Gordon.  Please send bug reports to
+the authors using the web page at www.info-zip.org; see README for details.
+
+Latest sources and executables are at ftp://ftp.info-zip.org/pub/infozip,
+as of above date; see http://www.info-zip.org/ for other sites.
+
+Compiled with gcc 4.8.2 for Unix (Linux ELF) on Oct 21 2013.
+
+Zip special compilation options:
+	USE_EF_UT_TIME       (store Universal Time)
+	BZIP2_SUPPORT        (bzip2 library version 1.0.6, 6-Sept-2010)
+	    bzip2 code and library copyright (c) Julian R Seward
+	    (See the bzip2 license for terms of use)
+	SYMLINK_SUPPORT      (symbolic links supported)
+	LARGE_FILE_SUPPORT   (can read and write large files on file system)
+	ZIP64_SUPPORT        (use Zip64 to store large files in archives)
+	UNICODE_SUPPORT      (store and read UTF-8 Unicode paths)
+	STORE_UNIX_UIDs_GIDs (store UID/GID sizes/values using new extra field)
+	UIDGID_NOT_16BIT     (old Unix 16-bit UID/GID extra field not used)
+	[encryption, version 2.91 of 05 Jan 2007] (modified for Zip 3)
+
+Encryption notice:
+	The encryption code of this program is not copyrighted and is
+	put in the public domain.  It was originally written in Europe
+	and, to the best of our knowledge, can be freely distributed
+	in both source and object forms from any country, including
+	the USA under License Exception TSU of the U.S. Export
+	Administration Regulations (section 740.13(e)) of 6 June 2002.
+
+Zip environment options:
+             ZIP:  [none]
+          ZIPOPT:  [none]
+[34m[1mvim version[0m
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Nov 24 2016 16:43:18)
+Included patches: 1-52
+Extra patches: 8.0.0056
+Modified by pkg-vim-maintainers@lists.alioth.debian.org
+Compiled by buildd@
+Huge version without GUI.  Features included (+) or not (-):
++acl             +farsi           +mouse_netterm   +syntax
++arabic          +file_in_path    +mouse_sgr       +tag_binary
++autocmd         +find_in_path    -mouse_sysmouse  +tag_old_static
+-balloon_eval    +float           +mouse_urxvt     -tag_any_white
+-browse          +folding         +mouse_xterm     -tcl
+++builtin_terms  -footer          +multi_byte      +terminfo
++byte_offset     +fork()          +multi_lang      +termresponse
++cindent         +gettext         -mzscheme        +textobjects
+-clientserver    -hangul_input    +netbeans_intg   +title
+-clipboard       +iconv           +path_extra      -toolbar
++cmdline_compl   +insert_expand   -perl            +user_commands
++cmdline_hist    +jumplist        +persistent_undo +vertsplit
++cmdline_info    +keymap          +postscript      +virtualedit
++comments        +langmap         +printer         +visual
++conceal         +libcall         +profile         +visualextra
++cryptv          +linebreak       +python          +viminfo
++cscope          +lispindent      -python3         +vreplace
++cursorbind      +listcmds        +quickfix        +wildignore
++cursorshape     +localmap        +reltime         +wildmenu
++dialog_con      -lua             +rightleft       +windows
++diff            +menu            -ruby            +writebackup
++digraphs        +mksession       +scrollbind      -X11
+-dnd             +modify_fname    +signs           -xfontset
+-ebcdic          +mouse           +smartindent     -xim
++emacs_tags      -mouseshape      -sniff           -xsmp
++eval            +mouse_dec       +startuptime     -xterm_clipboard
++ex_extra        +mouse_gpm       +statusline      -xterm_save
++extra_search    -mouse_jsbterm   -sun_workshop    -xpm
+   system vimrc file: "$VIM/vimrc"
+     user vimrc file: "$HOME/.vimrc"
+ 2nd user vimrc file: "~/.vim/vimrc"
+      user exrc file: "$HOME/.exrc"
+  fall-back for $VIM: "/usr/share/vim"
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1      
+Linking: gcc   -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl    -L/usr/lib/python2.7/config-x86_64-linux-gnu -lpython2.7 -lpthread -ldl -lutil -lm -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions      
+[34m[1miptables version[0m
+iptables v1.4.21
+[34m[1mcurl version[0m
+curl 7.35.0 (x86_64-pc-linux-gnu) libcurl/7.35.0 OpenSSL/1.0.1f zlib/1.2.8 libidn/1.28 librtmp/2.3
+[34m[1mwget version[0m
+GNU Wget 1.15 built on linux-gnu.
+[34m[1mrsync version[0m
+rsync  version 3.1.0  protocol version 31
+[34m[1mgimme version[0m
+v1.2.0
+[34m[1mnvm version[0m
+0.33.6
+[34m[1mperlbrew version[0m
+/home/travis/perl5/perlbrew/bin/perlbrew  - App::perlbrew/0.80
+[34m[1mphpenv version[0m
+rbenv 1.1.1-25-g6aa70b6
+[34m[1mrvm version[0m
+rvm 1.29.3 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+[34m[1mdefault ruby version[0m
+ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mElasticSearch version[0m
+5.5.0
+[34m[1mInstalled Firefox version[0m
+firefox 56.0.2
+[34m[1mMongoDB version[0m
+MongoDB 3.4.10
+[34m[1mPhantomJS version[0m
+2.1.1
+[34m[1mPre-installed PostgreSQL versions[0m
+9.2.24
+9.3.20
+9.4.15
+9.5.10
+9.6.6
+[34m[1mRabbitMQ Version[0m
+3.6.14
+[34m[1mRedis version[0m
+redis-server 4.0.6
+[34m[1mriak version[0m
+2.2.3
+[34m[1mPre-installed Go versions[0m
+1.7.4
+[34m[1mant version[0m
+Apache Ant(TM) version 1.9.3 compiled on April 8 2014
+[34m[1mmvn version[0m
+Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T07:58:13Z)
+Maven home: /usr/local/maven-3.5.2
+Java version: 1.8.0_151, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "4.4.0-101-generic", arch: "amd64", family: "unix"
+[34m[1mgradle version[0m
+
+------------------------------------------------------------
+Gradle 4.0.1
+------------------------------------------------------------
+
+Build time:   2017-07-07 14:02:41 UTC
+Revision:     38e5dc0f772daecca1d2681885d3d85414eb6826
+
+Groovy:       2.4.11
+Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015
+JVM:          1.8.0_151 (Oracle Corporation 25.151-b12)
+OS:           Linux 4.4.0-101-generic amd64
+
+[34m[1mlein version[0m
+Leiningen 2.8.1 on Java 1.8.0_151 Java HotSpot(TM) 64-Bit Server VM
+[34m[1mPre-installed Node.js versions[0m
+v4.8.6
+v6.12.0
+v6.12.1
+v8.9
+v8.9.1
+[34m[1mphpenv versions[0m
+  system
+  5.6
+* 5.6.32 (set by /home/travis/.phpenv/version)
+  7.0
+  7.0.25
+  7.1
+  7.1.11
+  hhvm
+  hhvm-stable
+[34m[1mcomposer --version[0m
+Composer version 1.5.2 2017-09-11 16:59:25
+[34m[1mPre-installed Ruby versions[0m
+ruby-2.2.7
+ruby-2.3.4
+ruby-2.4.1
+travis_fold:end:system_info[0K
+W: GPG error: http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 Release: The following signatures were invalid: KEYEXPIRED 1515625755
+W: The repository 'http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 Release' is not signed.
+W: GPG error: http://dl.google.com/linux/chrome/deb stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 78BD65473CB3BD13
+W: The repository 'http://dl.google.com/linux/chrome/deb stable InRelease' is not signed.
+W: There is no public key available for the following key IDs:
+78BD65473CB3BD13  
+W: GPG error: https://packagecloud.io/basho/riak/ubuntu trusty InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 960B2B2623A0BD5D
+W: The repository 'https://packagecloud.io/basho/riak/ubuntu trusty InRelease' is not signed.
+W: There is no public key available for the following key IDs:
+960B2B2623A0BD5D  
+W: GPG error: https://packagecloud.io/github/git-lfs/ubuntu trusty InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 6B05F25D762E3157
+W: The repository 'https://packagecloud.io/github/git-lfs/ubuntu trusty InRelease' is not signed.
+W: There is no public key available for the following key IDs:
+6B05F25D762E3157  
+W: GPG error: https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu trusty InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY F6609E60DC62814E
+W: The repository 'https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu trusty InRelease' is not signed.
+W: There is no public key available for the following key IDs:
+F6609E60DC62814E  
+W: http://ppa.launchpad.net/couchdb/stable/ubuntu/dists/trusty/Release.gpg: Signature by key 15866BAFD9BCC4F3C1E0DFC7D69548E1C17EAB57 uses weak digest algorithm (SHA1)
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd passed/crate/crate-jdbc
+travis_fold:start:git.submodule[0Ktravis_time:start:0449d1f8[0K$ git submodule update --init --recursive
+Submodule path 'pg/upstream': checked out '109ce6aa7a6895ce4573459d8baf1e4fa0bdc7b2'
+
+travis_time:end:0449d1f8:start=1600531707344055346,finish=1600531709406119870,duration=2062064524[0Ktravis_fold:end:git.submodule[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export CRATE_VERSION=0.56.4
+
+$ export TERM=dumb
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:12261684[0K$ Installing caching utilities
+
+travis_time:end:12261684:start=1600531710262729312,finish=1600531710338365409,duration=75636097[0Ktravis_time:start:19acbe18[0K
+travis_time:end:19acbe18:start=1600531710353774246,finish=1600531710364670621,duration=10896375[0Ktravis_time:start:0b0e7c64[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:0b0e7c64:start=1600531710377667519,finish=1600531711287537587,duration=909870068[0Ktravis_time:start:0140ded8[0K
+travis_time:end:0140ded8:start=1600531711299494069,finish=1600531711309658990,duration=10164921[0Ktravis_time:start:11d3cdb8[0K[32;1madding /home/travis/.m2 to cache[0m
+
+travis_time:end:11d3cdb8:start=1600531711324199335,finish=1600531712230349979,duration=906150644[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:install[0Ktravis_time:start:2910397e[0K$ JAVA_HOME=$(jdk_switcher home openjdk8) ./gradlew classes testClasses
+Downloading https://services.gradle.org/distributions/gradle-4.5.1-bin.zip
+.....................................................................
+Unzipping /home/travis/.gradle/wrapper/dists/gradle-4.5.1-bin/a5vbgfvpwtoqz8v2cdivxz28k/gradle-4.5.1-bin.zip to /home/travis/.gradle/wrapper/dists/gradle-4.5.1-bin/a5vbgfvpwtoqz8v2cdivxz28k
+Set executable permissions for: /home/travis/.gradle/wrapper/dists/gradle-4.5.1-bin/a5vbgfvpwtoqz8v2cdivxz28k/gradle-4.5.1/bin/gradle
+Starting a Gradle Daemon (subsequent builds will be faster)
+Download https://jcenter.bintray.com/com/github/jengelman/gradle/plugins/shadow/1.2.3/shadow-1.2.3.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm/5.0.3/asm-5.0.3.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-parent/5.0.3/asm-parent-5.0.3.pom
+Download https://jcenter.bintray.com/org/ow2/ow2/1.3/ow2-1.3.pom
+Download https://jcenter.bintray.com/commons-io/commons-io/2.4/commons-io-2.4.pom
+Download https://jcenter.bintray.com/org/apache/ant/ant/1.9.4/ant-1.9.4.pom
+Download https://jcenter.bintray.com/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.pom
+Download https://jcenter.bintray.com/org/jdom/jdom2/2.0.5/jdom2-2.0.5.pom
+Download https://jcenter.bintray.com/org/codehaus/groovy/groovy-backports-compat23/2.4.4/groovy-backports-compat23-2.4.4.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/25/commons-parent-25.pom
+Download https://jcenter.bintray.com/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom
+Download https://jcenter.bintray.com/org/apache/ant/ant-parent/1.9.4/ant-parent-1.9.4.pom
+Download https://jcenter.bintray.com/org/apache/apache/9/apache-9.pom
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.pom
+Download https://jcenter.bintray.com/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.pom
+Download https://jcenter.bintray.com/commons-io/commons-io/2.4/commons-io-2.4.jar
+Download https://jcenter.bintray.com/org/codehaus/groovy/groovy-backports-compat23/2.4.4/groovy-backports-compat23-2.4.4.jar
+Download https://jcenter.bintray.com/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.jar
+Download https://jcenter.bintray.com/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.jar
+Download https://jcenter.bintray.com/org/apache/ant/ant/1.9.4/ant-1.9.4.jar
+Download https://jcenter.bintray.com/org/jdom/jdom2/2.0.5/jdom2-2.0.5.jar
+Download https://jcenter.bintray.com/org/codehaus/plexus/plexus-utils/2.0.6/plexus-utils-2.0.6.jar
+Download https://jcenter.bintray.com/com/github/jengelman/gradle/plugins/shadow/1.2.3/shadow-1.2.3.jar
+:pg:preprocessJava
+Download https://repo.maven.apache.org/maven2/com/igormaznitsa/jcp/6.0.1/jcp-6.0.1.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.3/maven-plugin-api-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0.3/maven-core-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/10/maven-shared-components-10.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/9/maven-parent-9.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0.3/maven-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/apache/ant/ant-parent/1.8.2/ant-parent-1.8.2.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/15/maven-parent-15.pom
+Download https://repo.maven.apache.org/maven2/org/apache/apache/4/apache-4.pom
+Download https://repo.maven.apache.org/maven2/org/apache/apache/6/apache-6.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.1.1/sisu-inject-plexus-2.1.1.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.3/maven-model-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.3/maven-artifact-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/2.1.1/guice-plexus-2.1.1.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/2.1.1/guice-bean-2.1.1.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/2.1.1/sisu-inject-2.1.1.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/2.1.1/sisu-parent-2.1.1.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/7/forge-parent-7.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.3/maven-settings-builder-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.3/maven-settings-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.11/aether-impl-1.11.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0.3/maven-repository-metadata-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.11/aether-parent-1.11.pom
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.11/aether-api-1.11.pom
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.11/aether-util-1.11.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0.3/maven-aether-provider-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0.3/maven-model-builder-3.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom
+Download https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.pom
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/8/maven-shared-components-8.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/7/maven-parent-7.pom
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.1.1/sisu-inject-bean-2.1.1.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.11/aether-spi-1.11.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.2/maven-2.0.2.pom
+Download https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-alpha-6/wagon-1.0-alpha-6.pom
+Download https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom
+Download https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.9.4/sisu-guice-2.9.4.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/2.9.4/guice-parent-2.9.4.pom
+Download https://repo.maven.apache.org/maven2/com/igormaznitsa/jcp/6.0.1/jcp-6.0.1.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0.3/maven-core-3.0.3.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0.3/maven-artifact-3.0.3.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0.3/maven-model-builder-3.0.3.jar
+Download https://repo.maven.apache.org/maven2/org/apache/ant/ant/1.8.2/ant-1.8.2.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0.3/maven-aether-provider-3.0.3.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0.3/maven-plugin-api-3.0.3.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0.3/maven-repository-metadata-3.0.3.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0.3/maven-model-3.0.3.jar
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/2.1.1/sisu-inject-plexus-2.1.1.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0.3/maven-settings-3.0.3.jar
+Download https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar
+Download https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar
+Download https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.11/aether-util-1.11.jar
+Download https://repo.maven.apache.org/maven2/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar
+Download https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+Download https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.11/aether-impl-1.11.jar
+Download https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.9.4/sisu-guice-2.9.4-no_aop.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.jar
+Download https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.11/aether-api-1.11.jar
+Download https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.11/aether-spi-1.11.jar
+Download https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/2.1.1/sisu-inject-bean-2.1.1.jar
+Download https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.4/plexus-classworlds-2.4.jar
+Download https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0.3/maven-settings-builder-3.0.3.jar
+Preproces: upstream/pgjdbc/src/main/java -> /home/travis/build/passed/crate/crate-jdbc/pg/build/jcp/main/java
+Preproces: upstream/pgjdbc/src/main/resources -> /home/travis/build/passed/crate/crate-jdbc/pg/build/jcp/main/resources
+:pg:compileJava
+Download https://repo.maven.apache.org/maven2/com/github/dblock/waffle/waffle-jna/1.7.5/waffle-jna-1.7.5.pom
+Download https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.pom
+Download https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.12/jcl-over-slf4j-1.7.12.pom
+Download https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.2.1/jna-4.2.1.pom
+Download https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.2.1/jna-platform-4.2.1.pom
+Download https://repo.maven.apache.org/maven2/org/osgi/org.osgi.enterprise/4.2.0/org.osgi.enterprise-4.2.0.pom
+Download https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.5.3/jackson-databind-2.5.3.pom
+Download https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.12/slf4j-parent-1.7.12.pom
+Download https://repo.maven.apache.org/maven2/com/github/dblock/waffle/waffle-parent/1.7.5/waffle-parent-1.7.5.pom
+Download https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.5.1/jackson-parent-2.5.1.pom
+Download https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/19/oss-parent-19.pom
+Download https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.pom
+Download https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom
+Download https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Download https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.5.3/jackson-core-2.5.3.pom
+Download https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.5.0/jackson-annotations-2.5.0.pom
+Download https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.5/jackson-parent-2.5.pom
+Download https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/18/oss-parent-18.pom
+Download https://repo.maven.apache.org/maven2/com/github/dblock/waffle/waffle-jna/1.7.5/waffle-jna-1.7.5.jar
+Download https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar
+Download https://repo.maven.apache.org/maven2/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.jar
+Download https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.jar
+Download https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.2.1/jna-platform-4.2.1.jar
+Download https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.5.0/jackson-annotations-2.5.0.jar
+Download https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.5.3/jackson-core-2.5.3.jar
+Download https://repo.maven.apache.org/maven2/org/osgi/org.osgi.enterprise/4.2.0/org.osgi.enterprise-4.2.0.jar
+Download https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.12/jcl-over-slf4j-1.7.12.jar
+Download https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.5.3/jackson-databind-2.5.3.jar
+Download https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.2.1/jna-4.2.1.jar
+:pg:processResources
+:pg:classes
+:pg:jar
+:compileJava
+:processResources
+:classes
+:compileTestJava
+Download https://repo.maven.apache.org/maven2/org/mockito/mockito-core/2.2.3/mockito-core-2.2.3.pom
+Download https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom
+Download https://repo.maven.apache.org/maven2/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.1.11/randomizedtesting-runner-2.1.11.pom
+Download https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.pom
+Download https://repo.maven.apache.org/maven2/com/carrotsearch/randomizedtesting/randomizedtesting-parent/2.1.11/randomizedtesting-parent-2.1.11.pom
+Download https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+Download https://jcenter.bintray.com/io/crate/crate-testing/0.6.1/crate-testing-0.6.1.pom
+Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.2/commons-compress-1.2.pom
+Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson/1.7.2/gson-1.7.2.pom
+Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/20/commons-parent-20.pom
+Download https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom
+Download https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.4.26/byte-buddy-1.4.26.pom
+Download https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.4/objenesis-2.4.pom
+Download https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.4.26/byte-buddy-agent-1.4.26.pom
+Download https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/2.4/objenesis-parent-2.4.pom
+Download https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.4.26/byte-buddy-parent-1.4.26.pom
+Download https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+Download https://repo.maven.apache.org/maven2/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.1.11/randomizedtesting-runner-2.1.11.jar
+Download https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar
+Download https://repo.maven.apache.org/maven2/org/mockito/mockito-core/2.2.3/mockito-core-2.2.3.jar
+Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.2/commons-compress-1.2.jar
+Download https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.4.26/byte-buddy-1.4.26.jar
+Download https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+Download https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.4.26/byte-buddy-agent-1.4.26.jar
+Download https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar
+Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson/1.7.2/gson-1.7.2.jar
+Download https://repo.maven.apache.org/maven2/org/objenesis/objenesis/2.4/objenesis-2.4.jar
+Download https://jcenter.bintray.com/io/crate/crate-testing/0.6.1/crate-testing-0.6.1.jar
+:processTestResources NO-SOURCE
+:testClasses
+:pg:compileTestJava NO-SOURCE
+:pg:processTestResources NO-SOURCE
+:pg:testClasses UP-TO-DATE
+
+BUILD SUCCESSFUL in 18s
+7 actionable tasks: 7 executed
+
+travis_time:end:2910397e:start=1600531712515858424,finish=1600531731929216325,duration=19413357901[0Ktravis_fold:end:install[0Ktravis_time:start:0bac9fd8[0K$ ./gradlew test -s
+Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
+:pg:preprocessJava
+Preproces: upstream/pgjdbc/src/main/java -> /home/travis/build/passed/crate/crate-jdbc/pg/build/jcp/main/java
+Preproces: upstream/pgjdbc/src/main/resources -> /home/travis/build/passed/crate/crate-jdbc/pg/build/jcp/main/resources
+:pg:compileJava UP-TO-DATE
+:pg:processResources UP-TO-DATE
+:pg:classes UP-TO-DATE
+:pg:jar UP-TO-DATE
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:compileTestJava UP-TO-DATE
+:processTestResources NO-SOURCE
+:testClasses UP-TO-DATE
+:test
+
+io.crate.client.jdbc.integrationtests.CrateJDBCByPassSpecSettingTest STANDARD_OUT
+    Downloading Crate VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz.part-0edeb07a-3627-499d-95f8-83289a493471
+    Starting crate server process...
+[2020-09-19 16:09:03,845][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2020-09-19 16:09:03,983][INFO ][node                     ] [Rocher Blanc] version[2.3.4], pid[2994], build[${build/NA]
+[2020-09-19 16:09:03,984][INFO ][node                     ] [Rocher Blanc] initializing ...
+[2020-09-19 16:09:04,245][INFO ][io.crate.plugin          ] [Rocher Blanc] plugins loaded: [crate-sigar] 
+[2020-09-19 16:09:05,085][INFO ][plugins                  ] [Rocher Blanc] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2020-09-19 16:09:05,111][INFO ][env                      ] [Rocher Blanc] using [1] data paths, mounts [[/ (overlay)]], net usable_space [86.2tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2020-09-19 16:09:05,111][INFO ][env                      ] [Rocher Blanc] heap size [1.9gb], compressed ordinary object pointers [true]
+[2020-09-19 16:09:05,111][WARN ][env                      ] [Rocher Blanc] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2020-09-19 16:09:05,324][INFO ][http                     ] [Rocher Blanc] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2020-09-19 16:09:05,333][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_0edeb07a-3627-499d-95f8-83289a493471/plugins/elasticsearch-repository-hdfs/
+[2020-09-19 16:09:05,400][INFO ][io.crate.module          ] [Rocher Blanc] configuring crate. version: 0.56.4
+[2020-09-19 16:09:05,575][INFO ][io.crate.module          ] [Rocher Blanc] configuring crate. version: 0.56.4
+[2020-09-19 16:09:06,735][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5435]
+[2020-09-19 16:09:06,735][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2020-09-19 16:09:07,980][INFO ][io.crate.rest            ] [Rocher Blanc] Elasticsearch HTTP REST API not enabled
+[2020-09-19 16:09:08,032][INFO ][node                     ] [Rocher Blanc] initialized
+[2020-09-19 16:09:08,032][INFO ][node                     ] [Rocher Blanc] starting ...
+[2020-09-19 16:09:08,221][INFO ][io.crate.blob.BlobService] [Rocher Blanc] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2020-09-19 16:09:08,336][INFO ][http                     ] [Rocher Blanc] publish_address {127.0.0.1:4558}, bound_addresses {127.0.0.1:4558}
+[2020-09-19 16:09:08,424][INFO ][transport                ] [Rocher Blanc] publish_address {127.0.0.1:4211}, bound_addresses {127.0.0.1:4211}
+[2020-09-19 16:09:08,431][INFO ][discovery                ] [Rocher Blanc] TestingCluster/mnlxKDdwRtmRr-KFVNDl6A
+    Stopping crate server process...
+[2020-09-19 16:09:09,234][INFO ][node                     ] [Rocher Blanc] stopping ...
+[2020-09-19 16:09:09,282][INFO ][node                     ] [Rocher Blanc] stopped
+[2020-09-19 16:09:09,282][INFO ][node                     ] [Rocher Blanc] closing ...
+[2020-09-19 16:09:09,288][INFO ][node                     ] [Rocher Blanc] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCConnectionTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+[2020-09-19 16:09:10,779][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2020-09-19 16:09:10,903][INFO ][node                     ] [Älplihorn] version[2.3.4], pid[3352], build[${build/NA]
+[2020-09-19 16:09:10,903][INFO ][node                     ] [Älplihorn] initializing ...
+[2020-09-19 16:09:11,137][INFO ][io.crate.plugin          ] [Älplihorn] plugins loaded: [crate-sigar] 
+[2020-09-19 16:09:12,018][INFO ][plugins                  ] [Älplihorn] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2020-09-19 16:09:12,037][INFO ][env                      ] [Älplihorn] using [1] data paths, mounts [[/ (overlay)]], net usable_space [86.2tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2020-09-19 16:09:12,037][INFO ][env                      ] [Älplihorn] heap size [1.9gb], compressed ordinary object pointers [true]
+[2020-09-19 16:09:12,037][WARN ][env                      ] [Älplihorn] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2020-09-19 16:09:12,260][INFO ][http                     ] [Älplihorn] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2020-09-19 16:09:12,273][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_5ab3da57-e15c-4bc9-86f5-83928e31ae75/plugins/elasticsearch-repository-hdfs/
+[2020-09-19 16:09:12,345][INFO ][io.crate.module          ] [Älplihorn] configuring crate. version: 0.56.4
+[2020-09-19 16:09:12,572][INFO ][io.crate.module          ] [Älplihorn] configuring crate. version: 0.56.4
+[2020-09-19 16:09:13,867][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5473]
+[2020-09-19 16:09:13,868][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2020-09-19 16:09:14,938][INFO ][io.crate.rest            ] [Älplihorn] Elasticsearch HTTP REST API not enabled
+[2020-09-19 16:09:14,981][INFO ][node                     ] [Älplihorn] initialized
+[2020-09-19 16:09:14,981][INFO ][node                     ] [Älplihorn] starting ...
+[2020-09-19 16:09:15,148][INFO ][io.crate.blob.BlobService] [Älplihorn] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2020-09-19 16:09:15,311][INFO ][http                     ] [Älplihorn] publish_address {127.0.0.1:4544}, bound_addresses {127.0.0.1:4544}
+[2020-09-19 16:09:15,428][INFO ][transport                ] [Älplihorn] publish_address {127.0.0.1:4385}, bound_addresses {127.0.0.1:4385}
+[2020-09-19 16:09:15,435][INFO ][discovery                ] [Älplihorn] TestingCluster/YSRpP7VrTOeZJZB5908Hdw
+[2020-09-19 16:09:16,083][DEBUG][action.admin.indices.create] [Älplihorn] no known master node, scheduling a retry
+[2020-09-19 16:09:18,465][INFO ][cluster.service          ] [Älplihorn] new_master {Älplihorn}{YSRpP7VrTOeZJZB5908Hdw}{127.0.0.1}{127.0.0.1:4385}{info.extended.type=sigar, http_address=127.0.0.1:4544}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-09-19 16:09:18,470][INFO ][node                     ] [Älplihorn] started
+[2020-09-19 16:09:19,018][INFO ][gateway                  ] [Älplihorn] recovered [0] indices into cluster_state
+[2020-09-19 16:09:19,221][INFO ][cluster.metadata         ] [Älplihorn] [test] creating index, cause [api], templates [], shards [1]/[0], mappings [default]
+[2020-09-19 16:09:19,825][INFO ][cluster.routing.allocation] [Älplihorn] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[test][0]] ...]).
+[2020-09-19 16:09:20,020][DEBUG][action.bulk              ] create new coordinator for node YSRpP7VrTOeZJZB5908Hdw and shard [test][0]
+    Stopping crate server process...
+[2020-09-19 16:09:20,868][INFO ][node                     ] [Älplihorn] stopping ...
+[2020-09-19 16:09:21,032][INFO ][node                     ] [Älplihorn] stopped
+[2020-09-19 16:09:21,033][INFO ][node                     ] [Älplihorn] closing ...
+[2020-09-19 16:09:21,041][INFO ][node                     ] [Älplihorn] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCDriverTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+[2020-09-19 16:09:22,263][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2020-09-19 16:09:22,409][INFO ][node                     ] [Pointe de la Terrasse] version[2.3.4], pid[3744], build[${build/NA]
+[2020-09-19 16:09:22,410][INFO ][node                     ] [Pointe de la Terrasse] initializing ...
+[2020-09-19 16:09:22,679][INFO ][io.crate.plugin          ] [Pointe de la Terrasse] plugins loaded: [crate-sigar] 
+[2020-09-19 16:09:23,531][INFO ][plugins                  ] [Pointe de la Terrasse] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2020-09-19 16:09:23,551][INFO ][env                      ] [Pointe de la Terrasse] using [1] data paths, mounts [[/ (overlay)]], net usable_space [86.2tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2020-09-19 16:09:23,551][INFO ][env                      ] [Pointe de la Terrasse] heap size [1.9gb], compressed ordinary object pointers [true]
+[2020-09-19 16:09:23,551][WARN ][env                      ] [Pointe de la Terrasse] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2020-09-19 16:09:23,749][INFO ][http                     ] [Pointe de la Terrasse] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2020-09-19 16:09:23,759][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_9a3edef9-77b2-4274-8377-0e76f4fd2c66/plugins/elasticsearch-repository-hdfs/
+[2020-09-19 16:09:23,814][INFO ][io.crate.module          ] [Pointe de la Terrasse] configuring crate. version: 0.56.4
+[2020-09-19 16:09:23,996][INFO ][io.crate.module          ] [Pointe de la Terrasse] configuring crate. version: 0.56.4
+[2020-09-19 16:09:25,158][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5505]
+[2020-09-19 16:09:25,159][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2020-09-19 16:09:26,291][INFO ][io.crate.rest            ] [Pointe de la Terrasse] Elasticsearch HTTP REST API not enabled
+[2020-09-19 16:09:26,356][INFO ][node                     ] [Pointe de la Terrasse] initialized
+[2020-09-19 16:09:26,357][INFO ][node                     ] [Pointe de la Terrasse] starting ...
+[2020-09-19 16:09:26,578][INFO ][io.crate.blob.BlobService] [Pointe de la Terrasse] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2020-09-19 16:09:26,793][INFO ][http                     ] [Pointe de la Terrasse] publish_address {127.0.0.1:4501}, bound_addresses {127.0.0.1:4501}
+[2020-09-19 16:09:26,977][INFO ][transport                ] [Pointe de la Terrasse] publish_address {127.0.0.1:4363}, bound_addresses {127.0.0.1:4363}
+[2020-09-19 16:09:26,985][INFO ][discovery                ] [Pointe de la Terrasse] TestingCluster/mEtoO8dERWeabnZPDnOkUA
+    Stopping crate server process...
+[2020-09-19 16:09:27,505][INFO ][node                     ] [Pointe de la Terrasse] stopping ...
+[2020-09-19 16:09:27,562][INFO ][node                     ] [Pointe de la Terrasse] stopped
+[2020-09-19 16:09:27,562][INFO ][node                     ] [Pointe de la Terrasse] closing ...
+[2020-09-19 16:09:27,568][INFO ][node                     ] [Pointe de la Terrasse] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCFetchSizeIntegrationTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+[2020-09-19 16:09:28,725][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2020-09-19 16:09:28,867][INFO ][node                     ] [Daniel] version[2.3.4], pid[4101], build[${build/NA]
+[2020-09-19 16:09:28,867][INFO ][node                     ] [Daniel] initializing ...
+[2020-09-19 16:09:29,113][INFO ][io.crate.plugin          ] [Daniel] plugins loaded: [crate-sigar] 
+[2020-09-19 16:09:29,835][INFO ][plugins                  ] [Daniel] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2020-09-19 16:09:29,860][INFO ][env                      ] [Daniel] using [1] data paths, mounts [[/ (overlay)]], net usable_space [86.2tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2020-09-19 16:09:29,860][INFO ][env                      ] [Daniel] heap size [1.9gb], compressed ordinary object pointers [true]
+[2020-09-19 16:09:29,860][WARN ][env                      ] [Daniel] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2020-09-19 16:09:30,072][INFO ][http                     ] [Daniel] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2020-09-19 16:09:30,083][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_decb5c31-3133-493b-85ae-c42c9360ae98/plugins/elasticsearch-repository-hdfs/
+[2020-09-19 16:09:30,139][INFO ][io.crate.module          ] [Daniel] configuring crate. version: 0.56.4
+[2020-09-19 16:09:30,322][INFO ][io.crate.module          ] [Daniel] configuring crate. version: 0.56.4
+[2020-09-19 16:09:31,606][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5453]
+[2020-09-19 16:09:31,606][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2020-09-19 16:09:32,783][INFO ][io.crate.rest            ] [Daniel] Elasticsearch HTTP REST API not enabled
+[2020-09-19 16:09:32,829][INFO ][node                     ] [Daniel] initialized
+[2020-09-19 16:09:32,829][INFO ][node                     ] [Daniel] starting ...
+[2020-09-19 16:09:32,966][INFO ][io.crate.blob.BlobService] [Daniel] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2020-09-19 16:09:33,085][INFO ][http                     ] [Daniel] publish_address {127.0.0.1:4566}, bound_addresses {127.0.0.1:4566}
+[2020-09-19 16:09:33,203][INFO ][transport                ] [Daniel] publish_address {127.0.0.1:4263}, bound_addresses {127.0.0.1:4263}
+[2020-09-19 16:09:33,210][INFO ][discovery                ] [Daniel] TestingCluster/UDOcp3G2SzOS-FnwTeQ-FQ
+    Stopping crate server process...
+[2020-09-19 16:09:34,002][INFO ][node                     ] [Daniel] stopping ...
+[2020-09-19 16:09:34,727][WARN ][discovery.zen.ping.unicast] [Daniel] failed to send ping to [{#zen_unicast_1#}{127.0.0.1}{127.0.0.1:4263}]
+SendRequestTransportException[[Daniel][127.0.0.1:4263][internal:discovery/zen/unicast]]; nested: TransportException[TransportService is closed stopped can't send request];
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:336)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.sendPingRequestToNode(UnicastZenPing.java:440)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.sendPings(UnicastZenPing.java:426)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing$2.doRun(UnicastZenPing.java:249)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: TransportException[TransportService is closed stopped can't send request]
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:316)
+	... 7 more
+[2020-09-19 16:09:34,727][WARN ][discovery.zen.ping.unicast] [Daniel] failed to send ping to [{Daniel}{UDOcp3G2SzOS-FnwTeQ-FQ}{127.0.0.1}{127.0.0.1:4263}{info.extended.type=sigar, http_address=127.0.0.1:4566}]
+SendRequestTransportException[[Daniel][127.0.0.1:4263][internal:discovery/zen/unicast]]; nested: TransportException[TransportService is closed stopped can't send request];
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:336)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.sendPingRequestToNode(UnicastZenPing.java:440)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.sendPings(UnicastZenPing.java:426)
+	at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing$2.doRun(UnicastZenPing.java:249)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: TransportException[TransportService is closed stopped can't send request]
+	at org.elasticsearch.transport.TransportService.sendRequest(TransportService.java:316)
+	... 7 more
+[2020-09-19 16:09:35,551][WARN ][netty.channel.DefaultChannelPipeline] An exception was thrown by an exception handler.
+java.util.concurrent.RejectedExecutionException: Worker has already been shutdown
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.registerTask(AbstractNioSelector.java:120)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:72)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:56)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioChannelSink.execute(AbstractNioChannelSink.java:34)
+	at org.jboss.netty.channel.DefaultChannelPipeline.execute(DefaultChannelPipeline.java:636)
+	at org.jboss.netty.channel.Channels.fireExceptionCaughtLater(Channels.java:496)
+	at org.jboss.netty.channel.AbstractChannelSink.exceptionCaught(AbstractChannelSink.java:46)
+	at org.jboss.netty.channel.DefaultChannelPipeline.notifyHandlerException(DefaultChannelPipeline.java:658)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:577)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendErrorResponse(Messages.java:231)
+	at io.crate.protocols.postgres.ResultSetReceiver.fail(ResultSetReceiver.java:79)
+	at io.crate.protocols.postgres.SimplePortal$ResultReceiverRetryWrapper.fail(SimplePortal.java:273)
+	at io.crate.action.sql.RowReceiverToResultReceiver.fail(RowReceiverToResultReceiver.java:67)
+	at io.crate.executor.transport.executionphases.InterceptingRowReceiver$1.onFailure(InterceptingRowReceiver.java:133)
+	at io.crate.executor.MultiActionListener.countdown(MultiActionListener.java:68)
+	at io.crate.executor.MultiActionListener.onFailure(MultiActionListener.java:59)
+	at io.crate.executor.transport.DefaultTransportResponseHandler.handleException(DefaultTransportResponseHandler.java:62)
+	at org.elasticsearch.transport.TransportService$3.doRun(TransportService.java:349)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-09-19 16:09:35,551][INFO ][node                     ] [Daniel] stopped
+[2020-09-19 16:09:35,552][WARN ][netty.channel.DefaultChannelPipeline] An exception was thrown by an exception handler.
+java.util.concurrent.RejectedExecutionException: Worker has already been shutdown
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.registerTask(AbstractNioSelector.java:120)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:72)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.executeInIoThread(AbstractNioWorker.java:56)
+	at org.jboss.netty.channel.socket.nio.NioWorker.executeInIoThread(NioWorker.java:36)
+	at org.jboss.netty.channel.socket.nio.AbstractNioChannelSink.execute(AbstractNioChannelSink.java:34)
+	at org.jboss.netty.channel.DefaultChannelPipeline.execute(DefaultChannelPipeline.java:636)
+	at org.jboss.netty.channel.Channels.fireExceptionCaughtLater(Channels.java:496)
+	at org.jboss.netty.channel.AbstractChannelSink.exceptionCaught(AbstractChannelSink.java:46)
+	at org.jboss.netty.channel.DefaultChannelPipeline.notifyHandlerException(DefaultChannelPipeline.java:658)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendDownstream(DefaultChannelPipeline.java:577)
+	at org.jboss.netty.channel.Channels.write(Channels.java:704)
+	at org.jboss.netty.channel.Channels.write(Channels.java:671)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:348)
+	at io.crate.protocols.postgres.Messages.sendReadyForQuery(Messages.java:140)
+	at io.crate.protocols.postgres.ConnectionContext$ReadyForQueryListener.onFailure(ConnectionContext.java:222)
+	at io.crate.concurrent.CompletionMultiListener.onFailure(CompletionMultiListener.java:63)
+	at io.crate.protocols.postgres.ResultSetReceiver.fail(ResultSetReceiver.java:80)
+	at io.crate.protocols.postgres.SimplePortal$ResultReceiverRetryWrapper.fail(SimplePortal.java:273)
+	at io.crate.action.sql.RowReceiverToResultReceiver.fail(RowReceiverToResultReceiver.java:67)
+	at io.crate.executor.transport.executionphases.InterceptingRowReceiver$1.onFailure(InterceptingRowReceiver.java:133)
+	at io.crate.executor.MultiActionListener.countdown(MultiActionListener.java:68)
+	at io.crate.executor.MultiActionListener.onFailure(MultiActionListener.java:59)
+	at io.crate.executor.transport.DefaultTransportResponseHandler.handleException(DefaultTransportResponseHandler.java:62)
+	at org.elasticsearch.transport.TransportService$3.doRun(TransportService.java:349)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-09-19 16:09:35,552][INFO ][node                     ] [Daniel] closing ...
+[2020-09-19 16:09:35,559][INFO ][node                     ] [Daniel] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCMetaDataIntegrationTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+[2020-09-19 16:09:36,613][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2020-09-19 16:09:36,730][INFO ][node                     ] [Hinterrugg] version[2.3.4], pid[4462], build[${build/NA]
+[2020-09-19 16:09:36,730][INFO ][node                     ] [Hinterrugg] initializing ...
+[2020-09-19 16:09:36,968][INFO ][io.crate.plugin          ] [Hinterrugg] plugins loaded: [crate-sigar] 
+[2020-09-19 16:09:37,755][INFO ][plugins                  ] [Hinterrugg] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2020-09-19 16:09:37,776][INFO ][env                      ] [Hinterrugg] using [1] data paths, mounts [[/ (overlay)]], net usable_space [86.2tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2020-09-19 16:09:37,776][INFO ][env                      ] [Hinterrugg] heap size [1.9gb], compressed ordinary object pointers [true]
+[2020-09-19 16:09:37,776][WARN ][env                      ] [Hinterrugg] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2020-09-19 16:09:37,983][INFO ][http                     ] [Hinterrugg] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2020-09-19 16:09:37,993][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_246afbf6-21f1-49ba-a6f6-d4dc1a94d14e/plugins/elasticsearch-repository-hdfs/
+[2020-09-19 16:09:38,055][INFO ][io.crate.module          ] [Hinterrugg] configuring crate. version: 0.56.4
+[2020-09-19 16:09:38,274][INFO ][io.crate.module          ] [Hinterrugg] configuring crate. version: 0.56.4
+[2020-09-19 16:09:39,535][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5513]
+[2020-09-19 16:09:39,535][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2020-09-19 16:09:40,723][INFO ][io.crate.rest            ] [Hinterrugg] Elasticsearch HTTP REST API not enabled
+[2020-09-19 16:09:40,774][INFO ][node                     ] [Hinterrugg] initialized
+[2020-09-19 16:09:40,774][INFO ][node                     ] [Hinterrugg] starting ...
+[2020-09-19 16:09:40,925][INFO ][io.crate.blob.BlobService] [Hinterrugg] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2020-09-19 16:09:41,069][INFO ][http                     ] [Hinterrugg] publish_address {127.0.0.1:4578}, bound_addresses {127.0.0.1:4578}
+[2020-09-19 16:09:41,140][INFO ][transport                ] [Hinterrugg] publish_address {127.0.0.1:4374}, bound_addresses {127.0.0.1:4374}
+[2020-09-19 16:09:41,147][INFO ][discovery                ] [Hinterrugg] TestingCluster/zXnXdzspTdeDti6VaUQDcA
+[2020-09-19 16:09:41,824][DEBUG][action.admin.indices.create] [Hinterrugg] no known master node, scheduling a retry
+[2020-09-19 16:09:44,182][INFO ][cluster.service          ] [Hinterrugg] new_master {Hinterrugg}{zXnXdzspTdeDti6VaUQDcA}{127.0.0.1}{127.0.0.1:4374}{info.extended.type=sigar, http_address=127.0.0.1:4578}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-09-19 16:09:44,187][INFO ][node                     ] [Hinterrugg] started
+[2020-09-19 16:09:44,229][INFO ][gateway                  ] [Hinterrugg] recovered [0] indices into cluster_state
+[2020-09-19 16:09:44,406][INFO ][cluster.metadata         ] [Hinterrugg] [test.cluster] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2020-09-19 16:09:45,343][INFO ][cluster.routing.allocation] [Hinterrugg] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[test.cluster][2], [test.cluster][1], [test.cluster][3], [test.cluster][0]] ...]).
+[2020-09-19 16:09:45,456][INFO ][cluster.metadata         ] [Hinterrugg] [names] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2020-09-19 16:09:46,371][INFO ][cluster.routing.allocation] [Hinterrugg] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[names][2], [names][0], [names][1], [names][3]] ...]).
+[2020-09-19 16:09:46,394][INFO ][cluster.metadata         ] [Hinterrugg] [my_schema.names] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2020-09-19 16:09:46,955][INFO ][cluster.routing.allocation] [Hinterrugg] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[my_schema.names][0], [my_schema.names][3], [my_schema.names][1], [my_schema.names][2]] ...]).
+[2020-09-19 16:09:47,124][INFO ][cluster.metadata         ] [Hinterrugg] [t_multi_pks] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2020-09-19 16:09:47,194][INFO ][cluster.routing.allocation] [Hinterrugg] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[t_multi_pks][2], [t_multi_pks][3], [t_multi_pks][1], [t_multi_pks][0]] ...]).
+    Stopping crate server process...
+[2020-09-19 16:09:47,481][INFO ][node                     ] [Hinterrugg] stopping ...
+[2020-09-19 16:09:47,589][INFO ][node                     ] [Hinterrugg] stopped
+[2020-09-19 16:09:47,589][INFO ][node                     ] [Hinterrugg] closing ...
+[2020-09-19 16:09:47,597][INFO ][node                     ] [Hinterrugg] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCTypesTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+[2020-09-19 16:09:48,737][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2020-09-19 16:09:48,880][INFO ][node                     ] [Greifenberg] version[2.3.4], pid[4865], build[${build/NA]
+[2020-09-19 16:09:48,880][INFO ][node                     ] [Greifenberg] initializing ...
+[2020-09-19 16:09:49,160][INFO ][io.crate.plugin          ] [Greifenberg] plugins loaded: [crate-sigar] 
+[2020-09-19 16:09:50,150][INFO ][plugins                  ] [Greifenberg] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2020-09-19 16:09:50,166][INFO ][env                      ] [Greifenberg] using [1] data paths, mounts [[/ (overlay)]], net usable_space [86.2tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2020-09-19 16:09:50,166][INFO ][env                      ] [Greifenberg] heap size [1.9gb], compressed ordinary object pointers [true]
+[2020-09-19 16:09:50,166][WARN ][env                      ] [Greifenberg] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2020-09-19 16:09:50,386][INFO ][http                     ] [Greifenberg] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2020-09-19 16:09:50,399][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_3bdcdf25-968c-44e4-b207-1e62249eb0f7/plugins/elasticsearch-repository-hdfs/
+[2020-09-19 16:09:50,456][INFO ][io.crate.module          ] [Greifenberg] configuring crate. version: 0.56.4
+[2020-09-19 16:09:50,624][INFO ][io.crate.module          ] [Greifenberg] configuring crate. version: 0.56.4
+[2020-09-19 16:09:51,762][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5469]
+[2020-09-19 16:09:51,763][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2020-09-19 16:09:52,989][INFO ][io.crate.rest            ] [Greifenberg] Elasticsearch HTTP REST API not enabled
+[2020-09-19 16:09:53,040][INFO ][node                     ] [Greifenberg] initialized
+[2020-09-19 16:09:53,041][INFO ][node                     ] [Greifenberg] starting ...
+[2020-09-19 16:09:53,239][INFO ][io.crate.blob.BlobService] [Greifenberg] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2020-09-19 16:09:53,301][INFO ][http                     ] [Greifenberg] publish_address {127.0.0.1:4589}, bound_addresses {127.0.0.1:4589}
+[2020-09-19 16:09:53,410][INFO ][transport                ] [Greifenberg] publish_address {127.0.0.1:4277}, bound_addresses {127.0.0.1:4277}
+[2020-09-19 16:09:53,417][INFO ][discovery                ] [Greifenberg] TestingCluster/eLl65N8XQoS1hpEnYUEFtg
+[2020-09-19 16:09:53,955][DEBUG][action.admin.indices.create] [Greifenberg] no known master node, scheduling a retry
+[2020-09-19 16:09:56,456][INFO ][cluster.service          ] [Greifenberg] new_master {Greifenberg}{eLl65N8XQoS1hpEnYUEFtg}{127.0.0.1}{127.0.0.1:4277}{info.extended.type=sigar, http_address=127.0.0.1:4589}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2020-09-19 16:09:56,461][INFO ][node                     ] [Greifenberg] started
+[2020-09-19 16:09:56,549][INFO ][gateway                  ] [Greifenberg] recovered [0] indices into cluster_state
+[2020-09-19 16:09:56,744][INFO ][cluster.metadata         ] [Greifenberg] [test] creating index, cause [api], templates [], shards [1]/[0], mappings [default]
+[2020-09-19 16:09:56,992][INFO ][cluster.routing.allocation] [Greifenberg] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[test][0]] ...]).
+[2020-09-19 16:09:57,468][INFO ][cluster.metadata         ] [Greifenberg] [arraytest] creating index, cause [api], templates [], shards [1]/[0], mappings [default]
+[2020-09-19 16:09:57,507][INFO ][cluster.routing.allocation] [Greifenberg] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[arraytest][0]] ...]).
+[2020-09-19 16:09:57,554][INFO ][cluster.metadata         ] [Greifenberg] [arraytest] update_mapping [default]
+[2020-09-19 16:09:57,890][INFO ][cluster.metadata         ] [Greifenberg] [test_obj] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2020-09-19 16:09:58,008][INFO ][cluster.routing.allocation] [Greifenberg] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[test_obj][1], [test_obj][3], [test_obj][2], [test_obj][0]] ...]).
+    Stopping crate server process...
+[2020-09-19 16:09:58,228][INFO ][node                     ] [Greifenberg] stopping ...
+[2020-09-19 16:09:58,355][INFO ][node                     ] [Greifenberg] stopped
+[2020-09-19 16:09:58,355][INFO ][node                     ] [Greifenberg] closing ...
+[2020-09-19 16:09:58,365][INFO ][node                     ] [Greifenberg] closed
+
+io.crate.client.jdbc.integrationtests.CrateJDBCUnsupportedFeaturesTest STANDARD_OUT
+    No need to download crate. Already downloaded VERSION[0.56.4] to: /tmp/crate.testing/downloads/crate-0.56.4.tar.gz
+    Starting crate server process...
+[2020-09-19 16:09:59,541][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: your kernel is buggy and you should upgrade
+[2020-09-19 16:09:59,690][INFO ][node                     ] [Lastìa de Framónt] version[2.3.4], pid[5312], build[${build/NA]
+[2020-09-19 16:09:59,691][INFO ][node                     ] [Lastìa de Framónt] initializing ...
+[2020-09-19 16:09:59,959][INFO ][io.crate.plugin          ] [Lastìa de Framónt] plugins loaded: [crate-sigar] 
+[2020-09-19 16:10:00,766][INFO ][plugins                  ] [Lastìa de Framónt] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2020-09-19 16:10:00,786][INFO ][env                      ] [Lastìa de Framónt] using [1] data paths, mounts [[/ (overlay)]], net usable_space [86.2tb], net total_space [90.9tb], spins? [possibly], types [overlay]
+[2020-09-19 16:10:00,786][INFO ][env                      ] [Lastìa de Framónt] heap size [1.9gb], compressed ordinary object pointers [true]
+[2020-09-19 16:10:00,786][WARN ][env                      ] [Lastìa de Framónt] max file descriptors [30000] for elasticsearch process likely too low, consider increasing to at least [65536]
+[2020-09-19 16:10:00,985][INFO ][http                     ] [Lastìa de Framónt] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2020-09-19 16:10:00,993][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/tmp/crate.testing/working/crate-0.56.4_1a78b93f-b163-4de7-96ae-cfacfe5f598e/plugins/elasticsearch-repository-hdfs/
+[2020-09-19 16:10:01,035][INFO ][io.crate.module          ] [Lastìa de Framónt] configuring crate. version: 0.56.4
+[2020-09-19 16:10:01,210][INFO ][io.crate.module          ] [Lastìa de Framónt] configuring crate. version: 0.56.4
+[2020-09-19 16:10:02,332][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.port] from [5432-5532] to [5492]
+[2020-09-19 16:10:02,332][INFO ][io.crate.operation.reference.sys.cluster.ClusterSettingsExpression$ApplySettings] updating [psql.enabled] from [false] to [true]
+[2020-09-19 16:10:03,534][INFO ][io.crate.rest            ] [Lastìa de Framónt] Elasticsearch HTTP REST API not enabled
+[2020-09-19 16:10:03,577][INFO ][node                     ] [Lastìa de Framónt] initialized
+[2020-09-19 16:10:03,577][INFO ][node                     ] [Lastìa de Framónt] starting ...
+[2020-09-19 16:10:03,725][INFO ][io.crate.blob.BlobService] [Lastìa de Framónt] BlobService.doStart() io.crate.blob.BlobService@eebc0db
+[2020-09-19 16:10:03,824][INFO ][http                     ] [Lastìa de Framónt] publish_address {127.0.0.1:4524}, bound_addresses {127.0.0.1:4524}
+[2020-09-19 16:10:03,883][INFO ][transport                ] [Lastìa de Framónt] publish_address {127.0.0.1:4346}, bound_addresses {127.0.0.1:4346}
+[2020-09-19 16:10:03,891][INFO ][discovery                ] [Lastìa de Framónt] TestingCluster/m06a74fgR0ag20PAtz4EGA
+    Stopping crate server process...
+[2020-09-19 16:10:04,737][INFO ][node                     ] [Lastìa de Framónt] stopping ...
+[2020-09-19 16:10:04,818][INFO ][node                     ] [Lastìa de Framónt] stopped
+[2020-09-19 16:10:04,818][INFO ][node                     ] [Lastìa de Framónt] closing ...
+[2020-09-19 16:10:04,824][INFO ][node                     ] [Lastìa de Framónt] closed
+:pg:compileTestJava NO-SOURCE
+:pg:processTestResources NO-SOURCE
+:pg:testClasses UP-TO-DATE
+:pg:test SKIPPED
+
+BUILD SUCCESSFUL in 1m 13s
+8 actionable tasks: 2 executed, 6 up-to-date
+
+travis_time:end:0bac9fd8:start=1600531731941785392,finish=1600531805458002526,duration=73516217134[0K
+[32;1mThe command "./gradlew test -s" exited with 0.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:31ac3ad0[0K
+travis_time:end:31ac3ad0:start=1600531805472447301,finish=1600531805482930242,duration=10482941[0Ktravis_time:start:00f46ede[0K[32;1mchanges detected, packing new archive[0m
+
+travis_time:end:00f46ede:start=1600531805495643479,finish=1600531807456943191,duration=1961299712[0Ktravis_fold:end:cache.2[0K
+Done. Your build exited with 0.

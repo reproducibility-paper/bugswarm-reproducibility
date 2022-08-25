@@ -1,0 +1,149 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 52.21.89.200 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 52.21.89.200 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd failed/uwescience/myria
+travis_fold:start:postgresql[0K[33;1mStarting PostgreSQL v9.3[0m
+travis_time:start:3a11cbc8[0K$ sudo service postgresql stop
+ * Stopping PostgreSQL 9.1 database server
+   ...done.
+ * Stopping PostgreSQL 9.2 database server
+   ...done.
+ * Stopping PostgreSQL 9.3 database server
+   ...done.
+ * Stopping PostgreSQL 9.4 database server
+   ...done.
+
+travis_time:end:3a11cbc8:start=1599398056192061044,finish=1599398056908569655,duration=716508611[0Ktravis_time:start:072e5c02[0K$ sudo service postgresql start 9.3
+ * Starting PostgreSQL 9.3 database server
+   ...done.
+
+travis_time:end:072e5c02:start=1599398056919211373,finish=1599398059588308916,duration=2669097543[0Ktravis_time:start:045429f5[0K$ sudo -u postgres createuser -s -p 5432 travis &>/dev/null
+
+travis_time:end:045429f5:start=1599398059599094174,finish=1599398059687573469,duration=88479295[0Ktravis_time:start:2b5dfcc0[0K$ sudo -u postgres createdb -O travis -p 5432 travis &>/dev/null
+
+travis_time:end:2b5dfcc0:start=1599398059695058268,finish=1599398059973282992,duration=278224724[0Ktravis_time:start:3b3468b2[0K$ sudo -u postgres createuser -s -p 5433 travis &>/dev/null
+
+travis_time:end:3b3468b2:start=1599398059983105881,finish=1599398060040238229,duration=57132348[0Ktravis_time:start:064a2bc0[0K$ sudo -u postgres createdb -O travis -p 5433 travis &>/dev/null
+
+travis_time:end:064a2bc0:start=1599398060049407272,finish=1599398060102785938,duration=53378666[0Ktravis_fold:end:postgresql[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export AWS_ACCESS_KEY_ID=[secure]
+$ export AWS_SECRET_ACCESS_KEY=[secure]
+
+$ export TERM=dumb
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:280ba174[0K$ Installing caching utilities
+
+travis_time:end:280ba174:start=1599398062015315972,finish=1599398062435426934,duration=420110962[0Ktravis_time:start:26c461a6[0K
+travis_time:end:26c461a6:start=1599398062448654385,finish=1599398062456417122,duration=7762737[0Ktravis_time:start:01daefbb[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:01daefbb:start=1599398062465384839,finish=1599398063235792714,duration=770407875[0Ktravis_time:start:16229631[0K
+travis_time:end:16229631:start=1599398063245965856,finish=1599398063254929952,duration=8964096[0Ktravis_time:start:13429efc[0K[32;1madding /home/travis/.gradle/caches to cache[0m
+[32;1mcreating directory /home/travis/.gradle/caches[0m
+
+travis_time:end:13429efc:start=1599398063264064320,finish=1599398064005117264,duration=741052944[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:before_install.1[0Ktravis_time:start:06cb2be4[0K$ sh travis/before_install.sh
+CREATE DATABASE
+
+travis_time:end:06cb2be4:start=1599398064259032913,finish=1599398066667601426,duration=2408568513[0Ktravis_fold:end:before_install.1[0Ktravis_fold:start:before_install.2[0Ktravis_time:start:07987bf2[0K$ export TERM=dumb
+
+travis_time:end:07987bf2:start=1599398066677350556,finish=1599398066684520069,duration=7169513[0Ktravis_fold:end:before_install.2[0Ktravis_fold:start:install[0Ktravis_time:start:2564bdbe[0K$ ./gradlew assemble
+Downloading https://services.gradle.org/distributions/gradle-2.10-bin.zip
+..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping /home/travis/.gradle/wrapper/dists/gradle-2.10-bin/baigpnfu14tdk6ztbfwcl8275/gradle-2.10-bin.zip to /home/travis/.gradle/wrapper/dists/gradle-2.10-bin/baigpnfu14tdk6ztbfwcl8275
+Set executable permissions for: /home/travis/.gradle/wrapper/dists/gradle-2.10-bin/baigpnfu14tdk6ztbfwcl8275/gradle-2.10/bin/gradle
+
+BUILD FAILED
+
+Total time: 18.396 secs
+
+BUILD FAILED
+
+Total time: 1.981 secs
+
+BUILD FAILED
+
+Total time: 2.109 secs
+
+travis_time:end:2564bdbe:start=1599398066693508368,finish=1599398092704554651,duration=26011046283[0K
+[31;1mThe command "./gradlew assemble" failed and exited with 1 during .[0m
+
+Your build has been stopped.

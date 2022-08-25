@@ -1,0 +1,151 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: python
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 52.21.89.200 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 52.21.89.200 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ cd failed/hypothesis/h
+travis_fold:start:postgresql[0K[33;1mStarting PostgreSQL v9.4[0m
+travis_time:start:25683b79[0K$ sudo service postgresql stop
+ * Stopping PostgreSQL 9.1 database server
+   ...done.
+ * Stopping PostgreSQL 9.2 database server
+   ...done.
+ * Stopping PostgreSQL 9.3 database server
+   ...done.
+ * Stopping PostgreSQL 9.4 database server
+   ...done.
+
+travis_time:end:25683b79:start=1599313730219613002,finish=1599313730951899640,duration=732286638[0Ktravis_time:start:2de11388[0K$ sudo service postgresql start 9.4
+ * Starting PostgreSQL 9.4 database server
+   ...done.
+
+travis_time:end:2de11388:start=1599313730959902570,finish=1599313740364588567,duration=9404685997[0Ktravis_time:start:01098538[0K$ sudo -u postgres createuser -s -p 5432 travis &>/dev/null
+
+travis_time:end:01098538:start=1599313740372958931,finish=1599313740428946749,duration=55987818[0Ktravis_time:start:117a5c66[0K$ sudo -u postgres createdb -O travis -p 5432 travis &>/dev/null
+
+travis_time:end:117a5c66:start=1599313740437004412,finish=1599313740713194052,duration=276189640[0Ktravis_time:start:0957eb6c[0K$ sudo -u postgres createuser -s -p 5433 travis &>/dev/null
+
+travis_time:end:0957eb6c:start=1599313740723374628,finish=1599313740775955249,duration=52580621[0Ktravis_time:start:12fe806e[0K$ sudo -u postgres createdb -O travis -p 5433 travis &>/dev/null
+
+travis_time:end:12fe806e:start=1599313740785674318,finish=1599313740825458596,duration=39784278[0Ktravis_fold:end:postgresql[0K
+[33;1mSetting environment variables from .travis.yml[0m
+$ export ACTION=tox
+
+travis_time:start:10ed844b[0K$ source ~/virtualenv/python2.7/bin/activate
+
+travis_time:end:10ed844b:start=1599313743021332968,finish=1599313743026779211,duration=5446243[0Ktravis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:19e44df8[0K$ Installing caching utilities
+
+travis_time:end:19e44df8:start=1599313743352342355,finish=1599313744498619704,duration=1146277349[0Ktravis_time:start:0e6865ef[0K
+travis_time:end:0e6865ef:start=1599313744511689996,finish=1599313744520732833,duration=9042837[0Ktravis_time:start:024961e9[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:024961e9:start=1599313744529828736,finish=1599313745220810500,duration=690981764[0Ktravis_time:start:03af787a[0K
+travis_time:end:03af787a:start=1599313745231981074,finish=1599313745241181161,duration=9200087[0Ktravis_time:start:19a00664[0K[32;1madding /home/travis/build/failed/hypothesis/h/node_modules to cache[0m
+[32;1mcreating directory /home/travis/build/failed/hypothesis/h/node_modules[0m
+[32;1madding /home/travis/.cache/pip to cache[0m
+
+travis_time:end:19a00664:start=1599313745251884641,finish=1599313745929733323,duration=677848682[0Ktravis_fold:end:cache.1[0K$ python --version
+$ pip --version
+pip 6.0.7 from /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages (python 2.7)
+travis_fold:start:install[0Ktravis_time:start:1bfd59c0[0K$ pip install tox
+Collecting tox
+  Downloading https://files.pythonhosted.org/packages/54/8f/058a8d4255a106f79fd51421a2d90ef904ab1dbed03803ea91c5c7a401dc/tox-3.20.0-py2.py3-none-any.whl (83kB)
+  Exception:
+  Traceback (most recent call last):
+    File "/home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/pip/basecommand.py", line 232, in main
+      status = self.run(options, args)
+    File "/home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/pip/commands/install.py", line 339, in run
+      requirement_set.prepare_files(finder)
+    File "/home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/pip/req/req_set.py", line 436, in prepare_files
+      req_to_install.extras):
+    File "/home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/pip/_vendor/pkg_resources/__init__.py", line 2496, in requires
+      dm = self._dep_map
+    File "/home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/pip/_vendor/pkg_resources/__init__.py", line 2697, in _dep_map
+      self.__dep_map = self._compute_dependencies()
+    File "/home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/pip/_vendor/pkg_resources/__init__.py", line 2730, in _compute_dependencies
+      common = frozenset(reqs_for_extra(None))
+    File "/home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/pip/_vendor/pkg_resources/__init__.py", line 2727, in reqs_for_extra
+      if req.marker_fn(override={'extra':extra}):
+    File "/home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/pip/_vendor/_markerlib/markers.py", line 113, in marker_fn
+      return eval(compiled_marker, environment)
+    File "<environment marker>", line 1, in <module>
+  NameError: name 'platform_system' is not defined
+
+
+travis_time:end:1bfd59c0:start=1599313746222246991,finish=1599313747464981774,duration=1242734783[0K
+[31;1mThe command "pip install tox" failed and exited with 2 during .[0m
+
+Your build has been stopped.

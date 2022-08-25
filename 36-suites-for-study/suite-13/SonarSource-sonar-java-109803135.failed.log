@@ -1,0 +1,99 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+$ jdk_switcher use oraclejdk7
+Switching to Oracle JDK7 (java-7-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-7-oracle
+$ cd failed/SonarSource/sonar-java
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export TEST=plugin
+$ export SQ_VERSION=LTS
+
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:0d0e65a6[0K$ Installing caching utilities
+
+travis_time:end:0d0e65a6:start=1599284116712300297,finish=1599284117465634466,duration=753334169[0Ktravis_time:start:20d03ae6[0K
+travis_time:end:20d03ae6:start=1599284117477032894,finish=1599284117484620365,duration=7587471[0Ktravis_time:start:027b9160[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:027b9160:start=1599284117493270594,finish=1599284118232870635,duration=739600041[0Ktravis_time:start:17f697e6[0K
+travis_time:end:17f697e6:start=1599284118240851870,finish=1599284118248502327,duration=7650457[0Ktravis_time:start:011e891c[0K[32;1madding /home/travis/.m2/repository to cache[0m
+
+travis_time:end:011e891c:start=1599284118257795920,finish=1599284119005242435,duration=747446515[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:install[0Ktravis_time:start:04ef8008[0K$ true
+
+travis_time:end:04ef8008:start=1599284119195127862,finish=1599284119203005773,duration=7877911[0Ktravis_fold:end:install[0Ktravis_time:start:016f4635[0K$ ./travis.sh
+
+travis_time:end:016f4635:start=1599284119214279536,finish=1599284119236852900,duration=22573364[0K
+[31;1mThe command "./travis.sh" exited with 127.[0m
+travis_fold:start:cache.2[0Kstore build cache
+travis_time:start:2311de84[0K
+travis_time:end:2311de84:start=1599284119248557520,finish=1599284119257290158,duration=8732638[0Ktravis_time:start:150e5647[0K[32;1mchanges detected, packing new archive[0m
+
+travis_time:end:150e5647:start=1599284119267656947,finish=1599284121037172106,duration=1769515159[0Ktravis_fold:end:cache.2[0K
+Done. Your build exited with 1.

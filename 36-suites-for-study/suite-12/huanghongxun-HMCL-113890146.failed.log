@@ -1,0 +1,115 @@
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: java
+Build group: stable
+Build dist: precise
+Build id: ''
+Job id: ''
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+W: GPG error: http://apt.postgresql.org precise-pgdg Release: The following signatures were invalid: KEYEXPIRED 1562078959
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-amd64/Packages  403  Forbidden
+
+W: Failed to fetch http://ppa.launchpad.net/travis-ci/zero-mq/ubuntu/dists/precise/main/binary-i386/Packages  403  Forbidden
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-amd64/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+W: Failed to fetch http://downloads-distro.mongodb.org/repo/debian-sysvinit/dists/dist/10gen/binary-i386/Packages  Undetermined Error [IP: 54.175.147.155 80]
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+$ jdk_switcher use oraclejdk8
+Switching to Oracle JDK8 (java-8-oracle), JAVA_HOME will be set to /usr/lib/jvm/java-8-oracle
+$ cd failed/huanghongxun/HMCL
+$ export TERM=dumb
+travis_fold:start:cache.1[0KSetting up build cache
+$ export CASHER_DIR=$HOME/.casher
+travis_time:start:02cfd760[0K$ Installing caching utilities
+
+travis_time:end:02cfd760:start=1599078407797494273,finish=1599078408380800237,duration=583305964[0Ktravis_time:start:05d4de9c[0K
+travis_time:end:05d4de9c:start=1599078408396350724,finish=1599078408406267601,duration=9916877[0Ktravis_time:start:1e6a7dcc[0K[32;1mattempting to download cache archive[0m
+
+travis_time:end:1e6a7dcc:start=1599078408417008080,finish=1599078409151573922,duration=734565842[0Ktravis_time:start:01c00bc4[0K
+travis_time:end:01c00bc4:start=1599078409161670673,finish=1599078409170302075,duration=8631402[0Ktravis_time:start:04b09984[0K[32;1madding /home/travis/.gradle/caches to cache[0m
+[32;1mcreating directory /home/travis/.gradle/caches[0m
+[32;1madding /home/travis/.gradle/wrapper to cache[0m
+[32;1mcreating directory /home/travis/.gradle/wrapper[0m
+
+travis_time:end:04b09984:start=1599078409180004915,finish=1599078409947909688,duration=767904773[0Ktravis_fold:end:cache.1[0K$ java -Xmx32m -version
+$ javac -J-Xmx32m -version
+travis_fold:start:install[0Ktravis_time:start:0cd12f1b[0K$ echo "skip 'gradle assemble' step"
+skip 'gradle assemble' step
+
+travis_time:end:0cd12f1b:start=1599078410237301257,finish=1599078410246173551,duration=8872294[0Ktravis_fold:end:install[0Ktravis_time:start:0b9083b0[0K$ gradle build --continue
+
+BUILD FAILED
+
+Total time: 7.76 secs
+
+travis_time:end:0b9083b0:start=1599078410258775561,finish=1599078420034489664,duration=9775714103[0K
+[31;1mThe command "gradle build --continue" exited with 1.[0m
+travis_fold:start:before_cache[0Ktravis_time:start:076170e1[0K$ rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
+travis_time:end:076170e1:start=1599078420047843513,finish=1599078420060437781,duration=12594268[0Ktravis_fold:end:before_cache[0Ktravis_fold:start:cache.2[0Kstore build cache
+travis_time:start:005923d0[0K
+travis_time:end:005923d0:start=1599078420073246282,finish=1599078420083380355,duration=10134073[0Ktravis_time:start:209abcd8[0K[32;1mchanges detected, packing new archive[0m
+
+travis_time:end:209abcd8:start=1599078420095334734,finish=1599078421915546497,duration=1820211763[0Ktravis_fold:end:cache.2[0K
+Done. Your build exited with 1.
